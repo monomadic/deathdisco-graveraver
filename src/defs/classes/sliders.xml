@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+      <define class="beat_divider" placeholders="*width,*height">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <pos x="+0" y="+0"/>
+        <fader color="needle">
+          <mouserect x="+0" y="+0" width="0" height="0"/>
+          <size width="1" height="[HEIGHT]+2"/>
+        </fader>
+        <mouserect x="+0" y="+0" width="0" height="0"/>
+      </define>
+      <define class="beat_divider" placeholders="*width,*height" condition="var_equal '@$hauntingcolorscheme' 4">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <pos x="+0" y="+0"/>
+        <fader color="needle">
+          <mouserect x="+0" y="+0" width="0" height="0"/>
+          <size width="2" height="[HEIGHT]+2"/>
+        </fader>
+        <mouserect x="+0" y="+0" width="0" height="0"/>
+      </define>
+      <define class="dome_spinner" orientation="round" action="get_rotation" placeholders="width,height,offcolor,colorfader,widthfader,heightfader,radius">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <off color="[OFFCOLOR]" border="transparent" border_size="11" shape="circle"/>
+        <fader color="[COLORFADER]" width="[WIDTHFADER]" height="[HEIGHTFADER]" radius="[RADIUS]"/>
+      </define>
+      <define class="KNOB" placeholders="action,rgclick,dblclick,frommiddle,knobsize,knobradius,fillcolor,fillcoloroff=knobprogressoff,faderradius,textsize=12,textcolor=knobtextoff,textbelow=+36,textleft=-23,textwidth=87,text,textaction,actiontxt">
+        <slider action="[ACTION]" rightclick="[RGCLICK]" dblclick="[DBLCLICK]" orientation="round" frommiddle="[FROMMIDDLE]">
+          <pos x="+0" y="+0"/>
+          <size width="[KNOBSIZE]" height="[KNOBSIZE]"/>
+          <fader color="needle" width="2" height="11" radius="[FADERRADIUS]" anglemin="-140" anglemax="140"/>
+          <fill width="[KNOBSIZE]" height="[KNOBSIZE]" radius="[KNOBRADIUS]" color="[FILLCOLOR]" backcolor="[FILLCOLOROFF]"/>
+        </slider>
+        <textzone action="[ACTIONTXT]">
+          <pos x="[TEXTLEFT]" y="[TEXTBELOW]"/>
+          <size width="[TEXTWIDTH]" height="15"/>
+          <text fontsize="[TEXTSIZE]" weight="" color="[TEXTCOLOR]" align="center" action="[TEXTACTION]" text="[TEXT]" important="true" localize="true"/>
+        </textzone>
+      </define>
+      <define class="hor_slider" orientation="horizontal" frommiddle="[FROMMIDDLE]" placeholders="width,*height,coloron=br_focus">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <off color="knobprogressoff" shape="square"/>
+        <on color="[COLORON]" shape="square"/>
+        <fader color="needle" width="8" height="[HEIGHT]+10" radius="[FADERRADIUS]" anglemin="-140" anglemax="140"/>
+      </define>
+</defs>

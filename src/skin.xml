@@ -3,6 +3,24 @@
   <xi:include href="components/globals.xml" xpointer="xpointer(/globals/*)"/>
   <xi:include href="defs/classes.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/buttons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/sliders.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/pitch.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/display.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/browser.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/deck-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/fx.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/track-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/transport.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/jogwheel.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/performance.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/mixer.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/controls.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/panels.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/racks.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/video.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/deck-areas.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/layout.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/>

@@ -71,4 +71,97 @@
       <size width="[WIDTH]" height="[HEIGHT]"/>
     </visual>
   </define>
+
+  <!-- Legacy-style transport bar (songpos + key/beat/phrase + master) -->
+  <define class="TRANSPORT_BAR" placeholders="*deck,*deckside">
+    <deck deck="[DECK]">
+      <!-- Song position with framed background -->
+      <group visibility="loaded">
+        <pos x="+45" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+460" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
+        <songpos class="songpos" x="+6" y="+6" width="290" height="12" colorPlayed="deckcolor"/>
+        <visual width="300" height="24">
+          <off shape="square" color="transparent" border_size="1" border="pro_panel_border" radius="4"/>
+        </visual>
+      </group>
+
+      <!-- Key / Beat / Phrase / Master cluster -->
+      <group visibility="loaded">
+        <pos x="+365" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+115" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
+
+        <!-- KEY -->
+        <button class="button_main" action="select &amp; match_key" bordersize="1" query="match_key" visibility="not masterdeck">
+          <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+82*3" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="pro_panel_border" radius="3"/>
+          <down color="button_bg_over" border="deckcolor" radius="3"/>
+          <selected color="transparent" border="deckcolor" radius="3"/>
+          <text fontsize="12" color="pro_text_dim" colorselected="deckcolor" colordown="deckcolor" align="center" text="KEY"/>
+        </button>
+        <button class="button_main" action="select &amp; match_key" bordersize="1" query="match_key" visibility="masterdeck">
+          <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+82*3" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="color_masterdeck" radius="3"/>
+          <down color="button_bg_over" border="color_masterdeck" radius="3"/>
+          <selected color="transparent" border="color_masterdeck" radius="3"/>
+          <text fontsize="12" color="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="KEY"/>
+        </button>
+
+        <!-- BEAT -->
+        <button class="button_main" action="select &amp; sync" bordersize="1" query="not play ? true : not is_sync ? blink 500ms : true" visibility="not masterdeck">
+          <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="pro_panel_border" radius="3"/>
+          <down color="button_bg_over" border="deckcolor" radius="3"/>
+          <selected color="transparent" border="deckcolor" radius="3"/>
+          <text fontsize="12" color="pro_text_dim" colorselected="deckcolor" colordown="deckcolor" align="center" text="BEAT"/>
+        </button>
+        <button class="button_main" action="select &amp; sync" bordersize="1" query="not play ? true : not is_sync ? blink 500ms : true" visibility="masterdeck">
+          <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="pro_panel_border" radius="3"/>
+          <down color="button_bg_over" border="color_masterdeck" radius="3"/>
+          <selected color="transparent" border="color_masterdeck" radius="3"/>
+          <text fontsize="12" color="pro_text_dim" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="BEAT"/>
+        </button>
+
+        <!-- PHRASE -->
+        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="not playing ? true : is_sync ? true : false" visibility="masterdeck ? true : is_sync ? true : blink 500ms">
+          <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="pro_panel_border" radius="3"/>
+          <down color="button_bg_over" border="deckcolor" radius="3"/>
+          <selected color="transparent" border="deckcolor" radius="3"/>
+          <text fontsize="12" color="pro_text_dim" colorselected="deckcolor" colordown="deckcolor" align="center" text="PHRASE"/>
+        </button>
+
+        <!-- MASTER/SLAVE -->
+        <button class="button_main" action="select &amp; masterdeck" textcoloron="orange" bordersize="2" query="masterdeck" visibility="loaded">
+          <pos x="+82*3" condition="param_equal [DECKSIDE] 'left'"/>
+          <pos x="+0" condition="param_equal [DECKSIDE] 'right'"/>
+          <size width="80" height="25"/>
+          <off color="button_bg" border="pro_panel_border" border_size="1" shape="square" radius="3"/>
+          <down color="button_bg_over" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
+          <selected color="color_masterdeck" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
+          <text size="11" action="masterdeck ? masterdeck_auto ? get_text 'AUTO' : get_text 'MASTER' : get_text 'SLAVE'" color="pro_text_dim" colorselected="black" align="center"/>
+        </button>
+      </group>
+
+      <!-- Play/Pause (mirrored per deck side) -->
+      <button class="button_main" textsize="11" width="80" height="25" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" bordersize="0" visibility="loaded">
+        <pos x="+365+82*4+10" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+15" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
+        <off color="button_bg" border="pro_panel_border" border_size="1" shape="square" radius="4"/>
+        <over color="button_bg_over" border="pro_panel_border" border_size="1" shape="square" radius="4"/>
+        <down color="button_bg_over" border="deckcolor" border_size="1" shape="square" radius="4"/>
+        <selected color="deckcolor" border="deckcolor" border_size="1" shape="square" radius="4"/>
+      </button>
+    </deck>
+  </define>
 </defs>

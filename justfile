@@ -20,16 +20,13 @@ install: build
     cp -f "{{build_dir}}/skin.xml" "$install_path/skin.xml"
 
 watch:
-    # watchexec v2+ syntax using --filter (more portable than --exts)
     watchexec \
       --clear \
-      --restart \
       --watch "{{src_dir}}" \
       --watch "{{assets_dir}}" \
+      --exts xml,png,jpg,jpeg,bmp,svg \
       --ignore "{{build_dir}}" \
       --ignore .git \
-      --filter 'glob:**/*.xml' \
-      --filter 'glob:**/*.{png,jpg,jpeg,bmp,svg}' \
       -- just install
 
 clean:

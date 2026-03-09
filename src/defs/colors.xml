@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Base UI -->
+  <define color="bg_main" value="#000000"/>
+  <define color="bg_panel" value="#181a1f"/>
+  <define color="bg_panel_alt" value="#1d2026"/>
+  <!-- Shades -->
+  <define color="shade_0" value="#000000"/>
+  <define color="shade_1" value="#030404"/>
+  <define color="shade_2" value="#090909"/>
+  <!-- Text -->
+  <define color="text_main" value="#e8e8ea"/>
+  <define color="text_dim" value="#8f949c"/>
+  <define color="text_muted" value="#676c73"/>
+  <!-- Buttons -->
+  <define color="button_bg" value="#242831"/>
+  <define color="button_bg_over" value="#2c313b"/>
+  <define color="button_bg_on" value="#10151d"/>
+  <define color="button_border" value="#090b0f"/>
+  <define color="button_border_on" value="#4a5568"/>
+  <define color="button_text" value="#c8ccd4"/>
+  <define color="button_text_over" value="#ffffff"/>
+  <define color="button_text_on" value="#ffffff"/>
+  <!-- Knobs / meters -->
+  <define color="knob_bg" value="#2a2d33"/>
+  <define color="knob_border" value="#111318"/>
+  <define color="knob_indicator" value="#f3f4f6"/>
+  <define color="vu_off" value="#1d242b"/>
+  <define color="vu_on" value="#58d68d"/>
+  <!-- Deck accents -->
+  <define color="deck_accent" value="#2aa8ff" deck="1"/>
+  <define color="deck_accent" value="#ff5470" deck="2"/>
+  <define color="deck_accent_dim" value="#1b5f8f" deck="1"/>
+  <define color="deck_accent_dim" value="#8a2d43" deck="2"/>
+  <!-- Wave accents -->
+  <define color="wave_bg" value="#101216"/>
+  <define color="wave_grid" value="#2d3340"/>
+  <define color="wave_playhead" value="#ffffff"/>
+</defs>

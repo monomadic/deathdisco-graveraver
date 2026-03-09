@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <panel name="main" visible="yes">
+    <!-- OVERALL BACKGROUND -->
+    <square color="bg_main" canstretch="false">
+      <pos x="0" y="0"/>
+      <size width="1920" height="1080"/>
+    </square>
+    <square color="blue" canstretch="true">
+      <pos x="0" y="500"/>
+      <size width="1920" height="200"/>
+    </square>
+    <square color="green" canstretch="false">
+      <pos x="0" y="760"/>
+      <size width="1920" height="1080-760"/>
+    </square>
+    <!-- global header / branding / mode buttons -->
+    <group name="header" x="0" y="0">
+      <!-- top bar items -->
+      <button x="+10" y="+10" width="60" height="22" text="REFRESH" action="play_pause"/>
+      <!-- CENTER AREA -->
+      <group x="1920/2-100" y="4">
+        <!-- REFRESH BUTTON -->
+        <button tooltip="Reload Skin" action="load_skin">
+          <size width="50" height="30"/>
+          <off color="#000000"/>
+          <over color="#111111"/>
+          <icon sysicon="sampler_loop" width="22" height="22" coloroff="#AAAAAA" colorover="#FFFFFF"/>
+        </button>
+        <!-- SETTINGS BUTTON -->
+        <button action="settings" x="+155">
+          <size width="50" height="30"/>
+          <off color="#000000"/>
+          <over color="#111111"/>
+          <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+        </button>
+      </group>
+      <line x="0" y="40" width="1920" height="1" highlight="#101010" shadow="#707070"/>
+    </group>
+    <!-- CENTER AREA -->
+    <!-- optional framing / separators -->
+    <line color="red" width="1">
+      <pos x="0" y="300"/>
+      <pos2 x="1920" y="300"/>
+    </line>
+  </panel>
+</module>

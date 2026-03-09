@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <panel name="browser_main" visible="yes">
+    <browser toolbar="yes" sideview="yes" folders="yes" infos="yes" effects="no" searchbar="yes" lineheight="1.1" showzoom="yes">
+      <pos x="0" y="760"/>
+      <size width="1920" height="320"/>
+      <colors background="bg_main"/>
+    </browser>
+  </panel>
+</module>

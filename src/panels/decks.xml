@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <deck deck="1">
+    <group name="deck_left_root" x="20" y="200">
+      <visual width="383" height="300">
+        <off shape="square" color="red"/>
+      </visual>
+      <textzone class="track_text">
+        <pos x="+0" y="+0"/>
+        <text fontsize="13" color="text_main" align="left" action="get_text '`get_artist` - `get_title`'"/>
+      </textzone>
+      <button class="transport_button" action="play_pause" query="play">
+        <pos x="+0" y="+32"/>
+        <icon sysicon="play" color="button_text"/>
+      </button>
+      <button class="transport_button" action="cue_stop" query="cue_stop">
+        <pos x="+50" y="+32"/>
+        <text fontsize="12" color="button_text" align="center" text="CUE"/>
+      </button>
+      <button class="transport_button" action="sync" query="sync_lock">
+        <pos x="+100" y="+32"/>
+        <text fontsize="11" color="button_text" align="center" text="SYNC"/>
+      </button>
+      <slider class="knob_round" action="filter">
+        <pos x="+0" y="+92"/>
+      </slider>
+      <slider class="knob_round" action="gain">
+        <pos x="+70" y="+92"/>
+      </slider>
+      <visual class="vu_meter">
+        <pos x="+150" y="+92"/>
+      </visual>
+    </group>
+  </deck>
+  <deck deck="2">
+    <group name="deck_right_root" x="1640" y="200">
+      <visual width="383" height="300">
+        <off shape="square" color="red"/>
+      </visual>
+      <textzone class="track_text">
+        <pos x="+0" y="+0"/>
+        <text fontsize="13" color="text_main" align="right" action="get_text '`get_artist` - `get_title`'"/>
+      </textzone>
+      <button class="transport_button" action="play_pause" query="play">
+        <pos x="+0" y="+32"/>
+        <icon sysicon="play" color="button_text"/>
+      </button>
+      <button class="transport_button" action="cue_stop" query="cue_stop">
+        <pos x="+50" y="+32"/>
+        <text fontsize="12" color="button_text" align="center" text="CUE"/>
+      </button>
+      <button class="transport_button" action="sync" query="sync_lock">
+        <pos x="+100" y="+32"/>
+        <text fontsize="11" color="button_text" align="center" text="SYNC"/>
+      </button>
+      <slider class="knob_round" action="filter">
+        <pos x="+0" y="+92"/>
+      </slider>
+      <slider class="knob_round" action="gain">
+        <pos x="+70" y="+92"/>
+      </slider>
+      <visual class="vu_meter">
+        <pos x="+150" y="+92"/>
+      </visual>
+    </group>
+  </deck>
+</module>

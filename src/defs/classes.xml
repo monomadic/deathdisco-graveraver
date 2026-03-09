@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Generic main button -->
+  <define class="button_main">
+    <size width="88" height="24"/>
+    <off radius="5" border_size="1" border="button_border" color="button_bg"/>
+    <over radius="5" border_size="1" border="button_border" color="button_bg_over"/>
+    <down radius="5" border_size="1" border="button_border_on" color="button_bg_on"/>
+    <selected radius="5" border_size="1" border="button_border_on" color="button_bg_on"/>
+    <text fontsize="12" color="button_text" align="center"/>
+    <textover fontsize="12" color="button_text_over" align="center"/>
+    <textdown fontsize="12" color="button_text_on" align="center"/>
+    <textselected fontsize="12" color="button_text_on" align="center"/>
+  </define>
+  <!-- Small square transport button -->
+  <define class="transport_button">
+    <size width="42" height="42"/>
+    <off radius="8" border_size="1" border="button_border" color="button_bg"/>
+    <over radius="8" border_size="1" border="button_border" color="button_bg_over"/>
+    <down radius="8" border_size="1" border="deck_accent" color="button_bg_on"/>
+    <selected radius="8" border_size="1" border="deck_accent" color="button_bg_on"/>
+  </define>
+  <!-- Label text -->
+  <define class="label_small">
+    <size width="120" height="18"/>
+    <text fontsize="11" color="text_dim" align="left"/>
+  </define>
+  <!-- Title / track text -->
+  <define class="track_text">
+    <size width="260" height="20"/>
+    <text fontsize="13" color="text_main" align="left"/>
+  </define>
+  <!-- Round knob shell -->
+  <define class="knob_round" orientation="round">
+    <size width="54" height="54"/>
+    <off width="46" height="46" shape="circle" color="knob_bg" border="knob_border" border_size="2"/>
+    <fader color="knob_indicator" width="3" height="18" anglemin="-140" anglemax="140"/>
+  </define>
+  <!-- Vertical meter -->
+  <define class="vu_meter" source="get_vu_meter" type="linear" orientation="vertical">
+    <size width="10" height="90"/>
+    <off color="vu_off"/>
+    <on color="vu_on"/>
+  </define>
+</defs>

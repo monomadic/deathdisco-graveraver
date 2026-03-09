@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Pro theme tokens (used by modular panels) -->
+  <define color="bg_main" value="#0b0e13"/>
+  <define color="pro_surface_bg" value="#0b0e13"/>
+  <define color="pro_panel_bg" value="#10141b"/>
+  <define color="pro_panel_border" value="#1e242e"/>
+  <define color="pro_accent" value="#4cc2ff"/>
+  <define color="pro_text_main" value="#e6e8ee"/>
+  <define color="pro_text_dim" value="#9aa2ad"/>
   <!-- Base UI colors used by modular components -->
   <!-- Text -->
   <define color="text_main" value="#e8e8ea"/>

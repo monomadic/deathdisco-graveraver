@@ -3,16 +3,88 @@
   <!-- Minimal deck transport migrated from legacy -->
   <deck deck="1">
     <group name="deck_left" x="40" y="200">
+      <!-- Deck select button (PRO style) -->
+      <group class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
+        <pos x="+0" y="+0"/>
+      </group>
+      <group class="deck_button_left" visibility="not masterdeck" color="deckcolor">
+        <pos x="+0" y="+0"/>
+      </group>
       <!-- Track title/artist combo from legacy helper -->
       <panel class="textzone_title_artist_combo" x="+0" y="-40" width="300" align="left"/>
+      <!-- Song position strip -->
+      <songpos class="songpos" x="+0" y="-16" width="300" height="10" colorPlayed="deckcolor"/>
       <!-- Transport: SYNC / CUE / PLAY -->
       <panel class="transport_center"/>
+      <!-- Key controls -->
+      <panel class="key_display_left" x="+0" y="+40"/>
+      <!-- Jogwheel -->
+      <panel class="jogwheel" x="+220" y="-20" name="jogwheel_left"/>
+      <!-- Pitch + VU meter -->
+      <panel class="pitch" x="+400" y="+0"/>
+      <visual class="vu_meter">
+        <pos x="+470" y="+0"/>
+      </visual>
+
+      <!-- Background for deck control column -->
+      <visual class="gfx_shape" x="-10" y="-50" width="252" height="200" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="6"/>
+
+      <!-- Pads strip (Hotcues 1-8) -->
+      <group name="pads_left" x="+0" y="+90">
+        <visual class="gfx_shape" width="232" height="33" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
+        <panel class="hotcue_button_stack" x="+4" y="+4" source="1"/>
+        <panel class="hotcue_button_stack" x="+4+25+4" y="+4" source="2"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4" y="+4" source="3"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4" y="+4" source="4"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4" y="+4" source="5"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="6"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="7"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="8"/>
+      </group>
     </group>
   </deck>
   <deck deck="2">
     <group name="deck_right" x="1640" y="200">
+      <!-- Deck select button (PRO style) -->
+      <group class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
+        <pos x="-40" y="+0"/>
+      </group>
+      <group class="deck_button_left" visibility="not masterdeck" color="deckcolor">
+        <pos x="-40" y="+0"/>
+      </group>
       <panel class="textzone_title_artist_combo" x="-300" y="-40" width="300" align="right"/>
+      <!-- Song position strip -->
+      <songpos class="songpos" x="-300" y="-16" width="300" height="10" colorPlayed="deckcolor"/>
+      <!-- Transport: SYNC / CUE / PLAY -->
       <panel class="transport_center"/>
+      <!-- Key controls -->
+      <panel class="key_display_right" x="-128" y="+40"/>
+      <panel class="jogwheel" x="-240" y="-20" name="jogwheel_right"/>
+      <panel class="pitch" x="-420" y="+0"/>
+      <visual class="vu_meter">
+        <pos x="-490" y="+0"/>
+      </visual>
+
+      <!-- Background for deck control column -->
+      <visual class="gfx_shape" x="-242" y="-50" width="252" height="200" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="6"/>
+
+      <!-- Pads strip (Hotcues 1-8) -->
+      <group name="pads_right" x="-232" y="+90">
+        <visual class="gfx_shape" width="232" height="33" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
+
+      <!-- Active deck outline -->
+      <visual x="-12" y="-52" width="256" height="204" visibility="select">
+        <off shape="square" color="transparent" border="deckcolor" border_size="2" radius="7"/>
+      </visual>
+        <panel class="hotcue_button_stack" x="+4" y="+4" source="1"/>
+        <panel class="hotcue_button_stack" x="+4+25+4" y="+4" source="2"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4" y="+4" source="3"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4" y="+4" source="4"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4" y="+4" source="5"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="6"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="7"/>
+        <panel class="hotcue_button_stack" x="+4+25+4+25+4+25+4+25+4+25+4+25+4+25+4" y="+4" source="8"/>
+      </group>
     </group>
   </deck>
 </module>

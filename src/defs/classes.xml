@@ -3,10 +3,10 @@
   <!-- Generic main button -->
   <define class="button_main">
     <size width="88" height="24"/>
-    <off radius="5" border_size="1" border="button_border" color="button_bg"/>
-    <over radius="5" border_size="1" border="button_border" color="button_bg_over"/>
-    <down radius="5" border_size="1" border="button_border_on" color="button_bg_on"/>
-    <selected radius="5" border_size="1" border="button_border_on" color="button_bg_on"/>
+    <off radius="4" border_size="1" border="pro_panel_border" color="button_bg"/>
+    <over radius="4" border_size="1" border="pro_panel_border" color="button_bg_over"/>
+    <down radius="4" border_size="1" border="pro_accent" color="button_bg_on"/>
+    <selected radius="4" border_size="1" border="pro_accent" color="button_bg_on"/>
     <text fontsize="12" color="button_text" align="center"/>
     <textover fontsize="12" color="button_text_over" align="center"/>
     <textdown fontsize="12" color="button_text_on" align="center"/>
@@ -15,20 +15,20 @@
   <!-- Small square transport button -->
   <define class="transport_button">
     <size width="42" height="42"/>
-    <off radius="8" border_size="1" border="button_border" color="button_bg"/>
-    <over radius="8" border_size="1" border="button_border" color="button_bg_over"/>
-    <down radius="8" border_size="1" border="deck_accent" color="button_bg_on"/>
-    <selected radius="8" border_size="1" border="deck_accent" color="button_bg_on"/>
+    <off radius="6" border_size="1" border="pro_panel_border" color="button_bg"/>
+    <over radius="6" border_size="1" border="pro_panel_border" color="button_bg_over"/>
+    <down radius="6" border_size="1" border="deck_accent" color="button_bg_on"/>
+    <selected radius="6" border_size="1" border="deck_accent" color="button_bg_on"/>
   </define>
   <!-- Label text -->
   <define class="label_small">
     <size width="120" height="18"/>
-    <text fontsize="11" color="text_dim" align="left"/>
+    <text fontsize="11" color="pro_text_dim" align="left"/>
   </define>
   <!-- Title / track text -->
   <define class="track_text">
     <size width="260" height="20"/>
-    <text fontsize="13" color="text_main" align="left"/>
+    <text fontsize="13" color="pro_text_main" align="left"/>
   </define>
   <!-- Round knob shell -->
   <define class="knob_round" orientation="round">

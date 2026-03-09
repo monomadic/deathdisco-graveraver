@@ -2,7 +2,7 @@
 <module>
   <!-- Minimal deck transport migrated from legacy -->
   <deck deck="1">
-    <group name="deck_left" x="40" y="200">
+    <group name="deck_left" x="0" y="100">
       <!-- Deck select button (PRO style) -->
       <group class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
         <pos x="+0" y="+0"/>
@@ -10,6 +10,11 @@
       <group class="deck_button_left" visibility="not masterdeck" color="deckcolor">
         <pos x="+0" y="+0"/>
       </group>
+      <!-- background -->
+      <square color="red" canstretch="false">
+        <pos x="0" y="50"/>
+        <size width="800" height="400"/>
+      </square>
       <!-- Track info (Pro-styled container) -->
       <group name="track_info_left" x="+0" y="-56">
         <visual class="gfx_shape" width="300" height="56" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
@@ -63,7 +68,7 @@
     </group>
   </deck>
   <deck deck="2">
-    <group name="deck_right" x="1640" y="200">
+    <group name="deck_right" x="1920-800" y="100">
       <!-- Deck select button (PRO style) -->
       <group class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
         <pos x="-40" y="+0"/>
@@ -71,6 +76,11 @@
       <group class="deck_button_left" visibility="not masterdeck" color="deckcolor">
         <pos x="-40" y="+0"/>
       </group>
+      <!-- background -->
+      <square color="red" canstretch="false">
+        <pos x="1920-800" y="50"/>
+        <size width="800" height="400"/>
+      </square>
       <!-- Track info (Pro-styled container) -->
       <group name="track_info_right" x="-300" y="-56">
         <visual class="gfx_shape" width="300" height="56" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>

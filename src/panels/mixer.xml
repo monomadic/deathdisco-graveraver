@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
   <panel name="mixer_main" visible="yes">
-    <group name="mixer_root" x="760" y="420">
+    <group name="mixer_root" x="1920/2" y="50">
+      <!-- background -->
+      <square color="blue" canstretch="false">
+        <pos x="1920/2-160" y="50"/>
+        <size width="1920-800-800" height="400"/>
+      </square>
       <textzone class="label_small">
         <pos x="+0" y="+0"/>
         <text fontsize="11" color="text_dim" align="center" text="MIXER"/>

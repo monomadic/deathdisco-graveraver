@@ -26,10 +26,10 @@
   <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/>
   <!-- <xi:include href="defs/legacy-panels.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- Draw background first so header stays visible -->
-  <xi:include href="panels/layout.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="panels/header.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/browser.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/decks.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/mixer.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/wave.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="panels/layout.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
 </skin>

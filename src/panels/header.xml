@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <panel name="header_main" visible="yes">
+    <panel class="topbar"/>
+  </panel>
+  
+</module>
+

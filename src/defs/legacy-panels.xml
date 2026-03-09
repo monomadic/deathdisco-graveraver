@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Panel define(s) from legacy PANELS used by header/topbar -->
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='PANELS']/define[@class='topbar'])"/>
+</defs>
+

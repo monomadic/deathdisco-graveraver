@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Selected element/class defines pulled from legacy ELEMENTS needed by migrated panels -->
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='ELEMENTS']//define[@class='gfx_shape'])"/>
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='ELEMENTS']//define[@class='custom_button' or @class='custom_button2' or @class='tag_button'])"/>
+  <!-- Transport and text helpers for decks -->
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='ELEMENTS']//define[@class='transport_center' or @class='transport_horizontal' or @class='transport'])"/>
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='ELEMENTS']//define[@class='textzone_title_artist_combo'])"/>
+</defs>

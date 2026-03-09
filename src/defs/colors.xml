@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<defs>
-  <!-- Base UI -->
-  <define color="bg_main" value="#000000"/>
-  <define color="bg_panel" value="#181a1f"/>
-  <define color="bg_panel_alt" value="#1d2026"/>
-  <!-- Shades -->
-  <define color="shade_0" value="#000000"/>
-  <define color="shade_1" value="#030404"/>
-  <define color="shade_2" value="#090909"/>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Base UI colors used by modular components -->
   <!-- Text -->
   <define color="text_main" value="#e8e8ea"/>
   <define color="text_dim" value="#8f949c"/>
@@ -27,13 +20,9 @@
   <define color="knob_indicator" value="#f3f4f6"/>
   <define color="vu_off" value="#1d242b"/>
   <define color="vu_on" value="#58d68d"/>
-  <!-- Deck accents -->
+  <!-- Deck accents for classes that reference them generically -->
   <define color="deck_accent" value="#2aa8ff" deck="1"/>
   <define color="deck_accent" value="#ff5470" deck="2"/>
-  <define color="deck_accent_dim" value="#1b5f8f" deck="1"/>
-  <define color="deck_accent_dim" value="#8a2d43" deck="2"/>
-  <!-- Wave accents -->
-  <define color="wave_bg" value="#101216"/>
-  <define color="wave_grid" value="#2d3340"/>
-  <define color="wave_playhead" value="#ffffff"/>
+  <!-- Legacy color set (pulled directly) -->
+  <xi:include href="../legacy-skin.xml" xpointer="xpointer(/skin/group[@name='DEFINES']/*)"/>
 </defs>

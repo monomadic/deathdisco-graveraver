@@ -41,7 +41,7 @@
       <!-- Transport bar background (aligned to legacy songpos frame) -->
       <visual class="gfx_shape" x="+45" y="+0" width="300" height="36" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
       <!-- Transport bar (legacy layout) -->
-      <panel class="TRANSPORT_BAR" deck="1" deckside="left"/>
+      <panel class="transport_bar" deck="1" deckside="left"/>
       <!-- Key controls -->
       <panel class="key_display_left" x="+0" y="+40"/>
       <!-- Jogwheel -->
@@ -107,7 +107,7 @@
       <!-- Transport bar background (aligned to legacy songpos frame) -->
       <visual class="gfx_shape" x="+460" y="+0" width="300" height="36" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
       <!-- Transport: SYNC / CUE / PLAY -->
-      <panel class="TRANSPORT_BAR" deck="2" deckside="right"/>
+      <panel class="transport_bar" deck="2" deckside="right"/>
       <!-- Key controls -->
       <panel class="key_display_right" x="-128" y="+40"/>
       <panel class="jogwheel" x="-240" y="-20" name="jogwheel_right"/>

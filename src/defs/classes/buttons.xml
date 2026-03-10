@@ -618,7 +618,7 @@
     <!-- menus -->
     <define class="MENU_MAINDECKS" tooltip="Deck Options" placeholders="width,height">
       <size width="[WIDTH]" height="[HEIGHT]"/>
-      <icon sysicon="settings" color="#888888" colorover="white" colordown="white" colorselected="#888888" width="20" height="20"/>
+      <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="20" height="20"/>
       <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
       <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
       <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>

@@ -23,7 +23,7 @@
   <xi:include href="defs/classes/layout.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- <xi:include href="defs/legacy-panels.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- Draw background first so header stays visible -->
   <xi:include href="panels/browser.xml" xpointer="xpointer(/module/*)"/>
@@ -32,4 +32,6 @@
   <xi:include href="panels/wave.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/layout.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
+  <line visibility="select" x="0" y="500" width="1920" height="1" color="blue"/>
+  <line visibility="select" x="0" y="700" width="1920" height="1" color="blue"/>
 </skin>

@@ -34,4 +34,5 @@
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
   <!-- <line visibility="select" x="0" y="500" width="1920" height="1" color="blue"/> -->
   <!-- <line visibility="select" x="0" y="700" width="1920" height="1" color="blue"/> -->
+  <xi:include href="panels/bottombar.xml" xpointer="xpointer(/module/*)"/>
 </skin>

@@ -49,14 +49,14 @@
           <!-- BROWSER (UTILITY BAR OFF) -->
           <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
             <!-- 2 DECKS -->
-            <browser class="haunting_browser_pro" height="500" condition="var_equal '@$hauntinglayout' 0"/>
+            <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
             <!-- 4 DECKS -->
-            <browser class="haunting_browser_pro4decks" height="1080-43-2-432-2-2-2-1-216-2" condition="var_equal '@$hauntinglayout' 1"/>
+            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
           </group>
           <!-- BROWSER (UTILITY BAR ON) -->
           <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-            <browser class="haunting_browser_pro" height="1080-250-20" condition="var_equal '@$hauntinglayout' 0"/>
-            <browser class="haunting_browser_pro4decks" height="1080-33-2-432-2-2-2-1-216-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+            <browser class="haunting_browser_pro" height="250" condition="var_equal '@$hauntinglayout' 0"/>
+            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
           </group>
         </panel>
         <!--
@@ -110,4 +110,6 @@
       </group>
     </group>
   </panel>
+  <!-- BOTTOM BAR (UTILITY BAR) -->
+  <panel class="h_utility_bar" x="+2" y="+1280-38" condition="var_equal '@$hauntingutilitybar' 1"/>
 </module>

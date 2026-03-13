@@ -371,6 +371,7 @@
     </deck>
   </define>
   <define class="TOPBAR">
+    <!-- <visual class="gfx_shape" width="1920" height="50" coloroff="red"/> -->
     <!-- DECK MODE BUTTONS -->
     <group x="250" y="0">
       <!-- <button tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$h_utility_barmode'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$h_utility_barmode' 1 ? get_text '#' : get_text 'U'" coloroff="panel_background" coloron="#222222" query="true" bordersize="0"/> -->
@@ -877,8 +878,8 @@
       <menu tooltip="DIRECT OPTIONS">
         <pos x="+10" y="8"/>
         <size width="40" height="27"/>
-        <off color="panel_background" shape="square"/>
-        <over color="#333333" shape="square"/>
+        <off color="#000000" shape="square"/>
+        <over color="#000000" shape="square"/>
         <selected color="button_background" shape="square"/>
         <text dx="+2" dy="+6" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
         <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>

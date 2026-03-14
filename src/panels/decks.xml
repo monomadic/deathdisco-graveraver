@@ -4,12 +4,12 @@
   <deck deck="1">
     <group name="deck_left" x="0" y="100">
       <!-- Deck select button (PRO style) -->
-      <button class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
-        <pos x="+0" y="+0"/>
-      </button>
-      <button class="deck_button_left" visibility="not masterdeck" color="deckcolor">
-        <pos x="+0" y="+0"/>
-      </button>
+      <!-- <button class="deck_button" visibility="masterdeck" color="color_masterdeck"> -->
+      <!-- <pos x="+0" y="+0"/> -->
+      <!-- </button> -->
+      <!-- <button class="deck_button" visibility="not masterdeck" color="deckcolor"> -->
+      <!-- <pos x="+0" y="+0"/> -->
+      <!-- </button> -->
       <!-- background -->
       <square color="red" canstretch="false">
         <pos x="0" y="50"/>
@@ -70,10 +70,10 @@
   <deck deck="2">
     <group name="deck_right" x="1920-800" y="100">
       <!-- Deck select button (PRO style) -->
-      <button class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
+      <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
         <pos x="-40" y="+0"/>
       </button>
-      <button class="deck_button_left" visibility="not masterdeck" color="deckcolor">
+      <button class="deck_button" visibility="not masterdeck" color="deckcolor">
         <pos x="-40" y="+0"/>
       </button>
       <!-- background -->

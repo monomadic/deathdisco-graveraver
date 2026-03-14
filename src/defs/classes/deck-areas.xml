@@ -70,10 +70,10 @@
         <!-- <line x="+33" y="+0" width="2" height="433" color="deckcolor"/> -->
         <!-- </group> -->
         <line visibility="select" x="+34" y="+0" width="1" height="433" color="color_masterdeck"/>
-        <button class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
+        <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
           <pos x="+0" y="+0"/>
         </button>
-        <button class="deck_button_left" visibility="not masterdeck" color="deckcolor">
+        <button class="deck_button" visibility="not masterdeck" color="deckcolor">
           <pos x="+0" y="+0"/>
         </button>
         <!-- <group visibility="masterdeck"> -->
@@ -232,18 +232,26 @@
         <off shape="square" color="black" radius="6"/>
       </visual>
       <!-- PERFORMANCE: DECK BUTTON -->
-      <visual visibility="deck [DECK] select">
-        <size width="40" height="60" condition="param_equal [DECKSIDE] 'left'"/>
-        <size width="40" height="60" condition="param_equal [DECKSIDE] 'right'"/>
-        <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos x="+0" condition="param_equal [DECKSIDE] 'right'"/>
-        <off shape="square" color="deckcolor" radius="6"/>
-      </visual>
-      <button class="button_main" width="25" height="55" action="select" coloroff="black" textheight="54" textsize="30" textcoloron="black" textcolor="deckcolor">
-        <pos x="+5" y="+1" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos x="+3" y="+1" condition="param_equal [DECKSIDE] 'right'"/>
-        <text align="center" action="get_deck" width="25"/>
+      <button class="deck_button" deck="left" color="color_masterdeck">
+        <pos x="+0" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="-6" y="+0" condition="param_equal [DECKSIDE] 'right'"/>
+        <text dx="+8" condition="param_equal [DECKSIDE] 'right'"/>
       </button>
+      <!-- <button class="deck_button" deck="left" visibility="not masterdeck" color="deckcolor"/> -->
+      <!-- <button class="deck_button" deck="right" visibility="masterdeck" color="color_masterdeck"/> -->
+      <!-- <button class="deck_button" deck="right" visibility="not masterdeck" color="deckcolor"/> -->
+      <!-- <visual visibility="deck [DECK] select"> -->
+      <!-- <size width="40" height="60" condition="param_equal [DECKSIDE] 'left'"/> -->
+      <!-- <size width="40" height="60" condition="param_equal [DECKSIDE] 'right'"/> -->
+      <!-- <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/> -->
+      <!-- <pos x="+0" condition="param_equal [DECKSIDE] 'right'"/> -->
+      <!-- <off shape="square" color="deckcolor" radius="6"/> -->
+      <!-- </visual> -->
+      <!-- <button class="button_main" width="25" height="55" action="select" coloroff="black" textheight="54" textsize="30" textcoloron="black" textcolor="deckcolor"> -->
+      <!-- <pos x="+5" y="+1" condition="param_equal [DECKSIDE] 'left'"/> -->
+      <!-- <pos x="+3" y="+1" condition="param_equal [DECKSIDE] 'right'"/> -->
+      <!-- <text align="center" action="get_deck" width="25"/> -->
+      <!-- </button> -->
       <menu class="menu_maindecks" query="select" x="+3" y="+295" width="28" height="20"/>
     </deck>
   </define>

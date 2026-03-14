@@ -830,11 +830,9 @@
       </button>
     </define>
     <!-- CLASS: DECK BUTTON -->
-    <define class="DECK_BUTTON_LEFT" placeholders="*deck,*color" action="select">
+    <define class="DECK_BUTTON" placeholders="*deck,*color" action="select">
       <pos x="+0" y="+5"/>
       <size width="40" height="60"/>
-      <!-- <pos x="+5" y="+1" condition="param_equal [DECKSIDE] 'left'"/> -->
-      <!-- <pos x="+3" y="+1" condition="param_equal [DECKSIDE] 'right'"/> -->
       <off shape="square" color="transparent" radius="6" border_size="0" border="transparent"/>
       <on shape="square" color="[COLOR]" radius="6" border_size="1" border="[COLOR]"/>
       <text dx="+4" dy="-5" align="center" size="40" action="get_deck" width="25" color="[COLOR]" colorselected="black"/>

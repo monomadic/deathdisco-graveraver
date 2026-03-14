@@ -41,16 +41,6 @@
     <textzone class="text" x="+26" y="+0" width="128-26-26" height="48" action="key_match_menu" fontsize="30" color="`get_key_color`" align="center" weight="bold" textaction="get_key"/>
     <button class="button_main" x="+128-26" y="+8" width="26" height="48-16" action="key_move +1" coloroff="button_background" textcolor="textoff4" iconsize="22" sysicon="arrowright"/>
   </define>
-  <define class="DECK_BUTTON_LEFT" placeholders="*deck,*color">
-    <button action="select">
-      <pos x="+5" y="+5"/>
-      <size width="35" height="50"/>
-      <off shape="square" color="black" radius="5" border_size="1" border="black"/>
-      <on shape="square" color="[COLOR]" radius="5" border_size="1" border="[COLOR]"/>
-      <text dx="+1" dy="-5" align="center" size="35" action="get_deck" width="25" color="[COLOR]" colorselected="black"/>
-    </button>
-    <line visibility="select" x="+34" y="+0" width="1" height="433" color="[COLOR]"/>
-  </define>
   <define class="hotcue_button_stack" placeholders="*source,width=25,height=25">
     <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0" textaction="get_text '[SOURCE]'" textheight="22" textcoloron="needle"/>
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">

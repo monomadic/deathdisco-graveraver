@@ -69,25 +69,13 @@
         <!-- </button> -->
         <!-- <line x="+33" y="+0" width="2" height="433" color="deckcolor"/> -->
         <!-- </group> -->
-        <!-- CLASS: DECK BUTTON -->
-        <define class="DECK_BUTTON_LEFT" placeholders="*deck,*color">
-          <button action="select">
-            <pos x="+5" y="+5"/>
-            <size width="35" height="50"/>
-            <!-- <pos x="+5" y="+1" condition="param_equal [DECKSIDE] 'left'"/> -->
-            <!-- <pos x="+3" y="+1" condition="param_equal [DECKSIDE] 'right'"/> -->
-            <off shape="square" color="transparent" radius="5" border_size="0" border="transparent"/>
-            <on shape="square" color="[COLOR]" radius="5" border_size="1" border="[COLOR]"/>
-            <text dx="+1" dy="-5" align="center" size="35" action="get_deck" width="25" color="[COLOR]" colorselected="black"/>
-          </button>
-          <line visibility="select" x="+34" y="+0" width="1" height="433" color="[COLOR]"/>
-        </define>
-        <group class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
+        <line visibility="select" x="+34" y="+0" width="1" height="433" color="color_masterdeck"/>
+        <button class="deck_button_left" visibility="masterdeck" color="color_masterdeck">
           <pos x="+0" y="+0"/>
-        </group>
-        <group class="deck_button_left" visibility="not masterdeck" color="deckcolor">
+        </button>
+        <button class="deck_button_left" visibility="not masterdeck" color="deckcolor">
           <pos x="+0" y="+0"/>
-        </group>
+        </button>
         <!-- <group visibility="masterdeck"> -->
         <!-- <button action="select"> -->
         <!-- <pos x="+8" y="+5"/> -->
@@ -146,18 +134,6 @@
         <line color="#333333" x="+0" y="+400-2" width="765" height="1"/>
       </group>
     </deck>
-  </define>
-  <define class="DECK_BUTTON_LEFT" placeholders="*deck,*color">
-    <button action="select">
-      <pos x="+5" y="+5"/>
-      <size width="35" height="50"/>
-      <!-- <pos x="+5" y="+1" condition="param_equal [DECKSIDE] 'left'"/> -->
-      <!-- <pos x="+3" y="+1" condition="param_equal [DECKSIDE] 'right'"/> -->
-      <off shape="square" color="black" radius="5" border_size="1" border="black"/>
-      <on shape="square" color="[COLOR]" radius="5" border_size="1" border="[COLOR]"/>
-      <text dx="+1" dy="-5" align="center" size="35" action="get_deck" width="25" color="[COLOR]" colorselected="black"/>
-    </button>
-    <line visibility="select" x="+34" y="+0" width="1" height="433" color="[COLOR]"/>
   </define>
   <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck">
     <deck deck="[DECK]">
@@ -255,7 +231,7 @@
       <visual x="+0" y="+1" width="34" height="320">
         <off shape="square" color="black" radius="6"/>
       </visual>
-      <!-- DECK BUTTON -->
+      <!-- PERFORMANCE: DECK BUTTON -->
       <visual visibility="deck [DECK] select">
         <size width="40" height="60" condition="param_equal [DECKSIDE] 'left'"/>
         <size width="40" height="60" condition="param_equal [DECKSIDE] 'right'"/>
@@ -882,6 +858,7 @@
       </dropzone>
     </deck>
   </define>
+  <!-- AREA DECK: STACK -->
   <define class="area_deck_stack" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- spine -->

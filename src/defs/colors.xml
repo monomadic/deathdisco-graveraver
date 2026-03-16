@@ -291,6 +291,14 @@
   <define color="panel_bg" value="#10141b"/>
   <define color="panel_border" value="#1e242e"/>
   <define color="accent" value="#4cc2ff"/>
+  <define color="dark_0" value="#000000"/>
+  <define color="dark_1" value="#080808"/>
+  <define color="dark_2" value="#111111"/>
+  <define color="dark_3" value="#1A1A1A"/>
+  <define color="dark_4" value="#222222"/>
+  <define color="dark_5" value="#333333"/>
+  <define color="dark_6" value="#444444"/>
+  <define color="dark_7" value="#555555"/>
   <!-- Base UI colors used by modular components -->
   <!-- Text -->
   <define color="text_main" value="#e8e8ea"/>

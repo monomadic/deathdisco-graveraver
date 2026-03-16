@@ -546,10 +546,10 @@
               <pos x="+0" y="+0"/>
               <size width="100" height="25"/>
               <tooltip>Select pad page 1.</tooltip>
-              <off color="transparent" border="#222222" radius="6" bordersize="1"/>
+              <off color="transparent" border="dark_7" radius="6" bordersize="1"/>
               <over color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <down color="#000000" border="#666666" radius="6" bordersize="1"/>
-              <selected color="#000000" border="#555555" radius="6" bordersize="1"/>
+              <down color="#000000" border="dark_3" radius="6" bordersize="1"/>
+              <selected color="dark_4" border="dark_1" radius="6" bordersize="1"/>
               <text text="btn1" fontsize="12" color="textdarker" coloron="white" align="center"/>
             </button>
             <button class="button_main" query="param_equal `pad_page 2` `pad_page` ? true : param_equal `pad_page 6` `pad_page`" action="shift ? pad_page 6 : pad_page 2" rightclick="shift ? pad_page_select 6 : pad_page_select 2" textaction="shift ? pad_page btn6 &amp; param_uppercase : pad_page btn2 &amp; param_uppercase">

@@ -298,7 +298,9 @@
   <define color="dark_4" value="#222222"/>
   <define color="dark_5" value="#333333"/>
   <define color="dark_6" value="#444444"/>
-  <define color="dark_7" value="#555555"/>
+  <define color="dark_7" value="#666666"/>
+  <define color="dark_8" value="#999999"/>
+  <define color="dark_9" value="#AAAAAA"/>
   <!-- Base UI colors used by modular components -->
   <!-- Text -->
   <define color="text_main" value="#e8e8ea"/>

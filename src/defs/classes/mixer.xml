@@ -507,7 +507,7 @@
       <panel class="deck_level" x="+11+9-10" y="+6+30"/>
     </deck>
   </define>
-  <define class="mixer">
+  <define class="MIXER">
     <!-- MIDDLE PANEL BORDER -->
     <visual x="+4" width="308" height="375">
       <off shape="square" color="#000000" radius="6" bordersize="1" border="#222222"/>
@@ -1116,6 +1116,8 @@
     </group>
   </define>
   <define class="mixer_4decks">
+    <panel name="samplermixer" group="mixer" visible="yes">
+    </panel>
     <panel name="audiomixer" group="mixer" visible="yes">
       <group name="3124" visibility="setting 'mixerOrder' '3124'">
         <panel class="channel_extended" deck="3"/>

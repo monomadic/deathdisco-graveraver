@@ -26,6 +26,7 @@
           <panel class="area_waves"/>
           <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
           <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
+          <!-- browser -->
           <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
             <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
             <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>

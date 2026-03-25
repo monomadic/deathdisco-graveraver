@@ -12,6 +12,7 @@ lint:
 
 build: lint
     mkdir -p "{{build_dir}}"
+    if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{build_dir}}/"; fi
     xmllint --format --xinclude "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
 
 install: build

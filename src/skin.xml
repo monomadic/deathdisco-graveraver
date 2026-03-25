@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="900" breakline2="900">
+  <!-- Theme tokens and globals -->
   <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="components/globals.xml" xpointer="xpointer(/globals/*)"/>
+
+  <!-- Shared class library -->
   <xi:include href="defs/classes.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/buttons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/sliders.xml" xpointer="xpointer(/defs/*)"/>
@@ -18,6 +21,7 @@
   <xi:include href="defs/classes/waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/mixer.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/controls.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/decks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/panels.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/racks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/video.xml" xpointer="xpointer(/defs/*)"/>
@@ -25,14 +29,12 @@
   <xi:include href="defs/classes/layout.xml" xpointer="xpointer(/defs/*)"/>
   <!-- <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- <xi:include href="defs/legacy-panels.xml" xpointer="xpointer(/defs/*)"/> -->
-  <!-- Draw background first so header stays visible -->
-  <!-- <xi:include href="panels/browser.xml" xpointer="xpointer(/module/*)"/> -->
+
+  <!-- Composition order matters for layering -->
   <xi:include href="panels/decks.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/mixer.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/wave.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/layout.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
-  <!-- <line visibility="select" x="0" y="500" width="1920" height="1" color="blue"/> -->
-  <!-- <line visibility="select" x="0" y="700" width="1920" height="1" color="blue"/> -->
   <xi:include href="panels/bottombar.xml" xpointer="xpointer(/module/*)"/>
 </skin>

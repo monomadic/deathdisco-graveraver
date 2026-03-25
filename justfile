@@ -1,16 +1,18 @@
 set shell := ["zsh", "-eu", "-o", "pipefail", "-c"]
 
-skin_name := "DeathDisco GraveRaver v1"
+skin_name := "DeathDisco Grave Raver v1"
 src_dir := "src"
 assets_dir := "assets"
 build_dir := "build"
 
 default: install
 
-build:
-    mkdir -p "{{build_dir}}"
+lint:
     xmllint --noout --xinclude "{{src_dir}}/skin.xml"
-    xmllint --xinclude "{{src_dir}}/skin.xml" > "{{build_dir}}/skin.xml"
+
+build: lint
+    mkdir -p "{{build_dir}}"
+    xmllint --format --xinclude "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
 
 install: build
     install_root="$HOME/Library/Application Support/VirtualDJ/Skins"; \

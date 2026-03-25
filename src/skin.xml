@@ -7,6 +7,9 @@
 
   <!-- Shared class library -->
   <xi:include href="defs/classes.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/text.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/meters.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/cues.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/buttons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/sliders.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/pitch.xml" xpointer="xpointer(/defs/*)"/>

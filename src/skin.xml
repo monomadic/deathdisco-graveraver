@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="900" breakline2="900">
+  <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="components/globals.xml" xpointer="xpointer(/globals/*)"/>
   <xi:include href="defs/classes.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/buttons.xml" xpointer="xpointer(/defs/*)"/>
@@ -21,8 +23,6 @@
   <xi:include href="defs/classes/video.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/deck-areas.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/layout.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
   <!-- <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- <xi:include href="defs/legacy-panels.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- Draw background first so header stays visible -->

@@ -118,7 +118,7 @@
           <size width="65" height="16"/>
           <text fontsize="9" weight="normal" color="#999999" align="center" text="QUANTIZE" important="true"/>
         </textzone>
-        <button class="button_main" x="+0" y="+0+14" width="65" height="15" action="param_equal `setting 'globalQuantize'` 1  ? setting 'globalQuantize' 4  : param_equal `setting 'globalQuantize'` 4  ? setting 'globalQuantize' 16 : param_equal `setting 'globalQuantize'` 16 ? setting 'globalQuantize' 32 : setting 'globalQuantize' 1" textsize="12" textaction="setting 'globalQuantize'" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#999999" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="slip_mode ? blink 800ms : off"/>
+        <button class="button_main" x="+0" y="+0+14" width="65" height="15" action="param_equal `setting 'globalQuantize'` 1  ? setting 'globalQuantize' 4  : param_equal `setting 'globalQuantize'` 4  ? setting 'globalQuantize' 16 : param_equal `setting 'globalQuantize'` 16 ? setting 'globalQuantize' 32 : setting 'globalQuantize' 1" textsize="12" textaction="param_equal `setting 'globalQuantize' 1 ? get_text 'BEAT'`" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#999999" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="slip_mode ? blink 800ms : off"/>
       </group>
       <!-- CUE MODE -->
       <group x="+160" y="+0">

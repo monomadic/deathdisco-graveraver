@@ -10,61 +10,28 @@
       <line visibility="stem_pad 'instrumental'" color="color_instrumental" x="+4" y="+0" width="526" height="2"/>
       <line visibility="stem_pad 'acapella'" color="color_acapella" x="+4" y="+0" width="526" height="2"/>
     </group>
-    <!-- <group x="+262" y="+0"> -->
-    <!-- ACAPELLA TAG -->
-    <!-- <group visibility="stem_pad 'acapella'"> -->
-    <!-- <visual x="+0" y="+6"> -->
-    <!-- <size width="80" height="16"/> -->
-    <!-- <off shape="square" color="black"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'acapella'" border_size="1" visibility="stem_pad 'acapella'"> -->
-    <!-- <pos x="+0" y="+s"/> -->
-    <!-- <size width="80" height="16"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_acapella" radius="3"/> -->
-    <!-- <selected color="black" border="color_acapella" radius="3"/> -->
-    <!-- <text fontsize="10" color="#555555" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- INSTRUMENTAL TAG -->
-    <!-- <group visibility="stem_pad 'instrumental'"> -->
-    <!-- <visual> -->
-    <!-- <size width="85" height="20"/> -->
-    <!-- <off shape="square" color="black"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'instrumental'" border_size="1"> -->
-    <!-- <pos x="+2" y="+2"/> -->
-    <!-- <size width="85" height="20"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_instrumental" radius="3"/> -->
-    <!-- <selected color="transparent" border="color_instrumental" radius="3"/> -->
-    <!-- <text fontsize="10" color="#555555" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- </group> -->
     <!-- COVER ART: HIDE -->
     <group visibility="var_equal '@$haunting_showcover_title' 0 &amp; loaded">
+      <pos x="+15" y="+8"/>
       <!-- LEFT -->
       <textzone tooltip="" visibility="get_deck 1 ? true : get_deck 3 ? true : false">
-        <pos x="+20" y="+6"/>
         <size width="490" height="70-6-6-26"/>
-        <text fontsize="22" weight="bold" color="needle" align="left" scroll="no" action="get_text '`get_title_before_remix`'" localize="true" important="true"/>
+        <text fontsize="22" weight="bold" color="needle" align="left" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <textzone tooltip="" visibility="get_deck 1 ? true : get_deck 3 ? true : false">
-        <pos x="+20" y="+6+30"/>
+        <pos y="+30"/>
         <size width="490" height="70-6-6-26"/>
-        <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="get_text '`get_loaded_song remix` `get_bpm`bpm'" localize="true" important="true"/>
+        <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <!-- RIGHT -->
       <textzone tooltip="" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
-        <pos x="+20" y="+6"/>
         <size width="490" height="70-6-6-26"/>
-        <text fontsize="22" weight="bold" color="needle" align="right" scroll="no" action="get_text '`get_title_before_remix`'" localize="true" important="true"/>
+        <text fontsize="22" weight="bold" color="needle" align="right" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <textzone tooltip="" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
-        <pos x="+20" y="+6+30"/>
+        <pos y="+30"/>
         <size width="490" height="70-6-6-26"/>
-        <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="get_text '`get_loaded_song remix` `get_bpm`bpm'" localize="true" important="true"/>
+        <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
     </group>
     <!-- CLASS: PRO: TRACK INFO -->
@@ -178,101 +145,23 @@
       <panel class="track_info" x="+6+170+6" y="+0" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
       <!-- Right decks -->
       <panel class="track_info" x="+8" y="+0" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
+      <!-- PRO: COVER ART -->
+      <define class="COVER_ART_OCCLUDED">
+        <cover action="" rightclick="" dblclick="">
+          <size width="170" height="170"/>
+          <clipmask x="920" y="100" width="100" height="90"/>
+        </cover>
+        <!-- highlight -->
+        <visual>
+          <size width="170" height="65"/>
+          <off shape="square" color="transparent" border="#22FFFFFF" border_size="1"/>
+        </visual>
+      </define>
+      <!-- left -->
+      <group class="cover_art_occluded" x="+8" y="+6" visibility="loaded ? param_equal `get_deck` 1 | param_equal `get_deck` 3"/>
+      <!-- right -->
+      <group class="cover_art_occluded" x="+355" y="+6" visibility="loaded ? param_equal `get_deck` 2 | param_equal `get_deck` 4"/>
     </group>
-    <!-- PRO: COVER ART -->
-    <!-- <panel class="cover_art_hntg" size="178-6-6" x="+8" y="+4" visibility="var_equal '@$haunting_showcover_title' 1 ? get_deck 1 ? true : get_deck 3 ? true : false"/> -->
-    <group visibility="param_equal `get_deck` 1 | param_equal `get_deck` 3">
-      <pos x="+8" y="+6"/>
-      <!-- LEFT -->
-      <cover visibility="loaded" action="" rightclick="" dblclick="">
-        <pos x="+0" y="+0"/>
-        <size width="166" height="166"/>
-        <clipmask x="+800" y="+20" width="166" height="166"/>
-      </cover>
-      <!-- highlight -->
-      <visual>
-        <size width="166" height="64"/>
-        <off shape="square" color="transparent" border="#44FFFFFF" border_size="1"/>
-      </visual>
-    </group>
-    <group visibility="param_equal `get_deck` 2 | param_equal `get_deck` 4">
-      <pos x="+355" y="+6"/>
-      <!-- RIGHT -->
-      <cover action="" rightclick="" dblclick="">
-        <size width="170" height="170"/>
-        <clipmask x="920" y="100" width="100" height="90"/>
-      </cover>
-      <!-- highlight -->
-      <visual>
-        <size width="170" height="65"/>
-        <off shape="square" color="transparent" border="#44FFFFFF" border_size="1"/>
-      </visual>
-    </group>
-    <!-- <group visibility="param_equal `get_deck` 1 | param_equal `get_deck` 3"> -->
-    <!-- ACAPELLA TAG -->
-    <!-- <group x="+20" visibility="stem_pad 'acapella'"> -->
-    <!-- <visual y="+2"> -->
-    <!-- <size width="92" height="16"/> -->
-    <!-- <off shape="square" color="#FF000000" radius="6"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'acapella'" border_size="1" visibility="stem_pad 'acapella'"> -->
-    <!-- <pos y="+0"/> -->
-    <!-- <size width="90" height="16"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_acapella" radius="3"/> -->
-    <!-- <selected color="black" border="color_acapella" radius="3"/> -->
-    <!-- <text fontsize="11" color="#555555" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- INSTRUMENTAL TAG -->
-    <!-- <group x="+20" visibility="stem_pad 'instrumental'"> -->
-    <!-- <visual> -->
-    <!-- <size width="112" height="18"/> -->
-    <!-- <off shape="square" color="#FF000000" radius="6"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'instrumental'" border_size="1"> -->
-    <!-- <pos x="+0" y="+0"/> -->
-    <!-- <size width="110" height="16"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_inst0umental" radius="3"/> -->
-    <!-- <selected color="transparent" border="color_instrumental" radius="3"/> -->
-    <!-- <text fontsize="11" color="#555555" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- </group> -->
-    <!-- <group visibility="param_equal `get_deck` 2 | param_equal `get_deck` 4"> -->
-    <!-- ACAPELLA TAG -->
-    <!-- <group x="+20" visibility="stem_pad 'acapella'"> -->
-    <!-- <visual y="+2"> -->
-    <!-- <size width="92" height="16"/> -->
-    <!-- <off shape="square" color="#FF000000" radius="6"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'acapella'" border_size="1" visibility="stem_pad 'acapella'"> -->
-    <!-- <pos y="+0"/> -->
-    <!-- <size width="90" height="16"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_acapella" radius="3"/> -->
-    <!-- <selected color="black" border="color_acapella" radius="3"/> -->
-    <!-- <text fontsize="11" color="#555555" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- INSTRUMENTAL TAG -->
-    <!-- <group x="+400" visibility="stem_pad 'instrumental'"> -->
-    <!-- <visual> -->
-    <!-- <size width="112" height="18"/> -->
-    <!-- <off shape="square" color="#FF000000" radius="6"/> -->
-    <!-- </visual> -->
-    <!-- <button action="stem_pad 'instrumental'" border_size="1"> -->
-    <!-- <pos x="+0" y="+0"/> -->
-    <!-- <size width="110" height="16"/> -->
-    <!-- <off color="#222222" border="#444444" radius="3"/> -->
-    <!-- <down color="#222222" border="color_instrumental" radius="3"/> -->
-    <!-- <selected color="transparent" border="color_instrumental" radius="3"/> -->
-    <!-- <text fontsize="11" color="#555555" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/> -->
-    <!-- </button> -->
-    <!-- </group> -->
-    <!-- </group> -->
-    <!-- <panel class="cover_art_hntg" size="178-6-6" x="+358" y="+4" visibility="var_equal '@$haunting_showcover_title' 1 ? get_deck 2 ? true : get_deck 4 ? true : false"/> -->
   </define>
   <define class="TRACK_INFO" placeholders="DECK">
     <panel>

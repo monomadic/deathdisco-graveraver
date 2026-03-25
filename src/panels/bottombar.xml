@@ -36,7 +36,7 @@
       </group>
       <group name="genre_tags" x="+38" y="+26">
         <panel class="filter_tag_button" x="+0" accent_color="color_tag_genre" tag="#Trap" text="#TRAP" width="50"/>
-        <panel class="filter_tag_button" x="+53" accent_color="color_tag_genre" tag="#Baile-Funk" text="#BAILEFUNK" width="80"/>
+        <panel class="filter_tag_button" x="+53" accent_color="color_tag_genre" tag="#BaileFunk" text="#BAILE-FUNK" width="80"/>
       </group>
       <!-- MIX -->
       <group name="mix_tags" x="+600">

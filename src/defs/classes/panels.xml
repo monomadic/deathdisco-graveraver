@@ -930,8 +930,8 @@
         <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$hauntingproskinmode' 2 &amp;&amp; not var_equal '@$hauntingproskinmode' 5">
           <item text="Needle" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
           <item text="Text" localize="true" action="set '@$hauntingjogtype' 1" check="var_equal '@$hauntingjogtype' 1"/>
-          <item text="Needle + Text" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
-          <item text="Needle + Cover" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
+          <item text="Sync Status" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
+          <item text="Cover Art" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
           <separator localize="true"/>
           <submenu text="Text" localize="true">
             <item text="Jog Mode" localize="true" action="set '@$haunting_jog_text' 0" check="var_equal '@$haunting_jog_text' 0"/>
@@ -1160,8 +1160,8 @@
         <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$hauntingproskinmode' 2 &amp;&amp; not var_equal '@$hauntingproskinmode' 5">
           <item text="Needle" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
           <item text="Text" localize="true" action="set '@$hauntingjogtype' 1" check="var_equal '@$hauntingjogtype' 1"/>
-          <item text="Needle + Text" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
-          <item text="Needle + Cover" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
+          <item text="Sync Status" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
+          <item text="Cover Art" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
           <separator localize="true"/>
           <submenu text="Text" localize="true">
             <item text="Jog Mode" localize="true" action="set '@$haunting_jog_text' 0" check="var_equal '@$haunting_jog_text' 0"/>

@@ -29,6 +29,7 @@
   <xi:include href="defs/classes/racks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/video.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/deck-areas.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/layout-wave-positions.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/layout.xml" xpointer="xpointer(/defs/*)"/>
   <!-- <xi:include href="defs/legacy-elements.xml" xpointer="xpointer(/defs/*)"/> -->
   <!-- <xi:include href="defs/legacy-panels.xml" xpointer="xpointer(/defs/*)"/> -->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module>
+<module xmlns:xi="http://www.w3.org/2001/XInclude">
   <panel name="main" visible="yes">
     <!-- OVERALL BACKGROUND -->
     <square color="bg_main" canstretch="false">
@@ -15,100 +15,9 @@
     </panel>
     <!-- LAYOUTS -->
     <group y="50" name="layouts">
-      <!-- PRO
-        A layout that accounts for laptop control as well as controllers.
-        More functionality is included in the virtualdj interface UI itself.
-      -->
-      <group name="PRO" condition="var_equal '@$hauntingproskinmode' 0">
-        <!--
-        PRO: decks above -->
-        <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
-          <panel class="area_waves"/>
-          <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
-          <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
-          <!-- browser -->
-          <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-            <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
-            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-          </group>
-          <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-            <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
-            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-          </group>
-        </panel>
-        <!--
-        PRO: decks below -->
-        <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
-          <!-- DECKS -->
-          <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
-          <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
-          <!-- WAVES -->
-          <!-- 2 deck -->
-          <panel class="area_waves" y="+450" condition="var_equal '@$hauntinglayout' 0"/>
-          <!-- 4 deck -->
-          <panel class="area_waves" y="+450+450" condition="var_equal '@$hauntinglayout' 1"/>
-          <!-- BROWSER (UTILITY BAR OFF) -->
-          <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-            <!-- 2 DECKS -->
-            <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
-            <!-- 4 DECKS -->
-            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-          </group>
-          <!-- BROWSER (UTILITY BAR ON) -->
-          <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-            <browser class="haunting_browser_pro" height="250" condition="var_equal '@$hauntinglayout' 0"/>
-            <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-          </group>
-        </panel>
-        <!--
-        PRO: no waveforms -->
-        <panel class="pro_decks_no_waves" condition="var_equal '@$hauntingwavesviewmaindecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-        <!-- browser zoom & (auto switch) -->
-        <panel class="promini_decks_above" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="promini_decks_bottom" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="promini_decks_no_waves" condition="var_equal '@$hauntingwavesviewminidecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <!-- TESTBED -->
-        <deck deck="1">
-          <panel>
-            <!-- <visual width="250" height="250"> -->
-            <!-- <off shape="square" color="#000000"/> -->
-            <!-- </visual> -->
-          </panel>
-        </deck>
-      </group>
-      <!-- PERFORMANCE
-          Assumes the user will be heavily slanted to controller use,
-          And the VirtualDJ UI is used mostly for read-only feedback.
-       -->
-      <group name="PERFORMANCE" condition="var_equal '@$hauntingproskinmode' 1">
-        <!-- main decks -->
-        <group name="Extended" condition="var_equal '@$hauntingperformancelayout' 0">
-          <panel class="performance_decks_above" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-          <panel class="performance_decks_bottom" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-          <panel class="performance_decks_no_waves" condition="var_equal '@$hauntingwavesviewmaindecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-        </group>
-        <group name="Vertical" condition="var_equal '@$hauntingperformancelayout' 1">
-          <panel class="performance_decks_vertical" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-        </group>
-        <group name="Horizontal" condition="var_equal '@$hauntingperformancelayout' 2">
-          <panel class="performance_decks_center" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-        </group>
-        <!-- browser zoom & (auto switch) -->
-        <panel class="performancemini_decks_above" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="performancemini_decks_bottom" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="performancemini_decks_no_waves" condition="var_equal '@$hauntingwavesviewminidecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-      </group>
-      <!-- STACK
-          For multi-deck mixing, waveforms are given priority.
-      -->
-      <group name="STACK" condition="var_equal '@$hauntingproskinmode' 2">
-        <!-- main decks -->
-        <panel class="stack_decks" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-        <!-- browser zoom & (auto switch) -->
-        <panel class="performancemini_decks_above" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="performancemini_decks_bottom" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-        <panel class="performancemini_decks_no_waves" condition="var_equal '@$hauntingwavesviewminidecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-      </group>
+      <xi:include href="layout/pro.xml" xpointer="xpointer(/module/*)"/>
+      <xi:include href="layout/performance.xml" xpointer="xpointer(/module/*)"/>
+      <xi:include href="layout/stack.xml" xpointer="xpointer(/module/*)"/>
     </group>
   </panel>
   <!-- BOTTOM BAR (UTILITY BAR) -->

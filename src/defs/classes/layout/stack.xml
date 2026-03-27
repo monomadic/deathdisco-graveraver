@@ -34,8 +34,8 @@
     <panel class="stack_4decks" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- browsers -->
     <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-      <browser class="haunting_browser_stack" height="1080-164-138" condition="var_equal '@$hauntinglayout' 0"/>
-      <browser class="haunting_browser_stack4decks" height="1080-164-2-164-2-164-2-164-2-2" condition="var_equal '@$hauntinglayout' 1"/>
+      <browser class="haunting_browser_stack" height="1080-164-60" condition="var_equal '@$hauntinglayout' 0"/>
+      <browser class="haunting_browser_stack4decks" height="1080-164-330-60" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
     <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="haunting_browser_stack" height="1080-260" condition="var_equal '@$hauntinglayout' 0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globals>
-  <!-- Global skin-level settings migrated from legacy-skin.xml -->
-  <!-- Runtime deck state:
+  <!-- Runtime skin globals and environment defaults -->
+  <!-- Deck state:
     @$4decks controls whether the skin exposes 2 or 4 decks.
     @$hauntinglayout is the deck-density switch inside a mode: 0 = compact / swap, 1 = full 4-deck.
   -->

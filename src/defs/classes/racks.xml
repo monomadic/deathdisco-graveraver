@@ -324,6 +324,7 @@
     <!-- <panel class="pads" panelname="[PANELNAME]" visibility="rightdeck"/> -->
     <!-- </deck> -->
     <!-- </define> -->
+    <!-- Wrapper for the vertical performance pad surface -->
     <define class="pads_rack_vert" placeholders="deck,*panelname">
       <deck deck="[DECK]">
         <!-- SIDE BUTTON LEFT -->
@@ -340,6 +341,7 @@
         <panel class="pads_vert" y="+10" panelname="[PANELNAME]" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
       </deck>
     </define>
+    <!-- Wrapper for the center-wave performance pad surface -->
     <define class="pads_rack_center" placeholders="deck,*panelname">
       <deck deck="[DECK]">
         <panel class="tab_button" action="skin_panelgroup 'pads16++_[PANELNAME]' +1" action2="pad_menu" action3="skin_panelgroup_available 'pads16++_[PANELNAME]'" query="on/off" width="30" height="132+7" y="+6" orientation="vertical" textaction="not skin_panel '@hotcuesx8_[PANELNAME]' ? get_text 'PADS' : get_text 'HOTCUE'" visibility="get_deck 1 ? true : get_deck 3 ? true"/>
@@ -352,6 +354,7 @@
         <panel class="pads_center" panelname="[PANELNAME]" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
       </deck>
     </define>
+    <!-- Wrapper for the stack-mode pad surface -->
     <define class="pads_rack_stack" placeholders="deck,*panelname">
       <deck deck="[DECK]">
         <visual width="310" height="161">

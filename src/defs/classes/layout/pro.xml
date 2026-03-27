@@ -288,13 +288,13 @@
     <!-- browsers -->
     <!-- 2 decks -->
     <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-      <pos x="0" y="+432+2" width="1920" height="1080-43-2-432-2-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
-      <pos x="0" y="+432+2" width="1920" height="1080-43-2-432-2-2" condition="var_equal '@$hauntingutilitybar' 0"/>
+      <pos x="0" y="+432+2" width="1920" height="1080-432-2-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
+      <pos x="0" y="+432+2" width="1920" height="1080-432-2-2" condition="var_equal '@$hauntingutilitybar' 0"/>
     </browser>
     <!-- 4 decks -->
     <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-      <pos x="0" y="+432+2+216+2" width="1920" height="1080-43-2-432-2-2-216-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
-      <pos x="0" y="+432+2+216+2" width="1920" height="1080-43-2-432-2-2-216-2" condition="var_equal '@$hauntingutilitybar' 0"/>
+      <pos x="0" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
+      <pos x="0" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2" condition="var_equal '@$hauntingutilitybar' 0"/>
     </browser>
   </define>
   <define class="PROMINI_DECKS_NO_WAVES">

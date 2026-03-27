@@ -111,12 +111,12 @@
         <text fontsize="11" color="needle" colordown="texton" colorselected="texton" align="center" text="DECK 4" important="true"/>
       </button>
       <browser class="haunting_browser_basic" x="2" y="+43+2" condition="var_equal '@$hauntingutilitybar2' 1">
-        <zoomed width="1920-4" height="768-43-2-38-2"/>
-        <size width="1920-4" height="768-43-2-38-2"/>
+        <zoomed width="1920-4" height="768-38-2"/>
+        <size width="1920-4" height="768-38-2"/>
       </browser>
       <browser class="haunting_browser_basic" x="2" y="+43+2" condition="var_equal '@$hauntingutilitybar2' 0">
-        <size width="1920-4" height="768-43-2-2"/>
-        <zoomed width="1920-4" height="768-43-2-2"/>
+        <size width="1920-4" height="768-2"/>
+        <zoomed width="1920-4" height="768-2"/>
       </browser>
       <panel class="h_utility_bar" x="+2" y="+768-38"/>
       <!-- GUIDE OVERLAY -->

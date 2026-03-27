@@ -1364,7 +1364,7 @@
       </dropzone>
     </deck>
   </define>
-  <define class="waveform_horizontal_center" placeholders="*waveformwidth,*waveformheight">
+  <define class="WAVEFORM_HORIZONTAL_CENTER" placeholders="*waveformwidth,*waveformheight">
     <visual class="gfx_shape" width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
     <panel name="horizontal_scratch_active2deck" visibility="var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
       <scratchwave deck="3" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$hauntingwavesbkg' 0 ? deck 3 leftdeck">

@@ -306,7 +306,7 @@
       <pos x="0" y="+100" width="1920" height="1080-62-100-2" condition="var_equal '@$hauntingutilitybar' 0"/>
     </browser>
     <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-      <pos x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$hauntingutilitybar' 1"/>
+      <pos x="0" y="+100+100" width="1920" height="1080-50-100-100-38" condition="var_equal '@$hauntingutilitybar' 1"/>
       <pos x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$hauntingutilitybar' 0"/>
     </browser>
   </define>

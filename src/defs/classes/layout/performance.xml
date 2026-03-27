@@ -152,36 +152,36 @@
         <pos x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1280-43-2-333-2-2-333-2"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2"/>
       </browser>
     </group>
     <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2" width="1920-4" height="1280-43-2-333-2-2-38"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2-38"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1280-43-2-333-2-2-333-2-38"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38"/>
       </browser>
     </group>
   </define>
@@ -191,46 +191,46 @@
     <!-- browsers -->
     <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2" width="1920-4" height="1280-43-2-333-2-2"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1280-43-2-333-2-2-333-2"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2"/>
       </browser>
     </group>
     <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2" width="1920-4" height="1280-43-2-333-2-2-38"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2-38"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1280-43-2-333-2-2-333-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1280-43-2-333-2-2-333-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1280-43-2-333-2-2-333-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1280-43-2-333-2-2-333-2-38"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+140+2" width="1920-4" height="1080-43-2-333-2-2-333-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+86+2" width="1920-4" height="1080-43-2-333-2-2-333-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2+80+2" width="1920-4" height="1080-43-2-333-2-2-333-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38"/>
       </browser>
     </group>
   </define>
@@ -240,46 +240,46 @@
     <!-- browsers -->
     <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+2+264+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2+140+2" width="1920-4" height="1280-43-2-264-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2+86+2" width="1920-4" height="1280-43-2-264-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+140+2" width="1920-4" height="1280-43-2-264-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+86+2" width="1920-4" height="1280-43-2-264-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2" width="1920-4" height="1280-43-2-264-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+264+2" width="1920-4" height="1280-43-2-264-2-2"/>
+        <pos x="2" y="+43+2+264+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2+140+2" width="1920-4" height="1080-43-2-264-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2+86+2" width="1920-4" height="1080-43-2-264-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+140+2" width="1920-4" height="1080-43-2-264-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+86+2" width="1920-4" height="1080-43-2-264-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2" width="1920-4" height="1080-43-2-264-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+264+2" width="1920-4" height="1080-43-2-264-2-2"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+86+2" width="1920-4" height="1280-43-2-264-2-2-264-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2" width="1920-4" height="1280-43-2-264-2-2-264-2"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+86+2" width="1920-4" height="1080-43-2-264-2-2-264-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2" width="1920-4" height="1080-43-2-264-2-2-264-2"/>
       </browser>
     </group>
     <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+2+264+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2+140+2" width="1920-4" height="1280-43-2-264-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2+86+2" width="1920-4" height="1280-43-2-264-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+140+2" width="1920-4" height="1280-43-2-264-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+86+2" width="1920-4" height="1280-43-2-264-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+80+2" width="1920-4" height="1280-43-2-264-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+264+2" width="1920-4" height="1280-43-2-264-2-2-38"/>
+        <pos x="2" y="+43+2+264+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2+140+2" width="1920-4" height="1080-43-2-264-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2+86+2" width="1920-4" height="1080-43-2-264-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+140+2" width="1920-4" height="1080-43-2-264-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+86+2" width="1920-4" height="1080-43-2-264-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+80+2" width="1920-4" height="1080-43-2-264-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+264+2" width="1920-4" height="1080-43-2-264-2-2-38"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+86+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+140+2" width="1920-4" height="1280-43-2-264-2-2-264-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+86+2" width="1920-4" height="1280-43-2-264-2-2-264-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2+80+2" width="1920-4" height="1280-43-2-264-2-2-264-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-        <pos x="2" y="+43+2+264+2+264+2" width="1920-4" height="1280-43-2-264-2-2-264-2-38"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+86+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2+86+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+140+2" width="1920-4" height="1080-43-2-264-2-2-264-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+86+2" width="1920-4" height="1080-43-2-264-2-2-264-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2+80+2" width="1920-4" height="1080-43-2-264-2-2-264-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+        <pos x="2" y="+43+2+264+2+264+2" width="1920-4" height="1080-43-2-264-2-2-264-2-38"/>
       </browser>
     </group>
   </define>
@@ -289,57 +289,57 @@
     <!-- browsers -->
     <group name="no_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-        <pos x="2" y="+43+100+2" width="1920-4" height="1280-43-2-100-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
-        <pos x="2" y="+43+100+2" width="1920-4" height="1280-43-2-100-2" condition="var_equal '@$hauntingutilitybar' 0"/>
+        <pos x="2" y="+43+100+2" width="1920-4" height="1080-43-2-100-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
+        <pos x="2" y="+43+100+2" width="1920-4" height="1080-43-2-100-2" condition="var_equal '@$hauntingutilitybar' 0"/>
       </browser>
       <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-        <pos x="2" y="+43+100+2+98+2" width="1920-4" height="1280-43-2-100-2-98-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
-        <pos x="2" y="+43+100+2+98+2" width="1920-4" height="1280-43-2-100-2-98-2" condition="var_equal '@$hauntingutilitybar' 0"/>
+        <pos x="2" y="+43+100+2+98+2" width="1920-4" height="1080-43-2-100-2-98-2-38" condition="var_equal '@$hauntingutilitybar' 1"/>
+        <pos x="2" y="+43+100+2+98+2" width="1920-4" height="1080-43-2-100-2-98-2" condition="var_equal '@$hauntingutilitybar' 0"/>
       </browser>
     </group>
     <group name="+_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
       <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
         <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-          <pos x="2" y="+43+2+98+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2+140+2" width="1920-4" height="1280-43-2-98-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2+86+2" width="1920-4" height="1280-43-2-98-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+140+2" width="1920-4" height="1280-43-2-98-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+86+2" width="1920-4" height="1280-43-2-98-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2" width="1920-4" height="1280-43-2-98-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-          <pos x="2" y="+43+2+98+2" width="1920-4" height="1280-43-2-98-2-2"/>
+          <pos x="2" y="+43+2+98+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2+140+2" width="1920-4" height="1080-43-2-98-2-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2+86+2" width="1920-4" height="1080-43-2-98-2-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+140+2" width="1920-4" height="1080-43-2-98-2-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+86+2" width="1920-4" height="1080-43-2-98-2-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2" width="1920-4" height="1080-43-2-98-2-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+          <pos x="2" y="+43+2+98+2" width="1920-4" height="1080-43-2-98-2-2"/>
         </browser>
         <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+86+2" width="1920-4" height="1280-43-2-98-2-2-98-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2" width="1920-4" height="1280-43-2-98-2-2-98-2"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+86+2" width="1920-4" height="1080-43-2-98-2-2-98-2-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2" width="1920-4" height="1080-43-2-98-2-2-98-2"/>
         </browser>
       </group>
       <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
         <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 0">
-          <pos x="2" y="+43+2+98+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2+140+2" width="1920-4" height="1280-43-2-98-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2+86+2" width="1920-4" height="1280-43-2-98-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+140+2" width="1920-4" height="1280-43-2-98-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+86+2" width="1920-4" height="1280-43-2-98-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+80+2" width="1920-4" height="1280-43-2-98-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-          <pos x="2" y="+43+2+98+2" width="1920-4" height="1280-43-2-98-2-2-38"/>
+          <pos x="2" y="+43+2+98+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2+140+2" width="1920-4" height="1080-43-2-98-2-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2+86+2" width="1920-4" height="1080-43-2-98-2-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+140+2" width="1920-4" height="1080-43-2-98-2-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+86+2" width="1920-4" height="1080-43-2-98-2-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+80+2" width="1920-4" height="1080-43-2-98-2-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+          <pos x="2" y="+43+2+98+2" width="1920-4" height="1080-43-2-98-2-2-38"/>
         </browser>
         <browser class="haunting_browser_basic" condition="var_equal '@$hauntinglayout' 1">
-          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+86+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+140+2" width="1920-4" height="1280-43-2-98-2-2-98-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+86+2" width="1920-4" height="1280-43-2-98-2-2-98-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2+80+2" width="1920-4" height="1280-43-2-98-2-2-98-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
-          <pos x="2" y="+43+2+98+2+98+2" width="1920-4" height="1280-43-2-98-2-2-98-2-38"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-86-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+86+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-86-2-140-2-38" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-140-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2+86+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-86-2-38" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+140+2" width="1920-4" height="1080-43-2-98-2-2-98-2-140-2-38" condition="var_equal '@$hauntingskinvideorack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+86+2" width="1920-4" height="1080-43-2-98-2-2-98-2-86-2-38" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2+80+2" width="1920-4" height="1080-43-2-98-2-2-98-2-80-2-38" condition="var_equal '@$hauntingskinfxrack' 1"/>
+          <pos x="2" y="+43+2+98+2+98+2" width="1920-4" height="1080-43-2-98-2-2-98-2-38"/>
         </browser>
       </group>
     </group>

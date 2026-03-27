@@ -1,92 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <define class="PAD_PAGE_SECONDARY_TAB" placeholders="*page" query="pad_page btn[PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
+    <size width="100" height="25"/>
+    <off color="#000000" border="#222222" radius="6" border_size="1"/>
+    <over color="#000000" border="#222222" radius="6" border_size="1"/>
+    <down color="#000000" border="#222222" radius="6" border_size="1"/>
+    <selected color="#000000" border="#222222" radius="6" border_size="1"/>
+    <text dy="+1" weight="" fontsize="12" color="dark_7" colorover="white" align="center" action="pad_page btn[PAGE] &amp; param_uppercase"/>
+  </define>
+  <define class="PAD_PAGE_PRIMARY_TAB" placeholders="*page,*altpage" query="pad_page btn[PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
+    <size width="100" height="30"/>
+    <off color="#000000" border="#222222" radius="6" border_size="1"/>
+    <over color="#000000" border="#333333" radius="6" border_size="1"/>
+    <down color="#000000" border="#333333" radius="6" border_size="1"/>
+    <selected color="#000000" border="#333333" radius="6" border_size="1"/>
+    <text dy="-2" weight="bold" fontsize="14" color="dark_7" colordown="white" align="center" action="pad_page [PAGE] &amp; param_uppercase"/>
+  </define>
   <define class="PAD_PAGE_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- BACKGROUND -->
-      <!-- <visual x="+0" y="+0" width="512" height="217" shape="square"> -->
-      <!-- <off color="transparent" border="#222222" border_size="1" radius="6"/> -->
-      <!-- </visual> -->
+      <visual x="+0" y="+49" width="508" height="40*4">
+        <off shape="square" color="#222222" border="#222222" border_size="3" radius="0"/>
+      </visual>
+      <visual x="+0" y="+0" width="508" height="40*4+50+2">
+        <off shape="square" color="transparent" border="#222222" border_size="4" radius="6"/>
+      </visual>
       <!-- PRO: PADS (16) -->
       <panel name="@pads16_[PANELNAME]" group="efx_[PANELNAME]" visible="yes" available="yes" displayname="Pads x16" forceshow="16pads">
-        <group x="+10" y="+0">
-          <!-- BANK SELECT -->
-          <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="16 Pads">
-            <button class="button_main" query="pad_page btn1" action="shift ? pad_page 5 : pad_page 1" rightclick="shift ? pad_page_select 5 : pad_page_select 1" textaction="shift ? pad_page btn5 &amp; param_uppercase : pad_page btn1 &amp; param_uppercase">
-              <pos x="+0" y="+0"/>
-              <size width="100" height="25"/>
-              <tooltip>Select pad page 1.</tooltip>
-              <off color="transparent" border="#222222" radius="6" bordersize="1"/>
-              <over color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <down color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <selected color="#000000" border="#333333" radius="6" border_size="2"/>
-              <text weight="bold" text="btn2" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
-            </button>
-            <button class="button_main" query="pad_page btn2" action="shift ? pad_page 6 : pad_page 2" rightclick="shift ? pad_page_select 6 : pad_page_select 2" textaction="shift ? pad_page btn6 &amp; param_uppercase : pad_page btn2 &amp; param_uppercase">
-              <pos x="+2+100" y="+0"/>
-              <size width="100" height="25"/>
-              <tooltip>Select pad page 2.</tooltip>
-              <off color="transparent" border="#222222" radius="6" bordersize="1"/>
-              <over color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <down color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <selected color="#000000" border="#333333" radius="6" border_size="2"/>
-              <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
-            </button>
-            <button class="button_main" query="pad_page btn3" action="shift ? pad_page 7 : pad_page 3" rightclick="shift ? pad_page_select 7 : pad_page_select 3" textaction="shift ? pad_page btn7 &amp; param_uppercase : pad_page btn3 &amp; param_uppercase">
-              <pos x="+2+100*2" y="+0"/>
-              <size width="100" height="25"/>
-              <tooltip>Select pad page 3.</tooltip>
-              <off color="transparent" border="#222222" radius="6" bordersize="1"/>
-              <over color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <down color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <selected color="#000000" border="#333333" radius="6" border_size="2"/>
-              <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
-            </button>
-            <button class="button_main" query="pad_page btn4" action="shift ? pad_page 8 : pad_page 4" rightclick="shift ? pad_page_select 8 : pad_page_select 4" textaction="shift ? pad_page btn8 &amp; param_uppercase : pad_page btn4 &amp; param_uppercase">
-              <pos x="+2+100*3" y="+0"/>
-              <size width="100" height="25"/>
-              <tooltip>Select pad page 4.</tooltip>
-              <off color="transparent" border="#222222" radius="6" bordersize="1"/>
-              <over color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <down color="#000000" border="#333333" radius="6" bordersize="1"/>
-              <selected color="#000000" border="#333333" radius="6" border_size="2"/>
-              <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
-            </button>
-          </panel>
-        </group>
-        <!-- BANK SELECT -->
-        <!-- <group x="+40" y="+0"> -->
-        <!-- <visual x="-3" y="-3" width="+0+100+10+100+10+100+10+100+6" height="166"> -->
-        <!-- <off shape="square" color="#222222" border="#222222" border_size="3" radius="6"/> -->
-        <!-- </visual> -->
-        <!-- <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="16 Pads"> -->
-        <!-- <button class="button_main" x="+0" y="+0" width="110" height="21" action="pad_page btn1" rightclick="pad_page_select 1" tooltip="Select pad page 1." textcoloron="white" textsize="12" textaction="pad_page btn1 &amp; param_uppercase" coloroff="xf_background" coloron="#222222" bordersize="0" brcoloron="#222222" brcoloroff="#222222" textcolor="textdarker"/> -->
-        <!-- <button class="button_main" x="+0+100" y="+0" width="110" height="21" action="pad_page btn2" rightclick="pad_page_select 2" tooltip="Select pad page 2." textcoloron="white" textsize="12" textaction="pad_page btn2 &amp; param_uppercase" coloroff="xf_background" coloron="#222222" bordersize="0" brcoloron="#222222" brcoloroff="#222222" textcolor="textdarker"/> -->
-        <!-- <button class="button_main" x="+0+100+10+100" y="+0" width="110" height="21" action="pad_page btn3" rightclick="pad_page_select 3" tooltip="Select pad page 3." textcoloron="white" textsize="12" textaction="pad_page btn3 &amp; param_uppercase" coloroff="xf_background" coloron="#222222" bordersize="0" brcoloron="#222222" brcoloroff="#222222" textcolor="textdarker"/> -->
-        <!-- <button class="button_main" x="+0+100+10+100+100+10" y="+0" width="110" height="21" action="pad_page btn4" rightclick="pad_page_select 4" tooltip="Select pad page 4." textcoloron="white" textsize="12" textaction="pad_page btn4 &amp; param_uppercase" coloroff="xf_background" coloron="#222222" bordersize="0" brcoloron="#222222" brcoloroff="#222222" textcolor="textdarker"/> -->
-        <!-- </panel> -->
-        <!-- </group> -->
-        <!-- PAD AREA BORDER -->
-        <visual x="+0" y="+21" width="508" height="166">
-          <off shape="square" color="#222222" border="#222222" border_size="3" radius="6"/>
-        </visual>
+        <!-- 4-button style -->
+        <panel group="pads16_[PANELNAME]" visible="no" available="no" displayname="16 Pads">
+          <button class="button_main" query="pad_page btn1" action="shift ? pad_page 5 : pad_page 1" rightclick="shift ? pad_page_select 5 : pad_page_select 1" textaction="shift ? pad_page btn5 &amp; param_uppercase : pad_page btn1 &amp; param_uppercase">
+            <pos x="+0" y="+0"/>
+            <size width="100" height="25"/>
+            <tooltip>Select pad page 1.</tooltip>
+            <off color="#000000" border="#222222" radius="6" bordersize="1"/>
+            <over color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <down color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <selected color="#000000" border="#333333" radius="6" border_size="1"/>
+            <text weight="bold" text="btn2" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
+          </button>
+          <button class="button_main" query="pad_page btn2" action="shift ? pad_page 6 : pad_page 2" rightclick="shift ? pad_page_select 6 : pad_page_select 2" textaction="shift ? pad_page btn6 &amp; param_uppercase : pad_page btn2 &amp; param_uppercase">
+            <pos x="+2+100" y="+0"/>
+            <size width="100" height="25"/>
+            <tooltip>Select pad page 2.</tooltip>
+            <off color="#000000" border="#222222" radius="6" bordersize="1"/>
+            <over color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <down color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <selected color="#000000" border="#333333" radius="6" border_size="2"/>
+            <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
+          </button>
+          <button class="button_main" query="pad_page btn3" action="shift ? pad_page 7 : pad_page 3" rightclick="shift ? pad_page_select 7 : pad_page_select 3" textaction="shift ? pad_page btn7 &amp; param_uppercase : pad_page btn3 &amp; param_uppercase">
+            <pos x="+2+100*2" y="+0"/>
+            <size width="100" height="25"/>
+            <tooltip>Select pad page 3.</tooltip>
+            <off color="#000000" border="#222222" radius="6" bordersize="1"/>
+            <over color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <down color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <selected color="#000000" border="#333333" radius="6" border_size="2"/>
+            <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
+          </button>
+          <button class="button_main" query="pad_page btn4" action="shift ? pad_page 8 : pad_page 4" rightclick="shift ? pad_page_select 8 : pad_page_select 4" textaction="shift ? pad_page btn8 &amp; param_uppercase : pad_page btn4 &amp; param_uppercase">
+            <pos x="+2+100*3" y="+0"/>
+            <size width="100" height="25"/>
+            <tooltip>Select pad page 4.</tooltip>
+            <off color="#000000" border="#222222" radius="6" bordersize="1"/>
+            <over color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <down color="#000000" border="#333333" radius="6" bordersize="1"/>
+            <selected color="#000000" border="#333333" radius="6" border_size="2"/>
+            <text weight="bold" fontsize="12" coloron="white" colordown="white" colorover="#AAAAAA" align="center"/>
+          </button>
+        </panel>
+        <!-- 8-button style -->
+        <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="16 Pads">
+          <!-- BACK ROW -->
+          <group x="+20" y="+8">
+            <button class="pad_page_secondary_tab" page="5" x="+0"/>
+            <button class="pad_page_secondary_tab" page="6" x="+2+100*1"/>
+            <button class="pad_page_secondary_tab" page="7" x="+2+100*2"/>
+            <button class="pad_page_secondary_tab" page="8" x="+2+100*3"/>
+          </group>
+          <!-- FRONT ROW -->
+          <group x="+20" y="+23">
+            <button class="PAD_PAGE_PRIMARY_TAB" page="1" altpage="5" x="+0" y="+1"/>
+            <button class="PAD_PAGE_PRIMARY_TAB" page="2" altpage="6" x="+2+100" y="+1"/>
+            <button class="PAD_PAGE_PRIMARY_TAB" page="3" altpage="7" x="+2+100*2" y="+1"/>
+            <button class="PAD_PAGE_PRIMARY_TAB" page="4" altpage="8" x="+2+100*3" y="+1"/>
+          </group>
+        </panel>
         <!-- PAD BUTTONS -->
-        <group x="+2">
-          <panel class="padbutton2" x="+125*0+2" y="+25" source="1"/>
-          <panel class="padbutton2" x="+125*1+2" y="+25" source="2"/>
-          <panel class="padbutton2" x="+125*2+3" y="+25" source="3"/>
-          <panel class="padbutton2" x="+125*3+4" y="+25" source="4"/>
-          <panel class="padbutton2" x="+125*0+2" y="+25+40" source="5"/>
-          <panel class="padbutton2" x="+125*1+2" y="+25+40" source="6"/>
-          <panel class="padbutton2" x="+125*2+3" y="+25+40" source="7"/>
-          <panel class="padbutton2" x="+125*3+4" y="+25+40" source="8"/>
-          <panel class="padbutton2" x="+125*0+2" y="+40*2+25" source="9"/>
-          <panel class="padbutton2" x="+125*1+2" y="+40*2+25" source="10"/>
-          <panel class="padbutton2" x="+125*2+3" y="+40*2+25" source="11"/>
-          <panel class="padbutton2" x="+125*3+4" y="+40*2+25" source="12"/>
-          <panel class="padbutton2" x="+125*0+2" y="+40*3+25" source="13"/>
-          <panel class="padbutton2" x="+125*1+2" y="+40*3+25" source="14"/>
-          <panel class="padbutton2" x="+125*2+3" y="+40*3+25" source="15"/>
-          <panel class="padbutton2" x="+125*3+4" y="+40*3+25" source="16"/>
+        <group x="+2" y="+50">
+          <panel class="padbutton2" x="+125*0+2" y="+40*0" source="1"/>
+          <panel class="padbutton2" x="+125*1+2" y="+40*0" source="2"/>
+          <panel class="padbutton2" x="+125*2+3" y="+40*0" source="3"/>
+          <panel class="padbutton2" x="+125*3+4" y="+40*0" source="4"/>
+          <panel class="padbutton2" x="+125*0+2" y="+40*1" source="5"/>
+          <panel class="padbutton2" x="+125*1+2" y="+40*1" source="6"/>
+          <panel class="padbutton2" x="+125*2+3" y="+40*1" source="7"/>
+          <panel class="padbutton2" x="+125*3+4" y="+40*1" source="8"/>
+          <panel class="padbutton2" x="+125*0+2" y="+40*2" source="9"/>
+          <panel class="padbutton2" x="+125*1+2" y="+40*2" source="10"/>
+          <panel class="padbutton2" x="+125*2+3" y="+40*2" source="11"/>
+          <panel class="padbutton2" x="+125*3+4" y="+40*2" source="12"/>
+          <panel class="padbutton2" x="+125*0+2" y="+40*3" source="13"/>
+          <panel class="padbutton2" x="+125*1+2" y="+40*3" source="14"/>
+          <panel class="padbutton2" x="+125*2+3" y="+40*3" source="15"/>
+          <panel class="padbutton2" x="+125*3+4" y="+40*3" source="16"/>
         </group>
         <!-- menu -->
         <button action="pad_menu 1" query="auto_match_bpm ? auto_match_key" visibility="pad_has_menu 1" shape="circle">
@@ -120,9 +138,9 @@
           </group>
         </group>
         <!-- PAD AREA BORDER -->
-        <visual x="+0" y="+21" width="508" height="166">
-          <off shape="square" color="transparent" border="#222222" border_size="4" radius="8"/>
-        </visual>
+        <!-- <visual x="+0" y="+21" width="508" height="166"> -->
+        <!-- <off shape="square" color="transparent" border="#222222" border_size="4" radius="8"/> -->
+        <!-- </visual> -->
         <!-- <visual x="+0" y="+21" width="508" height="166"> -->
         <!-- <off shape="square" color="transparent" border="dark_5" border_size="1" radius="6"/> -->
         <!-- </visual> -->

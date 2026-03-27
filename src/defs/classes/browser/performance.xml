@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="HAUNTING_BROWSER_PERFORMANCE" showzoom="yes" placeholders="*height" condition="var_equal '@$hauntingutilitybar' 1">
+  <define class="HAUNTING_BROWSER_PERFORMANCE" showzoom="yes" placeholders="*height" condition="var_equal '@$hauntingutilitybar' 0">
     <pos x="+0" y="+[HEIGHT]+267-432+80+2+86+2+140+2-66-10-12-16" width="1920" height="+[HEIGHT]-381-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 13"/>
     <pos x="+0" y="+[HEIGHT]+247-432+80+2+86+2+140+2-66-10-12-16" width="1920" height="+[HEIGHT]-361-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 12"/>
     <pos x="+0" y="+[HEIGHT]+227-432+80+2+86+2+140+2-66-10-12-16" width="1920" height="+[HEIGHT]-341-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 11"/>
@@ -144,7 +144,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="HAUNTING_BROWSER_PERFORMANCE" showzoom="yes" placeholders="*height" condition="var_equal '@$hauntingutilitybar' 0">
+  <define class="HAUNTING_BROWSER_PERFORMANCE" showzoom="yes" placeholders="*height" condition="var_equal '@$hauntingutilitybar' 1">
     <pos x="+0" y="+[HEIGHT]+267-432+80+2+86+2+140+2-66+38-10-12-16" width="1920" height="+[HEIGHT]-381-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 13"/>
     <pos x="+0" y="+[HEIGHT]+247-432+80+2+86+2+140+2-66+38-10-12-16" width="1920" height="+[HEIGHT]-361-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 12"/>
     <pos x="+0" y="+[HEIGHT]+227-432+80+2+86+2+140+2-66+38-10-12-16" width="1920" height="+[HEIGHT]-341-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$infntywavesize' 11"/>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <!-- Stack keeps the same deck-density switch: @$hauntinglayout 0 = two-deck / swap, 1 = full four-deck -->
   <define class="STACK_2DECKS" placeholders="*panelname">
     <panel class="area_deck_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
     <panel class="area_deck_stack" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>

@@ -255,7 +255,7 @@
       <!-- panel black area bg -->
       <visual class="gfx_shape" x="+9" y="+98" width="520" height="220" coloroff="#050505" bordersize="2" bordercoloroff="#222222" radius="10"/>
       <!-- pads rack -->
-      <panel class="pad_page_panel" x="+19" y="+100" panelname="[PANELNAME]"/>
+      <panel class="pad_page_selector_panel" x="+19" y="+100" panelname="[PANELNAME]"/>
       <group x="+620" y="+260">
         <panel class="knob_xsmall_thin" label="get_text 'KNOB'"/>
       </group>

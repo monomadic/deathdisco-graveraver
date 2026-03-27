@@ -5,6 +5,7 @@
     More functionality is included in the virtualdj interface UI itself.
   -->
   <group name="PRO" condition="var_equal '@$hauntingproskinmode' 0">
+    <!-- @$hauntinglayout selects deck density within Pro: 0 = two-deck / swap, 1 = full four-deck -->
     <!-- PRO: decks above -->
     <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
       <panel class="area_waves"/>

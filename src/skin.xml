@@ -20,6 +20,7 @@
   <xi:include href="defs/classes/track-info.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/transport.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/jogwheel.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/pads.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/performance.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/mixer.xml" xpointer="xpointer(/defs/*)"/>

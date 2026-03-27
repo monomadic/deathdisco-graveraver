@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <globals>
   <!-- Global skin-level settings migrated from legacy-skin.xml -->
+  <!-- Runtime deck state:
+    @$4decks controls whether the skin exposes 2 or 4 decks.
+    @$hauntinglayout is the deck-density switch inside a mode: 0 = compact / swap, 1 = full 4-deck.
+  -->
   <font name="Helvetica Neue"/>
   <nbdecks value="2" condition="var_equal '@$4decks' 0"/>
   <nbdecks value="4" condition="var_not_equal '@$4decks' 0"/>
   <tooltip size="14" color="#e2e3e4" back="#2f2f2f" shortcut="gray" localize="true"/>
   <dialogs darkmode="true"/>
 </globals>
-

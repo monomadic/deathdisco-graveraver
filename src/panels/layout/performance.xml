@@ -5,6 +5,7 @@
     and the VirtualDJ UI is used mostly for read-only feedback.
   -->
   <group name="PERFORMANCE" condition="var_equal '@$hauntingproskinmode' 1">
+    <!-- @$hauntinglayout selects deck density within Performance: 0 = two-deck / swap, 1 = full four-deck -->
     <!-- Main decks -->
     <group name="Extended" condition="var_equal '@$hauntingperformancelayout' 0">
       <panel class="performance_decks_above" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>

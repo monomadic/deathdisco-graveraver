@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <!-- These Pro layout shells are selected by @$hauntinglayout: 0 = two-deck / swap, 1 = full four-deck -->
   <define class="PRO_2DECKS" placeholders="*panelname">
     <pos y="+43+2+381+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
     <pos y="+43+2+361+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>
@@ -146,12 +147,12 @@
       <!-- PRO: 2 DECK: PAD PAGES PANEL -->
       <group x="+10" y="+0">
         <group x="+100">
-          <panel class="pad_page_panel" deck="1" panelname="[PANELNAME]_1" x="+120" visibility="not deck 3 leftdeck"/>
-          <panel class="pad_page_panel" deck="3" panelname="[PANELNAME]_3" x="+120" visibility="deck 3 leftdeck"/>
+          <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" x="+120" visibility="not deck 3 leftdeck"/>
+          <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" x="+120" visibility="deck 3 leftdeck"/>
         </group>
         <group x="1920-960+135">
-          <panel class="pad_page_panel" deck="2" panelname="[PANELNAME]_2" x="+0" visibility="not deck 4 rightdeck"/>
-          <panel class="pad_page_panel" deck="4" panelname="[PANELNAME]_4" x="+0" visibility="deck 4 rightdeck"/>
+          <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" x="+0" visibility="not deck 4 rightdeck"/>
+          <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" x="+0" visibility="deck 4 rightdeck"/>
         </group>
       </group>
     </group>

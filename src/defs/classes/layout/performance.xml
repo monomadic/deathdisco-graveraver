@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <!-- These Performance layout shells are selected by @$hauntinglayout: 0 = two-deck / swap, 1 = full four-deck -->
   <define class="PERFORMANCE_2DECKS" placeholders="*panelname">
     <pos y="+381+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
     <pos y="+361+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>

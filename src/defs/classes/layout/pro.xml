@@ -119,7 +119,7 @@
     <panel class="AREA_DECK_PRO_RIGHT" x="+1920-0-800" y="+100+2" panelname="deck2" deck="2" visibility="deck 4 rightdeck"/>
     <panel class="AREA_DECK_PRO_RIGHT" x="+1920-0-800" y="+100+2" panelname="deck4" deck="4" visibility="deck 2 rightdeck"/>
     <!-- RACKS (PADS, ETC) -->
-    <panel class="htng_racks" x="+2" y="-2"/>
+    <panel class="pro_racks" x="+2" y="-2"/>
     <group y="+389">
       <!-- TRANSPORT 4 DECK -->
       <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/>

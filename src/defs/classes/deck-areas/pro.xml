@@ -71,17 +71,11 @@
         <menu class="menu_maindecks" query="select" x="+0" y="+386" width="34" height="34"/>
       </group>
       <group x="+35">
-        <!-- <visual x="+5" y="+150" width="750" height="1224"> -->
-        <!-- <off shape="square" color="red" radius="10" bordersize="1" border="#000000"/> -->
-        <!-- </visual> -->
         <!-- PRO: LEFT: TRACK INFO -->
         <panel class="infos"/>
         <!-- LEFT: action zone -->
         <panel class="track_info_action_zone" y="+55" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
-        <group>
-          <!-- PRO: SONGPOS LEFT -->
-        </group>
         <!-- PRO: LEFT JOGWHEEL -->
         <panel class="jogwheel" x="+730-[JOGSIZE]-30" y="+2+6+2" name="jogwheel_spinner"/>
         <!-- PRO: LEFT VOLUME -->

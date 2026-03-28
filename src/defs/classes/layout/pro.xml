@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<defs>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- These Pro layout shells are selected by @$hauntinglayout: 0 = two-deck / swap, 1 = full four-deck -->
   <define class="PRO_2DECKS" placeholders="*panelname">
-    <pos y="+43+2+381+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos y="+43+2+361+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos y="+43+2+341+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos y="+43+2+321+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos y="+43+2+301+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos y="+43+2+281+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos y="+43+2+261+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos y="+43+2+241+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos y="+43+2+221+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos y="+43+2+201+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos y="+43+2+181+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos y="+43+2+161+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos y="+43+2+141+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos y="+43+2+121+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/pro-2decks.xml" xpointer="xpointer(/positions/*)"/>
     <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
     <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="AREA_DECK_PRO_RIGHT" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
@@ -182,20 +170,8 @@
     <!-- <panel class="pro_2decks_overlays" deck="rightdeck"/> -->
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
-    <pos y="+43+2+381+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos y="+43+2+361+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos y="+43+2+341+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos y="+43+2+321+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos y="+43+2+301+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos y="+43+2+281+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos y="+43+2+261+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos y="+43+2+241+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos y="+43+2+221+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos y="+43+2+201+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos y="+43+2+181+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos y="+43+2+161+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos y="+43+2+141+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos y="+43+2+121+3" condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/pro-4decks.xml" xpointer="xpointer(/positions/*)"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
     <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck1" deck="1" visibility="deck 3 leftdeck"/>
@@ -235,20 +211,8 @@
     </group>
   </define>
   <define class="PRO_2DECKS_MINI" placeholders="*panelname">
-    <pos y="+2+381+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos y="+2+361+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos y="+2+341+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos y="+2+321+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos y="+2+301+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos y="+2+281+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos y="+2+261+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos y="+2+241+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos y="+2+221+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos y="+2+201+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos y="+2+181+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos y="+2+161+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos y="+2+141+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos y="+2+121+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/pro-2decks-mini.xml" xpointer="xpointer(/positions/*)"/>
     <!-- LEFT: TOP -->
     <panel class="AREA_DECK_MINI" x="+2" panelname="deck1" deck="1" visibility="deck 1 leftdeck"/>
     <panel class="AREA_DECK_MINI" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
@@ -258,20 +222,8 @@
     <panel class="AREA_DECK_MINI" x="+1920-878-2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
   </define>
   <define class="PRO_4DECKS_MINI" placeholders="*panelname">
-    <pos y="+43+2+381+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos y="+43+2+361+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos y="+43+2+341+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos y="+43+2+321+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos y="+43+2+301+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos y="+43+2+281+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos y="+43+2+261+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos y="+43+2+241+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos y="+43+2+221+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos y="+43+2+201+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos y="+43+2+181+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos y="+43+2+161+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos y="+43+2+141+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos y="+43+2+121+3" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/pro-4decks-mini.xml" xpointer="xpointer(/positions/*)"/>
     <!-- LEFT: TOP -->
     <panel class="AREA_DECK_MINI" x="+2" panelname="deck1" deck="1" visibility="deck 1 leftdeck"/>
     <panel class="AREA_DECK_MINI" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>

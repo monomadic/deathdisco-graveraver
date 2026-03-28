@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="900" breakline2="900">
+<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
   <!-- Theme tokens and runtime globals -->
   <xi:include href="defs/colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/icons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/globals.xml" xpointer="xpointer(/globals/*)"/>
-
   <!-- Shared class library -->
   <xi:include href="defs/classes.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/text.xml" xpointer="xpointer(/defs/*)"/>

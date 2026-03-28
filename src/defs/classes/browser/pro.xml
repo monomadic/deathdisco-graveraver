@@ -34,7 +34,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="haunting_browser_pro4decks" showzoom="yes" placeholders="*height">
+  <define class="HAUNTING_BROWSER_PRO4DECKS" showzoom="yes" placeholders="*height">
     <!-- Shared 4-deck browser wave-size ladder -->
     <xi:include href="positions/pro-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>

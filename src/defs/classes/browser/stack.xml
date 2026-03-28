@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="HAUNTING_BROWSER_STACK" showzoom="yes" placeholders="*height">
+  <define class="browser_stack" showzoom="yes" placeholders="*height">
     <!-- change height of browser based on what is visible -->
     <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinfxrack' 1"/>
     <pos y="+[HEIGHT]+7-200-164-3-164+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinfxrack' 1"/>
@@ -51,7 +51,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="HAUNTING_BROWSER_STACK4DECKS" showzoom="yes" placeholders="*height">
+  <define class="browser_stack_4decks" showzoom="yes" placeholders="*height">
     <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinfxrack' 1"/>
     <pos y="+[HEIGHT]+7-200+2+164+2+164+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinfxrack' 1"/>
     <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$hauntingskinvideorack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>

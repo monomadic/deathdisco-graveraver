@@ -12,12 +12,12 @@
     <!-- 2 decks: 1080 - 860 - 50 -->
     <group condition="var_equal '@$hauntinglayout' 0">
       <panel class="pro_2decks"/>
-      <browser class="haunting_browser_pro" height="500"/>
+      <browser class="browser_pro" height="500"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$hauntinglayout' 1">
       <panel class="pro_4decks"/>
-      <browser class="haunting_browser_pro4decks" height="410"/>
+      <browser class="browser_pro_4decks" height="410"/>
     </group>
   </define>
   <!-- around the wrong way. decks are actually above in the below. -->
@@ -33,24 +33,24 @@
     <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830.
          Utility-bar state only changes how much space is reserved at the bottom. -->
     <!-- 2 decks, no utility: 1080 - 830 - 50 -->
-    <browser class="haunting_browser_pro" height="180" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_pro" height="180" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 2 decks, utility visible: 1080 - 830 -->
-    <browser class="haunting_browser_pro" height="230" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_pro" height="230" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
     <!-- 4 decks: 1080 - 830 - 50 -->
-    <browser class="haunting_browser_pro4decks" height="500" condition="var_equal '@$hauntinglayout' 1"/>
+    <browser class="browser_pro_4decks" height="500" condition="var_equal '@$hauntinglayout' 1"/>
   </define>
   <define class="PROMINI_DECKS_ABOVE">
     <panel class="area_waves"/>
     <panel class="pro_2decks_mini" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks_mini" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- 2 decks: 1080 - 98 - 2 - 2 - 2 - 1 = 975 -->
-    <browser class="haunting_browser_promini" height="975" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_mini" height="975" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 2 decks + utility: 975 - 38 = 937 -->
-    <browser class="haunting_browser_promini" height="937" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_mini" height="937" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
     <!-- 4 decks: 1080 - 98 - 2 - 2 - 2 - 1 - 98 - 2 = 875 -->
-    <browser class="haunting_browser_promini4decks" height="875" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_mini_4decks" height="875" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 4 decks + utility: 875 - 38 = 837 -->
-    <browser class="haunting_browser_promini4decks" height="837" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_mini_4decks" height="837" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
   </define>
   <define class="PROMINI_DECKS_BELOW">
     <panel class="pro_2decks_mini" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
@@ -58,12 +58,12 @@
     <panel class="area_waves" y="+99+2" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="area_waves" y="+99+2+98+2" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- 2 decks: 1080 - 98 - 2 - 2 - 2 - 1 = 975 -->
-    <browser class="haunting_browser_promini" height="975" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_mini" height="975" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 2 decks + utility: 975 - 38 = 937 -->
-    <browser class="haunting_browser_promini" height="937" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_mini" height="937" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
     <!-- 4 decks: 1080 - 98 - 2 - 2 - 2 - 1 - 98 - 2 = 875 -->
-    <browser class="haunting_browser_promini4decks" height="875" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_mini_4decks" height="875" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 4 decks + utility: 875 - 38 = 837 -->
-    <browser class="haunting_browser_promini4decks" height="837" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_mini_4decks" height="837" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
   </define>
 </defs>

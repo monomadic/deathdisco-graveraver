@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <define class="HAUNTING_BROWSER_PRO" showzoom="yes" placeholders="*height">
+  <define class="browser_pro" showzoom="yes" placeholders="*height">
     <!-- Wave-size ladder extracted so the browser class only owns styling -->
     <xi:include href="positions/pro.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
@@ -34,7 +34,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="HAUNTING_BROWSER_PRO4DECKS" showzoom="yes" placeholders="*height">
+  <define class="browser_pro_4decks" showzoom="yes" placeholders="*height">
     <!-- Shared 4-deck browser wave-size ladder -->
     <xi:include href="positions/pro-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
@@ -68,8 +68,8 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="haunting_browser_promini" showzoom="yes" placeholders="*height">
-    <!-- Shared mini browser wave-size ladder -->
+  <define class="browser_mini" showzoom="yes" placeholders="*height">
+    <!-- Shared mini browser wave-size ladder used by Pro and Performance -->
     <xi:include href="positions/pro-mini.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
@@ -102,8 +102,8 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="haunting_browser_promini4decks" showzoom="yes" placeholders="*height">
-    <!-- Shared mini 4-deck browser wave-size ladder -->
+  <define class="browser_mini_4decks" showzoom="yes" placeholders="*height">
+    <!-- Shared mini 4-deck browser wave-size ladder used by Pro and Performance -->
     <xi:include href="positions/pro-mini-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>

@@ -184,16 +184,16 @@
     </group>
   </define>
   <define class="PERFORMANCE_DECKS_NO_WAVES">
-    <panel class="performance_2decks" y="+43+2" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="performance_4decks" y="+43+2" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="performance_2decks" condition="var_equal '@$hauntinglayout' 0"/>
+    <panel class="performance_4decks" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- browsers -->
     <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-      <panel class="browser_overlay_rack_aware" x="2" y="+264+2" width="1920-4" height="1080-43-2-264-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_rack_aware" x="2" y="+264+2+264+2" width="1920-4" height="1080-43-2-264-2-2-264-2" condition="var_equal '@$hauntinglayout' 1"/>
+      <panel class="browser_overlay_rack_aware" y="+264+2" width="1920" height="1080-43-2-264-2-2" condition="var_equal '@$hauntinglayout' 0"/>
+      <panel class="browser_overlay_rack_aware" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
     <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-      <panel class="browser_overlay_rack_aware" x="2" y="+264+2" width="1920-4" height="1080-43-2-264-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_rack_aware" x="2" y="+264+2+264+2" width="1920-4" height="1080-43-2-264-2-2-264-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+      <panel class="browser_overlay_rack_aware" y="+264+2" width="1920" height="1080-43-2-264-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
+      <panel class="browser_overlay_rack_aware" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2-38" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
   </define>
   <define class="PERFORMANCEMINI_DECKS_NO_WAVES">
@@ -201,19 +201,19 @@
     <panel class="performance_4decks_mini" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- browsers -->
     <group name="no_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
-      <panel class="browser_overlay_basic" x="2" y="+43+100+2" width="1920-4" height="1080-43-2-100-2-38" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
-      <panel class="browser_overlay_basic" x="2" y="+43+100+2" width="1920-4" height="1080-43-2-100-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
-      <panel class="browser_overlay_basic" x="2" y="+43+100+2+98+2" width="1920-4" height="1080-43-2-100-2-98-2-38" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
-      <panel class="browser_overlay_basic" x="2" y="+43+100+2+98+2" width="1920-4" height="1080-43-2-100-2-98-2" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+      <panel class="browser_overlay_basic" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2-38" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+      <panel class="browser_overlay_basic" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+      <panel class="browser_overlay_basic" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2-38" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+      <panel class="browser_overlay_basic" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
     </group>
     <group name="+_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
       <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-        <panel class="browser_overlay_rack_aware" x="2" y="+98+2" width="1920-4" height="1080-43-2-98-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-        <panel class="browser_overlay_rack_aware" x="2" y="+98+2+98+2" width="1920-4" height="1080-43-2-98-2-2-98-2" condition="var_equal '@$hauntinglayout' 1"/>
+        <panel class="browser_overlay_rack_aware" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2" condition="var_equal '@$hauntinglayout' 0"/>
+        <panel class="browser_overlay_rack_aware" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
       <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-        <panel class="browser_overlay_rack_aware" x="2" y="+98+2" width="1920-4" height="1080-43-2-98-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-        <panel class="browser_overlay_rack_aware" x="2" y="+98+2+98+2" width="1920-4" height="1080-43-2-98-2-2-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+        <panel class="browser_overlay_rack_aware" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
+        <panel class="browser_overlay_rack_aware" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
     </group>
   </define>

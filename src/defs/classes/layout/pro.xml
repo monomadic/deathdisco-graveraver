@@ -236,21 +236,21 @@
     <panel class="AREA_DECK_MINI" x="+1920-878-2" y="+98+2" panelname="deck4" deck="4" visibility="not deck 4 rightdeck"/>
   </define>
   <define class="PRO_DECKS_NO_WAVES">
-    <panel class="pro_2decks" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="pro_4decks" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
+    <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- browsers -->
-    <panel class="browser_overlay_basic" x="0" y="+432+2" width="1920" height="1080-432-2-2-38" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
-    <panel class="browser_overlay_basic" x="0" y="+432+2" width="1920" height="1080-432-2-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
-    <panel class="browser_overlay_basic" x="0" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2-38" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
-    <panel class="browser_overlay_basic" x="0" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+    <panel class="browser_overlay_basic" y="+432+2" width="1920" height="1080-432-2-2-38" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <panel class="browser_overlay_basic" y="+432+2" width="1920" height="1080-432-2-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <panel class="browser_overlay_basic" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2-38" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    <panel class="browser_overlay_basic" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
   </define>
   <define class="PROMINI_DECKS_NO_WAVES">
     <panel class="pro_2decks_mini" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks_mini" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- browsers -->
-    <panel class="browser_overlay_basic" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
-    <panel class="browser_overlay_basic" x="0" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
-    <panel class="browser_overlay_basic" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
-    <panel class="browser_overlay_basic" x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+    <panel class="browser_overlay_basic" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <panel class="browser_overlay_basic" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <panel class="browser_overlay_basic" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    <panel class="browser_overlay_basic" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
   </define>
 </defs>

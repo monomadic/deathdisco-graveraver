@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Shared pad-page selectors used by pro and extended deck layouts -->
-  <define class="PAD_PAGE_UPPER_BANK_TAB" placeholders="*page" query="pad_page btn[PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
+  <define class="PAD_PAGE_UPPER_BANK_TAB" placeholders="*page" query="pad_page [PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
     <size width="100" height="25"/>
     <off color="#000000" border="#222222" radius="6" border_size="1"/>
     <over color="#000000" border="#222222" radius="6" border_size="1"/>
     <down color="#000000" border="#222222" radius="6" border_size="1"/>
     <selected color="#000000" border="#222222" radius="6" border_size="1"/>
-    <text dy="+1" weight="" fontsize="12" color="dark_7" colordown="white" colorover="white" align="center" action="pad_page btn[PAGE] &amp; param_uppercase"/>
+    <text dy="+1" weight="" fontsize="12" color="dark_7" colordown="white" colorover="white" align="center" action="shift ? get_text '' : pad_page btn[PAGE] &amp; param_uppercase"/>
   </define>
-  <define class="PAD_PAGE_LOWER_TAB" placeholders="*page,*altpage" query="pad_page btn[PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
+  <define class="PAD_PAGE_LOWER_TAB" placeholders="*page,*altpage" query="shift ? pad_page [ALTPAGE] : pad_page [PAGE]" action="shift ? pad_page [ALTPAGE] : pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
     <size width="110" height="30"/>
     <off color="#000000" border="#222222" radius="6" border_size="1"/>
     <over color="#000000" border="#444444" radius="6" border_size="1"/>
     <down color="#000000" border="#555555" radius="6" border_size="1"/>
     <selected color="#000000" border="#555555" radius="6" border_size="1"/>
-    <text dy="-2" weight="bold" fontsize="14" color="dark_7" colordown="white" colorover="white" align="center" action="pad_page [PAGE] &amp; param_uppercase"/>
+    <text dy="-2" weight="bold" fontsize="14" color="dark_7" colordown="white" colorover="white" align="center" action="shift ? pad_page [ALTPAGE] &amp; param_uppercase : pad_page [PAGE] &amp; param_uppercase"/>
   </define>
   <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">

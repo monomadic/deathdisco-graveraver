@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Shared browser overlay helpers used by layout-level maximize/no-wave views -->
+  <xi:include href="layout/browser-overlays.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Pro layout classes and browser-zoom variants -->
   <xi:include href="layout/pro.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Performance layout classes and alternate performance views -->

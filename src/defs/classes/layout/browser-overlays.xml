@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Shared layout-level wrappers around haunting_browser_basic.
+       Layout classes pass only the slot geometry that differs by mode. -->
+  <define class="BROWSER_OVERLAY_BASIC" placeholders="*x,*y,*width,*height">
+    <browser class="haunting_browser_basic">
+      <pos x="[X]" y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
+    </browser>
+  </define>
+  <define class="BROWSER_OVERLAY_RACK_AWARE" placeholders="*x,*y,*width,*height">
+    <browser class="haunting_browser_basic">
+      <pos x="[X]" y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+      <pos x="[X]" y="+[Y]+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2+86+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
+      <pos x="[X]" y="+[Y]+140+2" width="[WIDTH]" height="[HEIGHT]-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
+      <pos x="[X]" y="+[Y]+86+2" width="[WIDTH]" height="[HEIGHT]-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2" width="[WIDTH]" height="[HEIGHT]-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+      <pos x="[X]" y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
+    </browser>
+  </define>
+</defs>

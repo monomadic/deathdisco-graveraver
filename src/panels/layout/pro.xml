@@ -6,60 +6,21 @@
   -->
   <group name="PRO" condition="var_equal '@$hauntingproskinmode' 0">
     <!-- @$hauntinglayout selects deck density within Pro: 0 = two-deck / swap, 1 = full four-deck -->
-    <!-- PRO: decks above -->
-    <!-- <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"> -->
-    <!-- <panel class="area_waves"/> -->
-    <!-- <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/> -->
-    <!-- <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/> -->
-    <!-- <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0"> -->
-    <!-- <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/> -->
-    <!-- <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/> -->
-    <!-- </group> -->
-    <!-- <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1"> -->
-    <!-- <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/> -->
-    <!-- <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/> -->
-    <!-- </group> -->
-    <!-- </panel> -->
-    <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
-      <panel class="area_waves"/>
-      <group name="2_decks" condition="var_equal '@$hauntinglayout' 0">
-        <panel class="pro_2decks"/>
-        <browser class="haunting_browser_pro" height="170" condition="var_equal '@$hauntingutilitybar' 0"/>
-        <browser class="haunting_browser_pro" height="170" condition="var_equal '@$hauntingutilitybar' 1"/>
-      </group>
-      <group name="4_decks" condition="var_equal '@$hauntinglayout' 1">
-        <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
-        <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntingutilitybar' 1"/>
-      </group>
-    </panel>
-    <!-- PRO: decks below -->
-    <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
-      <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
-      <panel class="area_waves" y="+450" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="area_waves" y="+450+450" condition="var_equal '@$hauntinglayout' 1"/>
-      <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-        <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0"/>
-        <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-      </group>
-      <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-        <browser class="haunting_browser_pro" height="250" condition="var_equal '@$hauntinglayout' 0"/>
-        <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-      </group>
-    </panel>
+    <group name="has_decks">
+      <!-- PRO: decks above -->
+      <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
+        <panel class="pro_decks_above"/>
+      </panel>
+      <!-- PRO: decks below -->
+      <panel condition="var_equal '@$hauntingwavesviewmaindecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true">
+        <panel class="pro_decks_below"/>
+      </panel>
+    </group>
     <!-- PRO: no waveforms -->
     <panel class="pro_decks_no_waves" condition="var_equal '@$hauntingwavesviewmaindecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     <!-- browser zoom & auto-switch -->
     <panel class="promini_decks_above" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 0" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="promini_decks_bottom" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="promini_decks_below" condition="var_equal '@$hauntingwavesviewminidecks' 0 ? var_equal '@$hauntingwaveformpos' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
     <panel class="promini_decks_no_waves" condition="var_equal '@$hauntingwavesviewminidecks' 1" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <!-- TESTBED -->
-    <deck deck="1">
-      <panel>
-        <!-- <visual width="250" height="250"> -->
-        <!-- <off shape="square" color="#000000"/> -->
-        <!-- </visual> -->
-      </panel>
-    </deck>
   </group>
 </module>

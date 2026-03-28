@@ -38,7 +38,7 @@
       </group>
     </group>
   </define>
-  <define class="PERFORMANCE_DECKS_BOTTOM">
+  <define class="PERFORMANCE_DECKS_BELOW">
     <panel class="performance_2decks" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="performance_4decks" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+2+324+3" condition="var_equal '@$hauntinglayout' 0"/>
@@ -52,7 +52,7 @@
       <browser class="haunting_browser_performance4decks" height="1080-440" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
   </define>
-  <define class="PERFORMANCEMINI_DECKS_BOTTOM">
+  <define class="PERFORMANCEMINI_DECKS_BELOW">
     <panel class="performance_2decks_mini" y="+43+2" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="performance_4decks_mini" y="+43+2" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+43+2+99+2" condition="var_equal '@$hauntinglayout' 0"/>

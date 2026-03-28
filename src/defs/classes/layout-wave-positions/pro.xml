@@ -20,21 +20,22 @@
       <browser class="haunting_browser_pro4decks" height="410"/>
     </group>
   </define>
+  <!-- around the wrong way. decks are actually above in the below. -->
   <define class="PRO_DECKS_BELOW">
     <group condition="var_equal '@$hauntinglayout' 0">
       <panel class="pro_2decks"/>
-      <panel class="area_waves" y="+450"/>
+      <panel class="area_waves" y="+470"/>
     </group>
     <group condition="var_equal '@$hauntinglayout' 1">
       <panel class="pro_4decks"/>
-      <panel class="area_waves" y="+450+205"/>
+      <panel class="area_waves" y="+450+200"/>
     </group>
     <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830.
          Utility-bar state only changes how much space is reserved at the bottom. -->
     <!-- 2 decks, no utility: 1080 - 830 - 50 -->
-    <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="haunting_browser_pro" height="180" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 2 decks, utility visible: 1080 - 830 -->
-    <browser class="haunting_browser_pro" height="250" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="haunting_browser_pro" height="230" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <browser class="haunting_browser_pro4decks" height="500" condition="var_equal '@$hauntinglayout' 1"/>
   </define>

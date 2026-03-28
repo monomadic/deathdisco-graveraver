@@ -8,144 +8,62 @@
     <panel class="AREA_DECK_PRO_LEFT" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="AREA_DECK_PRO_RIGHT" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
     <panel class="AREA_DECK_PRO_RIGHT" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
-    <!-- PADS -->
-    <!-- <panel class="pad_pages_pro" deck="1" x="+290" y="+176" visibility="not deck 3 leftdeck"/> -->
-    <!-- <panel class="pad_pages_pro" deck="3" x="+290" y="+176" visibility="deck 3 leftdeck"/> -->
-    <!-- <panel class="pad_pages_pro" deck="2" x="+1920-800" y="+176" visibility="not deck 4 rightdeck"/> -->
-    <!-- <panel class="pad_pages_pro" deck="4" x="+1920-800" y="+176" visibility="deck 4 rightdeck"/> -->
-    <!-- CLASS: STEM FADER -->
-    <define class="STEM_VU" placeholders="*deck,*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23">
-      <deck deck="[DECK]">
-        <!-- TOGGLE -->
-        <button x="+0" y="+135" action="stem_pad '[STEM]'" border_size="1">
-          <size width="[WIDTH]" height="[HEIGHT]"/>
-          <off color="transparent" border="transparent" radius="3"/>
-          <down color="transparent" border="transparent" radius="3"/>
-          <selected color="transparent" border="transparent" radius="3"/>
-          <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/>
-        </button>
-        <!-- VU METER -->
-        <!-- <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]"> -->
-        <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
-        <!-- <size width="[WIDTH]" height="7"/> -->
-        <!-- <off shape="square" border="#2A2A2A" color="black" radius="2"/> -->
-        <!-- <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/> -->
-        <!-- </visual> -->
-        <!-- GAIN SLIDER -->
-        <!-- <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false"> -->
-        <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
-        <!-- <size width="[WIDTH]" height="7"/> -->
-        <!-- <fader color="#AAAAAA" width="2" height="5"/> -->
-        <!-- </slider> -->
-        <!-- <visual source="get_level '[STEM]'" type="linear" orientation="vertical" direction="up" granularity="23"> -->
-        <!-- <pos x="+0" y="+55"/> -->
-        <!-- <size width="40" height="4"/> -->
-        <!-- <off shape="square" color="#333333" radius="0"/> -->
-        <!-- <on shape="square" color="[COLOR]" radius="0"/> -->
-        <!-- </visual> -->
-        <group x="+12">
-          <!-- FADER LINES -->
-          <group x="+0" y="+7">
-            <!-- <line color="faderlines" x="+0" y="+0" width="38" height="1"/> -->
-            <line color="faderlines" x="+3" y="+12" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*2" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*3" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*4" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*5" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*6" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*7" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*8" width="32" height="1"/>
-            <line color="faderlines" x="+3" y="+12*9" width="32" height="1"/>
-            <!-- <line color="faderlines" x="+0" y="+12*10" width="38" height="1"/> -->
-          </group>
-          <visual x="+5" y="+0" width="750" height="224">
-            <off shape="square" color="#050505" radius="10" bordersize="1" border="#000000"/>
-          </visual>
-          <group x="+14" y="+0">
-            <!-- BLACK STRIP -->
-            <!-- <visual width="10" height="123"> -->
-            <!-- <pos x="+0" y="+0"/> -->
-            <!-- <off shape="square" color="black" radius="3"/> -->
-            <!-- </visual> -->
-            <!-- LEVEL -->
-            <visual source="get_level '[STEM]'" type="linear" orientation="vertical" direction="up" granularity="23">
-              <pos x="+0" y="+5"/>
-              <size width="10" height="123"/>
-              <off shape="square" color="black" radius="2"/>
-              <on shape="square" color="[COLOR]" radius="2"/>
-            </visual>
-          </group>
-          <!-- SLIDER -->
-          <slider action="level '[STEM]'" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos x="+0" y="+0"/>
-            <size width="38" height="135"/>
-            <off width="-27" height="-8" color="transparent" border="#333333" border_size="1" radius="3" shape="square"/>
-            <on width="-27" height="-8" color="transparent" border="#333333" border_size="1" radius="3" shape="square"/>
-            <fader color="#333333" width="38" height="14" border="#555555"/>
-          </slider>
-          <!-- SLIDER PIECE -->
-          <slider action="level '[STEM]'" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos x="+0" y="+0+6"/>
-            <size width="38" height="135-12"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </deck>
-    </define>
-    <!-- DECK BOTTOM SECTION -->
-    <group y="+170" x="+40">
+    <!-- DECK: PAD PAGES SECTION -->
+    <group y="+175" x="+36">
       <!-- bg left (black behind pads) -->
-      <visual x="+5" y="+0" width="750" height="224">
-        <off shape="square" color="#050505" radius="10" bordersize="1" border="#000000"/>
-      </visual>
-      <!-- bg right -->
-      <visual x="1920-800+5+2" y="+0" width="750" height="224">
-        <off shape="square" color="black" radius="10" bordersize="1" border="#000000"/>
-      </visual>
-      <!-- CLASS: CUSTOM_BUTTON_1 -->
-      <define class="CUSTOM_BUTTON_1" action="custom_button [SOURCE]" deck="[DECK]" border_size="1" rightclick="custom_button_edit [SOURCE]" placeholders="*source,*deck,width=70,height=20">
-        <size width="[WIDTH]" height="[HEIGHT]"/>
-        <off color="#000000" border="#888888" radius="3"/>
-        <down color="#222222" border="#888888" radius="3"/>
-        <selected color="transparent" border="deckcolor" radius="3"/>
-        <text fontsize="10" color="#DDDDDD" colorselected="deckcolor" colordown="#888888" align="center" action="custom_button_name [SOURCE]"/>
-      </define>
-      <!-- CUSTOM BUTTONS LEFT -->
-      <group x="+15" y="+10">
-        <button class="custom_button_1" source="400" deck="1" width="80" y="+0"/>
-        <button class="custom_button_1" source="401" deck="1" width="80" y="+24"/>
-        <button class="custom_button_1" source="402" deck="1" width="80" y="+24*2"/>
-        <button class="custom_button_1" source="403" deck="1" width="80" y="+24*3"/>
-        <button class="custom_button_1" source="404" deck="1" width="80" y="+24*4"/>
-        <button class="custom_button_1" source="405" deck="1" width="80" y="+24*5"/>
-        <button class="custom_button_1" source="406" deck="1" width="80" y="+24*6"/>
-        <button class="custom_button_1" source="407" deck="1" width="80" y="+24*7"/>
-      </group>
-      <!-- CUSTOM BUTTONS RIGHT -->
-      <group x="+1920-80-80-10" y="+12">
-        <button class="custom_button_1" source="400" deck="2" width="80" y="+0"/>
-        <button class="custom_button_1" source="401" deck="2" width="80" y="+24"/>
-        <button class="custom_button_1" source="402" deck="2" width="80" y="+24*2"/>
-        <button class="custom_button_1" source="403" deck="2" width="80" y="+24*3"/>
-        <button class="custom_button_1" source="404" deck="2" width="80" y="+24*4"/>
-        <button class="custom_button_1" source="405" deck="2" width="80" y="+24*5"/>
-        <button class="custom_button_1" source="406" deck="2" width="80" y="+24*6"/>
-        <button class="custom_button_1" source="407" deck="2" width="80" y="+24*7"/>
-      </group>
-      <!-- PRO: 2 DECK: PAD PAGES PANEL -->
-      <group x="+10" y="+0">
-        <group x="+100">
-          <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" x="+120" visibility="not deck 3 leftdeck"/>
-          <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" x="+120" visibility="deck 3 leftdeck"/>
+      <!-- <visual x="+0" y="+0" width="750" height="324"> -->
+      <!-- <off shape="square" color="#050505" radius="10" bordersize="1" border="dark_5"/> -->
+      <!-- </visual> -->
+      <group name="custom_buttons" visibility="false">
+        <!-- CLASS: CUSTOM_BUTTON_1 -->
+        <define class="CUSTOM_BUTTON_1" action="custom_button [SOURCE]" deck="[DECK]" border_size="1" rightclick="custom_button_edit [SOURCE]" placeholders="*source,*deck,width=70,height=20">
+          <size width="[WIDTH]" height="[HEIGHT]"/>
+          <off color="#000000" border="#888888" radius="3"/>
+          <down color="#222222" border="#888888" radius="3"/>
+          <selected color="transparent" border="deckcolor" radius="3"/>
+          <text fontsize="10" color="#DDDDDD" colorselected="deckcolor" colordown="#888888" align="center" action="custom_button_name [SOURCE]"/>
+        </define>
+        <!-- CUSTOM BUTTONS LEFT -->
+        <group x="+15" y="+10">
+          <button class="custom_button_1" source="400" deck="1" width="80" y="+0"/>
+          <button class="custom_button_1" source="401" deck="1" width="80" y="+24"/>
+          <button class="custom_button_1" source="402" deck="1" width="80" y="+24*2"/>
+          <button class="custom_button_1" source="403" deck="1" width="80" y="+24*3"/>
+          <button class="custom_button_1" source="404" deck="1" width="80" y="+24*4"/>
+          <button class="custom_button_1" source="405" deck="1" width="80" y="+24*5"/>
+          <button class="custom_button_1" source="406" deck="1" width="80" y="+24*6"/>
+          <button class="custom_button_1" source="407" deck="1" width="80" y="+24*7"/>
         </group>
-        <group x="1920-960+135">
-          <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" x="+0" visibility="not deck 4 rightdeck"/>
-          <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" x="+0" visibility="deck 4 rightdeck"/>
+        <!-- CUSTOM BUTTONS RIGHT -->
+        <group x="+1920-80-80-10" y="+12">
+          <button class="custom_button_1" source="400" deck="2" width="80" y="+0"/>
+          <button class="custom_button_1" source="401" deck="2" width="80" y="+24"/>
+          <button class="custom_button_1" source="402" deck="2" width="80" y="+24*2"/>
+          <button class="custom_button_1" source="403" deck="2" width="80" y="+24*3"/>
+          <button class="custom_button_1" source="404" deck="2" width="80" y="+24*4"/>
+          <button class="custom_button_1" source="405" deck="2" width="80" y="+24*5"/>
+          <button class="custom_button_1" source="406" deck="2" width="80" y="+24*6"/>
+          <button class="custom_button_1" source="407" deck="2" width="80" y="+24*7"/>
+        </group>
+      </group>
+      <!-- bg right -->
+      <!-- <visual x="1920-800+5+2" y="+0" width="750" height="224"> -->
+      <!-- <off shape="square" color="black" radius="10" bordersize="1" border="#000000"/> -->
+      <!-- </visual> -->
+      <!-- PRO: 2 DECK: PAD PAGES PANEL -->
+      <group x="+0" y="+0">
+        <group x="+5" y="+5">
+          <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" visibility="not deck 3 leftdeck"/>
+          <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" visibility="deck 3 leftdeck"/>
+        </group>
+        <group x="1920/2+125+5" y="+5">
+          <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" visibility="not deck 4 rightdeck"/>
+          <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" visibility="deck 4 rightdeck"/>
         </group>
       </group>
     </group>
-    <group y="+400">
-      <!-- TRANSPORT -->
+    <group y="+450-25">
+      <!-- TRANSPORT 2 DECK -->
       <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/>
       <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/>
       <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/>
@@ -203,7 +121,7 @@
     <!-- RACKS (PADS, ETC) -->
     <panel class="htng_racks" x="+2" y="-2"/>
     <group y="+389">
-      <!-- TRANSPORT -->
+      <!-- TRANSPORT 4 DECK -->
       <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/>
       <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/>
       <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/>

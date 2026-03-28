@@ -452,47 +452,52 @@
       </visual>
     </define>
     <!-- PAD BUTTON TYPE 3 (Large) -->
-    <define class="padbutton3" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
       <visual>
-        <tooltip/>
-        <size width="71" height="55"/>
+        <size width="179" height="39"/>
         <up color="button_background2" shape="square"/>
       </visual>
       <!-- border -->
-      <!-- <visual type="color" source="pad_button_color [SOURCE]" visibility="pad [SOURCE] ? constant 1 : constant 0.0"> -->
-      <!-- <tooltip></tooltip> -->
-      <!-- <size width="71" height="55"/> -->
+      <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.0">
+        <size width="179" height="39"/>
+      </visual>
+      <!-- PUSHED -->
+      <!-- <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]"> -->
+      <!-- <size width="124" height="38"/> -->
+      <!-- </visual> -->
+      <button x="+0" y="+0" action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
+        <size width="180" height="40"/>
+        <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
+        <selected color="button_background2" border="#999999" border_size="1" shape="square" radius="3"/>
+      </button>
+      <!-- main button-->
+      <!-- <visual y="+0" width="124" height="38"> -->
+      <!-- <off shape="square" color="red"/> -->
       <!-- </visual> -->
       <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-        <size width="71" height="55"/>
-        <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-        <selected color="button_background2" border="transparent" border_size="1" shape="square"/>
+        <pos y="+0"/>
+        <size width="180" height="38"/>
+        <!-- <over color="button_background2" border="#444444" border_size="1" shape="square"/> -->
+        <text dx="+24" width="180-10-10" size="15" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="left" multiline="true"/>
       </button>
-      <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-        <size width="71" height="55"/>
-        <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-        <selected color="button_background2" border="needle" border_size="1" shape="square"/>
-      </button>
-      <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-        <size width="71" height="55"/>
-        <text dx="+6" dy="-4" width="71-12" size="14" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="center"/>
-      </button>
+      <!-- pushed color chip -->
+      <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
+        <tooltip/>
+        <pos x="+10" y="+12"/>
+        <size width="8" height="38-12-12"/>
+        <off color="pad_button_color [SOURCE]" shape="square"/>
+      </visual>
+      <!-- color chip -->
       <visual type="color" source="pad_button_color [SOURCE]">
         <tooltip/>
-        <pos x="+6" y="+55-12"/>
-        <size width="71-12" height="4"/>
+        <pos x="+12" y="+12"/>
+        <size width="4" height="38-12-12"/>
       </visual>
       <visual novisibility="pad_button_color [SOURCE]">
         <tooltip/>
-        <pos x="+6" y="+55-12"/>
-        <size width="71-12" height="4"/>
+        <pos x="+10" y="+10"/>
+        <size width="4" height="38-10-10"/>
         <off color="panel_background" shape="square"/>
-      </visual>
-      <visual visibility="pad_pushed [SOURCE]">
-        <tooltip/>
-        <pos x="+6" y="+55-12"/>
-        <size width="71-12" height="4"/>
-        <off color="needle" shape="square"/>
       </visual>
     </define>
     <define class="PADBUTTON_WIDE" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">

@@ -3,7 +3,7 @@
   <define class="INFOS">
     <!-- LEFT DECK -->
     <!-- background: black glass (behind cover) -->
-    <button class="button_main" action="select" width="532" height="165" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="1"/>
+    <button class="button_main" action="select" width="532" height="175" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="1"/>
     <!-- ACAPELLA/INSTRUMENTAL LINE BORDER -->
     <group visibility="loaded">
       <!-- left -->
@@ -488,16 +488,6 @@
     <menu class="menu_maindecks" query="select" x="+404-2-4-28" y="+72-8-22" width="28" height="20" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
   </define>
   <define class="TRACK_INFO_ACTION_ZONE">
-    <!-- HR -->
-    <!-- <visual class="gfx_shape" coloroff="panel_background"> -->
-    <!-- <pos x="+0" y="+20"/> -->
-    <!-- <size width="481" height="1"/> -->
-    <!-- </visual> -->
-    <!-- lower portion (panel color) -->
-    <!-- <visual class="gfx_shape" x="+0" y="+20" width="530" height="104" coloroff="panel_background" bordercoloroff="red" bordersize="1"/> -->
-    <!-- MID PANEL: glass bg -->
-    <!-- <visual class="gfx_shape" x="+3" y="+20" width="527" height="72" coloroff="#ff000000" bordercoloroff="#FFFFFFF" bordersize="1" radius="8"/> -->
-    <!-- <line color="#444444" x="+3" y="+0" width="530" height="1"/> -->
     <dropzone visibility="var_equal '@$hauntinglayout' 0" x="+0" y="+0">
       <size width="770" height="434"/>
       <over color="transparent" border_size="2" border="color_dropzone" shape="square" radius="10"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
-  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname">
+  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=450">
     <deck deck="[DECK]">
       <!-- PRO: LEFT DECK: SPINE BG -->
-      <visual x="+0" y="+0" width="34" height="450">
+      <visual x="+0" y="+0" width="34" height="[HEIGHT]">
         <off shape="square" color="black"/>
       </visual>
       <!-- LEFT: ACAPELLA SPINE LABEL -->
@@ -26,7 +26,7 @@
       <!-- </group> -->
       <!-- LEFT: MASTERDECK SPINE LABEL -->
       <group visibility="loaded ? masterdeck">
-        <visual x="+0" y="+0" width="34" height="440" visibility="0.2">
+        <visual x="+0" y="+0" width="34" height="[HEIGHT]" visibility="0.2">
           <off shape="square" color="color_masterdeck"/>
         </visual>
         <visual x="+5" y="+150" width="24" height="125">
@@ -71,9 +71,9 @@
         <menu class="menu_maindecks" query="select" x="+0" y="+386" width="34" height="34"/>
       </group>
       <group x="+35">
-        <visual x="+5" y="+150" width="750" height="1224">
-          <off shape="square" color="#050505" radius="10" bordersize="1" border="#000000"/>
-        </visual>
+        <!-- <visual x="+5" y="+150" width="750" height="1224"> -->
+        <!-- <off shape="square" color="red" radius="10" bordersize="1" border="#000000"/> -->
+        <!-- </visual> -->
         <!-- PRO: LEFT: TRACK INFO -->
         <panel class="infos"/>
         <!-- LEFT: action zone -->
@@ -94,7 +94,6 @@
       </group>
     </deck>
   </define>
-
   <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck">
     <deck deck="[DECK]">
       <panel class="video_preview" x="+404-2+60+11+4" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
@@ -104,7 +103,6 @@
       </visual>
     </deck>
   </define>
-
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <!-- bg: spine -->

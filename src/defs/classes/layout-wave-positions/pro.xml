@@ -12,7 +12,7 @@
     <!-- 2 decks: 1080 - 860 - 50 -->
     <group condition="var_equal '@$hauntinglayout' 0">
       <panel class="pro_2decks"/>
-      <browser class="haunting_browser_pro" height="270"/>
+      <browser class="haunting_browser_pro" height="500"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$hauntinglayout' 1">

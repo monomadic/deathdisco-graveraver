@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <!-- Pro browser slot formulas.
+       HEIGHT here is the browser anchor model used by the browser classes:
+       screen height minus the browser top line, with an extra 50px reserve
+       when the class itself accounts for the hidden utility-bar space. -->
+  <define class="PRO_BROWSER_SLOT" placeholders="*two_height_no_utility,*two_height_utility,*four_height_no_utility,*four_height_utility">
+    <group name="browser_slot">
+      <browser class="haunting_browser_pro" height="[TWO_HEIGHT_NO_UTILITY]" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+      <browser class="haunting_browser_pro" height="[TWO_HEIGHT_UTILITY]" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+      <browser class="haunting_browser_pro4decks" height="[FOUR_HEIGHT_NO_UTILITY]" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+      <browser class="haunting_browser_pro4decks" height="[FOUR_HEIGHT_UTILITY]" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    </group>
+  </define>
+  <define class="PROMINI_BROWSER_SLOT" placeholders="*two_height_no_utility,*two_height_utility,*four_height_no_utility,*four_height_utility">
+    <group name="browser_slot">
+      <browser class="haunting_browser_promini" height="[TWO_HEIGHT_NO_UTILITY]" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+      <browser class="haunting_browser_promini" height="[TWO_HEIGHT_UTILITY]" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+      <browser class="haunting_browser_promini4decks" height="[FOUR_HEIGHT_NO_UTILITY]" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+      <browser class="haunting_browser_promini4decks" height="[FOUR_HEIGHT_UTILITY]" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
+    </group>
+  </define>
   <define class="PRO_DECKS_ABOVE">
     <panel class="area_waves"/>
     <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
     <!-- With waves above, the browser slot only depends on deck density.
          The browser class itself already handles the utility-bar offset. -->
-    <browser class="haunting_browser_pro" height="170" condition="var_equal '@$hauntinglayout' 0"/>
-    <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="pro_browser_slot" two_height_no_utility="1080-860-50" two_height_utility="1080-860-50" four_height_no_utility="1080-830-50" four_height_utility="1080-830-50"/>
   </define>
   <define class="PRO_DECKS_BELOW">
     <panel class="pro_2decks" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+450" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="area_waves" y="+450+450" condition="var_equal '@$hauntinglayout' 1"/>
-    <!-- Keep the browser decision at the bottom of the composition:
-         only the 2-deck slot changes when the utility bar is shown. -->
-    <group name="browser_slot">
-      <browser class="haunting_browser_pro" height="200" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
-      <browser class="haunting_browser_pro" height="250" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
-      <browser class="haunting_browser_pro4decks" height="200" condition="var_equal '@$hauntinglayout' 1"/>
-    </group>
+    <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830.
+         Utility-bar state only changes how much space is reserved at the bottom. -->
+    <panel class="pro_browser_slot" two_height_no_utility="1080-830-50" two_height_utility="1080-830" four_height_no_utility="1080-830-50" four_height_utility="1080-830-50"/>
   </define>
   <define class="PROMINI_DECKS_ABOVE">
     <panel class="area_waves"/>
     <panel class="pro_2decks_mini" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks_mini" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-      <browser class="haunting_browser_promini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
-      <browser class="haunting_browser_promini4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
-    </group>
-    <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-      <browser class="haunting_browser_promini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <browser class="haunting_browser_promini4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
-    </group>
+    <panel class="promini_browser_slot" two_height_no_utility="1080-98-2-2-2-1" two_height_utility="1080-98-2-2-2-1-38" four_height_no_utility="1080-98-2-2-2-1-98-2" four_height_utility="1080-98-2-2-2-1-98-2-38"/>
   </define>
   <define class="PROMINI_DECKS_BELOW">
     <panel class="pro_2decks_mini" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="pro_4decks_mini" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+99+2" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="area_waves" y="+99+2+98+2" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
-      <browser class="haunting_browser_promini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
-      <browser class="haunting_browser_promini4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
-    </group>
-    <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
-      <browser class="haunting_browser_promini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <browser class="haunting_browser_promini4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
-    </group>
+    <panel class="promini_browser_slot" two_height_no_utility="1080-98-2-2-2-1" two_height_utility="1080-98-2-2-2-1-38" four_height_no_utility="1080-98-2-2-2-1-98-2" four_height_utility="1080-98-2-2-2-1-98-2-38"/>
   </define>
 </defs>

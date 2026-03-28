@@ -1,34 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<defs>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <define class="HAUNTING_BROWSER_PRO" showzoom="yes" placeholders="*height">
-    <pos x="0" width="1920" y="1080-[HEIGHT]+60-50" height="+[HEIGHT]-80+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+40-50" height="+[HEIGHT]-40+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+20-50" height="+[HEIGHT]-20+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-0-50" height="+[HEIGHT]+0+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-20-50" height="+[HEIGHT]+20+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-40-50" height="+[HEIGHT]+40+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-60-50" height="+[HEIGHT]+60+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-80-50" height="+[HEIGHT]+80+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-100-50" height="+[HEIGHT]+100+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-120-50" height="+[HEIGHT]+120+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-140-50" height="+[HEIGHT]+140+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-160-50" height="+[HEIGHT]+160+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-180-50" height="+[HEIGHT]+180+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-200-50" height="+[HEIGHT]+200+50" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 0"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+50" height="+[HEIGHT]-50-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+40" height="+[HEIGHT]-40-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+20" height="+[HEIGHT]-20-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-0" height="+[HEIGHT]-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-20" height="+[HEIGHT]+20-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-40" height="+[HEIGHT]+40-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-60" height="+[HEIGHT]+60-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-80" height="+[HEIGHT]+80-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-100" height="+[HEIGHT]+100-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-120" height="+[HEIGHT]+120-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-140" height="+[HEIGHT]+140-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-160" height="+[HEIGHT]+160-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-180" height="+[HEIGHT]+180-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]-200" height="+[HEIGHT]+200-50" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Wave-size ladder extracted so the browser class only owns styling -->
+    <xi:include href="positions/pro.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
@@ -61,34 +35,8 @@
     <fonttoolbar size="14"/>
   </define>
   <define class="haunting_browser_pro4decks" showzoom="yes" placeholders="*height">
-    <pos x="+2" y="+[HEIGHT]+267+432+4-200+38" width="1920-4" height="[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247+432+4-200+38" width="1920-4" height="[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227+432+4-200+38" width="1920-4" height="[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207+432+4-200+38" width="1920-4" height="[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187+432+4-200+38" width="1920-4" height="[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167+432+4-200+38" width="1920-4" height="[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147+432+4-200+38" width="1920-4" height="[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127+432+4-200+38" width="1920-4" height="[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107+432+4-200+38" width="1920-4" height="[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87+432+4-200+38" width="1920-4" height="[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67+432+4-200+38" width="1920-4" height="[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47+432+4-200+38" width="1920-4" height="[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27+432+4-200+38" width="1920-4" height="[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7+432+4-200+38" width="1920-4" height="[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 0"/>
-    <pos x="+2" y="+[HEIGHT]+267+432+4-200" width="1920-4" height="[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247+432+4-200" width="1920-4" height="[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227+432+4-200" width="1920-4" height="[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207+432+4-200" width="1920-4" height="[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187+432+4-200" width="1920-4" height="[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167+432+4-200" width="1920-4" height="[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147+432+4-200" width="1920-4" height="[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127+432+4-200" width="1920-4" height="[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107+432+4-200" width="1920-4" height="[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87+432+4-200" width="1920-4" height="[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67+432+4-200" width="1920-4" height="[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47+432+4-200" width="1920-4" height="[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27+432+4-200" width="1920-4" height="[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7+432+4-200" width="1920-4" height="[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Shared 4-deck browser wave-size ladder -->
+    <xi:include href="positions/pro-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
@@ -121,34 +69,8 @@
     <fonttoolbar size="14"/>
   </define>
   <define class="haunting_browser_promini" showzoom="yes" placeholders="*height">
-    <pos x="+2" y="+[HEIGHT]+267-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7-432-204-200+38-32" width="1920-4" height="+[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 0"/>
-    <pos x="+2" y="+[HEIGHT]+267-432-204-200-32" width="1920-4" height="+[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247-432-204-200-32" width="1920-4" height="+[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227-432-204-200-32" width="1920-4" height="+[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207-432-204-200-32" width="1920-4" height="+[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187-432-204-200-32" width="1920-4" height="+[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167-432-204-200-32" width="1920-4" height="+[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147-432-204-200-32" width="1920-4" height="+[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127-432-204-200-32" width="1920-4" height="+[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107-432-204-200-32" width="1920-4" height="+[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87-432-204-200-32" width="1920-4" height="+[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67-432-204-200-32" width="1920-4" height="+[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47-432-204-200-32" width="1920-4" height="+[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27-432-204-200-32" width="1920-4" height="+[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7-432-204-200-32" width="1920-4" height="+[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Shared mini browser wave-size ladder -->
+    <xi:include href="positions/pro-mini.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
@@ -181,34 +103,8 @@
     <fonttoolbar size="14"/>
   </define>
   <define class="haunting_browser_promini4decks" showzoom="yes" placeholders="*height">
-    <pos x="+2" y="+[HEIGHT]+267-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7-432-204+228+4-200+38-64" width="1920-4" height="+[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 1 ? var_equal '@$infntywavesize' 0"/>
-    <pos x="+2" y="+[HEIGHT]+267-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-381" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-361" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-341" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-321" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-301" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-281" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-261" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-241" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-221" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-201" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-181" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-161" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-141" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7-432-204+228+4-200-64" width="1920-4" height="+[HEIGHT]-121" condition="var_equal '@$hauntingutilitybar' 0 ? var_equal '@$infntywavesize' 0"/>
+    <!-- Shared mini 4-deck browser wave-size ladder -->
+    <xi:include href="positions/pro-mini-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>

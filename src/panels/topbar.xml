@@ -6,33 +6,6 @@
     -->
     <!-- background -->
     <visual class="gfx_shape" width="1920-2-2" height="43" coloroff="black"/>
-    <!-- SKIN LAYOUT MENU -->
-    <!-- <group name="layout_options" x="10" y="8" visibility="false"> -->
-    <!-- <menu tooltip="SKIN LAYOUT\nSelect the layout adapted to your mixing style"> -->
-    <!-- <pos x="+50" y="+0"/> -->
-    <!-- <size width="136" height="27"/> -->
-    <!-- <off shape="square" color="panel_background"/> -->
-    <!-- <over shape="square" color="#222222"/> -->
-    <!-- <text dx="10" width="102" fontsize="11" weight="" color="textoff2" colorover="needle" align="left" action="browser_zoom ? get_text 'BROWSER' : NOT browser_zoom ? var_equal '@$hauntingproskinmode' 0 ? get_text 'PRO' : var_equal '@$hauntingproskinmode' 1 ? get_text 'PERFORMANCE' : var_equal '@$hauntingproskinmode' 2 ? get_text 'STACK'" localize="true" important="true"/> -->
-    <!-- <icon dx="54" dy="-1" sysicon="chevrondown" height="17" width="17" color="textoff" colorover="needle" colordown="needle"/> -->
-    <!-- <item text="PRO" action="set '@$hauntingproskinmode' 0 &amp; load_skin" check="var_equal '@$hauntingproskinmode' 0"/> -->
-    <!-- <item text="PERFORMANCE" action="set '@$hauntingproskinmode' 1 &amp; load_skin" check="var_equal '@$hauntingproskinmode' 1"/> -->
-    <!-- <item text="STACK" action="set '@$hauntingproskinmode' 2 &amp; load_skin" check="var_equal '@$hauntingproskinmode' 2"/> -->
-    <!-- <item text="TOUCH" action="load_skin ':TOUCH'" check="off"/> -->
-    <!-- <separator/> -->
-    <!-- <item text="Vertical" action="set '@$hauntingperformancelayout' 1 &amp; load_skin" check="var_equal '@$hauntingperformancelayout' 1" visibility="var_equal '@$hauntingproskinmode' 1"/> -->
-    <!-- <item text="Horizontal" action="set '@$hauntingperformancelayout' 2 &amp; load_skin" check="var_equal '@$hauntingperformancelayout' 2" visibility="var_equal '@$hauntingproskinmode' 1"/> -->
-    <!-- <item text="Extended" action="set '@$hauntingperformancelayout' 0 &amp; load_skin" check="var_equal '@$hauntingperformancelayout' 0" visibility="var_equal '@$hauntingproskinmode' 1"/> -->
-    <!-- <separator visibility="var_equal '@$hauntingproskinmode' 1"/> -->
-    <!-- <item text="2 Decks" localize="true" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 0 &amp; load_skin" check="var_equal '@$hauntinglayout' 0 ? var_equal '@$4decks' 0"/> -->
-    <!-- <item text="4 Decks" localize="true" action="set '@$hauntinglayout' 1 &amp; set '@$4decks' 1 &amp; load_skin" check="var_equal '@$hauntinglayout' 1 ? var_equal '@$4decks' 1" visibility="not var_equal '@$hauntingproskinmode' 5"/> -->
-    <!-- <item text="4 Decks (Swap)" localize="true" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 1 &amp; load_skin" check="var_equal '@$hauntinglayout' 0 ? var_equal '@$4decks' 1" visibility="not var_equal '@$hauntingproskinmode' 5"/> -->
-    <!-- <item text="4 Decks (Swap)" localize="true" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 1 &amp; load_skin" check="var_equal '@$4decks' 1" visibility="var_equal '@$hauntingproskinmode' 5"/> -->
-    <!-- <item text="CONTROLLER LE SKIN" localize="true" action="load_skin '{LE}'" visibility="load_skin '{LE}'"/> -->
-    <!-- <separator/> -->
-    <!-- <item text="Browser Zoom" action="browser_zoom" check="browser_zoom"/> -->
-    <!-- </menu> -->
-    <!-- </group> -->
     <!-- DECK LAYOUT BUTTONS -->
     <group x="70" y="0">
       <button tooltip="Pro" class="button_main" action="set '@$hauntingproskinmode' 0 &amp; load_skin" width="60" height="43" bordersize="0" query="var_equal '@$hauntingproskinmode' 0">
@@ -153,12 +126,19 @@
         <icon sysicon="sampler_loop" width="22" height="22" coloroff="#CCCCCC" colorover="#FFFFFF"/>
       </button>
       <!-- SETTINGS BUTTON -->
-      <button action="settings" x="+180">
+      <button action="reinit_controller" x="+180">
         <size width="42" height="27"/>
         <off color="#000000"/>
         <over color="#222222"/>
-        <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+        <icon sysicon="sampler_loop" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
       </button>
+      <!-- SETTINGS BUTTON -->
+      <!-- <button action="settings" x="+180"> -->
+      <!-- <size width="42" height="27"/> -->
+      <!-- <off color="#000000"/> -->
+      <!-- <over color="#222222"/> -->
+      <!-- <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/> -->
+      <!-- </button> -->
     </group>
     <!-- Accent bottom border line -->
     <line x="0" y="43" width="1920" height="1" highlight="border_background1" shadow="#00000000"/>

@@ -2,6 +2,49 @@
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Top bar shell, mode utilities, status widgets, and app menus -->
   <define class="TOPBAR">
+    <line color="dark_4" x="0" y="0" width="1920" height="1"/>
+    <!-- TOP BAR: SETTINGS MENU -->
+    <group name="applicationbuttons_logo" condition="is_mac">
+      <logo>
+        <pos x="+1920" y="-40"/>
+        <size width="115" height="27"/>
+      </logo>
+      <menu tooltip="DIRECT OPTIONS">
+        <pos x="+10" y="8"/>
+        <size width="40" height="27"/>
+        <off color="#000000" shape="square"/>
+        <over color="#000000" shape="square"/>
+        <selected color="button_background" shape="square"/>
+        <text dx="+2" dy="+6" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
+        <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
+        <separator/>
+        <xi:include href="topbar/menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
+      </menu>
+      <group visibility="false">
+        <button action="close">
+          <pos x="15" y="+13"/>
+          <size width="17" height="17"/>
+          <off shape="circle" color="#bf4744"/>
+          <down shape="circle" color="#fc5753"/>
+          <selected shape="circle" color="#fc5753"/>
+        </button>
+        <button action="minimize">
+          <pos x="15+27" y="+13"/>
+          <size width="17" height="17"/>
+          <off shape="circle" color="#be8d2f"/>
+          <down shape="circle" color="#fdbc40"/>
+          <selected shape="circle" color="#fdbc40"/>
+        </button>
+        <button action="maximize">
+          <pos x="15+27+27" y="+13"/>
+          <size width="17" height="17"/>
+          <off shape="circle" color="#279637"/>
+          <down shape="circle" color="#33c748"/>
+          <selected shape="circle" color="#33c748"/>
+        </button>
+      </group>
+    </group>
+    <line color="dark_4" x="56" y="0" width="1" height="42"/>
     <!-- <visual class="gfx_shape" width="1920" height="50" coloroff="red"/> -->
     <!-- DECK MODE BUTTONS -->
     <group x="250" y="0">
@@ -499,47 +542,6 @@
         <text fontsize="15" color="white" align="right" weight="" action="get_clock" important="true"/>
         <text2 fontsize="15" color="white" align="right" weight="" format="%counter" important="true"/>
       </textzone>
-    </group>
-    <!-- TOP BAR: SETTINGS MENU -->
-    <group name="applicationbuttons_logo" condition="is_mac">
-      <logo>
-        <pos x="+1920" y="-40"/>
-        <size width="115" height="27"/>
-      </logo>
-      <menu tooltip="DIRECT OPTIONS">
-        <pos x="+10" y="8"/>
-        <size width="40" height="27"/>
-        <off color="#000000" shape="square"/>
-        <over color="#000000" shape="square"/>
-        <selected color="button_background" shape="square"/>
-        <text dx="+2" dy="+6" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
-        <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
-        <separator/>
-        <xi:include href="topbar/menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
-      </menu>
-      <group visibility="false">
-        <button action="close">
-          <pos x="15" y="+13"/>
-          <size width="17" height="17"/>
-          <off shape="circle" color="#bf4744"/>
-          <down shape="circle" color="#fc5753"/>
-          <selected shape="circle" color="#fc5753"/>
-        </button>
-        <button action="minimize">
-          <pos x="15+27" y="+13"/>
-          <size width="17" height="17"/>
-          <off shape="circle" color="#be8d2f"/>
-          <down shape="circle" color="#fdbc40"/>
-          <selected shape="circle" color="#fdbc40"/>
-        </button>
-        <button action="maximize">
-          <pos x="15+27+27" y="+13"/>
-          <size width="17" height="17"/>
-          <off shape="circle" color="#279637"/>
-          <down shape="circle" color="#33c748"/>
-          <selected shape="circle" color="#33c748"/>
-        </button>
-      </group>
     </group>
     <group name="applicationbuttons_logo" condition="is_pc">
       <menu tooltip="DIRECT OPTIONS">

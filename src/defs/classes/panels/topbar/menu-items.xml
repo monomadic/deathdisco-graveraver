@@ -41,7 +41,7 @@
     <item text="Single Rack" action="set '@$hauntingrackmode' 1 &amp; set '@$hauntingskinpadsrack' 0 &amp; set '@$hauntingskinfxrack' 0 &amp; set '@$hauntingskinmixerrack' 0 &amp; set '@$hauntingskinvideorack' 0 &amp;&amp; load_skin" check="var_equal '@$hauntingrackmode' 1"/>
     <item text="Multi Rack" action="set '@$hauntingrackmode' 0" check="var_equal '@$hauntingrackmode' 0"/>
     <separator localize="true"/>
-    <item text="Show On Browser Zoom" localize="true" action="toggle '@$hntnh_racksview_mini' &amp; load_skin" check="var_equal '@$hntnh_racksview_mini' 1"/>
+    <item text="Show In Browser Zoom" localize="true" action="toggle '@$show_zoom_racks' &amp; load_skin" check="var_equal '@$show_zoom_racks' 1"/>
   </submenu>
   <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$hauntingproskinmode' 2 &amp;&amp; not var_equal '@$hauntingproskinmode' 5">
     <item text="Needle" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
@@ -65,8 +65,8 @@
     <item text="Auto Disc Marker" action="setting 'autoDiscMarker'" check="setting 'autoDiscMarker'"/>
   </submenu>
   <submenu text="Show Waveform On">
-    <item text="Main Decks" action="toggle '@$hauntingwavesviewmaindecks' &amp; load_skin" check="var_equal '@$hauntingwavesviewmaindecks' 0" visibility="not var_equal '@$hauntingproskinmode' 3 &amp;&amp; not var_equal '@$hauntingproskinmode' 2 &amp;&amp; var_equal '@$hauntingproskinmode' 1 ? not var_equal '@$hauntingperformancelayout' 1 &amp;&amp; not var_equal '@$hauntingperformancelayout' 2"/>
-    <item text="Browser Zoom" action="toggle '@$hauntingwavesviewminidecks' &amp; load_skin" check="var_equal '@$hauntingwavesviewminidecks' 0"/>
+    <item text="Main Decks" action="toggle '@$hide_main_waveforms' &amp; load_skin" check="var_equal '@$hide_main_waveforms' 0" visibility="not var_equal '@$hauntingproskinmode' 3 &amp;&amp; not var_equal '@$hauntingproskinmode' 2 &amp;&amp; var_equal '@$hauntingproskinmode' 1 ? not var_equal '@$hauntingperformancelayout' 1 &amp;&amp; not var_equal '@$hauntingperformancelayout' 2"/>
+    <item text="Browser Zoom" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" check="var_equal '@$hide_zoom_waveforms' 0"/>
   </submenu>
   <submenu text="BPM Digits" localize="true">
     <item text="000.0" localize="true" action="set '@$hauntingjogbpmdgts' 0 &amp; setting 'browserBPMDigits' 1 &amp; load_skin" check="var_equal '@$hauntingjogbpmdgts' 0"/>

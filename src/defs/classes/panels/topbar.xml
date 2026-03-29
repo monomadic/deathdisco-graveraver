@@ -55,7 +55,7 @@
       <!-- <button tooltip="SAMPLE PADS\nToggle sample pads." class="button_main" x="+125" action="sideview_triggerpad 'sideview' &amp; sideview_triggerpad &amp; show_splitpanel 'sideview'" width="70" height="27" textsize="12" textcoloron="needle" text="SAMPLES" coloroff="#101010" coloron="#222222" bordersize="0" query=""/> -->
     </group>
     <group visibility="browser_zoom" x="680" y="8">
-      <button tooltip="SHOW WAVEFORMS\nShow or hide main waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hauntingwavesviewminidecks' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hauntingwavesviewminidecks' '1'"/>
+      <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
     </group>
     <!-- XL CUSTOM BUTTON -->
     <button class="custom_button" source="100" x="+960-64" y="+8" width="130" height="26" coloroff="black">
@@ -227,7 +227,7 @@
         </button>
       </group>
       <!-- <button class="button_main" x="115+80+300+75+75" y="8" width="32" height="27" tooltip="Quantize all" action="deck 1 quantize_all &amp; deck 2 quantize_all &amp; deck 3 quantize_all &amp; deck 4 quantize_all" textsize="10" text="QT" coloron="br_focus" bordersize="0"/> -->
-      <group visibility="var_equal '@$hntnh_racksview_mini' 1 ? constant 0 : constant 0.75">
+      <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75">
         <visual class="gfx_shape" x="+490" width="150" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
       </group>
       <!-- <button class="button_main" x="115+80+300+90+643" y="8" width="75" height="27" action="sandbox" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms"/> -->
@@ -288,10 +288,10 @@
           <text overcolor="white" size="12" oncolor="white" text="EFFECTS"/>
         </button>
       </group>
-      <!-- <group visibility="var_equal '@$hntnh_racksview_mini' 1 ? constant 0 : constant 0.75"> -->
+      <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75"> -->
       <!-- <visual class="gfx_shape" x="+490" width="220" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
       <!-- </group> -->
-      <!-- <group visibility="var_equal '@$hntnh_racksview_mini' 1 ? constant 0.75"> -->
+      <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0.75"> -->
       <!-- <visual class="gfx_shape" x="+490" width="58" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
       <!-- </group> -->
       <!-- SANDBOX -->

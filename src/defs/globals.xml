@@ -4,9 +4,9 @@
   <!-- Deck state:
     @$4decks controls whether the skin exposes 2 or 4 decks.
     @$hauntinglayout is the deck-density switch inside a mode: 0 = compact / swap, 1 = full 4-deck.
-    @$hauntingwavesviewmaindecks toggles main-deck waveforms on the normal layout.
-    @$hauntingwavesviewminidecks toggles waveforms in browser-zoom / mini-deck mode.
-    @$hntnh_racksview_mini controls whether rack surfaces stay visible in browser-zoom / mini-deck mode.
+    @$hide_main_waveforms controls main-deck waveform visibility on the normal layout: 0 = show, 1 = hide.
+    @$hide_zoom_waveforms controls waveform visibility in browser-zoom / mini-deck mode: 0 = show, 1 = hide.
+    @$show_zoom_racks controls rack visibility in browser-zoom / mini-deck mode: 0 = hide, 1 = show.
     @$hauntingutilitybar controls whether the bottom utility bar reserves screen space.
   -->
   <font name="Helvetica Neue"/>

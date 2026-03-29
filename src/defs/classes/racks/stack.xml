@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
     <!-- Stack-mode rack composition -->
-    <define class="htng_racks_stack" placeholders="*panelname">
+    <define class="racks_stack" placeholders="*panelname">
       <deck deck="mic">
         <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$hauntingskinmixerrack' 1">
           <pos x="+0" y="+164+2+164+2"/>
@@ -82,5 +82,9 @@
           <pos x="+1920-561-2-2" y="+164+2+164+2"/>
         </panel>
       </deck>
+    </define>
+    <!-- Compatibility alias while layout references are being cleaned up -->
+    <define class="htng_racks_stack" placeholders="*panelname">
+      <panel class="racks_stack" panelname="[PANELNAME]"/>
     </define>
 </defs>

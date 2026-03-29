@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-    <!-- Performance-mode rack compositions, including extended and mini variants -->
-    <define class="HTNG_RACKS_EX" placeholders="*panelname">
+    <!-- Shared rack surfaces used across Pro, Performance, and browser-zoom mini views -->
+    <define class="racks_extended" placeholders="*panelname">
       <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
       <xi:include href="positions/performance-ex.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+264+2" condition="var_equal '@$hauntinglayout' 1"/>
@@ -87,7 +87,7 @@
         </panel>
       </deck>
     </define>
-    <define class="htng_racks_ex_mini" placeholders="*panelname">
+    <define class="racks_mini" placeholders="*panelname">
       <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
       <xi:include href="positions/performance-ex-mini.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+98+2" condition="var_equal '@$hauntinglayout' 1"/>
@@ -173,7 +173,7 @@
         </panel>
       </deck>
     </define>
-    <define class="htng_racks_ex_single" placeholders="*panelname">
+    <define class="racks_single" placeholders="*panelname">
       <deck deck="mic">
         <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$hauntingskinmixerrack' 1">
           <pos x="+0" y="+264+2"/>
@@ -255,7 +255,7 @@
         </panel>
       </deck>
     </define>
-    <define class="htng_racks_vertical" placeholders="*panelname">
+    <define class="racks_vertical" placeholders="*panelname">
       <deck deck="mic">
         <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$hauntingskinmixerrack' 1">
           <pos x="+0" y="+333+2"/>
@@ -336,5 +336,18 @@
           <pos x="+1920-4-561" y="+333+2"/>
         </panel>
       </deck>
+    </define>
+    <!-- Compatibility aliases while older layout references are being removed -->
+    <define class="htng_racks_ex" placeholders="*panelname">
+      <panel class="racks_extended" panelname="[PANELNAME]"/>
+    </define>
+    <define class="htng_racks_ex_mini" placeholders="*panelname">
+      <panel class="racks_mini" panelname="[PANELNAME]"/>
+    </define>
+    <define class="htng_racks_ex_single" placeholders="*panelname">
+      <panel class="racks_single" panelname="[PANELNAME]"/>
+    </define>
+    <define class="htng_racks_vertical" placeholders="*panelname">
+      <panel class="racks_vertical" panelname="[PANELNAME]"/>
     </define>
 </defs>

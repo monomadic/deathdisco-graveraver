@@ -4,8 +4,8 @@
        This is just a mode-level wrapper around the existing rack compositions:
        extended racks when the main wave area is shown, single-height racks when it is hidden. -->
   <define class="pro_racks">
-    <panel class="htng_racks_ex" condition="var_equal '@$hauntingwavesviewmaindecks' 0"/>
-    <panel class="htng_racks_ex_single" condition="var_equal '@$hauntingwavesviewmaindecks' 1"/>
+    <panel class="racks_extended" condition="var_equal '@$hauntingwavesviewmaindecks' 0"/>
+    <panel class="racks_single" condition="var_equal '@$hauntingwavesviewmaindecks' 1"/>
   </define>
   <!-- Temporary compatibility alias while old layout references are being cleaned up -->
   <define class="htng_racks">

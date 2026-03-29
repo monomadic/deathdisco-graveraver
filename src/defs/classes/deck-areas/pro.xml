@@ -97,15 +97,15 @@
       </visual>
     </deck>
   </define>
-  <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname">
+  <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=450">
     <deck deck="[DECK]">
       <!-- bg: spine -->
-      <visual x="+768" y="+0" width="34" height="425">
+      <visual x="+768" y="+0" width="34" height="[HEIGHT]-10-10">
         <off shape="square" color="black"/>
       </visual>
       <!-- RIGHT: ACAPELLA SPINE LABEL -->
       <group x="+768" visibility="loaded ? stem_pad 'acapella'">
-        <visual x="+0" y="+0" width="34" height="425" visibility="0.1">
+        <visual x="+0" y="+0" width="34" height="[HEIGHT]-10" visibility="0.1">
           <off shape="square" color="color_acapella"/>
         </visual>
         <visual x="+5" y="+150" width="24" height="125">
@@ -119,7 +119,7 @@
       </group>
       <!-- RIGHT: INSTRUMENTAL SPINE LABEL -->
       <group x="+768" visibility="loaded ? stem_pad 'instrumental'">
-        <visual x="+0" y="+0" width="34" height="425" visibility="0.2">
+        <visual x="+0" y="+0" width="34" height="[HEIGHT]" visibility="0.2">
           <off shape="square" color="color_instrumental"/>
         </visual>
         <visual x="+5" y="+150" width="24" height="125">
@@ -132,13 +132,13 @@
         </textzone>
       </group>
       <!-- bg: panel -->
-      <visual width="765" height="390">
+      <visual width="765" height="[HEIGHT]">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
       <!-- PRO: RIGHT: DECK BUTTON -->
       <group x="+768" y="+3">
         <group visibility="masterdeck">
-          <line visibility="select" x="+0" y="+0" width="1" height="433" color="color_masterdeck"/>
+          <line visibility="select" x="+0" y="+0" width="1" height="[HEIGHT]" color="color_masterdeck"/>
           <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
             <pos x="+0" y="+0"/>
           </button>
@@ -161,17 +161,17 @@
       <panel class="jogwheel" x="+65" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
       <panel class="pitch" x="+15" y="+30"/>
       <group>
-        <visual width="765" height="438" y="+0">
+        <visual width="765" height="[HEIGHT]+15" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
-        <line color="#333333" x="+0" y="+400-2" width="765" height="1"/>
+        <!-- <line color="#333333" x="+0" y="+[HEIGHT]+15" width="765" height="1"/> -->
       </group>
       <dropzone visibility="var_equal '@$hauntinglayout' 0">
-        <size width="800" height="216"/>
+        <size width="800" height="[HEIGHT]"/>
         <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </dropzone>
       <dropzone visibility="var_equal '@$hauntinglayout' 1">
-        <size width="800" height="216"/>
+        <size width="800" height="[HEIGHT]"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>
       <panel class="video_preview" x="+2+60+11+1" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>

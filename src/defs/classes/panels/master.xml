@@ -126,10 +126,11 @@
   <define class="micfx_panel">
     <deck deck="mic">
       <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="MIC FX"/>
-      <button class="button_main" y="+24" width="118" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
-      <button class="button_main" x="+118" y="+24" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
-      <slider class="hor_slider" x="+0" y="+64" width="118+28" height="10" action="effect_slider 'mic' 1" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
-      <slider class="hor_slider" x="+0" y="+64" width="118+28" height="10" action="effect_slider 'mic' 1" visibility="effect_active 'mic'"/>
+      <button class="button_main" y="+24" width="88" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
+      <button class="button_main" x="+88" y="+24" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
+      <button class="button_main" x="+88+28" y="+24" width="28" height="28" action="effect_show_gui 'mic'" coloron="br_focus" bordersize="0" text="+"/>
+      <slider class="hor_slider" x="+0" y="+64" width="88+28+28" height="10" action="effect_slider 'mic' 1" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
+      <slider class="hor_slider" x="+0" y="+64" width="88+28+28" height="10" action="effect_slider 'mic' 1" visibility="effect_active 'mic'"/>
     </deck>
   </define>
 </defs>

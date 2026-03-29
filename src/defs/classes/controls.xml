@@ -336,17 +336,16 @@
       <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$hauntinglayout' 1"/>
       <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$hauntinglayout' 1"/>
       <group name="2decks_view" visibility="var_not_equal '@$hauntinglayout' 1">
-        <!-- <panel class="broadcast_panel" x="+6" y="+6"/> -->
-        <!-- <panel class="rec_panel" x="+6" y="+6+170"/> -->
-        <!-- <visual class="gfx_shape" y="+6+126+138" width="77+77+2" height="2" coloroff="skin_background"/> -->
+        <!-- Shared center utilities for the master mixer -->
         <panel class="masterfx_panel" x="+6" y="+6"/>
+        <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>
+        <panel class="micfx_panel" x="+6" y="+164"/>
       </group>
       <group name="4decks_view" visibility="var_equal '@$hauntinglayout' 1">
-        <!-- <panel class="broadcast_panel" x="+6" y="+6"/> -->
-        <!-- <panel class="rec_panel" x="+6" y="+6+170"/> -->
-        <!-- <visual class="gfx_shape" y="+6+126+138" width="77+77+2" height="2" coloroff="skin_background"/> -->
-        <!-- <panel class="micfx_panel" x="+6" y="+6+281+108+1"/> -->
+        <!-- Shared center utilities for the master mixer -->
         <panel class="masterfx_panel" x="+6" y="+6"/>
+        <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>
+        <panel class="micfx_panel" x="+6" y="+164"/>
       </group>
     </define>
 </defs>

@@ -1306,7 +1306,7 @@
       <panel class="scratch_controls" x="960-20" y="+0"/>
     </panel>
     <panel name="mastermixer" group="mixer" visible="no">
-      <!-- <panel class="mic/headphones_controls"/> -->
+      <panel class="mic/headphones_controls"/>
       <panel class="mastercentral_controls" x="+77+1"/>
       <panel class="master_controls" x="+77+1+77+2+77+1"/>
     </panel>

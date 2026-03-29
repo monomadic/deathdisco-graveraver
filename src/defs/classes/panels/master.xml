@@ -123,14 +123,32 @@
     </deck>
   </define>
 
-  <define class="micfx_panel">
+  <define class="mic_panel">
     <deck deck="mic">
-      <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="MIC FX"/>
-      <button class="button_main" y="+24" width="88" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
-      <button class="button_main" x="+88" y="+24" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
-      <button class="button_main" x="+88+28" y="+24" width="28" height="28" action="effect_show_gui 'mic'" coloron="br_focus" bordersize="0" text="+"/>
-      <slider class="hor_slider" x="+0" y="+64" width="88+28+28" height="10" action="effect_slider 'mic' 1" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
-      <slider class="hor_slider" x="+0" y="+64" width="88+28+28" height="10" action="effect_slider 'mic' 1" visibility="effect_active 'mic'"/>
+      <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="MIC"/>
+
+      <button class="button_main" x="+0" y="+24" width="46" height="24" action="mic" query="not mic" textsize="10" text="MUTE" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
+      <button class="button_main" x="+49" y="+24" width="44" height="24" action="sampler_rec 'mic'" textsize="10" text="REC" coloron="br_focus" bordersize="0"/>
+      <button class="button_main" x="+96" y="+24" width="48" height="24" action="mic_talkover while_pressed" rightclick="mic_talkover" tooltip="Mic Talk-Over (while pressed)\nRight-click: Mic Talk-Over (ON-OFF)" textsize="10" text="TALK" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
+
+      <textzone class="text" x="+0" y="+56" width="40" height="12" fontsize="9" color="textdarker" align="left" weight="" text="LEVEL"/>
+      <slider class="hor_slider" x="+0" y="+70" width="144" height="10" action="mic_volume" rightclick="mic_volume 62%" coloron="br_focus"/>
+
+      <button class="button_main" y="+92" width="88" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
+      <button class="button_main" x="+88" y="+92" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
+      <button class="button_main" x="+88+28" y="+92" width="28" height="28" action="effect_show_gui 'mic'" coloron="br_focus" bordersize="0" text="+"/>
+
+      <textzone class="text" x="+0" y="+128" width="22" height="12" fontsize="9" color="textdarker" align="left" weight="" text="FX1"/>
+      <slider class="hor_slider" x="+24" y="+129" width="120" height="10" action="effect_slider 'mic' 1" disabled="not effect_has_slider 'mic' 1" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
+      <slider class="hor_slider" x="+24" y="+129" width="120" height="10" action="effect_slider 'mic' 1" disabled="not effect_has_slider 'mic' 1" visibility="effect_active 'mic'"/>
+
+      <textzone class="text" x="+0" y="+146" width="22" height="12" fontsize="9" color="textdarker" align="left" weight="" text="FX2"/>
+      <slider class="hor_slider" x="+24" y="+147" width="120" height="10" action="effect_slider 'mic' 2" disabled="not effect_has_slider 'mic' 2" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
+      <slider class="hor_slider" x="+24" y="+147" width="120" height="10" action="effect_slider 'mic' 2" disabled="not effect_has_slider 'mic' 2" visibility="effect_active 'mic'"/>
     </deck>
+  </define>
+
+  <define class="micfx_panel">
+    <panel class="mic_panel"/>
   </define>
 </defs>

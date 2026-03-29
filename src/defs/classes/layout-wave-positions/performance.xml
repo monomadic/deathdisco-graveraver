@@ -4,11 +4,11 @@
     <panel class="area_waves"/>
     <panel class="performance_2decks" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="performance_4decks" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
       <browser class="browser_performance" height="1080-204-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
       <browser class="browser_performance_4decks" height="1080-204-2-2-2-1-264-2" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
-    <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+    <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="browser_performance" height="1080-204-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
       <browser class="browser_performance_4decks" height="1080-204-2-2-2-1-264-2-38" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
@@ -17,22 +17,22 @@
     <panel class="area_waves" y="+43+2"/>
     <panel class="performance_2decks_mini" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="performance_4decks_mini" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
-      <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="without_zoom_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
+      <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
         <browser class="browser_mini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_mini_4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
-      <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+      <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
         <browser class="browser_mini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_mini_4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
     </group>
-    <group name="+_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
-      <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="with_zoom_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
+      <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
         <browser class="browser_performance_mini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_performance_mini_4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
-      <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+      <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
         <browser class="browser_performance_mini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_performance_mini_4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
@@ -43,11 +43,11 @@
     <panel class="performance_4decks" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+2+324+3" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="area_waves" y="+2+324+3+264+2" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
       <browser class="browser_performance" height="1080-204-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
       <browser class="browser_performance_4decks" height="1080-204-2-2-2-1-264-2" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
-    <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+    <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
       <browser class="browser_performance" height="1080-140" condition="var_equal '@$hauntinglayout' 0"/>
       <browser class="browser_performance_4decks" height="1080-440" condition="var_equal '@$hauntinglayout' 1"/>
     </group>
@@ -57,22 +57,22 @@
     <panel class="performance_4decks_mini" y="+43+2" condition="var_equal '@$hauntinglayout' 1"/>
     <panel class="area_waves" y="+43+2+99+2" condition="var_equal '@$hauntinglayout' 0"/>
     <panel class="area_waves" y="+43+2+99+2+98+2" condition="var_equal '@$hauntinglayout' 1"/>
-    <group name="no_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
-      <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="without_zoom_racks" condition="var_equal '@$hntnh_racksview_mini' 0">
+      <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
         <browser class="browser_mini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_mini_4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
-      <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+      <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
         <browser class="browser_mini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_mini_4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
     </group>
-    <group name="+_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
-      <group name="no_utility_bar" condition="var_equal '@$hauntingutilitybar' 0">
+    <group name="with_zoom_racks" condition="var_equal '@$hntnh_racksview_mini' 1">
+      <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
         <browser class="browser_performance_mini" height="1080-98-2-2-2-1" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_performance_mini_4decks" height="1080-98-2-2-2-1-98-2" condition="var_equal '@$hauntinglayout' 1"/>
       </group>
-      <group name="utility_bar" condition="var_equal '@$hauntingutilitybar' 1">
+      <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
         <browser class="browser_performance_mini" height="1080-98-2-2-2-1-38" condition="var_equal '@$hauntinglayout' 0"/>
         <browser class="browser_performance_mini_4decks" height="1080-98-2-2-2-1-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
       </group>

@@ -135,7 +135,15 @@
         <!-- <visual class="gfx_shape" x="+494-32+122+105+2+55+2" y="-2+24-2" width="65" height="2" coloroff="br_focus"/> -->
         <group y="+2">
           <visual class="gfx_shape" x="+0" y="+0" width="83" height="42" coloroff="#660099" radius="3"/>
-          <button class="button_main" x="+1" y="+1" width="81" height="40" action="show_splitpanel 'sideview' toggle &amp; sideview 'remixes'" textsize="10" textcolor="br_textoff" text="SIDEPANEL" brcoloroff="#222222" coloroff="#111111" coloron="#660099" colorover="#222222" bordersize="1" radius="3"/>
+          <!-- <button class="button_main" x="+1" y="+1" width="81" height="40" action="show_splitpanel 'sideview' toggle &amp; sideview 'remixes'" textsize="10" textcolor="br_textoff" text="SIDEPANEL" brcoloroff="#222222" coloroff="#111111" coloron="#660099" colorover="#222222" bordersize="1" radius="3"/> -->
+          <!-- karaoke -->
+          <button x="+90" width="40" height="50" query="sideview karaoke ? show_splitpanel 'sideview'" action="switch_sidelist_playlist" text="SIDELIST">
+            <off color="transparent" border="#000000" border_size="0" shape="square"/>
+            <on color="#444444" border="#111111" border_size="0" shape="square"/>
+            <over color="transparent" border="#000000" border_size="0" shape="square"/>
+            <selected color="#333333" border="#555555" border_size="0" shape="square"/>
+            <text size="10" color="br_textoff" text="SIDEPANEL"/>
+          </button>
         </group>
       </group>
     </group>

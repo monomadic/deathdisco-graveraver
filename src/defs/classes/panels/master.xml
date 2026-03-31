@@ -39,14 +39,12 @@
       <item text="Show Advanced Settings" action="settings 'broadcast'"/>
     </menu>
   </define>
-
   <define class="rec_panel">
     <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="RECORD"/>
     <button class="button_main" tooltip="" x="+0" y="+24" width="72+72" height="24" query="record" textsize="11" textcolor="textdarker" textcoloron="needle" textaction="get_text '`get_record_time` (`get_record_size`)'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
     <button class="button_main" x="+0" y="+54" width="105" height="28" textsize="11" action="record" text="REC" coloroff="button_background2" coloron="br_focus" bordersize="0"/>
     <button class="button_main" x="+60+4+30+30-10" y="+54" width="30" height="28" action="record_config" iconsize="22" sysicon="settings" coloron="br_focus" bordersize="0"/>
   </define>
-
   <define class="MASTERFX_PANEL">
     <deck deck="master">
       <group name="sampler_panel" x="+0" y="+0">
@@ -76,32 +74,104 @@
           <visual class="gfx_shape" width="144" height="43-8-8" coloroff="xf_background"/>
           <textzone class="text" x="+0" y="+0" width="56" height="27" fontsize="10" color="textdarker" align="right" weight="" text="MASTER"/>
           <visual type="vumeter" source="get_level_left 'sampler'" x="+58+8" y="+6" width="70" height="6" smooth="no">
-            <led x="+0" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*2" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*3" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*4" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*5" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*6" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*7" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*8" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*9" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*10" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*11" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="orange_vu" radius="0" border="contrast" border_size="0"/></led>
+            <led x="+0" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*2" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*3" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*4" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*5" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*6" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*7" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*8" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*9" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*10" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*11" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
           </visual>
           <visual type="vumeter" source="get_level_right 'sampler'" x="+58+8" y="+6+7+2" width="70" height="6" smooth="no">
-            <led x="+0" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*2" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*3" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*4" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*5" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*6" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*7" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*8" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*9" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*10" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="green_vu" radius="0" border="contrast" border_size="0"/></led>
-            <led x="+6*11" y="+0" width="4" height="6"><off color="vu_background" radius="0" border="contrast" border_size="0"/><on color="orange_vu" radius="0" border="contrast" border_size="0"/></led>
+            <led x="+0" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*2" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*3" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*4" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*5" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*6" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*7" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*8" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*9" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*10" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
+            <led x="+6*11" y="+0" width="4" height="6">
+              <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+              <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
+            </led>
           </visual>
           <slider action="sampler_volume_master" dblclick="sampler_volume_master 80%" orientation="horizontal" direction="up" frommiddle="false">
             <pos x="+58+8" y="+4"/>
@@ -122,32 +192,35 @@
       <panel class="knob" x="-65" y="+110" textbelow="+40" knobsize="39" knobradius="9" faderradius="9" action="effect_slider 2" textaction="effect_select &amp; param_uppercase" rgclick="effect_select 2" frommiddle="false" fillcolor="#0055FF" fillcoloroff="#000000" text="FX2"/>
     </deck>
   </define>
-
   <define class="mic_panel">
     <deck deck="mic">
       <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="MIC"/>
-
       <button class="button_main" x="+0" y="+24" width="46" height="24" action="mic" query="not mic" textsize="10" text="MUTE" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
       <button class="button_main" x="+49" y="+24" width="44" height="24" action="sampler_rec 'mic'" textsize="10" text="REC" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+96" y="+24" width="48" height="24" action="mic_talkover while_pressed" rightclick="mic_talkover" tooltip="Mic Talk-Over (while pressed)\nRight-click: Mic Talk-Over (ON-OFF)" textsize="10" text="TALK" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
-
       <textzone class="text" x="+0" y="+56" width="40" height="12" fontsize="9" color="textdarker" align="left" weight="" text="LEVEL"/>
       <slider class="hor_slider" x="+0" y="+70" width="144" height="10" action="mic_volume" rightclick="mic_volume 62%" coloron="br_focus"/>
-
       <button class="button_main" y="+92" width="88" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
       <button class="button_main" x="+88" y="+92" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+88+28" y="+92" width="28" height="28" action="effect_show_gui 'mic'" coloron="br_focus" bordersize="0" text="+"/>
-
       <textzone class="text" x="+0" y="+128" width="22" height="12" fontsize="9" color="textdarker" align="left" weight="" text="FX1"/>
       <slider class="hor_slider" x="+24" y="+129" width="120" height="10" action="effect_slider 'mic' 1" disabled="not effect_has_slider 'mic' 1" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
       <slider class="hor_slider" x="+24" y="+129" width="120" height="10" action="effect_slider 'mic' 1" disabled="not effect_has_slider 'mic' 1" visibility="effect_active 'mic'"/>
-
       <textzone class="text" x="+0" y="+146" width="22" height="12" fontsize="9" color="textdarker" align="left" weight="" text="FX2"/>
       <slider class="hor_slider" x="+24" y="+147" width="120" height="10" action="effect_slider 'mic' 2" disabled="not effect_has_slider 'mic' 2" coloron="knobfilloff" novisibility="effect_active 'mic'"/>
       <slider class="hor_slider" x="+24" y="+147" width="120" height="10" action="effect_slider 'mic' 2" disabled="not effect_has_slider 'mic' 2" visibility="effect_active 'mic'"/>
+      <button action="effect_select 'mic' 'reverb' &amp; effect_active 'mic'" query="effect_active 'mic' &amp; param_equal `get_effect_name 'mic'` 'reverb'">
+        <pos x="+0" y="+150"/>
+        <size width="80" height="24"/>
+        <off color="#101010" border="#2A2A2A" radius="6" border_size="1"/>
+        <over color="#1A1A1A" border="#3A3A3A" radius="6" border_size="1"/>
+        <down color="#202020" border="#FFFFFF" radius="6" border_size="1"/>
+        <selected color="#202020" border="#FFFFFF" radius="6" border_size="1"/>
+        <text text="MIC VERB" align="center" fontsize="11" color="#C8C8C8"/>
+        <textselected text="MIC VERB" align="center" fontsize="11" color="white"/>
+      </button>
     </deck>
   </define>
-
   <define class="micfx_panel">
     <panel class="mic_panel"/>
   </define>

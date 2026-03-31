@@ -19,24 +19,6 @@
       </overlay>
     </scratchwave>
     <panel class="cover_art_hntg" size="[HEIGHT]" x="+[WIDTH]-[HEIGHT]" y="+0" visibility=""/>
-    <!-- <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal"  visibility="var_equal '@$hauntingwavesbkg' 1"> -->
-    <!-- <pos x="+0" y="+24+2"/> -->
-    <!-- <size width="+[WIDTH]" height="+[HEIGHT]-26-26"/> -->
-    <!-- <mouserect x="+77" y="+0" width="+[WIDTH]-77" height="+[HEIGHT]-26-26"/> -->
-    <!-- <grid size="1" mainsize="4" height="12" pos="-18" background="yes" backgroundcolor="wavesbackgroundcolor" backgroundshaded="no" maincolor="deckcolor" color="darkgray" mirrored="true" shapepos="-14" shapemirrored="down"/> -->
-    <!-- <gridlines width="1" color="gridlines" transparency="0.6"/> -->
-    <!-- <cue y="-18" height="[HEIGHT]"> -->
-    <!-- <mask x="0" y="0" width="11" height="12"/> -->
-    <!-- <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/> -->
-    <!-- </cue> -->
-    <!-- <overlay> -->
-    <!-- <pos x="+[WIDTH]/2" y="-24"/> -->
-    <!-- <size width="2" height="+[HEIGHT]-4" /> -->
-    <!-- <background color="needle" shape="square" /> -->
-    <!-- </overlay> -->
-    <!-- </scratchwave> -->
-    <!-- <panel class="beat_counter" x="+[WIDTH]/2-196" y="+22" visibility="var_equal '@$hauntingbarcounter' 1 ? setting 'waveformCenter' 'centered'"/> -->
-    <!-- <panel class="beat_counter" x="+[WIDTH]/4-170" y="+22" visibility="var_equal '@$hauntingbarcounter' 1 ? setting 'waveformCenter' 'left'"/> -->
     <!-- needle (left aligned) -->
     <panel class="beat_counter" x="+[WIDTH]/4-170" y="+22"/>
     <dropzone>

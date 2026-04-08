@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Top bar shell, mode utilities, status widgets, and app menus -->
-  <define class="TOPBAR">
-    <line color="dark_4" x="0" y="0" width="1920" height="1"/>
-    <!-- TOP BAR: SETTINGS MENU -->
+  <define class="TOPBAR" placeholders="height=40,background=dark_0">
+    <!-- Accent top line -->
+    <line x="0" y="0" width="1920" height="1" highlight="dark_8" shadow="#00000000"/>
+    <!-- SETTINGS MENU BUTTON -->
     <group name="applicationbuttons_logo" condition="is_mac">
       <logo>
         <pos x="+1920" y="-40"/>
-        <size width="115" height="27"/>
+        <size width="115" height="30"/>
       </logo>
       <menu tooltip="DIRECT OPTIONS">
         <pos x="+10" y="8"/>
-        <size width="40" height="27"/>
-        <off color="#000000" shape="square"/>
-        <over color="#000000" shape="square"/>
+        <size width="40" height="30"/>
+        <off color="transparent" shape="square"/>
+        <over color="transparent" shape="square"/>
         <selected color="button_background" shape="square"/>
-        <text dx="+2" dy="+6" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
+        <text dx="+2" dy="+8" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
         <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
         <separator/>
         <xi:include href="topbar/menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
@@ -44,13 +45,14 @@
         </button>
       </group>
     </group>
-    <line color="dark_4" x="56" y="0" width="1" height="42"/>
+    <!-- vr -->
+    <line color="dark_5" x="58" y="1" width="1" height="39"/>
     <!-- <visual class="gfx_shape" width="1920" height="50" coloroff="red"/> -->
     <!-- DECK MODE BUTTONS -->
-    <group x="250" y="0">
+    <group x="250" y="+1">
       <!-- <button tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$h_utility_barmode'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$h_utility_barmode' 1 ? get_text '#' : get_text 'U'" coloroff="panel_background" coloron="#222222" query="true" bordersize="0"/> -->
       <!-- <button tooltip="BORDER MODE\nShow or hide the active deck border." class="button_main" x="+30" action="toggle '@$dd_bordermode'" width="26" height="27" textsize="12" textcoloron="needle" text="B" coloroff="panel_background" coloron="#222222" bordersize="0"/> -->
-      <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="70" height="42" textsize="12" textcoloron="needle" text="LIBRARY" coloroff="#101010" coloron="#222222" bordersize="0"/>
+      <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="80" height="42" textsize="12" textcoloron="needle" text="BROWSER" coloroff="transparent" coloron="#222222" bordersize="0"/>
       <!-- <button tooltip="" class="button_main" x="+122" action="setting 'showLyrics'" width="60" height="27" textsize="12" textcoloron="needle" text="LYRICS" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
       <!-- <button tooltip="SAMPLE PADS\nToggle sample pads." class="button_main" x="+125" action="sideview_triggerpad 'sideview' &amp; sideview_triggerpad &amp; show_splitpanel 'sideview'" width="70" height="27" textsize="12" textcoloron="needle" text="SAMPLES" coloroff="#101010" coloron="#222222" bordersize="0" query=""/> -->
     </group>

@@ -5,51 +5,53 @@
       height: 43px
     -->
     <!-- background -->
-    <visual class="gfx_shape" width="1920-2-2" height="43" coloroff="black"/>
+    <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_3"/>
     <!-- DECK LAYOUT BUTTONS -->
     <group x="70" y="0">
-      <button tooltip="Pro" class="button_main" action="set '@$hauntingproskinmode' 0 &amp; load_skin" width="60" height="43" bordersize="0" query="var_equal '@$hauntingproskinmode' 0">
-        <off color="black"/>
+      <button tooltip="Pro" class="button_main" action="set '@$hauntingproskinmode' 0 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 0">
+        <off color="transparent"/>
         <on color="#222222"/>
-        <over color="#000000"/>
+        <over color="transparent"/>
         <down color="#222222"/>
         <selected color="#333333"/>
         <text overcolor="white" size="12" oncolor="white" text="PRO"/>
       </button>
-      <button x="+60" tooltip="Performance" class="button_main" action="set '@$hauntingproskinmode' 1 &amp; load_skin" width="60" height="43" bordersize="0" query="var_equal '@$hauntingproskinmode' 1">
-        <off color="black"/>
+      <button x="+60" tooltip="Performance" class="button_main" action="set '@$hauntingproskinmode' 1 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 1">
+        <off color="transparent"/>
         <on color="#222222"/>
-        <over color="#000000"/>
+        <over color="transparent"/>
         <down color="#222222"/>
         <selected color="#333333"/>
         <text overcolor="white" size="12" oncolor="white" text="PERF"/>
       </button>
-      <button x="+120" tooltip="Stack" class="button_main" action="set '@$hauntingproskinmode' 2 &amp; load_skin" width="60" height="43" bordersize="0" query="var_equal '@$hauntingproskinmode' 2">
-        <off color="black"/>
+      <button x="+120" tooltip="Stack" class="button_main" action="set '@$hauntingproskinmode' 2 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 2">
+        <off color="transparent"/>
         <on color="#222222"/>
-        <over color="#000000"/>
+        <over color="transparent"/>
         <down color="#222222"/>
         <selected color="#333333"/>
         <text overcolor="white" size="12" oncolor="white" text="STACK"/>
       </button>
     </group>
     <!-- NUMBER OF DECKS -->
-    <group x="340" y="+1">
+    <group x="340" y="+2">
       <!-- border -->
-      <visual x="+0" y="+6" width="65" height="29">
+      <visual x="+0" y="+7" width="65" height="30">
         <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
       </visual>
       <!-- blackout -->
-      <visual x="+16" y="+0" width="32" height="16" visibility="1.0">
+      <visual x="+16" y="+0" width="32" height="13" visibility="1.0">
         <off shape="square" color="black"/>
       </visual>
       <!-- 2 DECK BUTTON -->
-      <button x="+6" y="+8" width="26" height="26" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$hauntinglayout' 0 ? var_equal '@$4decks' 1">
-        <text overcolor="#999999" weight="" size="14" oncolor="white" text="2"/>
+      <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$hauntinglayout' 0 ? var_equal '@$4decks' 1">
+        <off color="transparent"/>
+        <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="2"/>
       </button>
       <!-- 4 DECK BUTTON -->
-      <button x="+33" y="+8" width="26" height="26" tooltip="4 Decks" class="button_main" action="set '@$hauntinglayout' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
-        <text overcolor="#999999" weight="" size="14" oncolor="white" text="4"/>
+      <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$hauntinglayout' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
+        <off color="transparent"/>
+        <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="4"/>
       </button>
       <!-- label -->
       <textzone>
@@ -60,13 +62,14 @@
     </group>
     <!-- DECK MODE BUTTONS -->
     <group x="250" y="0">
+      <!-- bottom bar toggle -->
       <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$hauntingutilitybar'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$hauntingutilitybar' 1 ? get_text '#' : get_text '#'" query="get_var '@$hauntingutilitybar'">
         <off color="dark_1"/>
         <on color="dark_8"/>
         <selected color="dark_5"/>
       </button>
       <!-- <button tooltip="BORDER MODE\nShow or hide the active deck border." class="button_main" x="+30" action="toggle '@$dd_bordermode'" width="26" height="27" textsize="12" textcoloron="needle" text="B" coloroff="panel_background" coloron="#222222" bordersize="0"/> -->
-      <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="70" height="42" textsize="12" textcoloron="needle" text="LIBRARY" coloroff="#101010" coloron="#222222" bordersize="0"/>
+      <!-- <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="70" height="42" textsize="12" textcoloron="needle" text="LIBRARY" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
       <!-- <button tooltip="" class="button_main" x="+122" action="setting 'showLyrics'" width="60" height="27" textsize="12" textcoloron="needle" text="LYRICS" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
       <!-- <button tooltip="SAMPLE PADS\nToggle sample pads." class="button_main" x="+125" action="sideview_triggerpad 'sideview' &amp; sideview_triggerpad &amp; show_splitpanel 'sideview'" width="70" height="27" textsize="12" textcoloron="needle" text="SAMPLES" coloroff="#101010" coloron="#222222" bordersize="0" query=""/> -->
     </group>
@@ -140,9 +143,9 @@
       <!-- <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/> -->
       <!-- </button> -->
     </group>
-    <!-- Accent bottom border line -->
-    <line x="0" y="43" width="1920" height="1" highlight="border_background1" shadow="#00000000"/>
     <!-- TOP BAR -->
     <panel class="topbar" x="0" y="0"/>
+    <!-- Accent bottom border line -->
+    <line x="0" y="45" width="1920" height="1" highlight="dark_8" shadow="#00000000"/>
   </panel>
 </module>

@@ -574,7 +574,7 @@
       <group x="-12" y="+13">
         <!-- STATUS: COLORFX -->
         <group>
-          <button width="80" height="19" action="effect_active 'colorfx' &amp; pad_page 3 'COLOR FX' &amp; effect_show_gui 'colorfx'" query="effect_active 'colorfx'" border_size="1">
+          <button width="80" height="19" action="effect_active 'colorfx'" query="effect_active 'colorfx'" border_size="1">
             <off color="#000000"/>
             <selected color="color_colorfx"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="COLOR FX"/>
@@ -588,7 +588,7 @@
         </group>
         <!-- STATUS: PADFX -->
         <group y="+20">
-          <button width="80" height="19" action="effects_used 'deck' ? effect_disable_all 'padfx' &amp; pad_page 3 'PAD FX' : effect_select" border_size="1" query="effects_used 'deck'" rightclick="effect_select">
+          <button width="80" height="19" action="effects_used 'deck' ? effect_disable_all 'padfx' : effect_select" border_size="1" query="effects_used 'deck'" rightclick="effect_select">
             <off color="#000000"/>
             <selected color="color_padfx"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="#333333" align="left" text="PAD FX"/>

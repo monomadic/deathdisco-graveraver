@@ -88,11 +88,11 @@
       </group>
     </deck>
   </define>
-  <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck">
+  <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck,height=468">
     <deck deck="[DECK]">
-      <panel class="video_preview" x="+404-2+60+11+4" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
+      <!-- <panel class="video_preview" x="+404-2+60+11+4" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
       <visual source="deck [DECK] select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
-        <size width="770" height="440"/>
+        <size width="770" height="[HEIGHT]"/>
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
       </visual>
     </deck>
@@ -152,12 +152,12 @@
       </group>
       <!-- cover, title etc -->
       <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <panel class="infos2" x="+800-567" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
+      <!-- <panel class="infos2" x="+800-567" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
       <cues dy="0" shade="0">
         <size width="200" height="10"/>
         <clipmask x="27" y="140"/>
       </cues>
-      <panel class="track_info_action_zone" x="+800-570" y="+55" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+      <panel class="track_info_action_zone" x="+800-565" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
       <panel class="jogwheel" x="+65" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
       <panel class="pitch" x="+15" y="+30"/>
       <group>

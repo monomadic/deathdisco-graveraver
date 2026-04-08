@@ -124,7 +124,7 @@
           <text fontsize="12" color="#FF0000" colorselected="deckcolor" colordown="deckcolor" align="center" text="KEY"/>
         </button>
         <!-- KEY BUTTON: masterdeck -->
-        <button class="button_main" action="select &amp; match_key" bordersize="1" query="match_key" visibility="masterdeck">
+        <button class="button_main" action="select &amp; match_key" bordersize="1" visibility="masterdeck">
           <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*3" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -143,7 +143,7 @@
           <selected color="transparent" border="deckcolor" radius="3"/>
           <text fontsize="12" color="#FF0000" colorselected="deckcolor" colordown="deckcolor" align="center" text="BEAT"/>
         </button>
-        <button class="button_main" action="select &amp; sync" bordersize="1" query="not play ? true : not is_sync ? blink 1bt : true" visibility="masterdeck">
+        <button class="button_main" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="true" visibility="masterdeck">
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -162,7 +162,7 @@
           <selected color="transparent" border="deckcolor" radius="3"/>
           <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" text="PHRASE"/>
         </button>
-        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="not play ? true : is_sync ? true : false" visibility="masterdeck">
+        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="true" visibility="masterdeck">
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>

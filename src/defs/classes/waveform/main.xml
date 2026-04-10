@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="waveform" placeholders="*waveformheight">
+  <define class="WAVEFORM" placeholders="*waveformheight">
     <group visibility="var_equal '@$hauntingsplitwaveform' 0">
       <panel name="mirroredwave2deck" visibility="var_equal '@$hauntingmirrorwaves' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
         <rhythmzone mirror="true" upsidedown="false" fade="200">

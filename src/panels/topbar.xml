@@ -63,7 +63,8 @@
     <!-- DECK MODE BUTTONS -->
     <group x="250" y="0">
       <!-- bottom bar toggle -->
-      <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$hauntingutilitybar'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$hauntingutilitybar' 1 ? get_text '#' : get_text '#'" query="get_var '@$hauntingutilitybar'">
+      <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$hauntingutilitybar' &amp; load_skin" textsize="10" textcolor="needle" textaction="var_equal '@$hauntingutilitybar' 1 ? get_text 'ON' : get_text 'OFF'" query="get_var '@$hauntingutilitybar'">
+        <size width="33" height="33"/>
         <off color="dark_1"/>
         <on color="dark_8"/>
         <selected color="dark_5"/>
@@ -124,15 +125,13 @@
       <!-- REFRESH BUTTON -->
       <button tooltip="RELOAD SKIN" action="load_skin">
         <size width="42" height="27"/>
-        <off color="#000000"/>
-        <over color="#222222"/>
+        <off color="transparent"/>
         <icon sysicon="sampler_loop" width="22" height="22" coloroff="#CCCCCC" colorover="#FFFFFF"/>
       </button>
       <!-- SETTINGS BUTTON -->
       <button action="reinit_controller" x="+180">
         <size width="42" height="27"/>
-        <off color="#000000"/>
-        <over color="#222222"/>
+        <off color="transparent"/>
         <icon sysicon="sampler_loop" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
       </button>
       <!-- SETTINGS BUTTON -->

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <define class="browser_pro" showzoom="yes" placeholders="*height">
+  <define class="BROWSER_PRO" showzoom="yes" placeholders="*height">
     <!-- Wave-size ladder extracted so the browser class only owns styling -->
     <xi:include href="positions/pro.xml" xpointer="xpointer(/positions/*)"/>
-    <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
+    <background color="dark_0" bordercolortop="xf_progressbackground" bordercolor="red" bordersize="0"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
       <toolbars background="xf_background" text="needle" iconbackground="xf_progressbackground" backgroundselected="br_coloron" backgroundmouseover="br_slcolor" icon="textoff" border="browser_iconbuttonoff"/>
@@ -12,7 +12,7 @@
       <columns background="br_tb_background" text="br_textoff"/>
       <scrollbars background="tab_menu" button="needle"/>
       <info background="xf_background" stripes="button_background" text="needle" label="br_textoff" artist="textoff2" title="needle"/>
-      <search background="xf_progressbackground" border="browser_iconbuttonoff" selected="br_focus" text="needle" cursor="red"/>
+      <search background="xf_progressbackground" border="browser_iconbuttonoff" selected="br_focus" text="needle" cursor="white"/>
       <prelisten background="xf_background" border="panel_background" selected="textdarker" cursor="red" button="needle" buttonbackground="button_background" buttonselected="green"/>
       <plugins background="br_background" text="textoff2" title="xf_background" titletext="texton2">
         <buttons over_deck1="waveform_active1" over_deck2="waveform_active2" over_deck3="waveform_active3" over_deck4="waveform_active4" selected_deck1="waveform_active1" selected_deck2="waveform_active2" selected_deck3="waveform_active3" selected_deck4="waveform_active4" up="button_background" over="br_focus" selected="br_focus" border="transparent" border_selected="transparent" text="needle"/>
@@ -21,20 +21,20 @@
     </colors>
     <button>
       <up color="browser_iconbuttonoff" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <over color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <down color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <selected color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <active color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
+      <over color="transparent" border="red" border_size="2" width="60" height="60"/>
+      <down color="dark_3" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
+      <selected color="dark_5" border="white" border_size="2" width="60" height="60"/>
+      <active color="dark_3" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
       <menu shape="circle" color="textdarker" border="button_background2" border_size="7" width="32" height="32"/>
       <menuover shape="circle" color="green" border="button_background" border_size="7" width="32" height="32"/>
     </button>
     <fontsearch size="18"/>
-    <font name="Arial" size="20"/>
+    <font size="20"/>
     <fontheader size="16"/>
     <fontgridtitle size="18"/>
-    <fonttoolbar size="14"/>
+    <fonttoolbar size="12"/>
   </define>
-  <define class="browser_pro_4decks" showzoom="yes" placeholders="*height">
+  <define class="BROWSER_PRO_4DECKS" showzoom="yes" placeholders="*height">
     <!-- Shared 4-deck browser wave-size ladder -->
     <xi:include href="positions/pro-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>

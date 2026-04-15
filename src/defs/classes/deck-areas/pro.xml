@@ -29,12 +29,12 @@
         <!-- <visual x="+0" y="+0" width="34" height="[HEIGHT]-4" visibility="0.2"> -->
         <!-- <off shape="square" color="color_masterdeck"/> -->
         <!-- </visual> -->
-        <visual x="+5" y="+150" width="24" height="125">
+        <visual x="+5" y="+150" width="15" height="125">
           <off shape="square" color="black" bordersize="1" border="color_masterdeck" radius="2"/>
         </visual>
         <textzone orientation="vertical" direction="ccw">
           <pos x="+0" y="+0"/>
-          <size width="34" height="[HEIGHT]-10"/>
+          <size width="24" height="125"/>
           <text fontsize="12" color="color_masterdeck" scroll="yes" align="center" text="MASTER" important="true"/>
         </textzone>
         <!-- LEFT: INSTRUMENTAL SPINE LABEL -->
@@ -93,7 +93,7 @@
       <!-- <panel class="video_preview" x="+404-2+60+11+4" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
       <visual source="deck [DECK] select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
         <size width="770" height="[HEIGHT]"/>
-        <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
+        <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
       </visual>
     </deck>
   </define>

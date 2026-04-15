@@ -611,6 +611,38 @@
                 <on color="transparent" border="#222222" border_size="1"/>
                 <icon sysicon="arrowright" color="#555555" colorover="#999999" dx="+2" width="24" height="24"/>
               </button>
+              <!-- bank left -->
+              <button action="sampler_bank -1">
+                <pos x="+0"/>
+                <size width="24" height="24"/>
+                <off color="dark_0" border="dark_6" border_size="1"/>
+                <on color="transparent" border="#222222" border_size="1"/>
+                <icon sysicon="arrowleft" color="#555555" colorover="#999999" dx="-3" width="24" height="24"/>
+              </button>
+              <!-- bank right -->
+              <button action="sampler_bank +1">
+                <pos x="+23"/>
+                <size width="24" height="24"/>
+                <off color="dark_0" border="dark_6" border_size="1"/>
+                <on color="transparent" border="#222222" border_size="1"/>
+                <icon sysicon="arrowright" color="#555555" colorover="#999999" dx="+2" width="24" height="24"/>
+              </button>
+              <!-- bank left -->
+              <button action="sampler_bank -1">
+                <pos x="+0"/>
+                <size width="24" height="24"/>
+                <off color="dark_0" border="dark_6" border_size="1"/>
+                <on color="transparent" border="#222222" border_size="1"/>
+                <icon sysicon="arrowleft" color="#555555" colorover="#999999" dx="-3" width="24" height="24"/>
+              </button>
+              <!-- bank right -->
+              <button action="sampler_bank +1">
+                <pos x="+23"/>
+                <size width="24" height="24"/>
+                <off color="dark_0" border="dark_6" border_size="1"/>
+                <on color="transparent" border="#222222" border_size="1"/>
+                <icon sysicon="arrowright" color="#555555" colorover="#999999" dx="+2" width="24" height="24"/>
+              </button>
               <!-- bank name -->
               <button class="button_main" x="+0+26+20" width="248" height="24" action="sampler_bank" rightclick="sampler_options" coloron="transparent">
                 <off color="dark_0" border="dark_6" border_size="1"/>
@@ -618,25 +650,6 @@
               </button>
             </group>
           </group>
-          <!-- SAMPLER BANK SELECT -->
-          <!-- <group x="+310/2-86" y="+0"> -->
-          <!-- header bg -->
-          <!-- <visual x="+0" width="170" height="25"> -->
-          <!-- <off shape="square" color="#222222"/> -->
-          <!-- </visual> -->
-          <!-- label -->
-          <!-- <button class="button_main" x="+0" width="26" height="24" action="sampler_bank -1" iconsize="20" sysicon="arrowleft" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/> -->
-          <!-- <button class="button_main" x="+0+26" width="120" height="24" action="sampler_bank" rightclick="sampler_options" coloroff="transparent" coloron="knobfillon" bordersize="0"> -->
-          <!-- <text action="get_text '`get_sampler_bank` (`get_sampler_count`)'" fontsize="13" color="white" weight="normal"/> -->
-          <!-- </button> -->
-          <!-- <button class="button_main" x="+0+26+120" width="26" height="24" action="sampler_bank +1" iconsize="20" sysicon="arrowright" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/> -->
-          <!-- <textzone class="text" x="+0" y="+15" width="120+26+26" height="22" fontsize="13" color="textoff" align="center" weight="bold" textaction="get_text '`get_sampler_bank` (`get_sampler_count`)'"/> -->
-          <!-- </group> -->
-          <!-- menu -->
-          <!-- <button action="sampler_options" query="on/off"> -->
-          <!-- <pos x="+255" y="+0" width="24" height="24"/> -->
-          <!-- <icon sysicon="chevrondown" color="tab_menu" colorover="tab_menu_over" colordown="deckcolor" colorselected="deckcolor" width="22" height="22"/> -->
-          <!-- </button> -->
           <!-- open samples in library -->
           <button x="+250" y="+0" width="24" height="24" visibility="true" query="browser_gotofolder 'Sampler'" action="browser_gotofolder 'Sampler'">
             <off color="transparent" border="#000000" border_size="0" shape="square"/>
@@ -681,62 +694,48 @@
               </visual>
               <!-- TEXT: LINE 1 -->
               <group x="+16" y="+0">
-                <!-- name -->
-                <textzone visibility="not param_equal `get_sampler_slot` [INDEX] ? true : sampler_play [INDEX]">
+                <textzone>
                   <size width="250" height="22"/>
-                  <text fontsize="12" color="#AAAAAA" align="left" action="sampler_pad [INDEX]"/>
+                  <!-- <text fontsize="12" color="#AAAAAA" align="left" action="sampler_pad [INDEX]"/> -->
+                  <text fontsize="12" color="#AAAAAA" align="left" action="get_text ' `sampler_pad_page &amp; param_add -1 &amp; param_multiply 8 &amp; param_add [INDEX] &amp; get_sample_name`'"/>
                 </textzone>
-                <textzone visibility="param_equal `get_sampler_slot` [INDEX]">
+                <textzone>
                   <size width="230" height="22"/>
-                  <text fontsize="12" color="#FFFFFF" align="left" action="sampler_pad [INDEX]"/>
+                  <!-- <text fontsize="12" color="#FFFFFF" align="left" action="sampler_pad [INDEX]"/> -->
+                  <text fontsize="12" color="#AAAAAA" align="left" action="get_text ' `sampler_pad_page &amp; param_add -1 &amp; param_multiply 8 &amp; param_add [INDEX] &amp; get_sample_name`'"/>
                 </textzone>
               </group>
               <!-- TEXT: LINE 2 -->
               <group x="+16" y="+13">
-                <!-- bpm -->
                 <textzone visibility="not param_equal '`get_sample_info [INDEX] bpm`' '``'">
                   <pos x="+0" y="+0"/>
                   <size width="200" height="22"/>
                   <text fontsize="11" color="#FFFFFF" align="left" action="get_text '`get_sample_info [INDEX] bpm`bpm'"/>
                 </textzone>
-                <!-- key -->
                 <textzone>
                   <pos x="+67" y="+0"/>
                   <size width="50" height="22"/>
-                  <text fontsize="11" weight="normal" color="#ffffff" align="center" action="get_text '`get_sample_info [INDEX] key`'"/>
+                  <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="get_text '`get_sample_info [INDEX] key`'"/>
                 </textzone>
-                <!-- mode -->
                 <textzone>
                   <pos x="+90" y="+0"/>
                   <size width="50" height="22"/>
-                  <text fontsize="11" weight="normal" color="#ffffff" align="center" action="get_text '`get_sample_info [INDEX] mode`'"/>
+                  <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="get_text '`get_sample_info [INDEX] mode`'"/>
                 </textzone>
               </group>
               <!-- play button -->
-              <group x="+260" y="+0">
-                <!-- color chip -->
-                <!-- <visual x="+0" y="+0" type="color" source="sampler_loaded [INDEX] ? sampler_color [INDEX] : constant '#333333'" visibility="sampler_play [INDEX] ? blink 1bt : false"> -->
-                <!-- <size width="34" height="34"/> -->
-                <!-- </visual> -->
-                <!-- button -->
-                <button action="sampler_pad [INDEX]" rightclick="sampler_edit [INDEX]" query="sampler_play [INDEX]" shape="square">
+              <group x="+258" y="+0">
+                <button action="sampler_pad [INDEX]" rightclick="sampler_edit [INDEX]" query="sampler_play [INDEX]" shape="square" visibility="sampler_play [INDEX] ? blink 1bt : true">
                   <size width="34" height="34"/>
                   <icon dx="-1" dy="+0" sysicon="play" width="34" height="34" color="#555555" coloron="white" colorselected="white"/>
                 </button>
               </group>
-              <!-- click zone + outline overlay (only when this slot is the focused/selected slot) -->
-              <!-- <button action="sampler_pad [INDEX]" query="param_equal `get_sampler_slot` [INDEX]" deck="master" rightclick="sampler_edit [INDEX]" visibility="sampler_play [INDEX] ? blink 1bt : true"> -->
-              <!-- <pos x="+0" y="+0"/> -->
-              <!-- <size width="286" height="30"/> -->
-              <!-- <off color="transparent" border_size="0"/> -->
-              <!-- <on color="transparent" border="#666666" border_size="1" radius="5"/> -->
-              <!-- </button> -->
-              <!-- click zone + outline overlay (only when this slot is the focused/selected slot) -->
-              <button action="sampler_pad [INDEX]" query="param_equal `get_sampler_slot` [INDEX]" deck="master" rightclick="sampler_edit [INDEX]">
-                <pos x="+0" y="+0"/>
-                <size width="286" height="30"/>
+              <!-- click zone + outline overlay -->
+              <button action="sampler_pad [INDEX]" query="sampler_position [INDEX]" deck="master" rightclick="sampler_edit [INDEX]">
+                <pos x="+1" y="+1"/>
+                <size width="288" height="33"/>
                 <off color="transparent" border_size="0"/>
-                <on color="transparent" border="#666666" border_size="0" radius="5"/>
+                <on color="transparent" border="dark_8" border_size="1" radius="5"/>
               </button>
             </define>
             <!-- usage -->
@@ -750,14 +749,65 @@
             <panel class="sampler_row" index="8" y="+34*7" visibility="sampler_loaded 8"/>
           </group>
           <!-- BOTTOM SECTION -->
+          <group y="+280">
+            <!-- <group name="sampler_mode" x="+10"> -->
+            <!-- label -->
+            <!-- <textzone class="text" x="+0" y="+0" width="45" height="20" fontsize="8" color="textoff" align="left" weight="" text="MODE"/> -->
+            <!-- <button x="+0" y="+16" class="button_main" bordersize="1" width="60" height="26" action="sampler_mode" textsize="10" textcolor="white"> -->
+            <!-- <size height="15"/> -->
+            <!-- <off color="#111111" border="#555555"/> -->
+            <!-- <down color="#111111" border="#555555"/> -->
+            <!-- <selected color="#111111" border="#555555"/> -->
+            <!-- <text align="center" action="sampler_mode &amp; param_uppercase"/> -->
+            <!-- </button> -->
+            <!-- </group> -->
+            <group name="sampler_pad_page_select" x="+188" y="+0">
+              <button x="+0" class="button_main" bordersize="1" action="sampler_pad_page -1" textsize="10" textcolor="white">
+                <size width="24" height="24"/>
+                <off color="#111111"/>
+                <down color="#111111"/>
+                <selected color="#111111"/>
+                <icon sysicon="arrowleft" color="#555555" colorover="#999999" dx="-2" width="18" height="18"/>
+              </button>
+              <button x="+23" class="button_main" bordersize="1" textsize="11" width="60" height="26" action="sampler_pad_page +1" textcolor="white">
+                <size width="60" height="24"/>
+                <off color="#111111"/>
+                <down color="#111111"/>
+                <selected color="#111111"/>
+                <text align="center" weight="" action="sampler_pad_page"/>
+              </button>
+              <button x="+82" class="button_main" bordersize="1" action="sampler_pad_page +1" textsize="10" textcolor="white">
+                <size width="24" height="24"/>
+                <off color="#111111"/>
+                <down color="#111111"/>
+                <selected color="#111111"/>
+                <icon sysicon="arrowright" color="dark_5" colorover="white" dx="+2" width="18" height="18"/>
+              </button>
+              <visual x="+0" y="+0" width="106" height="24" visibility="1.0">
+                <off shape="square" color="transparent" border_size="1" border="dark_7" radius="6"/>
+              </visual>
+            </group>
+            <!-- SAMPLER OUTPUT -->
+            <!-- <group name="sampler_output" x="+204"> -->
+            <!-- label -->
+            <!-- <textzone class="text" x="+0" y="+0" width="50" height="20" fontsize="8" color="textoff" align="left" weight="" text="OUTPUT"/> -->
+            <!-- SAMPLER ROUTING TOGGLE HEADPHONES/MASTER -->
+            <!-- <button x="+0" y="+16" query="false" textsize="11" class="button_main" action="param_equal `setting 'samplerOutputDeck'` 0 ? setting 'samplerOutputDeck' -1 : setting 'samplerOutputDeck' 0" rightclick="sampler_output 'popup'" textaction="param_equal `setting 'samplerOutputDeck'` 0 ? get_text 'MASTER' : param_equal `setting 'samplerOutputDeck'` -1 ? get_text 'HEADPHONES' : param_equal `setting 'samplerOutputDeck'` -2 ? get_text 'TRIGGER' : get_text 'DECK `setting &quot;samplerOutputDeck&quot;`'"> -->
+            <!-- <size width="95" height="17"/> -->
+            <!-- <off color="#111111" border="#555555"/> -->
+            <!-- <down color="#111111" border="#555555"/> -->
+            <!-- <text align="center" color="white"/> -->
+            <!-- </button> -->
+            <!-- </group> -->
+          </group>
           <!-- SAMPLER VUMETER -->
-          <group x="+0" y="+313">
+          <group x="+0" y="+310">
             <!-- BORDER BACKGROUND -->
             <!-- <visual x="+0" y="+0" width="144" height="43-8-8"> -->
             <!-- <off shape="square" color="transparent" border_size="1" border="#444444" radius="4"/> -->
             <!-- </visual> -->
-            <visual x="+0" y="+0" width="290" height="43-8-8">
-              <off shape="square" color="transparent" border_size="1" border="#444444" radius="4"/>
+            <visual x="+0" y="+0" width="295" height="43-8-8">
+              <off shape="square" color="transparent" border_size="1" border="dark_7" radius="4"/>
             </visual>
             <!-- LABEL -->
             <textzone class="text" x="+0" y="+0" width="56" height="27" fontsize="10" color="textdarker" align="right" weight="" text="SAMPLER"/>
@@ -877,7 +927,7 @@
               <text align="center" color="#888888" colorselected="color_sampler" text="CUE">CUE</text>
             </button>
             <!-- SAMPLER PLAY/STOP BUTTON -->
-            <button x="+230" y="+3" width="58" height="21" shape="square" action="sampler_play_stop" border_size="2" query="sampler_play" radius="4" color="black">
+            <button x="+234" y="+3" width="58" height="21" shape="square" action="sampler_play_stop" border_size="2" query="sampler_play" radius="4" color="black">
               <off color="#000000" border="#444444" radius="4"/>
               <on color="#222222" border="#888888" radius="4"/>
               <over color="#222222" border="#888888" radius="4"/>
@@ -888,31 +938,6 @@
           </group>
         </group>
         <!-- bottom section, top row buttons -->
-        <group y="+306">
-          <group name="sampler_mode" x="+10">
-            <!-- label -->
-            <textzone class="text" x="+0" y="+0" width="45" height="20" fontsize="8" color="textoff" align="left" weight="" text="MODE"/>
-            <button x="+0" y="+16" class="button_main" bordersize="1" width="60" height="26" action="sampler_mode" textsize="10" textcolor="white">
-              <size height="15"/>
-              <off color="#111111" border="#555555"/>
-              <down color="#111111" border="#555555"/>
-              <selected color="#111111" border="#555555"/>
-              <text align="center" action="sampler_mode &amp; param_uppercase"/>
-            </button>
-          </group>
-          <!-- SAMPLER OUTPUT -->
-          <group name="sampler_output" x="+204">
-            <!-- label -->
-            <textzone class="text" x="+0" y="+0" width="50" height="20" fontsize="8" color="textoff" align="left" weight="" text="OUTPUT"/>
-            <!-- SAMPLER ROUTING TOGGLE HEADPHONES/MASTER -->
-            <button x="+0" y="+16" query="false" textsize="11" class="button_main" action="param_equal `setting 'samplerOutputDeck'` 0 ? setting 'samplerOutputDeck' -1 : setting 'samplerOutputDeck' 0" rightclick="sampler_output 'popup'" textaction="param_equal `setting 'samplerOutputDeck'` 0 ? get_text 'MASTER' : param_equal `setting 'samplerOutputDeck'` -1 ? get_text 'HEADPHONES' : param_equal `setting 'samplerOutputDeck'` -2 ? get_text 'TRIGGER' : get_text 'DECK `setting &quot;samplerOutputDeck&quot;`'">
-              <size width="95" height="17"/>
-              <off color="#111111" border="#555555"/>
-              <down color="#111111" border="#555555"/>
-              <text align="center" color="white"/>
-            </button>
-          </group>
-        </group>
       </deck>
     </panel>
     <!-- MIXER PANEL: VIDEO -->

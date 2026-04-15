@@ -498,37 +498,37 @@
     </dropzone>
     <group visibility="loaded" x="+15" y="+10">
       <!-- CLASS: STEM BUTTONS -->
-      <define class="STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23">
-        <!-- TOGGLE -->
-        <button x="+0" action="stem_pad '[STEM]'" border_size="1">
-          <size width="[WIDTH]" height="[HEIGHT]"/>
-          <off color="#222222" border="#444444" radius="3"/>
-          <down color="#222222" border="[COLOR]" radius="3"/>
-          <selected color="transparent" border="[COLOR]" radius="3"/>
-          <text fontsize="[FONTSIZE]" color="#555555" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/>
-        </button>
-        <!-- VU METER -->
-        <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]">
-          <pos x="+0" y="+[HEIGHT]+2"/>
-          <size width="[WIDTH]" height="7"/>
-          <off shape="square" border="#2A2A2A" color="black" radius="2"/>
-          <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/>
-        </visual>
-        <!-- GAIN SLIDER -->
-        <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false">
-          <pos x="+0" y="+[HEIGHT]+2"/>
-          <size width="[WIDTH]" height="7"/>
-          <fader color="#AAAAAA" width="2" height="5"/>
-        </slider>
-        <!-- STEM FX -->
-        <button x="+0" y="+[HEIGHT]+12" action="stem_pad '[STEM]'" border_size="1">
-          <size width="[WIDTH]/3" height="[HEIGHT]*0.8"/>
-          <off color="#222222" border="#444444" radius="3"/>
-          <down color="#222222" border="[COLOR]" radius="3"/>
-          <selected color="transparent" border="[COLOR]" radius="3"/>
-          <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="FX"/>
-        </button>
-      </define>
+      <!-- <define class="_STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23"> -->
+      <!-- TOGGLE -->
+      <!-- <button x="+0" action="stem_pad '[STEM]'" border_size="1"> -->
+      <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
+      <!-- <off color="#222222" border="#444444" radius="3"/> -->
+      <!-- <down color="#222222" border="[COLOR]" radius="3"/> -->
+      <!-- <selected color="transparent" border="[COLOR]" radius="3"/> -->
+      <!-- <text fontsize="[FONTSIZE]" color="#555555" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/> -->
+      <!-- </button> -->
+      <!-- VU METER -->
+      <!-- <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]"> -->
+      <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
+      <!-- <size width="[WIDTH]" height="7"/> -->
+      <!-- <off shape="square" border="#2A2A2A" color="black" radius="2"/> -->
+      <!-- <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/> -->
+      <!-- </visual> -->
+      <!-- GAIN SLIDER -->
+      <!-- <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false"> -->
+      <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
+      <!-- <size width="[WIDTH]" height="7"/> -->
+      <!-- <fader color="#AAAAAA" width="2" height="5"/> -->
+      <!-- </slider> -->
+      <!-- STEM FX -->
+      <!-- <button x="+0" y="+[HEIGHT]+12" action="stem_pad '[STEM]'" border_size="1"> -->
+      <!-- <size width="[WIDTH]/3" height="[HEIGHT]*0.8"/> -->
+      <!-- <off color="#222222" border="#444444" radius="3"/> -->
+      <!-- <down color="#222222" border="[COLOR]" radius="3"/> -->
+      <!-- <selected color="transparent" border="[COLOR]" radius="3"/> -->
+      <!-- <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="FX"/> -->
+      <!-- </button> -->
+      <!-- </define> -->
       <group visibility="not has_stems" y="+30">
         <textzone class="text" width="300" height="48" fontsize="10" color="textdarker" align="center" weight="" text="STEMS NOT FOUND"/>
       </group>
@@ -540,13 +540,37 @@
       <!-- <panel class="hashtag_stack" deck="4" x="+1920-280" panelname="tags4" visibility="deck 4 leftdeck"/> -->
       <!-- </group> -->
       <!-- MID PANEL: STEM AREA -->
-      <group x="+0" y="-8">
+      <group x="+0" y="-10">
         <!-- STEM BUTTONS -->
-        <group x="+235" y="+52" visibility="has_stems">
+        <group x="+235" y="+50" visibility="has_stems">
           <panel class="stem_button" x="+0" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
           <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
           <panel class="stem_button" x="+140" y="+0" stem="bass" label="BASS" color="colorbass"/>
           <panel class="stem_button" x="+210" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
+          <group y="+25">
+            <group>
+              <button class="stem_fx_button" stem="vocal"/>
+              <button class="stem_iso_button" stem="vocal" x="+33"/>
+            </group>
+            <group x="+70">
+              <button class="stem_fx_button" stem="instru"/>
+              <button class="stem_iso_button" stem="instru" x="+33"/>
+            </group>
+            <group x="+140">
+              <button class="stem_fx_button" stem="bass"/>
+              <button class="stem_iso_button" stem="bass" x="+33"/>
+            </group>
+            <group x="+210">
+              <button class="stem_fx_button" stem="rhythm"/>
+              <button class="stem_iso_button" stem="rhythm" x="+33"/>
+            </group>
+          </group>
+          <group y="+46">
+            <panel class="stem_volume_slider" x="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
+            <panel class="stem_volume_slider" x="+70" stem="instru" label="INSTR" color="colorinstru"/>
+            <panel class="stem_volume_slider" x="+140" stem="bass" label="BASS" color="colorbass"/>
+            <panel class="stem_volume_slider" x="+210" stem="rhythm" label="DRUM" color="colorbeat"/>
+          </group>
         </group>
         <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
         <group x="+235" y="+24" visibility="loaded">
@@ -646,35 +670,35 @@
       <!-- <panel class="bpm_display_left" x="+2+4+200+4+128+4" y="+2"/> -->
     </group>
   </define>
-  <define class="STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23">
-    <!-- TOGGLE -->
-    <button x="+0" action="stem_pad '[STEM]'" border_size="1">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <off color="#222222" border="#444444" radius="3"/>
-      <down color="#222222" border="[COLOR]" radius="3"/>
-      <selected color="transparent" border="[COLOR]" radius="3"/>
-      <text fontsize="[FONTSIZE]" color="#555555" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/>
-    </button>
-    <!-- VU METER -->
-    <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]">
-      <pos x="+0" y="+[HEIGHT]+2"/>
-      <size width="[WIDTH]" height="7"/>
-      <off shape="square" border="#2A2A2A" color="black" radius="2"/>
-      <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/>
-    </visual>
-    <!-- GAIN SLIDER -->
-    <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false">
-      <pos x="+0" y="+[HEIGHT]+2"/>
-      <size width="[WIDTH]" height="7"/>
-      <fader color="#AAAAAA" width="2" height="5"/>
-    </slider>
-    <!-- STEM FX -->
-    <button x="+0" y="+[HEIGHT]+12" action="stem_pad '[STEM]'" border_size="1">
-      <size width="[WIDTH]/3" height="[HEIGHT]*0.8"/>
-      <off color="#222222" border="#444444" radius="3"/>
-      <down color="#222222" border="[COLOR]" radius="3"/>
-      <selected color="transparent" border="[COLOR]" radius="3"/>
-      <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="FX"/>
-    </button>
-  </define>
+  <!-- <define class="_STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23"> -->
+  <!-- TOGGLE -->
+  <!-- <button x="+0" action="stem_pad '[STEM]'" border_size="1"> -->
+  <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
+  <!-- <off color="#222222" border="#444444" radius="3"/> -->
+  <!-- <down color="#222222" border="[COLOR]" radius="3"/> -->
+  <!-- <selected color="transparent" border="[COLOR]" radius="3"/> -->
+  <!-- <text fontsize="[FONTSIZE]" color="#555555" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/> -->
+  <!-- </button> -->
+  <!-- VU METER -->
+  <!-- <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]"> -->
+  <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
+  <!-- <size width="[WIDTH]" height="7"/> -->
+  <!-- <off shape="square" border="#2A2A2A" color="black" radius="2"/> -->
+  <!-- <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/> -->
+  <!-- </visual> -->
+  <!-- GAIN SLIDER -->
+  <!-- <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false"> -->
+  <!-- <pos x="+0" y="+[HEIGHT]+2"/> -->
+  <!-- <size width="[WIDTH]" height="7"/> -->
+  <!-- <fader color="#AAAAAA" width="2" height="5"/> -->
+  <!-- </slider> -->
+  <!-- STEM FX -->
+  <!-- <button x="+0" y="+[HEIGHT]+12" action="stem_pad '[STEM]'" border_size="1"> -->
+  <!-- <size width="[WIDTH]/3" height="[HEIGHT]*0.8"/> -->
+  <!-- <off color="#222222" border="#444444" radius="3"/> -->
+  <!-- <down color="#222222" border="[COLOR]" radius="3"/> -->
+  <!-- <selected color="transparent" border="[COLOR]" radius="3"/> -->
+  <!-- <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="FX"/> -->
+  <!-- </button> -->
+  <!-- </define> -->
 </defs>

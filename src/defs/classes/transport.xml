@@ -101,11 +101,11 @@
       <!-- SONGPOS -->
       <!-- PRO: SONGPOS -->
       <group visibility="loaded">
-        <pos x="+45" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos x="+460" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
+        <pos x="+41" y="+5" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+460" y="+5" condition="param_equal [DECKSIDE] 'right'"/>
         <!-- <songpos class="cuemap" x="+3" y="+1" width="270" height="5"/> -->
-        <songpos class="songpos" x="+6" y="+6" width="290" height="12" colorPlayed="deckcolor"/>
-        <visual width="300" height="24">
+        <songpos class="songpos" x="+6" y="+6" width="300" height="16" colorPlayed="deckcolor"/>
+        <visual width="310" height="27">
           <off shape="square" color="transparent" border_size="1" border="#555555" radius="4"/>
         </visual>
       </group>

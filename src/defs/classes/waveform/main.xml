@@ -102,7 +102,7 @@
           <panel class="horizontal_waveform_track_info" deck="2" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
           <panel class="horizontal_waveform_track_info" deck="4" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- NEEDLE -->
-          <!-- left -->
+          <!-- left aligned -->
           <group visibility="setting 'waveformCenter' 'left'">
             <!-- shadow -->
             <visual x="+1920/2-6" y="+2" width="10" height="[WAVEFORMHEIGHT]-6">
@@ -113,7 +113,7 @@
               <off shape="square" color="white" border_size="0" border="deckcolor" radius="6"/>
             </visual>
           </group>
-          <!-- center -->
+          <!-- center aligned -->
           <group visibility="setting 'waveformCenter' 'centered'">
             <!-- shadow -->
             <visual x="+1920/2-6" y="+2" width="10" height="[WAVEFORMHEIGHT]-6">

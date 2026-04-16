@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
-  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=450">
+  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
       <!-- PRO: LEFT DECK: SPINE BG -->
       <visual x="+0" y="+0" width="34" height="[HEIGHT]-10-10">
@@ -29,13 +29,13 @@
         <!-- <visual x="+0" y="+0" width="34" height="[HEIGHT]-4" visibility="0.2"> -->
         <!-- <off shape="square" color="color_masterdeck"/> -->
         <!-- </visual> -->
-        <visual x="+5" y="+150" width="15" height="125">
-          <off shape="square" color="black" bordersize="1" border="color_masterdeck" radius="2"/>
+        <visual x="+10" y="+300" width="34-10-10" height="70">
+          <off shape="square" color="black" bordersize="1" border="color_masterdeck" radius="3"/>
         </visual>
         <textzone orientation="vertical" direction="ccw">
-          <pos x="+0" y="+0"/>
-          <size width="24" height="125"/>
-          <text fontsize="12" color="color_masterdeck" scroll="yes" align="center" text="MASTER" important="true"/>
+          <pos x="+0" y="+300"/>
+          <size width="34" height="70"/>
+          <text fontsize="12" color="color_masterdeck" scroll="no" align="center" text="MASTER" important="true"/>
         </textzone>
         <!-- LEFT: INSTRUMENTAL SPINE LABEL -->
         <!-- <group visibility="loaded ? stem_pad 'instrumental'"> -->
@@ -81,21 +81,18 @@
         <!-- PRO: LEFT VOLUME -->
         <panel class="pitch" x="+760-45" y="+30"/>
         <!-- PRO: LEFT DECK BORDER -->
-        <visual width="765" height="[HEIGHT]+15" y="+0">
+        <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
         <!-- <line color="#333333" x="+0" y="+400-2" width="765" height="1"/> -->
       </group>
     </deck>
   </define>
-  <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck,height=468">
-    <deck deck="[DECK]">
-      <!-- <panel class="video_preview" x="+404-2+60+11+4" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
-      <visual source="deck [DECK] select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
-        <size width="770" height="[HEIGHT]"/>
-        <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
-      </visual>
-    </deck>
+  <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck,height=466,width=766">
+    <visual source="deck [DECK] select" deck="[DECK]" visibility="var_equal '@$dd_bordermode' 1">
+      <size width="[WIDTH]" height="[HEIGHT]"/>
+      <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
+    </visual>
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=450">
     <deck deck="[DECK]">

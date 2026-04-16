@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="channel_extended" placeholders="deck">
+  <define class="CHANNEL_EXTENDED" placeholders="deck">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="xf_background"/>
       <visual class="gfx_shape" y="+30" width="77" height="432-76-1" coloroff="panel_background" visibility="0.9"/>
@@ -91,7 +91,7 @@
       </group>
     </deck>
   </define>
-  <define class="eq_zone_left" placeholders="deck">
+  <define class="EQ_ZONE_LEFT" placeholders="deck">
     <deck deck="[DECK]">
       <!-- 3knobs -->
       <group x="+30">
@@ -108,7 +108,7 @@
       </group>
     </deck>
   </define>
-  <define class="eq_zone_right" placeholders="deck">
+  <define class="EQ_ZONE_RIGHT" placeholders="deck">
     <deck deck="[DECK]">
       <!-- 3knobs -->
       <group x="+6">
@@ -151,7 +151,7 @@
       <panel class="deck_level" x="+11+9" y="+6+10+200"/>
     </deck>
   </define>
-  <define class="channel_levels_ex" placeholders="deck">
+  <define class="CHANNEL_LEVELS_EX" placeholders="deck">
     <deck deck="[DECK]">
       <group name="ONLY" y="+6">
         <visual class="gfx_shape" width="61" height="212-50-8" coloroff="xf_background" visibility="0.6"/>
@@ -178,7 +178,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_vert" placeholders="deck">
+  <define class="CHANNEL_LEVELS_VERT" placeholders="deck">
     <deck deck="[DECK]">
       <group name="ONLY" y="+6">
         <visual class="gfx_shape" width="61" height="212" coloroff="xf_background" visibility="0.6"/>
@@ -205,7 +205,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_mini" placeholders="deck">
+  <define class="CHANNEL_LEVELS_MINI" placeholders="deck">
     <deck deck="[DECK]">
       <group name="ONLY">
         <visual class="gfx_shape" width="77" height="98" coloroff="xf_background"/>
@@ -231,7 +231,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_stack" placeholders="deck">
+  <define class="CHANNEL_LEVELS_STACK" placeholders="deck">
     <deck deck="[DECK]">
       <group name="ONLY">
         <visual class="gfx_shape" width="77" height="164" coloroff="xf_background"/>
@@ -258,7 +258,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_compact4_left">
+  <define class="CHANNEL_LEVELS_COMPACT4_LEFT">
     <visual class="gfx_shape" width="77" height="216+2+216" coloroff="xf_background"/>
     <deck deck="1">
       <group name="deck1">
@@ -807,7 +807,7 @@
             <!-- <off shape="square" color="transparent" border_size="1" border="#444444" radius="4"/> -->
             <!-- </visual> -->
             <visual x="+0" y="+0" width="295" height="43-8-8">
-              <off shape="square" color="transparent" border_size="1" border="dark_7" radius="4"/>
+              <off shape="square" color="black" border_size="1" border="dark_7" radius="4"/>
             </visual>
             <!-- LABEL -->
             <textzone class="text" x="+0" y="+0" width="56" height="27" fontsize="10" color="textdarker" align="right" weight="" text="SAMPLER"/>
@@ -920,14 +920,14 @@
               <fader color="#999999" width="3" height="20"/>
             </slider>
             <!-- SAMPLER CUE BUTTON -->
-            <button x="+170" y="+3" width="58" height="21" shape="square" action="setting 'SamplerHeadphones'" border_size="1" radius="4">
+            <button x="+295-44-42" y="+3" width="40" height="21" shape="square" action="setting 'SamplerHeadphones'" border_size="1" radius="4">
               <off color="#000000" border="#444444" radius="4"/>
               <over color="#333333" border="#888888" radius="4"/>
               <selected color="black" border="color_sampler" radius="4"/>
               <text align="center" color="#888888" colorselected="color_sampler" text="CUE">CUE</text>
             </button>
             <!-- SAMPLER PLAY/STOP BUTTON -->
-            <button x="+234" y="+3" width="58" height="21" shape="square" action="sampler_play_stop" border_size="2" query="sampler_play" radius="4" color="black">
+            <button x="+295-40-4" y="+3" width="40" height="21" shape="square" action="sampler_play_stop" query="sampler_play" radius="4" color="black">
               <off color="#000000" border="#444444" radius="4"/>
               <on color="#222222" border="#888888" radius="4"/>
               <over color="#222222" border="#888888" radius="4"/>
@@ -1022,25 +1022,49 @@
       </menu>
       <panel class="video_crossfader" x="+26" y="+432-56+6+4-52"/>
     </panel>
-    <!-- PRO: PANEL: WAVE PANEL -->
+    <!-- PRO: MIXER PANEL: WAVE -->
     <panel name="scratchmixer" group="mixer" visible="no">
       <!-- <visual class="gfx_shape" width="312" height="432-56-1" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 0"/> -->
       <!-- <visual class="gfx_shape" width="312" height="432-56-1+57" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 1"/> -->
       <!-- LEFT -->
-      <panel class="vertical_scratchwave" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0"/>
+      <panel class="vertical_scratchwave2" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0" outer_height="350" waveform_height="347" dropzone_height="370"/>
+      <!-- <panel class="vertical_scratchwave" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0"/> -->
       <panel class="vertical_scratchwave" deck="3" visibility="deck 3 leftdeck" x="+40" y="+0"/>
       <!-- RIGHT -->
       <panel class="vertical_scratchwave" deck="2" visibility="not deck 4 rightdeck" x="+320-98-10-19-19" y="+0"/>
       <panel class="vertical_scratchwave" deck="4" visibility="deck 4 rightdeck" x="+320-98-10-19-19" y="+0"/>
       <!-- MIDDLE BUTTONS + VU -->
       <panel class="scratch_controls" x="960-20" y="+0"/>
-      <group x="+25" y="+90">
-        <visual width="260" height="28">
-          <off shape="square" color="#66000000" border_size="0" border="deckcolor" radius="6"/>
-        </visual>
-        <visual y="+13" width="260" height="2">
-          <off shape="square" color="white" border_size="0" border="deckcolor" radius="1"/>
-        </visual>
+      <!-- NEEDLE -->
+      <!-- <group x="+25" y="+90"> -->
+      <!-- <visual width="260" height="28"> -->
+      <!-- <off shape="square" color="#66000000" border_size="0" border="deckcolor" radius="6"/> -->
+      <!-- </visual> -->
+      <!-- <visual y="+13" width="260" height="2"> -->
+      <!-- <off shape="square" color="white" border_size="0" border="deckcolor" radius="1"/> -->
+      <!-- </visual> -->
+      <!-- </group> -->
+      <!-- left aligned -->
+      <!-- <group visibility="setting 'waveformCenter' 'left'"> -->
+      <!-- shadow -->
+      <!-- <visual x="+1920/2-6" y="+2" width="10" height="[WAVEFORMHEIGHT]-6"> -->
+      <!-- <off shape="square" color="#55000000" border_size="0" border="deckcolor" radius="6"/> -->
+      <!-- </visual> -->
+      <!-- tip -->
+      <!-- <visual x="+1920/2-2" y="+0" width="2" height="[WAVEFORMHEIGHT]" visibility="select"> -->
+      <!-- <off shape="square" color="white" border_size="0" border="deckcolor" radius="6"/> -->
+      <!-- </visual> -->
+      <!-- </group> -->
+      <!-- center aligned -->
+      <group visibility="setting 'waveformCenter' 'centered'">
+        <group x="+25" y="+176">
+          <visual width="260" height="28">
+            <off shape="square" color="#66000000" border_size="0" border="deckcolor" radius="6"/>
+          </visual>
+          <visual y="+13" width="260" height="2">
+            <off shape="square" color="white" border_size="0" border="deckcolor" radius="1"/>
+          </visual>
+        </group>
       </group>
     </panel>
     <panel name="mastermixer" group="mixer" visible="no">

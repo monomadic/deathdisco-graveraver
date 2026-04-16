@@ -4,10 +4,10 @@
   <define class="PRO_2DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
     <xi:include href="positions/pro-2decks.xml" xpointer="xpointer(/positions/*)"/>
-    <panel class="AREA_DECK_PRO_LEFT" x="0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-    <panel class="AREA_DECK_PRO_LEFT" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
-    <panel class="AREA_DECK_PRO_RIGHT" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
-    <panel class="AREA_DECK_PRO_RIGHT" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+    <panel class="area_deck_pro_left" x="0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
+    <panel class="area_deck_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+    <panel class="area_deck_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
+    <panel class="area_deck_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
     <!-- DECK: PAD PAGES SECTION -->
     <group y="+175" x="+36">
       <!-- bg left (black behind pads) -->
@@ -92,11 +92,11 @@
     <xi:include href="positions/pro-4decks.xml" xpointer="xpointer(/positions/*)"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
-    <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck1" deck="1" visibility="deck 3 leftdeck"/>
-    <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck3" deck="3" visibility="deck 1 leftdeck"/>
+    <panel class="area_deck_pro_left" x="+0" panelname="deck1" deck="1" visibility="deck 3 leftdeck"/>
+    <panel class="area_deck_pro_left" x="+0" panelname="deck3" deck="3" visibility="deck 1 leftdeck"/>
     <!-- LEFT: TOP -->
-    <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck1" deck="1" visibility="deck 1 leftdeck" y="+100+2"/>
-    <panel class="AREA_DECK_PRO_LEFT" x="+0" panelname="deck3" deck="3" visibility="deck 3 leftdeck" y="+100+2"/>
+    <panel class="area_deck_pro_left" x="+0" panelname="deck1" deck="1" visibility="deck 1 leftdeck" y="+100+2"/>
+    <panel class="area_deck_pro_left" x="+0" panelname="deck3" deck="3" visibility="deck 3 leftdeck" y="+100+2"/>
     <!-- PRO: 4 DECKS: MIXER PANEL / MIDDLE PANEL -->
     <group x="+802" y="+0">
       <!-- MIDDLE PANEL BORDER -->

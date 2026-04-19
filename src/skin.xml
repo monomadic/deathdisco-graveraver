@@ -48,4 +48,11 @@
   <xi:include href="panels/layout.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/bottombar.xml" xpointer="xpointer(/module/*)"/>
+  <button x="0" y="0" class="button_main" bordersize="1" textsize="11" width="60" height="26" action="sampler_pad_page +1" textcolor="white">
+    <size width="60" height="24"/>
+    <off color="#111111"/>
+    <down color="#111111"/>
+    <selected color="#111111"/>
+    <text align="center" weight="" action="deck 1 sampler_pad 1"/>
+  </button>
 </skin>

@@ -7,7 +7,7 @@
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
       <toolbars background="xf_background" text="needle" iconbackground="xf_progressbackground" backgroundselected="br_coloron" backgroundmouseover="br_slcolor" icon="textoff" border="browser_iconbuttonoff"/>
-      <lists background="br_background" stripes="br_stripes" over="xf_progressbackground" overstripes="br_stripes" focus="br_focus" selected="br_slcolor" overtext="needle" text="br_textoff" selectedtext="#ffffff" focustext="#ffffff" automix="br_automix" livefeedback="red" download="#009d9d" scan="#29c814" button="br_stripes" buttonover="button_background2" buttonselected="needle" buttonactive="textoff2" insert="red"/>
+      <lists background="black" stripes="transparent" over="dark_3" overstripes="dark_3" focus="dark_5" selected="br_slcolor" overtext="needle" text="br_textoff" selectedtext="#ffffff" focustext="#ffffff" automix="br_automix" livefeedback="red" download="#009d9d" scan="#29c814" button="br_stripes" buttonover="button_background2" buttonselected="needle" buttonactive="textoff2" insert="red"/>
       <grids background="br_stripes" over="br_stripes" selected="br_slcolor" focus="br_focus" text="br_textoff" overtext="needle" selectedtext="#ffffff" focustext="#ffffff" stripes="br_stripes" overstripes="br_stripes" selectedstripes="br_stripes" focusstripes="br_stripes" label="needle"/>
       <columns background="br_tb_background" text="br_textoff"/>
       <scrollbars background="tab_menu" button="needle"/>

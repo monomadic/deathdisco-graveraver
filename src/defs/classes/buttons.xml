@@ -33,15 +33,21 @@
     <define class="STEM_VOLUME_SLIDER" placeholders="*stem,*label,*color,width=65">
       <!-- VU METER -->
       <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]">
-        <pos y="+1"/>
-        <size width="[WIDTH]" height="12"/>
-        <off shape="square" border="#2A2A2A" color="black" radius="2"/>
+        <pos y="+4"/>
+        <size width="[WIDTH]" height="8"/>
+        <off shape="square" border="dark_6" color="black" radius="2"/>
         <down shape="square" border="[COLOR]" color="[COLOR]" radius="2"/>
       </visual>
       <!-- GAIN SLIDER -->
       <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false">
+        <pos x="-1"/>
+        <size width="[WIDTH]+2" height="16"/>
+        <fader color="dark_7" width="8" height="14" radius="2"/>
+      </slider>
+      <!-- GAIN SLIDER NOTCH -->
+      <slider action="param_multiply 50% &amp; stem '[STEM]'" dblclick="stem '[STEM]' 50%" orientation="horizontal" direction="up" frommiddle="false">
         <size width="[WIDTH]" height="16"/>
-        <fader color="#AAAAAA" width="6" height="12"/>
+        <fader color="dark_9" width="6" border="dark_3" border_size="2" height="12" radius="2"/>
       </slider>
     </define>
     <define class="STEM_FX_BUTTON" placeholders="*stem" action="effect_stems '[STEM]'">

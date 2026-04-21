@@ -3,7 +3,7 @@
   <define class="BROWSER_PRO" showzoom="yes" placeholders="*height">
     <!-- Wave-size ladder extracted so the browser class only owns styling -->
     <xi:include href="positions/pro.xml" xpointer="xpointer(/positions/*)"/>
-    <background color="dark_0" bordercolortop="xf_progressbackground" bordercolor="red" bordersize="0"/>
+    <background color="dark_0" bordercolortop="blue" bordercolor="red" bordersize="0"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
       <toolbars background="xf_background" text="needle" iconbackground="xf_progressbackground" backgroundselected="br_coloron" backgroundmouseover="br_slcolor" icon="textoff" border="browser_iconbuttonoff"/>

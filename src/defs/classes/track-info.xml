@@ -3,7 +3,7 @@
   <define class="INFOS">
     <!-- LEFT DECK -->
     <!-- background: black glass (behind cover) -->
-    <button class="button_main" action="select" width="532" height="175" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="1"/>
+    <button class="button_main" action="select" width="532" height="175" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="0"/>
     <!-- ACAPELLA/INSTRUMENTAL LINE BORDER -->
     <group visibility="loaded">
       <!-- left -->
@@ -70,7 +70,7 @@
             <!-- border, outer -->
             <visual>
               <pos y="+0"/>
-              <size width="343" height="30"/>
+              <size width="250" height="30"/>
               <off shape="square" color="transparent" border="#555555" border_size="1"/>
             </visual>
             <!-- border, vertical internal -->
@@ -101,9 +101,9 @@
               <pos x="+61" y="+11"/>
               <size width="40" height="18"/>
               <!-- colored when key exists -->
-              <text fontsize="14" weight="bold" align="left" visibility="get_key" color="white" action="get_loaded_song 'key'"/>
+              <text fontsize="14" weight="" align="left" visibility="get_key" color="white" action="get_loaded_song 'key'"/>
               <!-- fallback when no key/color -->
-              <text fontsize="14" weight="bold" align="left" visibility="not get_key" color="white" action="get_loaded_song 'key'"/>
+              <text fontsize="14" weight="" align="left" visibility="not get_key" color="white" action="get_loaded_song 'key'"/>
             </button>
             <!-- TIME REMAINING -->
             <textzone>
@@ -111,7 +111,7 @@
               <size width="260"/>
               <text fontsize="9" color="#888888" align="left" text="TIME" localize="true" important="true"/>
             </textzone>
-            <textzone class="text" x="+110" y="+13" width="50" fontsize="15" color="texton2" align="left" weight="" textaction="get_time" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+            <textzone class="text" x="+110" y="+13" width="50" fontsize="15" color="white" align="left" weight="" textaction="get_time"/>
             <group x="+195" y="+0">
               <!-- FILETYPE -->
               <square width="45" border="1" border_color="#555555" height="15" visibility="loaded" color="#111111"/>

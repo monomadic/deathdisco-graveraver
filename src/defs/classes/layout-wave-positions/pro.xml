@@ -34,9 +34,9 @@
     <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830.
          Utility-bar state only changes how much space is reserved at the bottom. -->
     <!-- 2 decks, no utility: 1080 - 830 - 50 -->
-    <browser class="browser_pro" height="180" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
+    <browser class="browser_pro" height="190" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
     <!-- 2 decks, utility visible: 1080 - 830 -->
-    <browser class="browser_pro" height="230" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
+    <browser class="browser_pro" height="240" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <browser class="browser_pro_4decks" height="500" condition="var_equal '@$hauntinglayout' 1"/>
   </define>

@@ -123,26 +123,58 @@
             <over shape="circle" color="#00FF00" border="transparent" border_size="1"/>
             <down shape="circle" color="#AA44FF44" border="#8800FF00" border_size="1"/>
           </button>
-          <group x="+730-26-80-26-26-80-27" y="+40*4+30+25">
-            <!-- PARAM 1 -->
-            <group name="pad_param1" visibility="pad_param_visible 1">
-              <button class="button_main" x="+0" width="26" height="26" action="pad_param -1" iconsize="20" sysicon="arrowleft" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
-              <button class="button_main" x="+26" width="80" height="26" action="pad_param +1" query="off" textaction="pad_param" coloroff="transparent" coloron="xf_background" bordersize="1" textsize="12" textcolor="white"/>
-              <button class="button_main" x="+26+80" width="26" height="26" action="pad_param +1" iconsize="20" sysicon="arrowright" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
-              <visual>
-                <size width="26+80+26" height="24"/>
-                <off shape="square" color="transparent" border="dark_6" border_size="1" radius="6"/>
-              </visual>
+          <!-- bottom row -->
+          <group y="+40*4+30+25">
+            <group>
+              <!-- MINI HOTCUES -->
+              <!-- <visual type="color" source="cue_color 1"> -->
+              <!-- <pos x="+3" y="+3"/> -->
+              <!-- <size width="18" height="18"/> -->
+              <!-- </visual> -->
+              <!-- <button action="hot_cue 1"> -->
+              <!-- <pos x="+3" y="+3"/> -->
+              <!-- <size width="18" height="18"/> -->
+              <!-- <off shape="square" color="transparent"/> -->
+              <!-- <text text="1" color="white" fontsize="14" weight="bold" align="center"/> -->
+              <!-- </button> -->
+              <!-- <define class="MINI_CUE_BUTTON" placeholders="*index,*color,*width=20,*height=20" action="hot_cue '[INDEX]'"> -->
+              <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
+              <!-- <off color="transparent" border="dark_7" border_size="1" radius="5"/> -->
+              <!-- <selected color="transparent" border="[COLOR]" radius="5"/> -->
+              <!-- <text fontsize="12" color="dark_7" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[INDEX]"/> -->
+              <!-- </define> -->
+              <!-- <button class="mini_cue_button" index="1" color="cue_color 1" x="+0" y="+0"/> -->
+              <define class="MINI_CUE_BUTTON" placeholders="*index,*width=20,*height=20" action="hot_cue [INDEX]" query="has_cue [INDEX]">
+                <size width="[WIDTH]" height="[HEIGHT]"/>
+                <off color="transparent" border="dark_7" border_size="1" radius="5"/>
+                <on color="transparent" border="`cue_color [INDEX]`" border_size="1" radius="5"/>
+                <selected color="transparent" border="`cue_color [INDEX]`" border_size="1" radius="5"/>
+                <text fontsize="12" color="light_3" colorover="light_0" coloron="`cue_color [INDEX]`" colorselected="`cue_color [INDEX]`" colordown="`cue_color [INDEX]`" align="center" text="[INDEX]"/>
+              </define>
+              <button class="MINI_CUE_BUTTON" index="1" x="+0" y="+0"/>
+              <button class="MINI_CUE_BUTTON" index="2" x="+21" y="+0"/>
             </group>
-            <!-- PARAM 2 -->
-            <group x="+26+80+26+2" name="pad_param1" visibility="pad_param_visible 2">
-              <button class="button_main" x="+0" width="26" height="26" action="pad_param2 -1" iconsize="20" sysicon="arrowleft" coloroff="black" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
-              <button class="button_main" x="+26" width="80" height="26" action="pad_param2 +1" query="off" textaction="pad_param2" coloroff="black" coloron="xf_background" bordersize="0" textsize="12" textcolor="white"/>
-              <button class="button_main" x="+26+80" width="26" height="26" action="pad_param2 +1" iconsize="20" sysicon="arrowright" coloroff="black" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
-              <visual>
-                <size width="26+80+26" height="24"/>
-                <off shape="square" color="transparent" border="dark_6" border_size="1" radius="6"/>
-              </visual>
+            <group x="+730-26-80-26-26-80-27">
+              <!-- PARAM 1 -->
+              <group name="pad_param1" visibility="pad_param_visible 1">
+                <button class="button_main" x="+0" width="26" height="26" action="pad_param -1" iconsize="20" sysicon="arrowleft" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+                <button class="button_main" x="+26" width="80" height="26" action="pad_param +1" query="off" textaction="pad_param" coloroff="transparent" coloron="xf_background" bordersize="1" textsize="12" textcolor="white"/>
+                <button class="button_main" x="+26+80" width="26" height="26" action="pad_param +1" iconsize="20" sysicon="arrowright" coloroff="transparent" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+                <visual>
+                  <size width="26+80+26" height="24"/>
+                  <off shape="square" color="transparent" border="dark_6" border_size="1" radius="6"/>
+                </visual>
+              </group>
+              <!-- PARAM 2 -->
+              <group x="+26+80+26+2" name="pad_param1" visibility="pad_param_visible 2">
+                <button class="button_main" x="+0" width="26" height="26" action="pad_param2 -1" iconsize="20" sysicon="arrowleft" coloroff="black" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+                <button class="button_main" x="+26" width="80" height="26" action="pad_param2 +1" query="off" textaction="pad_param2" coloroff="black" coloron="xf_background" bordersize="0" textsize="12" textcolor="white"/>
+                <button class="button_main" x="+26+80" width="26" height="26" action="pad_param2 +1" iconsize="20" sysicon="arrowright" coloroff="black" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+                <visual>
+                  <size width="26+80+26" height="24"/>
+                  <off shape="square" color="transparent" border="dark_6" border_size="1" radius="6"/>
+                </visual>
+              </group>
             </group>
           </group>
           <!-- PAD AREA BORDER -->

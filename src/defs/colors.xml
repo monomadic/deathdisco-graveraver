@@ -295,6 +295,16 @@
   <define color="dark_7" value="#666666"/>
   <define color="dark_8" value="#999999"/>
   <define color="dark_9" value="#AAAAAA"/>
+  <define color="light_0" value="#FFFFFF"/>
+  <define color="light_1" value="#F0F0F0"/>
+  <define color="light_2" value="#EEEEEE"/>
+  <define color="light_3" value="#DDDDDD"/>
+  <define color="light_4" value="#CCCCCC"/>
+  <define color="light_5" value="#BBBBBB"/>
+  <define color="light_6" value="#AAAAAA"/>
+  <define color="light_7" value="#999999"/>
+  <define color="light_8" value="#777777"/>
+  <define color="light_9" value="#555555"/>
   <!-- Base UI colors used by modular components -->
   <!-- Text -->
   <define color="text_main" value="#e8e8ea"/>

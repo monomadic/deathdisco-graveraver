@@ -172,7 +172,7 @@
       <fader color="faderbackgroundline" width="38" height="2"/>
     </slider>
   </define>
-  <define class="crossfader">
+  <define class="CROSSFADER">
     <!-- <button class="button_main" x="-5" y="+0" width="38" height="38" action="auto_crossfade 0%" rightclick="crossfader 0%" tooltip="Auto-Crossfader Left\nRight-click: Crossfader 0%" coloroff="transparent" coloron="transparent" brcoloroff="transparent" brcoloron="transparent" textsize="10" textcolor="textoff3" textcoloron="needle" iconsize="30" sysicon="arrowleft" query="crossfader 0%" visibility="var_equal '@$4decks' 0"/> -->
     <!-- <button class="button_main" x="+240" y="+0" width="38" height="38" action="auto_crossfade 100%" rightclick="crossfader 100%" tooltip="Auto-Crossfader Right\nRight-click: Crossfader 100%"coloroff="transparent" coloron="transparent" brcoloroff="transparent" brcoloron="transparent" textsize="10" textcolor="textoff3" textcoloron="needle" iconsize="30" sysicon="arrowright" query="crossfader 100%" visibility="var_equal '@$4decks' 0"/> -->
     <!-- <group name="channel_assign" x="-10" visibility="var_not_equal '@$4decks' 0"> -->
@@ -210,7 +210,7 @@
     <!-- <size width="194-12" height="38"/> -->
     <!-- <fader color="faderbackgroundline" width="2" height="38"/> -->
     <!-- </slider> -->
-    <panel class="xfader_panel" x="-20" y="-10"/>
+    <panel class="xfader_panel" x="-18" y="-10"/>
   </define>
   <define class="video_crossfader">
     <group name="channel_assign" x="-3" visibility="var_equal '@$hauntinglayout' 1">

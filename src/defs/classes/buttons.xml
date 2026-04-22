@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <group name="buttons">
+    <define class="HOTCUE_BUTTON_STACK_PROGRESS" placeholders="*source,width=25,height=22">
+      <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0"/>
+      <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">
+        <tooltip/>
+        <pos x="+0" y="+0"/>
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+      </visual>
+      <!-- Use a computed slider here because <visual source> is most reliable with built-in/get_* sources. -->
+      <slider orientation="vertical" direction="up" source="param_div `cue_countup &amp; param_cast float` `param_add cue_countup cue_countdown &amp; param_cast float`" visibility="get_cue &amp; param_equal [SOURCE] ? constant 0.42 : false">
+        <pos x="+1" y="+1"/>
+        <size width="[WIDTH]-2" height="[HEIGHT]-2"/>
+        <off shape="square" color="transparent" radius="4"/>
+        <on shape="square" color="#66FFFFFF" radius="4"/>
+      </slider>
+      <!-- <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE]"> -->
+      <!-- <tooltip/> -->
+      <!-- <pos x="+0" y="+[HEIGHT]-3"/> -->
+      <!-- <size width="[WIDTH]" height="3"/> -->
+      <!-- </visual> -->
+      <!-- <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" query="get_cue &amp; param_equal [SOURCE]" coloroff="transparent" coloron="transparent" brcoloroff="transparent" brcoloron="transparent" bordersize="0" textaction="get_text '[SOURCE]'" textheight="[HEIGHT]-3" textcolor="textoff2" textcoloron="needle"/> -->
+    </define>
     <!-- Generic main button -->
     <define class="BUTTON_MAIN" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=12,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no,textdx=0,textdy=0,radius">
       <size width="[WIDTH]" height="[HEIGHT]"/>

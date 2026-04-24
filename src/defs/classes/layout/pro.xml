@@ -85,7 +85,7 @@
     <panel class="pro_2decks_overlays" x="+35" y="+0" deck="3"/>
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2"/>
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
-    <!-- <panel class="pro_2decks_overlays" deck="rightdeck"/> -->
+    <panel class="pro_2decks_overlays" deck="rightdeck"/>
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->

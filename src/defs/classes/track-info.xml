@@ -488,14 +488,10 @@
     <menu class="menu_maindecks" query="select" x="+404-2-4-28" y="+72-8-22" width="28" height="20" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
   </define>
   <define class="TRACK_INFO_ACTION_ZONE">
-    <dropzone visibility="var_equal '@$hauntinglayout' 0" x="+0" y="+0">
-      <size width="770" height="434"/>
-      <over color="transparent" border_size="2" border="color_dropzone" shape="square" radius="10"/>
-    </dropzone>
-    <dropzone visibility="var_equal '@$hauntinglayout' 1" x="-2" y="-2">
-      <size width="770" height="436"/>
-      <over color="transparent" border_size="2" border="color_dropzone" shape="square" radius="10"/>
-    </dropzone>
+    <!-- <dropzone visibility="var_equal '@$hauntinglayout' 1" x="-2" y="-2"> -->
+    <!-- <size width="770" height="236"/> -->
+    <!-- <over color="transparent" border_size="2" border="color_dropzone" shape="square" radius="10"/> -->
+    <!-- </dropzone> -->
     <group visibility="loaded" x="+15" y="+10">
       <!-- CLASS: STEM BUTTONS -->
       <!-- <define class="_STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23"> -->

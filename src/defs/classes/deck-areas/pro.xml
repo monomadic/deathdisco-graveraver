@@ -85,6 +85,10 @@
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
         <!-- <line color="#333333" x="+0" y="+400-2" width="765" height="1"/> -->
+        <dropzone x="+0" y="+0">
+          <size width="770" height="234"/>
+          <over color="transparent" border_size="10" border="#55FFFFFF" shape="square" radius="10"/>
+        </dropzone>
       </group>
     </deck>
   </define>
@@ -163,14 +167,14 @@
         </visual>
         <!-- <line color="#333333" x="+0" y="+[HEIGHT]+15" width="765" height="1"/> -->
       </group>
-      <dropzone visibility="var_equal '@$hauntinglayout' 0">
-        <size width="800" height="[HEIGHT]"/>
-        <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
-      </dropzone>
-      <dropzone visibility="var_equal '@$hauntinglayout' 1">
-        <size width="800" height="[HEIGHT]"/>
-        <over color="transparent" border_size="2" border="needle" shape="square"/>
-      </dropzone>
+      <!-- <dropzone visibility="var_equal '@$hauntinglayout' 0"> -->
+      <!-- <size width="800" height="[HEIGHT]"/> -->
+      <!-- <over color="transparent" border_size="2" border="deckcolor" shape="square"/> -->
+      <!-- </dropzone> -->
+      <!-- <dropzone visibility="var_equal '@$hauntinglayout' 1"> -->
+      <!-- <size width="800" height="[HEIGHT]"/> -->
+      <!-- <over color="transparent" border_size="2" border="needle" shape="square"/> -->
+      <!-- </dropzone> -->
       <panel class="video_preview" x="+2+60+11+1" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
     </deck>
   </define>

@@ -17,6 +17,14 @@
     <selected color="#000000" border="dark_6" radius="6" border_size="2"/>
     <text dy="-2" weight="bold" fontsize="14" color="dark_7" colordown="white" colorover="white" align="center" action="shift ? pad_page [ALTPAGE] &amp; param_uppercase : pad_page [PAGE] &amp; param_uppercase"/>
   </define>
+  <define class="PAD_PAGE_BANK_BUTTONS" placeholders="*page" query="pad_page [PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
+    <size width="100" height="23"/>
+    <off color="#000000" border="dark_6" radius="6" border_size="1"/>
+    <over color="#000000" border="dark_6" radius="6" border_size="1"/>
+    <down color="#000000" border="dark_6" radius="6" border_size="2"/>
+    <selected color="#000000" border="dark_6" radius="6" border_size="2"/>
+    <text dy="+1" weight="" fontsize="12" color="dark_7" colordown="white" colorover="white" align="center" action="shift ? get_text '' : pad_page btn[PAGE] &amp; param_uppercase"/>
+  </define>
   <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- BACKGROUND -->
@@ -89,10 +97,6 @@
             </group>
           </panel>
           <!-- PAD BUTTONS -->
-          <!-- button borders -->
-          <!-- <visual x="+0" y="+49" width="750" height="40*4"> -->
-          <!-- <off shape="square" color="dark_5" border="0" radius="6"/> -->
-          <!-- </visual> -->
           <group x="+2" y="+50">
             <panel class="padbutton3" x="+180*0+2" y="+40*0" source="1"/>
             <panel class="padbutton3" x="+180*1+2" y="+40*0" source="2"/>
@@ -127,30 +131,6 @@
           <group y="+40*4+30+25">
             <group>
               <!-- MINI HOTCUES -->
-              <!-- <visual type="color" source="cue_color 1"> -->
-              <!-- <pos x="+3" y="+3"/> -->
-              <!-- <size width="18" height="18"/> -->
-              <!-- </visual> -->
-              <!-- <button action="hot_cue 1"> -->
-              <!-- <pos x="+3" y="+3"/> -->
-              <!-- <size width="18" height="18"/> -->
-              <!-- <off shape="square" color="transparent"/> -->
-              <!-- <text text="1" color="white" fontsize="14" weight="bold" align="center"/> -->
-              <!-- </button> -->
-              <!-- <define class="MINI_CUE_BUTTON" placeholders="*index,*color,*width=20,*height=20" action="hot_cue '[INDEX]'"> -->
-              <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
-              <!-- <off color="transparent" border="dark_7" border_size="1" radius="5"/> -->
-              <!-- <selected color="transparent" border="[COLOR]" radius="5"/> -->
-              <!-- <text fontsize="12" color="dark_7" colorover="[COLOR]" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[INDEX]"/> -->
-              <!-- </define> -->
-              <!-- <button class="mini_cue_button" index="1" color="cue_color 1" x="+0" y="+0"/> -->
-              <!-- <define class="MINI_CUE_BUTTON" placeholders="*index,*width=20,*height=20" action="hot_cue [INDEX]" query="has_cue [INDEX]"> -->
-              <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
-              <!-- <off color="transparent" border="dark_7" border_size="1" radius="5"/> -->
-              <!-- <on color="transparent" border="`cue_color [INDEX]`" border_size="1" radius="5"/> -->
-              <!-- <selected color="transparent" border="`cue_color [INDEX]`" border_size="1" radius="5"/> -->
-              <!-- <text fontsize="12" color="light_3" colorover="light_0" coloron="`cue_color [INDEX]`" colorselected="`cue_color [INDEX]`" colordown="`cue_color [INDEX]`" align="center" text="[INDEX]"/> -->
-              <!-- </define> -->
               <define class="MINI_CUE_BUTTON_V2" placeholders="*index,*width=21,*height=18" visibility="has_cue [INDEX]">
                 <button action="hot_cue [INDEX]" rightclick="goto_cue [INDEX]">
                   <pos x="+0" y="+0"/>

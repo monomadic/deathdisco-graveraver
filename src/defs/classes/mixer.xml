@@ -728,7 +728,7 @@
             <panel class="sampler_row" deck="master" index="8" y="+34*7" visibility="sampler_loaded 8"/>
           </group>
           <!-- BOTTOM SECTION -->
-          <group y="+280">
+          <group y="+275">
             <!-- <group name="sampler_mode" x="+10"> -->
             <!-- label -->
             <!-- <textzone class="text" x="+0" y="+0" width="45" height="20" fontsize="8" color="textoff" align="left" weight="" text="MODE"/> -->
@@ -740,15 +740,25 @@
             <!-- <text align="center" action="sampler_mode &amp; param_uppercase"/> -->
             <!-- </button> -->
             <!-- </group> -->
-            <group name="sampler_pad_page_select" x="+188" y="+0">
+            <!-- SAMPLER ROUTING TOGGLE HEADPHONES/MASTER -->
+            <group name="sampler_output" x="+0">
+              <textzone class="text" x="+0" y="+0" width="50" height="18" fontsize="8" color="textoff" align="left" weight="" text="OUTPUT"/>
+              <button x="+0" y="+14" query="false" textsize="11" class="button_main" action="param_equal `setting 'samplerOutputDeck'` 0 ? setting 'samplerOutputDeck' -1 : setting 'samplerOutputDeck' 0" rightclick="sampler_output 'popup'" textaction="param_equal `setting 'samplerOutputDeck'` 0 ? get_text 'MASTER' : param_equal `setting 'samplerOutputDeck'` -1 ? get_text 'HEADPHONES' : param_equal `setting 'samplerOutputDeck'` -2 ? get_text 'TRIGGER' : get_text 'DECK `setting &quot;samplerOutputDeck&quot;`'">
+                <size width="90" height="16"/>
+                <off color="#111111" border="#555555" radius="4"/>
+                <down color="#111111" border="#555555" radius="4"/>
+                <text align="center" color="white" radius="4"/>
+              </button>
+            </group>
+            <group name="sampler_pad_page_select" x="+188" y="+5">
               <deck deck="master">
-                <button x="-73" class="button_main" bordersize="1" textsize="11" width="60" height="26" action="deck 1 masterdeck ? deck 1 sampler_pad_page +1 : deck 2 masterdeck ? deck 2 sampler_pad_page +1 : deck 3 masterdeck ? deck 3 sampler_pad_page +1 : deck 4 masterdeck ? deck 4 sampler_pad_page +1 : sampler_pad_page +1" textcolor="white">
-                  <size width="60" height="24"/>
-                  <off color="#111111"/>
-                  <down color="#111111"/>
-                  <selected color="#111111"/>
-                  <text align="center" weight="" action="deck 1 masterdeck ? deck 1 sampler_pad 1 : deck 2 masterdeck ? deck 2 sampler_pad 1 : deck 3 masterdeck ? deck 3 sampler_pad 1 : deck 4 masterdeck ? deck 4 sampler_pad 1 : sampler_pad 1"/>
-                </button>
+                <!-- <button x="-73" class="button_main" bordersize="1" textsize="11" width="60" height="26" action="deck 1 masterdeck ? deck 1 sampler_pad_page +1 : deck 2 masterdeck ? deck 2 sampler_pad_page +1 : deck 3 masterdeck ? deck 3 sampler_pad_page +1 : deck 4 masterdeck ? deck 4 sampler_pad_page +1 : sampler_pad_page +1" textcolor="white"> -->
+                <!-- <size width="60" height="24"/> -->
+                <!-- <off color="#111111"/> -->
+                <!-- <down color="#111111"/> -->
+                <!-- <selected color="#111111"/> -->
+                <!-- <text align="center" weight="" action="deck 1 masterdeck ? deck 1 sampler_pad 1 : deck 2 masterdeck ? deck 2 sampler_pad 1 : deck 3 masterdeck ? deck 3 sampler_pad 1 : deck 4 masterdeck ? deck 4 sampler_pad 1 : sampler_pad 1"/> -->
+                <!-- </button> -->
                 <button x="+0" class="button_main" bordersize="1" action="deck 1 masterdeck ? deck 1 sampler_pad_page -1 : deck 2 masterdeck ? deck 2 sampler_pad_page -1 : deck 3 masterdeck ? deck 3 sampler_pad_page -1 : deck 4 masterdeck ? deck 4 sampler_pad_page -1 : sampler_pad_page -1" textsize="10" textcolor="white">
                   <size width="24" height="24"/>
                   <off color="#111111"/>
@@ -775,16 +785,6 @@
                 </visual>
               </deck>
             </group>
-            <!-- SAMPLER ROUTING TOGGLE HEADPHONES/MASTER -->
-            <!-- <group name="sampler_output" x="+204"> -->
-            <!-- <textzone class="text" x="+0" y="+0" width="50" height="20" fontsize="8" color="textoff" align="left" weight="" text="OUTPUT"/> -->
-            <!-- <button x="+0" y="+16" query="false" textsize="11" class="button_main" action="param_equal `setting 'samplerOutputDeck'` 0 ? setting 'samplerOutputDeck' -1 : setting 'samplerOutputDeck' 0" rightclick="sampler_output 'popup'" textaction="param_equal `setting 'samplerOutputDeck'` 0 ? get_text 'MASTER' : param_equal `setting 'samplerOutputDeck'` -1 ? get_text 'HEADPHONES' : param_equal `setting 'samplerOutputDeck'` -2 ? get_text 'TRIGGER' : get_text 'DECK `setting &quot;samplerOutputDeck&quot;`'"> -->
-            <!-- <size width="95" height="17"/> -->
-            <!-- <off color="#111111" border="#555555"/> -->
-            <!-- <down color="#111111" border="#555555"/> -->
-            <!-- <text align="center" color="white"/> -->
-            <!-- </button> -->
-            <!-- </group> -->
           </group>
           <!-- SAMPLER VUMETER -->
           <group x="+0" y="+310">

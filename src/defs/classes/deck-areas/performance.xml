@@ -16,7 +16,6 @@
       </textzone>
     </panel>
   </define>
-
   <define class="KNOB_XSMALL_THIN" placeholders="*label,knob_color=#EEEEEE,fill_color=yellow,bg_color=#AAAAAA">
     <visual width="30" height="35">
       <off shape="square" color="#11FFFFFF" radius="0"/>
@@ -35,7 +34,6 @@
       </textzone>
     </panel>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
     <panel class="AREA_DECK_PERFORMANCE_SPINE" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] leftdeck"/>
     <panel class="AREA_DECK_PERFORMANCE_BODY" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] leftdeck"/>
@@ -51,7 +49,6 @@
       </textzone>
     </panel>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
       <visual x="+0" y="+1" width="34" height="320">
@@ -65,7 +62,6 @@
       <menu class="menu_maindecks" query="select" x="+3" y="+295" width="28" height="20"/>
     </deck>
   </define>
-
   <!-- Shared performance body used on the left side and mirrored into the two-deck right-side shell -->
   <define class="AREA_DECK_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
@@ -125,7 +121,6 @@
       <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>
     </deck>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_LEFT_VERTICAL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="766" height="333" coloroff="panel_background"/>
@@ -153,7 +148,6 @@
       </dropzone>
     </deck>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_LEFT_CENTER" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
@@ -175,7 +169,6 @@
       <panel class="dual_dropzone" width="800-81" height="333"/>
     </deck>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="878+77+2" height="264" coloroff="#111111" bordersize="1" bordercoloroff="#222222"/>
@@ -203,7 +196,6 @@
       </dropzone>
     </deck>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_RIGHT_VERTICAL" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800" height="333" coloroff="panel_background"/>
@@ -231,7 +223,6 @@
       </dropzone>
     </deck>
   </define>
-
   <define class="AREA_DECK_PERFORMANCE_RIGHT_CENTER" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
@@ -253,7 +244,6 @@
       <panel class="dual_dropzone" width="800-81" height="333"/>
     </deck>
   </define>
-
   <define class="AREA_DECK_MINI" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <panel>

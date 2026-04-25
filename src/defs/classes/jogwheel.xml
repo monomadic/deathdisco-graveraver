@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <define class="GREEN_LIGHT_INDICATOR" placeholders="*action,*query">
+    <!-- <visual> -->
+    <!-- <size width="24" height="24"/> -->
+    <!-- <pos x="-2" y="-2"/> -->
+    <!-- <off shape="circle" color="#111111" border="#000000" border_size="1"/> -->
+    <!-- </visual> -->
+    <visual>
+      <size width="20" height="20"/>
+      <off shape="circle" color="#333333" border="#222222" border_size="1"/>
+    </visual>
+    <button shape="circle" action="[ACTION]" query="[QUERY]">
+      <size width="10" height="10"/>
+      <pos x="+5" y="+5"/>
+      <off shape="circle" color="#AAAAAA" border="#000000" border_size="1"/>
+      <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
+      <over shape="circle" color="#DDDDDD" border="#000000" border_size="0"/>
+      <down shape="circle" color="#00FF00" border="#88FFFF00" border_size="0"/>
+    </button>
+  </define>
   <define class="JOGWHEEL_CORNER_BUTTONS" placeholders="*jogsize=155">
-    <group>
-      <!-- <visual> -->
-      <!-- <size width="24" height="24"/> -->
-      <!-- <pos x="-2" y="-2"/> -->
-      <!-- <off shape="circle" color="#111111" border="#000000" border_size="1"/> -->
-      <!-- </visual> -->
+    <panel class="green_light_indicator" x="+[JOGSIZE]-20" y="+[JOGSIZE]-20" action="auto_sync_options" query="auto_match_bpm ? auto_match_key ? auto_sync ? auto_pitch_lock"/>
+    <group x="+0" y="+0">
       <visual>
         <size width="20" height="20"/>
-        <off shape="circle" color="#333333" border="#222222" border_size="1"/>
-      </visual>
-      <button action="auto_sync_options" query="auto_match_bpm ? auto_match_key ? auto_sync ? auto_pitch_lock" visibility="loaded" shape="circle">
-        <size width="10" height="10"/>
-        <pos x="+5" y="+5"/>
-        <off shape="circle" color="#AAAAAA" border="#000000" border_size="1"/>
-        <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
-        <over shape="circle" color="#DDDDDD" border="#000000" border_size="0"/>
-        <down shape="circle" color="#00FF00" border="#88FFFF00" border_size="0"/>
-      </button>
-    </group>
-    <group x="+[JOGSIZE]-20" y="+0">
-      <visual>
-        <size width="20" height="20"/>
-        <off shape="circle" color="#333333" border="#222222" border_size="1"/>
-        <over shape="circle" color="#888888" border="#888888" border_size="1"/>
+        <off shape="circle" color="transparent" border="dark_6" border_size="1"/>
+        <over shape="circle" color="transparent" border="#888888" border_size="1"/>
       </visual>
       <!-- PRO: JOGWHEEL MENU -->
       <menu>
@@ -32,13 +33,13 @@
         <size width="10" height="10"/>
         <pos x="+5" y="+5"/>
         <icon sysicon="settings" height="18" width="18" color="#AAAAAA" colorover="white" colordown="needle"/>
-        <item text="Needle" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
+        <item text="Minimal" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
         <item text="Text" localize="true" action="set '@$hauntingjogtype' 1" check="var_equal '@$hauntingjogtype' 1"/>
         <item text="Sync Status" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
         <item text="Cover Art" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
         <separator localize="true"/>
         <submenu text="Text" localize="true">
-          <item text="Jog Mode" localize="true" action="set '@$haunting_jog_text' 0" check="var_equal '@$haunting_jog_text' 0"/>
+          <item text="Key" localize="true" action="set '@$haunting_jog_text' 0" check="var_equal '@$haunting_jog_text' 0"/>
           <item text="Loop Size" localize="true" action="set '@$haunting_jog_text' 1" check="var_equal '@$haunting_jog_text' 1"/>
           <item text="Elapsed" localize="true" action="set '@$haunting_jog_text' 2" check="var_equal '@$haunting_jog_text' 2"/>
           <item text="Remain" localize="true" action="set '@$haunting_jog_text' 3" check="var_equal '@$haunting_jog_text' 3"/>
@@ -57,11 +58,12 @@
   <define class="JOGWHEEL" placeholders="*jogsize=155">
     <!-- JOGWHEEL A: NEEDLE -->
     <group name="jogwheel_a" visibility="var_equal '@$hauntingjogtype' 0">
-      <visual novisibility="loaded">
+      <!-- empty deck outer ring -->
+      <visual visibility="not loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
         <size width="[JOGSIZE]" height="[JOGSIZE]"/>
-        <off shape="circle" color="white" border="white"/>
+        <off shape="circle" color="dark_1" border="dark_4" border_size="1"/>
       </visual>
       <visual source="song_pos 'show warning'" type="circle" visibility="loaded">
         <tooltip/>
@@ -70,7 +72,7 @@
         <off shape="circle" color="jogprogressoff"/>
         <on shape="circle" color="dark_6"/>
       </visual>
-      <visual name="innercircle_border">
+      <visual name="innercircle_border" visibility="loaded">
         <pos x="+4" y="+4"/>
         <size width="[JOGSIZE]-8" height="[JOGSIZE]-8"/>
         <off shape="circle" color="#111111" border_size="35" border="dark_0"/>
@@ -86,17 +88,25 @@
         <size width="[JOGSIZE]-104" height="[JOGSIZE]-104"/>
         <off shape="circle" color="#33FFFFFF" border_size="1" border="#33FFFFFF"/>
       </visual>
-      <!-- inner needle piece -->
-      <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jogprogressoff" widthfader="8" heightfader="20" radius="8"/>
-      <visual name="innercircle_border">
-        <pos x="+69" y="+69"/>
-        <size width="[JOGSIZE]-69-69" height="[JOGSIZE]-69-69"/>
-        <off shape="circle" color="dark_9" border_size="0" border="black"/>
+      <group>
+        <!-- inner needle piece -->
+        <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jogprogressoff" widthfader="8" heightfader="20" radius="8"/>
+        <visual name="innercircle_border">
+          <pos x="+69" y="+69"/>
+          <size width="[JOGSIZE]-69-69" height="[JOGSIZE]-69-69"/>
+          <off shape="circle" color="dark_9" border_size="0" border="black"/>
+        </visual>
+        <!-- light needle piece -->
+        <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="white" widthfader="1" heightfader="45" radius="30"/>
+        <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jog_slider" widthfader="5" heightfader="5" radius="69"/>
+        <panel class="jogwheel_corner_buttons"/>
+      </group>
+      <visual visibility="loaded">
+        <tooltip/>
+        <pos x="+0" y="+0"/>
+        <size width="[JOGSIZE]" height="[JOGSIZE]"/>
+        <off shape="circle" color="transparent" border="dark_4" border_size="1"/>
       </visual>
-      <!-- light needle piece -->
-      <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="white" widthfader="1" heightfader="45" radius="30"/>
-      <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jog_slider" widthfader="5" heightfader="5" radius="69"/>
-      <panel class="jogwheel_corner_buttons"/>
     </group>
     <!-- JOGWHEEL B: TEXT -->
     <group name="jogwheel_b" visibility="var_equal '@$hauntingjogtype' 1">

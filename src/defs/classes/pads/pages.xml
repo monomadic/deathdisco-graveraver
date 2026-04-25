@@ -161,7 +161,7 @@
                 <visual>
                   <pos x="+0" y="+0"/>
                   <size width="21*4+4+4+3" height="26"/>
-                  <off shape="square" color="dark_0" border="dark_7" border_size="1" radius="5"/>
+                  <off shape="square" color="dark_0" border="dark_6" border_size="1" radius="5"/>
                 </visual>
                 <group x="+4" y="+4">
                   <panel class="MINI_CUE_BUTTON_V2" index="1" x="+0" y="+0"/>

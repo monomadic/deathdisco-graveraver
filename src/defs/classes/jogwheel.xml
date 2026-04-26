@@ -56,7 +56,7 @@
     </group>
   </define>
   <define class="JOGWHEEL" placeholders="*jogsize=155">
-    <!-- JOGWHEEL A: NEEDLE -->
+    <!-- JOGWHEEL A: MINIMAL -->
     <group name="jogwheel_a" visibility="var_equal '@$hauntingjogtype' 0">
       <!-- empty deck outer ring -->
       <visual visibility="not loaded">
@@ -77,17 +77,24 @@
         <size width="[JOGSIZE]-8" height="[JOGSIZE]-8"/>
         <off shape="circle" color="#111111" border_size="35" border="dark_0"/>
       </visual>
-      <!-- SONG ENDING WARNING -->
-      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink" tooltip="">
-        <size width="[JOGSIZE]" height="[JOGSIZE]"/>
-        <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/>
-        <on border_size="5" border="white" color="mixerbackground" shape="circle"/>
-      </visual>
       <visual name="innercircle_border" visibility="loaded">
         <pos x="+52" y="+52"/>
         <size width="[JOGSIZE]-104" height="[JOGSIZE]-104"/>
         <off shape="circle" color="#33FFFFFF" border_size="1" border="#33FFFFFF"/>
       </visual>
+      <!-- SONG ENDING WARNING -->
+      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink" tooltip="">
+        <size width="[JOGSIZE]" height="[JOGSIZE]"/>
+        <off border_size="20" border="transparent" color="mixerbackground" shape="circle"/>
+        <on border_size="4" border="#FF4444" color="#33FF0000" shape="circle"/>
+      </visual>
+      <group x="+45" y="+110" visibility="loaded ? songpos_warning">
+        <visual width="70" height="30" visibility="songpos_warning blink">
+          <off shape="square" color="#AA000000" border="#33FF4444" border_size="1" radius="4"/>
+        </visual>
+        <textzone class="text" width="70" height="15" fontsize="8" color="white" align="center" weight="bold" text="REMAINING"/>
+        <textzone class="text" y="+10" width="70" height="20" fontsize="17" color="white" align="center" weight="bold" textaction="get_time 'remain'"/>
+      </group>
       <group>
         <!-- inner needle piece -->
         <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jogprogressoff" widthfader="8" heightfader="20" radius="8"/>

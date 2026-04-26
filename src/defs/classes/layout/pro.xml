@@ -8,49 +8,9 @@
     <panel class="area_deck_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
-    <!-- DECK: PAD PAGES SECTION -->
+    <!-- PAD PAGES -->
     <group y="+175" x="+36">
-      <!-- bg left (black behind pads) -->
-      <!-- <visual x="+0" y="+0" width="750" height="324"> -->
-      <!-- <off shape="square" color="#050505" radius="10" bordersize="1" border="dark_5"/> -->
-      <!-- </visual> -->
-      <!-- <group name="custom_buttons" visibility="false"> -->
-      <!-- CLASS: CUSTOM_BUTTON_1 -->
-      <!-- <define class="CUSTOM_BUTTON_1" action="custom_button [SOURCE]" deck="[DECK]" border_size="1" rightclick="custom_button_edit [SOURCE]" placeholders="*source,*deck,width=70,height=20"> -->
-      <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
-      <!-- <off color="#000000" border="#888888" radius="3"/> -->
-      <!-- <down color="#222222" border="#888888" radius="3"/> -->
-      <!-- <selected color="transparent" border="deckcolor" radius="3"/> -->
-      <!-- <text fontsize="10" color="#DDDDDD" colorselected="deckcolor" colordown="#888888" align="center" action="custom_button_name [SOURCE]"/> -->
-      <!-- </define> -->
-      <!-- CUSTOM BUTTONS LEFT -->
-      <!-- <group x="+15" y="+10"> -->
-      <!-- <button class="custom_button_1" source="400" deck="1" width="80" y="+0"/> -->
-      <!-- <button class="custom_button_1" source="401" deck="1" width="80" y="+24"/> -->
-      <!-- <button class="custom_button_1" source="402" deck="1" width="80" y="+24*2"/> -->
-      <!-- <button class="custom_button_1" source="403" deck="1" width="80" y="+24*3"/> -->
-      <!-- <button class="custom_button_1" source="404" deck="1" width="80" y="+24*4"/> -->
-      <!-- <button class="custom_button_1" source="405" deck="1" width="80" y="+24*5"/> -->
-      <!-- <button class="custom_button_1" source="406" deck="1" width="80" y="+24*6"/> -->
-      <!-- <button class="custom_button_1" source="407" deck="1" width="80" y="+24*7"/> -->
-      <!-- </group> -->
-      <!-- CUSTOM BUTTONS RIGHT -->
-      <!-- <group x="+1920-80-80-10" y="+12"> -->
-      <!-- <button class="custom_button_1" source="400" deck="2" width="80" y="+0"/> -->
-      <!-- <button class="custom_button_1" source="401" deck="2" width="80" y="+24"/> -->
-      <!-- <button class="custom_button_1" source="402" deck="2" width="80" y="+24*2"/> -->
-      <!-- <button class="custom_button_1" source="403" deck="2" width="80" y="+24*3"/> -->
-      <!-- <button class="custom_button_1" source="404" deck="2" width="80" y="+24*4"/> -->
-      <!-- <button class="custom_button_1" source="405" deck="2" width="80" y="+24*5"/> -->
-      <!-- <button class="custom_button_1" source="406" deck="2" width="80" y="+24*6"/> -->
-      <!-- <button class="custom_button_1" source="407" deck="2" width="80" y="+24*7"/> -->
-      <!-- </group> -->
-      <!-- </group> -->
-      <!-- bg right -->
-      <!-- <visual x="1920-800+5+2" y="+0" width="750" height="224"> -->
-      <!-- <off shape="square" color="black" radius="10" bordersize="1" border="#000000"/> -->
-      <!-- </visual> -->
-      <!-- PRO: 2 DECK: PAD PAGES PANEL -->
+      <!-- PAD PAGE SELECT -->
       <group x="+0" y="+0">
         <group x="+5" y="+5">
           <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" visibility="not deck 3 leftdeck"/>
@@ -73,7 +33,6 @@
     <group x="+800">
       <group name="tabs">
         <button class="button_main" x="+2" width="78" height="23" action="skin_panel 'audiomixer' on" tooltip="AUDIO\nShow the audio (mixer) controls, like equalizers, gain, level, pfl, etc" textcolor="textdarker" textcoloron="needle" text="MIXER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
-        <!-- <button class="button_main" x="+2+78" width="78" height="23" action="skin_panel 'videomixer' on" tooltip="VIDEO\nShow the video controls, like video previews, source, effects, etc" textcolor="textdarker" textcoloron="needle" text="VIDEO" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/> -->
         <button class="button_main" x="+2+78" width="78" height="23" action="skin_panel 'samplermixer' on" tooltip="SAMPLER\nShow the sampler controls" textcolor="textdarker" textcoloron="needle" text="SAMPLER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
         <button class="button_main" x="+2+78+78" width="78" height="23" action="skin_panel 'scratchmixer' on" tooltip="SCRATCH\nShow a scratch-optimized view with vertical waveforms and scratch options" textcolor="textdarker" textcoloron="needle" text="WAVE" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
         <button class="button_main" x="+2+78+78+78" width="78" height="23" action="skin_panel 'mastermixer' on" textcolor="textdarker" tooltip="MASTER\nShow some general controls, like record/broadcast, microphone, or master effects" textcoloron="needle" text="MASTER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>

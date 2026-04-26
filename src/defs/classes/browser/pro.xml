@@ -68,7 +68,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="browser_mini" showzoom="yes" placeholders="*height">
+  <define class="BROWSER_MINI" showzoom="yes" placeholders="*height">
     <!-- Shared mini browser wave-size ladder used by Pro and Performance -->
     <xi:include href="positions/pro-mini.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
@@ -102,7 +102,7 @@
     <fontgridtitle size="18"/>
     <fonttoolbar size="14"/>
   </define>
-  <define class="browser_mini_4decks" showzoom="yes" placeholders="*height">
+  <define class="BROWSER_MINI_4DECKS" showzoom="yes" placeholders="*height">
     <!-- Shared mini 4-deck browser wave-size ladder used by Pro and Performance -->
     <xi:include href="positions/pro-mini-4deck.xml" xpointer="xpointer(/positions/*)"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>

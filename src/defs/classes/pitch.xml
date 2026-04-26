@@ -30,6 +30,36 @@
       <text dy="-1" text="BEATLOCK" fontsize="8" coloroff="dark_8" coloron="needle" align="center"/>
     </button>
   </define>
+  <define class="PITCH_SMALL" placeholders="*height=60">
+    <!-- <line color="faderlines" x="+0" y="+0" width="38" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13*2" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13*3" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+0" y="+13*4" width="38" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13*5" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13*6" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+2" y="+13*7" width="34" height="1"/> -->
+    <!-- <line color="faderlines" x="+0" y="+13*8" width="38" height="1"/> -->
+    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true">
+      <pos x="+0" y="-7"/>
+      <size width="33" height="[HEIGHT]"/>
+      <on width="-30" height="+0" color="dark_6" border="#FFFFFF" border_size="0" radius="0" shape="square"/>
+      <off width="-30" height="+0" color="#FFFFFF" border="#FFFFFF" border_size="0" radius="0" shape="square"/>
+      <fader color="#FFFFFF" width="15" height="2"/>
+    </slider>
+    <!-- <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true"> -->
+    <!-- <pos x="+0" y="-7+6"/> -->
+    <!-- <size width="38" height="[HEIGHT]"/> -->
+    <!-- <fader color="faderbackgroundline" width="38" height="2"/> -->
+    <!-- </slider> -->
+    <!-- <button x="-7" y="+[HEIGHT]" width="52" height="16" action="beatlock" query="beatlock"> -->
+    <!-- <off color="button_background3" border="button_background3" border_size="1" radius="5"/> -->
+    <!-- <on color="button_background3" border="white" border_size="1" radius="5"/> -->
+    <!-- <over color="button_background3" border="button_background3" border_size="1" radius="5"/> -->
+    <!-- <down color="button_background3" border="white" border_size="1" radius="5"/> -->
+    <!-- <text dy="-1" text="BEATLOCK" fontsize="8" coloroff="dark_8" coloron="needle" align="center"/> -->
+    <!-- </button> -->
+  </define>
   <define class="pitch_ex">
     <line color="faderlines2" x="+0" y="+0" width="38" height="1"/>
     <line color="faderlines2" x="+2" y="+12" width="34" height="1"/>

@@ -136,15 +136,46 @@
         <size width="[JOGSIZE]-20" height="[JOGSIZE]-20"/>
         <off shape="circle" color="jogwheelbackground2" border_size="1" border="deckcolor"/>
       </visual>
-      <textzone class="text" x="+18" y="+28" width="[JOGSIZE]-36" height="46" fontsize="26" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
-      <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+72" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/>
+      <!-- BPM -->
+      <group x="+0" y="+30" visibility="loaded">
+        <textzone class="text" width="[JOGSIZE]" height="46" fontsize="24" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+        <!-- BPM % DIFF -->
+        <!-- <textzone> -->
+        <!-- <pos x="+0" y="-12"/> -->
+        <!-- <size width="+[JOGSIZE]" height="25"/> -->
+        <!-- <text fontsize="14" weight="" color="white" align="center" format="`get_text '%Ppitch%'`" important="true"/> -->
+        <!-- </textzone> -->
+        <button action="pitch_reset 8bt">
+          <pos x="+0" y="-10"/>
+          <size width="+[JOGSIZE]" height="25"/>
+          <text fontsize="14" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>
+          <textover color="white" text="RESET" align="center"/>
+        </button>
+        <!-- <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/> -->
+      </group>
+      <!-- <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+72" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/> -->
       <!-- center -->
       <!-- left -->
-      <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/>
+      <!-- <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/> -->
       <!-- right -->
-      <button class="button_main" x="+18+6+50" y="+72" width="50" height="16" coloroff="transparent" coloron="transparent" bordersize="1" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded"/>
+      <!-- <button class="button_main" x="+18+6+50" y="+72" width="50" height="16" coloroff="transparent" coloron="transparent" bordersize="1" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded"/> -->
+      <group x="+[JOGSIZE]/2-30" y="+70">
+        <button x="+0" class="button_main" action="sync" width="20" height="18" color="blue" coloroff="transparent" brcoloroff="red" brcoloron="green" coloron="black" bordersize="0" textsize="12" textcolor="red" textcoloron="green" text="B" query="is_sync" visibility="loaded ? not masterdeck ? not is_sync ? blink 1bt : true"/>
+        <button x="+20" class="button_main" action="sync &amp; phrase_sync 32" width="20" height="18" color="blue" coloroff="transparent" brcoloroff="red" brcoloron="green" coloron="black" bordersize="0" textsize="12" textcolor="red" textcoloron="green" text="P" query="is_sync" visibility="loaded ? not masterdeck ? not is_sync ? blink 1bt : true"/>
+        <button x="+40" class="button_main" action="key_match_button" width="20" height="18" coloroff="black" coloron="transparent" brcoloroff="red" brcoloron="green" brcolorover="white" bordersize="0" textsize="12" textcolor="red" textcoloron="green" text="K" visibility="loaded ? not masterdeck ? not key_match ? blink 1bt : true" radius="2"/>
+        <!-- MASTER BUTTON -->
+        <button class="button_main" action="key_match_button" width="60" height="18" coloroff="transparent" coloron="transparent" bordersize="0" brcoloroff="orange" brcoloron="orange" radius="1" textsize="12" textcolor="orange" textcoloron="orange" textaction="masterdeck ? masterdeck_auto ? get_text 'AUTO MASTER' : get_text 'MASTER' : get_text 'SLAVE'" visibility="loaded ? masterdeck"/>
+      </group>
       <!-- bottom -->
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="deckcolor" align="center" weight="" textaction="get_key" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
+      <!-- KEY -->
+      <group x="+0" y="+92" visibility="loaded">
+        <textzone class="text" width="[JOGSIZE]" height="26" fontsize="24" color="white" align="center" weight="bold" textaction="get_key" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
+        <button action="key_match_button" visibility="loaded ? not masterdeck ? not key_match ? blink 1bt : true">
+          <pos x="+0" y="+18"/>
+          <size width="+[JOGSIZE]" height="25"/>
+          <text fontsize="12" weight="" color="white" align="center" action="get_key_modifier_text" important="true"/>
+        </button>
+      </group>
       <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="26" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
       <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
       <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
@@ -228,7 +259,7 @@
           <button class="button_main" action="key_match_button" width="110" height="18" x="+16" y="+20" coloroff="black" coloron="transparent" brcoloroff="red" brcoloron="green" brcolorover="white" bordersize="1" textsize="12" textcolor="red" textcoloron="green" text="KEY" visibility="loaded ? not masterdeck ? not key_match ? blink 1bt : true" radius="2"/>
         </group>
         <!-- MASTER BUTTON -->
-        <button class="button_main" action="key_match_button" width="110" height="30" x="+16+6" y="+63" coloroff="transparent" coloron="transparent" bordersize="1" brcoloroff="orange" brcoloron="orange" radius="1" textsize="12" textcolor="orange" textcoloron="orange" textaction="masterdeck ? masterdeck_auto ? get_text 'AUTO' : get_text 'MASTER' : get_text 'SLAVE'" visibility="loaded ? masterdeck"/>
+        <button class="button_main" action="key_match_button" width="110" height="30" x="+16+6" y="+63" coloroff="transparent" coloron="transparent" bordersize="1" brcoloroff="orange" brcoloron="orange" radius="1" textsize="12" textcolor="orange" textcoloron="orange" textaction="masterdeck ? masterdeck_auto ? get_text 'AUTO MASTER' : get_text 'MASTER' : get_text 'SLAVE'" visibility="loaded ? masterdeck"/>
         <!-- KEY -->
         <group x="+20" y="+103">
           <!-- KEY TEXT -->

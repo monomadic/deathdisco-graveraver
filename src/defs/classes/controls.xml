@@ -199,7 +199,6 @@
         <button class="custom_button" source="206" y="+120" width="57" height="19"/>
         <button class="custom_button" source="207" y="+140" width="57" height="19"/>
       </group>
-      <button class="button_main" x="0" y="0" width="100" height="100" action="quick_filter 'User 1 contains \'`get_title_before_remix`\''" rightclick="quick_filter ''"/>
     </group>
     <group name="4decks_view" visibility="var_equal '@$hauntinglayout' 1">
       <menu class="dropdown_menu" tooltip="Zero dB">

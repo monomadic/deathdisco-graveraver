@@ -642,12 +642,12 @@
         </group>
         <!-- STATUS: LOOPER -->
         <group y="+60">
-          <button width="80" height="19" action="sampler_play_stop &amp; pad_page 4 'SAMPLER'" border_size="1" query="sampler_play_stop">
+          <button width="80" height="19" action="sampler_play_stop &amp; pad_page 4 'SAMPLER'" border_size="1" query="is_using loop">
             <off color="#000000"/>
             <selected color="color_sampler" textcolor="white"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="LOOP"/>
           </button>
-          <button x="+80" width="145" height="19" action="sampler_play_stop" query="sampler_play_stop" border_size="1">
+          <button x="+80" width="145" height="19" action="sampler_play_stop" border_size="1" query="is_using loop">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_sampler" border="color_sampler"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_sampler" align="left" action="get_sample_name"/>

@@ -5,7 +5,7 @@
       height: 43px
     -->
     <!-- background -->
-    <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_3"/>
+    <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_1"/>
     <!-- DECK LAYOUT BUTTONS -->
     <group x="70" y="0">
       <button tooltip="Pro" class="button_main" action="set '@$hauntingproskinmode' 0 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 0">
@@ -95,23 +95,7 @@
           <size width="65" height="16"/>
           <text fontsize="9" weight="normal" color="#999999" align="center" text="QUANTIZE" important="true"/>
         </textzone>
-        <button
-          class="button_main"
-          x="+0"
-          y="+0+14"
-          width="65"
-          height="15"
-          action="setting 'globalQuantize' 1 ? setting 'globalQuantize' 4 : setting 'globalQuantize' 4 ? setting 'globalQuantize' 16 : setting 'globalQuantize' 16 ? setting 'globalQuantize' 32 : setting 'globalQuantize' 1"
-          textsize="12"
-          textaction="setting 'globalQuantize' 0.125 ? get_text '1/8' : setting 'globalQuantize' 0.25 ? get_text '1/4' : setting 'globalQuantize' 0.5 ? get_text '1/2' : setting 'globalQuantize' 1 ? get_text 'BEAT' : setting 'globalQuantize' 2 ? get_text '2' : setting 'globalQuantize' 4 ? get_text '4' : setting 'globalQuantize' 16 ? get_text '16' : setting 'globalQuantize' 32 ? get_text '32' : get_text 'BEAT'"
-          coloroff="#111111"
-          coloron="#111111"
-          bordersize="1"
-          textcolor="#999999"
-          textcoloron="white"
-          brcoloroff="#999999"
-          brcoloron="#999999"
-          query="setting 'globalQuantize' 1 ? off : setting 'globalQuantize' 0.125 ? on : setting 'globalQuantize' 0.25 ? on : setting 'globalQuantize' 0.5 ? on : setting 'globalQuantize' 2 ? on : setting 'globalQuantize' 4 ? on : setting 'globalQuantize' 16 ? on : setting 'globalQuantize' 32"/>
+        <button class="button_main" x="+0" y="+0+14" width="65" height="15" action="setting 'globalQuantize' 1 ? setting 'globalQuantize' 4 : setting 'globalQuantize' 4 ? setting 'globalQuantize' 16 : setting 'globalQuantize' 16 ? setting 'globalQuantize' 32 : setting 'globalQuantize' 1" textsize="12" textaction="setting 'globalQuantize' 0.125 ? get_text '1/8' : setting 'globalQuantize' 0.25 ? get_text '1/4' : setting 'globalQuantize' 0.5 ? get_text '1/2' : setting 'globalQuantize' 1 ? get_text 'BEAT' : setting 'globalQuantize' 2 ? get_text '2' : setting 'globalQuantize' 4 ? get_text '4' : setting 'globalQuantize' 16 ? get_text '16' : setting 'globalQuantize' 32 ? get_text '32' : get_text 'BEAT'" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#999999" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="setting 'globalQuantize' 1 ? off : setting 'globalQuantize' 0.125 ? on : setting 'globalQuantize' 0.25 ? on : setting 'globalQuantize' 0.5 ? on : setting 'globalQuantize' 2 ? on : setting 'globalQuantize' 4 ? on : setting 'globalQuantize' 16 ? on : setting 'globalQuantize' 32"/>
       </group>
       <!-- CUE MODE -->
       <group x="+160" y="+0">

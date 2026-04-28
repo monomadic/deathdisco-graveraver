@@ -74,9 +74,9 @@
         <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
         <group x="550">
           <!-- PRO: LEFT JOGWHEEL -->
-          <panel class="jogwheel" x="+0" y="+10" name="jogwheel_spinner"/>
+          <panel class="jogwheel" x="770-150" y="+10" name="jogwheel_spinner"/>
           <!-- PRO: LEFT VOLUME -->
-          <panel class="pitch_small" x="+[JOGWHEEL]" y="+20"/>
+          <panel class="pitch_small" x="770" y="+20"/>
           <!-- PRO: LEFT DECK BORDER -->
         </group>
         <visual width="765" height="[HEIGHT]" y="+0">

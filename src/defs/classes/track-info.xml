@@ -7,8 +7,8 @@
     <!-- ACAPELLA/INSTRUMENTAL LINE BORDER -->
     <group visibility="loaded">
       <!-- left -->
-      <line visibility="stem_pad 'instrumental'" color="color_instrumental" x="+4" y="+0" width="526" height="2"/>
-      <line visibility="stem_pad 'acapella'" color="color_acapella" x="+4" y="+0" width="526" height="2"/>
+      <!-- <line visibility="stem_pad 'instrumental'" color="color_instrumental" x="+4" y="+0" width="526" height="2"/> -->
+      <!-- <line visibility="stem_pad 'acapella'" color="color_acapella" x="+4" y="+0" width="526" height="2"/> -->
     </group>
     <!-- COVER ART: HIDE -->
     <group visibility="var_equal '@$haunting_showcover_title' 0 &amp; loaded">

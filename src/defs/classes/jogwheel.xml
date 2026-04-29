@@ -145,7 +145,7 @@
         <!-- <size width="+[JOGSIZE]" height="25"/> -->
         <!-- <text fontsize="14" weight="" color="white" align="center" format="`get_text '%Ppitch%'`" important="true"/> -->
         <!-- </textzone> -->
-        <button action="pitch_reset 8bt">
+        <button action="pitch_reset 8bt" visibility="param_not_equal get_text '%Ppitch%' '+0.0'">
           <pos x="+0" y="-10"/>
           <size width="+[JOGSIZE]" height="25"/>
           <text fontsize="14" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>

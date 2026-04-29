@@ -74,9 +74,9 @@
         <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
         <group x="550">
           <!-- PRO: LEFT JOGWHEEL -->
-          <panel class="jogwheel" x="770-150" y="+10" name="jogwheel_spinner"/>
+          <panel class="jogwheel" x="750-150" y="+10" name="jogwheel_spinner"/>
           <!-- PRO: LEFT VOLUME -->
-          <panel class="pitch_small" x="770" y="+20"/>
+          <panel class="pitch_small" x="765" y="+20"/>
           <!-- PRO: LEFT DECK BORDER -->
         </group>
         <visual width="765" height="[HEIGHT]" y="+0">
@@ -156,8 +156,8 @@
         <clipmask x="27" y="140"/>
       </cues>
       <panel class="track_info_action_zone" x="+800-565" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <panel class="jogwheel" x="+65" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <panel class="pitch" x="+15" y="+30"/>
+      <panel class="jogwheel" x="+55" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+      <panel class="pitch_small" x="+5" y="+20"/>
       <group>
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>

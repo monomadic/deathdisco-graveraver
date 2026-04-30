@@ -79,7 +79,7 @@
       </group>
     </deck>
   </define>
-  <define class="beat_divider" placeholders="*width,*height">
+  <define class="beat_divider" placeholders="*width,*height" condition="var_not_equal '@$hauntingcolorscheme' 4">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <pos x="+0" y="+0"/>
     <fader color="needle">

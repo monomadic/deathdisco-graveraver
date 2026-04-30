@@ -20,6 +20,7 @@
   <xi:include href="defs/classes/meters.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/cues.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/buttons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs/classes/panels/filters.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/sliders.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/pitch.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="defs/classes/display.xml" xpointer="xpointer(/defs/*)"/>

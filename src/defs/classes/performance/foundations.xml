@@ -451,19 +451,6 @@
     </panel>
     <!-- PRO: PANEL: LINE -->
     <panel name="no_linein_timecode_[PANELNAME]" visibility="not get_hastimecode &amp;&amp; not get_haslinein">
-      <define class="HASHTAG_BUTTON" placeholders="*tag,text,width=90,height=18,textheight=height,important=true,textaction,accent_color=green,coloroff=transparent,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=10,textcolor=br_textoff,textcoloron=needle,orientation=horizontal">
-        <button action="quick_filter 'User 1 contains [TAG]'" rightclick="quick_filter ''" x="+0" y="+0">
-          <pos x="+0" y="+0"/>
-          <size width="[WIDTH]" height="[HEIGHT]"/>
-          <off color="#000000" border="#444444" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-          <over color="#000000" border="#444444" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-          <down color="black" border="transparent" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-          <selected color="#000000" border="[ACCENT_COLOR]" border_size="1" shape="[SHAPE]" radius="5"/>
-          <text action="param_equal '[TEXT]' '' ? get_text '[TAG]' : get_text '[TEXT]'" dx="+6" fontsize="[TEXTSIZE]" color="#AAAAAA" colorover="#FFFFFF" colorselected="[ACCENT_COLOR]" colordown="[TEXTCOLOR]" align="left" orientation="[ORIENTATION]" localize="true" important="[IMPORTANT]"/>
-          <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
-        </button>
-        <!-- <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="1" coloroff="#88444444" visibility="quick_filter 'User 1 contains [TAG]'"/> -->
-      </define>
       <visual width="290" height="70">
         <off shape="square" color="black"/>
       </visual>
@@ -477,37 +464,24 @@
         <slot x="+184" y="+22"/>
         <!-- #BassHouse -->
         <item visibility="get_loaded_song 'User 1' &amp; param_lowercase &amp; param_contains '#basshouse '">
-          <panel class="hashtag_button" accent_color="color_tag_genre" tag="#BassHouse" text="#BASS_HOUSE"/>
+          <panel class="hashtag_button" accent_color="color_tag_genre" tag="#BassHouse" text="#BASS_HOUSE" height="18" coloroff="#000000" brcoloroff="#444444"/>
         </item>
         <!-- #House -->
         <item visibility="get_loaded_song 'User 1' &amp; param_lowercase &amp; param_contains '#house '">
-          <panel class="hashtag_button" accent_color="color_tag_genre" tag="#House" text="#HOUSE"/>
+          <panel class="hashtag_button" accent_color="color_tag_genre" tag="#House" text="#HOUSE" height="18" coloroff="#000000" brcoloroff="#444444"/>
         </item>
         <!-- #Techno -->
         <item visibility="get_loaded_song 'User 1' &amp; param_lowercase &amp; param_contains '#techno '">
-          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_genre" tag="#Techno" text="#TECHNO"/>
+          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_genre" tag="#Techno" text="#TECHNO" height="18" coloroff="#000000" brcoloroff="#444444"/>
         </item>
         <item visibility="get_loaded_song 'User 1' &amp; param_lowercase &amp; param_contains '#psy'">
-          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_genre" tag="#PsyTrance" text="#PSYTRANCE"/>
+          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_genre" tag="#PsyTrance" text="#PSYTRANCE" height="18" coloroff="#000000" brcoloroff="#444444"/>
         </item>
         <item visibility="get_loaded_song 'User 1' &amp; param_lowercase &amp; param_contains '#club '">
-          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_mood" tag="#Club" text="#CLUB"/>
+          <panel class="hashtag_button" x="+0" y="+0" accent_color="color_tag_mood" tag="#Club" text="#CLUB" height="18" coloroff="#000000" brcoloroff="#444444"/>
         </item>
       </stack>
     </panel>
-  </define>
-  <define class="HASHTAG_BUTTON" placeholders="*tag,text,width=90,height=18,textheight=height,important=true,textaction,accent_color=green,coloroff=transparent,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=10,textcolor=br_textoff,textcoloron=needle,orientation=horizontal">
-    <button action="quick_filter 'User 1 contains [TAG]'" rightclick="quick_filter ''" x="+0" y="+0">
-      <pos x="+0" y="+0"/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <off color="#000000" border="#444444" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <over color="#000000" border="#444444" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <down color="black" border="transparent" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <selected color="#000000" border="[ACCENT_COLOR]" border_size="1" shape="[SHAPE]" radius="5"/>
-      <text action="param_equal '[TEXT]' '' ? get_text '[TAG]' : get_text '[TEXT]'" dx="+6" fontsize="[TEXTSIZE]" color="#AAAAAA" colorover="#FFFFFF" colorselected="[ACCENT_COLOR]" colordown="[TEXTCOLOR]" align="left" orientation="[ORIENTATION]" localize="true" important="[IMPORTANT]"/>
-      <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
-    </button>
-    <!-- <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="1" coloroff="#88444444" visibility="quick_filter 'User 1 contains [TAG]'"/> -->
   </define>
   <define class="custom_buttons" placeholders="*panelname">
     <button class="custom_button2" coloroff="button_background2" source="1" x="+88*0+1" y="+0" width="86" height="25"/>

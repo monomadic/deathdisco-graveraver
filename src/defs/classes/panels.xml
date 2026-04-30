@@ -8,6 +8,4 @@
   <xi:include href="panels/scratch.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Utility bar custom button strips -->
   <xi:include href="panels/custom-buttons.xml" xpointer="xpointer(/defs/*)"/>
-  <!-- Shared filter button helper -->
-  <xi:include href="panels/filters.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

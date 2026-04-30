@@ -7,18 +7,6 @@
     <visual width="1920" height="50">
       <off shape="square" color="#000000" border_size="1" border="#222222"/>
     </visual>
-    <!-- CLASS: FILTER TAG BUTTON -->
-    <define class="FILTER_TAG_BUTTON" placeholders="*tag,text,width=90,height=17,textheight=height,important=true,textaction,accent_color=green,coloroff=dark_02,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal">
-      <button action="quick_filter 'User 1 contains [TAG]'" rightclick="quick_filter ''" x="+0" y="+0">
-        <pos x="+0" y="+0"/>
-        <size width="[WIDTH]" height="[HEIGHT]"/>
-        <off color="dark_2" border="transparent" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-        <over color="transparent" border="transparent" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-        <down color="transparent" shape="square" radius="5"/>
-        <selected color="dark1" border="[ACCENT_COLOR]" border_size="1" shape="[SHAPE]" radius="5"/>
-        <text weight="normal" action="param_equal '[TEXT]' '' ? get_text '[TAG]' : get_text '[TEXT]'" dx="-2" dy="-1" fontsize="[TEXTSIZE]" color="#AAAAAA" colorover="#FFFFFF" colorselected="[ACCENT_COLOR]" colordown="[TEXTCOLOR]" align="center" orientation="[ORIENTATION]" localize="true" important="[IMPORTANT]"/>
-      </button>
-    </define>
     <visual x="+7" y="+8" width="5" height="15">
       <off shape="square" color="[ACCENT_COLOR]" border_size="1" border="#222222"/>
     </visual>

@@ -73,15 +73,15 @@
     </define>
     <define class="STEM_FX_BUTTON" placeholders="*stem" action="effect_stems '[STEM]'">
       <size width="32" height="15"/>
-      <off color="transparent" border="dark_7" border_size="1" radius="3"/>
+      <off color="transparent" border="dark_7" border_size="0" radius="3"/>
       <selected color="transparent" border="color_padfx" radius="3"/>
       <text fontsize="11" color="dark_7" colorover="white" colorselected="color_padfx" colordown="color_padfx" align="center" text="FX"/>
     </define>
-    <define class="STEM_ISO_BUTTON" placeholders="*stem" action="effect_stems '[STEM]'">
+    <define class="STEM_ISO_BUTTON" placeholders="*stem" action="deck all param_equal `get_deck` `get_defaultdeck` ? mute_stem [STEM] off : mute_stem [STEM] on" query="mute_stem [STEM] ? off : action_deck 1 ? deck 2 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : action_deck 2 ? deck 1 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : action_deck 3 ? deck 1 mute_stem [STEM] &amp;&amp; deck 2 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : deck 1 mute_stem [STEM] &amp;&amp; deck 2 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM]">
       <size width="32" height="15"/>
-      <off color="transparent" border="dark_7" border_size="1" radius="3"/>
-      <selected color="transparent" border="color_padfx" radius="3"/>
-      <text fontsize="11" color="dark_7" colorover="white" colorselected="color_padfx" colordown="color_padfx" align="center" text="ISO"/>
+      <off color="transparent" border="black" border_size="1" radius="3"/>
+      <selected color="transparent" border="black" radius="3"/>
+      <text fontsize="11" color="dark_7" colorover="white" colorselected="#33FFF8" colordown="color_padfx" align="center" text="ISO"/>
     </define>
     <define class="STEM_CHANNEL" placeholders="*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23">
       <!-- TOGGLE -->
@@ -495,18 +495,18 @@
     <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
       <visual>
         <size width="180" height="39"/>
-        <up color="button_background2" shape="square"/>
+        <up color="#666666" shape="square"/>
       </visual>
       <!-- border -->
-      <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.0">
+      <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.5">
         <size width="180" height="39"/>
       </visual>
       <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
         <size width="180" height="39"/>
-        <off color="button_background2" border="button_background2" border_size="1" shape="square" radius="3"/>
+        <off color="button_background2" border="#444444" border_size="1" shape="square" radius="3"/>
         <over color="button_background2" border="#444444" border_size="1" shape="square" radius="3"/>
-        <down color="button_background2" border="#999999" border_size="1" shape="square" radius="3"/>
-        <selected color="button_background2" border="#999999" border_size="1" shape="square" radius="3"/>
+        <down color="button_background2" border="#555555" border_size="1" shape="square" radius="3"/>
+        <selected color="button_background2" border="#777777" border_size="2" shape="square" radius="3"/>
         <text dx="+24" width="180-10-10" size="15" weight="" color="textoff" colorover="textoff" colordown="needle" colorselected="needle" action="pad [SOURCE]" align="left" multiline="true"/>
       </button>
       <!-- pushed color chip -->

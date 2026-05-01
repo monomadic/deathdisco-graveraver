@@ -145,13 +145,19 @@
         <!-- <size width="+[JOGSIZE]" height="25"/> -->
         <!-- <text fontsize="14" weight="" color="white" align="center" format="`get_text '%Ppitch%'`" important="true"/> -->
         <!-- </textzone> -->
-        <button action="pitch_reset 8bt" visibility="param_not_equal get_text '%Ppitch%' '+0.0'">
+        <button action="pitch_reset 8bt">
           <pos x="+0" y="-10"/>
           <size width="+[JOGSIZE]" height="25"/>
-          <text fontsize="14" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>
+          <text fontsize="12" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>
           <textover color="white" text="RESET" align="center"/>
         </button>
         <!-- <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/> -->
+        <group y="+15">
+          <!-- PITCH DOWN BUTTON -->
+          <button class="button_main" x="+65-42" width="30" height="20" action="pitch -1 bpm" textcoloroff="transparent" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="minus"/>
+          <!-- PITCH UP BUTTON -->
+          <button class="button_main" x="+65+42" width="30" height="20" action="pitch +1 bpm" textcoloroff="transparent" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
+        </group>
       </group>
       <!-- <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+72" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/> -->
       <!-- center -->
@@ -172,15 +178,23 @@
       <!-- KEY -->
       <group x="+0" y="+93" visibility="loaded">
         <textzone class="text" width="[JOGSIZE]" height="26" fontsize="22" color="white" align="center" weight="bold" textaction="get_key" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
-        <button action="key_match_button" visibility="loaded ? not masterdeck ? not key_match ? blink 1bt : true">
+        <group visibility="not masterdeck">
+          <!-- KEY DOWN BUTTON -->
+          <button class="button_main" x="+65-35" y="+2" width="30" height="20" action="key_move -1" textcoloroff="transparent" textcoloron="white" coloron="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="minus"/>
+          <!-- KEY UP BUTTON -->
+          <button class="button_main" x="+65+35" y="+2" width="30" height="20" action="key_move +1" textcoloroff="transparent" textcoloron="white" coloron="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
+        </group>
+        <!-- key difference bottom text -->
+        <button action="key_match" rightclick="key_match_menu" visibility="loaded ? not masterdeck ? not key_match ? blink 1bt : true">
           <pos x="+0" y="+18"/>
           <size width="+[JOGSIZE]" height="25"/>
-          <text fontsize="12" weight="" color="white" align="center" action="get_key_modifier_text" important="true"/>
+          <text fontsize="12" weight="" align="center" coloroff="red" coloron="green" colorover="black" action="get_key_modifier" important="true"/>
         </button>
       </group>
       <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="26" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+      <!-- time elapsed -->
+      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/> -->
+      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/> -->
       <panel class="jogwheel_corner_buttons"/>
     </group>
     <!-- JOGWHEEL C: SYNC STATUS -->
@@ -217,7 +231,7 @@
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+5" y="+5" width="[JOGSIZE]-10" height="[JOGSIZE]-10" offcolor="transparent" colorfader="#222222" widthfader="10" heightfader="50" radius="30"/>
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+5" y="+5" width="[JOGSIZE]-10" height="[JOGSIZE]-10" offcolor="transparent" colorfader="#DDDDDD" widthfader="5" heightfader="50" radius="28"/>
       <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jog_slider" widthfader="8" heightfader="8" radius="66"/>
-      <!-- WARNING: SONG POS -->
+      <!-- SONG ENDING WARNING -->
       <visual source="song_pos 'show warning'" type="circle" visibility="loaded" color="red" width="40" height="40" x="+0" y="+0"/>
       <!-- black circle mask -->
       <visual name="innercircle_border">

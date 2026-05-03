@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <define class="DECK_SPINE" placeholders="*deck,*panelname,height=465">
+    <visual width="34" height="[HEIGHT]">
+      <off shape="square" color="red"/>
+    </visual>
+    <group visibility="loaded ? masterdeck">
+      <!-- <visual x="+10" y="+300" width="34-10-10" height="105"> -->
+      <!-- <off shape="square" color="black" bordersize="1" border="color_masterdeck" radius="3"/> -->
+      <!-- </visual> -->
+      <textzone orientation="vertical" direction="ccw">
+        <pos x="+0" y="+35"/>
+        <size width="34" height="105"/>
+        <text fontsize="12" color="color_masterdeck" scroll="no" align="center" text="MASTER DECK" important="true"/>
+      </textzone>
+      <!-- LEFT: INSTRUMENTAL SPINE LABEL -->
+      <!-- <group visibility="loaded ? stem_pad 'instrumental'"> -->
+      <!-- <visual x="+0" y="+0" width="34" height="425" visibility="0.2"> -->
+      <!-- <off shape="square" color="color_instrumental"/> -->
+      <!-- </visual> -->
+      <!-- <visual x="+5" y="+150" width="24" height="125"> -->
+      <!-- <off shape="square" color="black" bordersize="1" border="color_instrumental" radius="2"/> -->
+      <!-- </visual> -->
+      <!-- <textzone orientation="vertical" direction="ccw" visibility="play ? false : loaded"> -->
+      <!-- <pos x="+0" y="+0"/> -->
+      <!-- <size width="34" height="425"/> -->
+      <!-- <text fontsize="12" color="color_instrumental" scroll="yes" align="center" text="INSTRUMENTAL" important="true"/> -->
+      <!-- </textzone> -->
+    </group>
+  </define>
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
   <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
       <!-- PRO: LEFT DECK: SPINE BG -->
-      <visual x="+0" y="+0" width="34" height="[HEIGHT]">
-        <off shape="square" color="black"/>
-      </visual>
+      <!-- <visual x="+0" y="+0" width="34" height="[HEIGHT]"> -->
+      <!-- <off shape="square" color="black"/> -->
+      <!-- </visual> -->
       <!-- LEFT: ACAPELLA SPINE LABEL -->
       <!-- <group visibility="loaded ? stem_pad 'acapella'"> -->
       <!-- <visual x="+0" y="+0" width="34" height="425" visibility="0.2"> -->
@@ -48,6 +76,7 @@
         <!-- <text fontsize="12" color="color_instrumental" scroll="yes" align="center" text="INSTRUMENTAL" important="true"/> -->
         <!-- </textzone> -->
       </group>
+      <panel x="+0" y="+0" class="deck_spine"/>
       <!-- PRO: LEFT: PANEL BG (behind jog) -->
       <visual width="765" height="[HEIGHT]" x="+35">
         <off shape="square" color="panel_background" radius="6"/>

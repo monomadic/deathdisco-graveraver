@@ -15,9 +15,9 @@
     </panel>
     <!-- LAYOUT VARIATIONS -->
     <group y="50" name="layouts">
-      <xi:include href="layout/pro.xml" xpointer="xpointer(/module/*)"/>
-      <xi:include href="layout/performance.xml" xpointer="xpointer(/module/*)"/>
-      <xi:include href="layout/stack.xml" xpointer="xpointer(/module/*)"/>
+      <xi:include href="layouts/pro.xml" xpointer="xpointer(/module/*)"/>
+      <xi:include href="layouts/performance.xml" xpointer="xpointer(/module/*)"/>
+      <xi:include href="layouts/stack.xml" xpointer="xpointer(/module/*)"/>
     </group>
     <!-- RULERS & DEBUGGING TOOLS -->
     <group visibility="false">

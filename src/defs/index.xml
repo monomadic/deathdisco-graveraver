@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Theme tokens and runtime globals -->
+  <xi:include href="colors.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="icons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="globals.xml" xpointer="xpointer(/globals/*)"/>
+  <!-- Shared class library -->
+  <xi:include href="classes/index.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

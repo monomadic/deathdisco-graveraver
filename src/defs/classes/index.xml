@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Foundational class primitives -->
+  <xi:include href="base.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="text.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="meters.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="cues.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="buttons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="chrome/filters.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="sliders.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="pitch.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="display.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="browser.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="deck-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="fx.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="track-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="transport.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="jogwheel.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="pads.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="performance.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="mixer.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="controls.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="decks.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="chrome.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="video.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="deck-areas.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layout-wave-positions.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layout.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

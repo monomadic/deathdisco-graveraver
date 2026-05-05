@@ -142,7 +142,7 @@
           <selected color="transparent" border="deckcolor" radius="3"/>
           <text fontsize="12" color="#FF0000" colorselected="deckcolor" colordown="deckcolor" align="center" text="BEAT"/>
         </button>
-        <button class="button_main" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="true" visibility="masterdeck">
+        <button class="button_main" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="loaded ? is_sync ? on : blink" visibility="masterdeck">
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>

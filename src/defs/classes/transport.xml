@@ -113,7 +113,7 @@
         <pos x="+365" y="+7" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+115" y="+7" condition="param_equal [DECKSIDE] 'right'"/>
         <!-- KEY BUTTON -->
-        <button class="button_main" action="select &amp; match_key" bordersize="1" query="loaded ? play ? match_key ? true : blink 1bt" visibility="not masterdeck">
+        <button class="button_main" action="select &amp; match_key" bordersize="1" query="loaded ? match_key ? true : blink 1bt" visibility="not masterdeck">
           <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*3" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -133,7 +133,7 @@
           <text fontsize="12" color="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="KEY"/>
         </button>
         <!-- BEAT BUTTON -->
-        <button class="button_main" action="select &amp; sync" bordersize="1" query="play ? is_sync ? true : blink 1bt" visibility="not masterdeck">
+        <button class="button_main" action="select &amp; sync" bordersize="1" query="loaded ? is_sync ? true : blink 1bt" visibility="not masterdeck">
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>

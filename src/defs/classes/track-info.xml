@@ -11,7 +11,6 @@
       <off shape="square" color="transparent" border="#22FFFFFF" border_size="1"/>
     </visual>
   </define>
-
   <define class="INFOS">
     <!-- LEFT DECK -->
     <!-- background: black glass (behind cover) -->
@@ -529,7 +528,7 @@
         </group>
         <!-- STATUS: LOOPER -->
         <group y="+60">
-          <button width="80" height="19" action="sampler_play_stop &amp; pad_page 4 'SAMPLER'" border_size="1" query="is_using loop">
+          <button width="80" height="19" action="loop" border_size="1" query="is_using loop">
             <off color="#000000"/>
             <selected color="color_sampler" textcolor="white"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="LOOP"/>

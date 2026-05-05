@@ -113,7 +113,7 @@
         <pos x="+365" y="+7" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+115" y="+7" condition="param_equal [DECKSIDE] 'right'"/>
         <!-- KEY BUTTON -->
-        <button class="button_main" action="select &amp; match_key" bordersize="1" query="match_key ? true : blink 1bt" visibility="not masterdeck">
+        <button class="button_main" action="select &amp; match_key" bordersize="1" query="loaded ? play ? match_key ? true : blink 1bt" visibility="not masterdeck">
           <pos x="+0" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*3" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -133,7 +133,7 @@
           <text fontsize="12" color="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="KEY"/>
         </button>
         <!-- BEAT BUTTON -->
-        <button class="button_main" action="select &amp; sync" bordersize="1" query="not play ? true : not is_sync ? blink 1bt : true" visibility="not masterdeck">
+        <button class="button_main" action="select &amp; sync" bordersize="1" query="play ? is_sync ? true : blink 1bt" visibility="not masterdeck">
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -152,7 +152,16 @@
           <text fontsize="12" color="#FF0000" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="BEAT"/>
         </button>
         <!-- PHRASE BUTTON -->
-        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="not play ? true : is_sync ? true : blink 1bt" visibility="not masterdeck">
+        <!-- <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="`is_sync '$phrase_len'`" visibility="not masterdeck"> -->
+        <!-- <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/> -->
+        <!-- <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/> -->
+        <!-- <size width="80" height="25"/> -->
+        <!-- <off color="#440000" border="#FF3333" radius="3"/> -->
+        <!-- <down color="#222222" border="deckcolor" radius="3"/> -->
+        <!-- <selected color="transparent" border="deckcolor" radius="3"/> -->
+        <!-- <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" text="PHRASE"/> -->
+        <!-- </button> -->
+        <button class="button_main" x="+0" action="sync &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 : phrase_sync 32" bordersize="1" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck">
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>

@@ -9,17 +9,16 @@
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
     <!-- PAD PAGES -->
-    <group y="+175" x="+36">
-      <!-- PAD PAGE SELECT -->
-      <group x="+0" y="+0">
-        <group x="+5" y="+5">
-          <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" visibility="not deck 3 leftdeck"/>
-          <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" visibility="deck 3 leftdeck"/>
-        </group>
-        <group x="1920/2+125+5" y="+5">
-          <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" visibility="not deck 4 rightdeck"/>
-          <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" visibility="deck 4 rightdeck"/>
-        </group>
+    <group y="+180" x="+41">
+      <!-- left -->
+      <group>
+        <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" visibility="not deck 3 leftdeck"/>
+        <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" visibility="deck 3 leftdeck"/>
+      </group>
+      <!-- right -->
+      <group x="1920/2+125">
+        <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" visibility="not deck 4 rightdeck"/>
+        <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" visibility="deck 4 rightdeck"/>
       </group>
     </group>
     <group y="+450-25">

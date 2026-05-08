@@ -60,7 +60,7 @@
       <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
     </group>
     <!-- XL CUSTOM BUTTON -->
-    <button class="custom_button" source="100" x="+960-64" y="+8" width="130" height="26" coloroff="black">
+    <button class="custom_button" source="100" x="+960-64" y="+8" width="130" height="30" coloroff="black">
       <off color="black" border="#888888"/>
       <on color="#000000"/>
       <over color="#000000" border="white"/>

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="DECK_SPINE_PRO" placeholders="*deck,*panelname,height=465">
+  <define class="DECK_SPINE_PRO" placeholders="*deck,*panelname,height=465,controlsx=5">
     <visual width="34" height="[HEIGHT]">
       <off shape="square" color="black"/>
     </visual>
+    <group x="+[CONTROLSX]" y="+10">
+      <group visibility="masterdeck">
+        <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
+          <pos x="+0" y="+0"/>
+        </button>
+      </group>
+      <group visibility="not masterdeck">
+        <button class="deck_button" visibility="not masterdeck" color="deckcolor">
+          <pos x="+0" y="+0"/>
+        </button>
+      </group>
+      <menu class="menu_maindecks" query="select" x="+0" y="+386" width="34" height="34"/>
+    </group>
     <group visibility="loaded ? masterdeck">
-      <!-- deck button -->
-      <button class="deck_button" color="color_masterdeck">
-        <pos x="+5" y="+10"/>
-      </button>
       <textzone orientation="vertical" direction="ccw">
         <pos x="+0" y="+35"/>
         <size width="34" height="105"/>
@@ -30,11 +39,6 @@
       <!-- <size width="34" height="425"/> -->
       <!-- <text fontsize="12" color="color_instrumental" scroll="yes" align="center" text="INSTRUMENTAL" important="true"/> -->
       <!-- </textzone> -->
-    </group>
-    <group visibility="not masterdeck">
-      <button class="deck_button" visibility="not masterdeck" color="deckcolor">
-        <pos x="+5" y="+10"/>
-      </button>
     </group>
   </define>
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
@@ -72,64 +76,20 @@
   <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck,height=466,width=766">
     <visual source="deck [DECK] select" deck="[DECK]" visibility="var_equal '@$dd_bordermode' 1">
       <size width="[WIDTH]" height="[HEIGHT]"/>
-      <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
+      <down color="transparent" border_size="1" border="deckcolor" shape="square" radius="8"/>
     </visual>
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+768" y="+0" class="deck_spine_pro"/>
+      <panel x="+768" y="+0" class="deck_spine_pro" controlsx="2"/>
       <!-- bg: spine -->
       <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
       <!-- <off shape="square" color="black"/> -->
       <!-- </visual> -->
-      <group visibility="false">
-        <!-- RIGHT: ACAPELLA SPINE LABEL -->
-        <group x="+765" visibility="loaded ? stem_pad 'acapella'">
-          <visual x="+0" y="+0" width="34" height="[HEIGHT]" visibility="0.1">
-            <off shape="square" color="color_acapella"/>
-          </visual>
-          <visual x="+5" y="+150" width="24" height="125">
-            <off shape="square" color="black" bordersize="1" border="color_acapella" radius="2"/>
-          </visual>
-          <textzone orientation="vertical" direction="cw">
-            <pos x="+0" y="+0"/>
-            <size width="34" height="425"/>
-            <text fontsize="12" color="color_acapella" scroll="yes" align="center" text="ACAPELLA" important="true"/>
-          </textzone>
-        </group>
-        <!-- RIGHT: INSTRUMENTAL SPINE LABEL -->
-        <group x="+765" visibility="loaded ? stem_pad 'instrumental'">
-          <visual x="+0" y="+0" width="34" height="[HEIGHT]" visibility="0.2">
-            <off shape="square" color="color_instrumental"/>
-          </visual>
-          <visual x="+5" y="+150" width="24" height="125">
-            <off shape="square" color="black" bordersize="1" border="color_instrumental" radius="2"/>
-          </visual>
-          <textzone orientation="vertical" direction="cw" visibility="play ? false : loaded">
-            <pos x="+0" y="+0"/>
-            <size width="34" height="425"/>
-            <text fontsize="12" color="color_instrumental" scroll="yes" align="center" text="INSTRUMENTAL" important="true"/>
-          </textzone>
-        </group>
-      </group>
       <!-- PRO: RIGHT: PANEL BG -->
       <visual width="765" height="[HEIGHT]">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
-      <!-- PRO: RIGHT: DECK BUTTON -->
-      <group x="+770" y="+10" visibility="false">
-        <group visibility="masterdeck">
-          <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
-            <pos x="+0" y="+0"/>
-          </button>
-        </group>
-        <group visibility="not masterdeck">
-          <button class="deck_button" visibility="not masterdeck" color="deckcolor">
-            <pos x="+0" y="+0"/>
-          </button>
-        </group>
-        <menu class="menu_maindecks" query="select" x="+0" y="+386" width="34" height="34"/>
-      </group>
       <!-- cover, title etc -->
       <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
       <!-- <panel class="infos2" x="+800-567" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->

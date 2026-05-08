@@ -39,6 +39,12 @@
           <on shape="square" color="transparent" border="#11FFFFFF" border_size="10"/>
           <icon sysicon="play" width="[HEIGHT]*0.9" height="[HEIGHT]*0.9" coloroff="#33888888" colorselected="white" colorover="white" coloron="white ? blink 500ms"/>
         </button>
+        <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
+        <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
+          <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
+          <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
+          <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
+        </visual>
       </group>
       <!--
               === RIGHT DECK WAVEFORM TRACK INFO ===
@@ -76,6 +82,12 @@
           <on shape="square" color="transparent" border="#11FFFFFF" border_size="10"/>
           <icon sysicon="play" width="[HEIGHT]*0.9" height="[HEIGHT]*0.9" coloroff="#33888888" colorselected="white" colorover="white" coloron="white ? blink 500ms"/>
         </button>
+        <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
+        <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
+          <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
+          <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
+          <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
+        </visual>
       </group>
     </deck>
   </define>
@@ -116,11 +128,11 @@
         </scratchwave>
       </group>
       <!-- PRO: HORIZONTAL WAVEFORM: BORDER -->
-      <visual source="select" x="+34" y="+0" visibility="var_equal '@$dd_bordermode' 1">
-        <size width="1920-34-34" height="[HEIGHT]"/>
-        <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
-        <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="10"/>
-      </visual>
+      <!-- <visual source="select" x="+34" y="+0" visibility="var_equal '@$dd_bordermode' 1"> -->
+      <!-- <size width="1920-34-34" height="[HEIGHT]"/> -->
+      <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
+      <!-- <down color="transparent" border_size="1" border="deckcolor" shape="square" radius="10"/> -->
+      <!-- </visual> -->
       <dropzone>
         <pos x="+34" y="+0"/>
         <size width="1920-34-34" height="[HEIGHT]"/>

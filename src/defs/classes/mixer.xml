@@ -64,12 +64,13 @@
         <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <!-- PRO: AUDIO PANEL: COLORFX -->
         <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+50+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <!-- filter on light -->
         <group x="+55" y="+14+81+68+68+50+6">
           <visual>
             <size width="16" height="16"/>
             <off shape="circle" color="#333333" border="#222222" border_size="1"/>
           </visual>
-          <button action="auto_sync_options" query="auto_match_bpm ? auto_match_key ? auto_sync ? auto_pitch_lock" visibility="loaded" shape="circle">
+          <button action="effect_active 'colorfx'" query="effect_active 'colorfx'" shape="circle">
             <size width="8" height="8"/>
             <pos x="+4" y="+4"/>
             <off shape="circle" color="#AAAAAA" border="#000000" border_size="1"/>
@@ -78,6 +79,7 @@
             <down shape="circle" color="#00FF00" border="#88FFFF00" border_size="0"/>
           </button>
         </group>
+        <!-- colorfx on mixer panel on pro -->
         <panel class="knob" x="+18" y="+14+81+68+68+50+13" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label &amp; param_cast 'text' 9" actiontxt="filter_selectcolorfx"/>
       </group>
       <!-- 5knobs -->

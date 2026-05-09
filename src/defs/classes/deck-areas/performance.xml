@@ -51,15 +51,8 @@
   </define>
   <define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
-      <visual x="+0" y="+1" width="34" height="320">
-        <off shape="square" color="black" radius="6"/>
-      </visual>
-      <button class="deck_button" deck="left" color="color_masterdeck">
-        <pos x="+0" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos x="-6" y="+0" condition="param_equal [DECKSIDE] 'right'"/>
-        <text dx="+8" condition="param_equal [DECKSIDE] 'right'"/>
-      </button>
-      <menu class="menu_maindecks" query="select" x="+3" y="+295" width="28" height="20"/>
+      <panel class="deck_spine" height="320" bgy="+1" bgradius="6" buttonx="+0" buttony="+0" notmastercolor="color_masterdeck" menux="+3" menuy="+295" menuwidth="28" menuheight="20" showmasterlabel="no" condition="param_equal [DECKSIDE] 'left'"/>
+      <panel class="deck_spine" height="320" bgy="+1" bgradius="6" buttonx="-6" buttony="+0" buttontextdx="+8" notmastercolor="color_masterdeck" menux="+3" menuy="+295" menuwidth="28" menuheight="20" showmasterlabel="no" condition="param_equal [DECKSIDE] 'right'"/>
     </deck>
   </define>
   <!-- Shared performance body used on the left side and mirrored into the two-deck right-side shell -->

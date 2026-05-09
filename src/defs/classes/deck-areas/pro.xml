@@ -1,50 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="DECK_SPINE_PRO" placeholders="*deck,*panelname,height=465,controlsx=5">
-    <visual width="34" height="[HEIGHT]">
-      <off shape="square" color="black"/>
-    </visual>
-    <group x="+[CONTROLSX]" y="+10">
-      <group visibility="masterdeck">
-        <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
-          <pos x="+0" y="+0"/>
-        </button>
-      </group>
-      <group visibility="not masterdeck">
-        <button class="deck_button" visibility="not masterdeck" color="deckcolor">
-          <pos x="+0" y="+0"/>
-        </button>
-      </group>
-      <menu class="menu_maindecks" query="select" x="+0" y="+386" width="34" height="34"/>
-    </group>
-    <group visibility="loaded ? masterdeck">
-      <textzone orientation="vertical" direction="ccw">
-        <pos x="+0" y="+35"/>
-        <size width="34" height="105"/>
-        <text fontsize="12" color="color_masterdeck" scroll="no" align="center" text="MASTER DECK" important="true"/>
-      </textzone>
-      <!-- <visual x="+10" y="+300" width="34-10-10" height="105"> -->
-      <!-- <off shape="square" color="black" bordersize="1" border="color_masterdeck" radius="3"/> -->
-      <!-- </visual> -->
-      <!-- LEFT: INSTRUMENTAL SPINE LABEL -->
-      <!-- <group visibility="loaded ? stem_pad 'instrumental'"> -->
-      <!-- <visual x="+0" y="+0" width="34" height="425" visibility="0.2"> -->
-      <!-- <off shape="square" color="color_instrumental"/> -->
-      <!-- </visual> -->
-      <!-- <visual x="+5" y="+150" width="24" height="125"> -->
-      <!-- <off shape="square" color="black" bordersize="1" border="color_instrumental" radius="2"/> -->
-      <!-- </visual> -->
-      <!-- <textzone orientation="vertical" direction="ccw" visibility="play ? false : loaded"> -->
-      <!-- <pos x="+0" y="+0"/> -->
-      <!-- <size width="34" height="425"/> -->
-      <!-- <text fontsize="12" color="color_instrumental" scroll="yes" align="center" text="INSTRUMENTAL" important="true"/> -->
-      <!-- </textzone> -->
-    </group>
-  </define>
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
   <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+0" y="+0" class="deck_spine_pro"/>
+      <panel x="+0" y="+0" class="deck_spine"/>
       <!-- PRO: LEFT: PANEL BG (behind jog) -->
       <visual width="765" height="[HEIGHT]" x="+35">
         <off shape="square" color="panel_background" radius="6"/>
@@ -81,7 +40,7 @@
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+768" y="+0" class="deck_spine_pro" controlsx="2"/>
+      <panel x="+768" y="+0" class="deck_spine" buttonx="+2" menux="+2"/>
       <!-- bg: spine -->
       <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
       <!-- <off shape="square" color="black"/> -->

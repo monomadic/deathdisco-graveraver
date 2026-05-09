@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Shared deck spine used by Pro and Performance shells -->
+  <xi:include href="deck-areas/spine.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Pro layout deck shells and overlays -->
   <xi:include href="deck-areas/pro.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Performance layout deck shells and shared mini deck strip -->

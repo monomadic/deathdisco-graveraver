@@ -348,14 +348,14 @@
       <!-- </visual> -->
       <!-- <button class="button_main" x="+18" width="40" height="27" textsize="12" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? true : deck 3 effect_active colorfx ? true : deck 4 effect_active colorfx"/> -->
       <!-- </group> -->
-      <!-- FILTER INDICATOR -->
+      <!-- COLORFX INDICATOR -->
       <group x="-50">
         <visual type="transparent" source="deck 1 effect_active colorfx ? true : deck 2 effect_active colorfx ? true : deck 3 effect_active colorfx ? true : deck 4 effect_active colorfx ? true : false">
           <pos x="+3" y="+9" width="10" height="10"/>
           <off color="tab_menu" border="tab_menu" shape="circle"/>
           <on color="green" border="green" shape="circle"/>
         </visual>
-        <button class="button_main" x="+18" width="40" height="27" textsize="10" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_disable_all" query="effects_used ? blink 500ms"/>
+        <button class="button_main" x="+18" width="40" height="27" textsize="10" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? blink 500ms : deck 3 effect_active colorfx ? blink 500ms : deck 4 effect_active colorfx ? blink 500ms : false"/>
       </group>
       <!-- -->
       <!-- MASTER FX INDICATOR -->

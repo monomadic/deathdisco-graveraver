@@ -104,7 +104,7 @@
         <panel class="knob" x="+14+90+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+14+90+20+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+14+90+20+80+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
-        <button class="button_main" x="+14+90+20+80+80+80+20+41+8-12-58" y="+16" width="5" height="32" action="filter_activate" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="button_main" x="+14+90+20+80+80+80+20+41+8-12-58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
         <button class="dropdown_menu" action="filter_selectcolorfx" x="+14+90+20+80+80+80+20+41+8" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
         <panel class="knob" x="+14+90+20+80+80+80+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
       </group>
@@ -115,7 +115,7 @@
       <!-- 3knobs -->
       <group x="+6">
         <visual class="gfx_shape" x="+6+8+5" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
-        <button class="button_main" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20+58" y="+16" width="5" height="32" action="filter_activate" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="button_main" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20+58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
         <button class="dropdown_menu" action="filter_selectcolorfx" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20-8-14" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>

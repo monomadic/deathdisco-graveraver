@@ -503,12 +503,16 @@
       </visual>
       <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
         <size width="180" height="39"/>
-        <off color="button_background2" border="#444444" border_size="1" shape="square" radius="3"/>
-        <over color="button_background2" border="#444444" border_size="1" shape="square" radius="3"/>
-        <down color="button_background2" border="#555555" border_size="1" shape="square" radius="3"/>
-        <selected color="button_background2" border="#777777" border_size="2" shape="square" radius="3"/>
-        <text dx="+24" width="180-10-10" size="15" weight="" color="textoff" colorover="textoff" colordown="needle" colorselected="needle" action="pad [SOURCE]" align="left" multiline="true"/>
+        <off color="dark_0" border="#444444" border_size="1" shape="square" radius="3"/>
+        <over color="dark_2" border="#444444" border_size="1" shape="square" radius="3"/>
+        <down color="dark_5" border="#555555" border_size="1" shape="square" radius="3"/>
+        <selected color="dark_3" border="#777777" border_size="2" shape="square" radius="3"/>
+        <text dx="+24" width="180-10-10" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/>
       </button>
+      <visual type="color" source="pad_button_color [SOURCE]" visibility="0.2">
+        <tooltip/>
+        <size width="180" height="39"/>
+      </visual>
       <!-- pushed color chip -->
       <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
         <tooltip/>

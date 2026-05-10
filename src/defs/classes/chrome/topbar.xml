@@ -355,7 +355,7 @@
           <off color="tab_menu" border="tab_menu" shape="circle"/>
           <on color="green" border="green" shape="circle"/>
         </visual>
-        <button class="button_main" x="+18" width="40" height="27" textsize="10" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? blink 500ms : deck 3 effect_active colorfx ? blink 500ms : deck 4 effect_active colorfx ? blink 500ms : false"/>
+        <button class="button_main" x="+18" width="40" height="27" textsize="10" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? blink 500ms : deck 3 effect_active colorfx ? blink 500ms : deck 4 effect_active colorfx ? blink 500ms : false"/>
       </group>
       <!-- -->
       <!-- MASTER FX INDICATOR -->

@@ -493,27 +493,45 @@
     </define>
     <!-- PAD BUTTON TYPE 3 (Large) -->
     <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
-      <visual>
-        <size width="180" height="39"/>
-        <up color="#666666" shape="square"/>
+      <!-- <visual> -->
+      <!-- <size width="180" height="39"/> -->
+      <!-- <up color="#666666" shape="square"/> -->
+      <!-- </visual> -->
+      <!-- border, undercoat -->
+      <visual type="color" source="pad_button_color [SOURCE]">
+        <pos x="+3" y="+3"/>
+        <size width="180-6" height="39-6"/>
       </visual>
-      <!-- border -->
-      <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.5">
-        <size width="180" height="39"/>
-      </visual>
+      <!-- button base -->
       <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
         <size width="180" height="39"/>
-        <off color="dark_0" border="#444444" border_size="1" shape="square" radius="3"/>
-        <over color="dark_2" border="#444444" border_size="1" shape="square" radius="3"/>
-        <down color="dark_5" border="#555555" border_size="1" shape="square" radius="3"/>
-        <selected color="dark_3" border="#777777" border_size="2" shape="square" radius="3"/>
+        <off color="dark_0" border="#44FFFFFF" border_size="3" shape="square" radius="3"/>
+        <over color="#CC000000" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
+        <down color="dark_5" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
+        <selected color="#CC000000" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
         <text dx="+24" width="180-10-10" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/>
       </button>
-      <visual type="color" source="pad_button_color [SOURCE]" visibility="0.2">
+      <!-- color tinting -->
+      <visual type="color" source="pad_button_color [SOURCE]" visibility="0.4">
         <tooltip/>
         <size width="180" height="39"/>
       </visual>
-      <!-- pushed color chip -->
+      <!-- <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_has_action [SOURCE]"> -->
+      <!-- <size width="180" height="39"/> -->
+      <!-- <off color="#EE000000" border="#44444444" border_size="3" shape="square" radius="3"/> -->
+      <!-- <over color="#44000000" border="#44444444" border_size="3" shape="square" radius="3"/> -->
+      <!-- <down color="#44000000" border="#44555555" border_size="3" shape="square" radius="3"/> -->
+      <!-- <selected color="#AA000000" border="#88888888" border_size="3" shape="square" radius="3"/> -->
+      <!-- <text dx="+24" width="180-10-10" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/> -->
+      <!-- </button> -->
+      <!-- <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_has_action [SOURCE] ? constant 0.5 : constant 0:0"> -->
+      <!-- <size width="180" height="39"/> -->
+      <!-- <off color="#EE000000" border="#444444" border_size="3" shape="square" radius="3"/> -->
+      <!-- <over color="#44000000" border="#444444" border_size="3" shape="square" radius="3"/> -->
+      <!-- <down color="#44000000" border="#555555" border_size="3" shape="square" radius="3"/> -->
+      <!-- <selected color="#AA000000" border="#888888" border_size="3" shape="square" radius="3"/> -->
+      <!-- </button> -->
+      <!-- color chip (pushed state) -->
       <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
         <tooltip/>
         <pos x="+10" y="+12"/>
@@ -526,11 +544,18 @@
         <pos x="+12" y="+12"/>
         <size width="4" height="38-12-12"/>
       </visual>
+      <!-- no pad fallback - color chip -->
       <visual novisibility="pad_button_color [SOURCE]">
         <tooltip/>
         <pos x="+10" y="+10"/>
         <size width="4" height="38-10-10"/>
-        <off color="panel_background" shape="square"/>
+        <off color="dark_4" shape="square"/>
+      </visual>
+      <visual novisibility="pad_button_color [SOURCE]">
+        <tooltip/>
+        <size width="180" height="39"/>
+        <size width="4" height="38-10-10"/>
+        <off color="transparent" border_size="1" border="dark_4" shape="square"/>
       </visual>
     </define>
     <define class="PADBUTTON_WIDE" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="DECK_SPINE" placeholders="*deck,*panelname,height=465,bgy=+0,bgradius=0,buttonx=+5,buttony=+10,buttontextdx=-0,mastercolor=color_masterdeck,notmastercolor=deckcolor,menux=+5,menuy=+396,menuwidth=34,menuheight=34,labeldirection=ccw,showmasterlabel=yes">
-    <visual y="[BGY]" width="34" height="[HEIGHT]">
+  <define class="DECK_SPINE" placeholders="*deck,*panelname,width=34,height=465,bgradius=0,buttonx=+5,buttony=+10,buttontextdx=-0,mastercolor=color_masterdeck,notmastercolor=deckcolor,menux=+5,menuy=+396">
+    <!-- background -->
+    <visual width="[WIDTH]" height="[HEIGHT]">
       <off shape="square" color="black" radius="[BGRADIUS]"/>
     </visual>
+    <!-- deck number circle -->
     <group x="[BUTTONX]" y="[BUTTONY]">
       <group visibility="masterdeck">
         <button class="deck_button" visibility="masterdeck" color="[MASTERCOLOR]">
@@ -19,9 +21,10 @@
       </group>
     </group>
     <!-- settings menu -->
-    <menu class="menu_maindecks" query="select" x="+0" y="[HEIGHT]" width="[MENUWIDTH]" height="[HEIGHT]"/>
-    <group visibility="loaded ? masterdeck" condition="param_equal [SHOWMASTERLABEL] 'yes'">
-      <textzone orientation="vertical" direction="[LABELDIRECTION]">
+    <menu class="menu_maindecks" query="select" x="+0" y="[HEIGHT]" width="[WIDTH]" height="[HEIGHT]"/>
+    <!-- master deck label -->
+    <group visibility="loaded ? masterdeck">
+      <textzone orientation="vertical" direction="ccw">
         <pos x="+0" y="+35"/>
         <size width="34" height="105"/>
         <text fontsize="12" color="color_masterdeck" scroll="no" align="center" text="MASTER DECK" important="true"/>

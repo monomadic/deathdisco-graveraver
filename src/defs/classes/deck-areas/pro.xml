@@ -40,7 +40,7 @@
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+768" y="+0" class="deck_spine" buttonx="+2"/>
+      <panel x="+768" y="+0" class="deck_spine"/>
       <!-- bg: spine -->
       <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
       <!-- <off shape="square" color="black"/> -->

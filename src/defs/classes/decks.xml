@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Shared compact deck building blocks used by src/panels/decks.xml -->
+  <!-- Shared compact deck building blocks used by prototype panels. -->
   <define class="compact_deck_track_summary" placeholders="*side,width=300,height=56">
     <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="pro_panel_bg" bordercoloroff="pro_panel_border" bordersize="1" radius="4"/>
     <visual condition="param_equal [SIDE] 'left'">

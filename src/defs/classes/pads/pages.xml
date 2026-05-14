@@ -38,10 +38,10 @@
   <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- BACKGROUND -->
-      <visual width="752" height="40*4+50+35" query="shift">
-        <off shape="square" color="dark_1" border="dark_0" border_size="1" radius="5"/>
-        <on shape="square" color="red" border="dark_0" border_size="1" radius="5"/>
-      </visual>
+      <!-- <visual width="752" height="40*4+50+35" query="shift"> -->
+      <!-- <off shape="square" color="dark_1" border="dark_0" border_size="1" radius="5"/> -->
+      <!-- <on shape="square" color="red" border="dark_0" border_size="1" radius="5"/> -->
+      <!-- </visual> -->
       <group x="+10">
         <!-- <visual x="-1" y="+45" width="730+2" height="40*4+8"> -->
         <!-- <off shape="square" color="dark_6" border="0" radius="6"/> -->
@@ -116,6 +116,9 @@
           <!-- </panel> -->
           <!-- PAD BUTTONS -->
           <group y="+29">
+            <visual width="733" height="40*4+5+4" x="-1" y="-1">
+              <off shape="square" color="dark_1" border="dark_4" radius="6" border_size="1"/>
+            </visual>
             <group x="+2" y="+3">
               <panel class="padbutton3" x="+180*0+2" y="+40*0" source="1"/>
               <panel class="padbutton3" x="+180*1+2" y="+40*0" source="2"/>
@@ -134,9 +137,6 @@
               <panel class="padbutton3" x="+180*2+3" y="+40*3" source="15"/>
               <panel class="padbutton3" x="+180*3+4" y="+40*3" source="16"/>
             </group>
-            <visual width="730" height="40*4+5">
-              <off shape="square" color="transparent" border="dark_9" radius="6" border_size="1"/>
-            </visual>
           </group>
           <!-- bottom row -->
           <group y="+40*4+30+25">

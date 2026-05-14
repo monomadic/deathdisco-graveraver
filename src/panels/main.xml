@@ -48,6 +48,4 @@
       </visual>
     </group>
   </panel>
-  <!-- BOTTOM BAR (UTILITY BAR) -->
-  <panel class="h_utility_bar" x="+2" y="+1280-38" condition="var_equal '@$hauntingutilitybar' 1"/>
 </module>

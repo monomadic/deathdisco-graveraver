@@ -18,7 +18,8 @@
         </button>
       </group>
     </group>
-    <menu class="menu_maindecks" query="select" x="[MENUX]" y="[MENUY]" width="[MENUWIDTH]" height="[MENUHEIGHT]"/>
+    <!-- settings menu -->
+    <menu class="menu_maindecks" query="select" x="+0" y="[HEIGHT]" width="[MENUWIDTH]" height="[HEIGHT]"/>
     <group visibility="loaded ? masterdeck" condition="param_equal [SHOWMASTERLABEL] 'yes'">
       <textzone orientation="vertical" direction="[LABELDIRECTION]">
         <pos x="+0" y="+35"/>

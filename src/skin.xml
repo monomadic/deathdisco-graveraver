@@ -14,9 +14,6 @@
   <!-- Definitions: theme tokens, runtime globals, and shared class library -->
   <xi:include href="defs/index.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
-  <xi:include href="panels/decks.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="panels/mixer.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="panels/wave.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/main.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/bottombar.xml" xpointer="xpointer(/module/*)"/>

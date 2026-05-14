@@ -21,7 +21,6 @@
   <xi:include href="waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="mixer.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="controls.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="decks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="chrome.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="racks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="video.xml" xpointer="xpointer(/defs/*)"/>

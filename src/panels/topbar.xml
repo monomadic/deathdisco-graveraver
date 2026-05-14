@@ -8,7 +8,7 @@
     <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_1"/>
     <!-- DECK LAYOUT BUTTONS -->
     <group x="70" y="0">
-      <button tooltip="Pro" class="button_main" action="set '@$hauntingproskinmode' 0 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 0">
+      <button tooltip="Pro" class="button_main" action="set '@$skin_mode' 0 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 0">
         <off color="transparent"/>
         <on color="#222222"/>
         <over color="transparent"/>
@@ -16,7 +16,7 @@
         <selected color="#333333"/>
         <text overcolor="white" size="12" oncolor="white" text="PRO"/>
       </button>
-      <button x="+60" tooltip="Performance" class="button_main" action="set '@$hauntingproskinmode' 1 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 1">
+      <button x="+60" tooltip="Performance" class="button_main" action="set '@$skin_mode' 1 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 1">
         <off color="transparent"/>
         <on color="#222222"/>
         <over color="transparent"/>
@@ -24,7 +24,7 @@
         <selected color="#333333"/>
         <text overcolor="white" size="12" oncolor="white" text="PERF"/>
       </button>
-      <button x="+120" tooltip="Stack" class="button_main" action="set '@$hauntingproskinmode' 2 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$hauntingproskinmode' 2">
+      <button x="+120" tooltip="Stack" class="button_main" action="set '@$skin_mode' 2 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 2">
         <off color="transparent"/>
         <on color="#222222"/>
         <over color="transparent"/>
@@ -44,12 +44,12 @@
         <off shape="square" color="black"/>
       </visual>
       <!-- 2 DECK BUTTON -->
-      <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$hauntinglayout' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$hauntinglayout' 0 ? var_equal '@$4decks' 1">
+      <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$layout_4deck' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$layout_4deck' 0 ? var_equal '@$4decks' 1">
         <off color="transparent"/>
         <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="2"/>
       </button>
       <!-- 4 DECK BUTTON -->
-      <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$hauntinglayout' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
+      <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$layout_4deck' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
         <off color="transparent"/>
         <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="4"/>
       </button>
@@ -63,7 +63,7 @@
     <!-- DECK MODE BUTTONS -->
     <group x="250" y="0">
       <!-- bottom bar toggle -->
-      <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$hauntingutilitybar' &amp; load_skin" textsize="10" textcolor="needle" textaction="var_equal '@$hauntingutilitybar' 1 ? get_text 'ON' : get_text 'OFF'" query="get_var '@$hauntingutilitybar'">
+      <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$show_utility_bar' &amp; load_skin" textsize="10" textcolor="needle" textaction="var_equal '@$show_utility_bar' 1 ? get_text 'ON' : get_text 'OFF'" query="get_var '@$show_utility_bar'">
         <size width="33" height="33"/>
         <off color="dark_1"/>
         <on color="dark_8"/>

@@ -7,10 +7,10 @@
   <define class="scratch_controls">
     <!-- borders -->
     <!-- <visual class="gfx_shape" width="40" height="35" coloroff="infos_background" bordercoloroff="panel_background" bordersize="1"/> -->
-    <!-- <visual class="gfx_shape" width="40" height="432-56-1" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 0 ? var_not_equal '@$hauntinglayout' 1"/> -->
-    <!-- <visual class="gfx_shape" width="40" height="432-56-1+216+2" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 0 ? var_equal '@$hauntinglayout' 1"/> -->
-    <!-- <visual class="gfx_shape" width="40" height="432-56-1+57" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 1 ? var_not_equal '@$hauntinglayout' 1"/> -->
-    <!-- <visual class="gfx_shape" width="40" height="432-56-1+216+2+57" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 1 ? var_equal '@$hauntinglayout' 1"/> -->
+    <!-- <visual class="gfx_shape" width="40" height="432-56-1" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0 ? var_not_equal '@$layout_4deck' 1"/> -->
+    <!-- <visual class="gfx_shape" width="40" height="432-56-1+216+2" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0 ? var_equal '@$layout_4deck' 1"/> -->
+    <!-- <visual class="gfx_shape" width="40" height="432-56-1+57" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1 ? var_not_equal '@$layout_4deck' 1"/> -->
+    <!-- <visual class="gfx_shape" width="40" height="432-56-1+216+2+57" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1 ? var_equal '@$layout_4deck' 1"/> -->
     <menu tooltip="WAVEFORM OPTIONS" visibility="0.8">
       <pos x="+140" y="+4"/>
       <size width="22" height="24"/>
@@ -33,58 +33,58 @@
         <item text="Centered" localize="true" action="setting 'waveformCenter' 'centered'" check="setting 'waveformCenter' 'centered'"/>
       </submenu>
       <separator/>
-      <item text="Show Controls" localize="true" action="toggle '@$hauntingscratchbuttons'" check="var_equal '@$hauntingscratchbuttons' 1"/>
+      <item text="Show Controls" localize="true" action="toggle '@$show_scratch_buttons'" check="var_equal '@$show_scratch_buttons' 1"/>
       <item text="Show Gridlines" localize="true" action="setting 'showGridlines'" check="setting 'showGridlines'"/>
       <!-- <item text="Wave Gray On Kill" action="setting 'waveGrayOnKill'" check="setting 'waveGrayOnKill'" visibility="setting 'skinwaveformScratchType' 'shapes'"/> -->
-      <item text="Bar Counter" localize="true" action="toggle '@$hauntingbarcountervert'" check="var_equal '@$hauntingbarcountervert' 1"/>
-      <item text="Hide Transport" localize="true" action="toggle '@$hauntinghidecrossfader'" check="var_equal '@$hauntinghidecrossfader' 1"/>
+      <item text="Bar Counter" localize="true" action="toggle '@$show_bar_counter_vert'" check="var_equal '@$show_bar_counter_vert' 1"/>
+      <item text="Hide Transport" localize="true" action="toggle '@$hide_crossfader'" check="var_equal '@$hide_crossfader' 1"/>
     </menu>
     <!-- VU: LEFT -->
     <!-- <panel name="vdeck1" visibility="not deck 3 leftdeck"> -->
     <!-- <deck deck="1"> -->
-    <!-- <panel class="vvu_meter_LEDs" x="+7" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/> -->
+    <!-- <panel class="vvu_meter_LEDs" x="+7" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$show_peak_meter' 1"/> -->
     <!-- </deck> -->
     <!-- </panel> -->
     <!-- <panel name="vdeck3" visibility="deck 3 leftdeck"> -->
     <!-- <deck deck="3"> -->
-    <!-- <panel class="vvu_meter_LEDs" x="+7" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/> -->
+    <!-- <panel class="vvu_meter_LEDs" x="+7" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$show_peak_meter' 1"/> -->
     <!-- </deck> -->
     <!-- </panel> -->
     <!-- VU: RIGHT -->
     <!-- <panel name="vdeck2" visibility="not deck 4 rightdeck"> -->
     <!-- <deck deck="2"> -->
-    <!-- <panel class="vvu_meter_LEDs" x="+7+11+4" ledh="8" gap="10" y="+60" source="get_level" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/> -->
+    <!-- <panel class="vvu_meter_LEDs" x="+7+11+4" ledh="8" gap="10" y="+60" source="get_level" showpeaks="var_equal '@$show_peak_meter' 1"/> -->
     <!-- </deck> -->
     <!-- </panel> -->
     <!-- <panel name="vdeck4" visibility="deck 4 rightdeck"> -->
     <!-- <deck deck="4"> -->
-    <!-- <panel class="vvu_meter_LEDs" x="+7+11+4" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/> -->
+    <!-- <panel class="vvu_meter_LEDs" x="+7+11+4" y="+60" ledh="8" gap="10" source="get_level" showpeaks="var_equal '@$show_peak_meter' 1"/> -->
     <!-- </deck> -->
     <!-- </panel> -->
-    <!-- <slider action="zoom_vertical" dblclick="zoom_vertical 28%" orientation="vertical" frommiddle="false" visibility="var_equal '@$hauntinghidecrossfader' 0 ? constant 0.8"> -->
+    <!-- <slider action="zoom_vertical" dblclick="zoom_vertical 28%" orientation="vertical" frommiddle="false" visibility="var_equal '@$hide_crossfader' 0 ? constant 0.8"> -->
     <!-- <pos x="+10" y="+200"/> -->
-    <!-- <size width="20" height="120+216+2" condition="var_equal '@$hauntinglayout' 1"/> -->
+    <!-- <size width="20" height="120+216+2" condition="var_equal '@$layout_4deck' 1"/> -->
     <!-- <size width="20" height="120"/> -->
     <!-- <off color="xf_background" border="textdarker" shape="square"/> -->
     <!-- <on color="xf_background" border="textdarker" shape="square"/> -->
     <!-- <fader color="needle" width="18" height="7"/> -->
     <!-- </slider> -->
-    <!-- <slider action="zoom_vertical" dblclick="zoom_vertical 28%" orientation="vertical" frommiddle="false" visibility="var_equal '@$hauntinghidecrossfader' 1 ? constant 0.8"> -->
+    <!-- <slider action="zoom_vertical" dblclick="zoom_vertical 28%" orientation="vertical" frommiddle="false" visibility="var_equal '@$hide_crossfader' 1 ? constant 0.8"> -->
     <!-- <pos x="+10" y="+200"/> -->
-    <!-- <size width="20" height="120+216+2+57" condition="var_equal '@$hauntinglayout' 1"/> -->
+    <!-- <size width="20" height="120+216+2+57" condition="var_equal '@$layout_4deck' 1"/> -->
     <!-- <size width="20" height="120+57"/> -->
     <!-- <off color="xf_background" border="textdarker" shape="square"/> -->
     <!-- <on color="xf_background" border="textdarker" shape="square"/> -->
     <!-- <fader color="needle" width="18" height="7"/> -->
     <!-- </slider> -->
-    <!-- <button class="button_main" x="+6" y="+338" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hauntinghidecrossfader' 0 ? var_not_equal '@$hauntinglayout' 1"/> -->
-    <!-- <button class="button_main" x="+6" y="+338+216+2" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hauntinghidecrossfader' 0 ? var_equal '@$hauntinglayout' 1"/> -->
-    <!-- <button class="button_main" x="+6" y="+338+57" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hauntinghidecrossfader' 1 ? var_not_equal '@$hauntinglayout' 1"/> -->
-    <!-- <button class="button_main" x="+6" y="+338+216+2+57" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hauntinghidecrossfader' 1 ? var_equal '@$hauntinglayout' 1"/> -->
+    <!-- <button class="button_main" x="+6" y="+338" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hide_crossfader' 0 ? var_not_equal '@$layout_4deck' 1"/> -->
+    <!-- <button class="button_main" x="+6" y="+338+216+2" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hide_crossfader' 0 ? var_equal '@$layout_4deck' 1"/> -->
+    <!-- <button class="button_main" x="+6" y="+338+57" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hide_crossfader' 1 ? var_not_equal '@$layout_4deck' 1"/> -->
+    <!-- <button class="button_main" x="+6" y="+338+216+2+57" width="40-6-6" height="26" action="swap_decks" coloron="button_background" weight="bold" textcoloron="needle" text="> <" textsize="15" visibility="var_equal '@$hide_crossfader' 1 ? var_equal '@$layout_4deck' 1"/> -->
   </define>
   <define class="mic/headphones_controls">
-    <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$hauntinglayout' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$hauntinglayout' 1">
+    <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
       <!-- background -->
       <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background"/>
       <!-- <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="br_focus" text="MIC VOL"/> -->
@@ -122,7 +122,7 @@
         </led>
       </visual>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
       <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="br_focus" text="MIC VOL"/>
       <button class="button_main" x="+10" y="+74" width="77-10-10" height="26" action="mic" textsize="11" text="ON" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+10" y="+74+24+12" width="77-10-10" height="26" action="sampler_rec 'mic'" textsize="11" text="REC" coloron="br_focus" bordersize="0"/>
@@ -171,8 +171,8 @@
     </group>
   </define>
   <define class="master_controls">
-    <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$hauntinglayout' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$hauntinglayout' 1">
+    <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
       <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background"/>
       <menu class="dropdown_menu" tooltip="Zero dB">
         <pos x="+58" y="+6"/>
@@ -200,7 +200,7 @@
         <button class="custom_button" source="207" y="+140" width="57" height="19"/>
       </group>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
       <menu class="dropdown_menu" tooltip="Zero dB">
         <pos x="+58" y="+6"/>
         <separator text="Headroom"/>
@@ -276,15 +276,15 @@
     </group>
   </define>
   <define class="mastercentral_controls">
-    <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$hauntinglayout' 1"/>
-    <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$hauntinglayout' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$hauntinglayout' 1">
+    <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
+    <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
       <!-- Shared center utilities for the master mixer -->
       <panel class="masterfx_panel" x="+6" y="+6"/>
       <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>
       <panel class="mic_panel" x="+6" y="+164"/>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
       <!-- Shared center utilities for the master mixer -->
       <panel class="masterfx_panel" x="+6" y="+6"/>
       <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>

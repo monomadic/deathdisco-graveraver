@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Shape Colors: DENON DJ & PIONEER DJ -->
-  <group name="shapecolors" condition="var_equal '@$hauntingcolorshapescolors' 2">
+  <group name="shapecolors" condition="var_equal '@$shapes_color' 2">
     <!-- DENON DJ -->
     <define color="colorvocal" value="#0064E8"/>
     <define color="colorinstru" value="#0CFF00"/>
-    <define color="colorbeat" value="#edffec" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorbeat" value="#000000" condition="var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornovocal" value="#000000" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornovocal" value="#303030" condition="var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornoinstru" value="#000000" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornoinstru" value="#303030" condition="var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornobeat" value="#000000" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$hauntingcolorscheme' 4"/>
+    <define color="colorbeat" value="#edffec" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colorbeat" value="#000000" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colornovocal" value="#000000" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colornovocal" value="#303030" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colornoinstru" value="#000000" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colornoinstru" value="#303030" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colornobeat" value="#000000" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$color_scheme' 4"/>
   </group>
-  <group name="shapecolors" condition="var_equal '@$hauntingcolorshapescolors' 1">
+  <group name="shapecolors" condition="var_equal '@$shapes_color' 1">
     <!-- PIONEER DJ -->
-    <define color="colorvocal" value="green" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorvocal" value="#0064E8" condition="var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorinstru" value="orange" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorinstru" value="#FFA800" condition="var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorbeat" value="#1E70CD" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colorbeat" value="#000000" condition="var_equal '@$hauntingcolorscheme' 4"/>
+    <define color="colorvocal" value="green" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colorvocal" value="#0064E8" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colorinstru" value="orange" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colorinstru" value="#FFA800" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colorbeat" value="#1E70CD" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colorbeat" value="#000000" condition="var_equal '@$color_scheme' 4"/>
     <define color="colornovocal" value="#303030"/>
     <define color="colornoinstru" value="#303030"/>
-    <define color="colornobeat" value="#303030" condition="not var_equal '@$hauntingcolorscheme' 4"/>
-    <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$hauntingcolorscheme' 4"/>
+    <define color="colornobeat" value="#303030" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$color_scheme' 4"/>
   </group>
   <!-- ===== Top-level color defines (always active) ===== -->
   <define color="color_dropzone" value="white"/>
@@ -96,7 +96,7 @@
   <define color="colorhihat" value="#F0CF0C" deck="3"/>
   <define color="colorhihat" value="#F0CF0C" deck="4"/>
   <!-- Monochrome deck colors -->
-  <group name="deckcolors-mono" condition="var_equal '@$hauntingcolorsdecks' 1">
+  <group name="deckcolors-mono" condition="var_equal '@$deck_colors' 1">
     <define color="deckcolor" value="#BBBBBB" deck="1"/>
     <define color="deckcolor" value="#BBBBBB" deck="2"/>
     <define color="deckcolor" value="#BBBBBB" deck="3"/>
@@ -129,7 +129,7 @@
     <define color="waveform_passive3" value="#52291c"/>
   </group>
   <!-- Daylight scheme normal mode -->
-  <group name="deckcolors-daylight" condition="var_equal '@$hauntingcolorsdecks' 0 ? var_equal '@$hauntingcolorscheme' 4">
+  <group name="deckcolors-daylight" condition="var_equal '@$deck_colors' 0 ? var_equal '@$color_scheme' 4">
     <define color="waveform_active1" value="#2ec3ed"/>
     <define color="waveform_passive1" value="#113845"/>
     <define color="colorbass" value="#0e4551" deck="1"/>
@@ -168,7 +168,7 @@
     <define color="knobfillon" value="#f97b4e" deck="4"/>
   </group>
   <!-- Daylight scheme monochrome mode: Decks 1-2 blue, Decks 3-4 orange -->
-  <group name="deckcolors-daylight-mono" condition="var_equal '@$hauntingcolorsdecks' 1 ? var_equal '@$hauntingcolorscheme' 4">
+  <group name="deckcolors-daylight-mono" condition="var_equal '@$deck_colors' 1 ? var_equal '@$color_scheme' 4">
     <define color="waveform_active1" value="#2ec3ed"/>
     <define color="waveform_passive1" value="#113845"/>
     <define color="colorbass" value="#0e4551" deck="1"/>
@@ -223,7 +223,7 @@
     <define color="orange_vu" value="#df6729"/>
     <define color="red_vu" value="#ee2c3d"/>
   </group>
-  <group name="mastercolors" condition="var_equal '@$hauntingcolorscheme' 4">
+  <group name="mastercolors" condition="var_equal '@$color_scheme' 4">
     <define color="mastercoloron" value="#838487"/>
     <define color="br_focus" value="#697cec"/>
     <define color="browser_iconbuttonactive" value="#63f17a"/>

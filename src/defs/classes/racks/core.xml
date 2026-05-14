@@ -57,8 +57,8 @@
     </define>
     <define class="efx_rack_ex_master" placeholders="*panelname">
       <visual class="gfx_shape" width="312" height="80" coloroff="panel_background"/>
-      <button class="button_main" action="toggle '@$hauntingcenterfxrack'" query="on/off" tooltip="SWAP MASTER FX/MIC FX" width="30" height="80" textaction="var_equal '@$hauntingcenterfxrack' 0 ? get_text 'MASTER' : var_equal '@$hauntingcenterfxrack' 1 ? get_text 'MIC'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
-      <group name="masterfx" visibility="var_equal '@$hauntingcenterfxrack' 0">
+      <button class="button_main" action="toggle '@$show_center_fx_rack'" query="on/off" tooltip="SWAP MASTER FX/MIC FX" width="30" height="80" textaction="var_equal '@$show_center_fx_rack' 0 ? get_text 'MASTER' : var_equal '@$show_center_fx_rack' 1 ? get_text 'MIC'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
+      <group name="masterfx" visibility="var_equal '@$show_center_fx_rack' 0">
         <deck deck="master">
           <button class="button_main" x="+42+16" y="+12" width="148" height="28" action="effect_active" scroll="effect_select" textaction="get_effect_name &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
           <button class="button_main" x="+42+16+148" y="+12" width="28" height="28" action="effect_select" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
@@ -67,7 +67,7 @@
           <button class="button_main" x="+246" y="+24" width="39" height="28" action="effect_show_gui" coloron="br_focus" bordersize="0" text="+"/>
         </deck>
       </group>
-      <group name="micfx" visibility="var_equal '@$hauntingcenterfxrack' 1">
+      <group name="micfx" visibility="var_equal '@$show_center_fx_rack' 1">
         <deck deck="mic">
           <button class="button_main" x="+42+16" y="+12" width="148" height="28" action="effect_active 'mic'" scroll="effect_select 'mic'" textaction="get_effect_name 'mic' &amp; param_uppercase" coloroff="button_background3" coloron="br_focus" bordersize="0" textcolor="textoff2"/>
           <button class="button_main" x="+42+16+148" y="+12" width="28" height="28" action="effect_select 'mic'" sysicon="chevrondown" iconsize="20" coloron="br_focus" bordersize="0"/>
@@ -182,8 +182,8 @@
     </define>
     <define class="mic_rack_ex" placeholders="deck,*panelname">
       <visual class="gfx_shape" width="294" height="86" coloroff="panel_background"/>
-      <button class="button_main" query="on/off" width="30" height="86" action="toggle '@$hauntingleftmixerrack'" tooltip="SWAP MIC/HEADPHONES" textaction="var_equal '@$hauntingleftmixerrack' 0 ? get_text 'MIC' : var_equal '@$hauntingleftmixerrack' 1 ? get_text 'HP'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
-      <group name="microphone" visibility="var_equal '@$hauntingleftmixerrack' 0">
+      <button class="button_main" query="on/off" width="30" height="86" action="toggle '@$show_left_mixer_rack'" tooltip="SWAP MIC/HEADPHONES" textaction="var_equal '@$show_left_mixer_rack' 0 ? get_text 'MIC' : var_equal '@$show_left_mixer_rack' 1 ? get_text 'HP'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
+      <group name="microphone" visibility="var_equal '@$show_left_mixer_rack' 0">
         <deck deck="[DECK]">
           <visual class="gfx_shape" x="+14+9+30" y="+86-29" width="220" height="20" coloroff="xf_background" visibility="0.57"/>
           <visual type="vumeter" source="get_level 'mic'" x="+6+180" y="+64" width="70" height="6" smooth="true">
@@ -243,7 +243,7 @@
           <button class="button_main" x="+30+14+9" y="+18" width="40" height="30" action="mic" textsize="11" text="ON" coloron="br_focus" bordersize="0"/>
         </deck>
       </group>
-      <group name="headphones" visibility="var_equal '@$hauntingleftmixerrack' 1">
+      <group name="headphones" visibility="var_equal '@$show_left_mixer_rack' 1">
         <deck deck="headphones">
           <panel class="knob" x="+53" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_volume" rgclick="temporary" dblclick="headphone_volume 40%" frommiddle="false" fillcolor="br_focus" text="LEVEL"/>
           <panel class="knob" x="+53+60" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_mix" rgclick="temporary" dblclick="headphone_mix 50%" frommiddle="true" fillcolor="br_focus" text="MIXING"/>
@@ -254,8 +254,8 @@
     </define>
     <define class="master_rack_ex" placeholders="deck,*panelname">
       <visual class="gfx_shape" width="294" height="86" coloroff="panel_background"/>
-      <button class="button_main" x="+294-30" action="toggle '@$hauntingrightmixerrack'" tooltip="SWAP MASTER/REC" query="on/off" width="30" height="86" textaction="var_equal '@$hauntingrightmixerrack' 0 ? get_text 'MASTER' : var_equal '@$hauntingrightmixerrack' 1 ? get_text 'REC'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
-      <group name="master" visibility="var_equal '@$hauntingrightmixerrack' 0">
+      <button class="button_main" x="+294-30" action="toggle '@$show_right_mixer_rack'" tooltip="SWAP MASTER/REC" query="on/off" width="30" height="86" textaction="var_equal '@$show_right_mixer_rack' 0 ? get_text 'MASTER' : var_equal '@$show_right_mixer_rack' 1 ? get_text 'REC'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
+      <group name="master" visibility="var_equal '@$show_right_mixer_rack' 0">
         <deck deck="[DECK]">
           <visual class="gfx_shape" x="+14+9" y="+86-29" width="152" height="20" coloroff="xf_background" visibility="0.57"/>
           <button class="button_main" x="+185" y="+8" width="56" height="21" action="mono_mix" textsize="11" text="MONO" coloron="br_focus" bordersize="0"/>
@@ -275,7 +275,7 @@
           </menu>
         </deck>
       </group>
-      <group name="rec" visibility="var_equal '@$hauntingrightmixerrack' 1">
+      <group name="rec" visibility="var_equal '@$show_right_mixer_rack' 1">
         <deck deck="[DECK]">
           <button class="button_main" tooltip="" x="+10" y="+6" width="244" height="50" query="off" textsize="11" textcolor="texton2" textcoloron="needle" textaction="broadcast_message 'full'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
           <button class="button_main" x="+10" y="+60" width="60" height="20" action="record" textsize="11" text="REC" coloroff="button_background2" coloron="br_focus" bordersize="0"/>

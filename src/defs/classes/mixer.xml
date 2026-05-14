@@ -11,26 +11,26 @@
       </textzone>
       <!-- 3knobs -->
       <group novisibility="setting 'eqMode' 'STEMS'" y="+30">
-        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72+65" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
-        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+56" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+56" visibility="var_equal '@$show_drop_menus' 0"/>
         <!-- <panel class="knob" x="+18" y="+14+81+68+68+64" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label &amp; param_cast 'text' 9" actiontext="effect_select colorfx"/> -->
       </group>
       <!-- 5knobs -->
       <group visibility="setting 'eqMode' 'STEMS'" y="+30">
-        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72+65" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72+65+65" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+81+68+68+64" knobsize="41" knobradius="10" faderradius="9" action="stem 'bass'" rgclick="stem 'bass' 0% ? stem 'bass' 50% : stem 'bass' 0%" dblclick="stem 'bass' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'BASS'" actiontxt="eq_mode +1"/>
       </group>
       <group name="levels,vu,cue" y="+366">
-        <panel class="vu_meter_LEDs" x="+23" y="+30" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+30" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs" x="+23" y="+30" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10" y="+30" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -57,13 +57,13 @@
         <!-- <visual x="+10" y="+6" width="55" height="432-56-16"> -->
         <!-- <off shape="square" color="#1C1C1C" radius="6" bordersize="1" border="#444444"/> -->
         <!-- </visual> -->
-        <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$hauntingdropmenus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <!-- PRO: AUDIO PANEL: COLORFX -->
-        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+50+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+50+6" visibility="var_equal '@$show_drop_menus' 0"/>
         <!-- filter on light -->
         <group x="+55" y="+14+81+68+68+50+6">
           <visual>
@@ -84,8 +84,8 @@
       </group>
       <!-- 5knobs -->
       <group visibility="setting 'eqMode' 'STEMS'">
-        <button class="dropdown_menu" action="eq_mode" x="+68" y="+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+68" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
@@ -100,12 +100,12 @@
         <visual class="gfx_shape" x="+14+9" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
         <menu class="fake_menu" x="+14+9+18" y="+58"/>
         <button class="button_main" x="+14+9" y="+16" width="52" height="28" action="pfl" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
-        <button class="dropdown_menu" action="eq_mode" x="+14+90+20-14-8" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="eq_mode" x="+14+90+20-14-8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
         <panel class="knob" x="+14+90+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+14+90+20+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+14+90+20+80+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <button class="button_main" x="+14+90+20+80+80+80+20+41+8-12-58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
-        <button class="dropdown_menu" action="filter_selectcolorfx" x="+14+90+20+80+80+80+20+41+8" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+14+90+20+80+80+80+20+41+8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
         <panel class="knob" x="+14+90+20+80+80+80+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
       </group>
     </deck>
@@ -116,11 +116,11 @@
       <group x="+6">
         <visual class="gfx_shape" x="+6+8+5" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
         <button class="button_main" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20+58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
-        <button class="dropdown_menu" action="filter_selectcolorfx" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20-8-14" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20-8-14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
-        <button class="dropdown_menu" action="eq_mode" x="+504-30-52-14-9-41-20+14" y="+20" visibility="var_equal '@$hauntingdropmenus' 0"/>
+        <button class="dropdown_menu" action="eq_mode" x="+504-30-52-14-9-41-20+14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
         <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <button class="button_main" x="+504-30-60-14-9" y="+16" width="52" height="28" action="pfl" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
         <menu class="fake_menu" x="+504-30-60-14-9+19" y="+58"/>
@@ -135,8 +135,8 @@
       <!-- <size width="77" height="30"/> -->
       <!-- <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/> -->
       <!-- </textzone> -->
-      <panel class="vu_meter_LEDs" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-      <panel class="vu_meter_LEDs" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+      <panel class="vu_meter_LEDs" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+      <panel class="vu_meter_LEDs" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
       <!-- CUE BUTTON -->
       <!-- <button class="button_main" x="+2+4+4" y="+175" width="57" height="24" action="pfl" coloroff="button_background4" brcoloroff="button_background4" textcoloron="black" text="CUE"/> -->
       <button class="button_main" action="pfl" query="pfl">
@@ -163,9 +163,9 @@
           <size width="61" height="36"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs2" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs2" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs2" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs2" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="108-6"/>
@@ -190,9 +190,9 @@
           <size width="61" height="36"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="158"/>
@@ -216,8 +216,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -243,8 +243,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_stack" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_stack" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_stack" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_stack" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -269,9 +269,9 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="158"/>
@@ -292,9 +292,9 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="158"/>
@@ -318,8 +318,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -341,8 +341,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -367,9 +367,9 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="158"/>
@@ -390,9 +390,9 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$hauntingskinmixerrack' 1">
+        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
             <size width="38" height="158"/>
@@ -416,8 +416,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -439,8 +439,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$hauntingshowpeaksmt' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -499,7 +499,7 @@
           <item text="Per Deck" action="set '@$hntnhvumetercolors' 0" check="var_equal '@$hntnhvumetercolors' 0"/>
           <item text="Natural" action="set '@$hntnhvumetercolors' 1" check="var_equal '@$hntnhvumetercolors' 1"/>
           <separator/>
-          <item text="Show Extra Peak Meter" localize="true" action="toggle '@$hauntingshowpeaksmt'" check="var_equal '@$hauntingshowpeaksmt' 1"/>
+          <item text="Show Extra Peak Meter" localize="true" action="toggle '@$show_peak_meter'" check="var_equal '@$show_peak_meter' 1"/>
         </submenu>
         <submenu text="Filter Resonance" localize="true">
           <item text="Default" action="setting 'filterDefaultResonance' 'default'" check="setting 'filterDefaultResonance' 'default'"/>
@@ -517,7 +517,7 @@
         <separator/>
         <item text="Reset EQ On Load" localize="true" action="setting 'resetEqOnLoad'" check="setting 'resetEqOnLoad'"/>
         <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
-        <item text="Show Drop Down Menus" localize="true" action="toggle '@$hauntingdropmenus'" check="var_equal '@$hauntingdropmenus' 0"/>
+        <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
         <separator/>
         <submenu text="Crossfader" localize="true">
           <item text="Disabled" action="setting 'crossfaderDisable'" check="setting 'crossfaderDisable'"/>
@@ -877,8 +877,8 @@
     </panel>
     <!-- PRO: MIXER PANEL: WAVE -->
     <panel name="scratchmixer" group="mixer" visible="no">
-      <!-- <visual class="gfx_shape" width="312" height="432-56-1" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 0"/> -->
-      <!-- <visual class="gfx_shape" width="312" height="432-56-1+57" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 1"/> -->
+      <!-- <visual class="gfx_shape" width="312" height="432-56-1" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0"/> -->
+      <!-- <visual class="gfx_shape" width="312" height="432-56-1+57" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1"/> -->
       <!-- LEFT -->
       <panel class="vertical_scratchwave2" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0" outer_height="350" waveform_height="347" dropzone_height="370"/>
       <!-- <panel class="vertical_scratchwave" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0"/> -->
@@ -926,19 +926,19 @@
       <panel class="master_controls" x="+77+1+77+2+77+1"/>
     </panel>
     <!-- XFADER ZONE -->
-    <group visibility="var_equal '@$hauntinghidecrossfader' 1 ? not skin_panel 'scratchmixer' : on">
+    <group visibility="var_equal '@$hide_crossfader' 1 ? not skin_panel 'scratchmixer' : on">
       <visual class="gfx_shape" y="+432-56" width="312" height="56" coloroff="xf_background"/>
       <panel class="crossfader" x="+20" y="+432-56+6+4"/>
     </group>
   </define>
   <define class="levels_mini">
-    <group name="2/4 (decks_swap)" visibility="var_not_equal '@$hauntinglayout' 1">
+    <group name="2/4 (decks_swap)" visibility="var_not_equal '@$layout_4deck' 1">
       <panel class="channel_levels_mini" deck="3" x="+77+1" visibility="deck 3 leftdeck"/>
       <panel class="channel_levels_mini" deck="1" x="+77+1" visibility="not deck 3 leftdeck"/>
       <panel class="channel_levels_mini" deck="2" x="+77+1+77+2" visibility="not deck 4 rightdeck"/>
       <panel class="channel_levels_mini" deck="4" x="+77+1+77+2" visibility="deck 4 rightdeck"/>
     </group>
-    <group name="4 (fulldecks)" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="4 (fulldecks)" visibility="var_equal '@$layout_4deck' 1">
       <panel class="channel_levels_mini4_left" deck="left" x="+77+1"/>
       <panel class="channel_levels_mini4_right" deck="right" x="+77+1+77+2"/>
     </group>
@@ -988,7 +988,7 @@
           <item text="Per Deck" action="set '@$hntnhvumetercolors' 0" check="var_equal '@$hntnhvumetercolors' 0"/>
           <item text="Natural" action="set '@$hntnhvumetercolors' 1" check="var_equal '@$hntnhvumetercolors' 1"/>
           <separator/>
-          <item text="Show Extra Peak Meter" localize="true" action="toggle '@$hauntingshowpeaksmt'" check="var_equal '@$hauntingshowpeaksmt' 1"/>
+          <item text="Show Extra Peak Meter" localize="true" action="toggle '@$show_peak_meter'" check="var_equal '@$show_peak_meter' 1"/>
         </submenu>
         <submenu text="Mixer Order" localize="true">
           <item text="1-2-3-4" action="setting 'mixerOrder' '1234'" check="setting 'mixerOrder' '1234'"/>
@@ -1011,7 +1011,7 @@
         <separator/>
         <item text="Reset EQ On Load" localize="true" action="setting 'resetEqOnLoad'" check="setting 'resetEqOnLoad'"/>
         <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
-        <item text="Show Drop Down Menus" localize="true" action="toggle '@$hauntingdropmenus'" check="var_equal '@$hauntingdropmenus' 0"/>
+        <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
         <separator/>
         <submenu text="Crossfader" localize="true">
           <item text="Disabled" action="setting 'crossfaderDisable'" check="setting 'crossfaderDisable'"/>
@@ -1027,8 +1027,8 @@
     </panel>
     <!-- 4 deck scratch mixer -->
     <panel name="scratchmixer" group="mixer" visible="no">
-      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 0"/>
-      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hauntinghidecrossfader' 1"/>
+      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0"/>
+      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1"/>
       <panel class="vertical_scratchwave" deck="3" visibility="deck 3 leftdeck" x="+40" y="+0"/>
       <panel class="vertical_scratchwave" deck="1" visibility="deck 1 leftdeck" x="+40" y="+0"/>
       <panel class="vertical_scratchwave" deck="2" visibility="deck 2 rightdeck" x="+320-98-10-19-19" y="+0"/>
@@ -1041,7 +1041,7 @@
       <panel class="master_controls" x="+77+1+77+2+77+1"/>
     </panel>
     <!-- XFADER ZONE -->
-    <group visibility="var_equal '@$hauntinghidecrossfader' 1 ? not skin_panel 'scratchmixer' : on">
+    <group visibility="var_equal '@$hide_crossfader' 1 ? not skin_panel 'scratchmixer' : on">
       <visual class="gfx_shape" y="+432-56+216+2" width="312" height="56" coloroff="xf_background"/>
       <panel class="crossfader" x="+20" y="+432-56+6+4+216+2"/>
     </group>

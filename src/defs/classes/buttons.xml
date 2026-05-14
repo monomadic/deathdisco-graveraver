@@ -106,7 +106,7 @@
         <fader color="#AAAAAA" width="2" height="5"/>
       </slider>
     </define>
-    <define class="button_main" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=13,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="button_main" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=13,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no" condition="var_equal '@$color_scheme' 4">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
       <down color="[COLORON]" border="[BRCOLORON]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
@@ -115,7 +115,7 @@
       <icon dx="[ICONDX]" sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
       <!-- <action rgclick="[RIGHTCLICK]"/> -->
     </define>
-    <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=panel_background,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=panel_background,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$color_scheme' 4">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
       <over color="#1F1F1F" border="#222222" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
@@ -133,7 +133,7 @@
       <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[COLOR]" colorselected="black" colordown="[TEXTCOLOR]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
       <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
     </define>
-    <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=br_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=br_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$color_scheme' 4">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
       <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
@@ -148,7 +148,7 @@
       <selected color="transparent" border="deckcolor" radius="3"/>
       <text fontsize="10" color="#DDDDDD" colorselected="deckcolor" colordown="#888888" align="center" action="custom_button_name [SOURCE]"/>
     </define>
-    <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$color_scheme' 4">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
       <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
@@ -156,7 +156,7 @@
       <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
       <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
     </define>
-    <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$color_scheme' 4">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
       <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
@@ -231,7 +231,7 @@
       </visual>
     </define>
     <!-- CLASS: PAD BUTTON -->
-    <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
       <visual>
         <tooltip/>
         <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -273,7 +273,7 @@
         <off color="needle" shape="square"/>
       </visual>
     </define>
-    <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_equal '@$color_scheme' 4">
       <visual>
         <tooltip/>
         <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -315,7 +315,7 @@
         <off color="needle" shape="square"/>
       </visual>
     </define>
-    <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
       <visual>
         <tooltip/>
         <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -357,7 +357,7 @@
         <off color="needle" shape="square"/>
       </visual>
     </define>
-    <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_equal '@$color_scheme' 4">
       <visual>
         <tooltip/>
         <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -400,7 +400,7 @@
       </visual>
     </define>
     <!-- PRO: CLASS: PADBUTTON2 -->
-    <define class="PADBUTTON2" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON2" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
       <visual>
         <size width="124" height="38"/>
         <up color="button_background2" shape="square"/>
@@ -448,7 +448,7 @@
         <off color="panel_background" shape="square"/>
       </visual>
     </define>
-    <define class="PADBUTTON2" placeholders="*source" condition="var_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON2" placeholders="*source" condition="var_equal '@$color_scheme' 4">
       <visual>
         <tooltip/>
         <size width="116" height="37"/>
@@ -492,7 +492,7 @@
       </visual>
     </define>
     <!-- PAD BUTTON TYPE 3 (Large) -->
-    <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
       <!-- <visual> -->
       <!-- <size width="180" height="39"/> -->
       <!-- <up color="#666666" shape="square"/> -->
@@ -558,7 +558,7 @@
         <off color="transparent" border_size="1" border="dark_4" shape="square"/>
       </visual>
     </define>
-    <define class="PADBUTTON_WIDE" placeholders="*source" condition="var_not_equal '@$hauntingcolorscheme' 4">
+    <define class="PADBUTTON_WIDE" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
       <visual>
         <size width="160" height="38"/>
         <up color="button_background2" shape="square"/>
@@ -737,21 +737,21 @@
     <define class="MENU_MAINDECKS" tooltip="Deck Options" placeholders="width,height">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="20" height="20"/>
-      <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
-      <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
-      <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
-      <item text="Auto Pitch Lock" action="auto_pitch_lock" check="auto_pitch_lock" visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/>
-      <!-- <separator visibility="var_equal '@$hauntingproskinmode' 2 ? false : var_equal '@$hauntingproskinmode' 0 ? false : true"/> -->
-      <item text="Hot Cues" action="set '@infospannelmode' 2" check="var_equal '@infospannelmode' 2" visibility="var_equal '@$hauntingproskinmode' 2 : false"/>
-      <item text="Loops" action="set '@infospannelmode' 1" check="var_equal '@infospannelmode' 1" visibility="var_equal '@$hauntingproskinmode' 2 : false"/>
-      <item text="Edit Grid" action="set '@infospannelmode' 0" check="var_equal '@infospannelmode' 0" visibility="var_equal '@$hauntingproskinmode' 2 : false"/>
-      <item text="Timecode &amp; Line-In" action="set '@infospannelmode' 3" check="var_equal '@infospannelmode' 3" visibility="var_equal '@$hauntingproskinmode' 2 : false"/>
-      <item text="Custom Buttons" action="set '@infospannelmode' 4" check="var_equal '@infospannelmode' 4" visibility="var_equal '@$hauntingproskinmode' 2 : false"/>
-      <!-- <separator visibility="var_equal '@$hauntingproskinmode' 2 : false"/> -->
-      <item text="Jog" action="set '@hauntingdeckmode' 0" check="var_equal '@hauntingdeckmode' 0" visibility="var_equal '@$hauntingproskinmode' 2"/>
-      <item text="Pads" action="set '@hauntingdeckmode' 1" check="var_equal '@hauntingdeckmode' 1" visibility="var_equal '@$hauntingproskinmode' 2"/>
-      <item text="Saved Loops" action="set '@hauntingdeckmode' 2" check="var_equal '@hauntingdeckmode' 2" visibility="var_equal '@$hauntingproskinmode' 2"/>
-      <!-- <separator visibility="var_equal '@$hauntingproskinmode' 2"/> -->
+      <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
+      <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
+      <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
+      <item text="Auto Pitch Lock" action="auto_pitch_lock" check="auto_pitch_lock" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
+      <!-- <separator visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/> -->
+      <item text="Hot Cues" action="set '@infospannelmode' 2" check="var_equal '@infospannelmode' 2" visibility="var_equal '@$skin_mode' 2 : false"/>
+      <item text="Loops" action="set '@infospannelmode' 1" check="var_equal '@infospannelmode' 1" visibility="var_equal '@$skin_mode' 2 : false"/>
+      <item text="Edit Grid" action="set '@infospannelmode' 0" check="var_equal '@infospannelmode' 0" visibility="var_equal '@$skin_mode' 2 : false"/>
+      <item text="Timecode &amp; Line-In" action="set '@infospannelmode' 3" check="var_equal '@infospannelmode' 3" visibility="var_equal '@$skin_mode' 2 : false"/>
+      <item text="Custom Buttons" action="set '@infospannelmode' 4" check="var_equal '@infospannelmode' 4" visibility="var_equal '@$skin_mode' 2 : false"/>
+      <!-- <separator visibility="var_equal '@$skin_mode' 2 : false"/> -->
+      <item text="Jog" action="set '@deck_mode' 0" check="var_equal '@deck_mode' 0" visibility="var_equal '@$skin_mode' 2"/>
+      <item text="Pads" action="set '@deck_mode' 1" check="var_equal '@deck_mode' 1" visibility="var_equal '@$skin_mode' 2"/>
+      <item text="Saved Loops" action="set '@deck_mode' 2" check="var_equal '@deck_mode' 2" visibility="var_equal '@$skin_mode' 2"/>
+      <!-- <separator visibility="var_equal '@$skin_mode' 2"/> -->
       <submenu text="Songpos Waveform Type" localize="true">
         <item text="Auto" localize="true" action="setting 'skinOverviewType' 'auto'" check="setting 'skinOverviewType' 'auto'"/>
         <item text="Scratch" localize="true" action="setting 'skinOverviewType' 'colors'" check="setting 'skinOverviewType' 'colors'"/>
@@ -774,9 +774,9 @@
       </submenu>
       <!-- <separator visibility="setting 'skinOverviewType' 'shapes' ? true : setting 'skinOverviewType' 'auto' ? setting 'skinWaveformType' 'shapes' ? true : false"/> -->
       <submenu text="Colors" localize="true" visibility="setting 'skinOverviewType' 'shapes' ? true : setting 'skinOverviewType' 'auto' ? setting 'skinWaveformType' 'shapes' ? true : false">
-        <item text="Virtual DJ (ish)" localize="true" action="set '@$hauntingcolorshapescolors' 0 &amp; load_skin" check="var_equal '@$hauntingcolorshapescolors' 0"/>
-        <item text="Denon DJ (ish)" localize="true" action="set '@$hauntingcolorshapescolors' 2 &amp; load_skin" check="var_equal '@$hauntingcolorshapescolors' 2"/>
-        <item text="Pioneer DJ (ish)" localize="true" action="set '@$hauntingcolorshapescolors' 1 &amp; load_skin" check="var_equal '@$hauntingcolorshapescolors' 1"/>
+        <item text="Virtual DJ (ish)" localize="true" action="set '@$shapes_color' 0 &amp; load_skin" check="var_equal '@$shapes_color' 0"/>
+        <item text="Denon DJ (ish)" localize="true" action="set '@$shapes_color' 2 &amp; load_skin" check="var_equal '@$shapes_color' 2"/>
+        <item text="Pioneer DJ (ish)" localize="true" action="set '@$shapes_color' 1 &amp; load_skin" check="var_equal '@$shapes_color' 1"/>
       </submenu>
       <!-- <separator/> -->
       <submenu text="Pitch Range" localize="true">
@@ -827,8 +827,8 @@
           <item text="Beats left" action="setting 'cueDisplay' 'beat'" check="setting 'cueDisplay' 'beat'"/>
         </submenu>
       </submenu>
-      <!-- <separator visibility="not var_equal '@$hauntingproskinmode' 3"/> -->
-      <item text="Show CoverArt" action="toggle '@$haunting_showcover_title'" check="var_equal '@$haunting_showcover_title' 1" visibility="not var_equal '@$hauntingproskinmode' 3"/>
+      <!-- <separator visibility="not var_equal '@$skin_mode' 3"/> -->
+      <item text="Show CoverArt" action="toggle '@$show_cover_title'" check="var_equal '@$show_cover_title' 1" visibility="not var_equal '@$skin_mode' 3"/>
     </define>
     <define class="DROPDOWN_MENU">
       <size width="14" height="13"/>

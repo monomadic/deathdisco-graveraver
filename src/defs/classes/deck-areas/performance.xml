@@ -72,8 +72,8 @@
       </group>
       <group x="+535" y="+100">
         <group novisibility="setting 'eqMode' 'STEMS'" y="+4">
-          <button class="dropdown_menu" action="eq_mode" x="+46" y="-4" visibility="var_equal '@$hauntingdropmenus' 0"/>
-          <panel class="knob" x="+21" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="red" fillcoloroff="color_knob_bg" textaction="gain_label" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+          <button class="dropdown_menu" action="eq_mode" x="+46" y="-4" visibility="var_equal '@$show_drop_menus' 0"/>
+          <panel class="knob" x="+21" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="red" fillcoloroff="color_knob_bg" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
           <panel class="knob" x="+21" y="+50" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="colorvocal" fillcoloroff="colorvocal" textaction="high_label" actiontxt="eq_mode +1"/>
           <panel class="knob" x="+21" y="+50+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="colorinstru" fillcoloroff="colorinstru" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
           <panel class="knob" x="+21" y="+50+40+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="colorbeat" fillcoloroff="colorbeat" textaction="low_label" actiontxt="eq_mode +1"/>
@@ -87,8 +87,8 @@
           </group>
         </group>
         <group visibility="setting 'eqMode' 'STEMS'">
-          <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$hauntingdropmenus' 0"/>
-          <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$hauntingdropmenus' 1 ? eq_mode : eq_mode +1"/>
+          <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+          <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
           <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
           <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
           <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
@@ -127,15 +127,15 @@
       <line name="divider" color="button_background" width="3" height="171+48-2" x="+557-79-51" y="+108+2"/>
       <panel class="pads_rack_vert" x="+1" y="+108" panelname="[PANELNAME]"/>
       <panel class="channel_levels_vert" deck="[DECK]" x="+766-61-10" y="+108"/>
-      <visual source="deck [DECK] leftdeck" visibility="var_equal '@$hauntinglayout' 1 ? loaded ? blink_play on : true">
+      <visual source="deck [DECK] leftdeck" visibility="var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
         <size width="766" height="333"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </visual>
-      <dropzone visibility="var_equal '@$hauntinglayout' 0">
+      <dropzone visibility="var_equal '@$layout_4deck' 0">
         <size width="766" height="333"/>
         <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </dropzone>
-      <dropzone visibility="var_equal '@$hauntinglayout' 1">
+      <dropzone visibility="var_equal '@$layout_4deck' 1">
         <size width="766" height="333"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>
@@ -155,7 +155,7 @@
       <panel class="loops_center" x="+0" y="+108" panelname="[PANELNAME]"/>
       <panel class="pads_rack_center" x="+10" y="+108+72" panelname="[PANELNAME]"/>
       <panel class="channel_levels_vert" deck="[DECK]" x="+800-61-10-81" y="+108"/>
-      <visual source="deck [DECK] leftdeck" visibility="var_equal '@$hauntinglayout' 1 ? loaded ? blink_play on : true">
+      <visual source="deck [DECK] leftdeck" visibility="var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
         <size width="800-81" height="333"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </visual>
@@ -175,15 +175,15 @@
       <line name="divider" color="button_background" width="3" height="172-12" x="+878-557-3+77+1" y="+103+2-5"/>
       <panel class="loops_ex" x="+2+8+58+14+238+77+1" y="+103-6" panelname="[PANELNAME]"/>
       <panel class="channel_levels_ex" deck="[DECK]" x="+2+8" y="+103-6"/>
-      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] rightdeck ? var_equal '@$hauntinglayout' 1 ? loaded ? blink_play on : true">
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] rightdeck ? var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
         <size width="878+77+2" height="264"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
       </visual>
-      <dropzone visibility="var_equal '@$hauntinglayout' 0">
+      <dropzone visibility="var_equal '@$layout_4deck' 0">
         <size width="878+77+2" height="264"/>
         <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </dropzone>
-      <dropzone visibility="var_equal '@$hauntinglayout' 1">
+      <dropzone visibility="var_equal '@$layout_4deck' 1">
         <size width="878+77+2" height="264"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>
@@ -202,15 +202,15 @@
       <line name="divider" color="button_background" width="3" height="171+48-2" x="+878-557-3+52" y="+108+2+2"/>
       <panel class="pads_rack_vert" x="+1" y="+108" panelname="[PANELNAME]"/>
       <panel class="channel_levels_vert" deck="[DECK]" x="+10" y="+108"/>
-      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] rightdeck ? var_equal '@$hauntinglayout' 1 ? loaded ? blink_play on : true">
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] rightdeck ? var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
         <size width="800" height="333"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
       </visual>
-      <dropzone visibility="var_equal '@$hauntinglayout' 0">
+      <dropzone visibility="var_equal '@$layout_4deck' 0">
         <size width="800" height="333"/>
         <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </dropzone>
-      <dropzone visibility="var_equal '@$hauntinglayout' 1">
+      <dropzone visibility="var_equal '@$layout_4deck' 1">
         <size width="800" height="333"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>
@@ -230,7 +230,7 @@
       <panel class="loops_center" x="+2+8+58+14+238+53-30-3" y="+108" panelname="[PANELNAME]"/>
       <panel class="pads_rack_center" x="+2+8+58+14+238+53-30-3" y="+108+72" panelname="[PANELNAME]"/>
       <panel class="channel_levels_vert" deck="[DECK]" x="+10" y="+108"/>
-      <visual source="deck [DECK] rightdeck" visibility="var_equal '@$hauntinglayout' 1 ? loaded ? blink_play on : true">
+      <visual source="deck [DECK] rightdeck" visibility="var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
         <size width="800-81" height="333"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </visual>
@@ -267,7 +267,7 @@
             <on shape="square" color="transparent" border="#88FFFFFF" border_size="1"/>
           </button>
           <button class="button_main" x="+878-10-90" y="+4" width="90" height="30" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="18" textaction="not loaded ? get_text 'TAP'"/>
-          <textzone class="text" x="+878-10-90" y="+4" width="90" height="30" fontsize="22" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+          <textzone class="text" x="+878-10-90" y="+4" width="90" height="30" fontsize="22" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
           <textzone class="text" x="+878-10-90" y="+25" action="pitch_reset" width="90" height="30" fontsize="12" color="textoff2" align="center" weight="" textaction="get_text '%Ppitch%'"/>
           <group x="+878-10-90-10-90" y="+12">
             <visual class="gfx_shape" width="128" height="80" coloroff="transparent"/>
@@ -319,7 +319,7 @@
               <text fontsize="12" weight="" color="#888888" align="right" scroll="yes" action="get_loaded_song 'artist' &amp; param_uppercase" localize="true" important="true"/>
             </textzone>
           </group>
-          <textzone class="text" x="+20" y="+4" width="90" height="30" fontsize="22" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+          <textzone class="text" x="+20" y="+4" width="90" height="30" fontsize="22" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
           <button orientation="vertical" class="button_main" x="+6" y="+6" width="16" height="52" action="masterdeck" coloroff="button_background" textcolor="textoff4" coloron="black" textcoloron="color_masterdeck" text="MASTER" bordersize="1" textsize="10" brcoloron="color_masterdeck"/>
           <group x="+120" y="+12">
             <visual class="gfx_shape" width="128" height="80" coloroff="transparent"/>
@@ -350,11 +350,11 @@
         <size width="878" height="98"/>
         <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="10"/>
       </visual>
-      <dropzone visibility="var_equal '@$hauntinglayout' 0">
+      <dropzone visibility="var_equal '@$layout_4deck' 0">
         <size width="878" height="98"/>
         <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
       </dropzone>
-      <dropzone visibility="var_equal '@$hauntinglayout' 1">
+      <dropzone visibility="var_equal '@$layout_4deck' 1">
         <size width="878" height="98"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>

@@ -243,13 +243,13 @@
     <panel class="xfader_panel" x="-18" y="-10"/>
   </define>
   <define class="video_crossfader">
-    <group name="channel_assign" x="-3" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="channel_assign" x="-3" visibility="var_equal '@$layout_4deck' 1">
       <button class="button_main" x="+0" y="+0" width="18" height="18" action="deck 1 leftvideo" text="1" coloron="waveform_active1" bordersize="0"/>
       <button class="button_main" x="+20" y="+0" width="18" height="18" action="deck 2 leftvideo" text="2" coloron="waveform_active2" bordersize="0"/>
       <button class="button_main" x="+0" y="+20" width="18" height="18" action="deck 3 leftvideo" text="3" coloron="waveform_active3" bordersize="0"/>
       <button class="button_main" x="+20" y="+20" width="18" height="18" action="deck 4 leftvideo" text="4" coloron="waveform_active4" bordersize="0"/>
     </group>
-    <group name="channel_assign" x="+226" visibility="var_equal '@$hauntinglayout' 1">
+    <group name="channel_assign" x="+226" visibility="var_equal '@$layout_4deck' 1">
       <button class="button_main" x="+0" y="+0" width="18" height="18" action="deck 1 rightvideo" text="1" coloron="waveform_active1" bordersize="0"/>
       <button class="button_main" x="+20" y="+0" width="18" height="18" action="deck 2 rightvideo" text="2" coloron="waveform_active2" bordersize="0"/>
       <button class="button_main" x="+0" y="+20" width="18" height="18" action="deck 3 rightvideo" text="3" coloron="waveform_active3" bordersize="0"/>
@@ -316,8 +316,8 @@
       <button class="button_main" x="+0" y="+6+30+4+30+2+62" width="58" height="24" action="pitch_reset 4bt" coloroff="transparent" brcoloroff="transparent" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
       <button class="button_main" x="+0" y="+6+30+4+30+2+62" width="58" height="24" action="pitch_reset 4bt" coloroff="#330000" brcoloroff="button_background3" textsize="14" textcolor="red" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 1bt" visibility="param_add `get_bpm` `get_bpm 'absolute' &amp; param_multiply -1` &amp; param_bigger 25 ? blink 500ms : off"/>
       <!-- + and - -->
-      <!-- <button class="button_main" x="+0" y="+6+30+4+30+6+62+12" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1"  tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$hauntingjogtype' 0"/> -->
-      <!-- <button class="button_main" x="+29" y="+6+30+4+30+6+62+12" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$hauntingjogtype' 0"/> -->
+      <!-- <button class="button_main" x="+0" y="+6+30+4+30+6+62+12" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1"  tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$jog_type' 0"/> -->
+      <!-- <button class="button_main" x="+29" y="+6+30+4+30+6+62+12" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$jog_type' 0"/> -->
       <!-- <button x="+0" y="+0" width="26" height="26" action="master_tempo on ? master_tempo off : master_tempo on" coloroff="cue_color [SOURCE]" textcolor="white"> -->
       <!-- <off color="cue_color [SOURCE]"/> -->
       <!-- <over color="cue_color [SOURCE] ? constant 0.4"/> -->
@@ -351,24 +351,24 @@
   <define class="pitch_zone_ex">
     <button class="button_main" x="+0" y="+6" width="58" height="18" action="pitch_reset" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
     <panel class="pitch_ex" x="+11" y="+6+28"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12-8" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+29" y="+6+30+4+30+6+62+12-8" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12-8" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$hauntingjogtype' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12-8" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+29" y="+6+30+4+30+6+62+12-8" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12-8" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$jog_type' 0"/>
   </define>
   <define class="pitch_zone_stack">
     <button class="button_main" x="+0" y="+6" width="58" height="18" action="pitcht_reset" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
     <panel class="pitch_stack" x="+11" y="+6+28"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+29" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+64" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$hauntingjogtype' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+29" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+64" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$jog_type' 0"/>
   </define>
   <define class="pitch_zone_vertical">
     <button class="button_main" x="+0" y="+6" width="60" height="16" action="vinyl_mode" textsize="11" text="VINYL" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
     <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="slip_mode" textsize="11" text="SLIP" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/>
     <button class="button_main" x="+0" y="+6+50" width="58" height="18" action="pitch_reset" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
     <panel class="pitch" x="+11" y="+6+28+50"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12+50" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+29" y="+6+30+4+30+6+62+12+50" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12+50" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$hauntingjogtype' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12+50" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRigth-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+29" y="+6+30+4+30+6+62+12+50" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRigth-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+62+12+50" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRigth-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$jog_type' 0"/>
   </define>
 </defs>

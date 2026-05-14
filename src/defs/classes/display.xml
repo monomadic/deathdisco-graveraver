@@ -66,23 +66,23 @@
       <define class="bpm_display_left_stack">
         <!-- <visual class="gfx_shape" width="196" height="40" coloroff="transparent"/> -->
         <!-- <button class="button_main" x="+0" y="+8" width="196-73" height="24" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="20" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRight-click: Edit BPM \nDouble-click: Reanalyze"/> -->
-        <!-- <textzone class="text" x="+0" y="+10" width="196-73" height="20" fontsize="18" color="deckcolor" align="center" weight="" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%bpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%bpmex'" visibility="not var_equal '@$hauntingjogtype' 0 ? var_equal '@$hauntingdeckstack' 1 ? var_equal '@hauntingdeckmode' 0 : false"/> -->
-        <!-- <textzone class="text" x="+0" y="+10" width="196-73" height="20" fontsize="18" color="needle" align="center" weight="" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'" novisibility="not var_equal '@$hauntingjogtype' 0 ? var_equal '@$hauntingdeckstack' 1 ? var_equal '@hauntingdeckmode' 0 : false"/> -->
+        <!-- <textzone class="text" x="+0" y="+10" width="196-73" height="20" fontsize="18" color="deckcolor" align="center" weight="" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="not var_equal '@$jog_type' 0 ? var_equal '@$deck_stack' 1 ? var_equal '@deck_mode' 0 : false"/> -->
+        <!-- <textzone class="text" x="+0" y="+10" width="196-73" height="20" fontsize="18" color="needle" align="center" weight="" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'" novisibility="not var_equal '@$jog_type' 0 ? var_equal '@$deck_stack' 1 ? var_equal '@deck_mode' 0 : false"/> -->
         <!-- <button class="button_main" x="+196-105" y="+11" width="60" height="20" action="masterdeck" coloroff="button_background" coloron="orange" brcoloron="orange" textcoloron="black" textcolor="textoff4" textsize="10" text="MASTER"/> -->
-        <!-- <textzone class="text" x="+154" y="+8" action="pitch_reset" width="80" height="24" fontsize="20" color="textoff2" align="center" weight="" textaction="get_text '%Ppitch%'" visibility="not var_equal '@$hauntingdeckstack' 1"/> -->
+        <!-- <textzone class="text" x="+154" y="+8" action="pitch_reset" width="80" height="24" fontsize="20" color="textoff2" align="center" weight="" textaction="get_text '%Ppitch%'" visibility="not var_equal '@$deck_stack' 1"/> -->
       </define>
       <define class="bpm_display_right">
         <visual class="gfx_shape" width="136" height="80" coloroff="transparent"/>
         <group name="bpm_not_video" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'">
           <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRigth-click: Edit BPM \nDouble-click: Reanalyze"/>
-          <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'" visibility="var_equal '@$hauntingjogtype' 0"/>
-          <textzone class="text" x="+0" y="+0" width="136" height="50" fontsize="30" color="white" align="center" weight="bold" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%bpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%bpmex'" visibility="var_not_equal '@$hauntingjogtype' 0"/>
-          <!-- <button class="button_main" x="+56" y="+50" width="80" height="20" action="masterdeck" coloroff="button_background" textcolor="textoff4" text="MASTER" visibility="var_equal '@$hauntingjogtype' 0"/> -->
-          <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM" visibility="var_equal '@$hauntingjogtype' 0"/>
+          <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'" visibility="var_equal '@$jog_type' 0"/>
+          <textzone class="text" x="+0" y="+0" width="136" height="50" fontsize="30" color="white" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="var_not_equal '@$jog_type' 0"/>
+          <!-- <button class="button_main" x="+56" y="+50" width="80" height="20" action="masterdeck" coloroff="button_background" textcolor="textoff4" text="MASTER" visibility="var_equal '@$jog_type' 0"/> -->
+          <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM" visibility="var_equal '@$jog_type' 0"/>
         </group>
         <group name="bpm_has_video" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'">
           <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRigth-click: Edit BPM \nDouble-click: Reanalyze"/>
-          <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="" textaction="var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+          <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
           <!-- <button class="button_main" x="+56" y="+50" width="80" height="20" action="masterdeck" coloroff="button_background" textcolor="textoff4" text="MASTER"/> -->
           <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM"/>
         </group>
@@ -103,10 +103,10 @@
         <group name="loops" visibility="var_equal '@infospannelmode' 1">
           <button class="button_main" x="+4" y="+0" width="62" height="25" action="loop_in" coloroff="button_background" text="IN"/>
           <button class="button_main" x="+4+62+4" y="+0" width="62" height="25" action="loop_out" coloroff="button_background" text="OUT"/>
-          <button class="button_main" x="+4" y="+0" width="62" height="25" action="loop_in" coloroff="button_background" coloron="button_background" text="IN" textcoloron="needle" novisibility="loop" condition="var_not_equal '@$hauntingcolorscheme' 4"/>
-          <button class="button_main" x="+4+62+4" y="+0" width="62" height="25" action="loop_out" coloroff="button_background" coloron="button_background" text="OUT" textcoloron="needle" novisibility="loop" condition="var_not_equal '@$hauntingcolorscheme' 4"/>
-          <button class="button_main" x="+4" y="+0" width="62" height="25" action="loop_in" coloroff="button_background" coloron="button_background" text="IN" textcoloron="needle" bordersize="2" novisibility="loop" condition="var_equal '@$hauntingcolorscheme' 4"/>
-          <button class="button_main" x="+4+62+4" y="+0" width="62" height="25" action="loop_out" coloroff="button_background" coloron="button_background" text="OUT" textcoloron="needle" bordersize="2" novisibility="loop" condition="var_equal '@$hauntingcolorscheme' 4"/>
+          <button class="button_main" x="+4" y="+0" width="62" height="25" action="loop_in" coloroff="button_background" coloron="button_background" text="IN" textcoloron="needle" novisibility="loop" condition="var_not_equal '@$color_scheme' 4"/>
+          <button class="button_main" x="+4+62+4" y="+0" width="62" height="25" action="loop_out" coloroff="button_background" coloron="button_background" text="OUT" textcoloron="needle" novisibility="loop" condition="var_not_equal '@$color_scheme' 4"/>
+          <button class="button_main" x="+4" y="+0" width="62" height="25" action="loop_in" coloroff="button_background" coloron="button_background" text="IN" textcoloron="needle" bordersize="2" novisibility="loop" condition="var_equal '@$color_scheme' 4"/>
+          <button class="button_main" x="+4+62+4" y="+0" width="62" height="25" action="loop_out" coloroff="button_background" coloron="button_background" text="OUT" textcoloron="needle" bordersize="2" novisibility="loop" condition="var_equal '@$color_scheme' 4"/>
           <button class="button_main" x="+4+62+4+62+8" y="+0" width="32" height="25" action="loop_half" coloroff="button_background" sysicon="chevronleft" iconsize="22"/>
           <visual type="linear" source="loop_position" orientation="horizontal" direction="up">
             <pos x="+4+62+4+62+8+32+4" y="+0" width="122" height="25"/>
@@ -115,8 +115,8 @@
           </visual>
           <button class="button_main" x="+4+62+4+62+8+32+4" y="+0" width="122" height="25" action="loop" coloroff="transparent" coloron="transparent" textcoloron="needle" textaction="get_text '`get_loop` LOOP '" textsize="16" textcolor="textoff2" bordersize="0"/>
           <button class="button_main" x="+4+62+4+62+8+32+4+122+4" y="+0" width="32" height="25" action="loop_double" coloroff="button_background" sysicon="chevronright" iconsize="22"/>
-          <button class="button_main" x="+4+62+4+62+8+32+4+122+4+32+8" y="+0" width="127" height="25" action="reloop" coloroff="button_background" coloron="button_background" brcoloroff="button_background" brcoloron="deckcolor" bordersize="1" textcoloron="needle" text="RELOOP" condition="var_not_equal '@$hauntingcolorscheme' 4"/>
-          <button class="button_main" x="+4+62+4+62+8+32+4+122+4+32+8" y="+0" width="127" height="25" action="reloop" coloroff="button_background" coloron="button_background" brcoloroff="button_background" brcoloron="deckcolor" bordersize="2" textcoloron="needle" text="RELOOP" condition="var_equal '@$hauntingcolorscheme' 4"/>
+          <button class="button_main" x="+4+62+4+62+8+32+4+122+4+32+8" y="+0" width="127" height="25" action="reloop" coloroff="button_background" coloron="button_background" brcoloroff="button_background" brcoloron="deckcolor" bordersize="1" textcoloron="needle" text="RELOOP" condition="var_not_equal '@$color_scheme' 4"/>
+          <button class="button_main" x="+4+62+4+62+8+32+4+122+4+32+8" y="+0" width="127" height="25" action="reloop" coloroff="button_background" coloron="button_background" brcoloroff="button_background" brcoloron="deckcolor" bordersize="2" textcoloron="needle" text="RELOOP" condition="var_equal '@$color_scheme' 4"/>
         </group>
         <group name="hotcues" visibility="var_equal '@infospannelmode' 2">
           <panel class="hotcue_button_stack" x="+4" y="+0" source="1"/>

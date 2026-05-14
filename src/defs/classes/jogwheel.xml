@@ -33,16 +33,16 @@
         <size width="10" height="10"/>
         <pos x="+5" y="+5"/>
         <icon sysicon="settings" height="18" width="18" color="#AAAAAA" colorover="white" colordown="needle"/>
-        <item text="Minimal" localize="true" action="set '@$hauntingjogtype' 0" check="var_equal '@$hauntingjogtype' 0"/>
-        <item text="Text" localize="true" action="set '@$hauntingjogtype' 1" check="var_equal '@$hauntingjogtype' 1"/>
-        <item text="Sync Status" localize="true" action="set '@$hauntingjogtype' 2" check="var_equal '@$hauntingjogtype' 2"/>
-        <item text="Cover Art" localize="true" action="set '@$hauntingjogtype' 3" check="var_equal '@$hauntingjogtype' 3"/>
+        <item text="Minimal" localize="true" action="set '@$jog_type' 0" check="var_equal '@$jog_type' 0"/>
+        <item text="Text" localize="true" action="set '@$jog_type' 1" check="var_equal '@$jog_type' 1"/>
+        <item text="Sync Status" localize="true" action="set '@$jog_type' 2" check="var_equal '@$jog_type' 2"/>
+        <item text="Cover Art" localize="true" action="set '@$jog_type' 3" check="var_equal '@$jog_type' 3"/>
         <separator localize="true"/>
         <submenu text="Text" localize="true">
-          <item text="Key" localize="true" action="set '@$haunting_jog_text' 0" check="var_equal '@$haunting_jog_text' 0"/>
-          <item text="Loop Size" localize="true" action="set '@$haunting_jog_text' 1" check="var_equal '@$haunting_jog_text' 1"/>
-          <item text="Elapsed" localize="true" action="set '@$haunting_jog_text' 2" check="var_equal '@$haunting_jog_text' 2"/>
-          <item text="Remain" localize="true" action="set '@$haunting_jog_text' 3" check="var_equal '@$haunting_jog_text' 3"/>
+          <item text="Key" localize="true" action="set '@$jog_display_mode' 0" check="var_equal '@$jog_display_mode' 0"/>
+          <item text="Loop Size" localize="true" action="set '@$jog_display_mode' 1" check="var_equal '@$jog_display_mode' 1"/>
+          <item text="Elapsed" localize="true" action="set '@$jog_display_mode' 2" check="var_equal '@$jog_display_mode' 2"/>
+          <item text="Remain" localize="true" action="set '@$jog_display_mode' 3" check="var_equal '@$jog_display_mode' 3"/>
         </submenu>
         <submenu text="RPM" localize="true">
           <item text="25" localize="true" action="setting 'RPM' 25" check="setting 'RPM' 25"/>
@@ -57,7 +57,7 @@
   </define>
   <define class="JOGWHEEL" placeholders="*jogsize=155">
     <!-- JOGWHEEL A: MINIMAL -->
-    <group name="jogwheel_a" visibility="var_equal '@$hauntingjogtype' 0">
+    <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">
       <!-- empty deck outer ring -->
       <visual visibility="not loaded">
         <tooltip/>
@@ -116,7 +116,7 @@
       </visual>
     </group>
     <!-- JOGWHEEL B: TEXT -->
-    <group name="jogwheel_b" visibility="var_equal '@$hauntingjogtype' 1">
+    <group name="jogwheel_b" visibility="var_equal '@$jog_type' 1">
       <visual>
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -139,7 +139,7 @@
       <!-- BPM -->
       <group x="+0" y="+25" visibility="loaded">
         <!-- BPM VALUE -->
-        <textzone class="text" width="[JOGSIZE]" height="46" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+        <textzone class="text" width="[JOGSIZE]" height="46" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
         <!-- BPM % DIFF -->
         <!-- <textzone> -->
         <!-- <pos x="+0" y="-12"/> -->
@@ -179,7 +179,7 @@
       <!-- bottom -->
       <!-- KEY -->
       <group x="+0" y="+93" visibility="loaded">
-        <textzone class="text" width="[JOGSIZE]" height="28" fontsize="22" color="white" align="center" weight="bold" textaction="get_key" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
+        <textzone class="text" width="[JOGSIZE]" height="28" fontsize="22" color="white" align="center" weight="bold" textaction="get_key" visibility="loaded ? var_equal '@$jog_display_mode' 0"/>
         <group visibility="not masterdeck">
           <!-- KEY DOWN BUTTON -->
           <button class="button_main" x="+65-40" y="+2" width="30" height="20" action="key_move -1" textcoloroff="transparent" textcoloron="white" coloron="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="minus"/>
@@ -193,14 +193,14 @@
           <text fontsize="12" weight="" align="center" coloroff="red" coloron="green" colorover="black" action="get_key_modifier" important="true"/>
         </button>
       </group>
-      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="26" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
+      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="26" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
       <!-- time elapsed -->
-      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/> -->
-      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/> -->
+      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/> -->
+      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/> -->
       <panel class="jogwheel_corner_buttons"/>
     </group>
     <!-- JOGWHEEL C: SYNC STATUS -->
-    <group name="jogwheel_c" visibility="var_equal '@$hauntingjogtype' 2">
+    <group name="jogwheel_c" visibility="var_equal '@$jog_type' 2">
       <visual novisibility="loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -256,7 +256,7 @@
           </textzone>
           <!-- BPM -->
           <button action="pitch_reset 8bt" x="+0" y="+36" width="[JOGSIZE]" height="22" border_size="1" border="red">
-            <text fontsize="24" coloron="red" colorselected="green" weight="bold" align="center" action="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
+            <text fontsize="24" coloron="red" colorselected="green" weight="bold" align="center" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
           </button>
           <!-- LABEL: BPM -->
           <!-- <textzone> -->
@@ -298,7 +298,7 @@
       </group>
     </group>
     <!-- PRO: JOGWHEEL D: COVER ART -->
-    <group name="jogwheel_d" visibility="var_equal '@$hauntingjogtype' 3">
+    <group name="jogwheel_d" visibility="var_equal '@$jog_type' 3">
       <!-- <visual > -->
       <!-- <tooltip/> -->
       <!-- <pos x="+0" y="+0"/> -->
@@ -368,7 +368,7 @@
       <!-- <pos x="+20" y="+54"/> -->
       <!-- <size width="[JOGSIZE]-40" height="[JOGSIZE]-56-56"/> -->
       <!-- <off shape="square" color="jogprogressoff" border="jogprogressoff" radius="6"/> -->
-      <!-- <textzone class="text" x="+18" y="+50" width="[JOGSIZE]-36" height="46" fontsize="26" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '==.==' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/> -->
+      <!-- <textzone class="text" x="+18" y="+50" width="[JOGSIZE]-36" height="46" fontsize="26" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '==.==' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/> -->
       <!-- </visual> -->
       <panel class="jogwheel_corner_buttons"/>
     </group>
@@ -378,7 +378,7 @@
     <!-- </scratch> -->
   </define>
   <define class="jogwheel_2" placeholders="*jogsize=165">
-    <group name="jogwheel_a" visibility="var_equal '@$hauntingjogtype' 0">
+    <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">
       <visual novisibility="loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -411,7 +411,7 @@
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="deckcolor" widthfader="6" heightfader="39" radius="36"/>
       <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jog_slider" widthfader="6" heightfader="6" radius="76"/>
     </group>
-    <group name="jogwheel_b" visibility="var_equal '@$hauntingjogtype' 1">
+    <group name="jogwheel_b" visibility="var_equal '@$jog_type' 1">
       <visual>
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -430,16 +430,16 @@
         <size width="[JOGSIZE]-20" height="[JOGSIZE]-20"/>
         <off shape="circle" color="jogwheelbackground2" border_size="1" border="deckcolor"/>
       </visual>
-      <textzone class="text" x="+18" y="+32" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+32" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
       <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+74+2" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/>
       <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+74+2" coloroff="button_background" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_key_modifier_text" visibility="loaded ? not key 0"/>
       <button class="button_main" width="50" height="16" x="+18+6+50+12" y="+74+2" coloroff="transparent" coloron="transparent" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded ?"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="16" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
-      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="34" action="loop" textsize="16" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="16" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$jog_display_mode' 0"/>
+      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="34" action="loop" textsize="16" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="34" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/>
     </group>
-    <group name="jogwheel_c" visibility="var_equal '@$hauntingjogtype' 2">
+    <group name="jogwheel_c" visibility="var_equal '@$jog_type' 2">
       <visual novisibility="loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -459,14 +459,14 @@
         <size width="[JOGSIZE]-20" height="[JOGSIZE]-20"/>
         <off shape="circle" color="jogwheelbackground2" border_size="1" border="deckcolor"/>
       </visual>
-      <textzone class="text" x="+18" y="+26" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+26" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
       <button class="button_main" action="key_match_button" width="38" height="16" x="+16+6" y="+68+6" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" textaction="get_text 'KEY'" visibility="loaded ? key 0"/>
       <button class="button_main" action="key_match_button" width="38" height="16" x="+16+6" y="+68+6" coloroff="button_background" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_key_modifier_text" visibility="loaded ? not key 0"/>
       <button class="button_main" width="45" height="16" x="+18+6+45+15+14" y="+68+6" coloroff="transparent" coloron="transparent" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded ?"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="16" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
-      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="44" action="loop" textsize="16" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
-      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="16" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$jog_display_mode' 0"/>
+      <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="44" action="loop" textsize="16" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/>
+      <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="44" fontsize="20" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/>
       <visual name="innercircle_border">
         <pos x="+75" y="+75"/>
         <size width="[JOGSIZE]-150" height="[JOGSIZE]-150"/>
@@ -474,7 +474,7 @@
       </visual>
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="deckcolor" widthfader="7" heightfader="58" radius="12"/>
     </group>
-    <group name="jogwheel_d" visibility="var_equal '@$hauntingjogtype' 3">
+    <group name="jogwheel_d" visibility="var_equal '@$jog_type' 3">
       <visual>
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -503,7 +503,7 @@
         <size width="[JOGSIZE]-40" height="[JOGSIZE]-64-64"/>
         <off shape="square" color="jogprogressoff" border="jogprogressoff" radius="6"/>
       </visual>
-      <textzone class="text" x="+18" y="+56" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+56" width="[JOGSIZE]-36" height="48" fontsize="28" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
     </group>
     <scratch>
       <pos width="[JOGSIZE]" height="[JOGSIZE]"/>
@@ -511,7 +511,7 @@
     </scratch>
   </define>
   <define class="jogwheel_3" placeholders="*jogsize=142">
-    <group name="jogwheel_a" visibility="var_equal '@$hauntingjogtype' 0">
+    <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">
       <visual novisibility="loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -544,7 +544,7 @@
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="deckcolor" widthfader="6" heightfader="33" radius="30"/>
       <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="jog_slider" widthfader="6" heightfader="6" radius="64"/>
     </group>
-    <group name="jogwheel_b" visibility="var_equal '@$hauntingjogtype' 1">
+    <group name="jogwheel_b" visibility="var_equal '@$jog_type' 1">
       <visual>
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -563,16 +563,16 @@
         <size width="[JOGSIZE]-20" height="[JOGSIZE]-20"/>
         <off shape="circle" color="jogwheelbackground2" border_size="1" border="deckcolor"/>
       </visual>
-      <textzone class="text" x="+18" y="+26" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+26" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
       <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+64+2" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/>
       <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+64+2" coloroff="button_background" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_key_modifier_text" visibility="loaded ? not key 0"/>
       <button class="button_main" width="50" height="16" x="+18+6+40+12" y="+64+2" coloroff="transparent" coloron="transparent" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded ?"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="14" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
-      <button class="button_main" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="14" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$jog_display_mode' 0"/>
+      <button class="button_main" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="34" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/>
     </group>
-    <group name="jogwheel_c" visibility="var_equal '@$hauntingjogtype' 2">
+    <group name="jogwheel_c" visibility="var_equal '@$jog_type' 2">
       <visual novisibility="loaded">
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -592,14 +592,14 @@
         <size width="[JOGSIZE]-20" height="[JOGSIZE]-20"/>
         <off shape="circle" color="jogwheelbackground2" border_size="1" border="deckcolor"/>
       </visual>
-      <textzone class="text" x="+18" y="+22" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+22" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
       <button class="button_main" action="key_match_button" width="38" height="16" x="+16+6" y="+58+6" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" textaction="get_text 'KEY'" visibility="loaded ? key 0"/>
       <button class="button_main" action="key_match_button" width="38" height="16" x="+16+6" y="+58+6" coloroff="button_background" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_key_modifier_text" visibility="loaded ? not key 0"/>
       <button class="button_main" width="45" height="16" x="+18+6+25+15+14" y="+58+6" coloroff="transparent" coloron="transparent" bordersize="0" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded ?"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="14" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$haunting_jog_text' 0"/>
-      <button class="button_main" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$haunting_jog_text' 1"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$haunting_jog_text' 2"/>
-      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$haunting_jog_text' 3"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="14" color="deckcolor" align="center" weight="" textaction="wheel_mode &amp; param_uppercase" visibility="loaded ? var_equal '@$jog_display_mode' 0"/>
+      <button class="button_main" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/>
+      <textzone class="text" x="+18" y="+82-4" width="[JOGSIZE]-36" height="44" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/>
       <visual name="innercircle_border">
         <pos x="+65" y="+65"/>
         <size width="[JOGSIZE]-130" height="[JOGSIZE]-130"/>
@@ -607,7 +607,7 @@
       </visual>
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+10" y="+10" width="[JOGSIZE]-20" height="[JOGSIZE]-20" offcolor="transparent" colorfader="deckcolor" widthfader="6" heightfader="49" radius="10"/>
     </group>
-    <group name="jogwheel_d" visibility="var_equal '@$hauntingjogtype' 3">
+    <group name="jogwheel_d" visibility="var_equal '@$jog_type' 3">
       <visual>
         <tooltip/>
         <pos x="+0" y="+0"/>
@@ -636,7 +636,7 @@
         <size width="[JOGSIZE]-40" height="[JOGSIZE]-56-56"/>
         <off shape="square" color="jogprogressoff" border="jogprogressoff" radius="6"/>
       </visual>
-      <textzone class="text" x="+18" y="+49" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntingbpmhideopt' 1 ? get_text '--.--' : var_equal '@$hauntingjogbpmdgts' 0 ? get_text '%Pbpm' : var_equal '@$hauntingjogbpmdgts' 1 ? get_text '%Pbpmex'"/>
+      <textzone class="text" x="+18" y="+49" width="[JOGSIZE]-36" height="44" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
     </group>
     <scratch>
       <pos width="[JOGSIZE]" height="[JOGSIZE]"/>

@@ -43,7 +43,6 @@
     <panel class="pro_2decks_overlays" x="+35" y="+0" deck="3"/>
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2"/>
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
-    <panel class="pro_2decks_overlays" deck="rightdeck"/>
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
@@ -63,7 +62,6 @@
       </visual>
       <!-- tabs -->
       <button class="button_main" x="+12" width="78" height="23" action="skin_panel 'audiomixer' on" tooltip="AUDIO\nShow the audio (mixer) controls, like equalizers, gain, level, pfl, etc" textcolor="textdarker" textcoloron="needle" text="MIXER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
-      <!-- <button class="button_main" x="+7+78" width="78" height="23" action="skin_panel 'videomixer' on" tooltip="VIDEO\nShow the video controls, like video previews, source, effects, etc" textcolor="textdarker" textcoloron="needle" text="VIDEO" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/> -->
       <button class="button_main" x="+7+78" width="78" height="23" action="skin_panel 'samplermixer' on" tooltip="SAMPLER\nShow the sampler" textcolor="textdarker" textcoloron="needle" text="SAMPLER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
       <button class="button_main" x="+0+78+78" width="78" height="23" action="skin_panel 'scratchmixer' on" tooltip="SCRATCH\nShow a scratch-optimized view with vertical waveforms and scratch options" textcolor="textdarker" textcoloron="needle" text="WAVE" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>
       <button class="button_main" x="+0+76+78+78" width="78" height="23" action="skin_panel 'mastermixer' on" textcolor="textdarker" tooltip="MASTER\nShow some general controls, like record/broadcast, microphone, or master effects" textcoloron="needle" text="MASTER" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background"/>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="DECK_SPINE" placeholders="*deck,*panelname,width=34,height=465,bgradius=0,buttonx=+5,buttony=+10,buttontextdx=-0,mastercolor=color_masterdeck,notmastercolor=deckcolor,menux=+5,menuy=+396">
+  <define class="DECK_SPINE" placeholders="*deck,*panelname,width=34,height=465,radius=3,color=deckcolor">
     <!-- background -->
     <visual width="[WIDTH]" height="[HEIGHT]">
-      <off shape="square" color="black" radius="[BGRADIUS]"/>
+      <off shape="square" color="black" radius="[RADIUS]"/>
     </visual>
     <!-- deck number circle -->
-    <group x="[BUTTONX]" y="[BUTTONY]">
+    <group x="+5" y="+10">
       <group visibility="masterdeck">
-        <button class="deck_button" visibility="masterdeck" color="[MASTERCOLOR]">
+        <button class="deck_button" visibility="masterdeck" color="color_masterdeck">
           <pos x="+0" y="+0"/>
-          <text dx="[BUTTONTEXTDX]"/>
+          <text dx="+0"/>
         </button>
       </group>
       <group visibility="not masterdeck">
-        <button class="deck_button" visibility="not masterdeck" color="[NOTMASTERCOLOR]">
+        <button class="deck_button" visibility="not masterdeck" color="[COLOR]">
           <pos x="+0" y="+0"/>
-          <text dx="[BUTTONTEXTDX]"/>
+          <text dx="+0"/>
         </button>
       </group>
     </group>
     <!-- settings menu -->
-    <menu class="menu_maindecks" query="select" x="+0" y="[HEIGHT]" width="[WIDTH]" height="[HEIGHT]"/>
+    <menu class="menu_maindecks" query="select" x="+0" y="+[HEIGHT]-[WIDTH]" width="[WIDTH]" height="[WIDTH]"/>
     <!-- master deck label -->
     <group visibility="loaded ? masterdeck">
       <textzone orientation="vertical" direction="ccw">

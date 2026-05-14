@@ -3,7 +3,7 @@
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
   <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+0" y="+0" class="deck_spine"/>
+      <panel x="0" y="+0" class="deck_spine"/>
       <!-- PRO: LEFT: PANEL BG (behind jog) -->
       <visual width="765" height="[HEIGHT]" x="+35">
         <off shape="square" color="panel_background" radius="6"/>
@@ -40,7 +40,7 @@
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+768" y="+0" class="deck_spine"/>
+      <panel x="+765" y="+0" class="deck_spine"/>
       <!-- bg: spine -->
       <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
       <!-- <off shape="square" color="black"/> -->

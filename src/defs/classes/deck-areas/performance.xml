@@ -35,10 +35,12 @@
     </panel>
   </define>
   <define class="AREA_DECK_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
-    <panel class="AREA_DECK_PERFORMANCE_SPINE" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] leftdeck"/>
     <panel class="AREA_DECK_PERFORMANCE_BODY" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] leftdeck"/>
-    <panel class="AREA_DECK_PERFORMANCE_SPINE" x="+960-35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] rightdeck"/>
     <panel class="AREA_DECK_PERFORMANCE_BODY" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] rightdeck"/>
+    <deck deck="[DECK]">
+      <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
+      <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
+    </deck>
     <panel visibility="var '@$debugui'">
       <visual width="320" height="20">
         <off shape="square" color="#AA000000" radius="0"/>

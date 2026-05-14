@@ -2,7 +2,7 @@
 <module>
   <!-- PERFORMANCE
     Assumes the user will be heavily slanted to controller use,
-    and the VirtualDJ UI is used mostly for read-only feedback.
+    and the VirtualDJ screen mostly for visual cues and feedback over interaction.
   -->
   <group name="PERFORMANCE" condition="var_equal '@$skin_mode' 1">
     <!-- @$layout_4deck selects deck density within Performance: 0 = two-deck / swap, 1 = full four-deck -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height" condition="NOT var_equal '@$hauntingcolorshapescolors' 0">
+  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height" condition="NOT var_equal '@$shapes_color' 0">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <cues shade="0.0">
       <size width="3" height="26"/>

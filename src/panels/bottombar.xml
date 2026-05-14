@@ -3,7 +3,7 @@
   <!-- BOTTOM BAR (UTILITY BAR)
     height: 50px
   -->
-  <panel class="h_utility_bar" x="0" y="1080-50" visibility="var_equal '@$hauntingutilitybar' 1">
+  <panel class="h_utility_bar" x="0" y="1080-50" visibility="var_equal '@$show_utility_bar' 1">
     <visual width="1920" height="50">
       <off shape="square" color="#000000" border_size="1" border="#222222"/>
     </visual>

@@ -69,7 +69,7 @@
       <text overcolor="white" size="14" oncolor="white" align="center"/>
     </button>
     <!-- PRO: TOP BAR UTILITIES (right) -->
-    <group name="pro_skin_utility" visibility="var_equal '@$hauntingproskinmode' 0">
+    <group name="pro_skin_utility" visibility="var_equal '@$skin_mode' 0">
       <!-- sandbox button -->
       <group name="sandbox area" x="115+80+900" y="8" visibility="can_sandbox ? false">
         <button class="button_main" width="75" height="27" action="sandbox" coloroff="panel_background" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms" visibility="sandbox on ? false : true"/>
@@ -163,7 +163,7 @@
       </group>
     </group>
     <!-- PERFORMANCE: TOP BAR -->
-    <group name="performance_skin_utility" visibility="var_equal '@$hauntingproskinmode' 1">
+    <group name="performance_skin_utility" visibility="var_equal '@$skin_mode' 1">
       <!-- <button class="button_main" x="+1150" y="+8" width="60" height="12" action="setting 'hotcueMode' 'play'" query="setting 'hotcueMode' 'play'" textsize="11" text="CUE PLAY" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/> -->
       <!-- <button class="button_main" x="+1150" y="+8+12+2" width="60" height="12" action="setting 'hotcueMode' 'stutter'" textsize="11" text="STUTTER" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/> -->
       <group x="410" y="0">
@@ -183,19 +183,19 @@
         </textzone>
         <!-- layout buttons (cycle) -->
         <group x="+0" y="+11">
-          <button class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="cycle '@$hauntingperformancelayout' 3 &amp; load_skin">
-            <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$hauntingperformancelayout' &amp; param_equal 2) ? get_text 'HORIZONTAL'              : (get_var '@$hauntingperformancelayout' &amp; param_equal 0) ? get_text 'EXTENDED'              : get_text 'VERTICAL'"/>
+          <button class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="cycle '@$performance_layout' 3 &amp; load_skin">
+            <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$performance_layout' &amp; param_equal 2) ? get_text 'HORIZONTAL'              : (get_var '@$performance_layout' &amp; param_equal 0) ? get_text 'EXTENDED'              : get_text 'VERTICAL'"/>
           </button>
         </group>
         <!-- layout buttons (separate) -->
         <!-- <group x="+8" y="+11"> -->
-        <!-- <button class="button_main" action="set '@$hauntingperformancelayout' 1 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10"> -->
+        <!-- <button class="button_main" action="set '@$performance_layout' 1 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10"> -->
         <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="VERT"/> -->
         <!-- </button> -->
-        <!-- <button class="button_main" x="+53" action="set '@$hauntingperformancelayout' 2 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
+        <!-- <button class="button_main" x="+53" action="set '@$performance_layout' 2 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
         <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="HORIZ"/> -->
         <!-- </button> -->
-        <!-- <button class="button_main" x="+53+50" action="set '@$hauntingperformancelayout' 0 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
+        <!-- <button class="button_main" x="+53+50" action="set '@$performance_layout' 0 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
         <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="EXT"/> -->
         <!-- </button> -->
         <!-- <line x="+45" y="-2" width="1" height="26" highlight="#666666" shadow="000000"/> -->
@@ -203,7 +203,7 @@
         <!-- </group> -->
       </group>
       <group x="620">
-        <button class="button_main" x="+0" y="8" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinmixerrack' &amp; set '@$hauntingskinfxrack' 0 &amp; set '@$hauntingskinpadsrack' 0 &amp; set '@$hauntingskinvideorack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinmixerrack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <button class="button_main" x="+0" y="8" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="55" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -211,7 +211,7 @@
           <selected color="#333333"/>
           <text overcolor="white" size="12" oncolor="white" text="MIXER"/>
         </button>
-        <button class="button_main" x="+60" y="8" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinvideorack' &amp; set '@$hauntingskinfxrack' 0 &amp; set '@$hauntingskinmixerrack' 0 &amp; set '@$hauntingskinpadsrack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinvideorack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <button class="button_main" x="+60" y="8" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="55" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -219,7 +219,7 @@
           <selected color="#333333"/>
           <text overcolor="white" size="12" oncolor="white" text="VIDEO"/>
         </button>
-        <button class="button_main" x="+60+60" y="8" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinfxrack' &amp; set '@$hauntingskinpadsrack' 0 &amp; set '@$hauntingskinmixerrack' 0 &amp; set '@$hauntingskinvideorack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinfxrack' &amp; load_skin" width="65" height="27" bordersize="0">
+        <button class="button_main" x="+60+60" y="8" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="65" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -230,7 +230,7 @@
       </group>
       <!-- <button class="button_main" x="115+80+300+75+75" y="8" width="32" height="27" tooltip="Quantize all" action="deck 1 quantize_all &amp; deck 2 quantize_all &amp; deck 3 quantize_all &amp; deck 4 quantize_all" textsize="10" text="QT" coloron="br_focus" bordersize="0"/> -->
       <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75">
-        <visual class="gfx_shape" x="+490" width="150" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+        <visual class="gfx_shape" x="+490" width="150" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
       </group>
       <!-- <button class="button_main" x="115+80+300+90+643" y="8" width="75" height="27" action="sandbox" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms"/> -->
       <group visibility="0.75">
@@ -254,10 +254,10 @@
       <!-- </group> -->
     </group>
     <!-- STACK: TOP BAR -->
-    <group name="stack_skin_utility" visibility="var_equal '@$hauntingproskinmode' 2">
+    <group name="stack_skin_utility" visibility="var_equal '@$skin_mode' 2">
       <!-- PANEL TOGGLES -->
       <group x="450" y="+8">
-        <button tooltip="Show/Hide Pad Panel" class="button_main" x="+60*0" action="toggle '@$hauntingdeckstack'" width="55" height="27" bordersize="0">
+        <button tooltip="Show/Hide Pad Panel" class="button_main" x="+60*0" action="toggle '@$deck_stack'" width="55" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -265,7 +265,7 @@
           <selected color="#333333"/>
           <text overcolor="white" size="12" oncolor="white" text="PADS"/>
         </button>
-        <button tooltip="Show/Hide Mixer Rack" class="button_main" x="+60*1" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinmixerrack' &amp; set '@$hauntingskinfxrack' 0 &amp; set '@$hauntingskinpadsrack' 0 &amp; set '@$hauntingskinvideorack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinmixerrack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <button tooltip="Show/Hide Mixer Rack" class="button_main" x="+60*1" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="55" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -273,7 +273,7 @@
           <selected color="#333333"/>
           <text overcolor="white" size="12" oncolor="white" text="MIXER"/>
         </button>
-        <button tooltip="Show/Hide Video Rack" class="button_main" x="+60*2" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinvideorack' &amp; set '@$hauntingskinfxrack' 0 &amp; set '@$hauntingskinmixerrack' 0 &amp; set '@$hauntingskinpadsrack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinvideorack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <button tooltip="Show/Hide Video Rack" class="button_main" x="+60*2" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="55" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -281,7 +281,7 @@
           <selected color="#333333"/>
           <text overcolor="white" size="12" oncolor="white" text="VIDEO"/>
         </button>
-        <button tooltip="Show/Hide Effects Rack" class="button_main" x="+60*3" action="var_equal '@$hauntingrackmode' 1 ? toggle '@$hauntingskinfxrack' &amp; set '@$hauntingskinpadsrack' 0 &amp; set '@$hauntingskinmixerrack' 0 &amp; set '@$hauntingskinvideorack' 0 &amp;&amp; load_skin : toggle '@$hauntingskinfxrack' &amp; load_skin" width="65" height="27" bordersize="0">
+        <button tooltip="Show/Hide Effects Rack" class="button_main" x="+60*3" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="65" height="27" bordersize="0">
           <off color="black"/>
           <on color="#222222"/>
           <over color="#000000"/>
@@ -291,10 +291,10 @@
         </button>
       </group>
       <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75"> -->
-      <!-- <visual class="gfx_shape" x="+490" width="220" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
+      <!-- <visual class="gfx_shape" x="+490" width="220" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
       <!-- </group> -->
       <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0.75"> -->
-      <!-- <visual class="gfx_shape" x="+490" width="58" height="43" coloroff="panel_background" visibility="var '@$hauntingbrowserzoom' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
+      <!-- <visual class="gfx_shape" x="+490" width="58" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
       <!-- </group> -->
       <!-- SANDBOX -->
       <!-- <button class="button_main" x="115+80+300+90+643" y="8" width="75" height="27" action="sandbox" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms"/> -->

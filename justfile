@@ -9,9 +9,12 @@ prototype_build_dir := build_dir + "-prototype"
 
 default: install
 
+generate:
+    python3 scripts/gen-browser-positions.py
+
 lint: lint-prod lint-prototype
 
-lint-prod:
+lint-prod: generate
     xmllint --noout --xinclude "{{src_dir}}/skin.xml"
 
 lint-prototype:
@@ -21,6 +24,7 @@ build: lint-prod
     mkdir -p "{{build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{build_dir}}/"; fi
     xmllint --format --xinclude "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
+    python3 scripts/minify-skin.py "{{build_dir}}/skin.xml"
 
 prototype-build: lint-prototype
     mkdir -p "{{prototype_build_dir}}"

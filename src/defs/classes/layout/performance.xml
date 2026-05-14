@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- These Performance layout shells are selected by @$hauntinglayout: 0 = two-deck / swap, 1 = full four-deck -->
+  <!-- These Performance layout shells are selected by @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck -->
   <define class="PERFORMANCE_MAIN_RACKS" placeholders="offset_y=0">
     <panel class="racks_extended" x="+2" y="[OFFSET_Y]" condition="var_equal '@$hide_main_waveforms' 0"/>
     <panel class="racks_single" x="+2" y="[OFFSET_Y]" condition="var_equal '@$hide_main_waveforms' 1"/>
@@ -91,62 +91,62 @@
     <panel class="AREA_DECK_MINI" x="+1920-878-2" y="+98+2" panelname="deck4" deck="4"/>
   </define>
   <define class="PERFORMANCE_DECKS_VERTICAL">
-    <panel class="performance_2decks_vertical" y="+0" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="performance_4decks_vertical" y="+0" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="performance_2decks_vertical" y="+0" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="performance_4decks_vertical" y="+0" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
-    <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2" condition="var_equal '@$layout_4deck' 1"/>
     </group>
-    <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2" width="1920-4" height="1080-43-2-333-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
   <define class="PERFORMANCE_DECKS_CENTER">
-    <panel class="performance_2decks_center" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="performance_4decks_center" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="performance_2decks_center" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="performance_4decks_center" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
-    <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
-      <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
+      <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2" condition="var_equal '@$layout_4deck' 1"/>
     </group>
-    <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
-      <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
+      <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
   <define class="PERFORMANCE_DECKS_NO_WAVES">
-    <panel class="performance_2decks" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="performance_4decks" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
-    <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
-      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
+      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2" condition="var_equal '@$layout_4deck' 1"/>
     </group>
-    <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
-      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
+      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2-38" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
   <define class="PERFORMANCEMINI_DECKS_NO_WAVES">
-    <panel class="performance_2decks_mini" condition="var_equal '@$hauntinglayout' 0"/>
-    <panel class="performance_4decks_mini" condition="var_equal '@$hauntinglayout' 1"/>
+    <panel class="performance_2decks_mini" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="performance_4decks_mini" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
     <group name="without_zoom_racks" condition="var_equal '@$show_zoom_racks' 0">
-      <panel class="browser_overlay_plain" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2-38" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 1"/>
-      <panel class="browser_overlay_plain" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2" condition="var_equal '@$hauntinglayout' 0 ? var_equal '@$hauntingutilitybar' 0"/>
-      <panel class="browser_overlay_plain" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2-38" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 1"/>
-      <panel class="browser_overlay_plain" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2" condition="var_equal '@$hauntinglayout' 1 ? var_equal '@$hauntingutilitybar' 0"/>
+      <panel class="browser_overlay_plain" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2-38" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 1"/>
+      <panel class="browser_overlay_plain" x="0" y="+43+100+2" width="1920" height="1080-43-2-100-2" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 0"/>
+      <panel class="browser_overlay_plain" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2-38" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 1"/>
+      <panel class="browser_overlay_plain" x="0" y="+43+100+2+98+2" width="1920" height="1080-43-2-100-2-98-2" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 0"/>
     </group>
     <group name="with_zoom_racks" condition="var_equal '@$show_zoom_racks' 1">
-      <group name="utility_bar_hidden" condition="var_equal '@$hauntingutilitybar' 0">
-        <panel class="browser_overlay_with_racks" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2" condition="var_equal '@$hauntinglayout' 0"/>
-        <panel class="browser_overlay_with_racks" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2" condition="var_equal '@$hauntinglayout' 1"/>
+      <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
+        <panel class="browser_overlay_with_racks" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2" condition="var_equal '@$layout_4deck' 0"/>
+        <panel class="browser_overlay_with_racks" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2" condition="var_equal '@$layout_4deck' 1"/>
       </group>
-      <group name="utility_bar_visible" condition="var_equal '@$hauntingutilitybar' 1">
-        <panel class="browser_overlay_with_racks" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2-38" condition="var_equal '@$hauntinglayout' 0"/>
-        <panel class="browser_overlay_with_racks" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2-38" condition="var_equal '@$hauntinglayout' 1"/>
+      <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
+        <panel class="browser_overlay_with_racks" x="0" y="+98+2" width="1920" height="1080-43-2-98-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
+        <panel class="browser_overlay_with_racks" x="0" y="+98+2+98+2" width="1920" height="1080-43-2-98-2-2-98-2-38" condition="var_equal '@$layout_4deck' 1"/>
       </group>
     </group>
   </define>

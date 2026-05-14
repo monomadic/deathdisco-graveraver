@@ -9,13 +9,13 @@
   </define>
   <define class="BROWSER_OVERLAY_WITH_RACKS" placeholders="*x,*y,*width,*height">
     <browser class="browser_ui_base">
-      <pos y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-      <pos y="+[Y]+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-86-2-140-2" condition="var_equal '@$hauntingskinmixerrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-      <pos y="+[Y]+80+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-140-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinvideorack' 1"/>
-      <pos y="+[Y]+80+2+86+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2" condition="var_equal '@$hauntingskinfxrack' 1 ? var_equal '@$hauntingskinmixerrack' 1"/>
-      <pos y="+[Y]+140+2" width="[WIDTH]" height="[HEIGHT]-140-2" condition="var_equal '@$hauntingskinvideorack' 1"/>
-      <pos y="+[Y]+86+2" width="[WIDTH]" height="[HEIGHT]-86-2" condition="var_equal '@$hauntingskinmixerrack' 1"/>
-      <pos y="+[Y]+80+2" width="[WIDTH]" height="[HEIGHT]-80-2" condition="var_equal '@$hauntingskinfxrack' 1"/>
+      <pos y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos y="+[Y]+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-86-2-140-2" condition="var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos y="+[Y]+80+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos y="+[Y]+80+2+86+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+      <pos y="+[Y]+140+2" width="[WIDTH]" height="[HEIGHT]-140-2" condition="var_equal '@$show_video_rack' 1"/>
+      <pos y="+[Y]+86+2" width="[WIDTH]" height="[HEIGHT]-86-2" condition="var_equal '@$show_mixer_rack' 1"/>
+      <pos y="+[Y]+80+2" width="[WIDTH]" height="[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
       <pos y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
     </browser>
   </define>

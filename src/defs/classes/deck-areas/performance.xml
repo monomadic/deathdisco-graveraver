@@ -35,9 +35,9 @@
     </panel>
   </define>
   <define class="AREA_DECK_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
-    <panel class="AREA_DECK_PERFORMANCE_BODY" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] leftdeck"/>
-    <panel class="AREA_DECK_PERFORMANCE_BODY" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="deck [DECK] rightdeck"/>
     <deck deck="[DECK]">
+      <panel class="area_deck_performance_body" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
+      <panel class="area_deck_performance_body" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
       <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
       <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
     </deck>
@@ -51,12 +51,12 @@
       </textzone>
     </panel>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside">
-    <deck deck="[DECK]">
-      <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'right'"/>
-    </deck>
-  </define>
+  <!-- <define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside"> -->
+  <!-- <deck deck="[DECK]"> -->
+  <!-- <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'"/> -->
+  <!-- <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'right'"/> -->
+  <!-- </deck> -->
+  <!-- </define> -->
   <!-- Shared performance body used on the left side and mirrored into the two-deck right-side shell -->
   <define class="AREA_DECK_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">

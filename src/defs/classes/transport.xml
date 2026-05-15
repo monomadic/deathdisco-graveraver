@@ -35,7 +35,7 @@
     </textzone>
     <button class="button_main" x="+0" textsize="11" y="+6" width="60" height="30" action="sampler_play_stop all" text="SAMPLER" textcolor="textoff2" coloron="button_background3" brcoloron="button_background_3" textcoloron="green"/>
     <button class="button_main" x="+0" textsize="11" y="+6+33" width="60" height="30" action="key_match_button" text="KEY" textcolor="textoff2" coloron="button_background3" brcoloron="button_background_3" textcoloron="green"/>
-    <!-- <button class="button_main" x="+0" textsize="11" y="+6+30" width="60" height="30" action="key_match" text="KEY" textcolor="red" textcoloron="red" coloroff="red" coloron="red" visibility="loaded ? not masterdeck ? sync_hint"/> -->
+    <!-- <button class="button_main" x="+0" textsize="11" y="+6+30" width="60" height="30" action="match_key" text="KEY" textcolor="red" textcoloron="red" coloroff="red" coloron="red" visibility="loaded ? not masterdeck ? sync_hint"/> -->
     <button class="button_main" x="+0" textsize="11" y="+6+33+4+30" width="60" height="30" action="shift ? phrase_sync 16 : phrase_sync 32" text="PHRASE" textcolor="textoff2" textcoloron="black"/>
     <button class="button_main" x="+0" textsize="11" y="+6+33+4+28+4+31" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2" textcoloron="black"/>
     <!-- <button class="button_main" x="+0" y="+6+30+4+62" width="60" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2" textcoloron="black"/> -->

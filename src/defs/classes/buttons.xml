@@ -902,9 +902,9 @@
     <!-- CLASS: DECK BUTTON -->
     <define class="DECK_BUTTON" placeholders="*deck,*color" action="select">
       <size width="25" height="25"/>
-      <off shape="square" color="transparent" radius="12" border_size="1" border="[COLOR]"/>
+      <off shape="square" color="transparent" radius="12" border_size="2" border="[COLOR]"/>
       <on shape="square" color="transparent" radius="12" border_size="2" border="[COLOR]"/>
-      <text dy="-1" dx="-0" align="center" size="18" action="get_deck" weight="" width="25" color="[COLOR]" colorselected="[COLOR]"/>
+      <text dy="-1" dx="-1" align="center" size="16" action="get_deck" weight="bold" width="25" color="[COLOR]" colorselected="[COLOR]"/>
     </define>
     <define class="DECK_BUTTON_ROUND" placeholders="*deck,*color" action="select">
       <size width="40" height="60"/>

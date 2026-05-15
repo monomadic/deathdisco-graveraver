@@ -5,6 +5,10 @@
     <visual width="[WIDTH]" height="[HEIGHT]">
       <off shape="square" color="black" radius="[RADIUS]"/>
     </visual>
+    <!-- transparent full-spine hit area for right-click deck options -->
+    <button action="select" rightclick="select &amp; deck_options" query="select">
+      <size width="[WIDTH]" height="[HEIGHT]"/>
+    </button>
     <!-- deck number circle -->
     <group x="+5" y="+10">
       <group visibility="masterdeck">
@@ -23,7 +27,7 @@
     <!-- settings menu -->
     <menu class="menu_maindecks" query="select" x="+0" y="+[HEIGHT]-[WIDTH]" width="[WIDTH]" height="[WIDTH]"/>
     <!-- master deck label -->
-    <group visibility="loaded ? masterdeck">
+    <group visibility="masterdeck">
       <textzone orientation="vertical" direction="ccw">
         <pos x="+0" y="+35"/>
         <size width="34" height="105"/>

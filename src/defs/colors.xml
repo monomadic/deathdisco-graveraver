@@ -27,6 +27,16 @@
     <define color="colornobeat" value="#303030" condition="not var_equal '@$color_scheme' 4"/>
     <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$color_scheme' 4"/>
   </group>
+  <group name="shapecolors" condition="var_equal '@$shapes_color' 0">
+    <define color="colorvocal" value="#0064E8"/>
+    <define color="colorinstru" value="#0CFF00"/>
+    <define color="colorbeat" value="#1E70CD" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colorbeat" value="#000000" condition="var_equal '@$color_scheme' 4"/>
+    <define color="colornovocal" value="#303030"/>
+    <define color="colornoinstru" value="#303030"/>
+    <define color="colornobeat" value="#303030" condition="not var_equal '@$color_scheme' 4"/>
+    <define color="colornobeat" value="#F9E5CC" condition="var_equal '@$color_scheme' 4"/>
+  </group>
   <!-- ===== Top-level color defines (always active) ===== -->
   <define color="color_dropzone" value="white"/>
   <define color="color_masterdeck" value="orange"/>

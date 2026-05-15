@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="STEM_BUTTON" placeholders="*stem,*label,*color,width=65,height=23,fontsize=12,granularity=23">
     <!-- TOGGLE -->
     <button x="+0" action="stem_pad '[STEM]'" border_size="1">

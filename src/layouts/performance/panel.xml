@@ -19,8 +19,8 @@
       <panel class="performance_decks_center" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     </group>
     <!-- browser zoom & auto-switch -->
-    <panel class="performancemini_decks_above" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="performancemini_decks_below" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="performancemini_decks_no_waves" condition="var_equal '@$hide_zoom_waveforms' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_above" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_below" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_no_waves" condition="var_equal '@$hide_zoom_waveforms' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
   </group>
 </module>

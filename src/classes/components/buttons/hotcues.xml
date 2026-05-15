@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="HCUE_BUTTON" placeholders="*source">
     <button class="button_main" x="+4" width="115" height="22" action="hot_cue [SOURCE]" rightclick="cue_name [SOURCE]" query="on/off" align="left" textdx="10" textaction="cue_display [SOURCE] &amp; param_uppercase" coloroff="button_background3" coloron="button_background3" brcoloroff="button_background3" brcoloron="button_background3" textcolor="textoff2" textcoloron="needle"/>
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE]">

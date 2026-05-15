@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="TRACKCOLORBTN" placeholders="color,action,dblclick">
     <button action="[ACTION]" dblclick="[DBLCLICK]" tooltip="Browsed File Color\nDouble-click: Browsed File Color Reset">
       <size width="20" height="20"/>

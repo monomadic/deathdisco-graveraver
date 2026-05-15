@@ -3,7 +3,7 @@
   <!-- BOTTOM BAR (UTILITY BAR)
     height: 50px
   -->
-  <panel name="h_utility_bar" x="0" y="1080-50" visibility="var_equal '@$show_utility_bar' 1">
+  <panel name="bottombar" x="0" y="1080-50" visibility="var_equal '@$show_utility_bar' 1">
     <visual width="1920" height="50">
       <off shape="square" color="#000000" border_size="1" border="#222222"/>
     </visual>
@@ -11,7 +11,7 @@
       <off shape="square" color="[ACCENT_COLOR]" border_size="1" border="#222222"/>
     </visual>
     <!-- PANEL: HASHTAGS -->
-    <group name="browser_tools" visibility="var_equal '@$h_utility_barmode' 0">
+    <group name="browser_tools" visibility="var_equal '@$bottombar_mode' 0">
       <group name="genre_tags" x="+38" y="+6">
         <!-- BUTTONS -->
         <panel class="filter_tag_button" x="+0" accent_color="color_tag_genre" tag="#BassHouse" text="#BASS-HOUSE" width="92"/>
@@ -108,7 +108,7 @@
         </group>
       </group>
     </group>
-    <group name="custom_buttons" visibility="var_equal '@$h_utility_barmode' 1">
+    <group name="custom_buttons" visibility="var_equal '@$bottombar_mode' 1">
       <group x="+20">
         <button class="tag_button" source="24" x="+20" color="white" y="+6" width="80"/>
         <button class="tag_button" source="25" x="+105" y="+6" color="color_tag_genre"/>
@@ -130,6 +130,6 @@
         <button class="tag_button" source="41" x="+105*17" y="+6" color="white"/>
       </group>
     </group>
-    <button class="button_main" x="+5" y="+5" action="toggle '@$h_utility_barmode'" width="28" height="28" textsize="12" textcoloron="needle" coloroff="panel_background" coloron="#333333" bordersize="0" sysicon="settings" iconsize="20"/>
+    <button class="button_main" x="+5" y="+5" action="toggle '@$bottombar_mode'" width="28" height="28" textsize="12" textcoloron="needle" coloroff="panel_background" coloron="#333333" bordersize="0" sysicon="settings" iconsize="20"/>
   </panel>
 </module>

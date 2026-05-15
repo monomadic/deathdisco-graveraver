@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="HOTCUE_BUTTON_STACK_PROGRESS" placeholders="*source,width=25,height=22">
     <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0"/>
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">

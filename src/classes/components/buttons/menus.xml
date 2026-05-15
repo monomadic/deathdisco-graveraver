@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="MENU_MAINDECKS" tooltip="Deck Options" placeholders="width,height">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="20" height="20"/>

@@ -1746,7 +1746,7 @@ DECK MODE BUTTONS
 Original line 53:
 
 ```xml
-<button tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$h_utility_barmode'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$h_utility_barmode' 1 ? get_text '#' : get_text 'U'" coloroff="panel_background" coloron="#222222" query="true" bordersize="0"/>
+<button tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$bottombar_mode'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$bottombar_mode' 1 ? get_text '#' : get_text 'U'" coloroff="panel_background" coloron="#222222" query="true" bordersize="0"/>
 <button tooltip="BORDER MODE\nShow or hide the active deck border." class="button_main" x="+30" action="toggle '@$dd_bordermode'" width="26" height="27" textsize="12" textcoloron="needle" text="B" coloroff="panel_background" coloron="#222222" bordersize="0"/>
 ```
 

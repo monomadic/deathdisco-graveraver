@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <!-- Button-family definitions grouped by purpose. -->
   <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
     <visual>
       <tooltip/>

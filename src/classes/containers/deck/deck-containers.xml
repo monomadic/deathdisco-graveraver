@@ -59,7 +59,7 @@
       </group>
     </deck>
   </define>
-  <!-- Performance layout shells, plus the shared mini deck strip used by Pro and Performance mini modes -->
+  <!-- Performance layout shells, plus the shared browser-zoom mini deck strip -->
   <define class="KNOB_SMALL_THIN" placeholders="*label,knob_color=white">
     <panel x="+0" y="+16">
       <slider action="effect_slider 'colorfx'" rightclick="effect_select 'colorfx'" dblclick="effect_slider 'colorfx' 50%" orientation="round" frommiddle="true" resettomiddle="true">

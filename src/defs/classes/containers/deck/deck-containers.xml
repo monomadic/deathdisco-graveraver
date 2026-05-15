@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<defs>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
+  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
+    <deck deck="[DECK]">
+      <panel x="0" y="+0" class="deck_spine"/>
+      <!-- PRO: LEFT: PANEL BG (behind jog) -->
+      <visual width="765" height="[HEIGHT]" x="+35">
+        <off shape="square" color="panel_background" radius="6"/>
+      </visual>
+      <group x="+35">
+        <!-- PRO: LEFT: TRACK INFO -->
+        <panel class="infos"/>
+        <!-- LEFT: action zone -->
+        <panel class="track_info_action_zone" y="+55" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
+        <group x="550">
+          <!-- PRO: LEFT JOGWHEEL -->
+          <panel class="jogwheel" x="750-150" y="+10" name="jogwheel_spinner"/>
+          <!-- PRO: LEFT VOLUME -->
+          <panel class="pitch_small" x="765" y="+20"/>
+          <!-- PRO: LEFT DECK BORDER -->
+        </group>
+        <visual width="765" height="[HEIGHT]" y="+0">
+          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+        </visual>
+        <!-- <line color="#333333" x="+0" y="+400-2" width="765" height="1"/> -->
+        <dropzone x="+0" y="+0">
+          <size width="770-5" height="180"/>
+          <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
+        </dropzone>
+      </group>
+    </deck>
+  </define>
+  <define class="PRO_2DECKS_OVERLAYS" placeholders="*deck,height=466,width=766">
+    <visual source="deck [DECK] select" deck="[DECK]" visibility="var_equal '@$dd_bordermode' 1">
+      <size width="[WIDTH]" height="[HEIGHT]"/>
+      <down color="transparent" border_size="1" border="deckcolor" shape="square" radius="8"/>
+    </visual>
+  </define>
+  <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
+    <deck deck="[DECK]">
+      <panel x="+765" y="+0" class="deck_spine"/>
+      <!-- bg: spine -->
+      <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
+      <!-- <off shape="square" color="black"/> -->
+      <!-- </visual> -->
+      <!-- PRO: RIGHT: PANEL BG -->
+      <visual width="765" height="[HEIGHT]">
+        <off shape="square" color="panel_background" radius="6"/>
+      </visual>
+      <!-- cover, title etc -->
+      <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+      <!-- <panel class="infos2" x="+800-567" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
+      <cues dy="0" shade="0">
+        <size width="200" height="10"/>
+        <clipmask x="27" y="140"/>
+      </cues>
+      <panel class="track_info_action_zone" x="+800-565" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+      <panel class="jogwheel" x="+55" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+      <panel class="pitch_small" x="+5" y="+20"/>
+      <group>
+        <visual width="765" height="[HEIGHT]" y="+0">
+          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+        </visual>
+      </group>
+      <!-- <panel class="video_preview" x="+2+60+11+1" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
+    </deck>
+  </define>
   <!-- Performance layout shells, plus the shared mini deck strip used by Pro and Performance mini modes -->
   <define class="KNOB_SMALL_THIN" placeholders="*label,knob_color=white">
     <panel x="+0" y="+16">
@@ -360,6 +427,45 @@
         <size width="878" height="98"/>
         <over color="transparent" border_size="2" border="needle" shape="square"/>
       </dropzone>
+    </deck>
+  </define>
+  <!-- Stack mode uses a single repeated deck strip shell -->
+  <define class="AREA_DECK_STACK" placeholders="*deck,*panelname">
+    <deck deck="[DECK]">
+      <group>
+        <button textsize="16" class="button_main" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Right-click: Next Panel" coloroff="button_background" textheight="40" textcoloron="black">
+          <size width="30" height="40"/>
+          <pos x="+8" y="+6"/>
+          <text align="center" weight="bold" action="get_deck" width="25"/>
+        </button>
+        <menu class="menu_maindecks" x="+0" y="+160-30" width="35" height="20"/>
+      </group>
+      <group x="+35">
+        <panel class="infos_stack"/>
+        <panel class="times_bpm_key_stack2" y="+38-2" visibility="not var_equal '@$deck_stack' 1"/>
+        <group name="deck_control" visibility="var_equal '@$deck_stack' 1">
+          <panel visibility="var_equal '@deck_mode' 0">
+            <panel class="transport_stack" x="+484+7"/>
+            <panel class="pitch_zone_stack" x="+800-58-2-8"/>
+            <panel class="jogwheel" x="+800-[JOGSIZE]-2-8-58-16" y="+3" name="jogwheel_spinner"/>
+          </panel>
+          <panel visibility="var_equal '@deck_mode' 1">
+            <panel class="pads_rack_stack" x="+484+7"/>
+          </panel>
+          <panel visibility="var_equal '@deck_mode' 2">
+            <panel class="saved_loops_stack" panelname="[PANELNAME]" x="+484+7"/>
+          </panel>
+        </group>
+        <visual class="gfx_shape" x="+0" y="+164-38" width="482" height="38" coloroff="infos_background" bordercoloroff="panel_background" bordersize="1"/>
+        <songpos class="songpos" x="+2+4" y="+164-38+2+4" width="484-4-8" height="38-4-8"/>
+        <panel class="wave_stack" x="+800+2" visibility="var_equal '@$deck_stack' 1"/>
+        <panel class="wave_stack" x="+484+2" width="1114+316" visibility="var_equal '@$deck_stack' 0"/>
+      </group>
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1">
+        <pos x="+35"/>
+        <size width="1920-37" height="164"/>
+        <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="6"/>
+      </visual>
     </deck>
   </define>
 </defs>

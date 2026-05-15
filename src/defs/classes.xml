@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Components -->
+  <xi:include href="classes/components/primitives.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/text.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/meters.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/cues.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/buttons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/filter-buttons.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/sliders.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/pitch.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/display.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/deck-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/effects.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/track-info.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/transport.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/jogwheel.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/control-groups.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/deck-widgets.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/loop-panels.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/components/video.xml" xpointer="xpointer(/defs/*)"/>
+
+  <!-- Containers -->
+  <xi:include href="classes/containers/browser/browser-base.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/browser/overlays.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/browser/browser-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/browser/performance-browser.generated.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/pads/pad-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/main-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/horizontal-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/center-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/vertical-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/stack-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/waveform/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/mixer/mixer-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/global/master-panels.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/topbar/topbar-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/global/custom-button-zones.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/racks/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/racks/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/deck/spine.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes/containers/deck/deck-containers.xml" xpointer="xpointer(/defs/*)"/>
+
+  <!-- Layout orchestration -->
+  <xi:include href="layouts/wave-layouts.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/deck-layouts.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

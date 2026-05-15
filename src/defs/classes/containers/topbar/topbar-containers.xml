@@ -19,7 +19,7 @@
         <text dx="+2" dy="+8" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
         <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
         <separator/>
-        <xi:include href="topbar/menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
+        <xi:include href="menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
       </menu>
       <group visibility="false">
         <button action="close">
@@ -553,7 +553,7 @@
         <over color="button_background" shape="square"/>
         <selected color="button_background" shape="square"/>
         <text dx="+2" dy="+6" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
-        <xi:include href="topbar/menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
+        <xi:include href="menu-items.xml" xpointer="xpointer(/menuitems/*)"/>
       </menu>
       <logo>
         <pos x="+10+32+10" y="8"/>

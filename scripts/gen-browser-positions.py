@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generates src/defs/classes/browser/performance.xml
+Generates src/defs/classes/containers/browser/performance-browser.generated.xml
 
 This file encodes browser panel position/size for every combination of:
   - 2 class variants: browser_performance / browser_performance_mini
@@ -28,7 +28,7 @@ Do not edit the generated file — edit this script instead.
 import textwrap
 from pathlib import Path
 
-OUTPUT = Path(__file__).parent.parent / "src/defs/classes/browser/performance.xml"
+OUTPUT = Path(__file__).parent.parent / "src/defs/classes/containers/browser/performance-browser.generated.xml"
 
 # Rack combos ordered most-specific-first.
 # Each entry: (rack_condition_prefix, y_rack_terms, h_rack_terms)

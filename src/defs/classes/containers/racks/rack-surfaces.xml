@@ -3,7 +3,7 @@
     <!-- Shared rack surfaces used across Pro, Performance, and browser-zoom mini views -->
     <define class="racks_extended" placeholders="*panelname">
       <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
-      <xi:include href="positions/performance-ex.xml" xpointer="xpointer(/positions/*)"/>
+      <xi:include href="positions/extended-rack.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+264+2" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
       <deck deck="mic">
@@ -89,7 +89,7 @@
     </define>
     <define class="racks_mini" placeholders="*panelname">
       <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
-      <xi:include href="positions/performance-ex-mini.xml" xpointer="xpointer(/positions/*)"/>
+      <xi:include href="positions/mini-rack.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+98+2" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
       <deck deck="mic">

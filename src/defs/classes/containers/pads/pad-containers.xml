@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Shared pad-page selectors -->
-  <xi:include href="pads/pages.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="page-selector.xml" xpointer="xpointer(/defs/*)"/>
   <!-- FX rack content that shares the same deck surface area -->
-  <xi:include href="pads/fx.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="effects-zone.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Shared pad surface layouts -->
   <!-- Default horizontal pad rack used by the standard deck areas -->
   <define class="pads" placeholders="*panelname">

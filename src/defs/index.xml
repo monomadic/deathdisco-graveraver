@@ -5,5 +5,5 @@
   <xi:include href="icons.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="globals.xml" xpointer="xpointer(/globals/*)"/>
   <!-- Shared class library -->
-  <xi:include href="classes/index.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="classes.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

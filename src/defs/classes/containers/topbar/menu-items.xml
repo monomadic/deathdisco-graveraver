@@ -150,7 +150,6 @@
   </submenu>
   <separator/>
   <submenu text="Browser" localize="true">
-    <!-- <item text="Auto Zoom (with controllers)" localize="true" action="toggle '@$browser_zoom_mode'" check="var_equal '@$browser_zoom_mode' 1"/> -->
     <item text="Set Tags (Auto)" action="setting 'setTagsAuto'" check="setting 'setTagsAuto'"/>
     <item text="Read Only" action="setting 'readOnly'" check="setting 'readOnly'"/>
     <item text="Lock Folder Order" action="setting 'lockFolderOrder'" check="setting 'lockFolderOrder'"/>

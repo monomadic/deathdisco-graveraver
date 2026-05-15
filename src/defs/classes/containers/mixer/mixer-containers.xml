@@ -17,7 +17,6 @@
         <panel class="knob" x="+18" y="+14+72+65" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+72+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+56" visibility="var_equal '@$show_drop_menus' 0"/>
-        <!-- <panel class="knob" x="+18" y="+14+81+68+68+64" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label &amp; param_cast 'text' 9" actiontext="effect_select colorfx"/> -->
       </group>
       <!-- 5knobs -->
       <group visibility="setting 'eqMode' 'STEMS'" y="+30">
@@ -50,13 +49,7 @@
   </define>
   <define class="CHANNEL_EQS" placeholders="deck">
     <deck deck="[DECK]">
-      <!-- <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background"/> -->
-      <!-- 3knobs -->
-      <!-- PRO: MIXER PANEL: EQ KNOBS -->
       <group novisibility="setting 'eqMode' 'STEMS'">
-        <!-- <visual x="+10" y="+6" width="55" height="432-56-16"> -->
-        <!-- <off shape="square" color="#1C1C1C" radius="6" bordersize="1" border="#444444"/> -->
-        <!-- </visual> -->
         <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$show_drop_menus' 0"/>
         <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
@@ -130,15 +123,8 @@
   <define class="CHANNEL_LEVELS" placeholders="deck">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="77" height="432-56-1" coloroff="#000000"/>
-      <!-- <textzone> -->
-      <!-- <pos x="+0" y="+0"/> -->
-      <!-- <size width="77" height="30"/> -->
-      <!-- <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/> -->
-      <!-- </textzone> -->
       <panel class="vu_meter_LEDs" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
       <panel class="vu_meter_LEDs" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
-      <!-- CUE BUTTON -->
-      <!-- <button class="button_main" x="+2+4+4" y="+175" width="57" height="24" action="pfl" coloroff="button_background4" brcoloroff="button_background4" textcoloron="black" text="CUE"/> -->
       <button class="button_main" action="pfl" query="pfl">
         <pos x="+10" y="+175"/>
         <size width="60" height="25"/>
@@ -534,9 +520,6 @@
     <!-- MIXER PANEL: SAMPLER -->
     <panel name="samplermixer" group="mixer" visible="no">
       <deck deck="master">
-        <!-- panel bg -->
-        <!-- <visual class="gfx_shape" shape="square" width="312" height="432-56-1" bordercoloroff="red" bordersize="1"/> -->
-        <!-- header -->
         <group name="sampler_panel" x="+0" y="+0" visibility="true">
           <visual x="+4" width="307" height="375">
             <off shape="square" color="dark_3" radius="6" bordersize="1" border="dark_6"/>
@@ -588,10 +571,6 @@
         </group>
         <!-- SAMPLE LIST BOX -->
         <group x="+10" y="+30">
-          <!-- <visual x="+0" y="+0" width="310-20" height="34*8+2"> -->
-          <!-- <off shape="square" color="transparent" border_size="3" border="#222222" radius="6"/> -->
-          <!-- </visual> -->
-          <!-- border -->
           <visual x="+0" y="+0" width="310-10-6" height="34*8+4">
             <off shape="square" color="black" border_size="1" border="dark_7" radius="6"/>
           </visual>
@@ -635,7 +614,6 @@
                     <textzone>
                       <pos x="+0" y="+0"/>
                       <size width="200" height="22"/>
-                      <!-- <text fontsize="11" color="#FFFFFF" align="left" action="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? get_text '`get_sample_info [INDEX] bpm`bpm' : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_text '`get_constant 8 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_text '`get_constant 16 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_text '`get_constant 24 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_text '`get_constant 32 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_text '`get_constant 40 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_text '`get_constant 48 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_text '`get_constant 56 &amp; param_add [INDEX] &amp; get_sample_info bpm`bpm' : get_text ''"/> -->
                       <text fontsize="11" color="#FFFFFF" align="left" action="get_sample_info [INDEX] bpm"/>
                     </textzone>
                     <textzone>
@@ -678,18 +656,6 @@
           </group>
           <!-- BOTTOM SECTION -->
           <group y="+275">
-            <!-- <group name="sampler_mode" x="+10"> -->
-            <!-- label -->
-            <!-- <textzone class="text" x="+0" y="+0" width="45" height="20" fontsize="8" color="textoff" align="left" weight="" text="MODE"/> -->
-            <!-- <button x="+0" y="+16" class="button_main" bordersize="1" width="60" height="26" action="sampler_mode" textsize="10" textcolor="white"> -->
-            <!-- <size height="15"/> -->
-            <!-- <off color="#111111" border="#555555"/> -->
-            <!-- <down color="#111111" border="#555555"/> -->
-            <!-- <selected color="#111111" border="#555555"/> -->
-            <!-- <text align="center" action="sampler_mode &amp; param_uppercase"/> -->
-            <!-- </button> -->
-            <!-- </group> -->
-            <!-- SAMPLER ROUTING TOGGLE HEADPHONES/MASTER -->
             <group name="sampler_output" x="+0">
               <textzone class="text" x="+0" y="+0" width="50" height="18" fontsize="8" color="textoff" align="left" weight="" text="OUTPUT"/>
               <button x="+0" y="+14" query="false" textsize="11" class="button_main" action="param_equal `setting 'samplerOutputDeck'` 0 ? setting 'samplerOutputDeck' -1 : setting 'samplerOutputDeck' 0" rightclick="sampler_output 'popup'" textaction="param_equal `setting 'samplerOutputDeck'` 0 ? get_text 'MASTER' : param_equal `setting 'samplerOutputDeck'` -1 ? get_text 'HEADPHONES' : param_equal `setting 'samplerOutputDeck'` -2 ? get_text 'TRIGGER' : get_text 'DECK `setting &quot;samplerOutputDeck&quot;`'">
@@ -701,13 +667,6 @@
             </group>
             <group name="sampler_pad_page_select" x="+188" y="+5">
               <deck deck="master">
-                <!-- <button x="-73" class="button_main" bordersize="1" textsize="11" width="60" height="26" action="deck 1 masterdeck ? deck 1 sampler_pad_page +1 : deck 2 masterdeck ? deck 2 sampler_pad_page +1 : deck 3 masterdeck ? deck 3 sampler_pad_page +1 : deck 4 masterdeck ? deck 4 sampler_pad_page +1 : sampler_pad_page +1" textcolor="white"> -->
-                <!-- <size width="60" height="24"/> -->
-                <!-- <off color="#111111"/> -->
-                <!-- <down color="#111111"/> -->
-                <!-- <selected color="#111111"/> -->
-                <!-- <text align="center" weight="" action="deck 1 masterdeck ? deck 1 sampler_pad 1 : deck 2 masterdeck ? deck 2 sampler_pad 1 : deck 3 masterdeck ? deck 3 sampler_pad 1 : deck 4 masterdeck ? deck 4 sampler_pad 1 : sampler_pad 1"/> -->
-                <!-- </button> -->
                 <button x="+0" class="button_main" bordersize="1" action="deck 1 masterdeck ? deck 1 sampler_pad_page -1 : deck 2 masterdeck ? deck 2 sampler_pad_page -1 : deck 3 masterdeck ? deck 3 sampler_pad_page -1 : deck 4 masterdeck ? deck 4 sampler_pad_page -1 : sampler_pad_page -1" textsize="10" textcolor="white">
                   <size width="24" height="24"/>
                   <off color="#111111"/>
@@ -737,10 +696,6 @@
           </group>
           <!-- SAMPLER VUMETER -->
           <group x="+0" y="+310">
-            <!-- BORDER BACKGROUND -->
-            <!-- <visual x="+0" y="+0" width="144" height="43-8-8"> -->
-            <!-- <off shape="square" color="transparent" border_size="1" border="#444444" radius="4"/> -->
-            <!-- </visual> -->
             <visual x="+0" y="+0" width="295" height="43-8-8">
               <off shape="square" color="black" border_size="1" border="dark_7" radius="4"/>
             </visual>
@@ -877,38 +832,13 @@
     </panel>
     <!-- PRO: MIXER PANEL: WAVE -->
     <panel name="scratchmixer" group="mixer" visible="no">
-      <!-- <visual class="gfx_shape" width="312" height="432-56-1" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0"/> -->
-      <!-- <visual class="gfx_shape" width="312" height="432-56-1+57" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1"/> -->
-      <!-- LEFT -->
       <panel class="vertical_scratchwave2" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0" outer_height="350" waveform_height="347" dropzone_height="370"/>
-      <!-- <panel class="vertical_scratchwave" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0"/> -->
       <panel class="vertical_scratchwave" deck="3" visibility="deck 3 leftdeck" x="+40" y="+0"/>
       <!-- RIGHT -->
       <panel class="vertical_scratchwave" deck="2" visibility="not deck 4 rightdeck" x="+320-98-10-19-19" y="+0"/>
       <panel class="vertical_scratchwave" deck="4" visibility="deck 4 rightdeck" x="+320-98-10-19-19" y="+0"/>
       <!-- MIDDLE BUTTONS + VU -->
       <panel class="scratch_controls" x="960-20" y="+0"/>
-      <!-- NEEDLE -->
-      <!-- <group x="+25" y="+90"> -->
-      <!-- <visual width="260" height="28"> -->
-      <!-- <off shape="square" color="#66000000" border_size="0" border="deckcolor" radius="6"/> -->
-      <!-- </visual> -->
-      <!-- <visual y="+13" width="260" height="2"> -->
-      <!-- <off shape="square" color="white" border_size="0" border="deckcolor" radius="1"/> -->
-      <!-- </visual> -->
-      <!-- </group> -->
-      <!-- left aligned -->
-      <!-- <group visibility="setting 'waveformCenter' 'left'"> -->
-      <!-- shadow -->
-      <!-- <visual x="+1920/2-6" y="+2" width="10" height="[WAVEFORMHEIGHT]-6"> -->
-      <!-- <off shape="square" color="#55000000" border_size="0" border="deckcolor" radius="6"/> -->
-      <!-- </visual> -->
-      <!-- tip -->
-      <!-- <visual x="+1920/2-2" y="+0" width="2" height="[WAVEFORMHEIGHT]" visibility="select"> -->
-      <!-- <off shape="square" color="white" border_size="0" border="deckcolor" radius="6"/> -->
-      <!-- </visual> -->
-      <!-- </group> -->
-      <!-- center aligned -->
       <group visibility="setting 'waveformCenter' 'centered'">
         <group x="+25" y="+176">
           <visual width="260" height="28">
@@ -1083,19 +1013,6 @@
           <off shape="square" color="transparent"/>
           <on shape="square" color="green"/>
         </visual>
-        <!-- Play/Pause Button -->
-        <!-- <button x="+0" y="+17" -->
-        <!-- width="[WIDTH]" height="15" -->
-        <!-- action="play_pause" -->
-        <!-- border_size="0"> -->
-        <!-- <off color="#111111"/> -->
-        <!-- <over color="[OVERCOLOR]"/> -->
-        <!-- <selected color="deckcolor"/> -->
-        <!-- <icon dx="-2" sysicon="play" -->
-        <!-- width="37" height="33" -->
-        <!-- color="[TEXTCOLOR]" colordown="white" -->
-        <!-- colorselected="black"/> -->
-        <!-- </button> -->
         <button x="+0" y="+27" width="[WIDTH]" height="3" action="[SIDE]" border_size="0">
           <up color="deckcolor"/>
           <over color="deckcolor"/>
@@ -1110,20 +1027,6 @@
     <panel class="deck_select" deck="4" side="rightdeck" x="+252" y="+1"/>
     <!-- PLAY ALL BUTTON -->
     <group name="playpause_global" x="+123" y="+0">
-      <!-- PLAY state (no decks playing) -->
-      <!-- <button width="66" height="34" action="deck left play &amp; deck right play &amp; deck all sync &amp; phrase_sync" sysicon="play_button" iconsize="39"> -->
-      <!-- <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="white"/> -->
-      <!-- <over color="#111111" border="#666666" border_size="1" shape="square" radius="4" iconcolor="#999999"/> -->
-      <!-- <down color="#111111" border="#888888" border_size="1" shape="square" radius="4" iconcolor="#999999"/> -->
-      <!-- <selected color="white" border="white" radius="4" iconcolor="white"/> -->
-      <!-- </button> -->
-      <!-- STOP state (any deck playing) -->
-      <!-- <button textsize="11" width="66" height="34" visibility="deck 1 play or deck 2 play or deck 3 play or deck 4 play" action="deck all pause &amp; sampler stop all" sysicon="play_button" iconsize="39"> -->
-      <!-- <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="#999999"/> -->
-      <!-- <over color="#111111" border="#666666" border_size="1" shape="square" radius="4" iconcolor="#999999"/> -->
-      <!-- <down color="#111111" border="#888888" border_size="1" shape="square" radius="4" iconcolor="#666666"/> -->
-      <!-- <selected color="white" border="white" radius="4" iconcolor="white"/> -->
-      <!-- </button> -->
       <visual class="gfx_shape" width="66" height="34" coloroff="red">
         <off color="#000000" border="#555555" border_size="1" shape="square" radius="4" iconcolor="#999999"/>
       </visual>
@@ -1135,29 +1038,5 @@
         <panel class="beat_keeper_ex" bgcolor="#222222" width="14" y="+21" deck="4"/>
       </group>
     </group>
-    <!-- <button class="button_main" x="+30" y="+20" width="40" height="40" border="deck 1 deckcolor" border_size="3" action="invert_deck left" coloroff="deckcolor" text="" textcolor="white" iconsize="40" sysicon="play" border="0" shape="circle"/> -->
-    <!-- <button class="button_main" x="+5" y="+55" width="30" height="30" action="invert_deck left" coloroff="#222222" text="" textcolor="white" iconsize="30" sysicon="goto_last_folder" border="0" shape="circle"/> -->
-    <!-- <button class="button_main" x="+276" y="+55" width="30" height="30" action="invert_deck right" coloroff="#222222" text="" textcolor="white" iconsize="30" sysicon="goto_last_folder" border="0" shape="circle"/> -->
-    <!-- HAS LINKED TRACKS -->
-    <!-- <button class="button_main" -->
-    <!-- x="+106" y="+68" width="100" height="15" -->
-    <!-- action="browser_sideview 'linked'" -->
-    <!-- query="has_linked_tracks" -->
-    <!-- text="LINK" -->
-    <!-- textcolor="textoff3" -->
-    <!-- textcoloron="green" -->
-    <!-- textsize="10" -->
-    <!-- /> -->
-    <!-- LINK TRACKS BUTTON -->
-    <!-- <button class="button_main" -->
-    <!-- x="+65" y="+64" width="50" height="15" -->
-    <!-- action="mark_linked_tracks" -->
-    <!-- text="LINK" -->
-    <!-- textcolor="#888888" -->
-    <!-- textcoloron="black" -->
-    <!-- coloron="green" -->
-    <!-- textsize="10" /> -->
-    <!-- <button class="button_main" x="+62*3" y="+70" width="63" height="17" action="crossfader_curve 'custom' ? setting 'crossfaderDisable' : crossfader_curve 'custom'" query="crossfader_curve 'custom' ? not setting 'crossfaderDisable' ? true : false" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background" textsize="10" textcolor="textoff3" textcoloron="needle" textaction="get_text 'CUSTOM'"/> -->
-    <!-- <button class="button_main" x="+62*4" y="+70" width="63" height="17" action="crossfader_curve 'cut' ? setting 'crossfaderDisable' : crossfader_curve 'cut'" query="crossfader_curve 'cut' ? not setting 'crossfaderDisable' ? true : false" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background" textsize="10" textcolor="textoff3" textcoloron="needle" textaction="get_text 'CUT'"/> -->
   </define>
 </defs>

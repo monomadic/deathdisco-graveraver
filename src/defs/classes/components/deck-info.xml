@@ -22,27 +22,6 @@
           <pos x="+0" y="+0"/>
           <size width="[SIZE]" height="[SIZE]"/>
         </cover>
-        <!-- INSTRUMENTAL LABEL -->
-        <!-- <group visibility="stem_pad 'instrumental'"> -->
-        <!-- <pos x="+0" y="+36"/> -->
-        <!-- <visual visibility="0.8"> -->
-        <!-- <size width="175" height="30"/> -->
-        <!-- <off shape="square" color="black"/> -->
-        <!-- </visual> -->
-        <!-- <visual visibility="0.2"> -->
-        <!-- <pos x="+8" y="+6"/> -->
-        <!-- <size width="155" height="20"/> -->
-        <!-- <off shape="square" color="color_instrumental"/> -->
-        <!-- </visual> -->
-        <!-- <button action="stem_pad 'instrumental'" border_size="1"> -->
-        <!-- <pos x="+8" y="+6"/> -->
-        <!-- <size width="155" height="20"/> -->
-        <!-- <off color="#222222" border="#444444" radius="3"/> -->
-        <!-- <down color="#222222" border="color_instrumental" radius="3"/> -->
-        <!-- <selected color="transparent" border="color_instrumental" radius="3"/> -->
-        <!-- <text fontsize="12" color="#555555" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/> -->
-        <!-- </button> -->
-        <!-- </group> -->
         <button action="select" visibility="loaded">
           <pos x="+3" y="+3"/>
           <size width="[SIZE]-4" height="[SIZE]-4"/>
@@ -121,25 +100,6 @@
     <define class="BEAT_KEEPER_EX" placeholders="deck,bgcolor=transparent,width=10">
       <deck deck="[DECK]">
         <visual class="gfx_shape" width="[WIDTH]*4" height="27" coloroff="red"/>
-        <!-- <group name="phrase_bars"> -->
-        <!-- <button class="button_main" x="+0" y="+0" width="34" height="7" shape="square" query="get_phrase_num 1" coloroff="#222222" brcoloron="infos_background" brcoloroff="infos_background" bordersize="3"/> -->
-        <!-- <button class="button_main" x="+38" y="+0" width="34" height="7" shape="square" query="get_phrase_num 2" coloroff="#222222" brcoloron="infos_background" brcoloroff="infos_background" bordersize="3"/> -->
-        <!-- <button class="button_main" x="+38*2" y="+0" width="34" height="7" shape="square" query="get_phrase_num 3" coloroff="#222222" brcoloron="infos_background" brcoloroff="infos_background" bordersize="3"/> -->
-        <!-- <button class="button_main" x="+38*3" y="+0" width="34" height="7" shape="square" query="get_phrase_num 4" coloroff="#222222" brcoloron="infos_background" brcoloroff="infos_background" bordersize="3"/> -->
-        <!-- <button class="button_main" x="+0" y="+0" width="34" height="7" shape="square" query="goto_bar 1" coloroff="transparent" brcoloroff="transparent"/> -->
-        <!-- <button class="button_main" x="+38" y="+0" width="34" height="7" shape="square" query="goto_bar 2" coloroff="transparent" brcoloroff="transparent"/> -->
-        <!-- <button class="button_main" x="+38*2" y="+0" width="34" height="7" shape="square" query="goto_bar 3" coloroff="transparent" brcoloroff="transparent"/> -->
-        <!-- <button class="button_main" x="+38*3" y="+0" width="34" height="7" shape="square" query="goto_bar 4" coloroff="transparent" brcoloroff="transparent"/> -->
-        <!-- </group> -->
-        <!-- WATCHOS STYLE PHRASE TIMER -->
-        <!-- <group name="phrase_bars"> -->
-        <!-- <button class="button_main" x="+0" y="+0" width="34" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/> -->
-        <!-- <button class="button_main" x="+38" y="+0" width="34" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/> -->
-        <!-- <button class="button_main" x="+38*2" y="+0" width="34" height="10" shape="square" query="goto_bar 3" coloroff="infos_background" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/> -->
-        <!-- <button class="button_main" x="+38*3" y="+0" width="34" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/> -->
-        <!-- <panel class="phrase_circle" x="-48" y="-2" visibility="leftdeck"/> -->
-        <!-- <panel class="phrase_circle" x="+126+41" y="-16-2" visibility="rightdeck"/> -->
-        <!-- </group> -->
         <group name="phrase_bars">
           <button class="button_main" x="+0" y="+0" width="[WIDTH]" height="6" shape="square" query="get_phrase_num 1" coloroff="[BGCOLOR]" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/>
           <button class="button_main" x="+15" y="+0" width="[WIDTH]" height="6" shape="square" query="get_phrase_num 2" coloroff="[BGCOLOR]" brcoloron="infos_background" brcoloroff="infos_background" bordersize="0"/>
@@ -150,22 +110,10 @@
     </define>
     <define class="beat_counter" placeholders="deck">
       <deck deck="[DECK]">
-        <!-- <visual class="gfx_shape" width="120" height="20" coloroff="xf_progressbackground" bordersize="0" visibility="loaded ? constant 0.8"/> -->
-        <!-- <textzone visibility="loaded"> -->
-        <!-- <pos x="+10" y="-10"/> -->
-        <!-- <size width="120-20" height="20*2"/> -->
-        <!-- <text fontsize="16" weight="" color="needle" align="right" format="`get_bar`.`get_beat_num` bars"/> -->
-        <!-- </textzone> -->
       </deck>
     </define>
     <define class="beat_counter2" placeholders="deck">
       <deck deck="[DECK]">
-        <!-- <visual class="gfx_shape" width="120" height="20" coloroff="xf_progressbackground" bordersize="0" visibility="loaded ? constant 0.8"/> -->
-        <!-- <textzone visibility="loaded"> -->
-        <!-- <pos x="+10" y="-10"/> -->
-        <!-- <size width="120-20" height="20*2"/> -->
-        <!-- <text fontsize="16" weight="" color="needle" align="center" format="`get_bar`.`get_beat_num` bars"/> -->
-        <!-- </textzone> -->
       </deck>
     </define>
     <define class="beat_divider_area" placeholders="width,height">

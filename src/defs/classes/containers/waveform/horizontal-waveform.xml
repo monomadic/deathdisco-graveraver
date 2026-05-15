@@ -42,7 +42,6 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
-          <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
           <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
@@ -85,7 +84,6 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
-          <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
           <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
@@ -127,12 +125,6 @@
           </cue>
         </scratchwave>
       </group>
-      <!-- PRO: HORIZONTAL WAVEFORM: BORDER -->
-      <!-- <visual source="select" x="+34" y="+0" visibility="var_equal '@$dd_bordermode' 1"> -->
-      <!-- <size width="1920-34-34" height="[HEIGHT]"/> -->
-      <!-- <size width="[HEIGHT]" height="[HEIGHT]"/> -->
-      <!-- <down color="transparent" border_size="1" border="deckcolor" shape="square" radius="10"/> -->
-      <!-- </visual> -->
       <dropzone>
         <pos x="+34" y="+0"/>
         <size width="1920-34-34" height="[HEIGHT]"/>

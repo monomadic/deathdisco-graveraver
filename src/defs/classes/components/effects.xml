@@ -69,20 +69,11 @@
     <define class="fx_slot4" placeholders="*source,width=104">
       <button class="button_main" width="[WIDTH]-40" height="35" action="effect_active [SOURCE]" scroll="effect_select [SOURCE]" textaction="get_effect_name [SOURCE] &amp; param_uppercase" coloroff="button_background3" brcoloroff="button_background3" textcolor="textoff2" textcoloron="black" textsize="17"/>
       <button class="button_main" x="+[WIDTH]-40" width="28" height="35" action="effect_select [SOURCE]" sysicon="chevrondown" iconsize="20"/>
-      <!-- <panel class="knob" x="+104+28+8+15" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 1" frommiddle="false" fillcolor="knobfilloff" novisibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+15" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 1" frommiddle="false" fillcolor="knobfillon" visibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+28+25" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 2" frommiddle="false" fillcolor="knobfilloff" novisibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+28+25" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 2" frommiddle="false" fillcolor="knobfillon" visibility="effect_active [SOURCE]"/> -->
       <button class="button_main" x="+28+40+10+150" y="+6" width="30-8" height="30-8" action="effect_show_gui [SOURCE]" sysicon="settings" iconsize="20"/>
     </define>
     <define class="fx_colorfx" placeholders="*source,width=104">
-      <!-- <square x="+0" y="+0" width="[WIDTH]+28" height="36" color="black" /> -->
       <button class="button_main" width="[WIDTH]-40" height="35" action="effect_active [SOURCE]" scroll="effect_select [SOURCE]" textaction="filter_label" coloroff="button_background3" brcoloroff="button_background3" textcolor="textoff2" textcoloron="black" textsize="15"/>
       <button class="button_main" x="+[WIDTH]-40" width="28" height="35" action="effect_select [SOURCE]" sysicon="chevrondown" iconsize="20"/>
-      <!-- <panel class="knob" x="+104+28+8+15" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 1" frommiddle="true" fillcolor="knobfilloff" novisibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+15" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 1" frommiddle="false" fillcolor="knobfillon" visibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+28+25" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 2" frommiddle="false" fillcolor="knobfilloff" novisibility="effect_active [SOURCE]"/> -->
-      <!-- <panel class="knob" x="+104+28+8+28+25" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 2" frommiddle="false" fillcolor="knobfillon" visibility="effect_active [SOURCE]"/> -->
       <button class="button_main" x="+28+40+10+150" y="+6" width="30-8" height="30-8" action="effect_show_gui [SOURCE]" sysicon="settings" iconsize="20"/>
     </define>
     <define class="fx_slot_single">

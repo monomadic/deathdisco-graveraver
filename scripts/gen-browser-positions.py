@@ -192,5 +192,9 @@ def generate():
 
 
 if __name__ == "__main__":
-    OUTPUT.write_text(generate())
-    print(f"Written {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
+    content = generate()
+    if OUTPUT.exists() and OUTPUT.read_text(encoding="utf-8") == content:
+        print(f"Unchanged {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
+    else:
+        OUTPUT.write_text(content, encoding="utf-8")
+        print(f"Written {OUTPUT} ({OUTPUT.stat().st_size} bytes)")

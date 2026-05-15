@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Extracted from components/buttons.xml; keep button-family definitions grouped by purpose. -->
+  <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=panel_background,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$color_scheme' 4">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <over color="#1F1F1F" border="#222222" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <selected color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLOR]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
+    <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
+  </define>
+  <define class="TAG_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,color=green,coloroff=transparent,coloron=deckcolor,brcoloroff=#222222,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=12,textcolor=br_textoff,textcoloron=needle,orientation=horizontal">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="[COLOROFF]" border="#444444" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="6"/>
+    <over color="[COLOROFF]" border="#555555" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="6"/>
+    <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="6"/>
+    <selected color="[COLOR]" border="[COLOR]" border_size="1" shape="[SHAPE]" radius="6"/>
+    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[COLOR]" colorselected="black" colordown="[TEXTCOLOR]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
+    <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
+  </define>
+  <define class="CUSTOM_BUTTON" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=br_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$color_scheme' 4">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <selected color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="bold" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
+    <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
+  </define>
+  <define class="CUSTOM_BUTTON_1" action="custom_button [SOURCE]" deck="[DECK]" border_size="1" rightclick="custom_button_edit [SOURCE]" placeholders="*source,*deck,width=70,height=20">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="#000000" border="#888888" radius="3"/>
+    <down color="#222222" border="#888888" radius="3"/>
+    <selected color="transparent" border="deckcolor" radius="3"/>
+    <text fontsize="10" color="#DDDDDD" colorselected="deckcolor" colordown="#888888" align="center" action="custom_button_name [SOURCE]"/>
+  </define>
+  <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_not_equal '@$color_scheme' 4">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <selected color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
+    <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
+  </define>
+  <define class="custom_button2" action="custom_button [SOURCE]" rightclick="custom_button_edit [SOURCE]" placeholders="*source,width=100,height=26,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background2,brcoloron=deckcolor,bordersize=2,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal" condition="var_equal '@$color_scheme' 4">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <off color="[COLOROFF]" border="[COLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <down color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <selected color="[COLOROFF]" border="deckcolor" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
+    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="bold" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="center" orientation="[ORIENTATION]" action="custom_button_name [SOURCE]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
+    <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
+  </define>
+</defs>

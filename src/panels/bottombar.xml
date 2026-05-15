@@ -28,14 +28,6 @@
       </group>
       <!-- MIX -->
       <group name="mix_tags" x="+600">
-        <!-- bg -->
-        <!-- <visual x="+0" y="+0" width="335" height="38" visibility="0.2"> -->
-        <!-- <off shape="square" color="color_tag_mix" border_size="1" border="color_tag_mix" radius="0"/> -->
-        <!-- </visual> -->
-        <!-- <visual class="gfx_shape" x="+0" y="+0" width="335" height="2" coloroff="color_tag_mix" visibility="0.5"/> -->
-        <!-- <visual class="gfx_shape" x="+0" y="+34" width="335" height="2" coloroff="color_tag_mix" visibility="0.5"/> -->
-        <!-- label -->
-        <!-- <visual x="+0" y="+0" width="335" height="38" visibility="0.2"> -->
         <line x="+0" y="+0" width="1" height="50" highlight="#101010" shadow="#707070"/>
         <textzone class="text" x="+5" y="+0" orientation="vertical" width="15" height="50" fontsize="12" color="color_tag_mix" align="center" weight="bold" text="MIX"/>
         <!-- buttons -->
@@ -48,12 +40,6 @@
       </group>
       <!-- TIMING -->
       <group name="mix_timing" x="+950">
-        <!-- bg -->
-        <!-- <visual x="+0" y="+0" width="+26+66+15+2+50+2+58" height="38" visibility="0.2"> -->
-        <!-- <off shape="square" color="color_tag_timing" border_size="1" border="color_tag_timing" radius="0"/> -->
-        <!-- </visual> -->
-        <!-- <visual class="gfx_shape" x="+0" y="+0" width="+26+66+15+2+50+2+58" height="2" coloroff="color_tag_timing" visibility="0.5"/> -->
-        <!-- label -->
         <line x="+0" y="+0" width="1" height="50" highlight="#101010" shadow="#707070"/>
         <textzone class="text" x="+5" y="+0" orientation="vertical" width="15" height="50" fontsize="10" color="color_tag_timing" align="center" weight="bold" text="TIME"/>
         <!-- BUTTONS -->
@@ -65,11 +51,6 @@
       </group>
       <!-- MOOD -->
       <group name="mix_mood" x="+1180">
-        <!-- <visual x="+0" y="+0" width="+26+66+15+2+50+2+58" height="38" visibility="0.2"> -->
-        <!-- <off shape="square" color="color_tag_mood" border_size="1" border="color_tag_mood" radius="0"/> -->
-        <!-- </visual> -->
-        <!-- <visual class="gfx_shape" x="+0" y="+0" width="+26+66+15+2+50+2+58" height="2" coloroff="color_tag_mood" visibility="0.5"/> -->
-        <!-- label -->
         <line x="+0" y="+0" width="1" height="50" highlight="#101010" shadow="#707070"/>
         <textzone class="text" x="+5" y="+0" orientation="vertical" width="15" height="50" fontsize="10" color="color_tag_mood" align="center" weight="bold" text="MOOD"/>
         <!-- buttons -->
@@ -115,16 +96,8 @@
         </button>
       </group>
       <group name="color/rating/relayplay/automix" x="+1000+494-32+122+105+2+55+2+84" y="+2">
-        <!-- <button class="button_main" x="+494-32+122" y="-2" width="105" height="24" action="automix" textsize="10" textcolor="br_textoff" text="AUTOMIX" coloroff="br_background" coloron="br_automix2" bordersize="0" query="automix ? blink 1200ms"/> -->
-        <!-- <button class="button_main" x="+494-32+122+105+2" y="-2" width="55" height="24" action="automix_skip" textsize="10" textcolor="br_textoff" text="NEXT" coloroff="br_background" coloron="br_focus" bordersize="0"/> -->
-        <!-- <button class="button_main" x="+494-32+122+105+2+55+2" y="-2" width="65" height="24" action="switch_sidelist_playlist" textsize="10" textcolor="br_textoff" text="SIDELIST" coloroff="br_background" coloron="br_focus" bordersize="0"/> -->
-        <!-- <visual class="gfx_shape" x="+494-32+122" y="-2+24-2" width="105" height="2" coloroff="br_automix2"/> -->
-        <!-- <visual class="gfx_shape" x="+494-32+122+105+2" y="-2+24-2" width="55" height="2" coloroff="br_focus"/> -->
-        <!-- <visual class="gfx_shape" x="+494-32+122+105+2+55+2" y="-2+24-2" width="65" height="2" coloroff="br_focus"/> -->
         <group y="+2">
           <visual class="gfx_shape" x="+0" y="+0" width="83" height="42" coloroff="#660099" radius="3"/>
-          <!-- <button class="button_main" x="+1" y="+1" width="81" height="40" action="show_splitpanel 'sideview' toggle &amp; sideview 'remixes'" textsize="10" textcolor="br_textoff" text="SIDEPANEL" brcoloroff="#222222" coloroff="#111111" coloron="#660099" colorover="#222222" bordersize="1" radius="3"/> -->
-          <!-- karaoke -->
           <button x="+90" width="40" height="50" query="sideview karaoke ? show_splitpanel 'sideview'" action="switch_sidelist_playlist" text="SIDELIST">
             <off color="transparent" border="#000000" border_size="0" shape="square"/>
             <on color="#444444" border="#111111" border_size="0" shape="square"/>

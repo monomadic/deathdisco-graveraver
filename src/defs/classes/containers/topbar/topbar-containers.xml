@@ -47,14 +47,8 @@
     </group>
     <!-- vr -->
     <line color="dark_5" x="58" y="1" width="1" height="39"/>
-    <!-- <visual class="gfx_shape" width="1920" height="50" coloroff="red"/> -->
-    <!-- DECK MODE BUTTONS -->
     <group x="250" y="+1">
-      <!-- <button tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$h_utility_barmode'" width="26" height="27" textsize="12" textcolor="needle" textaction="var_equal '@$h_utility_barmode' 1 ? get_text '#' : get_text 'U'" coloroff="panel_background" coloron="#222222" query="true" bordersize="0"/> -->
-      <!-- <button tooltip="BORDER MODE\nShow or hide the active deck border." class="button_main" x="+30" action="toggle '@$dd_bordermode'" width="26" height="27" textsize="12" textcoloron="needle" text="B" coloroff="panel_background" coloron="#222222" bordersize="0"/> -->
       <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="80" height="42" textsize="12" textcoloron="needle" text="BROWSER" coloroff="transparent" coloron="#222222" bordersize="0"/>
-      <!-- <button tooltip="" class="button_main" x="+122" action="setting 'showLyrics'" width="60" height="27" textsize="12" textcoloron="needle" text="LYRICS" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
-      <!-- <button tooltip="SAMPLE PADS\nToggle sample pads." class="button_main" x="+125" action="sideview_triggerpad 'sideview' &amp; sideview_triggerpad &amp; show_splitpanel 'sideview'" width="70" height="27" textsize="12" textcoloron="needle" text="SAMPLES" coloroff="#101010" coloron="#222222" bordersize="0" query=""/> -->
     </group>
     <group visibility="browser_zoom" x="680" y="8">
       <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
@@ -164,8 +158,6 @@
     </group>
     <!-- PERFORMANCE: TOP BAR -->
     <group name="performance_skin_utility" visibility="var_equal '@$skin_mode' 1">
-      <!-- <button class="button_main" x="+1150" y="+8" width="60" height="12" action="setting 'hotcueMode' 'play'" query="setting 'hotcueMode' 'play'" textsize="11" text="CUE PLAY" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/> -->
-      <!-- <button class="button_main" x="+1150" y="+8+12+2" width="60" height="12" action="setting 'hotcueMode' 'stutter'" textsize="11" text="STUTTER" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/> -->
       <group x="410" y="0">
         <!-- border -->
         <visual x="+0" y="+8" width="90" height="28">
@@ -187,20 +179,6 @@
             <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$performance_layout' &amp; param_equal 2) ? get_text 'HORIZONTAL'              : (get_var '@$performance_layout' &amp; param_equal 0) ? get_text 'EXTENDED'              : get_text 'VERTICAL'"/>
           </button>
         </group>
-        <!-- layout buttons (separate) -->
-        <!-- <group x="+8" y="+11"> -->
-        <!-- <button class="button_main" action="set '@$performance_layout' 1 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10"> -->
-        <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="VERT"/> -->
-        <!-- </button> -->
-        <!-- <button class="button_main" x="+53" action="set '@$performance_layout' 2 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
-        <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="HORIZ"/> -->
-        <!-- </button> -->
-        <!-- <button class="button_main" x="+53+50" action="set '@$performance_layout' 0 &amp; load_skin" width="40" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="6"> -->
-        <!-- <text overcolor="#999999" weight="normal" size="14" oncolor="white" text="EXT"/> -->
-        <!-- </button> -->
-        <!-- <line x="+45" y="-2" width="1" height="26" highlight="#666666" shadow="000000"/> -->
-        <!-- <line x="+100" y="-2" width="1" height="26" highlight="#666666" shadow="000000"/> -->
-        <!-- </group> -->
       </group>
       <group x="620">
         <button class="button_main" x="+0" y="8" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="55" height="27" bordersize="0">
@@ -228,30 +206,12 @@
           <text overcolor="white" size="12" oncolor="white" text="EFFECTS"/>
         </button>
       </group>
-      <!-- <button class="button_main" x="115+80+300+75+75" y="8" width="32" height="27" tooltip="Quantize all" action="deck 1 quantize_all &amp; deck 2 quantize_all &amp; deck 3 quantize_all &amp; deck 4 quantize_all" textsize="10" text="QT" coloron="br_focus" bordersize="0"/> -->
       <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75">
         <visual class="gfx_shape" x="+490" width="150" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
       </group>
-      <!-- <button class="button_main" x="115+80+300+90+643" y="8" width="75" height="27" action="sandbox" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms"/> -->
       <group visibility="0.75">
         <visual class="gfx_shape" x="115+80+300+90+643" y="8" width="75" height="27" coloroff="panel_background" visibility="not can_sandbox"/>
       </group>
-      <!-- <group name="beatbar"> -->
-      <!-- <panel condition="var_equal '@$4decks' 0"> -->
-      <!-- <panel class="beat_keeper_ex" deck="1" x="+884" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="2" x="+884" y="+8+12+4"/> -->
-      <!-- </panel> -->
-      <!-- <panel condition="var_not_equal '@$4decks' 0"> -->
-      <!-- <panel class="beat_keeper_ex" deck="1" x="+890-86" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="2" x="+890+75" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="3" x="+890-86" y="+8+12+4"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="4" x="+890+75" y="+8+12+4"/> -->
-      <!-- <panel class="phrase_circle" x="+890-128-40" y="+6" deck="3" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890-128" y="+6" deck="1" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890+234" y="+6" deck="2" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890+234+40" y="+6" deck="4" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- </panel> -->
-      <!-- </group> -->
     </group>
     <!-- STACK: TOP BAR -->
     <group name="stack_skin_utility" visibility="var_equal '@$skin_mode' 2">
@@ -290,65 +250,9 @@
           <text overcolor="white" size="12" oncolor="white" text="EFFECTS"/>
         </button>
       </group>
-      <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75"> -->
-      <!-- <visual class="gfx_shape" x="+490" width="220" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
-      <!-- </group> -->
-      <!-- <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0.75"> -->
-      <!-- <visual class="gfx_shape" x="+490" width="58" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/> -->
-      <!-- </group> -->
-      <!-- SANDBOX -->
-      <!-- <button class="button_main" x="115+80+300+90+643" y="8" width="75" height="27" action="sandbox" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms"/> -->
-      <!-- DISABLED SANDBOX -->
-      <!-- <group visibility="0.75"> -->
-      <!-- <visual class="gfx_shape" x="115+80+300+90+643" y="8" width="75" height="27" coloroff="panel_background" visibility="not can_sandbox"/> -->
-      <!-- </group> -->
-      <!-- <group name="beatbar"> -->
-      <!-- <panel condition="var_equal '@$4decks' 0"> -->
-      <!-- <panel class="beat_keeper_ex" deck="1" x="+884" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="2" x="+884" y="+8+12+4"/> -->
-      <!-- </panel> -->
-      <!-- <panel condition="var_not_equal '@$4decks' 0"> -->
-      <!-- <panel class="beat_keeper_ex" deck="1" x="+890-86" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="2" x="+890+75" y="+8"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="3" x="+890-86" y="+8+12+4"/> -->
-      <!-- <panel class="beat_keeper_ex" deck="4" x="+890+75" y="+8+12+4"/> -->
-      <!-- <panel class="phrase_circle" x="+890-128-40" y="+6" deck="3" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890-128" y="+6" deck="1" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890+234" y="+6" deck="2" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- <panel class="phrase_circle" x="+890+234+40" y="+6" deck="4" visibility="var_equal '@$phrasecircle' 1"/> -->
-      <!-- </panel> -->
-      <!-- </group> -->
     </group>
     <!-- AUDIO MODIFIERS STATUS LIGHTS -->
     <group x="+802+160+100+2+400" y="+8">
-      <!-- FX: IS_USING '' -->
-      <!-- <group x="+0"> -->
-      <!-- <visual type="transparent" source="is_using 'padfx' ? blink 500ms"> -->
-      <!-- <pos x="+0" y="+8" width="12" height="12"/> -->
-      <!-- <off color="tab_menu" border="tab_menu" shape="circle"/> -->
-      <!-- <on color="green" border="green" shape="circle"/> -->
-      <!-- </visual> -->
-      <!-- <button class="button_main" x="+4" width="40" height="27" textsize="12" text="FX" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active 'Echo' off &amp; effect_active 'Reverb' off &amp; effect_active 'Delay' off &amp; effect_active 'Cut' off &amp; effect_active 'Echo Out' off &amp; effect_active 'Loop Roll' off &amp;    effect_active 'Backspin' off &amp;    effect_active 'Brake' off &amp;    effect_active 'Spiral' off &amp;    effect_active 'Phaser' off &amp;    effect_active 'Beatgrid' off &amp;    effect_active 'Gate' off" query="effects_used ? blink 500ms"/> -->
-      <!-- </group> -->
-      <!-- PADFX: EFFECTS_USED -->
-      <!-- <group x="+0"> -->
-      <!-- <visual type="transparent" source="effects_used 'padfx' ? blink 500ms : false"> -->
-      <!-- <pos x="+0" y="+8" width="12" height="12"/> -->
-      <!-- <off color="tab_menu" border="tab_menu" shape="circle"/> -->
-      <!-- <on color="green" border="green" shape="circle"/> -->
-      <!-- </visual> -->
-      <!-- <button class="button_main" x="+18" width="40" height="27" textsize="12" text="FX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_disable_all" query="effects_used ? blink 500ms"/> -->
-      <!-- </group> -->
-      <!-- COLORFX -->
-      <!-- <group x="+60"> -->
-      <!-- <visual type="transparent" source="deck all effect_active colorfx ? blink 500ms : false"> -->
-      <!-- <pos x="+0" y="+8" width="12" height="12"/> -->
-      <!-- <off color="tab_menu" border="tab_menu" shape="circle"/> -->
-      <!-- <on color="green" border="green" shape="circle"/> -->
-      <!-- </visual> -->
-      <!-- <button class="button_main" x="+18" width="40" height="27" textsize="12" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? true : deck 3 effect_active colorfx ? true : deck 4 effect_active colorfx"/> -->
-      <!-- </group> -->
-      <!-- COLORFX INDICATOR -->
       <group x="-50">
         <visual type="transparent" source="deck 1 effect_active colorfx ? true : deck 2 effect_active colorfx ? true : deck 3 effect_active colorfx ? true : deck 4 effect_active colorfx ? true : false">
           <pos x="+3" y="+9" width="10" height="10"/>
@@ -578,6 +482,5 @@
         <over color="#db333f"/>
       </button>
     </group>
-    <!-- <line x="+0" y="+42" width="1920" height="1" highlight="#666666" shadow="000000"/> -->
   </define>
 </defs>

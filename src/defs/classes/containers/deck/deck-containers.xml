@@ -24,7 +24,6 @@
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
-        <!-- <line color="#333333" x="+0" y="+400-2" width="765" height="1"/> -->
         <dropzone x="+0" y="+0">
           <size width="770-5" height="180"/>
           <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
@@ -41,17 +40,11 @@
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
       <panel x="+765" y="+0" class="deck_spine"/>
-      <!-- bg: spine -->
-      <!-- <visual x="+768" y="+0" width="34" height="[HEIGHT]"> -->
-      <!-- <off shape="square" color="black"/> -->
-      <!-- </visual> -->
-      <!-- PRO: RIGHT: PANEL BG -->
       <visual width="765" height="[HEIGHT]">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
       <!-- cover, title etc -->
       <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <!-- <panel class="infos2" x="+800-567" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
       <cues dy="0" shade="0">
         <size width="200" height="10"/>
         <clipmask x="27" y="140"/>
@@ -64,7 +57,6 @@
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
       </group>
-      <!-- <panel class="video_preview" x="+2+60+11+1" y="+6" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
     </deck>
   </define>
   <!-- Performance layout shells, plus the shared mini deck strip used by Pro and Performance mini modes -->
@@ -118,13 +110,6 @@
       </textzone>
     </panel>
   </define>
-  <!-- <define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside"> -->
-  <!-- <deck deck="[DECK]"> -->
-  <!-- <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'"/> -->
-  <!-- <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'right'"/> -->
-  <!-- </deck> -->
-  <!-- </define> -->
-  <!-- Shared performance body used on the left side and mirrored into the two-deck right-side shell -->
   <define class="AREA_DECK_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="922" height="324" coloroff="panel_background" bordersize="1" bordercoloroff="#111111"/>

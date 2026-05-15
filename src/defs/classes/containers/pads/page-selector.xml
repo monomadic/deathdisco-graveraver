@@ -37,16 +37,7 @@
   <!-- PAD PAGE -->
   <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
-      <!-- BACKGROUND -->
-      <!-- <visual width="752" height="40*4+50+35" query="shift"> -->
-      <!-- <off shape="square" color="dark_1" border="dark_0" border_size="1" radius="5"/> -->
-      <!-- <on shape="square" color="red" border="dark_0" border_size="1" radius="5"/> -->
-      <!-- </visual> -->
       <group x="+10">
-        <!-- <visual x="-1" y="+45" width="730+2" height="40*4+8"> -->
-        <!-- <off shape="square" color="dark_6" border="0" radius="6"/> -->
-        <!-- </visual> -->
-        <!-- 16 PADS -->
         <panel name="@pads16_[PANELNAME]" group="efx_[PANELNAME]" visible="yes" available="yes" displayname="Pads x16" forceshow="16pads">
           <!-- PAD PAGE SELECT -->
           <group>
@@ -97,24 +88,6 @@
               </visual>
             </group>
           </group>
-          <!-- 8-button style -->
-          <!-- <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="16 Pads"> -->
-          <!-- BACK ROW -->
-          <!-- <group x="+20" y="+8"> -->
-          <!-- <button class="pad_page_upper_bank_tab" page="5" x="+4"/> -->
-          <!-- <button class="pad_page_upper_bank_tab" page="6" x="+4+110*1"/> -->
-          <!-- <button class="pad_page_upper_bank_tab" page="7" x="+4+110*2"/> -->
-          <!-- <button class="pad_page_upper_bank_tab" page="8" x="+4+110*3"/> -->
-          <!-- </group> -->
-          <!-- FRONT ROW -->
-          <!-- <group x="+20" y="+23"> -->
-          <!-- <button class="PAD_PAGE_LOWER_TAB" page="1" altpage="5" x="+0" y="+1"/> -->
-          <!-- <button class="PAD_PAGE_LOWER_TAB" page="2" altpage="6" x="+2+110" y="+1"/> -->
-          <!-- <button class="PAD_PAGE_LOWER_TAB" page="3" altpage="7" x="+2+110*2" y="+1"/> -->
-          <!-- <button class="PAD_PAGE_LOWER_TAB" page="4" altpage="8" x="+2+110*3" y="+1"/> -->
-          <!-- </group> -->
-          <!-- </panel> -->
-          <!-- PAD BUTTONS -->
           <group y="+29">
             <visual width="733" height="40*4+5+4" x="-1" y="-1">
               <off shape="square" color="dark_1" border="dark_4" radius="6" border_size="1"/>
@@ -229,21 +202,6 @@
                   <panel class="MINI_CUE_BUTTON_V2" index="16" x="+66" y="+0"/>
                 </group>
               </group>
-              <!-- <define class="MINI_CUE_BUTTON" placeholders="*index,*width=20,*height=20"> -->
-              <!-- <size width="[WIDTH]" height="[HEIGHT]"/> -->
-              <!-- <off color="transparent" border="dark_7" border_size="1" radius="5"/> -->
-              <!-- <text fontsize="12" color="light_3" colorover="light_0" align="center" text="[INDEX]"/> -->
-              <!-- </define> -->
-              <!-- <button class="MINI_CUE_BUTTON" index="1" x="+0" y="+0" action="hot_cue 1" query="has_cue 1"> -->
-              <!-- <selected color="transparent" border="`cue_color 1`" border_size="1" radius="5"/> -->
-              <!-- <downselected color="transparent" border="`cue_color 1`" border_size="1" radius="5"/> -->
-              <!-- <textselected fontsize="12" color="`cue_color 1`" align="center" text="1"/> -->
-              <!-- </button> -->
-              <!-- <button class="MINI_CUE_BUTTON" index="2" x="+21" y="+0" action="hot_cue 2" query="has_cue 2"> -->
-              <!-- <selected color="transparent" border="`cue_color 2`" border_size="1" radius="5"/> -->
-              <!-- <downselected color="transparent" border="`cue_color 2`" border_size="1" radius="5"/> -->
-              <!-- <textselected fontsize="12" color="`cue_color 2`" align="center" text="2"/> -->
-              <!-- </button> -->
             </group>
             <group x="+730-26-80-26-26-80-27">
               <!-- PARAM 1 -->
@@ -268,13 +226,6 @@
               </group>
             </group>
           </group>
-          <!-- PAD AREA BORDER -->
-          <!-- <visual x="+0" y="+21" width="508" height="166"> -->
-          <!-- <off shape="square" color="transparent" border="#222222" border_size="4" radius="8"/> -->
-          <!-- </visual> -->
-          <!-- <visual x="+0" y="+21" width="508" height="166"> -->
-          <!-- <off shape="square" color="transparent" border="dark_5" border_size="1" radius="6"/> -->
-          <!-- </visual> -->
         </panel>
       </group>
     </deck>

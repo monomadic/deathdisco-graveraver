@@ -358,9 +358,6 @@
     </panel>
   </define>
   <define class="HASHTAG_STACK" placeholders="*panelname,*deck">
-    <!-- <visual width="280" height="215"> -->
-    <!-- <off shape="square" color="#090909"/> -->
-    <!-- </visual> -->
     <stack x="+0" y="+0" fadein="100ms" fadeout="100ms" visibility="loaded">
       <!-- Size of each slot -->
       <size width="290" height="70"/>

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <define class="GREEN_LIGHT_INDICATOR" placeholders="*action,*query">
-    <!-- <visual> -->
-    <!-- <size width="24" height="24"/> -->
-    <!-- <pos x="-2" y="-2"/> -->
-    <!-- <off shape="circle" color="#111111" border="#000000" border_size="1"/> -->
-    <!-- </visual> -->
     <visual>
       <size width="20" height="20"/>
       <off shape="circle" color="#333333" border="#222222" border_size="1"/>
@@ -140,20 +135,12 @@
       <group x="+0" y="+25" visibility="loaded">
         <!-- BPM VALUE -->
         <textzone class="text" width="[JOGSIZE]" height="46" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
-        <!-- BPM % DIFF -->
-        <!-- <textzone> -->
-        <!-- <pos x="+0" y="-12"/> -->
-        <!-- <size width="+[JOGSIZE]" height="25"/> -->
-        <!-- <text fontsize="14" weight="" color="white" align="center" format="`get_text '%Ppitch%'`" important="true"/> -->
-        <!-- </textzone> -->
-        <!-- BPM % DIFF -->
         <button action="pitch_reset 8bt">
           <pos x="+0" y="-10"/>
           <size width="+[JOGSIZE]" height="25"/>
           <text fontsize="12" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>
           <textover color="white" text="RESET" align="center"/>
         </button>
-        <!-- <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/> -->
         <group y="+15">
           <!-- PITCH DOWN BUTTON -->
           <button class="button_main" x="+65-40" width="30" height="20" action="pitch -1 bpm" textcoloroff="transparent" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="minus"/>
@@ -161,12 +148,6 @@
           <button class="button_main" x="+65+40" width="30" height="20" action="pitch +1 bpm" textcoloroff="transparent" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
         </group>
       </group>
-      <!-- <button class="button_main" action="key_match_button" width="50" height="16" x="+18+6" y="+72" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" text="KEY" visibility="loaded ? key 0"/> -->
-      <!-- center -->
-      <!-- left -->
-      <!-- <button class="button_main" x="+18+6" y="+72" width="50" height="20" coloroff="transparent" coloron="#222222" bordersize="1" brcoloroff="dark_5" radius="5" textsize="16" border="red" textcolor="textoff2" textaction="get_key_modifier_text" action="key_match_button" visibility="loaded ? not key 0"/> -->
-      <!-- right -->
-      <!-- <button class="button_main" x="+18+6+50" y="+72" width="50" height="16" coloroff="transparent" coloron="transparent" bordersize="1" textsize="14" textcolor="textoff2" textaction="get_text '±%Ppitchrange'" visibility="loaded"/> -->
       <group x="+[JOGSIZE]/2-50+1" y="+70">
         <group x="+15">
           <button x="+0" class="button_main" action="key_match_button" width="20" height="18" coloroff="black" coloron="transparent" brcoloroff="red" brcoloron="green" brcolorover="white" bordersize="0" textsize="12" textcolor="red" textcoloron="green" text="K" visibility="loaded ? not masterdeck ? not match_key ? blink 1bt : true" radius="2"/>
@@ -194,9 +175,6 @@
         </button>
       </group>
       <button class="button_main" x="+18" y="+92" width="[JOGSIZE]-36" height="26" action="loop" textsize="14" coloroff="transparent" coloron="transparent" bordersize="0" align="center" weight="bold" textaction="get_text '`get_loop` LOOP'" visibility="loaded ? var_equal '@$jog_display_mode' 1"/>
-      <!-- time elapsed -->
-      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'elapsed'" visibility="loaded ? var_equal '@$jog_display_mode' 2"/> -->
-      <!-- <textzone class="text" x="+18" y="+92" width="[JOGSIZE]-36" height="26" fontsize="18" color="texton2" align="center" weight="" textaction="get_time 'remain'" visibility="loaded ? var_equal '@$jog_display_mode' 3"/> -->
       <panel class="jogwheel_corner_buttons"/>
     </group>
     <!-- JOGWHEEL C: SYNC STATUS -->
@@ -258,19 +236,7 @@
           <button action="pitch_reset 8bt" x="+0" y="+36" width="[JOGSIZE]" height="22" border_size="1" border="red">
             <text fontsize="24" coloron="red" colorselected="green" weight="bold" align="center" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
           </button>
-          <!-- LABEL: BPM -->
-          <!-- <textzone> -->
-          <!-- <pos x="+0" y="+7"/> -->
-          <!-- <size width="[JOGSIZE]" height="25"/> -->
-          <!-- <text fontsize="8" weight="" color="white" align="center" text="BPM" important="true"/> -->
-          <!-- </textzone> -->
-          <!-- <line x="+6" y="+58" color="white" shadow="transparent" width="146"/> -->
         </group>
-        <!-- BPM- -->
-        <!-- <button class="button_main" x="+27" y="+42" width="26" height="16" action="pitch -1 bpm" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="minus"/> -->
-        <!-- BPM+ -->
-        <!-- <button class="button_main" x="+102" y="+42" width="26" height="16" action="pitch +1 bpm" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/> -->
-        <!-- PRO: JOGWHEEL: KEY BEAT PHRASE INDICATORS -->
         <group x="+8" y="+60">
           <button class="button_main" action="sync" width="43" height="18" x="+16" color="blue" coloroff="transparent" brcoloroff="red" brcoloron="green" coloron="black" bordersize="1" textsize="12" textcolor="red" textcoloron="green" text="BEAT" query="is_sync" visibility="loaded ? not masterdeck ? not is_sync ? blink 1bt : true"/>
           <button class="button_main" action="sync &amp; phrase_sync 32" width="66" height="18" x="+60" color="blue" coloroff="transparent" brcoloroff="red" brcoloron="green" coloron="black" bordersize="1" textsize="12" textcolor="red" textcoloron="green" text="PHRASE" query="is_sync" visibility="loaded ? not masterdeck ? not is_sync ? blink 1bt : true"/>
@@ -291,46 +257,17 @@
           </button>
           <!-- KEY UP BUTTON -->
           <button class="button_main" x="+75" y="+0" width="30" height="20" action="key_move +1" textcoloroff="transparent" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
-          <!-- KEY MISMATCH WARNING -->
-          <!-- <visual type="square" x="+10" y="+40" width="10" height="10" color="red" visibility="not is_sync ? blink : false"/> -->
         </group>
         <panel class="jogwheel_corner_buttons"/>
       </group>
     </group>
     <!-- PRO: JOGWHEEL D: COVER ART -->
     <group name="jogwheel_d" visibility="var_equal '@$jog_type' 3">
-      <!-- <visual > -->
-      <!-- <tooltip/> -->
-      <!-- <pos x="+0" y="+0"/> -->
-      <!-- <size width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-      <!-- <off shape="circle" color="deckcolor" border="jogprogressoff"/> -->
-      <!-- </visual> -->
-      <!-- <visual x="-1" y="-1" tooltip=""> -->
-      <!-- <size width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-      <!-- <off border_size="2" border="transparent" color="orange" shape="circle"/> -->
-      <!-- <on border_size="7" border="jogprogressoff" color="orange" shape="circle"/> -->
-      <!-- </visual> -->
-      <!-- <visual name="outerborder" x="+0" y="+0" source="true"> -->
-      <!-- <size width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-      <!-- <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/> -->
-      <!-- <on  border_size="7" -->
-      <!-- border="orange" -->
-      <!-- color="mixerbackground" -->
-      <!-- shape="circle"/> -->
-      <!-- </visual> -->
       <visual name="innercircle_border">
         <pos x="+0" y="+0"/>
         <size width="[JOGSIZE]" height="[JOGSIZE]"/>
         <off shape="circle" color="jogwheelbackground2" border_size="10" border="jogprogressoff"/>
       </visual>
-      <!-- <visual name="outerborder" x="+0" y="+0" source="true"> -->
-      <!-- <size width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-      <!-- <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/> -->
-      <!-- <on  border_size="7" -->
-      <!-- border="orange" -->
-      <!-- color="mixerbackground" -->
-      <!-- shape="circle"/> -->
-      <!-- </visual> -->
       <group visibility="0.6">
         <visual name="outerborder" x="+0" y="+0" source="masterdeck" query="masterdeck">
           <size width="[JOGSIZE]" height="[JOGSIZE]"/>
@@ -346,13 +283,6 @@
         <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/>
         <on border_size="7" border="jogprogressoff" color="mixerbackground" shape="circle"/>
       </visual>
-      <!-- overlay: orange border only when THIS deck is the master/sync master -->
-      <!-- <visual name="outerborder_master" x="+0" y="+0" -->
-      <!-- visibility="param_equal 'get_deck' 'get_activedeck'"> -->
-      <!-- <size width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-      <!-- draw only a border (transparent fill) -->
-      <!-- <off border_size="7" border="orange" color="transparent" shape="circle"/> -->
-      <!-- </visual> -->
       <cover rotate="yes" visibility="0.9">
         <pos x="+12" y="+12"/>
         <size width="[JOGSIZE]-24" height="[JOGSIZE]-24"/>
@@ -363,19 +293,8 @@
         <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/>
         <on border_size="10" border="red" color="#33FF0000" shape="circle"/>
       </visual>
-      <!-- <visual visibility="loaded ? constant 0.8 : constant 0.0"> -->
-      <!-- <tooltip/> -->
-      <!-- <pos x="+20" y="+54"/> -->
-      <!-- <size width="[JOGSIZE]-40" height="[JOGSIZE]-56-56"/> -->
-      <!-- <off shape="square" color="jogprogressoff" border="jogprogressoff" radius="6"/> -->
-      <!-- <textzone class="text" x="+18" y="+50" width="[JOGSIZE]-36" height="46" fontsize="26" color="needle" align="center" weight="bold" textaction="var_equal '@$bpm_hide_options' 1 ? get_text '==.==' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/> -->
-      <!-- </visual> -->
       <panel class="jogwheel_corner_buttons"/>
     </group>
-    <!-- <scratch> -->
-    <!-- <pos width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-    <!-- <mousecircle width="[JOGSIZE]" height="[JOGSIZE]"/> -->
-    <!-- </scratch> -->
   </define>
   <define class="jogwheel_2" placeholders="*jogsize=165">
     <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">

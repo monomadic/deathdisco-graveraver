@@ -69,10 +69,6 @@
         <on color="dark_8"/>
         <selected color="dark_5"/>
       </button>
-      <!-- <button tooltip="BORDER MODE\nShow or hide the active deck border." class="button_main" x="+30" action="toggle '@$dd_bordermode'" width="26" height="27" textsize="12" textcoloron="needle" text="B" coloroff="panel_background" coloron="#222222" bordersize="0"/> -->
-      <!-- <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="70" height="42" textsize="12" textcoloron="needle" text="LIBRARY" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
-      <!-- <button tooltip="" class="button_main" x="+122" action="setting 'showLyrics'" width="60" height="27" textsize="12" textcoloron="needle" text="LYRICS" coloroff="#101010" coloron="#222222" bordersize="0"/> -->
-      <!-- <button tooltip="SAMPLE PADS\nToggle sample pads." class="button_main" x="+125" action="sideview_triggerpad 'sideview' &amp; sideview_triggerpad &amp; show_splitpanel 'sideview'" width="70" height="27" textsize="12" textcoloron="needle" text="SAMPLES" coloroff="#101010" coloron="#222222" bordersize="0" query=""/> -->
     </group>
     <group visibility="browser_zoom" x="680" y="8">
       <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
@@ -144,13 +140,6 @@
         <off color="transparent"/>
         <icon sysicon="sampler_loop" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
       </button>
-      <!-- SETTINGS BUTTON -->
-      <!-- <button action="settings" x="+180"> -->
-      <!-- <size width="42" height="27"/> -->
-      <!-- <off color="#000000"/> -->
-      <!-- <over color="#222222"/> -->
-      <!-- <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/> -->
-      <!-- </button> -->
     </group>
     <!-- TOP BAR -->
     <panel class="topbar" x="0" y="0"/>

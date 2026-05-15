@@ -855,16 +855,6 @@
     </group>
     <!-- WAVEFORM SETTINGS / WAVEFORM CONTROLS -->
     <panel name="wave_options">
-      <!-- ZOOM SLIDER -->
-      <!-- <slider action="zoom & zoom_scratch" dblclick="zoom 28% & zoom_scratch 28%" orientation="vertical" frommiddle="false" visibility="0.8"> -->
-      <!-- <pos x="+10" y="+10"/> -->
-      <!-- <size width="20" height="[WAVEFORMHEIGHT]-10-10"/> -->
-      <!-- <off color="xf_background" border="textdarker" shape="square"/> -->
-      <!-- <on color="xf_background" border="textdarker" shape="square"/> -->
-      <!-- <fader color="needle" width="18" height="7"/> -->
-      <!-- </slider> -->
-      <!-- WAVEFORM SIZE UP DOWN -->
-      <!-- bg -->
       <group x="+1920-34">
         <visual y="+1" width="32" height="[WAVEFORMHEIGHT]">
           <off shape="square" color="#000000" border_size="0" border="#333333" radius="6"/>

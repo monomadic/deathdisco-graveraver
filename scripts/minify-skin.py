@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Minifies build/skin.xml in-place.
+Minifies a built skin XML file in-place.
 
 Strips XML comments and whitespace-only text nodes. Attribute values and
 text content are left untouched — VirtualDJ uses attributes for everything
@@ -9,6 +9,7 @@ meaningful, so this is safe.
 
 import sys
 import xml.etree.ElementTree as ET
+from os import getpid
 from pathlib import Path
 
 
@@ -43,7 +44,14 @@ def minify(path: Path):
     collapse_whitespace(root)
 
     ET.indent(root, space="")  # compact, no indentation
-    path.write_text(ET.tostring(root, encoding="unicode", xml_declaration=True))
+
+    output = ET.tostring(root, encoding="unicode", xml_declaration=True)
+    tmp_path = path.with_name(f".{path.name}.{getpid()}.tmp")
+    try:
+        tmp_path.write_text(output, encoding="utf-8")
+        tmp_path.replace(path)
+    finally:
+        tmp_path.unlink(missing_ok=True)
 
     after = path.stat().st_size
     pct = 100 * (1 - after / before)

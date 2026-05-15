@@ -32,7 +32,6 @@
       <panel class="stem_control" stem="instru" label="INSTR" color="colorinstru" x="+70" y="+10"/>
       <panel class="stem_control" stem="bass" label="BASS" color="colorbass" x="+130" y="+10"/>
       <panel class="stem_control" stem="kick" label="KICK" color="colorkick" x="+185" y="+10"/>
-      <!-- <panel class="stem_control" stem="hihat" label="HI-HAT" color="colorhihat" x="+240" y="+10"/> -->
     </define>
   <define class="STEM_CONTROL" placeholders="*stem,*label,*color">
     <panel x="+0" y="+20">
@@ -44,34 +43,9 @@
         <fill width="31" height="31" radius="12" color="[COLOR]" backcolor="#333333" visibility="not mute_stem '[STEM]'"/>
         <fill width="31" height="31" radius="12" color="#555555" backcolor="#333333" visibility="mute_stem '[STEM]'"/>
       </slider>
-      <!-- <textzone action="filter_selectcolorfx"> -->
-      <!-- <pos x="+0" y="+34"/> -->
-      <!-- <size width="51"/> -->
-      <!-- <text fontsize="10" weight="" color="knobtextoff" align="center" action="filter_label 'colorfx' &amp; param_cast 'text'" text="" important="true" localize="true"/> -->
-      <!-- </textzone> -->
     </panel>
     <!-- KNOB: STEM -->
     <group>
-      <!-- Stem Toggle Button -->
-      <!-- <button class="button_main" -->
-      <!-- x="+0" y="+42" width="45" height="12" -->
-      <!-- action="stem_pad '[STEM]'" -->
-      <!-- coloroff="#111111" brcoloroff="#111111" -->
-      <!-- coloron="[COLOR]" brcoloron="[COLOR]" -->
-      <!-- textcoloroff="[COLOR]" textcoloron="black" -->
-      <!-- text="[LABEL]" textsize="10" /> -->
-      <!-- Knob (muted state visible) -->
-      <!-- <panel class="knob" x="+10" y="+0" textwidth="40" textsize="12" textbelow="+37" textleft="-2" knobsize="34" knobradius="7" faderradius="6" action="stem '[STEM]'" rgclick="stem_pad '[STEM]'" dblclick="stem '[STEM]' 50%" frommiddle="false" fillcolor="#333333" fillcoloroff="#000000" text="" visibility="mute_stem '[STEM]' on"/> -->
-      <!-- Knob (unmuted state visible) -->
-      <!-- <panel class="knob" x="+10" y="+0" textwidth="40" textsize="12" textbelow="+37" textleft="-2" knobsize="34" knobradius="8" faderradius="6" action="stem '[STEM]'" rgclick="stem_pad '[STEM]'" dblclick="stem '[STEM]' 50%" frommiddle="false" fillcolor="[COLOR]" fillcoloroff="#000000" text="" visibility="mute_stem '[STEM]' off"/> -->
-      <!-- SIMPLE VECTOR VU METER -->
-      <!-- <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="23"> -->
-      <!-- <pos x="+0" y="+55"/> -->
-      <!-- <size width="40" height="4"/> -->
-      <!-- <off shape="square" color="#333333" radius="0"/> -->
-      <!-- <on  shape="square" color="[COLOR]" radius="0"/> -->
-      <!-- </visual> -->
-      <!-- BUTTON -->
       <button x="+0" y="+0" action="stem_pad '[STEM]'" border_size="1">
         <size width="50" height="15"/>
         <off color="#222222" border="transparent" radius="3"/>

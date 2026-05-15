@@ -6,11 +6,21 @@ src_dir := "src"
 assets_dir := "assets"
 build_dir := "build"
 prototype_build_dir := build_dir + "-prototype"
+generated_browser_positions := "src/defs/classes/containers/browser/performance-browser.generated.xml"
 
 default: install
 
 generate:
     python3 scripts/gen-browser-positions.py
+
+check: lint verify-generated
+
+verify-generated: generate
+    git diff --quiet -- "{{generated_browser_positions}}" || { \
+      echo "Generated browser positions are out of date. Run `just generate` and commit the result."; \
+      git diff -- "{{generated_browser_positions}}"; \
+      exit 1; \
+    }
 
 lint: lint-prod lint-prototype
 
@@ -30,6 +40,7 @@ prototype-build: lint-prototype
     mkdir -p "{{prototype_build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{prototype_build_dir}}/"; fi
     xmllint --format --xinclude "{{src_dir}}/prototypes/skin.xml" --output "{{prototype_build_dir}}/skin.xml"
+    python3 scripts/minify-skin.py "{{prototype_build_dir}}/skin.xml"
 
 install: build
     install_root="$HOME/Library/Application Support/VirtualDJ/Skins"; \

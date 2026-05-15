@@ -6,7 +6,7 @@ src_dir := "src"
 assets_dir := "assets"
 build_dir := "build"
 prototype_build_dir := build_dir + "-prototype"
-generated_browser_positions := "src/defs/classes/containers/browser/performance-browser.generated.xml"
+generated_browser_positions := "src/layouts/browser/performance.generated.xml"
 
 default: install
 

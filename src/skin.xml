@@ -12,7 +12,7 @@
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
   <oninit action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50% &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%"/>
   <!-- Definitions: theme tokens, runtime globals, and shared class library -->
-  <xi:include href="defs/index.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="defs.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
   <xi:include href="panels/main.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>

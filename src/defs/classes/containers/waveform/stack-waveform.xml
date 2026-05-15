@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="wave_stack" placeholders="*width=1114,*height=164">
+  <define class="WAVE_STACK" placeholders="*width=1114,*height=164">
     <!-- with no background -->
     <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal">
       <pos x="+0" y="+24+2"/>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="icon_play">
+  <define class="ICON_PLAY">
     <icon sysicon="play" color="button_text"/>
   </define>
-  <define class="icon_pause">
+  <define class="ICON_PAUSE">
     <icon sysicon="pause" color="button_text"/>
   </define>
-  <define class="icon_cue">
+  <define class="ICON_CUE">
     <text fontsize="12" color="button_text" align="center" text="CUE"/>
   </define>
-  <define class="icon_sync">
+  <define class="ICON_SYNC">
     <text fontsize="11" color="button_text" align="center" text="SYNC"/>
   </define>
-  <define class="icon_browser">
+  <define class="ICON_BROWSER">
     <icon sysicon="browser" color="button_text"/>
   </define>
-  <define class="icon_search">
+  <define class="ICON_SEARCH">
     <icon sysicon="search" color="button_text"/>
   </define>
 </defs>

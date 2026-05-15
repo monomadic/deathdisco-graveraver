@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Utility bar custom button strips -->
-  <define class="custom_buttons_zone_left" placeholders="*deck">
+  <define class="CUSTOM_BUTTONS_ZONE_LEFT" placeholders="*deck">
     <deck deck="[DECK]">
       <button class="tag_button" source="24" x="+0" y="+6"/>
       <button class="tag_button" source="25" x="+105" y="+6"/>
@@ -15,7 +15,7 @@
     </deck>
   </define>
 
-  <define class="custom_buttons_zone_right" placeholders="*deck">
+  <define class="CUSTOM_BUTTONS_ZONE_RIGHT" placeholders="*deck">
     <deck deck="[DECK]">
       <button class="tag_button" source="33" x="+0" y="+6" color="#CC00FF"/>
       <button class="tag_button" source="34" x="+105" y="+6" color="#FF3344"/>

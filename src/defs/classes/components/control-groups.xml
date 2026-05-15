@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="scratch_buttons">
+  <define class="SCRATCH_BUTTONS">
     <button class="button_main" x="+0" y="+370-13" width="67" height="16" action="smart_scratch" textsize="11" text="SMART" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
     <button class="button_main" x="+67" y="+370-13" width="67" height="16" action="beatlock" textsize="11" text="BEATLOCK" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
   </define>
-  <define class="scratch_controls">
+  <define class="SCRATCH_CONTROLS">
     <menu tooltip="WAVEFORM OPTIONS" visibility="0.8">
       <pos x="+140" y="+4"/>
       <size width="22" height="24"/>
@@ -33,7 +33,7 @@
       <item text="Hide Transport" localize="true" action="toggle '@$hide_crossfader'" check="var_equal '@$hide_crossfader' 1"/>
     </menu>
   </define>
-  <define class="mic/headphones_controls">
+  <define class="MIC/HEADPHONES_CONTROLS">
     <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
     <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
       <!-- background -->
@@ -113,7 +113,7 @@
       </visual>
     </group>
   </define>
-  <define class="master_controls">
+  <define class="MASTER_CONTROLS">
     <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
     <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
       <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background"/>
@@ -218,7 +218,7 @@
       </visual>
     </group>
   </define>
-  <define class="mastercentral_controls">
+  <define class="MASTERCENTRAL_CONTROLS">
     <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
     <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
     <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">

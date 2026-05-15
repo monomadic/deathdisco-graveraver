@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- LED-style VU meter variants -->
-  <define class="vu_meter_LEDs" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
+  <define class="VU_METER_LEDS" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
     <visual type="vumeter" width="11" height="154" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
       <led x="+0" y="+6*25" width="11" height="[HEIGHT]">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
@@ -223,7 +223,7 @@
     </slider>
   </define>
 
-  <define class="vu_meter_LEDs_mini" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
+  <define class="VU_METER_LEDS_MINI" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
     <visual type="vumeter" width="11" height="58" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
       <led x="+0" y="+6*9" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
@@ -317,7 +317,7 @@
     </slider>
   </define>
 
-  <define class="vu_meter_LEDs_mini2" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
+  <define class="VU_METER_LEDS_MINI2" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
     <visual type="vumeter" width="11" height="88" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
       <led x="+0" y="+6*14" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
@@ -451,7 +451,7 @@
     </slider>
   </define>
 
-  <define class="vu_meter_LEDs_stack" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
+  <define class="VU_METER_LEDS_STACK" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
     <visual type="vumeter" width="11" height="124" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
       <led x="+0" y="+6*20" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>

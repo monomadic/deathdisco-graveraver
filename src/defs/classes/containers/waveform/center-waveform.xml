@@ -697,7 +697,7 @@
     <button class="button_main" x="+[WAVEFORMWIDTH]-62" y="+[WAVEFORMHEIGHT]/2-15" width="26" height="30" action="repeat 100ms &amp; zoom -0.80%" text="+" weight="bold" textcoloron="needle" coloron="button_background" bordersize="0" textsize="18" visibility="0.7"/>
     <button class="button_main" x="+[WAVEFORMWIDTH]+26+4-62" y="+[WAVEFORMHEIGHT]/2-15" width="26" height="30" action="repeat 100ms &amp; zoom +0.80%" text="-" weight="bold" textcoloron="needle" coloron="button_background" bordersize="0" textsize="20" visibility="0.7"/>
   </define>
-  <define class="waveform_horizontal_center4" placeholders="*waveformwidth,*waveformheight">
+  <define class="WAVEFORM_HORIZONTAL_CENTER4" placeholders="*waveformwidth,*waveformheight">
     <visual class="gfx_shape" width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
     <panel name="horizontal_scratch_active4deck">
       <group name="1234" visibility="var_equal '@$wave_order' 1">

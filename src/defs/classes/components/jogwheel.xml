@@ -296,7 +296,7 @@
       <panel class="jogwheel_corner_buttons"/>
     </group>
   </define>
-  <define class="jogwheel_2" placeholders="*jogsize=165">
+  <define class="JOGWHEEL_2" placeholders="*jogsize=165">
     <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">
       <visual novisibility="loaded">
         <tooltip/>
@@ -429,7 +429,7 @@
       <mousecircle width="[JOGSIZE]" height="[JOGSIZE]"/>
     </scratch>
   </define>
-  <define class="jogwheel_3" placeholders="*jogsize=142">
+  <define class="JOGWHEEL_3" placeholders="*jogsize=142">
     <group name="jogwheel_a" visibility="var_equal '@$jog_type' 0">
       <visual novisibility="loaded">
         <tooltip/>

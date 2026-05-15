@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-      <define class="text" action="[ACTION]" placeholders="action,width,height,fontsize,color,weight,align,text,textaction,scroll">
+      <define class="TEXT" action="[ACTION]" placeholders="action,width,height,fontsize,color,weight,align,text,textaction,scroll">
         <size width="[WIDTH]" height="[HEIGHT]"/>
         <text fontsize="[FONTSIZE]" color="[COLOR]" localize="true" weight="[WEIGHT]" align="[ALIGN]" text="[TEXT]" action="[TEXTACTION]" scroll="[SCROLL]" important="true"/>
       </define>
-      <define class="syncoptions_display">
+      <define class="SYNCOPTIONS_DISPLAY">
         <group x="+0" y="-30" visibility="has_stems">
           <panel class="stem_button" x="+0" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
           <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
@@ -12,11 +12,11 @@
           <panel class="stem_button" x="+210" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
         </group>
       </define>
-      <define class="syncoptions_display2">
+      <define class="SYNCOPTIONS_DISPLAY2">
       </define>
-      <define class="transport_left_stack">
+      <define class="TRANSPORT_LEFT_STACK">
       </define>
-      <define class="key_display">
+      <define class="KEY_DISPLAY">
         <textzone class="text" x="+16" y="+0" width="128-26-26" height="20" action="key_match_menu" fontsize="22" color="`get_key_color`" align="center" weight="bold" textaction="get_key"/>
         <!-- KEY DOWN BUTTON -->
         <button class="button_main" x="+6" y="+0" width="26" height="15" action="key_move -1" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" border="0" iconsize="15" sysicon="minus"/>
@@ -25,7 +25,7 @@
         <!-- KEY UP BUTTON -->
         <button class="button_main" x="+80" y="+0" width="26" height="16" action="key_move +1" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
       </define>
-      <define class="key_display_left">
+      <define class="KEY_DISPLAY_LEFT">
         <visual class="gfx_shape" width="128" height="80" coloroff="transparent"/>
         <button class="button_main" x="+16" y="+34" width="26" height="48-16" action="key_move -1" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" border="0" iconsize="22" sysicon="arrowleft"/>
         <textzone class="text" x="+26" y="+0" width="128-26-26" height="48" action="key_match_menu" fontsize="26" color="`get_key_color`" align="center" weight="bold" textaction="get_key"/>
@@ -33,15 +33,24 @@
         <button class="button_main" action="key_match_button" width="100-26-26" height="16" x="+42" y="+42" coloroff="button_background" bordersize="0" textsize="12" textcolor="textdarker" textcoloron="black" textaction="get_key_modifier_text" visibility=""/>
         <visual type="square" x="+20" y="+40" width="10" height="10" color="red" visibility="not is_sync ? blink : false"/>
       </define>
-      <define class="key_display_right">
+      <define class="KEY_DISPLAY_RIGHT">
         <visual class="gfx_shape" width="128" height="80" coloroff="transparent"/>
         <button class="button_main" x="+0" y="+8" width="26" height="48-16" action="key_move -1" coloroff="button_background" textcolor="textoff4" iconsize="22" sysicon="arrowleft"/>
         <textzone class="text" x="+26" y="+0" width="128-26-26" height="48" action="key_match_menu" fontsize="30" color="`get_key_color`" align="center" weight="bold" textaction="get_key"/>
         <button class="button_main" x="+128-26" y="+8" width="26" height="48-16" action="key_move +1" coloroff="button_background" textcolor="textoff4" iconsize="22" sysicon="arrowright"/>
       </define>
-      <define class="bpm_display_left_stack">
+      <define class="TIMES_DISPLAY_LEFT_STACK">
       </define>
-      <define class="bpm_display_right">
+      <define class="TIMES_DISPLAY_LEFT">
+      </define>
+      <define class="TIMES_DISPLAY_RIGHT">
+      </define>
+      <define class="BPM_DISPLAY_LEFT_STACK">
+      </define>
+      <define class="BPM_DISPLAY_LEFT">
+        <panel class="bpm_display_right"/>
+      </define>
+      <define class="BPM_DISPLAY_RIGHT">
         <visual class="gfx_shape" width="136" height="80" coloroff="transparent"/>
         <group name="bpm_not_video" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'">
           <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRigth-click: Edit BPM \nDouble-click: Reanalyze"/>
@@ -55,7 +64,7 @@
           <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM"/>
         </group>
       </define>
-      <define class="prf_infopanels_left_stack">
+      <define class="PRF_INFOPANELS_LEFT_STACK">
         <group name="edit_grid" visibility="var_equal '@infospannelmode' 0">
           <button class="button_main" x="+4" y="+0" width="36" height="25" action="repeat 100ms &amp; set_bpm +0.1%" coloroff="button_background" text="| - |"/>
           <button class="button_main" x="+4+36+4" y="+0" width="36" height="25" action="repeat 100ms &amp; set_bpm -0.1%" coloroff="button_background" text="| + |"/>

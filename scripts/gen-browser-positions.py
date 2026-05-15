@@ -26,6 +26,7 @@ Do not edit the generated file — edit this script instead.
 """
 
 import textwrap
+import sys
 from pathlib import Path
 
 OUTPUT = Path(__file__).parent.parent / "src/defs/classes/containers/browser/performance-browser.generated.xml"
@@ -79,7 +80,7 @@ RACK_COMBOS = [
 # The four define variants and how they differ.
 DEFINES = [
     dict(
-        cls="browser_performance",
+        cls="BROWSER_PERFORMANCE",
         ubar_cond="var_equal '@$show_utility_bar' 0",
         x_attr="",
         y_tail="-66-10-12-16",
@@ -87,7 +88,7 @@ DEFINES = [
         bg_bordersize="0",
     ),
     dict(
-        cls="browser_performance",
+        cls="BROWSER_PERFORMANCE",
         ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+0" ',
         y_tail="-66+38-10-12-16",
@@ -95,7 +96,7 @@ DEFINES = [
         bg_bordersize="3",
     ),
     dict(
-        cls="browser_performance_mini",
+        cls="BROWSER_PERFORMANCE_MINI",
         ubar_cond="var_equal '@$show_utility_bar' 0",
         x_attr="",
         y_tail="-66-10-12-348",
@@ -103,7 +104,7 @@ DEFINES = [
         bg_bordersize="3",
     ),
     dict(
-        cls="browser_performance_mini",
+        cls="BROWSER_PERFORMANCE_MINI",
         ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+2" ',
         y_tail="-66+38-10-12-348",
@@ -191,10 +192,27 @@ def generate():
     return "\n".join(lines) + "\n"
 
 
-if __name__ == "__main__":
+def main(argv):
     content = generate()
+    if argv == ["--check"]:
+        if not OUTPUT.exists():
+            print(f"Missing {OUTPUT}")
+            return 1
+        if OUTPUT.read_text(encoding="utf-8") != content:
+            print(f"Out of date {OUTPUT}; run `just generate`")
+            return 1
+        print(f"Verified {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
+        return 0
+    if argv:
+        print("Usage: gen-browser-positions.py [--check]", file=sys.stderr)
+        return 2
     if OUTPUT.exists() and OUTPUT.read_text(encoding="utf-8") == content:
         print(f"Unchanged {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
     else:
         OUTPUT.write_text(content, encoding="utf-8")
         print(f"Written {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- FX rack content paired with the shared pad areas -->
-  <define class="effects_zone" placeholders="*panelname">
+  <define class="EFFECTS_ZONE" placeholders="*panelname">
     <panel name="@1fx_[PANELNAME]" group="efx_[PANELNAME]" visible="no" available="yes" forceshow="1fx">
       <panel class="fx_slot_ex2" x="+10+112" y="+6" source="1"/>
     </panel>

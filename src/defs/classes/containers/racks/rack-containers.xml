@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Reusable rack widgets and pad-surface wrappers shared across layouts -->
-  <define class="editgrid_rack" placeholders="deck,*panelname">
+  <define class="EDITGRID_RACK" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="294" height="80" coloroff="panel_background"/>
       <!-- GRID RACK SPINE -->
@@ -12,7 +12,7 @@
       <panel class="grids" x="+0" panelname="[PANELNAME]" visibility="rightdeck"/>
     </deck>
   </define>
-  <define class="loops_rack" placeholders="deck,*panelname">
+  <define class="LOOPS_RACK" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="294" height="132" coloroff="panel_background"/>
       <panel class="tab_button" action="skin_panelgroup 'loops_[PANELNAME]' +1" action3="skin_panelgroup_available 'loops_[PANELNAME]'" query="on/off" width="30" height="132" orientation="vertical" textheight="120" textaction="skin_panel '@fxx1_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx3_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx6_[PANELNAME]' ? get_text 'FX' : get_text 'LOOP'" menuvisible="no" visibility="leftdeck"/>
@@ -23,11 +23,11 @@
   </define>
   <define class="EFX_RACK" placeholders="deck,*panelname">
     <deck deck="[DECK]">
-      <panel class="effects" panelname="[PANELNAME]" visibility="leftdeck"/>
-      <panel class="effects" panelname="[PANELNAME]" visibility="rightdeck"/>
+      <panel class="effects_zone" panelname="[PANELNAME]" visibility="leftdeck"/>
+      <panel class="effects_zone" panelname="[PANELNAME]" visibility="rightdeck"/>
     </deck>
   </define>
-  <define class="efx_rack_ex" placeholders="deck,*panelname">
+  <define class="EFX_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800" height="80" coloroff="panel_background"/>
       <button class="button_main" action="toggle '@fxrackpanel'" query="on/off" tooltip="Next panel" width="30" height="80" text="FX" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="deckcolor" bordersize="1" brcoloroff="tab_buttons" brcoloron="deckcolor" visibility="leftdeck"/>
@@ -36,7 +36,7 @@
       <panel class="effects_zone" x="+6" panelname="[PANELNAME]" visibility="rightdeck"/>
     </deck>
   </define>
-  <define class="efx_rack_ex_master" placeholders="*panelname">
+  <define class="EFX_RACK_EX_MASTER" placeholders="*panelname">
     <visual class="gfx_shape" width="312" height="80" coloroff="panel_background"/>
     <button class="button_main" action="toggle '@$show_center_fx_rack'" query="on/off" tooltip="SWAP MASTER FX/MIC FX" width="30" height="80" textaction="var_equal '@$show_center_fx_rack' 0 ? get_text 'MASTER' : var_equal '@$show_center_fx_rack' 1 ? get_text 'MIC'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
     <group name="masterfx" visibility="var_equal '@$show_center_fx_rack' 0">
@@ -58,7 +58,7 @@
       </deck>
     </group>
   </define>
-  <define class="eq_rack_ex" placeholders="deck,*panelname">
+  <define class="EQ_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="504" height="86" coloroff="panel_background"/>
       <button class="button_main" query="on" width="30" height="86" textaction="get_text 'DECK `get_deck`'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="leftdeck"/>
@@ -67,7 +67,7 @@
       <panel class="eq_zone_right" panelname="[PANELNAME]" visibility="rightdeck"/>
     </deck>
   </define>
-  <define class="video_rack_ex" placeholders="deck,*panelname">
+  <define class="VIDEO_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="561" height="140" coloroff="panel_background"/>
       <button class="button_main" query="on" width="30" height="140" textaction="get_text 'PREVIEW `get_deck`'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="leftdeck"/>
@@ -82,7 +82,7 @@
       <button class="button_main" x="+450" y="+44" width="41" height="28" action="effect_show_gui 'video'" text="+" visibility="rightdeck"/>
     </deck>
   </define>
-  <define class="master_video_rack_ex" placeholders="deck,*panelname">
+  <define class="MASTER_VIDEO_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="790" height="140" coloroff="panel_background"/>
       <button class="button_main" query="on" width="30" height="140" text="MASTER" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0"/>
@@ -161,7 +161,7 @@
     </group>
     <panel class="video_crossfader_ex" x="+523" y="+90"/>
   </define>
-  <define class="mic_rack_ex" placeholders="deck,*panelname">
+  <define class="MIC_RACK_EX" placeholders="deck,*panelname">
     <visual class="gfx_shape" width="294" height="86" coloroff="panel_background"/>
     <button class="button_main" query="on/off" width="30" height="86" action="toggle '@$show_left_mixer_rack'" tooltip="SWAP MIC/HEADPHONES" textaction="var_equal '@$show_left_mixer_rack' 0 ? get_text 'MIC' : var_equal '@$show_left_mixer_rack' 1 ? get_text 'HP'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
     <group name="microphone" visibility="var_equal '@$show_left_mixer_rack' 0">
@@ -233,7 +233,7 @@
       </deck>
     </group>
   </define>
-  <define class="master_rack_ex" placeholders="deck,*panelname">
+  <define class="MASTER_RACK_EX" placeholders="deck,*panelname">
     <visual class="gfx_shape" width="294" height="86" coloroff="panel_background"/>
     <button class="button_main" x="+294-30" action="toggle '@$show_right_mixer_rack'" tooltip="SWAP MASTER/REC" query="on/off" width="30" height="86" textaction="var_equal '@$show_right_mixer_rack' 0 ? get_text 'MASTER' : var_equal '@$show_right_mixer_rack' 1 ? get_text 'REC'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcolor="texton2" textcoloron="br_focus" bordersize="1" brcoloroff="tab_buttons" brcoloron="br_focus"/>
     <group name="master" visibility="var_equal '@$show_right_mixer_rack' 0">
@@ -294,7 +294,7 @@
       </deck>
     </group>
   </define>
-  <define class="pads_rack_vert" placeholders="deck,*panelname">
+  <define class="PADS_RACK_VERT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <!-- SIDE BUTTON LEFT -->
       <panel class="tab_button" height="225" heightrec="225" action="skin_panelgroup 'pads16++_[PANELNAME]' +1" action2="pad_menu" action3="skin_panelgroup_available 'pads16++_[PANELNAME]'" query="on/off" width="30" y="+0" orientation="vertical" textaction="not skin_panel '@hotcuesx8_[PANELNAME]' ? get_text 'PADS' : get_text 'HOTCUE'" visibility="get_deck 1 ? true : get_deck 3 ? true"/>
@@ -311,7 +311,7 @@
     </deck>
   </define>
   <!-- Wrapper for the center-wave performance pad surface -->
-  <define class="pads_rack_center" placeholders="deck,*panelname">
+  <define class="PADS_RACK_CENTER" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <panel class="tab_button" action="skin_panelgroup 'pads16++_[PANELNAME]' +1" action2="pad_menu" action3="skin_panelgroup_available 'pads16++_[PANELNAME]'" query="on/off" width="30" height="132+7" y="+6" orientation="vertical" textaction="not skin_panel '@hotcuesx8_[PANELNAME]' ? get_text 'PADS' : get_text 'HOTCUE'" visibility="get_deck 1 ? true : get_deck 3 ? true"/>
       <button class="menu_button" action="pad_menu" query="on/off" x="+6" y="+12" width="18" height="18" visibility="get_deck 1 ? not skin_panel '@hotcuesx8_[PANELNAME]' ? pad_has_menu : get_deck 3 ? not skin_panel '@hotcuesx8_[PANELNAME]' ? pad_has_menu"/>
@@ -324,7 +324,7 @@
     </deck>
   </define>
   <!-- Wrapper for the stack-mode pad surface -->
-  <define class="pads_rack_stack" placeholders="deck,*panelname">
+  <define class="PADS_RACK_STACK" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual width="310" height="161">
         <off shape="square" color="#222222"/>
@@ -335,16 +335,16 @@
   <!-- Pro 4-deck rack surface.
        This is just a mode-level wrapper around the existing rack compositions:
        extended racks when the main wave area is shown, single-height racks when it is hidden. -->
-  <define class="pro_racks">
+  <define class="PRO_RACKS">
     <panel class="racks_extended" condition="var_equal '@$hide_main_waveforms' 0"/>
     <panel class="racks_single" condition="var_equal '@$hide_main_waveforms' 1"/>
   </define>
   <!-- Temporary compatibility alias while old layout references are being cleaned up -->
-  <define class="htng_racks">
+  <define class="HTNG_RACKS">
     <panel class="pro_racks"/>
   </define>
   <!-- Stack-mode rack composition -->
-  <define class="racks_stack" placeholders="*panelname">
+  <define class="RACKS_STACK" placeholders="*panelname">
     <deck deck="mic">
       <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
         <pos x="+0" y="+164+2+164+2"/>
@@ -427,7 +427,7 @@
     </deck>
   </define>
   <!-- Compatibility alias while layout references are being cleaned up -->
-  <define class="htng_racks_stack" placeholders="*panelname">
+  <define class="HTNG_RACKS_STACK" placeholders="*panelname">
     <panel class="racks_stack" panelname="[PANELNAME]"/>
   </define>
 </defs>

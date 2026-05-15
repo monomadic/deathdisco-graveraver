@@ -6,7 +6,7 @@
   <xi:include href="effects-zone.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Shared pad surface layouts -->
   <!-- Default horizontal pad rack used by the standard deck areas -->
-  <define class="pads" placeholders="*panelname">
+  <define class="PADS" placeholders="*panelname">
     <panel name="@pads_[PANELNAME]" group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="Pads (Default)" visibility="not skin_panel '@pads16_[PANELNAME]'">
       <visual class="gfx_shape" x="+10" y="+6" width="454" height="28" coloroff="xf_background"/>
       <group name="pad_param1" visibility="pad_has_param 1">
@@ -72,7 +72,7 @@
     </panel>
   </define>
   <!-- Extended-width pad rack used by the performance extended layout -->
-  <define class="pads_ex" placeholders="*panelname">
+  <define class="PADS_EX" placeholders="*panelname">
     <panel name="@padsbtns_[PANELNAME]" group="pads16++_[PANELNAME]" visible="no" available="yes" displayname="8 Pads">
       <!-- BANK SELECT -->
       <button class="button_main" x="+10" y="+6" width="121" height="28" action="pad_page btn1 ? pad_bank2 : pad_page btn1" rightclick="pad_page_select 1" query="pad_page btn1" scroll="pad_page_select 1" tooltip="Select this pad page, one more click shows pad bank 2.\nRigth-click: select a different pad page." textcoloron="needle" textsize="13" textaction="pad_page btn1 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
@@ -118,7 +118,7 @@
     </panel>
   </define>
   <!-- Vertical pad rack used by the performance vertical layout -->
-  <define class="pads_vert" placeholders="*panelname">
+  <define class="PADS_VERT" placeholders="*panelname">
     <panel name="@padsbtns_8_[PANELNAME]" group="pads16++_[PANELNAME]" visible="no" available="yes" displayname="8 Pads">
       <button class="button_main" x="+10" y="+6" width="88" height="26" action="pad_page btn1 ? pad_bank2 : pad_page btn1" rightclick="pad_page_select 1" query="pad_page btn1" scroll="pad_page_select 1" tooltip="Select this pad page, one more click shows pad bank 2.\nRigth-click: select a different pad page." textcoloron="needle" textsize="13" textaction="pad_page btn1 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
       <button class="button_main" x="+10+93" y="+6" width="88" height="26" action="pad_page btn2 ? pad_bank2 : pad_page btn2" rightclick="pad_page_select 2" query="pad_page btn2" scroll="pad_page_select 2" tooltip="Select this pad page, one more click shows pad bank 2.\nRigth-click: select a different pad page." textcoloron="needle" textsize="13" textaction="pad_page btn2 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
@@ -179,7 +179,7 @@
     </panel>
   </define>
   <!-- Narrow pad rack used by the center-wave performance layout -->
-  <define class="pads_center" placeholders="*panelname">
+  <define class="PADS_CENTER" placeholders="*panelname">
     <panel name="@padssl_[PANELNAME]" group="pads16++_[PANELNAME]" visible="yes" available="yes" displayname="Pads (Default)">
       <visual class="gfx_shape" x="+10" y="+6" width="454+45-80-52-24-24" height="28" coloroff="xf_background"/>
       <group name="pad_param1" visibility="pad_has_param 1">
@@ -236,7 +236,7 @@
     </panel>
   </define>
   <!-- Stack-mode pad rack -->
-  <define class="pads_stack" placeholders="*panelname">
+  <define class="PADS_STACK" placeholders="*panelname">
     <panel x="-8" y="-4">
       <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="Pads (4 btn)">
         <button class="button_main" x="+0" y="+6" width="80" height="25" action="pad_page btn1" rightclick="pad_page_select 1" scroll="pad_page_select 1" tooltip="" textcoloron="needle" textsize="9" textaction="pad_page btn1 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>

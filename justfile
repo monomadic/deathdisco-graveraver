@@ -13,14 +13,13 @@ default: install
 generate:
     python3 scripts/gen-browser-positions.py
 
-check: lint verify-generated
+check: verify-generated lint audit-classes
 
-verify-generated: generate
-    git diff --quiet -- "{{generated_browser_positions}}" || { \
-      echo "Generated browser positions are out of date. Run `just generate` and commit the result."; \
-      git diff -- "{{generated_browser_positions}}"; \
-      exit 1; \
-    }
+verify-generated:
+    python3 scripts/gen-browser-positions.py --check
+
+audit-classes:
+    python3 scripts/audit-class-casing.py
 
 lint: lint-prod lint-prototype
 

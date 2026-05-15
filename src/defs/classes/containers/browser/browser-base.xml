@@ -11,7 +11,7 @@
       <clipmask x="21" y="-1"/>
     </loops>
   </define>
-  <define class="browser_ui_base" showzoom="yes">
+  <define class="BROWSER_UI_BASE" showzoom="yes">
     <background color="br_background" bordercolortop="br_background" bordercolor="br_background" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>

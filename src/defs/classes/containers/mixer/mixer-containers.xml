@@ -28,8 +28,8 @@
         <panel class="knob" x="+18" y="+14+81+68+68+64" knobsize="41" knobradius="10" faderradius="9" action="stem 'bass'" rgclick="stem 'bass' 0% ? stem 'bass' 50% : stem 'bass' 0%" dblclick="stem 'bass' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'BASS'" actiontxt="eq_mode +1"/>
       </group>
       <group name="levels,vu,cue" y="+366">
-        <panel class="vu_meter_LEDs" x="+23" y="+30" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+30" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23" y="+30" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+30" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -123,8 +123,8 @@
   <define class="CHANNEL_LEVELS" placeholders="deck">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="77" height="432-56-1" coloroff="#000000"/>
-      <panel class="vu_meter_LEDs" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-      <panel class="vu_meter_LEDs" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+      <panel class="vu_meter_leds" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+      <panel class="vu_meter_leds" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
       <button class="button_main" action="pfl" query="pfl">
         <pos x="+10" y="+175"/>
         <size width="60" height="25"/>
@@ -149,8 +149,8 @@
           <size width="61" height="36"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs2" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs2" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -176,8 +176,8 @@
           <size width="61" height="36"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -202,8 +202,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -229,8 +229,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_stack" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_stack" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_stack" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_stack" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -255,8 +255,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -278,8 +278,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -295,7 +295,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_mini4_left">
+  <define class="CHANNEL_LEVELS_MINI4_LEFT">
     <visual class="gfx_shape" width="77" height="98+2+98" coloroff="xf_background"/>
     <deck deck="1">
       <group name="deck1">
@@ -304,8 +304,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -327,8 +327,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -344,7 +344,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_compact4_right">
+  <define class="CHANNEL_LEVELS_COMPACT4_RIGHT">
     <visual class="gfx_shape" width="77" height="216+2+216" coloroff="xf_background"/>
     <deck deck="2">
       <group name="deck2">
@@ -353,8 +353,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -376,8 +376,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -393,7 +393,7 @@
       </group>
     </deck>
   </define>
-  <define class="channel_levels_mini4_right">
+  <define class="CHANNEL_LEVELS_MINI4_RIGHT">
     <visual class="gfx_shape" width="77" height="98+2+98" coloroff="xf_background"/>
     <deck deck="2">
       <group name="deck2">
@@ -402,8 +402,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -425,8 +425,8 @@
           <size width="77" height="30"/>
           <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
         </textzone>
-        <panel class="vu_meter_LEDs_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_LEDs_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
         <group name="level" x="+20" y="+36+2">
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7"/>
@@ -861,7 +861,7 @@
       <panel class="crossfader" x="+20" y="+432-56+6+4"/>
     </group>
   </define>
-  <define class="levels_mini">
+  <define class="LEVELS_MINI">
     <group name="2/4 (decks_swap)" visibility="var_not_equal '@$layout_4deck' 1">
       <panel class="channel_levels_mini" deck="3" x="+77+1" visibility="deck 3 leftdeck"/>
       <panel class="channel_levels_mini" deck="1" x="+77+1" visibility="not deck 3 leftdeck"/>
@@ -873,7 +873,7 @@
       <panel class="channel_levels_mini4_right" deck="right" x="+77+1+77+2"/>
     </group>
   </define>
-  <define class="mixer_4decks">
+  <define class="MIXER_4DECKS">
     <!-- Placeholder preserves the current 4-deck Sampler tab without loading the 2-deck sampler tree. -->
     <panel name="samplermixer" group="mixer" visible="yes">
     </panel>
@@ -978,7 +978,7 @@
   </define>
   <define class="XFADER_PANEL">
     <!-- PLAY SELECT -->
-    <define class="deck_playselect" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
+    <define class="DECK_PLAYSELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
       <!-- Deck Select Button -->
       <deck deck="[DECK]">
         <button x="+0" y="+0" width="[WIDTH]" height="15" action="[SIDE]" border_size="0">
@@ -996,7 +996,7 @@
         </button>
       </deck>
     </define>
-    <define class="deck_select" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
+    <define class="DECK_SELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
       <!-- Deck Select Button -->
       <deck deck="[DECK]">
         <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="29" coloroff="infos_background" bordercoloroff="#333333" bordersize="1"/>

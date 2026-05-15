@@ -52,7 +52,7 @@
       </group>
     </deck>
   </define>
-  <define class="beat_divider" placeholders="*width,*height" condition="var_not_equal '@$color_scheme' 4">
+  <define class="BEAT_DIVIDER" placeholders="*width,*height" condition="var_not_equal '@$color_scheme' 4">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <pos x="+0" y="+0"/>
     <fader color="needle">
@@ -61,7 +61,7 @@
     </fader>
     <mouserect x="+0" y="+0" width="0" height="0"/>
   </define>
-  <define class="beat_divider" placeholders="*width,*height" condition="var_equal '@$color_scheme' 4">
+  <define class="BEAT_DIVIDER" placeholders="*width,*height" condition="var_equal '@$color_scheme' 4">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <pos x="+0" y="+0"/>
     <fader color="needle">
@@ -70,7 +70,7 @@
     </fader>
     <mouserect x="+0" y="+0" width="0" height="0"/>
   </define>
-  <define class="dome_spinner" orientation="round" action="get_rotation" placeholders="width,height,offcolor,colorfader,widthfader,heightfader,radius">
+  <define class="DOME_SPINNER" orientation="round" action="get_rotation" placeholders="width,height,offcolor,colorfader,widthfader,heightfader,radius">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <off color="[OFFCOLOR]" border="transparent" border_size="11" shape="circle"/>
     <fader color="[COLORFADER]" width="[WIDTHFADER]" height="[HEIGHTFADER]" radius="[RADIUS]"/>
@@ -88,7 +88,7 @@
       <text fontsize="[TEXTSIZE]" weight="" color="[TEXTCOLOR]" align="center" action="[TEXTACTION]" text="[TEXT]" important="true" localize="true"/>
     </textzone>
   </define>
-  <define class="hor_slider" orientation="horizontal" frommiddle="[FROMMIDDLE]" placeholders="width,*height,coloron=br_focus">
+  <define class="HOR_SLIDER" orientation="horizontal" frommiddle="[FROMMIDDLE]" placeholders="width,*height,coloron=br_focus">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <off color="knobprogressoff" shape="square"/>
     <on color="[COLORON]" shape="square"/>

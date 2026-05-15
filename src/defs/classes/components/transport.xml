@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="times_bpm_key_stack">
+  <define class="TIMES_BPM_KEY_STACK">
     <visual class="gfx_shape" width="484" height="108" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
     <!-- stems buttons -->
     <panel class="times_display_left_stack" x="+2+8-80" y="+2"/>
@@ -9,7 +9,7 @@
     <panel class="transport_left_stack" x="+370" y="+2"/>
     <panel class="bpm_display_left_stack" x="+2+4+180+6+98+4-80" y="+2"/>
   </define>
-  <define class="times_bpm_key_stack2">
+  <define class="TIMES_BPM_KEY_STACK2">
     <visual class="gfx_shape" width="484" height="108" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
     <panel class="times_display_left_stack" x="+2+8-80" y="+2"/>
     <panel class="prf_infopanels_left_stack" x="+2+4" y="+2+58"/>
@@ -17,7 +17,7 @@
     <panel class="bpm_display_left_stack" x="+2+4+180+6+98+4-80" y="+2"/>
     <panel class="syncoptions_display" x="+2+6" y="+39"/>
   </define>
-  <define class="times_bpm_key2">
+  <define class="TIMES_BPM_KEY2">
     <visual class="gfx_shape" width="404" height="104" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
     <panel class="times_display_left" x="+2+4-80" y="+2" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
     <panel class="key_display_left" x="+2+4+200+4-80" y="+2" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
@@ -26,7 +26,7 @@
     <panel class="key_display_right" x="+404-2-4-200-4-128+80" y="+2" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
     <panel class="bpm_display_right" x="+404-2-4-200-4-128-4-136+80" y="+2" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
   </define>
-  <define class="transport">
+  <define class="TRANSPORT">
     <textzone x="+0" y="+0" width="36" height="46" align="center">
       <text fontsize="26" color="needle" weight="bold" deck="@">
         <action>param_div `cue_countup` `param_add cue_countup cue_countdown`</action>
@@ -38,26 +38,26 @@
     <button class="button_main" x="+0" textsize="11" y="+6+33+4+28+4+31" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2" textcoloron="black"/>
     <button class="button_main" x="+0" textsize="11" y="+6+33+4+30+6" width="120" height="30" action="play_pause" sysicon="play_button" iconsize="39" iconcolor="black" textcoloron="black" coloroff="button_background2"/>
   </define>
-  <define class="transport_ex">
+  <define class="TRANSPORT_EX">
     <button class="button_main" x="+0" y="+6" width="60" height="16" action="setting 'hotcueMode' 'play'" query="setting 'hotcueMode' 'play'" textsize="11" text="CUE PLAY" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
     <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="setting 'hotcueMode' 'stutter'" textsize="11" text="STUTTER" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/>
     <button class="button_main" x="+0" y="+6+30+4+26-8" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2"/>
     <button class="button_main" x="+0" y="+6+30+4+62-8" width="60" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2"/>
     <button class="button_main" x="+0" y="+6+30+4+30+6+62-8" width="60" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2"/>
   </define>
-  <define class="transport_stack">
+  <define class="TRANSPORT_STACK">
     <button class="button_main" x="+0" y="+6" width="60" height="16" action="vinyl_mode" textsize="11" text="VINYL" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="black"/>
     <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="slip_mode" textsize="11" text="SLIP" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="black" query="slip_mode ? blink 800ms : off"/>
     <button class="button_main" x="+0" y="+6+20+4+26" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2" textcoloron="black"/>
     <button class="button_main" x="+0" y="+6+20+4+62" width="60" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2" textcoloron="black"/>
     <button class="button_main" x="+0" y="+6+20+4+30+6+62" width="60" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2" textcoloron="black"/>
   </define>
-  <define class="transport_horizontal">
+  <define class="TRANSPORT_HORIZONTAL">
     <button class="button_main" x="+0" y="+0" width="64" height="30" action="sync" text="SYNC" textcolor="textoff2"/>
     <button class="button_main" x="+64+8" y="+0" width="64" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2"/>
     <button class="button_main" x="+64+8+64+8" y="+0" width="64" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2"/>
   </define>
-  <define class="transport_center">
+  <define class="TRANSPORT_CENTER">
     <button class="button_main" x="+0" y="+0" width="54" height="30" action="sync" text="SYNC" textcolor="textoff2"/>
     <button class="button_main" x="+54+8" y="+0" width="54" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2"/>
     <button class="button_main" x="+54+8+54+8" y="+0" width="54" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2"/>

@@ -31,7 +31,7 @@
     <down radius="6" border_size="1" border="deck_accent" color="button_bg_on"/>
     <selected radius="6" border_size="1" border="deck_accent" color="button_bg_on"/>
   </define>
-  <define class="button_main" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=13,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no" condition="var_equal '@$color_scheme' 4">
+  <define class="BUTTON_MAIN" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=13,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no" condition="var_equal '@$color_scheme' 4">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
     <down color="[COLORON]" border="[BRCOLORON]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>

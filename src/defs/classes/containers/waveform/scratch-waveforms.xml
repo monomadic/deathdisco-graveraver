@@ -72,7 +72,7 @@
       </dropzone>
     </deck>
   </define>
-  <define class="vertical_scratchwave_prf" placeholders="deck,*width,*height">
+  <define class="VERTICAL_SCRATCHWAVE_PRF" placeholders="deck,*width,*height">
     <deck deck="[DECK]">
       <scratchwave orientation="vertical" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
         <pos x="+0" y="+2"/>

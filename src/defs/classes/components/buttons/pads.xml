@@ -85,7 +85,7 @@
       <off color="needle" shape="square"/>
     </visual>
   </define>
-  <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
+  <define class="PADBUTTON_VERT" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
     <visual>
       <tooltip/>
       <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -127,7 +127,7 @@
       <off color="needle" shape="square"/>
     </visual>
   </define>
-  <define class="padbutton_vert" placeholders="width=109,height=39,*source" condition="var_equal '@$color_scheme' 4">
+  <define class="PADBUTTON_VERT" placeholders="width=109,height=39,*source" condition="var_equal '@$color_scheme' 4">
     <visual>
       <tooltip/>
       <size width="[WIDTH]" height="[HEIGHT]"/>
@@ -335,7 +335,7 @@
       <off color="panel_background" shape="square"/>
     </visual>
   </define>
-  <define class="padbutton-extra-small" placeholders="*source">
+  <define class="PADBUTTON-EXTRA-SMALL" placeholders="*source">
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
       <size width="71" height="40"/>
       <up color="button_background2" border="button_background2" border_size="1" shape="square"/>

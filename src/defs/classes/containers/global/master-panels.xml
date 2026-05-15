@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Master/microphone utility panels -->
-  <define class="broadcast_panel">
+  <define class="BROADCAST_PANEL">
     <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="BROADCAST"/>
     <button class="button_main" tooltip="" x="+0" y="+24" width="72*2" height="60" textsize="11" textcolor="textoff2" textaction="broadcast_message 'full'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
     <button class="button_main" tooltip="" x="+0" y="+84" width="72" height="24" action="setting 'broadcastMode' 'direct'" textsize="11" textcolor="textdarker" textcoloron="needle" text="DIRECT" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
@@ -39,7 +39,7 @@
       <item text="Show Advanced Settings" action="settings 'broadcast'"/>
     </menu>
   </define>
-  <define class="rec_panel">
+  <define class="REC_PANEL">
     <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="RECORD"/>
     <button class="button_main" tooltip="" x="+0" y="+24" width="72+72" height="24" query="record" textsize="11" textcolor="textdarker" textcoloron="needle" textaction="get_text '`get_record_time` (`get_record_size`)'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
     <button class="button_main" x="+0" y="+54" width="105" height="28" textsize="11" action="record" text="REC" coloroff="button_background2" coloron="br_focus" bordersize="0"/>
@@ -192,7 +192,7 @@
       <panel class="knob" x="-65" y="+110" textbelow="+40" knobsize="39" knobradius="9" faderradius="9" action="effect_slider 2" textaction="effect_select &amp; param_uppercase" rgclick="effect_select 2" frommiddle="false" fillcolor="#0055FF" fillcoloroff="#000000" text="FX2"/>
     </deck>
   </define>
-  <define class="mic_panel">
+  <define class="MIC_PANEL">
     <deck deck="mic">
       <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="MIC"/>
       <button class="button_main" x="+0" y="+24" width="46" height="24" action="mic" query="not mic" textsize="10" text="MUTE" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
@@ -221,7 +221,7 @@
       </button>
     </deck>
   </define>
-  <define class="micfx_panel">
+  <define class="MICFX_PANEL">
     <panel class="mic_panel"/>
   </define>
 </defs>

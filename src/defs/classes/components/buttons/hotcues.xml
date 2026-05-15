@@ -25,7 +25,7 @@
       <size width="3" height="24"/>
     </visual>
   </define>
-  <define class="hcue_button_ex" placeholders="*source">
+  <define class="HCUE_BUTTON_EX" placeholders="*source">
     <!-- default background -->
     <button class="button_main" width="26" height="26" action="hot_cue [SOURCE]" rightclick="cue_name [SOURCE]" coloron="button_background" brcoloron="button_background"/>
     <!-- hotcue colored background -->
@@ -38,7 +38,7 @@
       <text align="left" dx="8" width="183" action="cue_display [SOURCE] &amp; param_uppercase" color="textoff2" colorselected="needle"/>
     </button>
   </define>
-  <define class="saved_loop_button2" placeholders="*source">
+  <define class="SAVED_LOOP_BUTTON2" placeholders="*source">
     <button class="button_main" width="24" height="24" action="loop_load [SOURCE]" icondx="+2" sysicon="arrowright" iconsize="20" coloron="button_background" brcoloron="button_background"/>
     <visual type="color" source="loop_color [SOURCE]" visibility="saved_loop [SOURCE] ? constant 0.28">
       <tooltip/>
@@ -54,7 +54,7 @@
       <size width="3" height="24"/>
     </visual>
   </define>
-  <define class="hotcue_button_ex" placeholders="*source,width=59,height=22">
+  <define class="HOTCUE_BUTTON_EX" placeholders="*source,width=59,height=22">
     <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0" textaction="cue_display [SOURCE]" textheight="18" textcoloron="needle"/>
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">
       <tooltip/>
@@ -66,7 +66,7 @@
       <size width="[WIDTH]" height="4"/>
     </visual>
   </define>
-  <define class="hotcue_button_vertical" placeholders="*source,width=53,height=32">
+  <define class="HOTCUE_BUTTON_VERTICAL" placeholders="*source,width=53,height=32">
     <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0" textaction="cue_display [SOURCE]" textheight="28" textcoloron="needle"/>
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">
       <tooltip/>
@@ -79,7 +79,7 @@
       <size width="[WIDTH]" height="5"/>
     </visual>
   </define>
-  <define class="hotcue_button_stack" placeholders="*source,width=25,height=25">
+  <define class="HOTCUE_BUTTON_STACK" placeholders="*source,width=25,height=25">
     <button class="button_main" width="[WIDTH]" height="[HEIGHT]" action="hot_cue [SOURCE]" rightclick="delete_cue [SOURCE]" coloroff="button_background" coloron="button_background" bordersize="0" textaction="get_text '[SOURCE]'" textheight="22" textcoloron="needle"/>
     <!-- bg -->
     <visual type="color" source="cue_color [SOURCE]" visibility="cue_color [SOURCE] ? constant 0.12">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-    <define class="video_preview" placeholders="*vpwidth=249,*vpheight=174-12">
+    <define class="VIDEO_PREVIEW" placeholders="*vpwidth=249,*vpheight=174-12">
       <deck deck="deck">
         <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
         <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
@@ -9,7 +9,7 @@
         </video>
       </deck>
     </define>
-    <define class="video_preview_ex" placeholders="*vpwidth=208,*vpheight=124">
+    <define class="VIDEO_PREVIEW_EX" placeholders="*vpwidth=208,*vpheight=124">
       <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
       <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
       <video source="deck" linkdrop="true" visibility="leftdeck">
@@ -19,13 +19,13 @@
         <size width="[VPWIDTH]" height="[VPHEIGHT]"/>
       </video>
     </define>
-    <define class="4_stem_controls">
+    <define class="4_STEM_CONTROLS">
       <panel class="stem_control" stem="vocal" label="VOCAL" color="colorvocal" x="+20" y="+10"/>
       <panel class="stem_control" stem="instru" label="INSTR" color="colorinstru" x="+80" y="+10"/>
       <panel class="stem_control" stem="bass" label="BASS" color="colorbass" x="+139" y="+10"/>
       <panel class="stem_control" stem="rhythm" label="DRUM" color="colorbeat" x="+196" y="+10"/>
     </define>
-    <define class="5_stem_controls">
+    <define class="5_STEM_CONTROLS">
       <!-- background -->
       <visual class="gfx_shape" x="+0" y="+0" width="260" height="213" coloroff="panel_background"/>
       <panel class="stem_control" stem="vocal" label="VOCAL" color="colorvocal" x="+10" y="+10"/>

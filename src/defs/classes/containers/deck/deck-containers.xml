@@ -120,26 +120,26 @@
       <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
       <visual class="gfx_shape" x="+0" y="+0" width="922" height="324" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>
       <visual class="gfx_shape" x="+9" y="+98" width="520" height="220" coloroff="#050505" bordersize="2" bordercoloroff="#222222" radius="10"/>
-      <panel class="pad_page_selector_panel" x="+19" y="+100" panelname="[PANELNAME]"/>
+      <panel class="pad_page_selector_panel" x="+5" y="+110" panelname="[PANELNAME]"/>
       <group x="+620" y="+260">
-        <panel class="KNOB_XSMALL_THIN" label="get_text 'KNOB'"/>
+        <panel class="knob_xsmall_thin" label="get_text 'KNOB'"/>
       </group>
       <group x="+535" y="+100">
-        <group novisibility="setting 'eqMode' 'STEMS'" y="+4">
-          <button class="dropdown_menu" action="eq_mode" x="+46" y="-4" visibility="var_equal '@$show_drop_menus' 0"/>
-          <panel class="knob" x="+21" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="red" fillcoloroff="color_knob_bg" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
-          <panel class="knob" x="+21" y="+50" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="colorvocal" fillcoloroff="colorvocal" textaction="high_label" actiontxt="eq_mode +1"/>
-          <panel class="knob" x="+21" y="+50+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="colorinstru" fillcoloroff="colorinstru" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
-          <panel class="knob" x="+21" y="+50+40+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="colorbeat" fillcoloroff="colorbeat" textaction="low_label" actiontxt="eq_mode +1"/>
-          <group x="+10" y="+50+40+40+50">
-            <panel x="+9" class="knob" knobsize="25" knobradius="6" faderradius="0" textwidth="30" textcolor="white" textleft="-3" textbelow="+21" textsize="10" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="magenta" fillcoloroff="#884488" textaction="filter_label &amp; param_cast 'text' 9" actiontxt="filter_selectcolorfx"/>
-            <visual type="transparent" source="effect_active colorfx ? blink 500ms">
-              <pos x="+34" width="8" height="8"/>
-              <off color="tab_menu" border="tab_menu" shape="circle"/>
-              <on color="green" border="green" shape="circle"/>
-            </visual>
-          </group>
-        </group>
+        <!-- <group novisibility="setting 'eqMode' 'STEMS'" y="+4"> -->
+        <!-- <button class="dropdown_menu" action="eq_mode" x="+46" y="-4" visibility="var_equal '@$show_drop_menus' 0"/> -->
+        <!-- <panel class="knob" x="+21" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="red" fillcoloroff="color_knob_bg" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+21" y="+50" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="colorvocal" fillcoloroff="colorvocal" textaction="high_label" actiontxt="eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+21" y="+50+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="colorinstru" fillcoloroff="colorinstru" textaction="mid_label 'short'" actiontxt="eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+21" y="+50+40+40" knobsize="21" knobradius="5" faderradius="0" textwidth="30" textcolor="white" textleft="-5" textbelow="+18" textsize="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="colorbeat" fillcoloroff="colorbeat" textaction="low_label" actiontxt="eq_mode +1"/> -->
+        <!-- <group x="+10" y="+50+40+40+50"> -->
+        <!-- <panel x="+9" class="knob" knobsize="25" knobradius="6" faderradius="0" textwidth="30" textcolor="white" textleft="-3" textbelow="+21" textsize="10" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="magenta" fillcoloroff="#884488" textaction="filter_label &amp; param_cast 'text' 9" actiontxt="filter_selectcolorfx"/> -->
+        <!-- <visual type="transparent" source="effect_active colorfx ? blink 500ms"> -->
+        <!-- <pos x="+34" width="8" height="8"/> -->
+        <!-- <off color="tab_menu" border="tab_menu" shape="circle"/> -->
+        <!-- <on color="green" border="green" shape="circle"/> -->
+        <!-- </visual> -->
+        <!-- </group> -->
+        <!-- </group> -->
         <group visibility="setting 'eqMode' 'STEMS'">
           <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
           <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
@@ -150,10 +150,10 @@
         </group>
       </group>
       <group y="+10" x="-20">
-        <panel class="jogwheel" x="+922-210" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
-        <panel class="deck_level" deck="[DECK]" x="+922-30" y="+110"/>
+        <panel class="jogwheel" x="+922-150" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
+        <panel class="pitch_small" deck="[DECK]" x="+922-10" y="+110"/>
       </group>
-      <group x="+805" y="+290">
+      <group x="+805" y="+285">
         <button class="button_main" textsize="11" width="110" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
           <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
           <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
@@ -161,8 +161,8 @@
           <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
         </button>
       </group>
-      <visual source="select" x="-3" y="-3" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
-        <size width="878+77+2-35+5" height="264+64"/>
+      <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
+        <size width="878+77+2-35" height="264+60"/>
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
       </visual>
       <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>

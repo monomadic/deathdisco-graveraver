@@ -180,7 +180,7 @@
       </group>
     </deck>
   </define>
-  <define class="infos_vert">
+  <define class="INFOS_VERT">
     <button class="button_main" action="toggle '@hntnhtxtscroll'" rightclick="file_info" tooltip="Text Scroll\nRigth-click: Tag Editor" width="800" height="70" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
     <group visibility="get_deck 1 ? true : get_deck 3 ? true : false">
       <button class="button_main" x="+2+4" y="+6" width="28" height="68-6-6" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck" coloroff="button_background" textheight="30" textsize="16" textaction="get_deck"/>
@@ -232,7 +232,7 @@
       <menu class="menu_maindecks" query="select" x="+878-2-4-28-78" y="+70-8-22" width="28" height="20"/>
     </group>
   </define>
-  <define class="infos_center">
+  <define class="INFOS_CENTER">
     <button class="button_main" action="toggle '@hntnhtxtscroll'" rightclick="file_info" tooltip="Text Scroll\nRigth-click: Tag Editor" width="800-81" height="70" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
     <group visibility="get_deck 1 ? true : get_deck 3 ? true : false">
       <button class="button_main" x="+2+4" y="+6" width="28" height="68-6-6" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck" coloroff="button_background" textheight="30" textsize="16" textaction="get_deck"/>

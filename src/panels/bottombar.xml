@@ -87,7 +87,7 @@
           <icon dx="+0" dy="+0" sysicon="sideview 'sampler'" width="30" height="30" color="#888888" colorselected="#6688FF" colordown="white" colorover="#FFFFFF"/>
         </button>
         <!-- karaoke -->
-        <button x="+90" width="40" height="50" query="sideview karaoke ? show_splitpanel 'sideview'" action="sideview karaoke &amp; show_splitpanel 'sideview''">
+        <button x="+90" width="40" height="50" query="sideview karaoke ? show_splitpanel 'sideview'" action="sideview karaoke &amp; show_splitpanel 'sideview'">
           <off color="transparent" border="#000000" border_size="0" shape="square"/>
           <on color="#444444" border="#111111" border_size="0" shape="square"/>
           <over color="transparent" border="#000000" border_size="0" shape="square"/>

@@ -935,11 +935,11 @@
         </menu>
       </group>
     </panel>
-    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$skin_mode' 1 ? var_equal '@$performance_layout' 0 ? constant 0.8">
-      <pos x="+10+20+10+36" y="+[WAVEFORMHEIGHT]-40"/>
-      <size width="26" height="30"/>
-      <off shape="square" color="xf_background" border="xf_background"/>
-      <icon sysicon="chevrondown" height="20" width="20" color="textdarker" colorover="needle" colordown="needle"/>
+    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$skin_mode' 1 ? var_equal '@$performance_layout' 0 ? constant 1.0">
+      <pos x="0" y="50"/>
+      <size width="36" height="36"/>
+      <off shape="square" color="black" border="dark_4"/>
+      <icon sysicon="settings" height="20" width="20" color="dark_8" colorover="white" colordown="needle"/>
       <submenu text="Left Panel (Mixer)" localize="true">
         <item text="Microphone" action="set '@$show_left_mixer_rack' 0" check="var_equal '@$show_left_mixer_rack' 0"/>
         <item text="Headphones" action="set '@$show_left_mixer_rack' 1" check="var_equal '@$show_left_mixer_rack' 1"/>

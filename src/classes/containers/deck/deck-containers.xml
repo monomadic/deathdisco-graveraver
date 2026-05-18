@@ -116,15 +116,15 @@
       <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
       <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
     </deck>
-    <panel visibility="var '@$debugui'">
-      <visual width="320" height="20">
-        <off shape="square" color="#AA000000" radius="0"/>
-      </visual>
-      <textzone>
-        <size width="320" height="18"/>
-        <text align="center" size="12" color="white" action="get_text 'DECK=`get_deck`([DECK]) SELECTED=`get_deck` GETLEFTDECK=`get_leftdeck` LEFTDECK=`leftdeck` LEFT=`deck [DECK] leftdeck`'"/>
-      </textzone>
-    </panel>
+    <!-- <panel visibility="var '@$debugui'"> -->
+    <!-- <visual width="320" height="20"> -->
+    <!-- <off shape="square" color="#AA000000" radius="0"/> -->
+    <!-- </visual> -->
+    <!-- <textzone> -->
+    <!-- <size width="320" height="18"/> -->
+    <!-- <text align="center" size="12" color="white" action="get_text 'DECK=`get_deck`([DECK]) SELECTED=`get_deck` GETLEFTDECK=`get_leftdeck` LEFTDECK=`leftdeck` LEFT=`deck [DECK] leftdeck`'"/> -->
+    <!-- </textzone> -->
+    <!-- </panel> -->
   </define>
   <define class="AREA_DECK_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
@@ -158,14 +158,14 @@
         <!-- </visual> -->
         <!-- </group> -->
         <!-- </group> -->
-        <group visibility="setting 'eqMode' 'STEMS'">
-          <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
-          <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
-          <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
-          <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
-          <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
-          <panel class="knob" x="+18" y="+14+81+68+68+68+13" knobsize="41" knobradius="10" faderradius="9" action="stem 'bass'" rgclick="stem 'bass' 0% ? stem 'bass' 50% : stem 'bass' 0%" dblclick="stem 'bass' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'BASS'" actiontxt="eq_mode +1"/>
-        </group>
+        <!-- <group visibility="setting 'eqMode' 'STEMS'"> -->
+        <!-- <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/> -->
+        <!-- <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/> -->
+        <!-- <panel class="knob" x="+18" y="+14+81+68+68+68+13" knobsize="41" knobradius="10" faderradius="9" action="stem 'bass'" rgclick="stem 'bass' 0% ? stem 'bass' 50% : stem 'bass' 0%" dblclick="stem 'bass' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'BASS'" actiontxt="eq_mode +1"/> -->
+        <!-- </group> -->
       </group>
       <group y="+10" x="-20">
         <panel class="jogwheel" x="+922-150" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>

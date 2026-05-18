@@ -10,8 +10,8 @@
       <browser class="browser_performance" height="1080-75-2-2-2-1-340-2" condition="var_equal '@$layout_4deck' 1"/>
     </group>
     <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
-      <browser class="browser_performance" height="1080-75-2-2-2-1-38" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_performance" height="1080-75-2-2-2-1-340-2-38" condition="var_equal '@$layout_4deck' 1"/>
+      <browser class="browser_performance" height="1080-75-2-2-2-1-50" condition="var_equal '@$layout_4deck' 0"/>
+      <browser class="browser_performance" height="1080-75-2-2-2-1-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
   <define class="PERFORMANCE_DECKS_BELOW">

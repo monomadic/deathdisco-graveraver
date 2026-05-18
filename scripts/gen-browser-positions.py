@@ -18,7 +18,7 @@ Layout constants (all in px):
   PADDING_MID   12
   BROWSER_Y_FULL  16   bottom gap for full browser
   BROWSER_Y_MINI 348   bottom gap for mini browser
-  UTILITY_EXTRA  38   extra y offset when utility bar is visible
+  UTILITY_EXTRA  50   extra y offset when utility bar is visible
   WAVESIZE_BASE   7   y offset for wavesize=0  (step: +20 per size unit)
   HEIGHT_BASE   121   height constant for wavesize=0 (step: -20 per size unit)
 
@@ -91,9 +91,9 @@ DEFINES = [
         cls="BROWSER_PERFORMANCE",
         ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+0" ',
-        y_tail="-66+38-10-12-16",
-        bg_bordercolor="xf_progressbackground",
-        bg_bordersize="3",
+        y_tail="-66+50-10-12-16",
+        bg_bordercolor="transparent",
+        bg_bordersize="0",
     ),
     dict(
         cls="BROWSER_PERFORMANCE_MINI",
@@ -107,7 +107,7 @@ DEFINES = [
         cls="BROWSER_PERFORMANCE_MINI",
         ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+2" ',
-        y_tail="-66+38-10-12-348",
+        y_tail="-66+50-10-12-348",
         bg_bordercolor="xf_progressbackground",
         bg_bordersize="3",
     ),

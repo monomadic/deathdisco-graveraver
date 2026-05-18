@@ -26,8 +26,8 @@
       <panel class="browser_overlay_with_racks" x="2" y="+43+2+323+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2" condition="var_equal '@$layout_4deck' 1"/>
     </group>
     <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+323+2" width="1920-4" height="1080-43-2-333-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
-      <panel class="browser_overlay_with_racks" x="2" y="+43+2+323+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-38" condition="var_equal '@$layout_4deck' 1"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+323+2" width="1920-4" height="1080-43-2-333-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="2" y="+43+2+323+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
 </defs>

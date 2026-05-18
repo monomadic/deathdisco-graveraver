@@ -24,7 +24,7 @@
           <!-- PRO: LEFT DECK BORDER -->
         </group>
         <!-- PAD PAGES -->
-        <panel class="pad_page_selector_panel" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
+        <panel class="pad_page_container" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
         <!-- TRANSPORT BAR -->
         <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="left"/>
         <!-- deck border -->
@@ -65,7 +65,7 @@
         <panel class="jogwheel" x="+55" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         <panel class="pitch_small" x="+5" y="+20"/>
         <!-- PAD PAGES -->
-        <panel class="pad_page_selector_panel" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
+        <panel class="pad_page_container" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
         <!-- TRANSPORT BAR -->
         <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="right"/>
         <!-- deck border -->
@@ -129,7 +129,7 @@
       <songpos class="songpos" x="+2" y="+65" width="918" height="30"/>
       <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
       <!-- pads -->
-      <panel class="pad_page_selector_panel" x="+0" y="+100" panelname="[PANELNAME]"/>
+      <panel class="pad_page_container" x="+0" y="+100" panelname="[PANELNAME]"/>
       <group y="+10" x="-20">
         <panel class="jogwheel" x="+922-150" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
         <panel class="pitch_small" deck="[DECK]" x="+922-10" y="+110"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- Shared pad-page selectors used by pro and extended deck layouts -->
+  <!-- Pad page container used by pro and extended deck layouts -->
   <define class="PAD_PAGE_UPPER_BANK_TAB" placeholders="*page" query="pad_page [PAGE]" action="pad_page [PAGE]" rightclick="pad_page_select [PAGE]">
     <size width="100" height="23"/>
     <off color="#000000" border="dark_6" radius="6" border_size="1"/>
@@ -34,8 +34,8 @@
     <selected color="dark_3" border="#AAAAAA" radius="4" border_size="2"/>
     <text weight="bold" text="btn2" fontsize="11" color="dark_7" coloron="white" colordown="white" colorover="#AAAAAA" colorselected="white" align="center" action="[TEXTACTION]"/>
   </define>
-  <!-- PAD PAGE PANEL -->
-  <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
+  <!-- PAD PAGE CONTAINER -->
+  <define class="PAD_PAGE_CONTAINER" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- background of entire pad area -->
       <visual class="gfx_shape" x="+0" y="+0" width="743" height="236" coloroff="#050505" bordersize="1" bordercoloroff="dark_4" radius="10"/>

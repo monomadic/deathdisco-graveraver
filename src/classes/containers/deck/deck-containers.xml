@@ -3,17 +3,19 @@
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
   <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
+      <!-- spine -->
       <panel x="0" y="+0" class="deck_spine"/>
       <!-- PRO: LEFT: PANEL BG (behind jog) -->
       <visual width="765" height="[HEIGHT]" x="+35">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
+      <!-- PRO: LEFT: DECK INNER -->
       <group x="+35">
         <!-- PRO: LEFT: TRACK INFO -->
         <panel class="infos"/>
         <!-- LEFT: action zone -->
         <panel class="track_info_action_zone" y="+55" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-        <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/>
+        <!-- <panel class="times_bpm_key2" y="+72-2" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'"/> -->
         <group x="550">
           <!-- PRO: LEFT JOGWHEEL -->
           <panel class="jogwheel" x="750-150" y="+10" name="jogwheel_spinner"/>
@@ -21,13 +23,14 @@
           <panel class="pitch_small" x="765" y="+20"/>
           <!-- PRO: LEFT DECK BORDER -->
         </group>
+        <!-- PAD PAGES -->
+        <panel class="pad_page_selector_panel" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
+        <!-- TRANSPORT BAR -->
+        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="left"/>
+        <!-- deck border -->
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
-        <dropzone x="+0" y="+0">
-          <size width="770-5" height="180"/>
-          <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
-        </dropzone>
       </group>
     </deck>
   </define>
@@ -36,23 +39,36 @@
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <down color="transparent" border_size="1" border="deckcolor" shape="square" radius="8"/>
     </visual>
+    <!-- drop area -->
+    <dropzone deck="[DECK]">
+      <size width="770-5" height="180"/>
+      <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
+    </dropzone>
   </define>
   <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
+      <!-- spine -->
       <panel x="+765" y="+0" class="deck_spine"/>
+      <!-- bg behind jog -->
       <visual width="765" height="[HEIGHT]">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
-      <!-- cover, title etc -->
-      <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <cues dy="0" shade="0">
-        <size width="200" height="10"/>
-        <clipmask x="27" y="140"/>
-      </cues>
-      <panel class="track_info_action_zone" x="+800-565" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <panel class="jogwheel" x="+55" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-      <panel class="pitch_small" x="+5" y="+20"/>
+      <!-- PRO: RIGHT: DECK INNER -->
       <group>
+        <!-- cover, title etc -->
+        <panel class="infos" x="+800-567" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <cues dy="0" shade="0">
+          <size width="200" height="10"/>
+          <clipmask x="27" y="140"/>
+        </cues>
+        <panel class="track_info_action_zone" x="+800-565" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <panel class="jogwheel" x="+55" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <panel class="pitch_small" x="+5" y="+20"/>
+        <!-- PAD PAGES -->
+        <panel class="pad_page_selector_panel" y="+180" x="+6" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
+        <!-- TRANSPORT BAR -->
+        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="right"/>
+        <!-- deck border -->
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
@@ -122,9 +138,7 @@
       <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
       <!-- border -->
       <visual class="gfx_shape" x="+0" y="+0" width="922" height="324" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>
-      <!-- border around entire pad area -->
-      <visual class="gfx_shape" x="+4" y="+100" width="743" height="216" coloroff="#050505" bordersize="1" bordercoloroff="#222222" radius="10"/>
-      <panel class="pad_page_selector_panel" x="+0" y="+106" panelname="[PANELNAME]"/>
+      <panel class="pad_page_selector_panel" x="+0" y="+100" panelname="[PANELNAME]"/>
       <!-- <group x="+620" y="+260"> -->
       <!-- <panel class="knob_xsmall_thin" label="get_text 'KNOB'"/> -->
       <!-- </group> -->

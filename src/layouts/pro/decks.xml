@@ -4,29 +4,22 @@
   <define class="PRO_2DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
+    <!-- SPINES -->
+    <!-- <panel class="deck_spine" deck="3" x="0" y="+0" visibility="deck 3 leftdeck"/> -->
+    <!-- <panel class="deck_spine" deck="1" x="0" y="+0" visibility="not deck 3 leftdeck"/> -->
+    <!-- <panel class="deck_spine" deck="2" x="0" y="+0" visibility="not deck 4 leftdeck"/> -->
+    <!-- <panel class="deck_spine" deck="4" x="0" y="+0" visibility="deck 4 leftdeck"/> -->
+    <!-- DECKS -->
     <panel class="area_deck_pro_left" x="0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
     <panel class="area_deck_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
     <panel class="area_deck_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
-    <!-- PAD PAGES -->
-    <group y="+180" x="+41">
-      <!-- left -->
-      <group>
-        <panel class="pad_page_selector_panel" deck="1" panelname="[PANELNAME]_1" visibility="not deck 3 leftdeck"/>
-        <panel class="pad_page_selector_panel" deck="3" panelname="[PANELNAME]_3" visibility="deck 3 leftdeck"/>
-      </group>
-      <!-- right -->
-      <group x="1920/2+125">
-        <panel class="pad_page_selector_panel" deck="2" panelname="[PANELNAME]_2" visibility="not deck 4 rightdeck"/>
-        <panel class="pad_page_selector_panel" deck="4" panelname="[PANELNAME]_4" visibility="deck 4 rightdeck"/>
-      </group>
-    </group>
     <group y="+450-25">
       <!-- TRANSPORT 2 DECK -->
-      <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/>
-      <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/>
-      <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/>
-      <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/>
+      <!-- <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/> -->
+      <!-- <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/> -->
+      <!-- <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/> -->
+      <!-- <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/> -->
     </group>
     <!-- PRO: 2 DECK: MIXER PANEL / MIDDLE PANEL -->
     <group x="+800">

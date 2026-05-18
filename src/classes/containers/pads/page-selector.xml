@@ -37,7 +37,9 @@
   <!-- PAD PAGE -->
   <define class="PAD_PAGE_SELECTOR_PANEL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
-      <group x="+10">
+      <!-- background of entire pad area -->
+      <visual class="gfx_shape" x="+0" y="+0" width="743" height="236" coloroff="#050505" bordersize="1" bordercoloroff="dark_4" radius="10"/>
+      <group x="+6" y="+6">
         <panel name="@pads16_[PANELNAME]" group="efx_[PANELNAME]" visible="yes" available="yes" displayname="Pads x16" forceshow="16pads">
           <!-- PAD PAGE SELECT -->
           <group>
@@ -112,7 +114,7 @@
             </group>
           </group>
           <!-- bottom row -->
-          <group y="+40*4+30+25">
+          <group y="+40*4+30+10">
             <!-- menu -->
             <button action="pad_menu 1" query="auto_match_bpm ? auto_match_key" visibility="pad_has_menu 1" shape="circle">
               <size width="10" height="10"/>

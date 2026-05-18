@@ -64,6 +64,8 @@
   </define>
   <define class="TRANSPORT_BAR" placeholders="*deck,*deckside">
     <deck deck="[DECK]">
+      <visual class="gfx_shape" x="+0" y="+0" width="765" height="40" coloroff="black" radius="6"/>
+      <line x="+0" y="+0" width="765" height="2" highlight="dark_6" shadow="transparent"/>
       <!-- WARNING INDICATORS TODO: MOVE THESE -->
       <group visibility="false">
         <pos y="+2" x="+7" condition="param_equal [DECKSIDE] 'left'"/>
@@ -97,7 +99,7 @@
       </group>
       <!-- SONGPOS -->
       <group visibility="loaded">
-        <pos x="+41" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+6" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+450" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
         <songpos class="songpos" x="+3" y="+3" width="304" height="21" colorPlayed="deckcolor"/>
         <!-- border -->
@@ -107,7 +109,7 @@
       </group>
       <!-- SYNC BUTTONS -->
       <group visibility="loaded">
-        <pos x="+365" y="+7" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+325" y="+7" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+115" y="+7" condition="param_equal [DECKSIDE] 'right'"/>
         <!-- KEY BUTTON -->
         <button class="button_main" action="select &amp; match_key" bordersize="1" query="loaded ? match_key ? true : blink 1bt" visibility="not masterdeck">
@@ -178,11 +180,11 @@
         </button>
       </group>
       <!-- PLAY/PAUSE BUTTON -->
-      <line color="dark_6" x="+800-100" y="+0" width="1" height="38" condition="param_equal [DECKSIDE] 'left'"/>
-      <line color="dark_6" x="+105" y="+0" width="1" height="38" condition="param_equal [DECKSIDE] 'right'"/>
+      <line color="dark_5" x="+800-140" y="+2" width="1" height="38" condition="param_equal [DECKSIDE] 'left'"/>
+      <line color="dark_5" x="+105" y="+2" width="1" height="38" condition="param_equal [DECKSIDE] 'right'"/>
       <!-- not master -->
       <button class="button_main" textsize="11" width="100" height="38" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
-        <pos x="+800-100" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+800-140" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+2" y="+0" condition="param_equal [DECKSIDE] 'right'"/>
         <off color="transparent" border="transparent" border_size="0" shape="square" radius="4" iconcolor="blue"/>
         <over color="transparent" border="transparent" border_size="0" shape="square" radius="4"/>
@@ -190,7 +192,7 @@
         <selected color="transparent" border="transparent" border_size="1" radius="4"/>
       </button>
       <button class="button_main" textsize="11" width="102" height="38" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0" visibility="not masterdeck ? play ? blink 1bt : on">
-        <pos x="+800-102" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+800-140" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+2" y="+0" condition="param_equal [DECKSIDE] 'right'"/>
         <off color="transparent" border="#444444" border_size="0" shape="square" radius="4"/>
         <over color="transparent" border="deckcolor" border_size="1" shape="square" radius="4"/>
@@ -199,7 +201,7 @@
         <icon coloroff="deckcolor" colorover="deckcolor" colordown="#FFFFFF" colorselected="deckcolor"/>
       </button>
       <button class="button_main" textsize="11" width="100" height="38" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0" visibility="masterdeck ? play ? blink 1bt : on">
-        <pos x="+800-100" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
+        <pos x="+800-140" y="+0" condition="param_equal [DECKSIDE] 'left'"/>
         <pos x="+2" y="+0" condition="param_equal [DECKSIDE] 'right'"/>
         <off color="transparent" border="color_masterdeck" border_size="0" shape="square" radius="4" iconcolor="blue"/>
         <over color="transparent" border="color_masterdeck" border_size="1" shape="square" radius="4"/>

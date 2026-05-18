@@ -16,7 +16,7 @@
       <panel class="performance_decks_vertical" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     </group>
     <group name="Horizontal" condition="var_equal '@$performance_layout' 2">
-      <panel class="performance_decks_center" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
+      <panel class="performance_decks_horizontal" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     </group>
     <!-- browser zoom & auto-switch -->
     <panel class="browser_zoom_decks_above" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>

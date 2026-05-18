@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Extended Performance layout: decks and racks above/below the browser. -->
+  <define class="PERFORMANCE_MAIN_RACKS" placeholders="offset_y=0">
+    <panel class="racks_extended" x="+2" y="[OFFSET_Y]" condition="var_equal '@$hide_main_waveforms' 0"/>
+    <panel class="racks_single" x="+2" y="[OFFSET_Y]" condition="var_equal '@$hide_main_waveforms' 1"/>
+  </define>
+  <define class="PERFORMANCE_2DECKS" placeholders="*panelname">
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
+    <panel class="deck_container_performance_side" x="0" panelname="deck1" deck="1" deckside="left" visibility="deck 1 leftdeck"/>
+    <panel class="deck_container_performance_side" x="0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_performance_side" x="+960" panelname="deck2" deck="2" deckside="right" visibility="deck 2 rightdeck"/>
+    <panel class="deck_container_performance_side" x="+960" panelname="deck4" deck="4" deckside="right" visibility="deck 4 rightdeck"/>
+    <panel class="performance_main_racks" y="+60"/>
+  </define>
+  <define class="PERFORMANCE_4DECKS" placeholders="*panelname">
+    <!-- Wave-size offset ladder extracted to keep the shell readable -->
+    <xi:include href="positions/4decks.xml" xpointer="xpointer(/positions/*)"/>
+    <panel class="deck_container_performance_body" x="+2" panelname="deck1" deck="1"/>
+    <panel class="deck_container_performance_body" x="+2" y="+264+2" panelname="deck3" deck="3"/>
+    <panel class="performance_main_racks" offset_y="+264+2"/>
+    <panel class="deck_container_performance_right" x="+1920-2-878-77-2" panelname="deck2" deck="2"/>
+    <panel class="deck_container_performance_right" x="+1920-2-878-77-2" y="+264+2" panelname="deck4" deck="4"/>
+  </define>
+  <define class="PERFORMANCE_DECKS_NO_WAVES">
+    <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
+    <!-- browsers -->
+    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
+      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2" condition="var_equal '@$layout_4deck' 1"/>
+    </group>
+    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
+      <panel class="browser_overlay_with_racks" y="+264+2" width="1920" height="1080-43-2-264-2-2-38" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" y="+264+2+264+2" width="1920" height="1080-43-2-264-2-2-264-2-38" condition="var_equal '@$layout_4deck' 1"/>
+    </group>
+  </define>
+</defs>

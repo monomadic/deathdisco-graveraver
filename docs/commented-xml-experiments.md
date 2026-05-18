@@ -2,7 +2,7 @@
 
 Disabled XML removed from active skin files. Keep future experiments here or under `src/prototypes/` so production XML stays readable.
 
-## src/classes/components/buttons/base.xml
+## src/components/buttons/base.xml
 
 Original line 18:
 
@@ -21,7 +21,7 @@ Original line 50:
 <action rgclick="[RIGHTCLICK]"/>
 ```
 
-## src/classes/components/buttons/hotcues.xml
+## src/components/buttons/hotcues.xml
 
 Original line 39:
 
@@ -44,7 +44,7 @@ button color
 </visual>
 ```
 
-## src/classes/components/buttons/menus.xml
+## src/components/buttons/menus.xml
 
 Original line 11:
 
@@ -100,7 +100,7 @@ Original line 97:
 <separator visibility="not var_equal '@$skin_mode' 3"/>
 ```
 
-## src/classes/components/buttons/pads.xml
+## src/components/buttons/pads.xml
 
 Original line 185:
 
@@ -232,7 +232,7 @@ Original line 455:
 <up color="button_background2" border="black" border_size="1" shape="square"/>
 ```
 
-## src/classes/components/control-groups.xml
+## src/components/control-groups.xml
 
 Original line 8:
 
@@ -311,7 +311,7 @@ Original line 90:
 <visual class="gfx_shape" x="+77/2-10" y="+66-8+122+2" width="21" height="50" coloroff="xf_background"/>
 ```
 
-## src/classes/components/deck-info.xml
+## src/components/deck-info.xml
 
 Original line 25:
 
@@ -385,7 +385,7 @@ Original line 163:
 </textzone>
 ```
 
-## src/classes/components/deck-widgets.xml
+## src/components/deck-widgets.xml
 
 Original line 21:
 
@@ -428,7 +428,7 @@ LOOP ACTIVE
 <button class="button_main" x="+10+55+134+5" y="+6+88" width="50" height="30" action="loop_double" sysicon="chevronright" iconsize="22"/>
 ```
 
-## src/classes/components/display.xml
+## src/components/display.xml
 
 Original line 16:
 
@@ -512,7 +512,7 @@ Original line 86:
 <button class="button_main" x="+56" y="+50" width="80" height="20" action="masterdeck" coloroff="button_background" textcolor="textoff4" text="MASTER"/>
 ```
 
-## src/classes/components/effects.xml
+## src/components/effects.xml
 
 Original line 72:
 
@@ -538,7 +538,7 @@ Original line 82:
 <panel class="knob" x="+104+28+8+28+25" y="+10" knobsize="22" knobradius="10" faderradius="5" action="effect_slider [SOURCE] 2" frommiddle="false" fillcolor="knobfillon" visibility="effect_active [SOURCE]"/>
 ```
 
-## src/classes/components/jogwheel.xml
+## src/components/jogwheel.xml
 
 Original line 4:
 
@@ -686,7 +686,7 @@ Original line 375:
 </scratch>
 ```
 
-## src/classes/components/loop-panels.xml
+## src/components/loop-panels.xml
 
 Original line 361:
 
@@ -696,7 +696,7 @@ Original line 361:
 </visual>
 ```
 
-## src/classes/components/pitch.xml
+## src/components/pitch.xml
 
 Original line 34:
 
@@ -844,7 +844,7 @@ PITCH SLIDER: PITCH LOCK BUTTON
 <button class="button_main" x="+0" y="+150" width="60" height="16" action="master_tempo on ? master_tempo off : master_tempo on" query="master_tempo" textsize="8" text="PITCH LOCK" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/>
 ```
 
-## src/classes/components/sliders.xml
+## src/components/sliders.xml
 
 Original line 14:
 
@@ -893,7 +893,7 @@ BLACK STRIP
 LEVEL
 ```
 
-## src/classes/components/track-info.xml
+## src/components/track-info.xml
 
 Original line 20:
 
@@ -1138,7 +1138,7 @@ STEM FX
 </define>
 ```
 
-## src/classes/components/transport.xml
+## src/components/transport.xml
 
 Original line 11:
 
@@ -1173,7 +1173,7 @@ PHRASE BUTTON
 </button>
 ```
 
-## src/classes/components/video.xml
+## src/components/video.xml
 
 Original line 35:
 
@@ -1216,7 +1216,7 @@ SIMPLE VECTOR VU METER
 BUTTON
 ```
 
-## src/classes/containers/deck/deck-containers.xml
+## src/components/containers/deck/deck-containers.xml
 
 Original line 27:
 
@@ -1249,7 +1249,7 @@ Original line 67:
 Original line 121:
 
 ```xml
-<define class="AREA_DECK_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside">
+<define class="DECK_CONTAINER_PERFORMANCE_SPINE" placeholders="*deck,*panelname,*deckside">
 <deck deck="[DECK]">
 <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'"/>
 <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'right'"/>
@@ -1258,7 +1258,7 @@ Original line 121:
 Shared performance body used on the left side and mirrored into the two-deck right-side shell
 ```
 
-## src/classes/containers/mixer/mixer-containers.xml
+## src/components/containers/mixer/mixer-containers.xml
 
 Original line 20:
 
@@ -1466,7 +1466,7 @@ textsize="10" />
 <button class="button_main" x="+62*4" y="+70" width="63" height="17" action="crossfader_curve 'cut' ? setting 'crossfaderDisable' : crossfader_curve 'cut'" query="crossfader_curve 'cut' ? not setting 'crossfaderDisable' ? true : false" coloroff="xf_background" coloron="xf_background" brcoloroff="xf_background" brcoloron="xf_background" textsize="10" textcolor="textoff3" textcoloron="needle" textaction="get_text 'CUT'"/>
 ```
 
-## src/classes/containers/pads/pad-containers.xml
+## src/components/containers/pads/pad-containers.xml
 
 Original line 76:
 
@@ -1606,7 +1606,7 @@ Original line 320:
 STACK: 16 PADS
 ```
 
-## src/classes/containers/pads/page-selector.xml
+## src/components/containers/pads/page-selector.xml
 
 Original line 40:
 
@@ -1682,7 +1682,7 @@ PAD AREA BORDER
 </visual>
 ```
 
-## src/classes/containers/racks/rack-containers.xml
+## src/components/containers/racks/rack-containers.xml
 
 Original line 26:
 
@@ -1726,7 +1726,7 @@ background
 Wrapper for the vertical performance pad surface
 ```
 
-## src/classes/containers/topbar/menu-items.xml
+## src/components/containers/topbar/menu-items.xml
 
 Original line 153:
 
@@ -1734,7 +1734,7 @@ Original line 153:
 <item text="Auto Zoom (with controllers)" localize="true" action="toggle '@$browser_zoom_mode'" check="var_equal '@$browser_zoom_mode' 1"/>
 ```
 
-## src/classes/containers/topbar/topbar-containers.xml
+## src/components/containers/topbar/topbar-containers.xml
 
 Original line 50:
 
@@ -1888,7 +1888,7 @@ Original line 581:
 <line x="+0" y="+42" width="1920" height="1" highlight="#666666" shadow="000000"/>
 ```
 
-## src/classes/containers/waveform/horizontal-waveform.xml
+## src/components/containers/waveform/horizontal-waveform.xml
 
 Original line 45:
 
@@ -1913,7 +1913,7 @@ PRO: HORIZONTAL WAVEFORM: BORDER
 </visual>
 ```
 
-## src/classes/containers/waveform/main-waveform.xml
+## src/components/containers/waveform/main-waveform.xml
 
 Original line 858:
 
@@ -1930,7 +1930,7 @@ WAVEFORM SIZE UP DOWN
 bg
 ```
 
-## src/classes/containers/waveform/scratch-waveforms.xml
+## src/components/containers/waveform/scratch-waveforms.xml
 
 Original line 62:
 
@@ -1947,24 +1947,24 @@ Original line 62:
 Original line 93:
 
 ```xml
-<panel class="AREA_DECK_MINI" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+<panel class="DECK_CONTAINER_MINI" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
 ```
 
 Original line 149:
 
 ```xml
-<panel class="AREA_DECK_PERFORMANCE_BODY" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-<panel class="AREA_DECK_PERFORMANCE_BODY" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+<panel class="DECK_CONTAINER_PERFORMANCE_BODY" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
+<panel class="DECK_CONTAINER_PERFORMANCE_BODY" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
 ```
 
 Original line 156:
 
 ```xml
-<panel class="AREA_DECK_PERFORMANCE_BODY" x="+1920-2-878-77-2" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
-<panel class="AREA_DECK_PERFORMANCE_BODY" x="+1920-2-878-77-2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+<panel class="DECK_CONTAINER_PERFORMANCE_BODY" x="+1920-2-878-77-2" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
+<panel class="DECK_CONTAINER_PERFORMANCE_BODY" x="+1920-2-878-77-2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
 ```
 
-## src/panels/bottombar.xml
+## src/components/containers/bottombar/panel.xml
 
 Original line 31:
 
@@ -2018,7 +2018,7 @@ Original line 126:
 karaoke
 ```
 
-## src/panels/topbar.xml
+## src/components/containers/topbar/panel.xml
 
 Original line 72:
 

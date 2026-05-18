@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Pro layout deck shells mirrored left/right plus the two-deck overlay treatment -->
-  <define class="AREA_DECK_PRO_LEFT" placeholders="*deck,*panelname,height=465">
+  <define class="DECK_CONTAINER_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
       <!-- spine -->
       <panel x="0" y="+0" class="deck_spine"/>
@@ -45,7 +45,7 @@
       <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
     </dropzone>
   </define>
-  <define class="AREA_DECK_PRO_RIGHT" placeholders="deck,*panelname,height=465">
+  <define class="DECK_CONTAINER_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
       <!-- spine -->
       <panel x="+765" y="+0" class="deck_spine"/>
@@ -109,10 +109,10 @@
       </textzone>
     </panel>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
+  <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
-      <panel class="area_deck_performance_body" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
-      <panel class="area_deck_performance_body" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
+      <panel class="deck_container_performance_body" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
+      <panel class="deck_container_performance_body" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
       <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
       <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
     </deck>
@@ -126,7 +126,7 @@
     <!-- </textzone> -->
     <!-- </panel> -->
   </define>
-  <define class="AREA_DECK_PERFORMANCE_BODY" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <!-- background -->
       <visual class="gfx_shape" width="922" height="324" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
@@ -186,7 +186,7 @@
       <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>
     </deck>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_LEFT_VERTICAL" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_LEFT_VERTICAL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="766" height="333" coloroff="panel_background"/>
       <panel class="infos_vert"/>
@@ -213,7 +213,7 @@
       </dropzone>
     </deck>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_LEFT_CENTER" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_LEFT_CENTER" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
       <panel class="infos_center"/>
@@ -234,7 +234,7 @@
       <panel class="dual_dropzone" width="800-81" height="333"/>
     </deck>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="878+77+2" height="264" coloroff="#111111" bordersize="1" bordercoloroff="#222222"/>
       <panel class="infos_ex" x="+0" deck="[DECK]" deckside="right"/>
@@ -261,7 +261,7 @@
       </dropzone>
     </deck>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_RIGHT_VERTICAL" placeholders="deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_RIGHT_VERTICAL" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800" height="333" coloroff="panel_background"/>
       <panel class="infos_vert"/>
@@ -288,7 +288,7 @@
       </dropzone>
     </deck>
   </define>
-  <define class="AREA_DECK_PERFORMANCE_RIGHT_CENTER" placeholders="deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_RIGHT_CENTER" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
       <panel class="infos_center"/>
@@ -309,7 +309,7 @@
       <panel class="dual_dropzone" width="800-81" height="333"/>
     </deck>
   </define>
-  <define class="AREA_DECK_MINI" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_MINI" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <panel>
         <button class="button_main" action="select" rightclick="file_info" tooltip="Text Scroll\nRigth-click: Tag Editor" width="878" height="100-4" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
@@ -433,7 +433,7 @@
     </deck>
   </define>
   <!-- Stack mode uses a single repeated deck strip shell -->
-  <define class="AREA_DECK_STACK" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_STACK" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <group>
         <button textsize="16" class="button_main" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Right-click: Next Panel" coloroff="button_background" textheight="40" textcoloron="black">

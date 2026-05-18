@@ -2,31 +2,31 @@
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Stack deck layout shells. @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
   <define class="STACK_2DECKS" placeholders="*panelname">
-    <panel class="area_deck_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-    <panel class="area_deck_stack" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
-    <panel class="area_deck_stack" y="+164+2" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
-    <panel class="area_deck_stack" y="+164+2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
+    <panel class="deck_container_stack" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_stack" y="+164+2" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
+    <panel class="deck_container_stack" y="+164+2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
     <!-- racks -->
     <panel class="racks_stack"/>
   </define>
   <define class="STACK_4DECKS" placeholders="*panelname">
     <group name="1234" visibility="setting 'mixerOrder' '1234'">
-      <panel class="area_deck_stack" panelname="deck1" deck="1"/>
-      <panel class="area_deck_stack" y="+164+2" panelname="deck2" deck="2"/>
-      <panel class="area_deck_stack" y="+164+2+164+2" panelname="deck3" deck="3"/>
-      <panel class="area_deck_stack" y="+164+2+164+2+164+2" panelname="deck4" deck="4"/>
+      <panel class="deck_container_stack" panelname="deck1" deck="1"/>
+      <panel class="deck_container_stack" y="+164+2" panelname="deck2" deck="2"/>
+      <panel class="deck_container_stack" y="+164+2+164+2" panelname="deck3" deck="3"/>
+      <panel class="deck_container_stack" y="+164+2+164+2+164+2" panelname="deck4" deck="4"/>
     </group>
     <group name="3124" visibility="setting 'mixerOrder' '3124'">
-      <panel class="area_deck_stack" panelname="deck3" deck="3"/>
-      <panel class="area_deck_stack" y="+164+2" panelname="deck1" deck="1"/>
-      <panel class="area_deck_stack" y="+164+2+164+2" panelname="deck2" deck="2"/>
-      <panel class="area_deck_stack" y="+164+2+164+2+164+2" panelname="deck4" deck="4"/>
+      <panel class="deck_container_stack" panelname="deck3" deck="3"/>
+      <panel class="deck_container_stack" y="+164+2" panelname="deck1" deck="1"/>
+      <panel class="deck_container_stack" y="+164+2+164+2" panelname="deck2" deck="2"/>
+      <panel class="deck_container_stack" y="+164+2+164+2+164+2" panelname="deck4" deck="4"/>
     </group>
     <group name="1342" visibility="setting 'mixerOrder' '1342'">
-      <panel class="area_deck_stack" panelname="deck1" deck="1"/>
-      <panel class="area_deck_stack" y="+164+2" panelname="deck3" deck="3"/>
-      <panel class="area_deck_stack" y="+164+2+164+2" panelname="deck4" deck="4"/>
-      <panel class="area_deck_stack" y="+164+2+164+2+164+2" panelname="deck2" deck="2"/>
+      <panel class="deck_container_stack" panelname="deck1" deck="1"/>
+      <panel class="deck_container_stack" y="+164+2" panelname="deck3" deck="3"/>
+      <panel class="deck_container_stack" y="+164+2+164+2" panelname="deck4" deck="4"/>
+      <panel class="deck_container_stack" y="+164+2+164+2+164+2" panelname="deck2" deck="2"/>
     </group>
     <panel class="racks_stack" y="+164+2+164+2"/>
   </define>

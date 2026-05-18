@@ -11,10 +11,25 @@
 -->
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
   <oninit action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50% &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%"/>
-  <!-- Definitions: theme tokens, runtime globals, and shared class library -->
+  <!--
+    Skin organisation
+    =================
+    Layouts are the highest-level composition blocks. They assemble containers
+    into complete screen modes and live in src/layouts. They are included as
+    modules rather than reusable classes.
+
+    Containers are reusable regions that group components: decks, racks,
+    waveforms, top/bottom bars, mixer areas, and similar configurable skin
+    regions. Container definitions live under src/components/containers.
+
+    Components are the smaller reusable UI elements used inside containers:
+    buttons, sliders, text, meters, transport controls, jogwheels, and related
+    primitives. Component definitions live directly under src/components.
+  -->
+  <!-- Definitions: theme tokens, runtime globals, components, and containers -->
   <xi:include href="index.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
-  <xi:include href="panels/main.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="panels/topbar.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="panels/bottombar.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="layouts/base.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="components/containers/topbar/panel.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="components/containers/bottombar/panel.xml" xpointer="xpointer(/module/*)"/>
 </skin>

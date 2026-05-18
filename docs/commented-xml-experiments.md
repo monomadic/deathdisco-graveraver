@@ -1942,12 +1942,12 @@ Original line 62:
 </overlay>
 ```
 
-## src/layouts/pro/decks.xml and src/layouts/performance/decks.xml
+## src/layouts/browser/mini.xml and src/layouts/performance/extended.xml
 
 Original line 93:
 
 ```xml
-<panel class="DECK_CONTAINER_MINI" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+<panel class="deck_container_mini" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
 ```
 
 Original line 149:

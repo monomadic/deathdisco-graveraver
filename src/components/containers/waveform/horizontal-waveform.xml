@@ -42,7 +42,7 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
-          <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
+          <down color="transparent" border_size="2" border="#AAFFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
       <!--
@@ -84,7 +84,7 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[HEIGHT]*2+40" height="[HEIGHT]*2"/>
-          <down color="transparent" border_size="1" border="#AAFFFFFF" shape="square" radius="4"/>
+          <down color="transparent" border_size="3" border="#AAFFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
     </deck>

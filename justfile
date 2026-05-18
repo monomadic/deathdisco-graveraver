@@ -21,6 +21,12 @@ verify-generated:
 audit-classes:
     python3 scripts/audit-class-casing.py
 
+repair-pad-state:
+    python3 scripts/repair-vdj-pad-panels.py
+
+repair-pad-state-apply:
+    python3 scripts/repair-vdj-pad-panels.py --apply
+
 lint: lint-prod lint-prototype
 
 lint-prod: generate

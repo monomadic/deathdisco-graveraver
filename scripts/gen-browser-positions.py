@@ -4,7 +4,6 @@ Generates src/layouts/browser/performance.generated.xml
 
 This file encodes browser panel position/size for every combination of:
   - 2 class variants: browser_performance / browser_performance_mini
-  - 2 utility bar states: @$show_utility_bar 0 / 1
   - 8 rack combinations: any subset of fx (80px), mixer (86px), video (140px) racks active
   - 14 waveform sizes: @$infntywavesize 0–13 (step = 20px)
 
@@ -18,7 +17,7 @@ Layout constants (all in px):
   PADDING_MID   12
   BROWSER_Y_FULL  16   bottom gap for full browser
   BROWSER_Y_MINI 348   bottom gap for mini browser
-  UTILITY_EXTRA  50   extra y offset when utility bar is visible
+  UTILITY_BAR   50   bottom utility bar reservation
   WAVESIZE_BASE   7   y offset for wavesize=0  (step: +20 per size unit)
   HEIGHT_BASE   121   height constant for wavesize=0 (step: -20 per size unit)
 
@@ -77,19 +76,10 @@ RACK_COMBOS = [
     ),
 ]
 
-# The four define variants and how they differ.
+# The two define variants and how they differ.
 DEFINES = [
     dict(
         cls="BROWSER_PERFORMANCE",
-        ubar_cond="var_equal '@$show_utility_bar' 0",
-        x_attr="",
-        y_tail="-66-10-12-16",
-        bg_bordercolor="transparent",
-        bg_bordersize="0",
-    ),
-    dict(
-        cls="BROWSER_PERFORMANCE",
-        ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+0" ',
         y_tail="-66+50-10-12-16",
         bg_bordercolor="transparent",
@@ -97,15 +87,6 @@ DEFINES = [
     ),
     dict(
         cls="BROWSER_PERFORMANCE_MINI",
-        ubar_cond="var_equal '@$show_utility_bar' 0",
-        x_attr="",
-        y_tail="-66-10-12-348",
-        bg_bordercolor="xf_progressbackground",
-        bg_bordersize="3",
-    ),
-    dict(
-        cls="BROWSER_PERFORMANCE_MINI",
-        ubar_cond="var_equal '@$show_utility_bar' 1",
         x_attr='x="+2" ',
         y_tail="-66+50-10-12-348",
         bg_bordercolor="xf_progressbackground",
@@ -177,7 +158,7 @@ def generate():
     for d in DEFINES:
         lines.append(
             f'  <define class="{d["cls"]}" showzoom="yes"'
-            f' placeholders="*height" condition="{d["ubar_cond"]}">'
+            f' placeholders="*height">'
         )
         lines.extend(pos_elements(d["x_attr"], d["y_tail"]))
         lines.append(

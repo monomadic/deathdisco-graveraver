@@ -138,22 +138,14 @@
   </define>
   <define class="BROWSER_STACK" showzoom="yes" placeholders="*height">
     <!-- change height of browser based on what is visible -->
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164+38" width="1920" height="+[HEIGHT]" condition="var_equal '@$show_utility_bar' 1"/>
-    <pos y="+[HEIGHT]+7-200-164-3-164" width="1920" height="+[HEIGHT]" condition="var_equal '@$show_utility_bar' 0"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_video_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_mixer_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200-164-3-164+38" width="1920" height="+[HEIGHT]"/>
     <!-- background -->
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
@@ -188,22 +180,14 @@
     <fonttoolbar size="14"/>
   </define>
   <define class="BROWSER_STACK_4DECKS" showzoom="yes" placeholders="*height">
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_video_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_video_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_mixer_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_utility_bar' 1 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_utility_bar' 0 ? var_equal '@$show_fx_rack' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1" width="1920" height="+[HEIGHT]" condition="var_equal '@$show_utility_bar' 1"/>
-    <pos y="+[HEIGHT]+7-200+2+164+2+164" width="1920" height="+[HEIGHT]" condition="var_equal '@$show_utility_bar' 0"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2" width="1920" height="+[HEIGHT]-140-2-86-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+80+2" width="1920" height="+[HEIGHT]-140-2-80-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2+80+2" width="1920" height="+[HEIGHT]-86-2-80-2" condition="var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2" width="1920" height="+[HEIGHT]-140-2" condition="var_equal '@$show_video_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2" width="1920" height="+[HEIGHT]-86-2" condition="var_equal '@$show_mixer_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
+    <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1" width="1920" height="+[HEIGHT]"/>
     <background color="xf_progressbackground" bordercolortop="xf_progressbackground" bordercolor="xf_progressbackground" bordersize="3"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>

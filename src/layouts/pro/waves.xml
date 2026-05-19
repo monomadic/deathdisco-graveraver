@@ -6,11 +6,10 @@
     <!-- With waves above, the browser slot only depends on deck density.
          Slot heights stay numeric here because the browser classes reuse
          HEIGHT inside their own arithmetic expressions. -->
-    <!-- 2 decks: 1080 - 860 - 50 -->
+    <!-- 2 decks with utility bar: 1080 - 845 -->
     <group condition="var_equal '@$layout_4deck' 0">
       <panel class="pro_2decks"/>
-      <browser class="browser_pro" height="190" condition="var_equal '@$show_utility_bar' 0"/>
-      <browser class="browser_pro" height="235" condition="var_equal '@$show_utility_bar' 1"/>
+      <browser class="browser_pro" height="235"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$layout_4deck' 1">
@@ -27,12 +26,8 @@
       <panel class="pro_4decks"/>
       <panel class="area_waves" y="+450+200"/>
     </group>
-    <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830.
-         Utility-bar state only changes how much space is reserved at the bottom. -->
-    <!-- 2 decks, no utility: 1080 - 830 - 50 -->
-    <browser class="browser_pro" height="190" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 0"/>
-    <!-- 2 decks, utility visible: 1080 - 830 -->
-    <browser class="browser_pro" height="240" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 1"/>
+    <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830. -->
+    <browser class="browser_pro" height="240" condition="var_equal '@$layout_4deck' 0"/>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <browser class="browser_pro_4decks" height="500" condition="var_equal '@$layout_4deck' 1"/>
   </define>

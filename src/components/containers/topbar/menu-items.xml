@@ -173,9 +173,6 @@
     </submenu>
   </submenu>
   <submenu text="Utility Bar">
-    <item text="Show On Main Browser" localize="true" action="toggle '@$show_utility_bar' &amp; load_skin" check="var_equal '@$show_utility_bar' 1"/>
-    <item text="Show On Browser Window" localize="true" action="toggle '@$show_utility_bar2' &amp; load_skin" check="var_equal '@$show_utility_bar2' 1"/>
-    <separator/>
     <item text="Show Browser Tools" action="set '@$bottombar_mode' 0" check="var_equal '@$bottombar_mode' 0"/>
     <item text="Show Custom Buttons" action="set '@$bottombar_mode' 1" check="var_equal '@$bottombar_mode' 1"/>
   </submenu>

@@ -169,34 +169,22 @@
     <panel class="browser_zoom_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="browser_zoom_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <group name="without_zoom_racks" condition="var_equal '@$show_zoom_racks' 0">
-      <panel class="browser_overlay_plain" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 1"/>
-      <panel class="browser_overlay_plain" x="0" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 0"/>
-      <panel class="browser_overlay_plain" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 1"/>
-      <panel class="browser_overlay_plain" x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 0"/>
+      <panel class="browser_overlay_plain" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_plain" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
     <group name="with_zoom_racks" condition="var_equal '@$show_zoom_racks' 1">
-      <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
-        <panel class="browser_overlay_with_racks" x="0" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$layout_4deck' 0"/>
-        <panel class="browser_overlay_with_racks" x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$layout_4deck' 1"/>
-      </group>
-      <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
-        <panel class="browser_overlay_with_racks" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0"/>
-        <panel class="browser_overlay_with_racks" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1"/>
-      </group>
+      <panel class="browser_overlay_with_racks" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
   <define class="BROWSER_ZOOM_BROWSER_WAVES">
     <group name="without_zoom_racks" condition="var_equal '@$show_zoom_racks' 0">
-      <panel class="browser_overlay_plain_waves" x="0" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 0"/>
-      <panel class="browser_overlay_plain_waves" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 1"/>
-      <panel class="browser_overlay_plain_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 0"/>
-      <panel class="browser_overlay_plain_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 1"/>
+      <panel class="browser_overlay_plain_waves" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_plain_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
     <group name="with_zoom_racks" condition="var_equal '@$show_zoom_racks' 1">
-      <panel class="browser_overlay_with_racks_waves" x="0" y="+98" width="1920" height="1080-46-100-2" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 0"/>
-      <panel class="browser_overlay_with_racks_waves" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$show_utility_bar' 1"/>
-      <panel class="browser_overlay_with_racks_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 0"/>
-      <panel class="browser_overlay_with_racks_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$show_utility_bar' 1"/>
+      <panel class="browser_overlay_with_racks_waves" x="0" y="+98" width="1920" height="1080-46-100-2-50" condition="var_equal '@$layout_4deck' 0"/>
+      <panel class="browser_overlay_with_racks_waves" x="0" y="+100+100" width="1920" height="1080-50-100-100-50" condition="var_equal '@$layout_4deck' 1"/>
     </group>
   </define>
 </defs>

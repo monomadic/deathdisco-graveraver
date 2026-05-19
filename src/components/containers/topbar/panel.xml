@@ -60,16 +60,6 @@
         <text fontsize="9" weight="normal" color="#999999" align="center" text="DECKS" important="true"/>
       </textzone>
     </group>
-    <!-- DECK MODE BUTTONS -->
-    <group x="250" y="0">
-      <!-- bottom bar toggle -->
-      <button x="420" y="8" tooltip="UTILITY BAR MODE\nToggle between utility bar and hashtag bar at the bottom of the screen." class="button_main" action="toggle '@$show_utility_bar' &amp; load_skin" textsize="10" textcolor="needle" textaction="var_equal '@$show_utility_bar' 1 ? get_text 'ON' : get_text 'OFF'" query="get_var '@$show_utility_bar'">
-        <size width="33" height="33"/>
-        <off color="dark_1"/>
-        <on color="dark_8"/>
-        <selected color="dark_5"/>
-      </button>
-    </group>
     <group visibility="browser_zoom" x="680" y="8">
       <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
     </group>

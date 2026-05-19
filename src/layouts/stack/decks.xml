@@ -73,13 +73,7 @@
     <panel class="stack_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="stack_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
-    <group name="no_utility_bar" condition="var_equal '@$show_utility_bar' 0">
-      <browser class="browser_stack" height="1080-164-60" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_stack_4decks" height="1080-164-330-60" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
-    <group name="utility_bar" condition="var_equal '@$show_utility_bar' 1">
-      <browser class="browser_stack" height="1080-260" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_stack_4decks" height="1080-260-260-70" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
+    <browser class="browser_stack" height="1080-260" condition="var_equal '@$layout_4deck' 0"/>
+    <browser class="browser_stack_4decks" height="1080-260-260-70" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

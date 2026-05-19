@@ -5,27 +5,15 @@
     <panel class="area_waves"/>
     <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
-    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
-      <browser class="browser_performance" height="1080-75-2-2-2-1" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_performance" height="1080-75-2-2-2-1-340-2" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
-    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
-      <browser class="browser_performance" height="1080-75-2-2-2-1-50" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_performance" height="1080-75-2-2-2-1-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
+    <browser class="browser_performance" height="1080-75-2-2-2-1-50" condition="var_equal '@$layout_4deck' 0"/>
+    <browser class="browser_performance" height="1080-75-2-2-2-1-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
   </define>
   <define class="PERFORMANCE_DECKS_BELOW">
     <panel class="performance_2decks" y="+0" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="performance_4decks" y="+0" condition="var_equal '@$layout_4deck' 1"/>
     <panel class="area_waves" y="+2+324+3" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="area_waves" y="+2+324+3+340+2" condition="var_equal '@$layout_4deck' 1"/>
-    <group name="utility_bar_hidden" condition="var_equal '@$show_utility_bar' 0">
-      <browser class="browser_performance" height="1080-204-2-2-2-1" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_performance" height="1080-204-2-2-2-1-340-2" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
-    <group name="utility_bar_visible" condition="var_equal '@$show_utility_bar' 1">
-      <browser class="browser_performance" height="1080-140" condition="var_equal '@$layout_4deck' 0"/>
-      <browser class="browser_performance" height="1080-440" condition="var_equal '@$layout_4deck' 1"/>
-    </group>
+    <browser class="browser_performance" height="1080-140" condition="var_equal '@$layout_4deck' 0"/>
+    <browser class="browser_performance" height="1080-440" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

@@ -7,7 +7,6 @@
     @$hide_main_waveforms controls main-deck waveform visibility on the normal layout: 0 = show, 1 = hide.
     @$hide_zoom_waveforms controls waveform visibility in browser-zoom / mini-deck mode: 0 = show, 1 = hide.
     @$show_zoom_racks controls rack visibility in browser-zoom / mini-deck mode: 0 = hide, 1 = show.
-    @$show_utility_bar controls whether the bottom utility bar reserves screen space.
   -->
   <font name="Helvetica Neue"/>
   <nbdecks value="2" condition="var_equal '@$4decks' 0"/>

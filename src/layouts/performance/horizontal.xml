@@ -1,21 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Horizontal Performance layout: decks arranged around a center waveform. -->
+  <define class="DECK_CONTAINER_PERFORMANCE_HORIZONTAL_LEFT_CENTER" placeholders="*deck,*panelname">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
+      <panel class="infos_center"/>
+      <visual class="gfx_shape" y="+68-2" width="800-81" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
+      <panel class="beat_divider_area" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
+      <songpos class="songpos" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
+      <panel class="transport_center" x="+484+7+80-61-81+30" y="+188+108"/>
+      <panel class="pitch_zone_vertical" x="+484+7-61+10-81+30" y="+108"/>
+      <panel class="jogwheel_2" x="+800-[JOGSIZE]-2-8-20-14-61-81+15" y="+2+6+4+108"/>
+      <line name="divider" color="button_background" width="2" height="171+48-2" x="+557-79-51-81+30+2" y="+108+2+2"/>
+      <panel class="loops_center" x="+0" y="+108" panelname="[PANELNAME]"/>
+      <panel class="pads_rack_center" x="+10" y="+108+72" panelname="[PANELNAME]"/>
+      <panel class="channel_levels_vert" deck="[DECK]" x="+800-61-10-81" y="+108"/>
+      <visual source="deck [DECK] leftdeck" visibility="var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
+        <size width="800-81" height="333"/>
+        <down color="transparent" border_size="2" border="deckcolor" shape="square"/>
+      </visual>
+      <panel class="dual_dropzone" width="800-81" height="333"/>
+    </deck>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_HORIZONTAL_RIGHT_CENTER" placeholders="deck,*panelname">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
+      <panel class="infos_center"/>
+      <visual class="gfx_shape" y="+68-2" width="800-81" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
+      <panel class="beat_divider_area" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
+      <songpos class="songpos" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
+      <panel class="transport_center" x="+21+61" y="+188+108"/>
+      <panel class="pitch_zone_vertical" x="+800-484-60-7+61-10-30" y="+108"/>
+      <panel class="jogwheel_2" x="+2+8+20+14+61-15" y="+2+6+4+108"/>
+      <line name="divider" color="button_background" width="2" height="171+48-2" x="+878-557-3+52-30-1" y="+108+2+2"/>
+      <panel class="loops_center" x="+2+8+58+14+238+53-30-3" y="+108" panelname="[PANELNAME]"/>
+      <panel class="pads_rack_center" x="+2+8+58+14+238+53-30-3" y="+108+72" panelname="[PANELNAME]"/>
+      <panel class="channel_levels_vert" deck="[DECK]" x="+10" y="+108"/>
+      <visual source="deck [DECK] rightdeck" visibility="var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
+        <size width="800-81" height="333"/>
+        <down color="transparent" border_size="2" border="deckcolor" shape="square"/>
+      </visual>
+      <panel class="dual_dropzone" width="800-81" height="333"/>
+    </deck>
+  </define>
   <define class="PERFORMANCE_2DECKS_HORIZONTAL" placeholders="*panelname">
-    <panel class="deck_container_performance_left_center" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-    <panel class="deck_container_performance_left_center" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
+    <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="racks_vertical" x="+2"/>
     <panel class="waveform_horizontal_center" waveformwidth="474" waveformheight="333" x="+800-81+4" y="+0"/>
-    <panel class="deck_container_performance_right_center" x="+1920-2-800+81" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
-    <panel class="deck_container_performance_right_center" x="+1920-2-800+81" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_performance_horizontal_right_center" x="+1920-2-800+81" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
+    <panel class="deck_container_performance_horizontal_right_center" x="+1920-2-800+81" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
   </define>
   <define class="PERFORMANCE_4DECKS_HORIZONTAL" placeholders="*panelname">
-    <panel class="deck_container_performance_left_center" x="+2" panelname="deck1" deck="1"/>
-    <panel class="deck_container_performance_left_center" x="+2" y="+333+2" panelname="deck3" deck="3"/>
+    <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck1" deck="1"/>
+    <panel class="deck_container_performance_horizontal_left_center" x="+2" y="+333+2" panelname="deck3" deck="3"/>
     <panel class="waveform_horizontal_center4" waveformwidth="474" waveformheight="333+2+333" x="+800-81+4" y="+0"/>
     <panel class="racks_vertical" x="+2" y="+333+2"/>
-    <panel class="deck_container_performance_right_center" x="+1920-2-800+81" panelname="deck2" deck="2"/>
-    <panel class="deck_container_performance_right_center" x="+1920-2-800+81" y="+333+2" panelname="deck4" deck="4"/>
+    <panel class="deck_container_performance_horizontal_right_center" x="+1920-2-800+81" panelname="deck2" deck="2"/>
+    <panel class="deck_container_performance_horizontal_right_center" x="+1920-2-800+81" y="+333+2" panelname="deck4" deck="4"/>
   </define>
   <define class="PERFORMANCE_DECKS_HORIZONTAL">
     <panel class="performance_2decks_horizontal" condition="var_equal '@$layout_4deck' 0"/>

@@ -17,7 +17,9 @@
   <xi:include href="jogwheel.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="control-groups.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-widgets.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="deck-spine.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="loop-panels.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="utility-panels.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="video.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Containers -->
   <xi:include href="containers/pads/pad-containers.xml" xpointer="xpointer(/defs/*)"/>
@@ -29,10 +31,7 @@
   <xi:include href="containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/mixer/mixer-containers.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/global/master-panels.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/topbar/topbar-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/racks/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/racks/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/deck/spine.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/deck/deck-containers.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

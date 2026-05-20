@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
+  <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
+    <deck deck="[DECK]">
+      <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
+      <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
+      <panel class="deck_container_performance_body" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
+      <panel class="deck_container_performance_body" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
+    </deck>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="922" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
+      <panel class="infos_ex" deckside="left" visibility="leftdeck"/>
+      <panel class="infos_ex" deckside="right" visibility="rightdeck"/>
+      <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
+      <songpos class="songpos" x="+2" y="+65" width="918" height="30"/>
+      <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
+      <panel class="pad_page_container" x="+0" y="+100" panelname="[PANELNAME]"/>
+      <group y="+10" x="-20">
+        <panel class="jogwheel" x="+922-150" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
+        <panel class="pitch_small" deck="[DECK]" x="+922-10" y="+110"/>
+      </group>
+      <group x="+805" y="+285">
+        <button class="button_main" textsize="11" width="110" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
+          <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
+          <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+          <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+          <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
+        </button>
+      </group>
+      <visual class="gfx_shape" x="+0" y="+0" width="922" height="340" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>
+      <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
+        <size width="878+77+2-35" height="340"/>
+        <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
+      </visual>
+      <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>
+    </deck>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="878+77+2" height="264" coloroff="#111111" bordersize="1" bordercoloroff="#222222"/>
+      <panel class="infos_ex" x="+0" deck="[DECK]" deckside="right"/>
+      <visual class="gfx_shape" y="+68-2-6" width="878+77+2" height="38" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
+      <panel class="beat_divider_area" x="+2+4" y="+68+4-6" width="878-4-8+77+2" height="38-4-8"/>
+      <songpos class="songpos" x="+2+4" y="+68+4-6" width="878-4-8+77+2" height="38-4-8"/>
+      <panel class="transport_ex" x="+878-484-60-7-77-2+6+2" y="+103-6"/>
+      <panel class="pitch_zone_ex" x="+878-484-60-7-77-2+77+2+2" y="+103-6"/>
+      <panel class="jogwheel" x="+2+8+58+14+8+2-4" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
+      <line name="divider" color="button_background" width="3" height="172-12" x="+878-557-3+77+1" y="+103+2-5"/>
+      <panel class="loops_ex" x="+2+8+58+14+238+77+1" y="+103-6" panelname="[PANELNAME]"/>
+      <panel class="channel_levels_ex" deck="[DECK]" x="+2+8" y="+103-6"/>
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] rightdeck ? var_equal '@$layout_4deck' 1 ? loaded ? blink_play on : true">
+        <size width="878+77+2" height="264"/>
+        <down color="transparent" border_size="2" border="deckcolor" shape="square" radius="8"/>
+      </visual>
+      <dropzone visibility="var_equal '@$layout_4deck' 0">
+        <size width="878+77+2" height="264"/>
+        <over color="transparent" border_size="2" border="deckcolor" shape="square"/>
+      </dropzone>
+      <dropzone visibility="var_equal '@$layout_4deck' 1">
+        <size width="878+77+2" height="264"/>
+        <over color="transparent" border_size="2" border="needle" shape="square"/>
+      </dropzone>
+    </deck>
+  </define>
   <define class="PERFORMANCE_MAIN_RACKS" placeholders="offset_y=0,deck_offset=264+2">
     <panel class="racks_extended" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 0"/>
     <panel class="racks_single" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 1"/>

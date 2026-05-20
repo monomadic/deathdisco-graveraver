@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Pad page container -->
-  <xi:include href="pad_page_container.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="pad-page-container.xml" xpointer="xpointer(/defs/*)"/>
   <!-- FX rack content that shares the same deck surface area -->
   <xi:include href="effects-zone.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Vertical pad rack used by the performance vertical layout -->

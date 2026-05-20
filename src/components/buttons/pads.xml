@@ -251,24 +251,24 @@
       <off color="needle" shape="square"/>
     </visual>
   </define>
-  <define class="PADBUTTON3" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
+  <define class="PADBUTTON3" placeholders="*source,width=180">
     <visual type="color" source="pad_button_color [SOURCE]">
       <pos x="+3" y="+3"/>
-      <size width="180-6" height="39-6"/>
+      <size width="[WIDTH]-3-3" height="39-6"/>
     </visual>
     <!-- button base -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="180" height="39"/>
+      <size width="[WIDTH]" height="39"/>
       <off color="dark_0" border="#44FFFFFF" border_size="3" shape="square" radius="3"/>
       <over color="#CC000000" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
       <down color="dark_5" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
       <selected color="#CC000000" border="#99FFFFFF" border_size="3" shape="square" radius="3"/>
-      <text dx="+24" width="180-10-10" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/>
+      <text dx="+24" width="[WIDTH]-20" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/>
     </button>
     <!-- color tinting -->
     <visual type="color" source="pad_button_color [SOURCE]" visibility="0.4">
       <tooltip/>
-      <size width="180" height="39"/>
+      <size width="[WIDTH]" height="39"/>
     </visual>
     <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
       <tooltip/>
@@ -291,7 +291,7 @@
     </visual>
     <visual novisibility="pad_button_color [SOURCE]">
       <tooltip/>
-      <size width="180" height="39"/>
+      <size width="[WIDTH]" height="39"/>
       <size width="4" height="38-10-10"/>
       <off color="transparent" border_size="1" border="dark_4" shape="square"/>
     </visual>

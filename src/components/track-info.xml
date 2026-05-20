@@ -14,7 +14,7 @@
   <define class="INFOS">
     <!-- LEFT DECK -->
     <!-- background: black glass (behind cover) -->
-    <button class="button_main" action="select" width="532" height="175" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="0"/>
+    <button class="button_main" action="select" width="550" height="75" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="0"/>
     <!-- ACAPELLA/INSTRUMENTAL LINE BORDER -->
     <group visibility="loaded">
     </group>

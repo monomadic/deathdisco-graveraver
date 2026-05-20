@@ -16,17 +16,17 @@
   </define>
   <define class="JOGWHEEL_CORNER_BUTTONS" placeholders="*jogsize=155">
     <panel class="green_light_indicator" x="+[JOGSIZE]-20" y="+[JOGSIZE]-20" action="auto_sync_options" query="auto_match_bpm ? auto_match_key ? auto_sync ? auto_pitch_lock"/>
+    <!-- settings menu -->
     <group x="+0" y="+0">
       <visual>
         <size width="20" height="20"/>
-        <off shape="circle" color="transparent" border="dark_6" border_size="1"/>
-        <over shape="circle" color="transparent" border="#888888" border_size="1"/>
+        <!-- <off shape="circle" color="transparent" border="dark_8" border_size="1"/> -->
+        <off shape="circle" color="transparent" border="dark_6" border_size="2"/>
       </visual>
       <!-- PRO: JOGWHEEL MENU -->
       <menu>
-        <pos x="+5" y="+5"/>
-        <size width="10" height="10"/>
-        <pos x="+5" y="+5"/>
+        <pos x="+0" y="+0"/>
+        <size width="20" height="20"/>
         <icon sysicon="settings" height="18" width="18" color="#AAAAAA" colorover="white" colordown="needle"/>
         <item text="Minimal" localize="true" action="set '@$jog_type' 0" check="var_equal '@$jog_type' 0"/>
         <item text="Text" localize="true" action="set '@$jog_type' 1" check="var_equal '@$jog_type' 1"/>

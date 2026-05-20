@@ -13,7 +13,7 @@
         <menu class="menu_maindecks" x="+0" y="+160-30" width="35" height="20"/>
       </group>
       <group x="+35">
-        <panel class="infos_stack"/>
+        <panel class="track_info_stack"/>
         <panel class="times_bpm_key_stack2" y="+38-2" visibility="not var_equal '@$deck_stack' 1"/>
         <group name="deck_control" visibility="var_equal '@$deck_stack' 1">
           <panel visibility="var_equal '@deck_mode' 0">

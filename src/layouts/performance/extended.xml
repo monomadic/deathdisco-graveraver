@@ -12,8 +12,8 @@
   <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="922" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
-      <panel class="infos_ex" deckside="left" visibility="leftdeck"/>
-      <panel class="infos_ex" deckside="right" visibility="rightdeck"/>
+      <panel class="track_info_extended" deckside="left" visibility="leftdeck"/>
+      <panel class="track_info_extended" deckside="right" visibility="rightdeck"/>
       <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
       <songpos class="songpos" x="+2" y="+65" width="918" height="30"/>
       <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
@@ -41,7 +41,7 @@
   <define class="DECK_CONTAINER_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="878+77+2" height="264" coloroff="#111111" bordersize="1" bordercoloroff="#222222"/>
-      <panel class="infos_ex" x="+0" deck="[DECK]" deckside="right"/>
+      <panel class="track_info_extended" x="+0" deck="[DECK]" deckside="right"/>
       <visual class="gfx_shape" y="+68-2-6" width="878+77+2" height="38" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
       <panel class="beat_divider_area" x="+2+4" y="+68+4-6" width="878-4-8+77+2" height="38-4-8"/>
       <songpos class="songpos" x="+2+4" y="+68+4-6" width="878-4-8+77+2" height="38-4-8"/>

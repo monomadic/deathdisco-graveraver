@@ -4,7 +4,7 @@
   <define class="DECK_CONTAINER_PERFORMANCE_LEFT_VERTICAL" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="766" height="333" coloroff="panel_background"/>
-      <panel class="infos_vert"/>
+      <panel class="track_info_vertical"/>
       <visual class="gfx_shape" y="+68-2" width="766" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
       <panel class="beat_divider_area" x="+2+4" y="+68+4" width="766-4-8" height="44-4-8"/>
       <songpos class="songpos" x="+2+4" y="+68+4" width="766-4-8" height="44-4-8"/>
@@ -31,7 +31,7 @@
   <define class="DECK_CONTAINER_PERFORMANCE_RIGHT_VERTICAL" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800" height="333" coloroff="panel_background"/>
-      <panel class="infos_vert"/>
+      <panel class="track_info_vertical"/>
       <visual class="gfx_shape" y="+68-2" width="800" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
       <panel class="beat_divider_area" x="+2+4" y="+68+4" width="800-4-8" height="44-4-8"/>
       <songpos class="songpos" x="+2+4" y="+68+4" width="800-4-8" height="44-4-8"/>
@@ -58,7 +58,7 @@
   <define class="DECK_CONTAINER_PERFORMANCE_VERTICAL_LEFT_CENTER" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
-      <panel class="infos_center"/>
+      <panel class="track_info_center"/>
       <visual class="gfx_shape" y="+68-2" width="800-81" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
       <panel class="beat_divider_area" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
       <songpos class="songpos" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
@@ -79,7 +79,7 @@
   <define class="DECK_CONTAINER_PERFORMANCE_VERTICAL_RIGHT_CENTER" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800-81" height="333" coloroff="panel_background"/>
-      <panel class="infos_center"/>
+      <panel class="track_info_center"/>
       <visual class="gfx_shape" y="+68-2" width="800-81" height="44" coloroff="infos_background" bordercoloroff="panel_background" bordersize="2"/>
       <panel class="beat_divider_area" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>
       <songpos class="songpos" x="+2+4" y="+68+4" width="800-4-8-81" height="44-4-8"/>

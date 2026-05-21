@@ -74,6 +74,8 @@
     <panel class="stack_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
     <browser class="browser_stack" height="1080-260" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="browser_result_count_stack" height="1080-260" condition="var_equal '@$layout_4deck' 0"/>
     <browser class="browser_stack_4decks" height="1080-260-260-70" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="browser_result_count_stack_4decks" height="1080-260-260-70" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

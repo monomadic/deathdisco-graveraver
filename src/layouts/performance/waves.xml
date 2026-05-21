@@ -6,7 +6,9 @@
     <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <browser class="browser_performance" height="1080-75-2-2-2-1-50" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="browser_performance_result_count" height="1080-75-2-2-2-1-50" condition="var_equal '@$layout_4deck' 0"/>
     <browser class="browser_performance" height="1080-75-2-2-2-1-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="browser_performance_result_count" height="1080-75-2-2-2-1-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
   </define>
   <define class="PERFORMANCE_DECKS_BELOW">
     <panel class="performance_2decks" y="+0" condition="var_equal '@$layout_4deck' 0"/>
@@ -14,6 +16,8 @@
     <panel class="area_waves" y="+2+324+3" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="area_waves" y="+2+324+3+340+2" condition="var_equal '@$layout_4deck' 1"/>
     <browser class="browser_performance" height="1080-140" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="browser_performance_result_count" height="1080-140" condition="var_equal '@$layout_4deck' 0"/>
     <browser class="browser_performance" height="1080-440" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="browser_performance_result_count" height="1080-440" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

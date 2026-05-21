@@ -2,22 +2,94 @@
 <defs>
   <!-- Shared browser wrappers used by layout-level browser overlays.
        Layout classes pass only the slot geometry and rack visibility. -->
+  <define class="BROWSER_RESULT_COUNT" placeholders="*width">
+    <group x="+[WIDTH]-176" y="+8">
+      <visual class="gfx_shape" width="160" height="28" coloroff="xf_background" bordercoloroff="button_background" bordersize="1" radius="3"/>
+      <textzone class="text" x="+8" y="+4" width="144" height="20" fontsize="14" color="needle" align="right" weight="bold" textaction="get_text '`file_count &amp; param_cast &quot;integer&quot;` FILES'"/>
+    </group>
+  </define>
+
+  <define class="BROWSER_RESULT_COUNT_PRO" placeholders="*height">
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+50" condition="var_equal '@$infntywavesize' 13"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+40" condition="var_equal '@$infntywavesize' 12"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+20" condition="var_equal '@$infntywavesize' 11"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-0" condition="var_equal '@$infntywavesize' 10"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-20" condition="var_equal '@$infntywavesize' 9"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-40" condition="var_equal '@$infntywavesize' 8"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-60" condition="var_equal '@$infntywavesize' 7"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-80" condition="var_equal '@$infntywavesize' 6"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-100" condition="var_equal '@$infntywavesize' 5"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-120" condition="var_equal '@$infntywavesize' 4"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-140" condition="var_equal '@$infntywavesize' 3"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-160" condition="var_equal '@$infntywavesize' 2"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-180" condition="var_equal '@$infntywavesize' 1"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-200" condition="var_equal '@$infntywavesize' 0"/>
+  </define>
+
+  <define class="BROWSER_RESULT_COUNT_PRO_4DECKS" placeholders="*height">
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+267+432+4-200+38" condition="var_equal '@$infntywavesize' 13"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+247+432+4-200+38" condition="var_equal '@$infntywavesize' 12"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+227+432+4-200+38" condition="var_equal '@$infntywavesize' 11"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+207+432+4-200+38" condition="var_equal '@$infntywavesize' 10"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+187+432+4-200+38" condition="var_equal '@$infntywavesize' 9"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+167+432+4-200+38" condition="var_equal '@$infntywavesize' 8"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+147+432+4-200+38" condition="var_equal '@$infntywavesize' 7"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+127+432+4-200+38" condition="var_equal '@$infntywavesize' 6"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+107+432+4-200+38" condition="var_equal '@$infntywavesize' 5"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+87+432+4-200+38" condition="var_equal '@$infntywavesize' 4"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+67+432+4-200+38" condition="var_equal '@$infntywavesize' 3"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+47+432+4-200+38" condition="var_equal '@$infntywavesize' 2"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+27+432+4-200+38" condition="var_equal '@$infntywavesize' 1"/>
+    <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+7+432+4-200+38" condition="var_equal '@$infntywavesize' 0"/>
+  </define>
+
+  <define class="BROWSER_RESULT_COUNT_STACK" placeholders="*height">
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+86+2+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+86+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
+  </define>
+
+  <define class="BROWSER_RESULT_COUNT_STACK_4DECKS" placeholders="*height">
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+86+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
+    <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
+  </define>
+
   <define class="BROWSER_OVERLAY_PLAIN" placeholders="*x,*y,*width,*height">
     <browser class="browser_ui_base">
-      <pos y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
+      <pos x="[X]" y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
     </browser>
+    <panel class="browser_result_count" x="[X]" y="[Y]" width="[WIDTH]"/>
   </define>
   <define class="BROWSER_OVERLAY_WITH_RACKS" placeholders="*x,*y,*width,*height">
     <browser class="browser_ui_base">
-      <pos y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
-      <pos y="+[Y]+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-86-2-140-2" condition="var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
-      <pos y="+[Y]+80+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_video_rack' 1"/>
-      <pos y="+[Y]+80+2+86+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-      <pos y="+[Y]+140+2" width="[WIDTH]" height="[HEIGHT]-140-2" condition="var_equal '@$show_video_rack' 1"/>
-      <pos y="+[Y]+86+2" width="[WIDTH]" height="[HEIGHT]-86-2" condition="var_equal '@$show_mixer_rack' 1"/>
-      <pos y="+[Y]+80+2" width="[WIDTH]" height="[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
-      <pos y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
+      <pos x="[X]" y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos x="[X]" y="+[Y]+86+2+140+2" width="[WIDTH]" height="[HEIGHT]-86-2-140-2" condition="var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2+140+2" width="[WIDTH]" height="[HEIGHT]-80-2-140-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2+86+2" width="[WIDTH]" height="[HEIGHT]-80-2-86-2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+      <pos x="[X]" y="+[Y]+140+2" width="[WIDTH]" height="[HEIGHT]-140-2" condition="var_equal '@$show_video_rack' 1"/>
+      <pos x="[X]" y="+[Y]+86+2" width="[WIDTH]" height="[HEIGHT]-86-2" condition="var_equal '@$show_mixer_rack' 1"/>
+      <pos x="[X]" y="+[Y]+80+2" width="[WIDTH]" height="[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
+      <pos x="[X]" y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>
     </browser>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+80+2+86+2+140+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+86+2+140+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+80+2+140+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 1"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+80+2+86+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 0"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+140+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 1"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+86+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 0"/>
+    <panel class="browser_result_count" x="[X]" y="+[Y]+80+2" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 0"/>
+    <panel class="browser_result_count" x="[X]" y="[Y]" width="[WIDTH]" condition="var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 0"/>
   </define>
   <define class="BROWSER_OVERLAY_PLAIN_WAVES" placeholders="*base_y,*width,*height">
     <panel class="browser_overlay_plain" y="+[BASE_Y]+381+3" width="[WIDTH]" height="[HEIGHT]-381-3" condition="var_equal '@$infntywavesize' 13"/>

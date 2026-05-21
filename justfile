@@ -51,15 +51,15 @@ install: build
     install_root="$HOME/Library/Application Support/VirtualDJ/Skins"; \
     install_path="$install_root/{{skin_name}}"; \
     mkdir -p "$install_path"; \
-    if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "$install_path/"; fi; \
-    cp -f "{{build_dir}}/skin.xml" "$install_path/skin.xml"
+    if [[ -d "{{assets_dir}}" ]]; then rsync -a --omit-dir-times --delete --exclude skin.xml "{{assets_dir}}/" "$install_path/"; fi; \
+    cmp -s "{{build_dir}}/skin.xml" "$install_path/skin.xml" || cp -f "{{build_dir}}/skin.xml" "$install_path/skin.xml"
 
 prototype-install: prototype-build
     install_root="$HOME/Library/Application Support/VirtualDJ/Skins"; \
     install_path="$install_root/{{prototype_skin_name}}"; \
     mkdir -p "$install_path"; \
-    if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "$install_path/"; fi; \
-    cp -f "{{prototype_build_dir}}/skin.xml" "$install_path/skin.xml"
+    if [[ -d "{{assets_dir}}" ]]; then rsync -a --omit-dir-times --delete --exclude skin.xml "{{assets_dir}}/" "$install_path/"; fi; \
+    cmp -s "{{prototype_build_dir}}/skin.xml" "$install_path/skin.xml" || cp -f "{{prototype_build_dir}}/skin.xml" "$install_path/skin.xml"
 
 watch:
     watchexec \

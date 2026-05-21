@@ -10,11 +10,13 @@
     <group condition="var_equal '@$layout_4deck' 0">
       <panel class="pro_2decks"/>
       <browser class="browser_pro" height="235"/>
+      <panel class="browser_result_count_pro" height="235"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$layout_4deck' 1">
       <panel class="pro_4decks"/>
       <browser class="browser_pro_4decks" height="410"/>
+      <panel class="browser_result_count_pro_4decks" height="410"/>
     </group>
   </define>
   <define class="PRO_DECKS_BELOW">
@@ -28,7 +30,9 @@
     </group>
     <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830. -->
     <browser class="browser_pro" height="240" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="browser_result_count_pro" height="240" condition="var_equal '@$layout_4deck' 0"/>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <browser class="browser_pro_4decks" height="500" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="browser_result_count_pro_4decks" height="500" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

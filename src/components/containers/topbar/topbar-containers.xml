@@ -158,13 +158,14 @@
     </group>
     <!-- PERFORMANCE: TOP BAR -->
     <group name="performance_skin_utility" visibility="var_equal '@$skin_mode' 1">
-      <group x="410" y="0">
+      <!-- LAYOUT SELECTOR -->
+      <group x="410" y="2">
         <!-- border -->
         <visual x="+0" y="+8" width="90" height="28">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
         <!-- blackout -->
-        <visual x="+30" y="+0">
+        <visual x="+30">
           <size width="28" height="16"/>
           <off shape="square" color="black"/>
         </visual>

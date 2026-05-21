@@ -28,8 +28,8 @@
     <group y="+[HEIGHT]-[WIDTH]">
       <visual x="[WIDTH]/2-11" y="+[WIDTH]/2-11">
         <size width="22" height="22"/>
-        <off shape="circle" color="dark_4" border="transparent" border_size="0"/>
-        <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
+        <off shape="circle" color="transparent" border="dark_6" border_size="2"/>
+        <icon sysicon="settings" coloroff="dark_7" colorover="white" colordown="dark_6" colorselected="dark_5" width="18" height="18"/>
       </visual>
     </group>
     <menu class="menu_maindecks" x="+0" y="+[HEIGHT]-[WIDTH]" width="[WIDTH]" height="[WIDTH]"/>

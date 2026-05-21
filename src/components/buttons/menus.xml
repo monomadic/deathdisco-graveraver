@@ -3,7 +3,7 @@
   <!-- Button-family definitions grouped by purpose. -->
   <define class="MENU_MAINDECKS" tooltip="Deck Options" placeholders="width,height">
     <size width="[WIDTH]" height="[HEIGHT]"/>
-    <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
+    <icon sysicon="settings" coloroff="dark_8" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
     <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
     <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
     <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>

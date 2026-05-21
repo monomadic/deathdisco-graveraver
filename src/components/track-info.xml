@@ -335,9 +335,9 @@
         <textzone class="text" width="300" height="48" fontsize="10" color="textdarker" align="center" weight="" text="STEMS NOT FOUND"/>
       </group>
       <!-- STEM BUTTONS -->
-      <group x="+0" y="+5" visibility="has_stems" condition="not [MIRROR]">
+      <group x="+5" y="+5" visibility="has_stems" condition="not [MIRROR]">
         <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
-        <group x="+20" y="+0">
+        <group x="+0" y="+0">
           <!-- acapella -->
           <button action="stem_pad 'acapella'" border_size="1">
             <size width="135" height="23"/>

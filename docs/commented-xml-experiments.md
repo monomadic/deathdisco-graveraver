@@ -17,7 +17,7 @@ Working notes from the `TRACK_MODIFIERS_PANEL` mirror experiment:
 - Runtime canary result: conditions on whole groups with direct `x`/`y`, e.g. `<group x="+318" y="+30" condition="param_equal [FLIP] 0">`, work as expected.
 - Runtime canary result: conditional child `<pos>` inside `<group>` did not move the group, even when the numeric placeholder condition was otherwise valid. Avoid `<group><pos .../></group>` for conditional group placement.
 - Runtime canary result: unstarred string placeholders such as `side=false` remained literal as `[SIDE]` in the visual test and did not drive conditions. Use `*side=false` for placeholders that must appear inside text or script conditions.
-- A canary fixture lives at `src/prototypes/mirror-condition-canary.xml`. Temporarily include it from `src/skin.xml` to re-test placeholder and group-position behavior in VirtualDJ.
+- These findings came from a temporary visual canary that has since been removed from the active skin and prototypes.
 
 ## src/components/buttons/base.xml
 

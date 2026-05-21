@@ -10,7 +10,7 @@ Official docs describe `*placeholder` as enabling simple math, but runtime testi
 - Unstarred placeholders may work for simple XML attribute replacement, but they can remain literal in script/text contexts.
 - Boolean-style placeholders should be declared with a star when used in conditions.
 
-Observed with the canary in `src/prototypes/mirror-condition-canary.xml`:
+Observed with a temporary runtime canary:
 
 ```xml
 <define class="STRING_CONDITION_CANARY" placeholders="side=false">

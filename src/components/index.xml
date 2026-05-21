@@ -31,7 +31,6 @@
   <xi:include href="containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/mixer/mixer-containers.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/topbar/topbar-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/racks/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/racks/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

@@ -328,14 +328,15 @@
     <button class="button_main" x="+404-2-4-28" y="+6" width="28" height="72-6-6" action="SELECT" coloroff="button_background" textheight="45" textsize="16" textaction="get_deck" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
     <menu class="menu_maindecks" query="select" x="+404-2-4-28" y="+72-8-22" width="28" height="20" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
   </define>
-  <define class="TRACK_INFO_ACTION_ZONE">
+  <define class="TRACK_MODIFIERS_PANEL" placeholders="*mirror=0">
     <group visibility="loaded" x="+15" y="+10">
+      <!-- NO STEMS ALERT -->
       <group visibility="not has_stems" y="+30">
         <textzone class="text" width="300" height="48" fontsize="10" color="textdarker" align="center" weight="" text="STEMS NOT FOUND"/>
       </group>
       <group x="+0" y="-10">
         <!-- STEM BUTTONS -->
-        <group x="+235" y="+50" visibility="has_stems">
+        <group x="+235" y="+50" visibility="has_stems" condition="param_equal [MIRROR] 0">
           <panel class="stem_button" x="+0" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
           <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
           <panel class="stem_button" x="+140" y="+0" stem="bass" label="BASS" color="colorbass"/>
@@ -365,10 +366,40 @@
             <panel class="stem_volume_slider" x="+210" stem="rhythm" label="DRUM" color="colorbeat"/>
           </group>
         </group>
+        <group x="+42" y="+50" visibility="has_stems" condition="param_equal [MIRROR] 1">
+          <panel class="stem_button" x="+210" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
+          <panel class="stem_button" x="+140" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
+          <panel class="stem_button" x="+70" y="+0" stem="bass" label="BASS" color="colorbass"/>
+          <panel class="stem_button" x="+0" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
+          <group y="+25">
+            <group x="+210">
+              <button class="stem_fx_button" stem="vocal"/>
+              <button class="stem_iso_button" stem="vocal" x="+33"/>
+            </group>
+            <group x="+140">
+              <button class="stem_fx_button" stem="instru"/>
+              <button class="stem_iso_button" stem="instru" x="+33"/>
+            </group>
+            <group x="+70">
+              <button class="stem_fx_button" stem="bass"/>
+              <button class="stem_iso_button" stem="bass" x="+33"/>
+            </group>
+            <group>
+              <button class="stem_fx_button" stem="rhythm"/>
+              <button class="stem_iso_button" stem="rhythm" x="+33"/>
+            </group>
+          </group>
+          <group y="+46">
+            <panel class="stem_volume_slider" x="+210" stem="vocal" label="VOCAL" color="colorvocal"/>
+            <panel class="stem_volume_slider" x="+140" stem="instru" label="INSTR" color="colorinstru"/>
+            <panel class="stem_volume_slider" x="+70" stem="bass" label="BASS" color="colorbass"/>
+            <panel class="stem_volume_slider" x="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
+          </group>
+        </group>
         <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
-        <group x="+235" y="+24" visibility="loaded">
-          <pos x="+42" y="+6" condition="param_equal [DECKSIDE] 'left'"/>
-          <pos x="+500" y="+6" condition="param_equal [DECKSIDE] 'right'"/>
+        <group visibility="loaded">
+          <pos x="+42" y="+6" condition="param_equal [MIRROR] 0"/>
+          <pos x="+500" y="+6" condition="param_equal [MIRROR] 1"/>
           <!-- acapella -->
           <button action="stem_pad 'acapella'" border_size="1">
             <size width="135" height="23"/>
@@ -396,49 +427,50 @@
             <selected color="color_colorfx"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="COLOR FX"/>
           </button>
-          <button x="+80" width="145" height="19" action="pad_page 3 'COLOR FX' &amp; effect_show_gui 'colorfx'" query="effect_active colorfx" border_size="1">
+          <button x="+82" width="145" height="19" action="pad_page 3 'COLOR FX' &amp; effect_show_gui 'colorfx'" query="effect_active colorfx" border_size="1">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_colorfx" border="color_colorfx"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_colorfx" align="left" action="filter_label"/>
           </button>
         </group>
         <!-- STATUS: PADFX -->
-        <group y="+20">
+        <group y="+22">
           <button width="80" height="19" action="effects_used 'deck' ? effect_disable_all 'padfx' : effect_select" border_size="1" query="effects_used 'deck'" rightclick="effect_select">
             <off color="#000000"/>
-            <selected color="color_padfx"/>
+            <selected color="black"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="#333333" align="left" text="PAD FX"/>
           </button>
-          <button x="+80" width="145" height="19" action="pad_page 3 'PAD FX'" query="effects_used 'padfx'" border_size="1">
+          <button x="+82" width="145" height="19" action="pad_page 3 'PAD FX'" query="effects_used 'padfx'" border_size="1">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_padfx" border="#333333"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_padfx" align="left" action="get_text '`get_effects_used` ACTIVE'"/>
           </button>
         </group>
         <!-- STATUS: SAMPLER -->
-        <group y="+40">
+        <group y="+44">
           <button width="80" height="19" action="sampler_play_stop &amp; pad_page 3 'SAMPLER'" border_size="1" query="sampler_play_stop">
             <off color="#000000"/>
             <selected color="color_sampler" textcolor="white"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="SAMPLER"/>
           </button>
-          <button x="+80" width="145" height="19" action="sampler_play_stop" query="sampler_play_stop" border_size="1">
+          <button x="+82" width="145" height="19" action="sampler_play_stop" query="sampler_play_stop" border_size="1">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_sampler" border="#333333"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_sampler" align="left" action="get_sample_name"/>
           </button>
         </group>
         <!-- STATUS: LOOPER -->
-        <group y="+60">
-          <button width="80" height="19" action="loop" border_size="1" query="is_using loop">
+        <group y="+66">
+          <button class="button_main" width="32" height="19" action="loop ? loop : nothing" query="loop ? blink 500ms : off" sysicon="sampler_loop" iconsize="16" coloroff="#000000" coloron="#000000" brcoloroff="#000000" brcoloron="#2aa8ff" bordersize="1" textcolor="#555555" textcoloron="#2aa8ff" tooltip="Loop"/>
+          <button x="+32" width="48" height="19" action="loop ? loop : nothing" border_size="1" query="loop">
             <off color="#000000"/>
-            <selected color="color_sampler" textcolor="white"/>
-            <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="LOOP"/>
+            <selected color="#000000" border="#2aa8ff"/>
+            <text dx="+7" fontsize="12" color="#AAAAAA" colorselected="#2aa8ff" align="left" text="LOOP"/>
           </button>
-          <button x="+80" width="145" height="19" action="sampler_play_stop" border_size="1" query="is_using loop">
+          <button x="+82" width="145" height="19" action="loop ? loop : nothing" border_size="1" query="loop">
             <off color="#000000"/>
-            <selected color="#222222" textcolor="color_sampler" border="color_sampler"/>
-            <text dx="+10" fontsize="12" color="#555555" colorselected="color_sampler" align="left" action="get_sample_name"/>
+            <selected color="#222222" textcolor="#2aa8ff" border="#2aa8ff"/>
+            <text dx="+10" fontsize="12" color="#555555" colorselected="#2aa8ff" align="left" action="get_text '`get_loop` ACTIVE'"/>
           </button>
         </group>
       </group>

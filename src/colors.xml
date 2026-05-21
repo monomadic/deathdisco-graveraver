@@ -224,6 +224,7 @@
   <define color="br_automix2" value="#ee8b23"/>
   <define color="br_coloron" value="#46484c"/>
   <define color="br_textoff" value="#a3a8b2"/>
+  <define color="browser_search_border" value="#d8e2ff"/>
   <!-- master source colors vu-meters,etc -->
   <group name="mastercolors">
     <define color="mastercoloron" value="#9197a1"/>

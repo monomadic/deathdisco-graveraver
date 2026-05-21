@@ -21,7 +21,7 @@
       <columns background="br_tb_background" text="br_textoff"/>
       <scrollbars background="tab_menu" button="needle"/>
       <info background="xf_background" stripes="button_background" text="needle" label="br_textoff" artist="textoff2" title="needle"/>
-      <search background="xf_progressbackground" border="browser_iconbuttonoff" selected="br_focus" text="needle" cursor="red"/>
+      <search background="xf_progressbackground" border="browser_search_border" selected="br_focus" text="needle" cursor="red"/>
       <prelisten background="xf_background" border="panel_background" selected="textdarker" cursor="red" button="needle" buttonbackground="button_background" buttonselected="green"/>
       <plugins background="br_background" text="textoff2" title="xf_background" titletext="texton2">
         <buttons over_deck1="waveform_active1" over_deck2="waveform_active2" over_deck3="waveform_active3" over_deck4="waveform_active4" selected_deck1="waveform_active1" selected_deck2="waveform_active2" selected_deck3="waveform_active3" selected_deck4="waveform_active4" up="button_background" over="br_focus" selected="br_focus" border="transparent" border_selected="transparent" text="needle"/>

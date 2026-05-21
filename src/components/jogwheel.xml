@@ -154,7 +154,7 @@
           <button x="+44" class="button_main" action="sync &amp; phrase_sync 32" width="20" height="18" color="blue" coloroff="transparent" brcoloroff="red" brcoloron="green" coloron="black" bordersize="0" textsize="12" textcolor="red" textcoloron="green" text="P" query="is_sync" visibility="loaded ? not masterdeck ? not is_sync ? blink 1bt : true"/>
         </group>
         <!-- MASTER BUTTON -->
-        <button class="button_main" action="key_match_button" width="100" height="18" coloroff="transparent" coloron="transparent" bordersize="0" brcoloroff="orange" brcoloron="orange" radius="1" textsize="12" textcolor="orange" textcoloron="orange" textaction="masterdeck ? masterdeck_auto ? get_text 'AUTO MASTER' : get_text 'MASTER DECK' : get_text 'SLAVE'" visibility="loaded ? masterdeck"/>
+        <button class="button_main" action="key_match_button" width="100" height="18" coloroff="transparent" coloron="transparent" bordersize="0" brcoloroff="orange" brcoloron="orange" radius="1" textsize="12" textcolor="orange" textcoloron="orange" textaction="masterdeck ? masterdeck_auto ? get_text 'MASTER (AUTO)' : get_text 'MANUAL' : get_text 'SLAVE'" visibility="loaded ? masterdeck"/>
       </group>
       <!-- bottom -->
       <!-- KEY -->

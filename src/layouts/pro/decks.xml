@@ -11,7 +11,7 @@
         <panel class="track_info_pro"/>
         <panel class="track_info_action_zone" y="+55" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         <group x="550">
-          <panel class="jogwheel" x="750-140" y="+10" name="jogwheel_spinner"/>
+          <panel class="jogwheel" x="750-140" y="+14" name="jogwheel_spinner"/>
           <panel class="pitch_small" x="765" y="+20"/>
         </group>
         <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
@@ -40,7 +40,7 @@
       </visual>
       <group>
         <panel class="pitch_small" x="+5" y="+20"/>
-        <panel class="jogwheel" x="+42" y="+2+6+2" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <panel class="jogwheel" x="+42" y="+14" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         <group x="+210">
           <panel class="track_info_pro"/>
           <panel class="track_info_action_zone" y="+60" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>

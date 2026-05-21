@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Standard Sizes
-  ==============
-               w      h
-  Document     1920   1080
-  Top Bar      1920   43
-  Pro
-    Deck       800    450
-       TBar    800    38
--->
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
   <oninit action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50% &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%"/>
   <!--

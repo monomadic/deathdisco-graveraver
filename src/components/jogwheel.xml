@@ -20,7 +20,6 @@
     <group x="+0" y="+0">
       <visual>
         <size width="20" height="20"/>
-        <!-- <off shape="circle" color="transparent" border="dark_8" border_size="1"/> -->
         <off shape="circle" color="transparent" border="dark_6" border_size="2"/>
       </visual>
       <!-- PRO: JOGWHEEL MENU -->

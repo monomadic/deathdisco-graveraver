@@ -25,7 +25,14 @@
       </group>
     </group>
     <!-- settings menu -->
-    <menu class="menu_maindecks" query="select" x="+0" y="+[HEIGHT]-[WIDTH]" width="[WIDTH]" height="[WIDTH]"/>
+    <group y="+[HEIGHT]-[WIDTH]">
+      <visual x="[WIDTH]/2-11" y="+[WIDTH]/2-11">
+        <size width="22" height="22"/>
+        <off shape="circle" color="dark_4" border="transparent" border_size="0"/>
+        <icon sysicon="settings" coloroff="white" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
+      </visual>
+    </group>
+    <menu class="menu_maindecks" x="+0" y="+[HEIGHT]-[WIDTH]" width="[WIDTH]" height="[WIDTH]"/>
     <!-- master deck label -->
     <group visibility="masterdeck">
       <textzone orientation="vertical" direction="ccw">

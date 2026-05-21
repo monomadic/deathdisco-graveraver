@@ -119,14 +119,16 @@
           <!-- bottom row -->
           <group y="+40*4+30+6">
             <!-- menu -->
-            <button action="pad_menu 1" query="auto_match_bpm ? auto_match_key" visibility="pad_has_menu 1" shape="circle">
-              <size width="10" height="10"/>
-              <pos x="+0" y="+5"/>
-              <off shape="circle" color="#777777" border="#555555" border_size="1"/>
-              <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
-              <over shape="circle" color="#00FF00" border="transparent" border_size="1"/>
-              <down shape="circle" color="#AA44FF44" border="#8800FF00" border_size="1"/>
-            </button>
+            <group x="+150">
+              <button action="pad_menu 1" query="auto_match_bpm ? auto_match_key" visibility="pad_has_menu 1" shape="circle">
+                <size width="10" height="10"/>
+                <pos x="+0" y="+5"/>
+                <off shape="circle" color="#777777" border="#555555" border_size="1"/>
+                <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
+                <over shape="circle" color="#00FF00" border="transparent" border_size="1"/>
+                <down shape="circle" color="#AA44FF44" border="#8800FF00" border_size="1"/>
+              </button>
+            </group>
             <group>
               <!-- MINI HOTCUES -->
               <define class="MINI_CUE_BUTTON_V2" placeholders="*index,*width=21,*height=19">

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!--
+    Temporary runtime canary for VirtualDJ skin placeholder/condition behavior.
+
+    It tests a few independent questions:
+    1. Do starred string placeholders work in conditions? *side=false / *side=true
+    2. Do numeric starred placeholders work in conditions? *flip=0 / *flip=1
+    3. Do string placeholders need to be quoted inside the script? '[SIDE]'
+    4. Can a starred string placeholder be used directly as a boolean condition?
+    5. Does <group> accept conditional child <pos>, or only x/y on the group node?
+
+    This module is intentionally visual and temporary.
+  -->
+
+  <define class="STRING_CONDITION_CANARY" placeholders="*side=false">
+    <group x="+20" y="+70">
+      <visual width="720" height="74">
+        <off color="#AA000000" border="#777777" border_size="1" radius="4"/>
+      </visual>
+      <textzone x="+8" y="+6" width="700" height="18">
+        <text fontsize="12" color="#FFFFFF" text="String side canary: [SIDE]"/>
+      </textzone>
+
+      <!-- Variant A: group uses child <pos>. -->
+      <group>
+        <pos x="+8" y="+30" condition="param_equal [SIDE] 'false'"/>
+        <pos x="+158" y="+30" condition="param_equal [SIDE] 'true'"/>
+        <visual width="140" height="24">
+          <off color="#222244" border="#66AADD" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="string child [SIDE]"/>
+        </textzone>
+      </group>
+
+      <!-- Variant B: condition selects whole groups with x/y on the group node. -->
+      <group x="+318" y="+30" condition="param_equal [SIDE] 'false'">
+        <visual width="140" height="24">
+          <off color="#224422" border="#88DD66" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="string attr false"/>
+        </textzone>
+      </group>
+      <group x="+468" y="+30" condition="param_equal [SIDE] 'true'">
+        <visual width="140" height="24">
+          <off color="#442222" border="#DD8866" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="string attr true"/>
+        </textzone>
+      </group>
+
+      <!-- Variant C: quoted placeholder inside the script expression. -->
+      <group x="+568" y="+6" condition="param_equal '[SIDE]' 'false'">
+        <visual width="140" height="24">
+          <off color="#224422" border="#CCFF99" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="quoted false"/>
+        </textzone>
+      </group>
+      <group x="+568" y="+42" condition="param_equal '[SIDE]' 'true'">
+        <visual width="140" height="24">
+          <off color="#442222" border="#FFCC99" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="quoted true"/>
+        </textzone>
+      </group>
+
+      <!-- Variant D: direct boolean use of the substituted placeholder. -->
+      <group x="+8" y="+54" condition="not [SIDE]">
+        <visual width="140" height="16">
+          <off color="#333333" border="#CCCCCC" border_size="1" radius="2"/>
+        </visual>
+        <textzone width="140" height="16">
+          <text fontsize="10" color="#FFFFFF" align="center" text="not [SIDE]"/>
+        </textzone>
+      </group>
+      <group x="+158" y="+54" condition="[SIDE]">
+        <visual width="140" height="16">
+          <off color="#333333" border="#CCCCCC" border_size="1" radius="2"/>
+        </visual>
+        <textzone width="140" height="16">
+          <text fontsize="10" color="#FFFFFF" align="center" text="[SIDE]"/>
+        </textzone>
+      </group>
+    </group>
+  </define>
+
+  <define class="NUMERIC_CONDITION_CANARY" placeholders="*flip=0">
+    <group x="+20" y="+230">
+      <visual width="720" height="74">
+        <off color="#AA000000" border="#777777" border_size="1" radius="4"/>
+      </visual>
+      <textzone x="+8" y="+6" width="700" height="18">
+        <text fontsize="12" color="#FFFFFF" text="Numeric flip canary: [FLIP]"/>
+      </textzone>
+
+      <!-- Variant A: group uses child <pos>. -->
+      <group>
+        <pos x="+8" y="+30" condition="param_equal [FLIP] 0"/>
+        <pos x="+158" y="+30" condition="param_equal [FLIP] 1"/>
+        <visual width="140" height="24">
+          <off color="#222244" border="#66AADD" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="num child [FLIP]"/>
+        </textzone>
+      </group>
+
+      <!-- Variant B: condition selects whole groups with x/y on the group node. -->
+      <group x="+318" y="+30" condition="param_equal [FLIP] 0">
+        <visual width="140" height="24">
+          <off color="#224422" border="#88DD66" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="num attr 0"/>
+        </textzone>
+      </group>
+      <group x="+468" y="+30" condition="param_equal [FLIP] 1">
+        <visual width="140" height="24">
+          <off color="#442222" border="#DD8866" border_size="1" radius="3"/>
+        </visual>
+        <textzone width="140" height="24">
+          <text fontsize="11" color="#FFFFFF" align="center" text="num attr 1"/>
+        </textzone>
+      </group>
+    </group>
+  </define>
+
+  <panel class="string_condition_canary" side="false"/>
+  <panel class="string_condition_canary" y="+80" side="true"/>
+  <panel class="numeric_condition_canary" flip="0"/>
+  <panel class="numeric_condition_canary" y="+80" flip="1"/>
+</module>

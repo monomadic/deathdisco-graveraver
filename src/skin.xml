@@ -22,4 +22,5 @@
   <xi:include href="layouts/base.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="components/containers/topbar/panel.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="components/containers/bottombar/panel.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="prototypes/mirror-condition-canary.xml" xpointer="xpointer(/module/*)"/>
 </skin>

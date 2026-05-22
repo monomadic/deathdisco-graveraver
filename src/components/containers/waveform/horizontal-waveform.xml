@@ -100,7 +100,7 @@
         <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="leftdeck">
           <pos x="0" y="+20"/>
           <size width="1920" height="[HEIGHT]-40"/>
-          <grid height="10" pos="-18" maincolor="#888888" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" shapepos="-14"/>
+          <grid height="10" pos="-18" maincolor="#888888" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="true" shapepos="-14" shapemirrored="down"/>
           <gridlines width="1" color="gridlines" transparency="0.3"/>
           <cue y="-16">
             <mask x="123" y="100" width="6" height="13"/>
@@ -116,7 +116,7 @@
         <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="rightdeck">
           <pos x="0" y="+20"/>
           <size width="1920" height="[HEIGHT]-40"/>
-          <grid height="10" pos="-18" maincolor="#888888" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" shapepos="-14"/>
+          <grid height="10" pos="-18" maincolor="#888888" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="true" shapepos="-14" shapemirrored="up"/>
           <gridlines width="1" color="gridlines" transparency="0.3"/>
           <!-- y = below waveform: [HEIGHT] here is the scratchwave's own height in this context -->
           <cue y="+[HEIGHT]-38">

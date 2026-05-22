@@ -14,7 +14,7 @@ Layout constants (all in px):
   TOPBAR_H      66   top bar
   PADDING_TOP   10
   PADDING_MID   12
-  BROWSER_Y_FULL  16   bottom gap for full browser
+  BROWSER_Y_FULL  18   bottom gap for full browser
   UTILITY_BAR   50   bottom utility bar reservation
   WAVESIZE_BASE   7   y offset for wavesize=0  (step: +20 per size unit)
   HEIGHT_BASE   121   height constant for wavesize=0 (step: -20 per size unit)
@@ -113,7 +113,7 @@ DEFINES = [
     dict(
         cls="BROWSER_PERFORMANCE",
         x_attr='x="+0" ',
-        y_tail="-66+50-10-12-16",
+        y_tail="-66+50-10-12-18",
     ),
 ]
 

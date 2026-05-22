@@ -3,12 +3,12 @@
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
   <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="320" mirror="false" container_width="960" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="leftdeck ? masterdeck"/>
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="320" mirror="false" container_width="960" label="  DECK [DECK]" condition="param_equal [DECKSIDE] 'left'" color="deckcolor" visibility="leftdeck ? not masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="leftdeck ? masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" label="  DECK [DECK]" condition="param_equal [DECKSIDE] 'left'" color="deckcolor" visibility="leftdeck ? not masterdeck"/>
       <panel class="deck_container_performance_body" x="+35" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
       <panel class="deck_container_performance_body" x="+2" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
-      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="320" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="rightdeck ? masterdeck"/>
-      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="320" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="rightdeck ? not masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="rightdeck ? masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="rightdeck ? not masterdeck"/>
     </deck>
   </define>
   <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,width=922">

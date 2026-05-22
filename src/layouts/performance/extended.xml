@@ -3,15 +3,17 @@
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
   <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
-      <panel class="deck_spine" height="320" condition="param_equal [DECKSIDE] 'left'" visibility="leftdeck"/>
-      <panel class="deck_spine" height="320" x="+960-35" condition="param_equal [DECKSIDE] 'right'" visibility="rightdeck"/>
-      <panel class="deck_container_performance_body" x="+2" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
-      <panel class="deck_container_performance_body" x="+35" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="320" mirror="false" container_width="960" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="leftdeck ? masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="320" mirror="false" container_width="960" label="  DECK [DECK]" condition="param_equal [DECKSIDE] 'left'" color="deckcolor" visibility="leftdeck ? not masterdeck"/>
+      <panel class="deck_container_performance_body" x="+35" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
+      <panel class="deck_container_performance_body" x="+2" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="320" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="rightdeck ? masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="320" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="rightdeck ? not masterdeck"/>
     </deck>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname">
+  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,width=922">
     <deck deck="[DECK]">
-      <visual class="gfx_shape" width="922" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
+      <visual class="gfx_shape" width="[WIDTH]" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
       <panel class="track_info_extended" deckside="left" visibility="leftdeck"/>
       <panel class="track_info_extended" deckside="right" visibility="rightdeck"/>
       <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>

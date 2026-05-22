@@ -3,7 +3,8 @@
   <!-- Pro deck layout shells. @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
   <define class="DECK_CONTAINER_PRO_LEFT" placeholders="*deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="0" y="+0" class="deck_spine"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
       <visual width="765" height="[HEIGHT]" x="+35">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
@@ -34,7 +35,8 @@
   </define>
   <define class="DECK_CONTAINER_PRO_RIGHT" placeholders="deck,*panelname,height=465">
     <deck deck="[DECK]">
-      <panel x="+765" y="+0" class="deck_spine"/>
+      <panel class="deck_spine" x="+800-34" deck="[DECK]" panelname="[PANELNAME]" mirror="true" height="[HEIGHT]" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" x="+800-34" deck="[DECK]" panelname="[PANELNAME]" mirror="true" height="[HEIGHT]" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
       <visual width="765" height="[HEIGHT]">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
@@ -56,11 +58,6 @@
   <define class="PRO_2DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
-    <!-- SPINES -->
-    <!-- <panel class="deck_spine" deck="3" x="0" y="+0" visibility="deck 3 leftdeck"/> -->
-    <!-- <panel class="deck_spine" deck="1" x="0" y="+0" visibility="not deck 3 leftdeck"/> -->
-    <!-- <panel class="deck_spine" deck="2" x="0" y="+0" visibility="not deck 4 leftdeck"/> -->
-    <!-- <panel class="deck_spine" deck="4" x="0" y="+0" visibility="deck 4 leftdeck"/> -->
     <!-- DECKS -->
     <panel class="deck_container_pro_left" x="0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
     <panel class="deck_container_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>

@@ -14,7 +14,11 @@
       </group>
       <group x="+35">
         <panel class="track_info_stack"/>
-        <panel class="times_bpm_key_stack2" y="+38-2" visibility="not var_equal '@$deck_stack' 1"/>
+        <square color="bg_main" canstretch="false">
+          <pos x="+0" y="+50"/>
+          <size width="485" height="75"/>
+        </square>
+        <panel class="track_modifiers_panel" y="+35"/>
         <group name="deck_control" visibility="var_equal '@$deck_stack' 1">
           <panel visibility="var_equal '@deck_mode' 0">
             <panel class="transport_stack" x="+484+7"/>
@@ -28,8 +32,8 @@
             <panel class="saved_loops_stack" panelname="[PANELNAME]" x="+484+7"/>
           </panel>
         </group>
-        <visual class="gfx_shape" x="+0" y="+164-38" width="482" height="38" coloroff="infos_background" bordercoloroff="panel_background" bordersize="1"/>
-        <songpos class="songpos" x="+2+4" y="+164-38+2+4" width="484-4-8" height="38-4-8"/>
+        <!-- <visual class="gfx_shape" x="+0" y="+164-36" width="482" height="38" coloroff="infos_background" bordercoloroff="panel_background" bordersize="1"/> -->
+        <songpos class="songpos" x="+170" y="+10" width="310" height="36"/>
         <panel class="wave_stack" x="+800+2" visibility="var_equal '@$deck_stack' 1"/>
         <panel class="wave_stack" x="+484+2" width="1114+316" visibility="var_equal '@$deck_stack' 0"/>
       </group>

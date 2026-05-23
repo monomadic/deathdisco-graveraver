@@ -18,6 +18,7 @@ Layout constants (all in px):
   UTILITY_BAR   50   bottom utility bar reservation
   WAVESIZE_BASE   7   y offset for wavesize=0  (step: +20 per size unit)
   HEIGHT_BASE   121   height constant for wavesize=0 (step: -20 per size unit)
+  BOTTOM_TRIM    0    optional layout-level browser height trim
 
 Do not edit the generated file — edit this script instead.
 """
@@ -125,7 +126,7 @@ def pos_elements(x_attr, y_tail):
             height_base = 121 + n * 20    # 381 at n=13, 121 at n=0
 
             y = f"+[HEIGHT]+{wavesize_y}-432{y_rack}{y_tail}"
-            height = f"+[HEIGHT]-{height_base}{h_rack}"
+            height = f"+[HEIGHT]-{height_base}{h_rack}-[BOTTOM_TRIM]"
 
             if rack_cond:
                 condition = f"{rack_cond} ? var_equal '@$infntywavesize' {n}"
@@ -160,7 +161,7 @@ def generate():
     ]
 
     for d in DEFINES:
-        lines.append(f'  <define class="{d["cls"]}_SURFACE" placeholders="*height">')
+        lines.append(f'  <define class="{d["cls"]}_SURFACE" placeholders="*height,bottom_trim=0">')
         lines.append('    <browser class="browser_ui_base">')
         lines.extend(pos_elements(d["x_attr"], d["y_tail"]))
         lines.append("    </browser>")

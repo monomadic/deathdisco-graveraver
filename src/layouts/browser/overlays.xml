@@ -10,20 +10,20 @@
   </define>
 
   <define class="BROWSER_RESULT_COUNT_PRO" placeholders="*height">
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+50" condition="var_equal '@$infntywavesize' 13"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+40" condition="var_equal '@$infntywavesize' 12"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+20" condition="var_equal '@$infntywavesize' 11"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-0" condition="var_equal '@$infntywavesize' 10"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-20" condition="var_equal '@$infntywavesize' 9"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-40" condition="var_equal '@$infntywavesize' 8"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-60" condition="var_equal '@$infntywavesize' 7"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-80" condition="var_equal '@$infntywavesize' 6"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-100" condition="var_equal '@$infntywavesize' 5"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-120" condition="var_equal '@$infntywavesize' 4"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-140" condition="var_equal '@$infntywavesize' 3"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-160" condition="var_equal '@$infntywavesize' 2"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-180" condition="var_equal '@$infntywavesize' 1"/>
-    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]-200" condition="var_equal '@$infntywavesize' 0"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+267-207" condition="var_equal '@$infntywavesize' 13"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+247-207" condition="var_equal '@$infntywavesize' 12"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+227-207" condition="var_equal '@$infntywavesize' 11"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+207-207" condition="var_equal '@$infntywavesize' 10"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+187-207" condition="var_equal '@$infntywavesize' 9"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+167-207" condition="var_equal '@$infntywavesize' 8"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+147-207" condition="var_equal '@$infntywavesize' 7"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+127-207" condition="var_equal '@$infntywavesize' 6"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+107-207" condition="var_equal '@$infntywavesize' 5"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+87-207" condition="var_equal '@$infntywavesize' 4"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+67-207" condition="var_equal '@$infntywavesize' 3"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+47-207" condition="var_equal '@$infntywavesize' 2"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+27-207" condition="var_equal '@$infntywavesize' 1"/>
+    <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+7-207" condition="var_equal '@$infntywavesize' 0"/>
   </define>
 
   <define class="BROWSER_RESULT_COUNT_PRO_4DECKS" placeholders="*height">

@@ -75,41 +75,6 @@ RACK_COMBOS = [
     ),
 ]
 
-RACK_COMBOS_EXCLUSIVE = [
-    (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1",
-        "+80+2+86+2+140+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1",
-        "+86+2+140+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 1",
-        "+80+2+140+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 0",
-        "+80+2+86+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 1",
-        "+140+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 0",
-        "+86+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 0",
-        "+80+2",
-    ),
-    (
-        "var_equal '@$show_fx_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_video_rack' 0",
-        "",
-    ),
-]
-
 DEFINES = [
     dict(
         cls="BROWSER_PERFORMANCE",
@@ -139,20 +104,6 @@ def pos_elements(x_attr, y_tail):
             )
 
 
-def count_elements(x_attr, y_tail):
-    """Yield matching result-count overlay panels for one generated browser block."""
-    for rack_cond, y_rack in RACK_COMBOS_EXCLUSIVE:
-        for n in range(13, -1, -1):
-            wavesize_y = 7 + n * 20
-            y = f"+[HEIGHT]+{wavesize_y}-432{y_rack}{y_tail}"
-            condition = f"{rack_cond} ? var_equal '@$infntywavesize' {n}"
-
-            yield (
-                f'    <panel class="browser_result_count" {x_attr}y="{y}"'
-                f' width="1920" condition="{condition}"/>'
-            )
-
-
 def generate():
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -165,7 +116,6 @@ def generate():
         lines.append('    <browser class="browser_ui_base">')
         lines.extend(pos_elements(d["x_attr"], d["y_tail"]))
         lines.append("    </browser>")
-        lines.extend(count_elements(d["x_attr"], d["y_tail"]))
         lines.append("  </define>")
 
     lines.append("</defs>")

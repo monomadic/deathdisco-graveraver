@@ -4,14 +4,12 @@
     <browser class="browser_ui_base">
       <xi:include href="positions/pro-browser.xml" xpointer="xpointer(/positions/*)"/>
     </browser>
-    <panel class="browser_result_count_pro" height="[HEIGHT]"/>
   </define>
 
   <define class="BROWSER_SURFACE_PRO_4DECKS" placeholders="*height">
     <browser class="browser_ui_base">
       <xi:include href="positions/pro-browser-4deck.xml" xpointer="xpointer(/positions/*)"/>
     </browser>
-    <panel class="browser_result_count_pro_4decks" height="[HEIGHT]"/>
   </define>
 
   <define class="BROWSER_SURFACE_STACK" placeholders="*height">
@@ -25,7 +23,6 @@
       <pos y="+[HEIGHT]+7-200-164-3-164+38+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
       <pos y="+[HEIGHT]+7-200-164-3-164+38" width="1920" height="+[HEIGHT]"/>
     </browser>
-    <panel class="browser_result_count_stack" height="[HEIGHT]"/>
   </define>
 
   <define class="BROWSER_SURFACE_STACK_4DECKS" placeholders="*height">
@@ -39,6 +36,5 @@
       <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1+80+2" width="1920" height="+[HEIGHT]-80-2" condition="var_equal '@$show_fx_rack' 1"/>
       <pos y="+[HEIGHT]+7-200+2+164+2+164+38+1" width="1920" height="+[HEIGHT]"/>
     </browser>
-    <panel class="browser_result_count_stack_4decks" height="[HEIGHT]"/>
   </define>
 </defs>

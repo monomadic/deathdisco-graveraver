@@ -175,15 +175,16 @@
       </group>
       <group visibility="param_equal [DECKSIDE] 'right'">
         <!-- LINE 1 (Title) -->
-        <textzone x="+232">
-          <size width="500" height="70-6-6-26"/>
+        <textzone>
+          <pos x="+320" y="+0"/>
+          <size width="410" height="70-6-6-26"/>
           <text fontsize="18" weight="bold" color="needle" align="right" scroll="yes" action="deck loaded ? get_title_before_remix &amp; param_uppercase" localize="true" important="true"/>
         </textzone>
         <button class="button_main" action="search `get_title_before_remix`" rightclick="file_info" x="+288" y="+1" tooltip="" width="484-2-4-28-6-2-4-210" height="70-6-6-26" coloroff="transparent" coloron="transparent" brcoloroff="transparent" brcoloron="transparent" bordersize="2"/>
         <!-- LINE 2 (Remix) -->
-        <textzone x="+472">
-          <pos y="+18"/>
-          <size width="260" height="70-6-6-26"/>
+        <textzone>
+          <pos x="+320" y="+18"/>
+          <size width="410" height="70-6-6-26"/>
           <text fontsize="12" color="#888888" align="right" scroll="yes" action="get_loaded_song 'artist' &amp; param_uppercase" localize="true" important="true"/>
         </textzone>
       </group>

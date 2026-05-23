@@ -3,19 +3,18 @@
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
   <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside">
     <deck deck="[DECK]">
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="leftdeck ? masterdeck"/>
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" label="  DECK [DECK]" condition="param_equal [DECKSIDE] 'left'" color="deckcolor" visibility="leftdeck ? not masterdeck"/>
-      <panel class="deck_container_performance_body" x="+35" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="leftdeck"/>
-      <panel class="deck_container_performance_body" x="+2" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" visibility="rightdeck"/>
-      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="rightdeck ? masterdeck"/>
-      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="rightdeck ? not masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="340" mirror="false" container_width="960" label="  DECK [DECK]" condition="param_equal [DECKSIDE] 'left'" color="deckcolor" visibility="not masterdeck"/>
+      <panel class="deck_container_performance_body" x="+35" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'left'"/>
+      <panel class="deck_container_performance_body" x="+2" width="922" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'right'"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="340" mirror="true" container_width="960" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
     </deck>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,width=922">
+  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,*deckside,width=922">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="[WIDTH]" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
-      <panel class="track_info_extended" deckside="left" visibility="leftdeck"/>
-      <panel class="track_info_extended" deckside="right" visibility="rightdeck"/>
+      <panel class="track_info_extended" deckside="[DECKSIDE]"/>
       <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
       <songpos class="songpos" x="+2" y="+65" width="918" height="30"/>
       <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
@@ -81,19 +80,18 @@
     <panel class="performance_main_racks" deck_offset="340"/>
   </define>
   <define class="PERFORMANCE_4DECKS" placeholders="*panelname">
-    <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <xi:include href="positions/4decks.xml" xpointer="xpointer(/positions/*)"/>
-    <panel class="deck_container_performance_body" x="+2" panelname="deck1" deck="1"/>
-    <panel class="deck_container_performance_body" x="+2" y="+340+2" panelname="deck3" deck="3"/>
+    <!-- Match the 2-deck extended shell, with the second deck pair stacked below. -->
+    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
+    <panel class="deck_container_performance_side" x="0" panelname="deck1" deck="1" deckside="left"/>
+    <panel class="deck_container_performance_side" x="+960" panelname="deck2" deck="2" deckside="right"/>
+    <panel class="deck_container_performance_side" x="0" y="+340+2" panelname="deck3" deck="3" deckside="left"/>
+    <panel class="deck_container_performance_side" x="+960" y="+340+2" panelname="deck4" deck="4" deckside="right"/>
     <panel class="performance_main_racks" offset_y="+340+2" deck_offset="340"/>
-    <panel class="deck_container_performance_right" x="+1920-2-878-77-2" panelname="deck2" deck="2"/>
-    <panel class="deck_container_performance_right" x="+1920-2-878-77-2" y="+340+2" panelname="deck4" deck="4"/>
   </define>
   <define class="PERFORMANCE_DECKS_NO_WAVES">
     <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
     <panel class="browser_overlay_with_racks" y="+340+2" width="1920" height="1080-43-2-340-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
-    <panel class="browser_overlay_with_racks" y="+340+2+340+2" width="1920" height="1080-43-2-340-2-2-340-2-50" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

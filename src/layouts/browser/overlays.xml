@@ -8,7 +8,6 @@
       <textzone class="text" x="+8" y="+4" width="144" height="20" fontsize="14" color="needle" align="right" weight="bold" textaction="get_text '`file_count &amp; param_cast &quot;integer&quot;` FILES'"/>
     </group>
   </define>
-
   <define class="BROWSER_RESULT_COUNT_PRO" placeholders="*height">
     <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+267-207" condition="var_equal '@$infntywavesize' 13"/>
     <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+247-207" condition="var_equal '@$infntywavesize' 12"/>
@@ -25,7 +24,6 @@
     <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+27-207" condition="var_equal '@$infntywavesize' 1"/>
     <panel class="browser_result_count" x="0" width="1920" y="1080-[HEIGHT]+7-207" condition="var_equal '@$infntywavesize' 0"/>
   </define>
-
   <define class="BROWSER_RESULT_COUNT_PRO_4DECKS" placeholders="*height">
     <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+267+432+4-200+38" condition="var_equal '@$infntywavesize' 13"/>
     <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+247+432+4-200+38" condition="var_equal '@$infntywavesize' 12"/>
@@ -42,7 +40,6 @@
     <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+27+432+4-200+38" condition="var_equal '@$infntywavesize' 1"/>
     <panel class="browser_result_count" x="+2" width="1920-4" y="+[HEIGHT]+7+432+4-200+38" condition="var_equal '@$infntywavesize' 0"/>
   </define>
-
   <define class="BROWSER_RESULT_COUNT_STACK" placeholders="*height">
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
@@ -53,7 +50,6 @@
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200-164-3-164+38" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
   </define>
-
   <define class="BROWSER_RESULT_COUNT_STACK_4DECKS" placeholders="*height">
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2+80+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+140+2+86+2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 0"/>
@@ -64,7 +60,6 @@
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1+80+2" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 1"/>
     <panel class="browser_result_count" width="1920" y="+[HEIGHT]+7-200+2+164+2+164+38+1" condition="var_equal '@$show_video_rack' 0 ? var_equal '@$show_mixer_rack' 0 ? var_equal '@$show_fx_rack' 0"/>
   </define>
-
   <define class="BROWSER_OVERLAY_PLAIN" placeholders="*x,*y,*width,*height">
     <browser class="browser_ui_base">
       <pos x="[X]" y="[Y]" width="[WIDTH]" height="[HEIGHT]"/>

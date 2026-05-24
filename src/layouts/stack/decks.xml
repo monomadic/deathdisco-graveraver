@@ -5,7 +5,7 @@
   <define class="DECK_CONTAINER_STACK" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <group>
-        <button textsize="16" class="button_main" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Right-click: Next Panel" coloroff="button_background" textheight="40" textcoloron="black">
+        <button textsize="16" class="button_main" action="select" rightclick="cycle '@deck_mode' 3" tooltip="Select Deck \n Right-click: Next Panel" coloroff="button_background" textheight="40" textcoloron="black">
           <size width="30" height="40"/>
           <pos x="+8" y="+6"/>
           <text align="center" weight="bold" action="get_deck" width="25"/>
@@ -15,10 +15,10 @@
       <group x="+35">
         <panel class="track_info_stack"/>
         <square color="bg_main" canstretch="false">
-          <pos x="+0" y="+50"/>
+          <pos x="+35" y="+50"/>
           <size width="485" height="75"/>
         </square>
-        <panel class="track_modifiers_panel" y="+35"/>
+        <panel class="track_modifiers_panel" x="+35" y="+35"/>
         <group name="deck_control" visibility="var_equal '@$deck_stack' 1">
           <panel visibility="var_equal '@deck_mode' 0">
             <panel class="transport_stack" x="+484+7"/>

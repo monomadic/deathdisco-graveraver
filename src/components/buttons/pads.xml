@@ -358,27 +358,27 @@
   </define>
   <define class="PADBUTTON-16-SMALL" placeholders="*source">
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="not pad_pushed [SOURCE]">
-      <size width="80" height="33"/>
-      <up color="button_background2" border="transparent" border_size="1" shape="square"/>
-      <over color="#111111" border="#333333" border_size="2" shape="square"/>
-      <selected color="#CC000000" border="transparent" border_size="1" shape="square"/>
+      <size width="76" height="30"/>
+      <up color="button_background2" border="dark_4" border_size="0" shape="square"/>
+      <over color="#111111" border="#333333" border_size="0" shape="square"/>
+      <selected color="#CC000000" border="dark_6" border_size="0" shape="square"/>
     </button>
     <!-- black background (pushed) -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="80" height="33"/>
+      <size width="76" height="30"/>
       <selected color="#CC000000" border="pad_button_color [SOURCE]" border_size="1" shape="square"/>
     </button>
     <!-- text -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
       <pos x="+0" y="+0"/>
-      <size width="80" height="33"/>
-      <over color="#000000"/>
+      <size width="76" height="30"/>
+      <over color="dark_2" border="dark_7" border_size="1" radius="5"/>
       <text dx="+15" dy="-1" width="78" size="12" weight="" color="textoff" colorselected="needle" colorover="#999999" action="pad [SOURCE]" align="left"/>
     </button>
     <!-- color bar -->
     <visual type="color" source="pad_button_color [SOURCE]">
-      <pos x="+6" y="+10"/>
-      <size width="3" height="12"/>
+      <pos x="+5" y="+6"/>
+      <size width="3" height="18"/>
     </visual>
   </define>
 </defs>

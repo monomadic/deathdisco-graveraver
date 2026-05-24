@@ -4,9 +4,9 @@
   <define class="DECK_CONTAINER_MINI" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <panel>
-        <button class="button_main" action="select" rightclick="file_info" tooltip="Text Scroll\nRigth-click: Tag Editor" width="878" height="100-4" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
+        <button class="button_main" action="select" rightclick="file_info" tooltip="Text Scroll\nRight-click: Tag Editor" width="878" height="100-4" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
         <group visibility="loaded ? get_deck 1 ? true : get_deck 3 ? true : false">
-          <button class="button_main" x="+0" y="+0" width="36" height="94" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Rigth-click: Next Panel" coloroff="transparent" textcoloron="black" textcolor="deckcolor" textsize="33" textaction="get_deck" textheight="55" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
+          <button class="button_main" x="+0" y="+0" width="36" height="94" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Right-click: Next Panel" coloroff="transparent" textcoloron="black" textcolor="deckcolor" textsize="33" textaction="get_deck" textheight="55" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
           <menu class="menu_maindecks" query="select" x="+0" y="+64" width="40" height="20"/>
           <group x="+4+28+4+100" y="+0">
             <textzone tooltip="">
@@ -94,7 +94,7 @@
             <button class="button_main" x="+70" y="+0" width="26" height="16" action="key_move +1" textcoloron="white" coloron="transparent" coloroff="transparent" brcoloron="transparent" brcoloroff="transparent" iconsize="15" sysicon="plus"/>
             <visual type="square" x="+10" y="+40" width="10" height="10" color="red" visibility="not is_sync ? blink : false"/>
           </group>
-          <button class="button_main" x="+878-2-4-30" y="-2" width="36" height="100-2" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Rigth-click: Next Panel" coloroff="transparent" textcoloron="black" textcolor="deckcolor" textsize="33" textheight="55" textaction="get_deck" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
+          <button class="button_main" x="+878-2-4-30" y="-2" width="36" height="100-2" action="select" rightclick="cycle '@infospannelmode' 5" tooltip="Select Deck \n Right-click: Next Panel" coloroff="transparent" textcoloron="black" textcolor="deckcolor" textsize="33" textheight="55" textaction="get_deck" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
           <menu class="menu_maindecks" query="select" x="+878-10-28" y="+64" width="40" height="20"/>
           <cover rotate="no" rightclick="" dblclick="">
             <pos x="+878-27-100" y="+3"/>
@@ -140,7 +140,7 @@
     <panel class="deck_container_mini" x="+1920-878-2" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
   </define>
   <define class="BROWSER_ZOOM_4DECKS" placeholders="*panelname">
-    <xi:include href="positions/4decks-mini.xml" xpointer="xpointer(/positions/*)"/>
+    <xi:include href="positions/2decks-mini.xml" xpointer="xpointer(/positions/*)"/>
     <panel class="deck_container_mini" x="+2" panelname="deck1" deck="1" visibility="deck 1 leftdeck"/>
     <panel class="deck_container_mini" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="deck_container_mini" x="+2" y="+98+2" panelname="deck3" deck="3" visibility="not deck 3 leftdeck"/>

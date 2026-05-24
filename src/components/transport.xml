@@ -39,8 +39,8 @@
     <button class="button_main" x="+0" textsize="11" y="+6+33+4+30+6" width="120" height="30" action="play_pause" sysicon="play_button" iconsize="39" iconcolor="black" textcoloron="black" coloroff="button_background2"/>
   </define>
   <define class="TRANSPORT_EX">
-    <button class="button_main" x="+0" y="+6" width="60" height="16" action="setting 'hotcueMode' 'play'" query="setting 'hotcueMode' 'play'" textsize="11" text="CUE PLAY" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
-    <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="setting 'hotcueMode' 'stutter'" textsize="11" text="STUTTER" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/>
+    <button class="button_main" x="+0" y="+6" width="60" height="16" action="setting 'hotCueMode' 'play'" query="setting 'hotCueMode' 'play'" textsize="11" text="CUE PLAY" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
+    <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="setting 'hotCueMode' 'stutter'" textsize="11" text="STUTTER" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle" query="slip_mode ? blink 800ms : off"/>
     <button class="button_main" x="+0" y="+6+30+4+26-8" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2"/>
     <button class="button_main" x="+0" y="+6+30+4+62-8" width="60" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2"/>
     <button class="button_main" x="+0" y="+6+30+4+30+6+62-8" width="60" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2"/>

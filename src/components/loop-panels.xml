@@ -16,7 +16,7 @@
         <button class="button_main" x="+10+38+4+38+4+38+4" y="+6" width="38" height="32" action="set_bpm 50%" coloroff="button_background2" brcoloroff="button_background2" text="/2"/>
         <button class="button_main" x="+10+38+4+38+4" y="+6+30+5" width="38" height="32" action="repeat 100ms &amp; adjust_cbg -1" coloroff="button_background2" brcoloroff="button_background2" iconsize="20" sysicon="arrowleft"/>
         <button class="button_main" x="+10+38+4+38+4+38+4" y="+6+30+5" width="38" height="32" action="repeat 100ms &amp; adjust_cbg +1" coloroff="button_background2" brcoloroff="button_background2" iconsize="20" sysicon="arrowright"/>
-        <button class="button_main" x="+10+38+4+38+4+38+4+38+4+3" y="+6" width="38+35" height="30" action="setting 'hotcueMode'" coloroff="button_background2" brcoloroff="button_background2" textaction="setting 'hotcueMode' &amp; param_uppercase"/>
+        <button class="button_main" x="+10+38+4+38+4+38+4+38+4+3" y="+6" width="38+35" height="30" action="setting 'hotCueMode'" coloroff="button_background2" brcoloroff="button_background2" textaction="setting 'hotCueMode' &amp; param_uppercase"/>
         <button class="button_main" x="+10+38+4+38+4+38+4+38+4+3" y="+6+30+7" width="38+35" height="30" action="edit_bpm" coloroff="button_background2" brcoloroff="button_background2" text="EDIT"/>
       </panel>
       <panel name="@vfx_[PANELNAME]" group="grid_[PANELNAME]" visible="no" available="yes" displayname="STEM 3">

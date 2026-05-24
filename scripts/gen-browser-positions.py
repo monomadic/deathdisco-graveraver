@@ -23,7 +23,6 @@ Layout constants (all in px):
 Do not edit the generated file — edit this script instead.
 """
 
-import textwrap
 import sys
 from pathlib import Path
 

@@ -63,13 +63,6 @@
     <panel class="deck_container_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
     <panel class="deck_container_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
     <panel class="deck_container_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
-    <group y="+450-25">
-      <!-- TRANSPORT 2 DECK -->
-      <!-- <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/> -->
-      <!-- <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/> -->
-      <!-- <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/> -->
-      <!-- <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/> -->
-    </group>
     <!-- PRO: 2 DECK: MIXER PANEL / MIDDLE PANEL -->
     <group x="+800">
       <group name="tabs">
@@ -88,7 +81,7 @@
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <xi:include href="positions/4decks.xml" xpointer="xpointer(/positions/*)"/>
+    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
     <panel class="deck_container_pro_left" x="+0" panelname="deck1" deck="1" visibility="deck 3 leftdeck"/>

@@ -53,13 +53,13 @@
       <define class="BPM_DISPLAY_RIGHT">
         <visual class="gfx_shape" width="136" height="80" coloroff="transparent"/>
         <group name="bpm_not_video" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'">
-          <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRigth-click: Edit BPM \nDouble-click: Reanalyze"/>
+          <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRight-click: Edit BPM \nDouble-click: Reanalyze"/>
           <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'" visibility="var_equal '@$jog_type' 0"/>
           <textzone class="text" x="+0" y="+0" width="136" height="50" fontsize="30" color="white" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="var_not_equal '@$jog_type' 0"/>
           <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM" visibility="var_equal '@$jog_type' 0"/>
         </group>
         <group name="bpm_has_video" visibility="has_video_mix 'active' &amp;&amp; skin_panel 'videomixer'">
-          <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRigth-click: Edit BPM \nDouble-click: Reanalyze"/>
+          <button class="button_main" x="+0" y="+0" width="136" height="48" action="beat_tap" dblclick="reanalyze" rightclick="edit_bpm" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="textdarker" textsize="24" textaction="not loaded ? get_text 'TAP'" tooltip="Beat Tap \nRight-click: Edit BPM \nDouble-click: Reanalyze"/>
           <textzone class="text" x="+0" y="+0" width="136" height="48" fontsize="36" color="needle" align="center" weight="" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
           <textzone class="text" x="+0" y="+50" width="56" height="20" fontsize="13" color="textdarker" align="center" weight="" text="BPM"/>
         </group>

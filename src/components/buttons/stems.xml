@@ -36,7 +36,13 @@
     <size width="32" height="15"/>
     <off color="transparent" border="dark_7" border_size="0" radius="3"/>
     <selected color="transparent" border="color_padfx" radius="3"/>
-    <text fontsize="11" color="dark_7" colorover="white" colorselected="color_padfx" colordown="color_padfx" align="center" text="FX"/>
+    <text fontsize="10" color="dark_7" colorover="white" colorselected="color_padfx" colordown="color_padfx" align="center" text="STEM"/>
+  </define>
+  <define class="SLOT_FX_BUTTON" placeholders="*slot" action="effect_active '[SLOT]'" rightclick="effect_select '[SLOT]'">
+    <size width="32" height="15"/>
+    <off color="transparent" border="dark_7" border_size="0" radius="3"/>
+    <selected color="transparent" border="color_padfx" radius="3"/>
+    <text fontsize="10" color="dark_7" colorover="white" colorselected="color_padfx" colordown="color_padfx" align="center" text="SLOT"/>
   </define>
   <define class="STEM_ISO_BUTTON" placeholders="*stem" action="deck all param_equal `get_deck` `get_defaultdeck` ? mute_stem [STEM] off : mute_stem [STEM] on" query="mute_stem [STEM] ? off : action_deck 1 ? deck 2 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : action_deck 2 ? deck 1 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : action_deck 3 ? deck 1 mute_stem [STEM] &amp;&amp; deck 2 mute_stem [STEM] &amp;&amp; deck 4 mute_stem [STEM] : deck 1 mute_stem [STEM] &amp;&amp; deck 2 mute_stem [STEM] &amp;&amp; deck 3 mute_stem [STEM]">
     <size width="32" height="15"/>

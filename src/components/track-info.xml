@@ -374,6 +374,57 @@
     <button class="button_main" x="+404-2-4-28" y="+6" width="28" height="72-6-6" action="SELECT" coloroff="button_background" textheight="45" textsize="16" textaction="get_deck" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
     <menu class="menu_maindecks" query="select" x="+404-2-4-28" y="+72-8-22" width="28" height="20" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
   </define>
+  <define class="TRACK_STEM_MODIFIERS">
+    <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
+    <group x="+0" y="+0">
+      <!-- acapella -->
+      <button action="stem_pad 'acapella'" border_size="1">
+        <size width="135" height="23"/>
+        <off color="#000000" border="#555555" radius="3"/>
+        <down color="#222222" border="color_acapella" radius="3"/>
+        <selected color="transparent" border="color_acapella" radius="3"/>
+        <text fontsize="12" color="#888888" colorover="color_acapella" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/>
+      </button>
+      <!-- instrumental -->
+      <button x="+140" action="stem_pad 'instrumental'" border_size="1">
+        <size width="134" height="23"/>
+        <off color="#111111" border="#555555" radius="3"/>
+        <down color="#222222" border="color_instrumental" radius="3"/>
+        <selected color="transparent" border="color_instrumental" radius="3"/>
+        <text fontsize="12" color="#888888" colorover="color_instrumental" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/>
+      </button>
+    </group>
+    <group y="+30">
+      <panel class="stem_button" x="+0" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
+      <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
+      <panel class="stem_button" x="+140" y="+0" stem="bass" label="BASS" color="colorbass"/>
+      <panel class="stem_button" x="+210" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
+      <group y="+25">
+        <group>
+          <button class="stem_fx_button" stem="vocal"/>
+          <button class="slot_fx_button" slot="vocals" x="+33"/>
+        </group>
+        <group x="+70">
+          <button class="stem_fx_button" stem="instru"/>
+          <button class="slot_fx_button" slot="instru" x="+33"/>
+        </group>
+        <group x="+140">
+          <button class="stem_fx_button" stem="bass"/>
+          <button class="slot_fx_button" slot="bass" x="+33"/>
+        </group>
+        <group x="+210">
+          <button class="stem_fx_button" stem="rhythm"/>
+          <button class="slot_fx_button" slot="rhythm" x="+33"/>
+        </group>
+      </group>
+      <group y="+46">
+        <panel class="stem_volume_slider" x="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
+        <panel class="stem_volume_slider" x="+70" stem="instru" label="INSTR" color="colorinstru"/>
+        <panel class="stem_volume_slider" x="+140" stem="bass" label="BASS" color="colorbass"/>
+        <panel class="stem_volume_slider" x="+210" stem="rhythm" label="DRUM" color="colorbeat"/>
+      </group>
+    </group>
+  </define>
   <define class="TRACK_MODIFIERS_PANEL" placeholders="*mirror=false">
     <group visibility="loaded" x="+0" y="+20">
       <!-- NO STEMS ALERT -->
@@ -382,106 +433,10 @@
       </group>
       <!-- STEM BUTTONS -->
       <group x="+5" y="+5" visibility="has_stems" condition="not [MIRROR]">
-        <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
-        <group x="+0" y="+0">
-          <!-- acapella -->
-          <button action="stem_pad 'acapella'" border_size="1">
-            <size width="135" height="23"/>
-            <off color="#000000" border="#555555" radius="3"/>
-            <down color="#222222" border="color_acapella" radius="3"/>
-            <selected color="transparent" border="color_acapella" radius="3"/>
-            <text fontsize="12" color="#888888" colorover="color_acapella" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/>
-          </button>
-          <!-- instrumental -->
-          <button x="+140" action="stem_pad 'instrumental'" border_size="1">
-            <size width="134" height="23"/>
-            <off color="#111111" border="#555555" radius="3"/>
-            <down color="#222222" border="color_instrumental" radius="3"/>
-            <selected color="transparent" border="color_instrumental" radius="3"/>
-            <text fontsize="12" color="#888888" colorover="color_instrumental" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/>
-          </button>
-        </group>
-        <group y="+30">
-          <panel class="stem_button" x="+0" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
-          <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
-          <panel class="stem_button" x="+140" y="+0" stem="bass" label="BASS" color="colorbass"/>
-          <panel class="stem_button" x="+210" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
-          <group y="+25">
-            <group>
-              <button class="stem_fx_button" stem="vocal"/>
-              <button class="stem_iso_button" stem="vocal" x="+33"/>
-            </group>
-            <group x="+70">
-              <button class="stem_fx_button" stem="instru"/>
-              <button class="stem_iso_button" stem="instru" x="+33"/>
-            </group>
-            <group x="+140">
-              <button class="stem_fx_button" stem="bass"/>
-              <button class="stem_iso_button" stem="bass" x="+33"/>
-            </group>
-            <group x="+210">
-              <button class="stem_fx_button" stem="rhythm"/>
-              <button class="stem_iso_button" stem="rhythm" x="+33"/>
-            </group>
-          </group>
-          <group y="+46">
-            <panel class="stem_volume_slider" x="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
-            <panel class="stem_volume_slider" x="+70" stem="instru" label="INSTR" color="colorinstru"/>
-            <panel class="stem_volume_slider" x="+140" stem="bass" label="BASS" color="colorbass"/>
-            <panel class="stem_volume_slider" x="+210" stem="rhythm" label="DRUM" color="colorbeat"/>
-          </group>
-        </group>
+        <panel class="track_stem_modifiers"/>
       </group>
       <group x="+265" y="+5" visibility="has_stems" condition="[MIRROR]">
-        <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
-        <group x="+0" y="+0">
-          <!-- acapella -->
-          <button action="stem_pad 'acapella'" border_size="1">
-            <size width="135" height="23"/>
-            <off color="#000000" border="#555555" radius="3"/>
-            <down color="#222222" border="color_acapella" radius="3"/>
-            <selected color="transparent" border="color_acapella" radius="3"/>
-            <text fontsize="12" color="#888888" colorover="color_acapella" colorselected="color_acapella" colordown="color_acapella" align="center" text="ACAPELLA"/>
-          </button>
-          <!-- instrumental -->
-          <button x="+140" action="stem_pad 'instrumental'" border_size="1">
-            <size width="134" height="23"/>
-            <off color="#111111" border="#555555" radius="3"/>
-            <down color="#222222" border="color_instrumental" radius="3"/>
-            <selected color="transparent" border="color_instrumental" radius="3"/>
-            <text fontsize="12" color="#888888" colorover="color_instrumental" colorselected="color_instrumental" colordown="color_instrumental" align="center" text="INSTRUMENTAL"/>
-          </button>
-        </group>
-        <group y="+30">
-          <panel class="stem_button" x="+210" y="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
-          <panel class="stem_button" x="+140" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
-          <panel class="stem_button" x="+70" y="+0" stem="bass" label="BASS" color="colorbass"/>
-          <panel class="stem_button" x="+0" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
-          <group y="+25">
-            <group x="+210">
-              <button class="stem_fx_button" stem="vocal"/>
-              <button class="stem_iso_button" stem="vocal" x="+33"/>
-            </group>
-            <group x="+140">
-              <button class="stem_fx_button" stem="instru"/>
-              <button class="stem_iso_button" stem="instru" x="+33"/>
-            </group>
-            <group x="+70">
-              <button class="stem_fx_button" stem="bass"/>
-              <button class="stem_iso_button" stem="bass" x="+33"/>
-            </group>
-            <group>
-              <button class="stem_fx_button" stem="rhythm"/>
-              <button class="stem_iso_button" stem="rhythm" x="+33"/>
-            </group>
-          </group>
-          <group y="+46">
-            <panel class="stem_volume_slider" x="+210" stem="vocal" label="VOCAL" color="colorvocal"/>
-            <panel class="stem_volume_slider" x="+140" stem="instru" label="INSTR" color="colorinstru"/>
-            <panel class="stem_volume_slider" x="+70" stem="bass" label="BASS" color="colorbass"/>
-            <panel class="stem_volume_slider" x="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
-          </group>
-        </group>
+        <panel class="track_stem_modifiers"/>
       </group>
       <!-- MODIFIERS -->
       <panel>

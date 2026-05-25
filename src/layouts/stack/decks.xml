@@ -18,7 +18,7 @@
           <pos x="+35" y="+50"/>
           <size width="485" height="75"/>
         </square>
-        <panel class="track_modifiers_panel" x="+35" y="+35"/>
+        <panel class="track_stem_modifiers" x="+40" y="+60"/>
         <group name="deck_control" visibility="var_equal '@$deck_stack' 1">
           <panel visibility="var_equal '@deck_mode' 0">
             <panel class="transport_stack" x="+484+7"/>

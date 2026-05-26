@@ -252,7 +252,7 @@
     </visual>
   </define>
   <!-- PAD BUTTON 3: most recent style -->
-  <define class="PADBUTTON3" placeholders="*source,width=180">
+  <define class="PADBUTTON3" placeholders="*source,*width=180">
     <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_has_color [SOURCE]">
       <pos x="+3" y="+3"/>
       <size width="[WIDTH]-3-3" height="39-6"/>

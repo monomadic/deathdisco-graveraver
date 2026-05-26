@@ -143,14 +143,6 @@
             <!-- fallback when no key/color -->
             <text fontsize="11" weight="normal" align="center" visibility="not has_linked_tracks" color="black" coloron="black" text="LINKS"/>
           </button>
-          <button action="effect_active 6" query="effect_active 6" rightclick="effect_show_gui 6">
-            <pos x="+230" y="-20"/>
-            <size width="80" height="15"/>
-            <off color="black" radius="3" border="dark_6" border_size="1"/>
-            <selected color="black" radius="3" border="yellow" border_size="1"/>
-            <over color="transparent" radius="3" border="dark_8" border_size="1"/>
-            <text fontsize="11" weight="normal" align="center" visibility="not has_linked_tracks" color="dark_8" colorselected="yellow" action="get_effect_name 6"/>
-          </button>
         </group>
       </group>
     </panel>

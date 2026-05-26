@@ -27,7 +27,6 @@
   </define>
   <define class="PADBANK_BUTTON" placeholders="textaction,*width=90">
     <size width="[WIDTH]" height="20"/>
-    <tooltip/>
     <off color="#000000" border="dark_4" radius="4" bordersize="2"/>
     <over color="#000000" border="dark_7" radius="4" bordersize="2"/>
     <down color="#000000" border="dark_7" radius="4" bordersize="2"/>
@@ -75,7 +74,7 @@
                 </panel>
               </group>
               <visual width="[WIDTH]-16/2" height="24" visibility="not shift">
-                <off shape="square" color="#44000000" border="dark_5" radius="5" border_size="1"/>
+                <off shape="square" color="#66000000" border="dark_5" radius="5" border_size="1"/>
               </visual>
               <visual width="[WIDTH]-16/2" height="24" visibility="shift ? blink">
                 <off shape="square" color="transparent" border="dark_6" radius="5" border_size="2"/>

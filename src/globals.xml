@@ -11,6 +11,6 @@
   <font name="Helvetica Neue"/>
   <nbdecks value="2" condition="var_equal '@$4decks' 0"/>
   <nbdecks value="4" condition="var_not_equal '@$4decks' 0"/>
-  <tooltip size="14" color="#e2e3e4" back="#2f2f2f" shortcut="gray" localize="true"/>
+  <tooltip size="15" color="dark_9" back="dark_2" shortcut="white" localize="true"/>
   <dialogs darkmode="true"/>
 </globals>

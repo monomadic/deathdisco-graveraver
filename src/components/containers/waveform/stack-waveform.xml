@@ -18,7 +18,16 @@
         <background color="needle" shape="square"/>
       </overlay>
     </scratchwave>
-    <panel class="cover_art_hntg" size="[HEIGHT]" x="+[WIDTH]-[HEIGHT]" y="+0" visibility=""/>
+    <panel>
+      <pos x="+[WIDTH]-[HEIGHT]-30"/>
+      <!-- cover -->
+      <cover action="" rightclick="" dblclick="">
+        <size width="[HEIGHT]" height="[HEIGHT]"/>
+      </cover>
+      <visual class="gfx_shape" coloroff="transparent" bordercoloroff="#55FFFFFF" bordersize="1">
+        <size width="[HEIGHT]-1" height="[HEIGHT]-1"/>
+      </visual>
+    </panel>
     <!-- needle (left aligned) -->
     <panel class="beat_counter" x="+[WIDTH]/4-170" y="+22"/>
     <dropzone>

@@ -44,8 +44,13 @@
     </deck>
   </define>
   <define class="PERFORMANCE_2DECKS_HORIZONTAL" placeholders="*panelname">
-    <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-    <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
+    <!-- <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/> -->
+    <group visibility="not deck 3 leftdeck">
+      <panel class="deck_spine" deck="1" panelname="deck1" height="340" mirror="false" container_width="960" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="1" panelname="deck1" height="340" mirror="false" container_width="960" label="  DECK 1" color="deckcolor" visibility="not masterdeck"/>
+      <panel class="deck_container_performance_body" x="+35" width="690" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
+    </group>
+    <!-- <panel class="deck_container_performance_horizontal_left_center" x="+2" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/> -->
     <panel class="racks_vertical" x="+2"/>
     <panel class="waveform_horizontal_center" waveformwidth="474" waveformheight="333" x="+800-81+4" y="+0"/>
     <panel class="deck_container_performance_horizontal_right_center" x="+1920-2-800+81" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>

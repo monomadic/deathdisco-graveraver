@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="HORIZONTAL_WAVEFORM_TRACK_INFO" placeholders="*deck,*height,fullheight=[HEIGHT]*2-4">
+  <define class="_HORIZONTAL_WAVEFORM_TRACK_INFO" placeholders="*deck,*height,fullheight=[HEIGHT]*2-4">
     <deck deck="[DECK]">
       <!-- TRACK INFO -->
       <!-- === LEFT DECK WAVEFORM TRACK INFO === -->

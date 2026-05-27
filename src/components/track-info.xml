@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="COVER_ART_OCCLUDED">
+  <define class="COVER_ART_OCCLUDED" placeholders="*cover_width=170">
     <cover action="" rightclick="" dblclick="">
-      <size width="170" height="170"/>
+      <size width="[COVER_WIDTH]" height="[COVER_WIDTH]"/>
       <clipmask x="920" y="100" width="100" height="90"/>
     </cover>
     <!-- highlight -->
@@ -11,7 +11,7 @@
       <off shape="square" color="transparent" border="#22FFFFFF" border_size="1"/>
     </visual>
   </define>
-  <define class="TRACK_INFO_PRO" placeholders="width=550,height=75">
+  <define class="TRACK_INFO_PRO" placeholders="*width=550,height=75">
     <!-- LEFT DECK -->
     <!-- background: black glass (behind cover) -->
     <button class="button_main" action="select" width="[WIDTH]" height="[HEIGHT]" coloroff="#000000" coloron="black" brcoloroff="#333333" brcoloron="#444444" bordersize="0"/>
@@ -23,38 +23,38 @@
       <pos x="+15" y="+8"/>
       <!-- LEFT -->
       <textzone tooltip="" visibility="get_deck 1 ? true : get_deck 3 ? true : false">
-        <size width="490" height="70-6-6-26"/>
+        <size width="[WIDTH]/2" height="70-6-6-26"/>
         <text fontsize="22" weight="bold" color="needle" align="left" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <textzone tooltip="" visibility="get_deck 1 ? true : get_deck 3 ? true : false">
         <pos y="+30"/>
-        <size width="490" height="70-6-6-26"/>
+        <size width="[WIDTH]/2" height="70-6-6-26"/>
         <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <!-- RIGHT -->
       <textzone tooltip="" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
-        <size width="490" height="70-6-6-26"/>
+        <size width="[WIDTH]/2" height="70-6-6-26"/>
         <text fontsize="22" weight="bold" color="needle" align="right" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
       <textzone tooltip="" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
         <pos y="+30"/>
-        <size width="490" height="70-6-6-26"/>
+        <size width="[WIDTH]/2" height="70-6-6-26"/>
         <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
       </textzone>
     </group>
     <!-- COVER ART: SHOW -->
     <group visibility="var_equal '@$show_cover_title' 1">
       <!-- Left decks -->
-      <panel class="track_info_metadata" x="+6+170+6" y="+0" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
+      <panel class="track_info_metadata" x="+10+170+10" y="+0" visibility="get_deck 1 ? true : get_deck 3 ? true : false" width="[WIDTH]"/>
       <!-- Right decks -->
-      <panel class="track_info_metadata" x="+8" y="+0" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
+      <panel class="track_info_metadata" x="+10" y="+0" visibility="get_deck 2 ? true : get_deck 4 ? true : false" width="[WIDTH]"/>
       <!-- left -->
-      <group class="cover_art_occluded" x="+8" y="+6" visibility="loaded ? param_equal `get_deck` 1 | param_equal `get_deck` 3"/>
+      <group class="cover_art_occluded" x="+10" y="+6" visibility="loaded ? param_equal `get_deck` 1 | param_equal `get_deck` 3"/>
       <!-- right -->
-      <group class="cover_art_occluded" x="+355" y="+6" visibility="loaded ? param_equal `get_deck` 2 | param_equal `get_deck` 4"/>
+      <group class="cover_art_occluded" x="+[WIDTH]-170-5" y="+6" visibility="loaded ? param_equal `get_deck` 2 | param_equal `get_deck` 4"/>
     </group>
   </define>
-  <define class="TRACK_INFO_METADATA" placeholders="DECK">
+  <define class="TRACK_INFO_METADATA" placeholders="deck,*width=320">
     <panel>
       <group visibility="loaded">
         <button y="+5" class="button_main" action="search `get_title_before_remix`" rightclick="file_info" tooltip="" bordersize="0">

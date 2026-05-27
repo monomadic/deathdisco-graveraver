@@ -52,7 +52,7 @@
       <songpos class="songpos" x="+2" y="+65" width="[WIDTH]-4" height="30"/>
       <songpos class="cuemap" x="+2" y="+91" width="[WIDTH]-4" height="2"/>
       <panel condition="param_equal [DECKSIDE] 'left'">
-        <panel class="track_info_pro"/>
+        <panel class="track_info_pro" width="[WIDTH]"/>
         <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
         <group y="+4" x="-40">
           <panel class="jogwheel" x="+[WIDTH]-160" y="+105" name="jogwheel_spinner"/>
@@ -74,7 +74,7 @@
         </group>
       </panel>
       <panel condition="param_equal [DECKSIDE] 'right'">
-        <panel class="track_info_pro" x="+[WIDTH]-550"/>
+        <panel class="track_info_pro" x="+0" width="[WIDTH]"/>
         <panel class="pitch_small" deck="[DECK]" x="+5" y="+114"/>
         <panel class="jogwheel" x="+42" y="+109" name="jogwheel_spinner"/>
         <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>

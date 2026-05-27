@@ -45,6 +45,72 @@
       <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>
     </deck>
   </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*deckside,width=684,height=333">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="panel_background" bordersize="1" bordercoloroff="transparent" radius="6"/>
+      <visual class="gfx_shape" y="+62" width="[WIDTH]" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
+      <songpos class="songpos" x="+2" y="+65" width="[WIDTH]-4" height="30"/>
+      <songpos class="cuemap" x="+2" y="+91" width="[WIDTH]-4" height="2"/>
+      <panel condition="param_equal [DECKSIDE] 'left'">
+        <panel class="track_info_pro"/>
+        <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <group y="+4" x="-40">
+          <panel class="jogwheel" x="+[WIDTH]-160" y="+105" name="jogwheel_spinner"/>
+          <panel class="pitch_small" deck="[DECK]" x="+[WIDTH]" y="+110"/>
+        </group>
+        <group x="+[WIDTH]-214" y="+[HEIGHT]-40">
+          <button class="button_main" textsize="11" width="100" height="30" action="select &amp; cue_button" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+            <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
+            <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+            <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+            <selected color="deckcolor" border="deckcolor" radius="4" textcolor="black"/>
+          </button>
+          <button x="+105" class="button_main" textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
+            <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
+            <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+            <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+            <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
+          </button>
+        </group>
+      </panel>
+      <panel condition="param_equal [DECKSIDE] 'right'">
+        <panel class="track_info_pro" x="+[WIDTH]-550"/>
+        <panel class="pitch_small" deck="[DECK]" x="+5" y="+114"/>
+        <panel class="jogwheel" x="+42" y="+109" name="jogwheel_spinner"/>
+        <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <group x="+8" y="+[HEIGHT]-40">
+          <button class="button_main" textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
+            <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
+            <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+            <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+            <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
+          </button>
+          <button x="+105" class="button_main" textsize="11" width="100" height="30" action="select &amp; cue_button" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+            <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
+            <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+            <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+            <selected color="deckcolor" border="deckcolor" radius="4" textcolor="black"/>
+          </button>
+        </group>
+      </panel>
+      <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="[HEIGHT]" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
+      </visual>
+      <panel x="+1" y="+1" class="dual_dropzone" width="[WIDTH]-2" height="[HEIGHT]-2"/>
+    </deck>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT" placeholders="*deck,*panelname,*deckside,width=719,height=333">
+    <deck deck="[DECK]">
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="false" condition="param_equal [DECKSIDE] 'left'" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="false" condition="param_equal [DECKSIDE] 'left'" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
+      <panel class="deck_container_performance_compact_body" x="+35" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'left'"/>
+      <panel class="deck_container_performance_compact_body" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'right'"/>
+      <panel class="deck_spine" deck="[DECK]" x="+[WIDTH]-34" panelname="[PANELNAME]" height="[HEIGHT]" mirror="true" condition="param_equal [DECKSIDE] 'right'" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+      <panel class="deck_spine" deck="[DECK]" x="+[WIDTH]-34" panelname="[PANELNAME]" height="[HEIGHT]" mirror="true" condition="param_equal [DECKSIDE] 'right'" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
+    </deck>
+  </define>
   <define class="DECK_CONTAINER_PERFORMANCE_RIGHT" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="878+77+2" height="264" coloroff="#111111" bordersize="1" bordercoloroff="#222222"/>

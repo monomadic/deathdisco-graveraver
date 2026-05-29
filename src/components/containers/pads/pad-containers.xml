@@ -17,22 +17,22 @@
       </panel>
     </panel>
     <panel x="+0" y="+0">
-      <panel class="padbutton-16-small" x="+1" y="+8+24" source="1"/>
-      <panel class="padbutton-16-small" x="+78" y="+8+24" source="2"/>
-      <panel class="padbutton-16-small" x="+78*2" y="+8+24" source="3"/>
-      <panel class="padbutton-16-small" x="+78*3" y="+8+24" source="4"/>
-      <panel class="padbutton-16-small" x="+1" y="+8+24+32" source="5"/>
-      <panel class="padbutton-16-small" x="+78" y="+8+24+32" source="6"/>
-      <panel class="padbutton-16-small" x="+78*2" y="+8+24+32" source="7"/>
-      <panel class="padbutton-16-small" x="+78*3" y="+8+24+32" source="8"/>
-      <panel class="padbutton-16-small" x="+1" y="+8+24+32+32" source="9"/>
-      <panel class="padbutton-16-small" x="+78" y="+8+24+32+32" source="10"/>
-      <panel class="padbutton-16-small" x="+78*2" y="+8+24+32+32" source="11"/>
-      <panel class="padbutton-16-small" x="+78*3" y="+8+24+32+32" source="12"/>
-      <panel class="padbutton-16-small" x="+1" y="+8+24+32+32+32" source="13"/>
-      <panel class="padbutton-16-small" x="+78" y="+8+24+32+32+32" source="14"/>
-      <panel class="padbutton-16-small" x="+78*2" y="+8+24+32+32+32" source="15"/>
-      <panel class="padbutton-16-small" x="+78*3" y="+8+24+32+32+32" source="16"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24" source="1"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24" source="2"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24" source="3"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24" source="4"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32" source="5"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32" source="6"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32" source="7"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32" source="8"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32+32" source="9"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32+32" source="10"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32+32" source="11"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32+32" source="12"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32+32+32" source="13"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32+32+32" source="14"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32+32+32" source="15"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32+32+32" source="16"/>
     </panel>
   </define>
 </defs>

@@ -33,6 +33,23 @@
     <selected color="dark_3" border="#AAAAAA" radius="4" border_size="2"/>
     <text weight="bold" text="btn2" fontsize="11" color="dark_7" coloron="white" colordown="white" colorover="#AAAAAA" colorselected="white" align="center" action="[TEXTACTION]"/>
   </define>
+  <define class="MINI_HOTCUE_BUTTON" placeholders="*index,*cue_width=16,*height=7" visibility="has_cue [INDEX]">
+    <visual type="color" source="cue_color [INDEX]" visibility="has_cue [INDEX] ? play ? param_equal `get_cue` [INDEX] ? blink 1bt" radius="5">
+      <pos x="+1" y="+1"/>
+      <size width="[CUE_WIDTH]-2" height="[HEIGHT]-2"/>
+    </visual>
+    <button action="hot_cue [INDEX]" rightclick="goto_cue [INDEX]">
+      <pos x="+0" y="+0"/>
+      <size width="[CUE_WIDTH]" height="[HEIGHT]"/>
+      <off color="#00000000" border="dark_8" border_size="1" radius="2"/>
+      <over color="transparent" border="dark_7" border_size="1" radius="2"/>
+      <text dy="-1" dx="-1" fontsize="12" coloroff="black" coloron="white" weight="" align="center" text=""/>
+    </button>
+    <visual type="color" source="cue_color [INDEX]" visibility="0.5" radius="5">
+      <pos x="+0" y="+0"/>
+      <size width="[CUE_WIDTH]" height="[HEIGHT]"/>
+    </visual>
+  </define>
   <!-- PAD PAGE CONTAINER -->
   <define class="PAD_PAGE_CONTAINER" placeholders="*deck,*panelname,*width=746,*show_shift_pads=true">
     <deck deck="[DECK]">
@@ -94,87 +111,56 @@
             </group>
           </group>
           <group y="+30">
-            <panel class="padbutton3" x="+[WIDTH]-18/4*0+0" y="+41*0" width="[WIDTH]-18/4" source="1"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*1+1" y="+41*0" width="[WIDTH]-18/4" source="2"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*2+2" y="+41*0" width="[WIDTH]-18/4" source="3"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*3+3" y="+41*0" width="[WIDTH]-18/4" source="4"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*0+0" y="+41*1" width="[WIDTH]-18/4" source="5"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*1+1" y="+41*1" width="[WIDTH]-18/4" source="6"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*2+2" y="+41*1" width="[WIDTH]-18/4" source="7"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*3+3" y="+41*1" width="[WIDTH]-18/4" source="8"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*0+0" y="+41*2" width="[WIDTH]-18/4" source="9"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*1+1" y="+41*2" width="[WIDTH]-18/4" source="10"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*2+2" y="+41*2" width="[WIDTH]-18/4" source="11"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*3+3" y="+41*2" width="[WIDTH]-18/4" source="12"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*0+0" y="+41*3" width="[WIDTH]-18/4" source="13"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*1+1" y="+41*3" width="[WIDTH]-18/4" source="14"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*2+2" y="+41*3" width="[WIDTH]-18/4" source="15"/>
-            <panel class="padbutton3" x="+[WIDTH]-18/4*3+3" y="+41*3" width="[WIDTH]-18/4" source="16"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*0+0" y="+41*0" width="[WIDTH]-18/4" source="1"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*1+1" y="+41*0" width="[WIDTH]-18/4" source="2"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*2+2" y="+41*0" width="[WIDTH]-18/4" source="3"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*3+3" y="+41*0" width="[WIDTH]-18/4" source="4"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*0+0" y="+41*1" width="[WIDTH]-18/4" source="5"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*1+1" y="+41*1" width="[WIDTH]-18/4" source="6"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*2+2" y="+41*1" width="[WIDTH]-18/4" source="7"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*3+3" y="+41*1" width="[WIDTH]-18/4" source="8"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*0+0" y="+41*2" width="[WIDTH]-18/4" source="9"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*1+1" y="+41*2" width="[WIDTH]-18/4" source="10"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*2+2" y="+41*2" width="[WIDTH]-18/4" source="11"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*3+3" y="+41*2" width="[WIDTH]-18/4" source="12"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*0+0" y="+41*3" width="[WIDTH]-18/4" source="13"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*1+1" y="+41*3" width="[WIDTH]-18/4" source="14"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*2+2" y="+41*3" width="[WIDTH]-18/4" source="15"/>
+            <panel class="pad_grid_button" x="+[WIDTH]-18/4*3+3" y="+41*3" width="[WIDTH]-18/4" source="16"/>
           </group>
           <!-- bottom row -->
           <group y="+40*4+30+6">
             <group>
-              <!-- MINI HOTCUES -->
-              <define class="MINI_CUE_BUTTON_V2" placeholders="*index,*cue_width=16,*height=7" visibility="has_cue [INDEX]">
-                <visual type="color" source="cue_color [INDEX]" visibility="has_cue [INDEX] ? play ? param_equal `get_cue` [INDEX] ? blink 1bt" radius="5">
-                  <pos x="+1" y="+1"/>
-                  <size width="[CUE_WIDTH]-2" height="[HEIGHT]-2"/>
-                </visual>
-                <button action="hot_cue [INDEX]" rightclick="goto_cue [INDEX]">
-                  <pos x="+0" y="+0"/>
-                  <size width="[CUE_WIDTH]" height="[HEIGHT]"/>
-                  <off color="#00000000" border="dark_8" border_size="1" radius="2"/>
-                  <over color="transparent" border="dark_7" border_size="1" radius="2"/>
-                  <text dy="-1" dx="-1" fontsize="12" coloroff="black" coloron="white" weight="" align="center" text=""/>
-                </button>
-                <visual type="color" source="cue_color [INDEX]" visibility="0.5" radius="5">
-                  <pos x="+0" y="+0"/>
-                  <size width="[CUE_WIDTH]" height="[HEIGHT]"/>
-                </visual>
-              </define>
-              <define class="MINI_CUE_BUTTON_V1" placeholders="*index,*width=22,*height=18">
-                <visual type="color" source="cue_color [INDEX]">
-                  <pos x="+1" y="+1"/>
-                  <size width="20" height="[HEIGHT]-2"/>
-                </visual>
-                <button action="hot_cue [INDEX]" rightclick="goto_cue [INDEX]">
-                  <pos x="+0" y="+0"/>
-                  <size width="[WIDTH]" height="[HEIGHT]"/>
-                  <off color="#00000000" border="dark_3" border_size="1" radius="2"/>
-                  <over color="#22000000" border="dark_0" border_size="1" radius="3"/>
-                  <text dy="-0" dx="+0" fontsize="10" coloroff="black" coloron="white" weight="bold" align="center" text=""/>
-                </button>
-              </define>
               <group visibility="true">
                 <group x="+0" y="+0">
-                  <panel class="mini_cue_button_v2" index="1" x="+0" y="+0" visibility="has_cue [INDEX]"/>
-                  <panel class="mini_cue_button_v2" index="2" x="+16" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="3" x="+32" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="4" x="+48" y="+0"/>
+                  <panel class="mini_hotcue_button" index="1" x="+0" y="+0"/>
+                  <panel class="mini_hotcue_button" index="2" x="+16" y="+0"/>
+                  <panel class="mini_hotcue_button" index="3" x="+32" y="+0"/>
+                  <panel class="mini_hotcue_button" index="4" x="+48" y="+0"/>
                 </group>
               </group>
               <group x="+64+8">
                 <group x="+0" y="+0">
-                  <panel class="mini_cue_button_v2" index="5" x="+0" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="6" x="+16" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="7" x="+32" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="8" x="+48" y="+0"/>
+                  <panel class="mini_hotcue_button" index="5" x="+0" y="+0"/>
+                  <panel class="mini_hotcue_button" index="6" x="+16" y="+0"/>
+                  <panel class="mini_hotcue_button" index="7" x="+32" y="+0"/>
+                  <panel class="mini_hotcue_button" index="8" x="+48" y="+0"/>
                 </group>
               </group>
               <group x="+128+16">
                 <group x="+0" y="+0">
-                  <panel class="mini_cue_button_v2" index="9" x="+0" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="10" x="+16" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="11" x="+32" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="12" x="+48" y="+0"/>
+                  <panel class="mini_hotcue_button" index="9" x="+0" y="+0"/>
+                  <panel class="mini_hotcue_button" index="10" x="+16" y="+0"/>
+                  <panel class="mini_hotcue_button" index="11" x="+32" y="+0"/>
+                  <panel class="mini_hotcue_button" index="12" x="+48" y="+0"/>
                 </group>
               </group>
               <group x="+192+24">
                 <group x="+0" y="+0">
-                  <panel class="mini_cue_button_v2" index="13" x="+0" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="14" x="+22" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="15" x="+44" y="+0"/>
-                  <panel class="mini_cue_button_v2" index="16" x="+66" y="+0"/>
+                  <panel class="mini_hotcue_button" index="13" x="+0" y="+0"/>
+                  <panel class="mini_hotcue_button" index="14" x="+22" y="+0"/>
+                  <panel class="mini_hotcue_button" index="15" x="+44" y="+0"/>
+                  <panel class="mini_hotcue_button" index="16" x="+66" y="+0"/>
                 </group>
               </group>
             </group>

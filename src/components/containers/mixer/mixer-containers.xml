@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <define class="SAMPLER_ROW" placeholders="*deck,*index">
+    <deck deck="[DECK]">
+      <visual source="sampler_position [INDEX]" type="linear" orientation="horizontal" direction="up" granularity="23">
+        <pos x="+0" y="+0"/>
+        <size width="290" height="35"/>
+        <off shape="square" color="#000000" radius="0" border_size="1" border="#222222"/>
+        <over shape="square" color="#111111" radius="0" border_size="1" border="#222222"/>
+      </visual>
+      <visual source="sampler_position [INDEX]" type="linear" orientation="horizontal" direction="up" granularity="23">
+        <pos x="+0" y="+0"/>
+        <size width="290" height="35"/>
+        <on shape="square" color="#0000DD" radius="6"/>
+      </visual>
+      <group x="+7" y="+6" visibility="sampler_play [INDEX] 'auto' ? blink 1bt : true">
+        <visual type="color" source="sampler_color [INDEX]">
+          <size width="10" height="23"/>
+        </visual>
+        <textzone>
+          <size width="10" height="16"/>
+          <text fontsize="10" color="#000000" align="center" weight="" text="[INDEX]"/>
+        </textzone>
+      </group>
+      <group x="+22">
+        <textzone>
+          <size width="230" height="22"/>
+          <text fontsize="12" color="#AAAAAA" align="left" format="`deck 1 masterdeck ? deck 1 sampler_pad [INDEX] : deck 2 masterdeck ? deck 2 sampler_pad [INDEX] : deck 3 masterdeck ? deck 3 sampler_pad [INDEX] : deck 4 masterdeck ? deck 4 sampler_pad [INDEX] : sampler_pad [INDEX]`"/>
+        </textzone>
+        <group y="+13">
+          <textzone>
+            <pos x="+0" y="+0"/>
+            <size width="200" height="22"/>
+            <text fontsize="11" color="#FFFFFF" align="left" action="get_sample_info [INDEX] bpm"/>
+          </textzone>
+          <textzone>
+            <pos x="+67" y="+0"/>
+            <size width="50" height="22"/>
+            <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? get_text '`get_sample_info [INDEX] key`' : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_text '`get_constant 8 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_text '`get_constant 16 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_text '`get_constant 24 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_text '`get_constant 32 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_text '`get_constant 40 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_text '`get_constant 48 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_text '`get_constant 56 &amp; param_add [INDEX] &amp; get_sample_info key`' : get_text ''"/>
+          </textzone>
+          <textzone>
+            <pos x="+90" y="+0"/>
+            <size width="50" height="22"/>
+            <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? get_text '`get_sample_info [INDEX] mode`' : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_text '`get_constant 8 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_text '`get_constant 16 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_text '`get_constant 24 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_text '`get_constant 32 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_text '`get_constant 40 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_text '`get_constant 48 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_text '`get_constant 56 &amp; param_add [INDEX] &amp; get_sample_info mode`' : get_text ''"/>
+          </textzone>
+        </group>
+      </group>
+      <group x="+258" y="+0">
+        <button action="sampler_pad [INDEX]" rightclick="sampler_edit [INDEX]" query="sampler_play [INDEX] 'auto'" shape="square" visibility="sampler_play [INDEX] 'auto' ? blink 1bt : true">
+          <size width="34" height="34"/>
+          <icon dx="-1" dy="+0" sysicon="play" width="34" height="34" color="#555555" coloron="white" colorselected="white"/>
+        </button>
+      </group>
+      <button action="sampler_pad [INDEX]" query="sampler_position [INDEX]" deck="master" rightclick="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? sampler_edit [INDEX] : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_constant 8 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_constant 16 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_constant 24 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_constant 32 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_constant 40 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_constant 48 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_constant 56 &amp; param_add [INDEX] &amp; sampler_edit : nothing">
+        <pos x="+1" y="+1"/>
+        <size width="288" height="33"/>
+        <off color="transparent" border_size="0"/>
+        <on color="transparent" border="dark_8" border_size="1" radius="5"/>
+      </button>
+    </deck>
+  </define>
+  <define class="XFADER_DECK_SELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="29" coloroff="infos_background" bordercoloroff="#333333" bordersize="1"/>
+      <button x="+0" y="+1" width="[WIDTH]" height="26" action="[SIDE]" border_size="0">
+        <up color="black"/>
+        <over color="black"/>
+        <selected color="black"/>
+        <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="white" align="center" weight="bold" text="[DECK]"/>
+      </button>
+      <visual source="get_level" type="linear" orientation="horizontal" direction="right" granularity="23">
+        <pos x="+0" y="-1"/>
+        <size width="[WIDTH]" height="2"/>
+        <off shape="square" color="transparent"/>
+        <on shape="square" color="green"/>
+      </visual>
+      <button x="+0" y="+27" width="[WIDTH]" height="3" action="[SIDE]" border_size="0">
+        <up color="deckcolor"/>
+        <over color="deckcolor"/>
+        <selected color="deckcolor"/>
+        <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="black" align="center" text=""/>
+      </button>
+    </deck>
+  </define>
   <define class="CHANNEL_EXTENDED" placeholders="deck">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="xf_background"/>
@@ -548,76 +630,6 @@
             <off shape="square" color="black" border_size="1" border="dark_7" radius="6"/>
           </visual>
           <group x="+2" y="+2">
-            <!-- CLASS: SAMPLE PLAYER -->
-            <define class="SAMPLER_ROW" placeholders="*deck,*index">
-              <deck deck="[deck]">
-                <!-- border -->
-                <visual source="sampler_position [INDEX]" type="linear" orientation="horizontal" direction="up" granularity="23">
-                  <pos x="+0" y="+0"/>
-                  <size width="290" height="35"/>
-                  <off shape="square" color="#000000" radius="0" border_size="1" border="#222222"/>
-                  <over shape="square" color="#111111" radius="0" border_size="1" border="#222222"/>
-                </visual>
-                <!-- progress -->
-                <visual source="sampler_position [INDEX]" type="linear" orientation="horizontal" direction="up" granularity="23">
-                  <pos x="+0" y="+0"/>
-                  <size width="290" height="35"/>
-                  <on shape="square" color="#0000DD" radius="6"/>
-                </visual>
-                <!-- color chip -->
-                <group x="+7" y="+6" visibility="sampler_play [INDEX] 'auto' ? blink 1bt : true">
-                  <visual type="color" source="sampler_color [INDEX]">
-                    <size width="10" height="23"/>
-                  </visual>
-                  <textzone>
-                    <size width="10" height="16"/>
-                    <text fontsize="10" color="#000000" align="center" weight="" text="[INDEX]"/>
-                  </textzone>
-                </group>
-                <group x="+22">
-                  <!-- TEXT: LINE 1 -->
-                  <group>
-                    <textzone>
-                      <size width="230" height="22"/>
-                      <text fontsize="12" color="#AAAAAA" align="left" format="`deck 1 masterdeck ? deck 1 sampler_pad [INDEX] : deck 2 masterdeck ? deck 2 sampler_pad [INDEX] : deck 3 masterdeck ? deck 3 sampler_pad [INDEX] : deck 4 masterdeck ? deck 4 sampler_pad [INDEX] : sampler_pad [INDEX]`"/>
-                    </textzone>
-                  </group>
-                  <!-- TEXT: LINE 2 -->
-                  <group y="+13">
-                    <textzone>
-                      <pos x="+0" y="+0"/>
-                      <size width="200" height="22"/>
-                      <text fontsize="11" color="#FFFFFF" align="left" action="get_sample_info [INDEX] bpm"/>
-                    </textzone>
-                    <textzone>
-                      <pos x="+67" y="+0"/>
-                      <size width="50" height="22"/>
-                      <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? get_text '`get_sample_info [INDEX] key`' : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_text '`get_constant 8 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_text '`get_constant 16 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_text '`get_constant 24 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_text '`get_constant 32 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_text '`get_constant 40 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_text '`get_constant 48 &amp; param_add [INDEX] &amp; get_sample_info key`' : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_text '`get_constant 56 &amp; param_add [INDEX] &amp; get_sample_info key`' : get_text ''"/>
-                    </textzone>
-                    <textzone>
-                      <pos x="+90" y="+0"/>
-                      <size width="50" height="22"/>
-                      <text fontsize="11" weight="normal" color="#FFFFFF" align="center" action="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? get_text '`get_sample_info [INDEX] mode`' : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_text '`get_constant 8 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_text '`get_constant 16 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_text '`get_constant 24 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_text '`get_constant 32 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_text '`get_constant 40 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_text '`get_constant 48 &amp; param_add [INDEX] &amp; get_sample_info mode`' : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_text '`get_constant 56 &amp; param_add [INDEX] &amp; get_sample_info mode`' : get_text ''"/>
-                    </textzone>
-                  </group>
-                </group>
-                <!-- play button -->
-                <group x="+258" y="+0">
-                  <button action="sampler_pad [INDEX]" rightclick="sampler_edit [INDEX]" query="sampler_play [INDEX] 'auto'" shape="square" visibility="sampler_play [INDEX] 'auto' ? blink 1bt : true">
-                    <size width="34" height="34"/>
-                    <icon dx="-1" dy="+0" sysicon="play" width="34" height="34" color="#555555" coloron="white" colorselected="white"/>
-                  </button>
-                </group>
-                <!-- click zone + outline overlay -->
-                <button action="sampler_pad [INDEX]" query="sampler_position [INDEX]" deck="master" rightclick="param_equal `sampler_pad_page` &quot;1 to 8&quot; ? sampler_edit [INDEX] : param_equal `sampler_pad_page` &quot;9 to 16&quot; ? get_constant 8 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;17 to 24&quot; ? get_constant 16 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;25 to 32&quot; ? get_constant 24 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;33 to 40&quot; ? get_constant 32 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;41 to 48&quot; ? get_constant 40 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;49 to 56&quot; ? get_constant 48 &amp; param_add [INDEX] &amp; sampler_edit : param_equal `sampler_pad_page` &quot;57 to 64&quot; ? get_constant 56 &amp; param_add [INDEX] &amp; sampler_edit : nothing">
-                  <pos x="+1" y="+1"/>
-                  <size width="288" height="33"/>
-                  <off color="transparent" border_size="0"/>
-                  <on color="transparent" border="dark_8" border_size="1" radius="5"/>
-                </button>
-              </deck>
-            </define>
-            <!-- usage -->
             <panel class="sampler_row" deck="master" index="1" y="+34*0" visibility="sampler_loaded 1"/>
             <panel class="sampler_row" deck="master" index="2" y="+34*1" visibility="sampler_loaded 2"/>
             <panel class="sampler_row" deck="master" index="3" y="+34*2" visibility="sampler_loaded 3"/>
@@ -950,54 +962,10 @@
     </group>
   </define>
   <define class="XFADER_PANEL">
-    <!-- PLAY SELECT -->
-    <define class="DECK_PLAYSELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
-      <!-- Deck Select Button -->
-      <deck deck="[DECK]">
-        <button x="+0" y="+0" width="[WIDTH]" height="15" action="[SIDE]" border_size="0">
-          <up color="black"/>
-          <over color="[OVERCOLOR]"/>
-          <selected color="deckcolor"/>
-          <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="black" align="center" text="[DECK]"/>
-        </button>
-        <!-- Play/Pause Button -->
-        <button x="+0" y="+17" width="[WIDTH]" height="15" action="play_pause" border_size="0">
-          <off color="#111111"/>
-          <over color="[OVERCOLOR]"/>
-          <selected color="deckcolor"/>
-          <icon dx="-2" sysicon="play" width="37" height="33" color="[TEXTCOLOR]" colordown="white" colorselected="black"/>
-        </button>
-      </deck>
-    </define>
-    <define class="DECK_SELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
-      <!-- Deck Select Button -->
-      <deck deck="[DECK]">
-        <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="29" coloroff="infos_background" bordercoloroff="#333333" bordersize="1"/>
-        <button x="+0" y="+1" width="[WIDTH]" height="26" action="[SIDE]" border_size="0">
-          <up color="black"/>
-          <over color="black"/>
-          <selected color="black"/>
-          <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="white" align="center" weight="bold" text="[DECK]"/>
-        </button>
-        <!-- VOLUME -->
-        <visual source="get_level" type="linear" orientation="horizontal" direction="right" granularity="23">
-          <pos x="+0" y="-1"/>
-          <size width="[WIDTH]" height="2"/>
-          <off shape="square" color="transparent"/>
-          <on shape="square" color="green"/>
-        </visual>
-        <button x="+0" y="+27" width="[WIDTH]" height="3" action="[SIDE]" border_size="0">
-          <up color="deckcolor"/>
-          <over color="deckcolor"/>
-          <selected color="deckcolor"/>
-          <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="black" align="center" text=""/>
-        </button>
-      </deck>
-    </define>
-    <panel class="deck_select" deck="3" side="leftdeck" x="+0" y="+1"/>
-    <panel class="deck_select" deck="1" side="leftdeck" x="+61" y="+1"/>
-    <panel class="deck_select" deck="2" side="rightdeck" x="+191" y="+1"/>
-    <panel class="deck_select" deck="4" side="rightdeck" x="+252" y="+1"/>
+    <panel class="xfader_deck_select" deck="3" side="leftdeck" x="+0" y="+1"/>
+    <panel class="xfader_deck_select" deck="1" side="leftdeck" x="+61" y="+1"/>
+    <panel class="xfader_deck_select" deck="2" side="rightdeck" x="+191" y="+1"/>
+    <panel class="xfader_deck_select" deck="4" side="rightdeck" x="+252" y="+1"/>
     <!-- PLAY ALL BUTTON -->
     <group name="playpause_global" x="+123" y="+0">
       <visual class="gfx_shape" width="66" height="34" coloroff="red">

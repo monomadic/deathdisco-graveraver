@@ -1,183 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Button-family definitions grouped by purpose. -->
-  <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_not_equal '@$color_scheme' 4">
-    <visual>
-      <tooltip/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" shape="square"/>
-    </visual>
-    <visual type="color" source="pad_button_color [SOURCE]" visibility="pad [SOURCE] ? constant 1 : constant 0.0">
-      <tooltip/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-    </visual>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="transparent" border_size="1" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="needle" border_size="1" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <text dx="+10+5+4" width="[WIDTH]-20-10" size="16" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="center"/>
-    </button>
-    <visual type="color" source="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-    </visual>
-    <visual novisibility="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-    <visual visibility="pad_pushed [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-      <off color="needle" shape="square"/>
-    </visual>
-  </define>
-  <define class="PADBUTTON" placeholders="width=109,height=39,*source" condition="var_equal '@$color_scheme' 4">
-    <visual>
-      <tooltip/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" shape="square"/>
-    </visual>
-    <visual type="color" source="pad_color [SOURCE]" visibility="pad [SOURCE] ? constant 1 : constant 0.0">
-      <tooltip/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-    </visual>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" border="button_background2" border_size="2" shape="square"/>
-      <selected color="button_background2" border="transparent" border_size="2" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" border="button_background2" border_size="2" shape="square"/>
-      <selected color="button_background2" border="needle" border_size="2" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <text dx="+10+5+4" width="[WIDTH]-20-10" size="16" weight="bold" color="textoff" colorselected="needle" action="pad [SOURCE]" align="center"/>
-    </button>
-    <visual type="color" source="pad_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-    </visual>
-    <visual novisibility="pad_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-    <visual visibility="pad_pushed [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="[HEIGHT]-10-10"/>
-      <off color="needle" shape="square"/>
-    </visual>
-  </define>
-  <define class="PADBUTTON2" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
-    <visual>
-      <size width="124" height="38"/>
-      <up color="button_background2" shape="square"/>
-    </visual>
-    <!-- border -->
-    <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.0">
-      <size width="124" height="38"/>
-    </visual>
-    <button x="-1" y="-1" action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="126" height="40"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="#999999" border_size="1" shape="square" radius="3"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <pos y="+0"/>
-      <size width="124" height="38"/>
-      <text dx="+24" width="115-10-10" size="15" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="left" multiline="true"/>
-    </button>
-    <!-- pushed color chip -->
-    <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+12"/>
-      <size width="8" height="38-12-12"/>
-      <off color="pad_button_color [SOURCE]" shape="square"/>
-    </visual>
-    <!-- color chip -->
-    <visual type="color" source="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+12" y="+12"/>
-      <size width="4" height="38-12-12"/>
-    </visual>
-    <visual novisibility="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="38-10-10"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-  </define>
-  <define class="PADBUTTON2" placeholders="*source" condition="var_equal '@$color_scheme' 4">
-    <visual>
-      <tooltip/>
-      <size width="116" height="37"/>
-      <up color="button_background2" shape="square"/>
-    </visual>
-    <!-- border -->
-    <visual type="color" source="pad_color [SOURCE]" visibility="pad [SOURCE] ? constant 1 : constant 0.0">
-      <tooltip/>
-      <size width="109" height="37"/>
-    </visual>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="109" height="37"/>
-      <up color="button_background2" border="button_background2" border_size="2" shape="square"/>
-      <selected color="button_background2" border="transparent" border_size="2" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="109" height="37"/>
-      <up color="button_background2" border="button_background2" border_size="2" shape="square"/>
-      <selected color="button_background2" border="needle" border_size="2" shape="square"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="109" height="37"/>
-      <text dx="+10+5+4" width="109-20-10" size="16" weight="bold" color="textoff" colorselected="needle" action="pad [SOURCE]" align="center"/>
-    </button>
-    <visual type="color" source="pad_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="37-10-10"/>
-    </visual>
-    <visual novisibility="pad_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="37-10-10"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-    <visual visibility="pad_pushed [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="37-10-10"/>
-      <off color="needle" shape="square"/>
-    </visual>
-  </define>
-  <!-- PAD BUTTON 3: most recent style -->
-  <define class="PADBUTTON3" placeholders="*source,*width=180">
-    <!-- <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_has_color [SOURCE]"> -->
-    <!-- <pos x="+0" y="+0"/> -->
-    <!-- <size width="[WIDTH]" height="39"/> -->
-    <!-- </visual> -->
+  <define class="PAD_GRID_BUTTON" placeholders="*source,*width=180">
     <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_has_color [SOURCE]">
       <pos x="+3" y="+3"/>
       <size width="[WIDTH]-3-3" height="39-6"/>
     </visual>
-    <!-- button base -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
       <size width="[WIDTH]" height="39"/>
       <off color="#AA000000" border="#55FFFFFF" border_size="3" shape="square" radius="3"/>
@@ -186,22 +14,11 @@
       <selected color="#99000000" border="#AAFFFFFF" border_size="3" shape="square" radius="5"/>
       <text dx="+21" width="[WIDTH]-20" size="15" weight="" color="white" colorover="white" colordown="white" colorselected="white" action="pad [SOURCE]" align="left" multiline="true"/>
     </button>
-    <!-- color tinting -->
     <visual type="color" source="pad_button_color [SOURCE]" visibility="0.3">
       <tooltip/>
       <size width="[WIDTH]" height="39"/>
     </visual>
-    <!-- <button action="pad [SOURCE]" rightclick="padshift [SOURCE]"> -->
-    <!-- <size width="[WIDTH]" height="39"/> -->
-    <!-- <off color="#AA000000" border="#44FFFFFF" border_size="3" shape="square" radius="3"/> -->
-    <!-- <over color="#88000000" border="#66FFFFFF" border_size="3" shape="square" radius="3"/> -->
-    <!-- <down color="#55000000" border="#CCFFFFFF" border_size="3" shape="square" radius="5"/> -->
-    <!-- <selected color="#99000000" border="#AAFFFFFF" border_size="3" shape="square" radius="5"/> -->
-    <!-- <text dx="+24" width="[WIDTH]-20" size="15" weight="" color="#44FFFFFF" action="pad [SOURCE]" align="left" multiline="true"/> -->
-    <!-- </button> -->
-    <!-- COLOR CHIP -->
     <group visibility="pad_has_color [SOURCE] ? pad_has_action [SOURCE]">
-      <!-- pushed color chip -->
       <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
         <tooltip/>
         <pos x="+11" y="+12"/>
@@ -209,7 +26,6 @@
         <off color="pad_button_color [SOURCE]" shape="square"/>
         <over color="red" shape="square"/>
       </visual>
-      <!-- color chip -->
       <visual type="color" source="pad_button_color [SOURCE]">
         <tooltip/>
         <pos x="+12" y="+12"/>
@@ -217,94 +33,23 @@
       </visual>
     </group>
   </define>
-  <define class="PADBUTTON_WIDE" placeholders="*source" condition="var_not_equal '@$color_scheme' 4">
-    <visual>
-      <size width="160" height="38"/>
-      <up color="button_background2" shape="square"/>
-    </visual>
-    <!-- border -->
-    <visual type="color" source="#FFFFFF" visibility="pad [SOURCE] ? constant 1.0 : constant 0.0">
-      <size width="124" height="38"/>
-    </visual>
-    <button x="-1" y="-1" action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="126" height="40"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="#999999" border_size="1" shape="square" radius="3"/>
-    </button>
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <pos y="+0"/>
-      <size width="124" height="38"/>
-      <text dx="+24" width="115-10-10" size="15" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="left" multiline="true"/>
-    </button>
-    <!-- pushed color chip -->
-    <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+12"/>
-      <size width="8" height="38-12-12"/>
-      <off color="pad_button_color [SOURCE]" shape="square"/>
-    </visual>
-    <!-- color chip -->
-    <visual type="color" source="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+12" y="+12"/>
-      <size width="4" height="38-12-12"/>
-    </visual>
-    <visual novisibility="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+10" y="+10"/>
-      <size width="4" height="38-10-10"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-  </define>
-  <define class="PADBUTTON-EXTRA-SMALL" placeholders="*source">
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="71" height="40"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="transparent" border_size="1" shape="square"/>
-    </button>
-    <!-- background (pushed) -->
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
-      <size width="71" height="40"/>
-      <up color="button_background2" border="button_background2" border_size="1" shape="square"/>
-      <selected color="button_background2" border="needle" border_size="1" shape="square"/>
-    </button>
-    <!-- text -->
-    <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
-      <size width="71" height="38"/>
-      <text dx="+6" dy="-4" width="71-12" size="14" weight="" color="textoff" colorselected="needle" action="pad [SOURCE]" align="center"/>
-    </button>
-    <visual type="color" source="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+6" y="+40-11"/>
-      <size width="71-12" height="4"/>
-    </visual>
-    <visual novisibility="pad_button_color [SOURCE]">
-      <tooltip/>
-      <pos x="+6" y="+40-11"/>
-      <size width="71-12" height="4"/>
-      <off color="panel_background" shape="square"/>
-    </visual>
-  </define>
-  <define class="PADBUTTON-16-SMALL" placeholders="*source">
+  <define class="PAD_STACK_BUTTON" placeholders="*source">
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="not pad_pushed [SOURCE]">
       <size width="76" height="30"/>
       <up color="button_background2" border="dark_4" border_size="0" shape="square"/>
       <over color="#111111" border="#333333" border_size="0" shape="square"/>
       <selected color="#CC000000" border="dark_6" border_size="0" shape="square"/>
     </button>
-    <!-- black background (pushed) -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
       <size width="76" height="30"/>
       <selected color="#CC000000" border="pad_button_color [SOURCE]" border_size="1" shape="square"/>
     </button>
-    <!-- text -->
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
       <pos x="+0" y="+0"/>
       <size width="76" height="30"/>
       <over color="dark_2" border="dark_7" border_size="1" radius="5"/>
       <text dx="+15" dy="-1" width="78" size="12" weight="" color="textoff" colorselected="needle" colorover="#999999" action="pad [SOURCE]" align="left"/>
     </button>
-    <!-- color bar -->
     <visual type="color" source="pad_button_color [SOURCE]">
       <pos x="+5" y="+6"/>
       <size width="3" height="18"/>

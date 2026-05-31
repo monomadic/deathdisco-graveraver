@@ -4,20 +4,13 @@ Disabled XML removed from active skin files. Keep future experiments here or und
 
 ## VirtualDJ Conditions And Group Positioning
 
-Reference summary: see `docs/virtualdj-skin-reference-notes.md`.
+Reference summary: see
+`../virtualdj-api-reference/Reference/Skin Runtime Findings.md` from the skin
+repo root.
 
-Working notes from the `TRACK_MODIFIERS_PANEL` mirror experiment:
-
-- Use `condition` for load-time/static layout choices. Do not expect it to react like `visibility` at runtime.
-- Prefer direct `x`/`y` attributes on `<group>` for group placement.
-- Runtime canary result: starred string placeholders such as `*side=false` substitute and work in `condition` expressions.
-- Runtime canary result: string placeholders are safest when quoted inside comparisons, e.g. `condition="param_equal '[MIRROR]' 'true'"`.
-- Runtime canary result: direct boolean conditions also work for starred boolean-string placeholders: `condition="[MIRROR]"` for `true`, and `condition="not [MIRROR]"` for `false`.
-- Runtime canary result: numeric starred placeholders such as `*flip=0` also substitute and work in `condition` expressions.
-- Runtime canary result: conditions on whole groups with direct `x`/`y`, e.g. `<group x="+318" y="+30" condition="param_equal [FLIP] 0">`, work as expected.
-- Runtime canary result: conditional child `<pos>` inside `<group>` did not move the group, even when the numeric placeholder condition was otherwise valid. Avoid `<group><pos .../></group>` for conditional group placement.
-- Runtime canary result: unstarred string placeholders such as `side=false` remained literal as `[SIDE]` in the visual test and did not drive conditions. Use `*side=false` for placeholders that must appear inside text or script conditions.
-- These findings came from a temporary visual canary that has since been removed from the active skin and prototypes.
+The reusable notes from the `TRACK_MODIFIERS_PANEL` mirror experiment were
+promoted to the reference repo. Keep this file for GraveRaver-specific retired
+XML snippets rather than broadly applicable VirtualDJ runtime behavior.
 
 ## src/components/buttons/base.xml
 

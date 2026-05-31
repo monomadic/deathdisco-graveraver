@@ -567,9 +567,6 @@
         <!-- layout buttons (cycle) -->
       </group>
     </group>
-    <group visibility="var_equal '@$show_zoom_racks' 1 ? constant 0 : constant 0.75">
-      <visual class="gfx_shape" x="+490" width="150" height="43" coloroff="panel_background" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    </group>
     <group visibility="0.75">
       <visual class="gfx_shape" x="115+80+300+90+643" y="8" width="75" height="27" coloroff="panel_background" visibility="not can_sandbox"/>
     </group>

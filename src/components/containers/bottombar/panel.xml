@@ -97,13 +97,12 @@
       </group>
       <group name="color/rating/relayplay/automix" x="+1000+494-32+122+105+2+55+2+84" y="+2">
         <group y="+2">
-          <visual class="gfx_shape" x="+0" y="+0" width="83" height="42" coloroff="#660099" radius="3"/>
-          <button x="+90" width="40" height="50" query="sideview karaoke ? show_splitpanel 'sideview'" action="switch_sidelist_playlist" text="SIDELIST">
-            <off color="transparent" border="#000000" border_size="0" shape="square"/>
-            <on color="#444444" border="#111111" border_size="0" shape="square"/>
-            <over color="transparent" border="#000000" border_size="0" shape="square"/>
-            <selected color="#333333" border="#555555" border_size="0" shape="square"/>
-            <text size="10" color="br_textoff" text="SIDEPANEL"/>
+          <button width="83" height="42" query="sideview sidelist ? show_splitpanel 'sideview'" action="sideview sidelist &amp; show_splitpanel 'sideview'">
+            <off color="#660099" border="#222222" border_size="1" shape="square" radius="3"/>
+            <on color="#8844AA" border="#111111" border_size="1" shape="square" radius="3"/>
+            <over color="#7722AA" border="#555555" border_size="1" shape="square" radius="3"/>
+            <selected color="#8844AA" border="#555555" border_size="1" shape="square" radius="3"/>
+            <text size="10" color="br_textoff" colorselected="white" colorover="white" text="SIDELIST"/>
           </button>
         </group>
       </group>

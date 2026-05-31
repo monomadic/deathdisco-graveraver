@@ -15,9 +15,11 @@
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="[WIDTH]" height="340" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
       <panel class="track_info_extended" deckside="[DECKSIDE]"/>
-      <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
-      <songpos class="songpos" x="+2" y="+65" width="918" height="30"/>
-      <songpos class="cuemap" x="+2" y="+91" width="918" height="2"/>
+      <panel class="sync_info_extended" x="+614" condition="param_equal [DECKSIDE] 'left'"/>
+      <panel class="sync_info_extended" x="+10" condition="param_equal [DECKSIDE] 'right'"/>
+      <!-- <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/> -->
+      <songpos class="songpos" x="+2" y="+80" width="918" height="20"/>
+      <songpos class="cuemap" x="+2" y="+100" width="918" height="2"/>
       <panel class="pad_page_container" x="+10" y="+105" panelname="[PANELNAME]" width="[WIDTH]-232"/>
       <group y="+10" x="-40">
         <panel class="jogwheel" x="+[WIDTH]-160" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>

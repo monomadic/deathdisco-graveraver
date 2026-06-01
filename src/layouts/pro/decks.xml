@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Pro deck layout shells. @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
-  <define class="DECK_CONTAINER_PRO_LEFT" placeholders="*deck,*panelname,height=465">
+  <define class="DECK_CONTAINER_PRO" placeholders="*deck,*panelname,*deckside,height=465">
     <deck deck="[DECK]">
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
-      <panel class="deck_spine" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
-      <visual width="765" height="[HEIGHT]" x="+35">
+      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" condition="param_equal [DECKSIDE] 'left'"/>
+      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" x="+800-34" mirror="true" height="[HEIGHT]" condition="param_equal [DECKSIDE] 'right'"/>
+      <visual width="765" height="[HEIGHT]" x="+35" condition="param_equal [DECKSIDE] 'left'">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
-      <group x="+35">
+      <visual width="765" height="[HEIGHT]" condition="param_equal [DECKSIDE] 'right'">
+        <off shape="square" color="panel_background" radius="6"/>
+      </visual>
+      <group x="+35" condition="param_equal [DECKSIDE] 'left'">
         <panel class="track_info_pro"/>
         <panel class="track_modifiers_panel" x="+10" y="+60" mirror="false" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         <group x="550">
@@ -17,6 +20,19 @@
         </group>
         <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
         <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="left"/>
+        <visual width="765" height="[HEIGHT]" y="+0">
+          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+        </visual>
+      </group>
+      <group condition="param_equal [DECKSIDE] 'right'">
+        <panel class="pitch_small" x="+5" y="+20"/>
+        <panel class="jogwheel" x="+42" y="+14" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        <group x="+210">
+          <panel class="track_info_pro"/>
+          <panel class="track_modifiers_panel" y="+60" mirror="true" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
+        </group>
+        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
+        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="right"/>
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
@@ -33,36 +49,14 @@
       <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
     </dropzone>
   </define>
-  <define class="DECK_CONTAINER_PRO_RIGHT" placeholders="deck,*panelname,height=465">
-    <deck deck="[DECK]">
-      <panel class="deck_spine" x="+800-34" deck="[DECK]" panelname="[PANELNAME]" mirror="true" height="[HEIGHT]" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
-      <panel class="deck_spine" x="+800-34" deck="[DECK]" panelname="[PANELNAME]" mirror="true" height="[HEIGHT]" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
-      <visual width="765" height="[HEIGHT]">
-        <off shape="square" color="panel_background" radius="6"/>
-      </visual>
-      <group>
-        <panel class="pitch_small" x="+5" y="+20"/>
-        <panel class="jogwheel" x="+42" y="+14" name="jogwheel_spinner" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-        <group x="+210">
-          <panel class="track_info_pro"/>
-          <panel class="track_modifiers_panel" y="+60" mirror="true" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
-        </group>
-        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
-        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="right"/>
-        <visual width="765" height="[HEIGHT]" y="+0">
-          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
-        </visual>
-      </group>
-    </deck>
-  </define>
   <define class="PRO_2DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
     <!-- DECKS -->
-    <panel class="deck_container_pro_left" x="0" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>
-    <panel class="deck_container_pro_left" x="0" panelname="deck3" deck="3" visibility="deck 3 leftdeck"/>
-    <panel class="deck_container_pro_right" x="+1920-800" panelname="deck2" deck="2" visibility="not deck 4 rightdeck"/>
-    <panel class="deck_container_pro_right" x="+1920-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_pro" x="0" panelname="deck1" deck="1" deckside="left" visibility="not deck 3 leftdeck"/>
+    <panel class="deck_container_pro" x="0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_pro" x="+1920-800" panelname="deck2" deck="2" deckside="right" visibility="not deck 4 rightdeck"/>
+    <panel class="deck_container_pro" x="+1920-800" panelname="deck4" deck="4" deckside="right" visibility="deck 4 rightdeck"/>
     <!-- PRO: 2 DECK: MIXER PANEL / MIDDLE PANEL -->
     <group x="+800">
       <group name="tabs">
@@ -84,11 +78,11 @@
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
-    <panel class="deck_container_pro_left" x="+0" panelname="deck1" deck="1" visibility="deck 3 leftdeck"/>
-    <panel class="deck_container_pro_left" x="+0" panelname="deck3" deck="3" visibility="deck 1 leftdeck"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="left" visibility="deck 1 leftdeck"/>
     <!-- LEFT: TOP -->
-    <panel class="deck_container_pro_left" x="+0" panelname="deck1" deck="1" visibility="deck 1 leftdeck" y="+100+2"/>
-    <panel class="deck_container_pro_left" x="+0" panelname="deck3" deck="3" visibility="deck 3 leftdeck" y="+100+2"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 1 leftdeck" y="+100+2"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck" y="+100+2"/>
     <!-- PRO: 4 DECKS: MIXER PANEL / MIDDLE PANEL -->
     <group x="+802" y="+0">
       <!-- MIDDLE PANEL BORDER -->
@@ -104,11 +98,11 @@
     <!-- MIDDLE -->
     <panel class="mixer_4decks" x="+2+800+2" y="+24"/>
     <!-- RIGHT: TOP -->
-    <panel class="deck_container_pro_right" x="+1920-0-800" panelname="deck2" deck="2" visibility="deck 2 rightdeck"/>
-    <panel class="deck_container_pro_right" x="+1920-0-800" panelname="deck4" deck="4" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_pro" x="+1920-0-800" panelname="deck2" deck="2" deckside="right" visibility="deck 2 rightdeck"/>
+    <panel class="deck_container_pro" x="+1920-0-800" panelname="deck4" deck="4" deckside="right" visibility="deck 4 rightdeck"/>
     <!-- RIGHT: BOTTOM -->
-    <panel class="deck_container_pro_right" x="+1920-0-800" y="+100+2" panelname="deck2" deck="2" visibility="deck 4 rightdeck"/>
-    <panel class="deck_container_pro_right" x="+1920-0-800" y="+100+2" panelname="deck4" deck="4" visibility="deck 2 rightdeck"/>
+    <panel class="deck_container_pro" x="+1920-0-800" y="+100+2" panelname="deck2" deck="2" deckside="right" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_pro" x="+1920-0-800" y="+100+2" panelname="deck4" deck="4" deckside="right" visibility="deck 2 rightdeck"/>
     <!-- RACKS (PADS, ETC) -->
     <panel class="pro_racks" x="+2" y="-2"/>
     <group y="+389">

@@ -36,4 +36,8 @@
       </group>
     </deck>
   </define>
+  <define class="DECK_SPINE_PAIR" placeholders="*deck,*panelname,*height=465,*mirror=false,*x=0">
+    <panel class="deck_spine" x="[X]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" height="[HEIGHT]" label="MASTER" color="color_masterdeck" visibility="masterdeck"/>
+    <panel class="deck_spine" x="[X]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" height="[HEIGHT]" label="  DECK [DECK]" color="deckcolor" visibility="not masterdeck"/>
+  </define>
 </defs>

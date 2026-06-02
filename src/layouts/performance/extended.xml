@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
-  <define class="PERFORMANCE_PLAY_BUTTON" placeholders="x=0,y=0">
-    <button class="button_main" x="[X]" y="[Y]" textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
+  <define class="PERFORMANCE_PLAY_BUTTON">
+    <button class="button_main" textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
       <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
       <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
       <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
       <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
     </button>
   </define>
-  <define class="PERFORMANCE_CUE_BUTTON" placeholders="x=0,y=0">
-    <button class="button_main" x="[X]" y="[Y]" textsize="11" width="100" height="30" action="select &amp; cue_button" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+  <define class="PERFORMANCE_CUE_BUTTON">
+    <button class="button_main" textsize="11" width="100" height="30" action="select &amp; cue_button" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
       <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
       <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
       <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
       <selected color="deckcolor" border="deckcolor" radius="4" textcolor="black"/>
     </button>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*deckside,height=340">
+  <define class="DECK_CONTAINER_PERFORMANCE_SIDE" placeholders="*deck,*panelname,*mirror=false,height=340">
     <deck deck="[DECK]">
-      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="false" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="deck_container_performance_body" x="+35" width="922" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="deck_container_performance_body" x="+2" width="922" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'right'"/>
-      <panel class="deck_spine_pair" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="[HEIGHT]" mirror="true" condition="param_equal [DECKSIDE] 'right'"/>
+      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_body" x="+35" width="922" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_body" x="+2" width="922" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="[MIRROR]"/>
+      <panel class="deck_spine_pair" deck="[DECK]" x="1920-35" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="[MIRROR]"/>
     </deck>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,*deckside,width=922,height=340">
+  <define class="DECK_CONTAINER_PERFORMANCE_BODY" placeholders="*deck,*panelname,*mirror=false,width=922,height=340">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="panel_background" bordersize="1" bordercoloroff="transparent"/>
-      <panel class="track_info_extended" deckside="[DECKSIDE]"/>
-      <panel class="sync_info_extended" x="+614" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="sync_info_extended" x="+10" condition="param_equal [DECKSIDE] 'right'"/>
+      <panel class="track_info_extended" mirror="[MIRROR]"/>
+      <panel class="sync_info_extended" x="+614" condition="not [MIRROR]"/>
+      <panel class="sync_info_extended" x="+10" condition="[MIRROR]"/>
       <!-- <visual class="gfx_shape" y="+62" width="922" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/> -->
       <songpos class="songpos" x="+2" y="+80" width="918" height="20"/>
       <songpos class="cuemap" x="+2" y="+100" width="918" height="2"/>
-      <panel class="pad_page_container" x="+10" y="+110" panelname="[PANELNAME]" width="[WIDTH]-232"/>
-      <group y="+10" x="-40">
-        <panel class="jogwheel" x="+[WIDTH]-160" y="+2+6+4+103-6-4" name="jogwheel_spinner"/>
-        <panel class="pitch_small" deck="[DECK]" x="+[WIDTH]" y="+110"/>
+      <panel class="pad_page_container" x="+10" y="+110" panelname="[PANELNAME]" width="[WIDTH]-232" condition="not [MIRROR]"/>
+      <panel class="pad_page_container" x="+221" y="+110" panelname="[PANELNAME]" width="[WIDTH]-232" condition="[MIRROR]"/>
+      <group x="+[WIDTH]-170" y="+130" condition="not [MIRROR]">
+        <panel class="jogwheel" x="-20" name="jogwheel_spinner"/>
+        <panel class="pitch_small" x="+132" y="+10" deck="[DECK]"/>
       </group>
-      <group x="+707" y="+300">
-        <panel class="performance_play_button"/>
+      <group condition="[MIRROR]" y="+130">
+        <panel class="pitch_small" deck="[DECK]" x="+5" y="+10"/>
+        <panel class="jogwheel" x="+42" name="jogwheel_spinner"/>
+      </group>
+      <group x="+707" y="+315" condition="not [MIRROR]">
+        <panel class="performance_cue_button"/>
         <panel class="performance_play_button" x="+105"/>
+      </group>
+      <group x="+8" y="+315" condition="[MIRROR]">
+        <panel class="performance_play_button"/>
+        <panel class="performance_cue_button" x="+105"/>
       </group>
       <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="[HEIGHT]" coloroff="transparent" bordercoloroff="dark_5" bordersize="1" radius="6"/>
       <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
-        <size width="878+77+2-35" height="340"/>
+        <size width="878+77+2-35" height="[HEIGHT]"/>
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
       </visual>
       <panel x="+1" y="+1" class="dual_dropzone" width="878+77+2-35-2" height="264+60"/>
     </deck>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*deckside,width=684,height=333">
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*mirror=false,width=684,height=333">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="panel_background" bordersize="1" bordercoloroff="transparent" radius="6"/>
       <visual class="gfx_shape" y="+62" width="[WIDTH]" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
       <songpos class="songpos" x="+2" y="+65" width="[WIDTH]-4" height="30"/>
       <songpos class="cuemap" x="+2" y="+91" width="[WIDTH]-4" height="2"/>
-      <panel condition="param_equal [DECKSIDE] 'left'">
+      <panel condition="not [MIRROR]">
         <panel class="track_info_pro" width="[WIDTH]"/>
         <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
         <group y="+4" x="-40">
@@ -69,7 +78,7 @@
           <panel class="performance_play_button" x="+105"/>
         </group>
       </panel>
-      <panel condition="param_equal [DECKSIDE] 'right'">
+      <panel condition="[MIRROR]">
         <panel class="track_info_pro" x="+0" width="[WIDTH]"/>
         <panel class="pitch_small" deck="[DECK]" x="+5" y="+114"/>
         <panel class="jogwheel" x="+42" y="+109" name="jogwheel_spinner"/>
@@ -87,12 +96,12 @@
       <panel x="+1" y="+1" class="dual_dropzone" width="[WIDTH]-2" height="[HEIGHT]-2"/>
     </deck>
   </define>
-  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT" placeholders="*deck,*panelname,*deckside,width=719,height=333">
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT" placeholders="*deck,*panelname,*mirror=false,width=719,height=333">
     <deck deck="[DECK]">
-      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="false" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="deck_container_performance_compact_body" x="+35" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'left'"/>
-      <panel class="deck_container_performance_compact_body" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" deckside="[DECKSIDE]" condition="param_equal [DECKSIDE] 'right'"/>
-      <panel class="deck_spine_pair" deck="[DECK]" x="+[WIDTH]-34" panelname="[PANELNAME]" height="[HEIGHT]" mirror="true" condition="param_equal [DECKSIDE] 'right'"/>
+      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_compact_body" x="+35" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_compact_body" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="[MIRROR]"/>
+      <panel class="deck_spine_pair" deck="[DECK]" x="+[WIDTH]-34" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="[MIRROR]"/>
     </deck>
   </define>
   <define class="PERFORMANCE_MAIN_RACKS" placeholders="offset_y=0,deck_offset=264+2">
@@ -102,25 +111,25 @@
   <define class="PERFORMANCE_2DECKS" placeholders="*panelname,height=355">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
-    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" panelname="deck1" deck="1" deckside="left" visibility="deck 1 leftdeck"/>
-    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck"/>
-    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck2" deck="2" deckside="right" visibility="deck 2 rightdeck"/>
-    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck4" deck="4" deckside="right" visibility="deck 4 rightdeck"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" panelname="deck1" deck="1" mirror="false" visibility="deck 1 leftdeck"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" panelname="deck3" deck="3" mirror="false" visibility="deck 3 leftdeck"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck2" deck="2" mirror="true" visibility="deck 2 rightdeck"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck4" deck="4" mirror="true" visibility="deck 4 rightdeck"/>
     <panel class="performance_main_racks" deck_offset="[HEIGHT]"/>
   </define>
   <define class="PERFORMANCE_4DECKS" placeholders="*panelname">
     <!-- Match the 2-deck extended shell, with the second deck pair stacked below. -->
     <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
-    <panel class="deck_container_performance_side" x="0" panelname="deck1" deck="1" deckside="left"/>
-    <panel class="deck_container_performance_side" x="+960" panelname="deck2" deck="2" deckside="right"/>
-    <panel class="deck_container_performance_side" x="0" y="+340+2" panelname="deck3" deck="3" deckside="left"/>
-    <panel class="deck_container_performance_side" x="+960" y="+340+2" panelname="deck4" deck="4" deckside="right"/>
+    <panel class="deck_container_performance_side" x="0" panelname="deck1" deck="1" mirror="false"/>
+    <panel class="deck_container_performance_side" x="+960" panelname="deck2" deck="2" mirror="true"/>
+    <panel class="deck_container_performance_side" x="0" y="+340+2" panelname="deck3" deck="3" mirror="false"/>
+    <panel class="deck_container_performance_side" x="+960" y="+340+2" panelname="deck4" deck="4" mirror="true"/>
     <panel class="performance_main_racks" offset_y="+340+2" deck_offset="340"/>
   </define>
   <define class="PERFORMANCE_DECKS_NO_WAVES">
     <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>
     <panel class="performance_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
-    <panel class="browser_overlay_with_racks" y="+340+2" width="1920" height="1080-43-2-340-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="browser_overlay_with_racks" y="+355+2" width="1920" height="1080-43-2-355-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
   </define>
 </defs>

@@ -149,17 +149,17 @@
       </group>
     </panel>
   </define>
-  <define class="TRACK_INFO_EXTENDED" placeholders="*deck,*deckside,*width=920,*height=75">
+  <define class="TRACK_INFO_EXTENDED" placeholders="*deck,*mirror=false,*width=920,*height=75">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="black"/>
       <!-- cover -->
-      <group x="+10" y="+5" visibility="loaded ? param_equal [DECKSIDE] 'left'">
+      <group x="+10" y="+5" visibility="loaded" condition="not [MIRROR]">
         <cover action="" rightclick="" dblclick="">
           <size width="[HEIGHT]*2+20" height="[HEIGHT]*2"/>
           <clipmask x="920" y="100" width="100" height="[HEIGHT]"/>
         </cover>
       </group>
-      <group x="+742" y="+5" visibility="loaded ? param_equal [DECKSIDE] 'right'">
+      <group x="+742" y="+5" visibility="loaded" condition="[MIRROR]">
         <cover action="" rightclick="" dblclick="">
           <size width="170" height="170"/>
           <clipmask x="920" y="100" width="100" height="90"/>
@@ -167,8 +167,8 @@
       </group>
       <!-- title etc -->
       <panel class="track_info_metadata" width="410">
-        <pos x="+190" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos x="+320" condition="param_equal [DECKSIDE] 'right'"/>
+        <pos x="+190" condition="not [MIRROR]"/>
+        <pos x="+320" condition="[MIRROR]"/>
       </panel>
     </deck>
   </define>
@@ -192,7 +192,12 @@
           <size width="25" height="18"/>
         </textzone>
         <!-- bpm -->
-        <textzone>
+        <textzone visibility="masterdeck">
+          <pos x="+0" y="+17"/>
+          <size width="90" height="30"/>
+          <text color="color_masterdeck" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
+        </textzone>
+        <textzone visibility="not masterdeck">
           <pos x="+0" y="+17"/>
           <size width="90" height="30"/>
           <text color="white" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
@@ -219,7 +224,12 @@
           <text color="dark_8" align="left" weight="" size="15" action="get_text KEY"/>
         </button>
         <!-- key -->
-        <textzone action="key_match_button" rightclick="key_match_menu">
+        <textzone action="key_match_button" rightclick="key_match_menu" visibility="masterdeck">
+          <pos x="+0" y="+17"/>
+          <size width="90" height="30"/>
+          <text size="36" color="color_masterdeck" align="left" weight="bold" action="get_key"/>
+        </textzone>
+        <textzone action="key_match_button" rightclick="key_match_menu" visibility="not masterdeck">
           <pos x="+0" y="+17"/>
           <size width="90" height="30"/>
           <text size="36" color="`get_key_color`" align="left" weight="bold" action="get_key"/>
@@ -254,7 +264,7 @@
       </group>
     </group>
     <!-- PERFORMANCE: EXTENDED: RIGHT DECK: ACTIONS -->
-    <!-- <group visibility="param_equal [DECKSIDE] 'right'"> -->
+    <!-- <group condition="[MIRROR]"> -->
     <!-- <textzone class="text" x="+222" y="+7" width="90" height="34" fontsize="25" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'" visibility="var_equal '@$jog_type' 0"/> -->
     <!-- <textzone class="text" x="+222" y="+7" width="90" height="34" fontsize="25" color="white" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="not var_equal '@$jog_type' 0"/> -->
     <!-- <textzone class="text" x="+232" y="+36" action="cycle '@$hauntinstimesdisplay' 3" tooltip="" width="80" height="24" fontsize="12" color="textdarker" align="center" weight="" text="BPM"/> -->

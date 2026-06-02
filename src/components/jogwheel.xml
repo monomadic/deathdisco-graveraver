@@ -267,11 +267,11 @@
         <size width="[JOGSIZE]" height="[JOGSIZE]"/>
         <off shape="circle" color="jogwheelbackground2" border_size="10" border="jogprogressoff"/>
       </visual>
-      <group visibility="0.6">
+      <group visibility="0.8">
         <visual name="outerborder" x="+0" y="+0" source="masterdeck" query="masterdeck">
           <size width="[JOGSIZE]" height="[JOGSIZE]"/>
           <off border_size="1" border="dark_5" color="transparent" shape="circle"/>
-          <on border_size="1" border="color_masterdeck" color="black" shape="circle"/>
+          <on border_size="8" border="color_masterdeck" color="black" shape="circle"/>
         </visual>
       </group>
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+5" y="+5" width="[JOGSIZE]-10" height="[JOGSIZE]-10" offcolor="transparent" colorfader="jogprogressoff" widthfader="20" heightfader="32" radius="42"/>

@@ -102,7 +102,7 @@
             <on color="#8844AA" border="#111111" border_size="1" shape="square" radius="3"/>
             <over color="#7722AA" border="#555555" border_size="1" shape="square" radius="3"/>
             <selected color="#8844AA" border="#555555" border_size="1" shape="square" radius="3"/>
-            <text size="10" color="br_textoff" colorselected="white" colorover="white" text="SIDELIST"/>
+            <text size="14" align="center" color="dark_9" weight="bold" colorselected="white" colorover="white" text="SIDELIST"/>
           </button>
         </group>
       </group>

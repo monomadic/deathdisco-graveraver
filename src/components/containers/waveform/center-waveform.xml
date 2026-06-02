@@ -2,7 +2,75 @@
 <defs>
   <define class="WAVEFORM_HORIZONTAL_CENTER" placeholders="*waveformwidth,*waveformheight">
     <visual class="gfx_shape" width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-    <panel name="horizontal_scratch_active2deck" visibility="var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+    <panel name="defaultwave2deck" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <rhythmzone mirror="false" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="0" deck1_active="waveform_active1" deck1_left="waveform_passive1" deck2="0" deck2_active="waveform_active2" deck2_right="waveform_passive2" deck3="0" deck3_active="waveform_active3" deck3_left="waveform_passive3" deck4="0" deck4_active="waveform_active4" deck4_right="waveform_passive4"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12" y2="+[WAVEFORMHEIGHT]-6-12+8" y3="+[WAVEFORMHEIGHT]-6-12" y4="+[WAVEFORMHEIGHT]-6-12+8"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="mirroredwave2deck" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <rhythmzone mirror="true" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="0" deck1_active="waveform_active1" deck1_left="waveform_passive1" deck2="0" deck2_active="waveform_active2" deck2_right="waveform_passive2" deck3="0" deck3_active="waveform_active3" deck3_left="waveform_passive3" deck4="0" deck4_active="waveform_active4" deck4_right="waveform_passive4"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12" y2="+[WAVEFORMHEIGHT]-6-12+8" y3="+[WAVEFORMHEIGHT]-6-12" y4="+[WAVEFORMHEIGHT]-6-12+8"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="beats_dropzones2deck" visibility="setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <dropzone deck="3" visibility="deck 3 leftdeck">
+        <pos x="+0" y="+0"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="1" visibility="not deck 3 leftdeck">
+        <pos x="+0" y="+0"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="2" visibility="not deck 4 rightdeck">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2-1"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="4" visibility="deck 4 rightdeck">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2-1"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    </panel>
+    <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
       <scratchwave deck="3" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck">
         <pos x="+2" y="+14+6"/>
         <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]/2-32-6"/>
@@ -13,7 +81,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -28,7 +96,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -48,7 +116,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -63,7 +131,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -83,7 +151,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -98,7 +166,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -118,7 +186,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -133,7 +201,7 @@
           <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
         </cue>
         <overlay>
-          <pos x="960" y="-16"/>
+          <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
           <size width="2" height="[WAVEFORMHEIGHT]/2-6"/>
           <background color="needle" shape="square"/>
         </overlay>
@@ -143,12 +211,84 @@
         <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
         <over color="transparent" border="deckcolor" border_size="2"/>
       </dropzone>
-      <panel class="beat_counter" deck="left" x="960-2-120-40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-      <panel class="beat_counter" deck="right" x="960-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-      <panel class="beat_counter" deck="left" x="960-2-120+40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-      <panel class="beat_counter" deck="right" x="960-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+18" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
     </panel>
-    <panel name="horizontal_scratch_active4deck" visibility="var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+    <panel name="defaultwave4deck" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <rhythmzone mirror="false" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="mirroredwave4deck" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <rhythmzone mirror="true" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="beats_dropzones4deck" visibility="setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <dropzone deck="1">
+        <pos x="+0" y="+2"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="2">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="3">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2-24-2+14+12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="4">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2-12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    </panel>
+    <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
       <group name="1234" visibility="var_equal '@$wave_order' 1">
         <scratchwave deck="1" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
           <pos x="+2" y="+12+2"/>
@@ -160,7 +300,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -175,7 +315,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -195,7 +335,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -210,7 +350,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -230,7 +370,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -245,7 +385,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -265,7 +405,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -280,7 +420,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -290,14 +430,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
       <group name="3124" visibility="var_equal '@$wave_order' 0">
         <scratchwave deck="3" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
@@ -310,7 +450,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -325,7 +465,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -345,7 +485,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -360,7 +500,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -380,7 +520,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -395,7 +535,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -415,7 +555,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -430,7 +570,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -440,14 +580,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
       <group name="1342" visibility="var_equal '@$wave_order' 2">
         <scratchwave deck="1" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
@@ -460,7 +600,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -475,7 +615,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -495,7 +635,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -510,7 +650,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -530,7 +670,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -545,7 +685,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -565,7 +705,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -580,7 +720,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-10"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-10"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-4"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -590,14 +730,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
     </panel>
     <panel name="wave_options">
@@ -607,6 +747,8 @@
         <off shape="square" color="button_background"/>
         <icon sysicon="settings" height="24" width="24" color="textoff" colorover="needle" colordown="needle"/>
         <submenu text="Waveform Type" localize="true">
+          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 0"/>
+          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 1"/>
           <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
           <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
         </submenu>
@@ -699,7 +841,79 @@
   </define>
   <define class="WAVEFORM_HORIZONTAL_CENTER4" placeholders="*waveformwidth,*waveformheight">
     <visual class="gfx_shape" width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-    <panel name="horizontal_scratch_active4deck">
+    <panel name="defaultwave4deck" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0">
+      <rhythmzone mirror="false" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="mirroredwave4deck" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0">
+      <rhythmzone mirror="true" upsidedown="false" fade="200">
+        <pos x="+2" y="+0"/>
+        <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+        <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+        <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+        <grid height="6" width="5" mainwidth="10">
+          <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+        </grid>
+        <gridlines width="1" color="gridlines" transparency="0.6"/>
+        <cue dy="+0" height="[WAVEFORMHEIGHT]">
+          <mask x="0" y="0" width="11" height="12"/>
+          <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+        </cue>
+        <overlay>
+          <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+          <size width="2" height="[WAVEFORMHEIGHT]"/>
+          <background color="needle" shape="square"/>
+        </overlay>
+      </rhythmzone>
+    </panel>
+    <panel name="beats_dropzones4deck" visibility="setting skinWaveformType 0">
+      <dropzone deck="1">
+        <pos x="+0" y="+2"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="2">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="3">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2-24-2+14+12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <dropzone deck="4">
+        <pos x="+0" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2-12"/>
+        <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+        <over color="transparent" border="deckcolor" border_size="2"/>
+      </dropzone>
+      <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+      <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    </panel>
+    <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0">
       <group name="1234" visibility="var_equal '@$wave_order' 1">
         <scratchwave deck="1" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
           <pos x="+2" y="+14+6"/>
@@ -711,7 +925,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -726,7 +940,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -746,7 +960,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -761,7 +975,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -781,7 +995,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -796,7 +1010,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -816,7 +1030,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -831,7 +1045,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -841,14 +1055,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
       <group name="3124" visibility="var_equal '@$wave_order' 0">
         <scratchwave deck="3" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
@@ -861,7 +1075,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -876,7 +1090,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -896,7 +1110,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -911,7 +1125,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -931,7 +1145,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -946,7 +1160,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -966,7 +1180,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -981,7 +1195,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -991,14 +1205,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
       <group name="1342" visibility="var_equal '@$wave_order' 2">
         <scratchwave deck="1" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="var_equal '@$waves_show_background' 0">
@@ -1011,7 +1225,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1026,7 +1240,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1046,7 +1260,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1061,7 +1275,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1081,7 +1295,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1096,7 +1310,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1116,7 +1330,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1131,7 +1345,7 @@
             <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
           </cue>
           <overlay>
-            <pos x="960" y="-16"/>
+            <pos x="+[WAVEFORMWIDTH]/2" y="-16"/>
             <size width="2" height="[WAVEFORMHEIGHT]/4-7"/>
             <background color="needle" shape="square"/>
           </overlay>
@@ -1141,14 +1355,14 @@
           <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
           <over color="transparent" border="deckcolor" border_size="2"/>
         </dropzone>
-        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="960-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="960-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="960-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </group>
     </panel>
     <panel name="wave_options">
@@ -1158,6 +1372,8 @@
         <off shape="square" color="button_background"/>
         <icon sysicon="settings" height="24" width="24" color="textoff" colorover="needle" colordown="needle"/>
         <submenu text="Waveform Type" localize="true">
+          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 0"/>
+          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 1"/>
           <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
           <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
         </submenu>

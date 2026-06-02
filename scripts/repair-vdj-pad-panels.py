@@ -65,7 +65,7 @@ def expand_panelname(name: str) -> set[str]:
 def current_pad_panels(skin_xml: Path) -> set[str]:
     try:
         xml = subprocess.check_output(
-            ["xmllint", "--xinclude", str(skin_xml)],
+            ["xmllint", "--xinclude", "--loaddtd", "--noent", str(skin_xml)],
             text=True,
             cwd=REPO_ROOT,
         )

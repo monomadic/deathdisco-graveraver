@@ -1,0 +1,11 @@
+<!--
+  Shared XML entity macros expanded by xmllint before VirtualDJ sees skin.xml.
+
+  To use macros in an included XML file, add a local DOCTYPE and adjust the
+  relative path from that XML file, for example:
+    <!DOCTYPE defs SYSTEM "../macros.dtd">
+
+  Escape VDJScript command separators as &amp; inside entity values.
+  Escape literal percent signs as &#37; inside entity values.
+-->
+<!ENTITY grvResetColorFxAndFilters "deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50&#37; &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50&#37;">

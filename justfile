@@ -28,21 +28,21 @@ repair-pad-state-apply:
 lint: lint-prod lint-prototype
 
 lint-prod: generate
-    xmllint --noout --xinclude "{{src_dir}}/skin.xml"
+    xmllint --noout --xinclude --loaddtd --noent "{{src_dir}}/skin.xml"
 
 lint-prototype:
-    xmllint --noout --xinclude "{{src_dir}}/prototypes/skin.xml"
+    xmllint --noout --xinclude --loaddtd --noent "{{src_dir}}/prototypes/skin.xml"
 
 build: lint-prod
     mkdir -p "{{build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{build_dir}}/"; fi
-    xmllint --format --xinclude "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
+    xmllint --format --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
     python3 scripts/minify-skin.py "{{build_dir}}/skin.xml"
 
 prototype-build: lint-prototype
     mkdir -p "{{prototype_build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{prototype_build_dir}}/"; fi
-    xmllint --format --xinclude "{{src_dir}}/prototypes/skin.xml" --output "{{prototype_build_dir}}/skin.xml"
+    xmllint --format --xinclude --loaddtd --noent "{{src_dir}}/prototypes/skin.xml" --output "{{prototype_build_dir}}/skin.xml"
     python3 scripts/minify-skin.py "{{prototype_build_dir}}/skin.xml"
 
 install: build

@@ -3,6 +3,7 @@
   <!-- Components -->
   <xi:include href="primitives.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="text.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="songpos.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="meters.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="cues.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="buttons/index.xml" xpointer="xpointer(/defs/*)"/>

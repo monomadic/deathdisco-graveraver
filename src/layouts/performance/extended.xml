@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Extended Performance layout: decks and racks above/below the browser. -->
+  <define class="DUAL_DROPZONE" placeholders="*width,*height,x=0,y=0">
+    <dropzone visibility="blink 1bt" x="[X]" y="[Y]" radius="6">
+      <size width="[WIDTH]" height="[HEIGHT]"/>
+      <over color="transparent" border_size="2" border="needle" shape="square"/>
+    </dropzone>
+  </define>
   <define class="PERFORMANCE_PLAY_BUTTON">
     <button textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" textcoloron="black" colorselected="red" bordersize="0">
       <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>

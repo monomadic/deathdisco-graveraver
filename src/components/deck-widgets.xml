@@ -55,24 +55,24 @@
   </define>
   <define class="SAVED_LOOPS_STACK" placeholders="*panelname">
     <panel name="svloopspage1_[PANELNAME]" group="svloops_[PANELNAME]" visible="yes">
-      <panel class="saved_loop_button2" x="+0" y="+6" source="1"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29" source="2"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29+29" source="3"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29+29+29" source="4"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6" source="5"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29" source="6"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29+29" source="7"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29+29+29" source="8"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6" source="1"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29" source="2"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29+29" source="3"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29+29+29" source="4"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6" source="5"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29" source="6"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29+29" source="7"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29+29+29" source="8"/>
     </panel>
     <panel name="svloopspage2_[PANELNAME]" group="svloops_[PANELNAME]" visible="no">
-      <panel class="saved_loop_button2" x="+0" y="+6" source="9"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29" source="10"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29+29" source="11"/>
-      <panel class="saved_loop_button2" x="+0" y="+6+29+29+29" source="12"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6" source="13"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29" source="14"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29+29" source="15"/>
-      <panel class="saved_loop_button2" x="+0+154" y="+6+29+29+29" source="16"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6" source="9"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29" source="10"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29+29" source="11"/>
+      <panel class="saved_loop_button_stack" x="+0" y="+6+29+29+29" source="12"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6" source="13"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29" source="14"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29+29" source="15"/>
+      <panel class="saved_loop_button_stack" x="+0+154" y="+6+29+29+29" source="16"/>
     </panel>
     <button class="button_main" x="+0" y="+6+121" width="61" height="28" action="skin_panel 'svloopspage1_[PANELNAME]' on" iconsize="20" sysicon="arrowleft" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
     <button class="button_main" x="+0+61" y="+6+121" width="177" height="28" textsize="11" action="skin_panelgroup 'svloops_[PANELNAME]' +1" textaction="skin_panel 'svloopspage1_[PANELNAME]' on ? get_text 'SAVED LOOPS 1-8' : skin_panel 'svloopspage2_[PANELNAME]' on ? get_text 'SAVED LOOPS 9-16'" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" textcoloron="needle"/>

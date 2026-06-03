@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <cues shade="0.0">
+      <size width="3" height="26"/>
+      <clipmask x="0" y="-1"/>
+    </cues>
+    <loops dy="0" shade="0.0">
+      <size width="5" height="26"/>
+      <clipmask x="21" y="-1"/>
+    </loops>
+  </define>
+
+  <define class="CUEMAP" placeholders="*deck,width=470,height=2" orientation="horizontal" waveform="yes" colorPlayed="black">
+    <size width="[WIDTH]" height="[HEIGHT]"/>
+    <wave>
+      <size height="0"/>
+      <pos y="+5"/>
+    </wave>
+    <cues dy="0" shade="0">
+      <size width="253" height="10"/>
+      <clipmask x="0" y="100"/>
+    </cues>
+  </define>
+</defs>

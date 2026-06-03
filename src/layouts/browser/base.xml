@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height" condition="NOT var_equal '@$shapes_color' 0">
-    <size width="[WIDTH]" height="[HEIGHT]"/>
-    <cues shade="0.0">
-      <size width="3" height="26"/>
-      <clipmask x="0" y="-1"/>
-    </cues>
-    <loops dy="0" shade="0.0">
-      <size width="5" height="26"/>
-      <clipmask x="21" y="-1"/>
-    </loops>
-  </define>
-  <define class="BROWSER_UI_BASE" showzoom="yes">
-    <background color="br_background" bordercolortop="br_background" bordercolor="br_background" bordersize="3"/>
+  <define class="BROWSER_UI_BASE" folders="yes" searchbar="yes" showzoom="yes" toolbar="yes">
+    <background color="dark_1" bordercolortop="br_background" bordercolor="br_background" bordersize="0"/>
     <colors>
       <separators background="button_background" line="button_background" text="needle"/>
       <toolbars background="xf_background" text="needle" iconbackground="xf_progressbackground" backgroundselected="br_coloron" backgroundmouseover="br_slcolor" icon="textoff" border="browser_iconbuttonoff"/>
@@ -29,18 +18,18 @@
       </plugins>
     </colors>
     <button>
-      <up color="browser_iconbuttonoff" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <over color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <down color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <selected color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
-      <active color="browser_iconbuttonactive" border="browser_iconbuttonoff" border_size="2" width="60" height="60"/>
+      <up color="dark_0" border="browser_iconbuttonoff" border_size="0" width="60" height="60"/>
+      <over color="dark_0" border="browser_iconbuttonoff" border_size="0" width="60" height="60"/>
+      <down color="dark_0" border="browser_iconbuttonoff" border_size="0" width="60" height="60"/>
+      <selected color="dark_0" border="browser_iconbuttonoff" border_size="0" width="60" height="60"/>
+      <active color="dark_0" border="browser_iconbuttonoff" border_size="0" width="60" height="60"/>
       <menu shape="circle" color="textdarker" border="button_background2" border_size="7" width="32" height="32"/>
       <menuover shape="circle" color="green" border="button_background" border_size="7" width="32" height="32"/>
     </button>
-    <fontsearch size="18"/>
-    <font name="Arial" size="20"/>
-    <fontheader size="16"/>
-    <fontgridtitle size="18"/>
-    <fonttoolbar size="14"/>
+    <!-- <fontsearch size="18"/> -->
+    <!-- <font name="Arial" size="20"/> -->
+    <!-- <fontheader size="16"/> -->
+    <!-- <fontgridtitle size="18"/> -->
+    <fonttoolbar size="12"/>
   </define>
 </defs>

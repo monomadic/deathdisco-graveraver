@@ -1,57 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <!-- CLASS: STEM FADER - unused? -->
-  <define class="STEM_VU" placeholders="*deck,*stem,*label,*color,width=65,height=23,fontsize=13,granularity=23">
-    <deck deck="[DECK]">
-      <!-- TOGGLE -->
-      <button x="+0" y="+135" action="stem_pad '[STEM]'" border_size="1">
-        <size width="[WIDTH]" height="[HEIGHT]"/>
-        <off color="transparent" border="transparent" radius="3"/>
-        <down color="transparent" border="transparent" radius="3"/>
-        <selected color="transparent" border="transparent" radius="3"/>
-        <text fontsize="[FONTSIZE]" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/>
-      </button>
-      <group x="+12">
-        <!-- FADER LINES -->
-        <group x="+0" y="+7">
-          <line color="faderlines" x="+3" y="+12" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*2" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*3" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*4" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*5" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*6" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*7" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*8" width="32" height="1"/>
-          <line color="faderlines" x="+3" y="+12*9" width="32" height="1"/>
-        </group>
-        <visual x="+5" y="+0" width="750" height="224">
-          <off shape="square" color="#050505" radius="10" bordersize="1" border="#000000"/>
-        </visual>
-        <group x="+14" y="+0">
-          <visual source="get_level '[STEM]'" type="linear" orientation="vertical" direction="up" granularity="23">
-            <pos x="+0" y="+5"/>
-            <size width="10" height="123"/>
-            <off shape="square" color="black" radius="2"/>
-            <on shape="square" color="[COLOR]" radius="2"/>
-          </visual>
-        </group>
-        <!-- SLIDER -->
-        <slider action="level '[STEM]'" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-          <pos x="+0" y="+0"/>
-          <size width="38" height="135"/>
-          <off width="-27" height="-8" color="transparent" border="#333333" border_size="1" radius="3" shape="square"/>
-          <on width="-27" height="-8" color="transparent" border="#333333" border_size="1" radius="3" shape="square"/>
-          <fader color="#333333" width="38" height="14" border="#555555"/>
-        </slider>
-        <!-- SLIDER PIECE -->
-        <slider action="level '[STEM]'" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-          <pos x="+0" y="+0+6"/>
-          <size width="38" height="135-12"/>
-          <fader color="faderbackgroundline" width="38" height="2"/>
-        </slider>
-      </group>
-    </deck>
-  </define>
   <define class="BEAT_DIVIDER" placeholders="*width,*height" condition="var_not_equal '@$color_scheme' 4">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <pos x="+0" y="+0"/>

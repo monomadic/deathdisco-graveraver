@@ -31,6 +31,11 @@
     </button>
   </define>
   <define class="PITCH_SMALL" placeholders="*height=60">
+    <visual>
+      <pos x="+13" y="-10"/>
+      <size width="7" height="[HEIGHT]+6"/>
+      <off shape="square" color="dark_8" border="dark_0" border_size="2" radius="3"/>
+    </visual>
     <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true">
       <pos x="+0" y="-7"/>
       <size width="33" height="[HEIGHT]"/>
@@ -38,6 +43,11 @@
       <off width="-30" height="+0" color="#FFFFFF" border="#FFFFFF" border_size="0" radius="0" shape="square"/>
       <fader color="#FFFFFF" width="15" height="2"/>
     </slider>
+    <button action="pitch_reset" y="+[HEIGHT]/2-15" x="-8" visibility="not get_pitch_zero">
+      <size width="16" height="16"/>
+      <off shape="circle" color="transparent"/>
+      <icon sysicon="arrowright" coloroff="dark_7" colorover="white" colordown="dark_6" colorselected="dark_5" width="14" height="14"/>
+    </button>
   </define>
   <define class="PITCH_EX">
     <line color="faderlines2" x="+0" y="+0" width="38" height="1"/>

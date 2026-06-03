@@ -45,9 +45,7 @@
           <down color="transparent" border_size="2" border="#AAFFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
-      <!--
-              === RIGHT DECK WAVEFORM TRACK INFO ===
-            -->
+      <!-- === RIGHT DECK WAVEFORM TRACK INFO === -->
       <group x="1920-[FULLHEIGHT]-34-40" y="-[HEIGHT]" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
         <!-- BG -->
         <square x="+0" y="+0" height="[FULLHEIGHT]" width="[FULLHEIGHT]+40" color="#CC000000"/>

@@ -66,12 +66,12 @@
         <off shape="circle" color="jogprogressoff"/>
         <on shape="circle" color="dark_6"/>
       </visual>
-      <visual name="innercircle_border" visibility="loaded">
+      <visual name="innercircle_border" visibility="loaded" tooltip="">
         <pos x="+4" y="+4"/>
         <size width="[JOGSIZE]-8" height="[JOGSIZE]-8"/>
         <off shape="circle" color="#111111" border_size="35" border="dark_0"/>
       </visual>
-      <visual name="innercircle_border" visibility="loaded">
+      <visual name="innercircle_border" visibility="loaded" tooltip="">
         <pos x="+52" y="+52"/>
         <size width="[JOGSIZE]-104" height="[JOGSIZE]-104"/>
         <off shape="circle" color="#33FFFFFF" border_size="1" border="#33FFFFFF"/>
@@ -82,7 +82,7 @@
         <off border_size="20" border="transparent" color="mixerbackground" shape="circle"/>
         <on border_size="4" border="#FF4444" color="#33FF0000" shape="circle"/>
       </visual>
-      <group x="+45" y="+110" visibility="loaded ? songpos_warning">
+      <group x="+45" y="+110" visibility="loaded ? songpos_warning" tooltip="">
         <visual width="70" height="30" visibility="songpos_warning blink">
           <off shape="square" color="#AA000000" border="#33FF4444" border_size="1" radius="4"/>
         </visual>
@@ -268,7 +268,7 @@
         <off shape="circle" color="jogwheelbackground2" border_size="10" border="jogprogressoff"/>
       </visual>
       <group visibility="0.8">
-        <visual name="outerborder" x="+0" y="+0" source="masterdeck" query="masterdeck">
+        <visual name="outerborder" x="+0" y="+0" source="masterdeck" query="masterdeck" tooltip="">
           <size width="[JOGSIZE]" height="[JOGSIZE]"/>
           <off border_size="1" border="dark_5" color="transparent" shape="circle"/>
           <on border_size="8" border="color_masterdeck" color="black" shape="circle"/>
@@ -277,7 +277,7 @@
       <slider class="dome_spinner" visibility="loaded" tooltip="" x="+5" y="+5" width="[JOGSIZE]-10" height="[JOGSIZE]-10" offcolor="transparent" colorfader="jogprogressoff" widthfader="20" heightfader="32" radius="42"/>
       <slider class="dome_spinner" action="get_rotation_slip" visibility="loaded ? get_slip_active" tooltip="" x="+5" y="+5" width="[JOGSIZE]-10" height="[JOGSIZE]-10" offcolor="transparent" colorfader="jog_slider" widthfader="20" heightfader="32" radius="42"/>
       <!-- base (yours) -->
-      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink">
+      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink" tooltip="">
         <size width="[JOGSIZE]" height="[JOGSIZE]"/>
         <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/>
         <on border_size="7" border="jogprogressoff" color="mixerbackground" shape="circle"/>
@@ -286,8 +286,8 @@
         <pos x="+12" y="+12"/>
         <size width="[JOGSIZE]-24" height="[JOGSIZE]-24"/>
       </cover>
-      <visual source="song_pos 'show warning'" type="circle" visibility="loaded" color="red" width="40" height="40" x="+0" y="+0"/>
-      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink">
+      <visual source="song_pos 'show warning'" type="circle" visibility="loaded" color="red" width="40" height="40" x="+0" y="+0" tooltip=""/>
+      <visual name="outerborder" x="+0" y="+0" source="songpos_warning blink" tooltip="">
         <size width="[JOGSIZE]" height="[JOGSIZE]"/>
         <off border_size="2" border="transparent" color="mixerbackground" shape="circle"/>
         <on border_size="10" border="red" color="#33FF0000" shape="circle"/>

@@ -125,14 +125,14 @@
     <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck4" deck="4" mirror="true" visibility="deck 4 rightdeck"/>
     <panel class="performance_main_racks" deck_offset="[HEIGHT]"/>
   </define>
-  <define class="PERFORMANCE_4DECKS" placeholders="*panelname">
+  <define class="PERFORMANCE_4DECKS" placeholders="*panelname,height=355,wave_height=1080-50-50-355-2-355-3">
     <!-- Match the 2-deck extended shell, with the second deck pair stacked below. -->
-    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
-    <panel class="deck_container_performance_side" x="0" panelname="deck1" deck="1" mirror="false"/>
-    <panel class="deck_container_performance_side" x="+960" panelname="deck2" deck="2" mirror="true"/>
-    <panel class="deck_container_performance_side" x="0" y="+340+2" panelname="deck3" deck="3" mirror="false"/>
-    <panel class="deck_container_performance_side" x="+960" y="+340+2" panelname="deck4" deck="4" mirror="true"/>
-    <panel class="performance_main_racks" offset_y="+340+2" deck_offset="340"/>
+    <pos y="+[WAVE_HEIGHT]+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" panelname="deck1" deck="1" mirror="false"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" panelname="deck2" deck="2" mirror="true"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="0" y="+[HEIGHT]+2" panelname="deck3" deck="3" mirror="false"/>
+    <panel class="deck_container_performance_side" height="[HEIGHT]" x="+960" y="+[HEIGHT]+2" panelname="deck4" deck="4" mirror="true"/>
+    <panel class="performance_main_racks" offset_y="+[HEIGHT]+2" deck_offset="[HEIGHT]"/>
   </define>
   <define class="PERFORMANCE_DECKS_NO_WAVES">
     <panel class="performance_2decks" condition="var_equal '@$layout_4deck' 0"/>

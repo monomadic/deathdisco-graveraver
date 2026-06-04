@@ -13,6 +13,17 @@
           <over color="black" border="white" border_size="4" shape="square"/>
           <icon dx="+3" sysicon="arrowright" color="#777777" colordown="white" colorselected="white" colorover="white" width="40" height="40"/>
         </button>
+        <!-- cover placeholder -->
+        <group novisibility="loaded" x="+5" y="+5">
+          <visual type="circle">
+            <size width="[FULLHEIGHT]-10" height="[FULLHEIGHT]-10"/>
+            <off shape="circle" color="dark_3" border="dark_2" border_size="60"/>
+          </visual>
+          <visual type="circle">
+            <size width="[FULLHEIGHT]-10" height="[FULLHEIGHT]-10"/>
+            <off shape="circle" color="dark_0" border="transparent" border_size="88"/>
+          </visual>
+        </group>
         <!-- cover -->
         <cover visibility="loaded" action="" rightclick="" dblclick="">
           <pos x="+0" y="+0"/>
@@ -42,11 +53,10 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[FULLHEIGHT]+40" height="[FULLHEIGHT]"/>
-          <down color="transparent" border_size="2" border="#AAFFFFFF" shape="square" radius="4"/>
+          <down color="transparent" border_size="1" border="#66FFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
-      <!-- === RIGHT DECK WAVEFORM TRACK INFO === -->
-      <group x="1920-[FULLHEIGHT]-34-40" y="-[HEIGHT]" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
+      <group x="1920-[FULLHEIGHT]-27-40" y="-[HEIGHT]" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
         <!-- BG -->
         <square x="+0" y="+0" height="[FULLHEIGHT]" width="[FULLHEIGHT]+40" color="#CC000000"/>
         <!-- black fallback -->
@@ -55,6 +65,17 @@
           <over color="black" border="white" border_size="4" shape="square"/>
           <icon dx="+3" sysicon="arrowright" color="#777777" colordown="white" colorselected="white" colorover="white" width="40" height="40"/>
         </button>
+        <!-- cover placeholder -->
+        <group novisibility="loaded" x="+45" y="+5">
+          <visual type="circle">
+            <size width="[FULLHEIGHT]-10" height="[FULLHEIGHT]-10"/>
+            <off shape="circle" color="dark_3" border="dark_2" border_size="60"/>
+          </visual>
+          <visual type="circle">
+            <size width="[FULLHEIGHT]-10" height="[FULLHEIGHT]-10"/>
+            <off shape="circle" color="dark_0" border="transparent" border_size="88"/>
+          </visual>
+        </group>
         <cover x="+40" visibility="loaded ? get_deck 2 ? true : get_deck 4 ? true : false" action="" rightclick="" dblclick="">
           <size width="[FULLHEIGHT]" height="[FULLHEIGHT]"/>
         </cover>
@@ -82,7 +103,7 @@
         <!-- PRO: HORIZONTAL WAVEFORM: COVER BORDER -->
         <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1">
           <size width="[FULLHEIGHT]+40" height="[FULLHEIGHT]"/>
-          <down color="transparent" border_size="3" border="#AAFFFFFF" shape="square" radius="4"/>
+          <down color="transparent" border_size="1" border="#66FFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
     </deck>

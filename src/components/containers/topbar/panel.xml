@@ -118,10 +118,10 @@
       <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
     </button>
     <!-- INIT CONTROLLER -->
-    <button action="reinit_controller" x="+280">
+    <button action="reinit_controller" x="+210">
       <size width="42" height="27"/>
       <off color="transparent"/>
-      <icon sysicon="sampler_loop" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+      <icon sysicon="headphones" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
     </button>
   </group>
   <!-- Accent top line -->
@@ -139,7 +139,9 @@
       <over color="transparent" shape="square"/>
       <selected color="button_background" shape="square"/>
       <text dx="+2" dy="+8" fontsize="25" text="iii" color="textoff" colorselected="needle" colorover="needle" orientation="vertical-cw"/>
-      <item text="Keyboard Mode [CMD+B]" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
+      <item text="Settings" localize="true" action="settings"/>
+      <separator/>
+      <item text="Keyboard Mode" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
       <separator/>
       <submenu text="Top Bar">
         <submenu text="Beat Counter" localize="true">

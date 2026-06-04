@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="WAVEFORM" placeholders="*waveformheight">
+  <define class="WAVEFORM" placeholders="*waveformheight,force4deck=false">
     <group visibility="var_equal '@$split_waveform' 0">
       <visual class="gfx_shape" width="1920-4" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-      <panel name="mirroredwave2deck" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <panel name="mirroredwave2deck" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
         <rhythmzone mirror="true" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -29,7 +29,7 @@
         <panel class="beat_counter" deck="right" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </panel>
       <!-- WAVEFORM TYPE: BEATS -->
-      <panel name="defaultwave4deck" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <panel name="defaultwave4deck" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
         <rhythmzone mirror="false" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -59,7 +59,66 @@
         <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </panel>
       <!-- WAVEFORM TYPE: BEATS MIRRORED -->
-      <panel name="mirroredwave4deck" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <panel name="mirroredwave4deck" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+        <rhythmzone mirror="true" upsidedown="false" fade="200">
+          <pos x="+2" y="+0"/>
+          <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
+          <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+          <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+          <grid height="6" width="5" mainwidth="10">
+            <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+          </grid>
+          <gridlines width="1" color="gridlines" transparency="0.6"/>
+          <cue dy="+0" height="[WAVEFORMHEIGHT]">
+            <mask x="0" y="0" width="11" height="12"/>
+            <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+          </cue>
+          <overlay>
+            <pos x="960" y="+0"/>
+            <size width="2" height="[WAVEFORMHEIGHT]"/>
+            <background color="needle" shape="square"/>
+          </overlay>
+        </rhythmzone>
+        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="960-2-598-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      </panel>
+      <!-- PERFORMANCE EXTENDED: MAIN WAVEFORM (HORIZONTAL, FORCED 4 DECK) -->
+      <panel name="defaultwave4deck_forced" condition="[FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0">
+        <rhythmzone mirror="false" upsidedown="false" fade="200">
+          <pos x="+2" y="+0"/>
+          <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
+          <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+          <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+          <grid height="6" width="5" mainwidth="10">
+            <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+          </grid>
+          <gridlines width="1" color="gridlines" transparency="0.6"/>
+          <cue dy="+0" height="[WAVEFORMHEIGHT]">
+            <mask x="0" y="0" width="11" height="12"/>
+            <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+          </cue>
+          <overlay>
+            <pos x="960" y="+0"/>
+            <size width="2" height="[WAVEFORMHEIGHT]"/>
+            <background color="needle" shape="square"/>
+          </overlay>
+        </rhythmzone>
+        <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="960-2-598-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+      </panel>
+      <panel name="mirroredwave4deck_forced" condition="[FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0">
         <rhythmzone mirror="true" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -90,7 +149,7 @@
       </panel>
       <!-- PRO+PERFORMANCE: MAIN WAVEFORM (HORIZONTAL, 2 DECK) -->
       <!-- WAVEFORM TYPE: SHAPES, SCRATCH (COLORS) -->
-      <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
         <group>
           <!-- WAVES -->
           <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/2" x="+0" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
@@ -129,7 +188,13 @@
       </panel>
       <!-- PRO: MAIN WAVEFORM (HORIZONTAL, 4 DECK) -->
       <!-- waveform type: shapes, scratch (colors) -->
-      <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+        <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
+        <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
+        <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
+        <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
+      </panel>
+      <panel name="horizontal_scratch_active4deck_forced" condition="[FORCE4DECK]" visibility="not setting skinWaveformType 0">
         <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
         <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
         <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>

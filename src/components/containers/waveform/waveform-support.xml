@@ -17,6 +17,6 @@
     <panel class="waveform" x="+2" waveformheight="121" condition="var_equal '@$infntywavesize' 0"/>
   </define>
   <define class="AREA_WAVES_PERFORMANCE_EXTENDED_4DECK">
-    <panel class="waveform" x="+2" width="1920-4" height="1080-50-50-355-2-355-3" waveformheight="1080-50-50-355-2-355-3"/>
+    <panel class="waveform" x="+2" width="1920-4" height="1080-50-50-355-2-355-3" waveformheight="1080-50-50-355-2-355-3" force4deck="true"/>
   </define>
 </defs>

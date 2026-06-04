@@ -383,25 +383,25 @@
         <pos x="+0" y="+5" condition="[MIRROR]"/>
         <!-- STATUS: COLORFX -->
         <group>
-          <button width="80" height="19" action="effect_active 'colorfx'" query="effect_active 'colorfx'" border_size="1">
+          <button width="80" height="19" action="effect_disable_all 'colorfx'" query="effect_active 'colorfx'" border_size="1">
             <off color="#000000"/>
             <selected color="color_colorfx"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="COLOR FX"/>
           </button>
-          <button x="+82" width="165" height="19" action="pad_page 3 'COLOR FX' &amp; effect_show_gui 'colorfx'" query="effect_active colorfx" border_size="1">
+          <button x="+82" width="165" height="19" action="effect_disable_all 'colorfx'" query="effect_active colorfx" border_size="1">
             <off color="#000000"/>
-            <selected color="#222222" textcolor="color_colorfx" border="color_colorfx"/>
+            <selected color="#222222" textcolor="color_colorfx" border="#333333"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_colorfx" align="left" action="filter_label"/>
           </button>
         </group>
         <!-- STATUS: PADFX -->
         <group y="+22">
-          <button width="80" height="19" action="effects_used 'deck' ? effect_disable_all 'padfx' : effect_select" border_size="1" query="effects_used 'deck'" rightclick="effect_select">
+          <button width="80" height="19" action="effect_disable_all &amp; effect_disable_all 'sampler'" border_size="1" query="effects_used 'padfx'">
             <off color="#000000"/>
-            <selected color="transparent"/>
+            <selected color="color_padfx"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="#333333" align="left" text="PAD FX"/>
           </button>
-          <button x="+82" width="165" height="19" action="pad_page 3 'PAD FX'" query="effects_used 'padfx'" border_size="1">
+          <button x="+82" width="165" height="19" action="effect_disable_all 'padfx'" query="effects_used 'padfx'" border_size="1">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_padfx" border="#333333"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_padfx" align="left" action="get_text '`get_effects_used` ACTIVE'"/>
@@ -409,12 +409,12 @@
         </group>
         <!-- STATUS: SAMPLER -->
         <group y="+44">
-          <button width="80" height="19" action="sampler_play_stop &amp; pad_page 3 'SAMPLER'" border_size="1" query="sampler_play_stop">
+          <button width="80" height="19" action="sampler_stop" border_size="1" query="sampler_play_stop">
             <off color="#000000"/>
-            <selected color="color_sampler" textcolor="white"/>
+            <selected color="color_sampler"/>
             <text dx="+10" fontsize="12" color="#AAAAAA" colorselected="black" align="left" text="SAMPLER"/>
           </button>
-          <button x="+82" width="165" height="19" action="sampler_play_stop" query="sampler_play_stop" border_size="1">
+          <button x="+82" width="165" height="19" action="sampler_stop" query="sampler_play_stop" border_size="1">
             <off color="#000000"/>
             <selected color="#222222" textcolor="color_sampler" border="#333333"/>
             <text dx="+10" fontsize="12" color="#555555" colorselected="color_sampler" align="left" action="get_sample_name"/>

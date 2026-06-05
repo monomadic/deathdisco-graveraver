@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="SCRATCH_BUTTONS">
-    <button class="button_main" x="+0" y="+370-13" width="67" height="16" action="smart_scratch" textsize="11" text="SMART" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
-    <button class="button_main" x="+67" y="+370-13" width="67" height="16" action="beatlock" textsize="11" text="BEATLOCK" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="needle"/>
-  </define>
   <define class="SCRATCH_CONTROLS">
     <menu tooltip="WAVEFORM OPTIONS" visibility="0.8">
       <pos x="+140" y="+4"/>

@@ -2,7 +2,6 @@
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Components -->
   <xi:include href="primitives.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="text.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="songpos.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="meters.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="cues.xml" xpointer="xpointer(/defs/*)"/>
@@ -19,7 +18,6 @@
   <xi:include href="control-groups.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-widgets.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-spine.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="loop-panels.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="utility-panels.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="video.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Containers -->

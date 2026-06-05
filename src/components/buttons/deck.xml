@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Button-family definitions grouped by purpose. -->
-  <define class="TRACKCOLORBTN" placeholders="color,action,dblclick">
-    <button action="[ACTION]" dblclick="[DBLCLICK]" tooltip="Browsed File Color\nDouble-click: Browsed File Color Reset">
-      <size width="20" height="20"/>
-      <off color="[COLOR]" border_size="4" border="xf_background" shape="circle"/>
-      <over color="[COLOR]" shape="circle"/>
-    </button>
-  </define>
   <define class="DECK_BUTTON" placeholders="*deck,*color" action="select">
     <size width="25" height="25"/>
     <off shape="square" color="transparent" radius="12" border_size="2" border="[COLOR]"/>
     <on shape="square" color="transparent" radius="12" border_size="2" border="[COLOR]"/>
     <text dy="-1" dx="-1" align="center" size="16" action="get_deck" weight="bold" width="25" color="[COLOR]" colorselected="[COLOR]"/>
-  </define>
-  <define class="DECK_BUTTON_ROUND" placeholders="*deck,*color" action="select">
-    <size width="40" height="60"/>
-    <off shape="square" color="transparent" radius="6" border_size="0" border="transparent"/>
-    <on shape="square" color="[COLOR]" radius="6" border_size="1" border="[COLOR]"/>
-    <text dx="+4" dy="-5" align="center" size="40" action="get_deck" width="25" color="[COLOR]" colorselected="black"/>
   </define>
 </defs>

@@ -3,22 +3,6 @@
   <!-- Cue and saved-loop widgets -->
 
 
-  <define class="SAVED_LOOP_BUTTON" placeholders="*source">
-    <button class="button_main" width="24" height="22" action="loop_load [SOURCE]" icondx="+2" sysicon="arrowright" iconsize="20" coloron="button_background" brcoloron="button_background"/>
-    <visual type="color" source="loop_color [SOURCE]" visibility="saved_loop [SOURCE] ? constant 0.28">
-      <tooltip/>
-      <pos x="+0" y="+0"/>
-      <size width="24" height="22"/>
-    </visual>
-    <button class="button_main" width="24" height="22" action="not saved_loop [SOURCE] ? saved_loop [SOURCE] : loop_load [SOURCE]" query="saved_loop [SOURCE]" icondx="+2" sysicon="arrowright" iconsize="20" textcolor="textoff" textcoloron="needle" coloroff="transparent" coloron="transparent" brcoloroff="transparent" brcoloron="transparent"/>
-    <button class="button_main" x="+24" width="70" height="22" action="not saved_loop [SOURCE] ? saved_loop [SOURCE] : loop_load_prepare [SOURCE]" query="loop_load_prepare [SOURCE] ? blink 400ms" textaction="get_saved_loop [SOURCE] &amp; param_uppercase" coloroff="button_background3" coloron="button_background3" brcoloroff="button_background3" brcoloron="button_background3" textcolor="textoff" textcoloron="needle"/>
-    <button class="button_main" x="+24+70" width="24" height="22" action="loop_delete [SOURCE]" query="on/off" text="X" textsize="12"/>
-    <visual type="color" source="loop_color [SOURCE]" visibility="saved_loop [SOURCE]">
-      <tooltip/>
-      <pos x="+0" y="+0"/>
-      <size width="3" height="22"/>
-    </visual>
-  </define>
 
   <define class="SAVED_LOOP_BUTTON_STACK" placeholders="*source">
     <button class="button_main" width="24" height="24" action="loop_load [SOURCE]" icondx="+2" sysicon="arrowright" iconsize="20" coloron="button_background" brcoloron="button_background"/>

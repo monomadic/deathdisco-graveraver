@@ -1,50 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Master/microphone utility panels -->
-  <define class="BROADCAST_PANEL">
-    <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="BROADCAST"/>
-    <button class="button_main" tooltip="" x="+0" y="+24" width="72*2" height="60" textsize="11" textcolor="textoff2" textaction="broadcast_message 'full'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" tooltip="" x="+0" y="+84" width="72" height="24" action="setting 'broadcastMode' 'direct'" textsize="11" textcolor="textdarker" textcoloron="needle" text="DIRECT" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" tooltip="" x="+72" y="+84" width="72" height="24" action="setting 'broadcastMode' 'video'" textsize="11" textcolor="textdarker" textcoloron="needle" text="VIDEO" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" tooltip="" x="+0" y="+84+24" width="72" height="24" action="setting 'broadcastMode' 'server'" textsize="11" textcolor="textdarker" textcoloron="needle" text="RADIO" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" tooltip="" x="+72" y="+84+24" width="72" height="24" action="setting 'broadcastMode' 'podcast'" textsize="11" textcolor="textdarker" textcoloron="needle" text="PODCAST" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" x="+0" y="+138" width="105" height="28" textsize="11" action="broadcast" text="START" coloroff="button_background2" coloron="br_focus" bordersize="0"/>
-    <menu class="button_main" x="+60+4+30+30-10" y="+138" width="30" height="28" iconsize="22" sysicon="settings" coloron="br_focus" bordersize="0">
-      <submenu text="Video Stream To">
-        <item text="Facebook" action="setting 'broadcastVideoProvider' 0" check="setting 'broadcastVideoProvider' 0"/>
-        <item text="Youtube" action="setting 'broadcastVideoProvider' 1" check="setting 'broadcastVideoProvider' 1"/>
-        <item text="Periscope" action="setting 'broadcastVideoProvider' 2" check="setting 'broadcastVideoProvider' 2"/>
-        <item text="Twitch" action="setting 'broadcastVideoProvider' 3" check="setting 'broadcastVideoProvider' 3"/>
-        <item text="Vimeo" action="setting 'broadcastVideoProvider' 4" check="setting 'broadcastVideoProvider' 4"/>
-        <item text="PlayDJ.tv" action="setting 'broadcastVideoProvider' 6" check="setting 'broadcastVideoProvider' 6"/>
-        <item text="MixCloud" action="setting 'broadcastVideoProvider' 7" check="setting 'broadcastVideoProvider' 7"/>
-        <item text="Other" action="setting 'broadcastVideoProvider' 5" check="setting 'broadcastVideoProvider' 5"/>
-      </submenu>
-      <submenu text="Direct Format">
-        <item text="OGG" action="setting 'broadcastDirectFormat' ogg" check="setting 'broadcastDirectFormat' ogg"/>
-        <item text="MP3" action="setting 'broadcastDirectFormat' mp3" check="setting 'broadcastDirectFormat' mp3"/>
-      </submenu>
-      <submenu text="Direct Quality">
-        <item text="High" action="setting 'broadcastDirectQuality' high" check="setting 'broadcastDirectQuality' high"/>
-        <item text="Mid" action="setting 'broadcastDirectQuality' medium" check="setting 'broadcastDirectQuality' medium"/>
-        <item text="Low" action="setting 'broadcastDirectQuality' low" check="setting 'broadcastDirectQuality' low"/>
-      </submenu>
-      <submenu text="Video Quality">
-        <item text="High" action="setting 'broadcastVideoQuality' high" check="setting 'broadcastVideoQuality' high"/>
-        <item text="Mid" action="setting 'broadcastVideoQuality' mid" check="setting 'broadcastVideoQuality' mid"/>
-        <item text="Low" action="setting 'broadcastVideoQuality' low" check="setting 'broadcastVideoQuality' low"/>
-      </submenu>
-      <separator/>
-      <item text="Broadcast Song Info" action="setting 'broadcastSongInfo'" check="setting 'broadcastSongInfo'"/>
-      <item text="Show Advanced Settings" action="settings 'broadcast'"/>
-    </menu>
-  </define>
-  <define class="REC_PANEL">
-    <textzone class="text" y="+0" width="77+77+2-6-6" height="20" fontsize="10" color="textoff" align="center" weight="" text="RECORD"/>
-    <button class="button_main" tooltip="" x="+0" y="+24" width="72+72" height="24" query="record" textsize="11" textcolor="textdarker" textcoloron="needle" textaction="get_text '`get_record_time` (`get_record_size`)'" coloroff="xf_background" coloron="xf_background" bordersize="0"/>
-    <button class="button_main" x="+0" y="+54" width="105" height="28" textsize="11" action="record" text="REC" coloroff="button_background2" coloron="br_focus" bordersize="0"/>
-    <button class="button_main" x="+60+4+30+30-10" y="+54" width="30" height="28" action="record_config" iconsize="22" sysicon="settings" coloron="br_focus" bordersize="0"/>
-  </define>
   <define class="MASTERFX_PANEL">
     <deck deck="master">
       <group name="sampler_panel" x="+0" y="+0">
@@ -220,8 +176,5 @@
         <textselected text="MIC VERB" align="center" fontsize="11" color="white"/>
       </button>
     </deck>
-  </define>
-  <define class="MICFX_PANEL">
-    <panel class="mic_panel"/>
   </define>
 </defs>

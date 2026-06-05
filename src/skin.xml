@@ -20,8 +20,11 @@
     
   -->
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png">
+  <!-- pro -->
   <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$skin_mode' 0"/>
-  <breaklines breakline1="500" breakline2="1000" condition="var_equal '@$skin_mode' 1"/>
+  <!-- perf -->
+  <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$skin_mode' 1"/>
+  <!-- stack -->
   <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$skin_mode' 2"/>
   <oninit action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50% &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%"/>
   <!-- Definitions: theme tokens, runtime globals, components, and containers -->

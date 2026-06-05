@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Reusable rack widgets and pad-surface wrappers shared across layouts -->
-  <define class="EDITGRID_RACK" placeholders="deck,*panelname">
-    <deck deck="[DECK]">
-      <visual class="gfx_shape" width="294" height="80" coloroff="panel_background"/>
-      <!-- GRID RACK SPINE -->
-      <panel class="tab_button" action="skin_panelgroup 'grid_[PANELNAME]' +1" action3="skin_panelgroup_available 'grid_[PANELNAME]'" query="on/off" width="30" height="80" orientation="vertical" textheight="60" textaction="skin_panel '@vfx_[PANELNAME]' ? get_text 'STEM 3' : skin_panel '@svloops_[PANELNAME]' ? get_text 'SAVED' : skin_panel '@hcues_[PANELNAME]' ? get_text 'CUES' : skin_panel '@tc_[PANELNAME]' ? get_text 'LINE' : skin_panel '@cuejump_[PANELNAME]' ? 'CUEJUMP' : skin_panel '@custom_[PANELNAME]' ? get_text 'USER' : skin_panel '@custom_2_[PANELNAME]' ? get_text 'USER 2' : get_text 'GRID'" menuvisible="no" visibility="leftdeck"/>
-      <!-- MENU -->
-      <panel class="tab_button" action="skin_panelgroup 'grid_[PANELNAME]' +1" action3="skin_panelgroup_available 'grid_[PANELNAME]'" query="on/off" x="+294-30" width="30" height="80" orientation="vertical-cw" textheight="60" textaction="skin_panel '@vfx_[PANELNAME]' ? get_text 'STEM 3' : skin_panel '@svloops_[PANELNAME]' ? get_text 'SAVED' : skin_panel '@hcues_[PANELNAME]' ? get_text 'CUES' : skin_panel '@tc_[PANELNAME]' ? get_text 'LINE' : skin_panel '@custom_[PANELNAME]' ? get_text 'USER 1' : get_text 'GRID'" menuvisible="no" visibility="rightdeck"/>
-      <panel class="grids" x="+32-2" panelname="[PANELNAME]" visibility="leftdeck"/>
-      <panel class="grids" x="+0" panelname="[PANELNAME]" visibility="rightdeck"/>
-    </deck>
-  </define>
-  <define class="LOOPS_RACK" placeholders="deck,*panelname">
-    <deck deck="[DECK]">
-      <visual class="gfx_shape" width="294" height="132" coloroff="panel_background"/>
-      <panel class="tab_button" action="skin_panelgroup 'loops_[PANELNAME]' +1" action3="skin_panelgroup_available 'loops_[PANELNAME]'" query="on/off" width="30" height="132" orientation="vertical" textheight="120" textaction="skin_panel '@fxx1_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx3_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx6_[PANELNAME]' ? get_text 'FX' : get_text 'LOOP'" menuvisible="no" visibility="leftdeck"/>
-      <panel class="tab_button" action="skin_panelgroup 'loops_[PANELNAME]' +1" action3="skin_panelgroup_available 'loops_[PANELNAME]'" query="on/off" x="+294-30" width="30" height="132" orientation="vertical-cw" textheight="120" textaction="skin_panel '@fxx1_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx3_[PANELNAME]' ? get_text 'FX' : skin_panel '@fxx6_[PANELNAME]' ? get_text 'FX' : get_text 'LOOP'" menuvisible="no" visibility="rightdeck"/>
-      <panel class="loops" x="+32-2" panelname="[PANELNAME]" visibility="leftdeck"/>
-      <panel class="loops" x="+0" panelname="[PANELNAME]" visibility="rightdeck"/>
-    </deck>
-  </define>
-  <define class="EFX_RACK" placeholders="deck,*panelname">
-    <deck deck="[DECK]">
-      <panel class="effects_zone" panelname="[PANELNAME]" visibility="leftdeck"/>
-      <panel class="effects_zone" panelname="[PANELNAME]" visibility="rightdeck"/>
-    </deck>
-  </define>
   <define class="EFX_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="800" height="80" coloroff="panel_background"/>
@@ -312,9 +286,6 @@
     <panel class="racks_single" condition="var_equal '@$hide_main_waveforms' 1"/>
   </define>
   <!-- Temporary compatibility alias while old layout references are being cleaned up -->
-  <define class="HTNG_RACKS">
-    <panel class="pro_racks"/>
-  </define>
   <!-- Stack-mode rack composition -->
   <define class="RACKS_STACK" placeholders="*panelname">
     <deck deck="mic">
@@ -399,7 +370,4 @@
     </deck>
   </define>
   <!-- Compatibility alias while layout references are being cleaned up -->
-  <define class="HTNG_RACKS_STACK" placeholders="*panelname">
-    <panel class="racks_stack" panelname="[PANELNAME]"/>
-  </define>
 </defs>

@@ -221,33 +221,6 @@
       <panel class="deck_level" x="+11+9" y="+6+10+200"/>
     </deck>
   </define>
-  <define class="CHANNEL_LEVELS_EX" placeholders="deck">
-    <deck deck="[DECK]">
-      <group name="ONLY" y="+6">
-        <visual class="gfx_shape" width="61" height="212-50-8" coloroff="xf_background" visibility="0.6"/>
-        <visual class="gfx_shape" width="61" height="36" coloroff="xf_background"/>
-        <textzone>
-          <pos x="+0" y="+0"/>
-          <size width="61" height="36"/>
-          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
-        </textzone>
-        <panel class="vu_meter_leds" x="+23-8" y="+22+24" source="get_level_left" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_leds" x="+23+11+10-8" y="+22+24" source="get_level_right" vucoloroff="vu_background" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <group name="level" x="+20-8" y="+16+12+24" condition="var_equal '@$show_mixer_rack' 1">
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7"/>
-            <size width="38" height="108-6"/>
-            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
-          </slider>
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7+6"/>
-            <size width="38" height="108-12-6"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </group>
-    </deck>
-  </define>
   <define class="CHANNEL_LEVELS_MINI" placeholders="deck">
     <deck deck="[DECK]">
       <group name="ONLY">
@@ -301,55 +274,6 @@
       </group>
     </deck>
   </define>
-  <define class="CHANNEL_LEVELS_COMPACT4_LEFT">
-    <visual class="gfx_shape" width="77" height="216+2+216" coloroff="xf_background"/>
-    <deck deck="1">
-      <group name="deck1">
-        <textzone>
-          <pos x="+0" y="+0"/>
-          <size width="77" height="30"/>
-          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
-        </textzone>
-        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7"/>
-            <size width="38" height="158"/>
-            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
-          </slider>
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7+6"/>
-            <size width="38" height="158-12"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </group>
-    </deck>
-    <deck deck="3">
-      <group name="deck3" y="+216+2">
-        <textzone>
-          <pos x="+0" y="+0"/>
-          <size width="77" height="30"/>
-          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
-        </textzone>
-        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7"/>
-            <size width="38" height="158"/>
-            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
-          </slider>
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7+6"/>
-            <size width="38" height="158-12"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </group>
-    </deck>
-  </define>
   <define class="CHANNEL_LEVELS_MINI4_LEFT">
     <visual class="gfx_shape" width="77" height="98+2+98" coloroff="xf_background"/>
     <deck deck="1">
@@ -393,55 +317,6 @@
           <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
             <pos y="-7+6"/>
             <size width="38" height="62-12"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </group>
-    </deck>
-  </define>
-  <define class="CHANNEL_LEVELS_COMPACT4_RIGHT">
-    <visual class="gfx_shape" width="77" height="216+2+216" coloroff="xf_background"/>
-    <deck deck="2">
-      <group name="deck2">
-        <textzone>
-          <pos x="+0" y="+0"/>
-          <size width="77" height="30"/>
-          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
-        </textzone>
-        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7"/>
-            <size width="38" height="158"/>
-            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
-          </slider>
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7+6"/>
-            <size width="38" height="158-12"/>
-            <fader color="faderbackgroundline" width="38" height="2"/>
-          </slider>
-        </group>
-      </group>
-    </deck>
-    <deck deck="4">
-      <group name="deck4" y="+216+2">
-        <textzone>
-          <pos x="+0" y="+0"/>
-          <size width="77" height="30"/>
-          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
-        </textzone>
-        <panel class="vu_meter_leds" x="+23" y="+36" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <panel class="vu_meter_leds" x="+23+11+10" y="+36" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
-        <group name="level" x="+20" y="+42" condition="var_equal '@$show_mixer_rack' 1">
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7"/>
-            <size width="38" height="158"/>
-            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
-          </slider>
-          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
-            <pos y="-7+6"/>
-            <size width="38" height="158-12"/>
             <fader color="faderbackgroundline" width="38" height="2"/>
           </slider>
         </group>

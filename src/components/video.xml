@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-    <define class="VIDEO_PREVIEW" placeholders="*vpwidth=249,*vpheight=174-12">
-      <deck deck="deck">
-        <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
-        <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
-        <video source="deck" linkdrop="true" visibility="100%">
-          <size width="[VPWIDTH]" height="[VPHEIGHT]"/>
-        </video>
-      </deck>
-    </define>
     <define class="VIDEO_PREVIEW_EX" placeholders="*vpwidth=208,*vpheight=124">
       <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
       <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
@@ -19,47 +10,4 @@
         <size width="[VPWIDTH]" height="[VPHEIGHT]"/>
       </video>
     </define>
-    <define class="4_STEM_CONTROLS">
-      <panel class="stem_control" stem="vocal" label="VOCAL" color="colorvocal" x="+20" y="+10"/>
-      <panel class="stem_control" stem="instru" label="INSTR" color="colorinstru" x="+80" y="+10"/>
-      <panel class="stem_control" stem="bass" label="BASS" color="colorbass" x="+139" y="+10"/>
-      <panel class="stem_control" stem="rhythm" label="DRUM" color="colorbeat" x="+196" y="+10"/>
-    </define>
-    <define class="5_STEM_CONTROLS">
-      <!-- background -->
-      <visual class="gfx_shape" x="+0" y="+0" width="260" height="213" coloroff="panel_background"/>
-      <panel class="stem_control" stem="vocal" label="VOCAL" color="colorvocal" x="+10" y="+10"/>
-      <panel class="stem_control" stem="instru" label="INSTR" color="colorinstru" x="+70" y="+10"/>
-      <panel class="stem_control" stem="bass" label="BASS" color="colorbass" x="+130" y="+10"/>
-      <panel class="stem_control" stem="kick" label="KICK" color="colorkick" x="+185" y="+10"/>
-    </define>
-  <define class="STEM_CONTROL" placeholders="*stem,*label,*color">
-    <panel x="+0" y="+20">
-      <!-- on state -->
-      <slider action="stem '[STEM]'" rightclick="stem '[STEM]' 50%" dblclick="stem '[STEM]' 50%" orientation="round" frommiddle="true" resettomiddle="true">
-        <pos x="+10" y="+0"/>
-        <size width="31" height="31"/>
-        <fader color="needle" width="2" height="10" radius="1" anglemin="-140" anglemax="140"/>
-        <fill width="31" height="31" radius="12" color="[COLOR]" backcolor="#333333" visibility="not mute_stem '[STEM]'"/>
-        <fill width="31" height="31" radius="12" color="#555555" backcolor="#333333" visibility="mute_stem '[STEM]'"/>
-      </slider>
-    </panel>
-    <!-- KNOB: STEM -->
-    <group>
-      <button x="+0" y="+0" action="stem_pad '[STEM]'" border_size="1">
-        <size width="50" height="15"/>
-        <off color="#222222" border="transparent" radius="3"/>
-        <down color="#222222" border="transparent" radius="3"/>
-        <selected color="#111111" border="transparent" radius="3"/>
-        <text fontsize="10" color="#555555" colorselected="[COLOR]" colordown="[COLOR]" align="center" text="[LABEL]"/>
-      </button>
-      <!-- SIMPLE VECTOR VU METER -->
-      <visual source="get_level '[STEM]'" type="linear" orientation="horizontal" direction="up" granularity="[GRANULARITY]">
-        <pos x="+11" y="+40+15"/>
-        <size width="30" height="3"/>
-        <off shape="square" color="#333333" radius="1"/>
-        <on shape="square" border="[COLOR]" color="[COLOR]" radius="1"/>
-      </visual>
-    </group>
-  </define>
 </defs>

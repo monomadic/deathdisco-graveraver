@@ -338,16 +338,4 @@
       </deck>
     </define>
     <!-- Compatibility aliases while older layout references are being removed -->
-    <define class="HTNG_RACKS_EX" placeholders="*panelname">
-      <panel class="racks_extended" panelname="[PANELNAME]"/>
-    </define>
-    <define class="HTNG_RACKS_EX_MINI" placeholders="*panelname">
-      <panel class="racks_mini" panelname="[PANELNAME]"/>
-    </define>
-    <define class="HTNG_RACKS_EX_SINGLE" placeholders="*panelname">
-      <panel class="racks_single" panelname="[PANELNAME]"/>
-    </define>
-    <define class="HTNG_RACKS_VERTICAL" placeholders="*panelname">
-      <panel class="racks_vertical" panelname="[PANELNAME]"/>
-    </define>
 </defs>

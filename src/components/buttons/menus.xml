@@ -93,37 +93,6 @@
     <off shape="square" color="panel_background"/>
     <icon sysicon="chevrondown" height="14" width="14" color="textdarker" colorover="needle" colordown="needle"/>
   </define>
-  <define class="MENU_BUTTON">
-    <size width="18" height="18"/>
-    <up color="tab_menu" border="tab_buttons" border_size="5" shape="circle"/>
-    <over color="tab_menu_over" border="tab_buttons" border_size="5" shape="circle"/>
-    <down color="deckcolor" border="tab_buttons" border_size="5" shape="circle"/>
-    <selected color="deckcolor" border="tab_buttons" border_size="5" shape="circle"/>
-  </define>
-  <define class="MENU_BUTTON_FX">
-    <size width="18" height="18"/>
-    <up color="tab_menu" border="tab_buttons" border_size="5" shape="circle"/>
-    <over color="tab_menu_over" border="tab_buttons" border_size="5" shape="circle"/>
-    <down color="deckcolor" border="tab_buttons" border_size="5" shape="circle"/>
-    <selected color="deckcolor" border="tab_buttons" border_size="5" shape="circle"/>
-    <separator text="Fx Bank A" localize="true"/>
-    <item text="Load" action="effect_bank_load 1" check="effect_bank_load 1"/>
-    <item text="Save" action="effect_bank_save 1" check="effect_bank_save 1"/>
-    <separator text="Fx Bank B" localize="true"/>
-    <item text="Load" action="effect_bank_load 2" check="effect_bank_load 2"/>
-    <item text="Save" action="effect_bank_save 2" check="effect_bank_save 2"/>
-    <separator text="Fx Bank C" localize="true"/>
-    <item text="Load" action="effect_bank_load 3" check="effect_bank_load 3"/>
-    <item text="Save" action="effect_bank_save 3" check="effect_bank_save 3"/>
-    <separator text="Fx Bank D" localize="true"/>
-    <item text="Load" action="effect_bank_load 4" check="effect_bank_load 4"/>
-    <item text="Save" action="effect_bank_save 4" check="effect_bank_save 4"/>
-    <separator/>
-    <item text="Pre-Fader (Fx Processing)" action="setting 'fxProcessing' Pre-fader" check="setting 'fxProcessing' Pre-fader"/>
-    <item text="Post-Fader (Fx Processing)" action="setting 'fxProcessing' Post-fader" check="setting 'fxProcessing' Post-fader"/>
-    <separator/>
-    <item text="Reset Fx On Load" action="setting 'resetFxOnLoad'" check="setting 'resetFxOnLoad'"/>
-  </define>
   <define class="FAKE_MENU">
     <size width="18" height="20"/>
     <icon sysicon="arrowdown" height="20" width="20" color="textdarker" colorover="needle" colordown="needle"/>
@@ -134,19 +103,5 @@
     <item text="Fake Gain" action="fake_gain" check="fake_gain"/>
     <item text="Fake PFL" action="fake_pfl" check="fake_pfl"/>
     <item text="Fake Mixer" action="fake_mixer" check="fake_mixer"/>
-  </define>
-  <define class="TAB_BUTTON" placeholders="width,*height,action,action3,posrec=+0,heightrec=120,rgclick,textsize=13,textheight=height,textcolor=texton2,textcoloron=deckcolor,orientation,textaction,text,important=true">
-    <button action="[ACTION]" rightclick="[RGCLICK]" query="on/off">
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="tab_buttons" border="tab_buttons" border_size="1" shape="square"/>
-      <down color="tab_buttons" border="deckcolor" border_size="1" shape="square"/>
-      <selected color="tab_buttons" border="deckcolor" border_size="1" shape="square"/>
-      <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="center" orientation="[ORIENTATION]" action="[TEXTACTION]" text="[TEXT]" localize="true" important="[IMPORTANT]"/>
-      <mouserect x="+0" y="[POSREC]" height="[HEIGHTREC]"/>
-    </button>
-    <button action="[ACTION3]" rightclick="[ACTION3]" query="on/off" tooltip="PANEL AVAILABLE\nSelect which views are available for this panel">
-      <pos x="+6" y="+[HEIGHT]-18-6" width="18" height="18"/>
-      <icon sysicon="chevrondown" color="tab_menu" colorover="tab_menu_over" colordown="deckcolor" colorselected="deckcolor" width="22" height="22"/>
-    </button>
   </define>
 </defs>

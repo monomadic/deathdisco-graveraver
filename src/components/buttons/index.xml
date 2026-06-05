@@ -4,7 +4,6 @@
   <xi:include href="base.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="stems.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="custom.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="hotcues.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="pads.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="menus.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck.xml" xpointer="xpointer(/defs/*)"/>

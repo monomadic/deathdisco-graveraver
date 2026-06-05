@@ -14,16 +14,4 @@
   </define>
 
   <!-- Shared track hashtag chip used by performance panels. -->
-  <define class="HASHTAG_BUTTON" placeholders="*tag,text,width=90,height=20,textheight=height,important=true,textaction,accent_color=green,coloroff=transparent,coloron=deckcolor,brcoloroff=transparent,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=10,textcolor=br_textoff,textcoloron=needle,orientation=horizontal,overcolor=#000000,brover=#444444,selectedcolor=#000000,textdx=+6">
-    <button action="quick_filter 'User 1 contains [TAG]'" rightclick="quick_filter ''" x="+0" y="+0">
-      <pos x="+0" y="+0"/>
-      <size width="[WIDTH]" height="[HEIGHT]"/>
-      <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <over color="[OVERCOLOR]" border="[BROVER]" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <down color="black" border="transparent" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="5"/>
-      <selected color="[SELECTEDCOLOR]" border="[ACCENT_COLOR]" border_size="1" shape="[SHAPE]" radius="5"/>
-      <text action="param_equal '[TEXT]' '' ? get_text '[TAG]' : get_text '[TEXT]'" dx="[TEXTDX]" fontsize="[TEXTSIZE]" color="#AAAAAA" colorover="#FFFFFF" colorselected="[ACCENT_COLOR]" colordown="[TEXTCOLOR]" align="left" orientation="[ORIENTATION]" localize="true" important="[IMPORTANT]"/>
-      <icon sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
-    </button>
-  </define>
 </defs>

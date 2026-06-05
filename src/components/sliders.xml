@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="BEAT_DIVIDER" placeholders="*width,*height" condition="var_not_equal '@$color_scheme' 4">
-    <size width="[WIDTH]" height="[HEIGHT]"/>
-    <pos x="+0" y="+0"/>
-    <fader color="needle">
-      <mouserect x="+0" y="+0" width="0" height="0"/>
-      <size width="1" height="[HEIGHT]+2"/>
-    </fader>
-    <mouserect x="+0" y="+0" width="0" height="0"/>
-  </define>
-  <define class="BEAT_DIVIDER" placeholders="*width,*height" condition="var_equal '@$color_scheme' 4">
-    <size width="[WIDTH]" height="[HEIGHT]"/>
-    <pos x="+0" y="+0"/>
-    <fader color="needle">
-      <mouserect x="+0" y="+0" width="0" height="0"/>
-      <size width="2" height="[HEIGHT]+2"/>
-    </fader>
-    <mouserect x="+0" y="+0" width="0" height="0"/>
-  </define>
   <define class="DOME_SPINNER" orientation="round" action="get_rotation" placeholders="width,height,offcolor,colorfader,widthfader,heightfader,radius">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <off color="[OFFCOLOR]" border="transparent" border_size="11" shape="circle"/>

@@ -299,20 +299,6 @@
       <size width="120" height="120"/>
     </cover>
   </define>
-  <define class="TRACK_INFO_COMPACT">
-    <button class="button_main" action="select" rightclick="file_info" tooltip="" width="404" height="72" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="2"/>
-    <menu class="menu_maindecks" query="select" x="+2+4" y="+72-8-22" width="28" height="20" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
-    <group visibility="get_deck 1 ? true : get_deck 3 ? true : false">
-      <panel class="textzone_title_artist_combo" x="+2+4+28+6" y="+6" width="404-2-4-28-6-2-4" align="center" scroll="no" titlefontsize="22" artistfontsize="17" titleaction="get_title" artistaction="get_artist" visibility="var_equal '@hntnhtxtscroll' 0"/>
-      <panel class="textzone_title_artist_combo" x="+2+4+28+6" y="+6" width="404-2-4-28-6-2-4" align="center" scroll="yes" titlefontsize="22" artistfontsize="17" titleaction="get_title" artistaction="get_artist" visibility="var_equal '@hntnhtxtscroll' 1"/>
-    </group>
-    <group visibility="get_deck 2 ? true : get_deck 4 ? true : false">
-      <panel class="textzone_title_artist_combo" x="+2+4" y="+6" width="404-2-4-28-6-2-4" align="center" scroll="no" titlefontsize="22" artistfontsize="17" titleaction="get_title" artistaction="get_artist" visibility="var_equal '@hntnhtxtscroll' 0"/>
-      <panel class="textzone_title_artist_combo" x="+2+4" y="+6" width="404-2-4-28-6-2-4" align="center" scroll="yes" titlefontsize="22" artistfontsize="17" titleaction="get_title" artistaction="get_artist" visibility="var_equal '@hntnhtxtscroll' 1"/>
-    </group>
-    <button class="button_main" x="+404-2-4-28" y="+6" width="28" height="72-6-6" action="SELECT" coloroff="button_background" textheight="45" textsize="16" textaction="get_deck" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
-    <menu class="menu_maindecks" query="select" x="+404-2-4-28" y="+72-8-22" width="28" height="20" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
-  </define>
   <define class="TRACK_STEM_MODIFIERS">
     <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
     <group x="+0" y="+0">

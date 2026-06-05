@@ -152,15 +152,15 @@
       <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
         <group>
           <!-- WAVES -->
-          <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/2" x="+0" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/2" x="+0" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- TRACK INFO -->
-          <panel class="horizontal_waveform_track_info" deck="3" height="[WAVEFORMHEIGHT]/2" x="+0" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="1" height="[WAVEFORMHEIGHT]/2" x="+0" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="2" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="4" height="[WAVEFORMHEIGHT]/2" x="+0" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="3" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="1" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="2" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="4" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- NEEDLE -->
           <!-- left aligned -->
           <group visibility="setting 'waveformCenter' 'left'">
@@ -921,9 +921,16 @@
     </group>
     <!-- WAVEFORM SETTINGS / WAVEFORM CONTROLS -->
     <panel name="wave_options">
+      <!-- left spine -->
+      <group x="0">
+        <visual y="+0" width="34" height="[WAVEFORMHEIGHT]">
+          <off shape="square" color="black" border_size="0" border="#333333" radius="0"/>
+        </visual>
+      </group>
+      <!-- right spine -->
       <group x="+1920-34">
-        <visual y="+1" width="32" height="[WAVEFORMHEIGHT]">
-          <off shape="square" color="#000000" border_size="0" border="#333333" radius="6"/>
+        <visual y="+0" width="34" height="[WAVEFORMHEIGHT]">
+          <off shape="square" color="black" border_size="0" border="#333333" radius="0"/>
         </visual>
         <line y="+0" width="1" height="[WAVEFORMHEIGHT]+3" highlight="#444444" shadow="000000"/>
         <!-- ZOOM BUTTONS -->

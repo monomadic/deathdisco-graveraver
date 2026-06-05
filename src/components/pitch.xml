@@ -19,6 +19,26 @@
       <icon sysicon="arrowright" coloroff="dark_7" colorover="white" colordown="dark_6" colorselected="dark_5" width="14" height="14"/>
     </button>
   </define>
+  <define class="VOLUME_SMALL" placeholders="*height=60">
+    <visual>
+      <pos x="+12" y="-10"/>
+      <size width="8" height="[HEIGHT]+6"/>
+      <off shape="square" color="dark_6" border="dark_0" border_size="2" radius="3"/>
+    </visual>
+    <visual source="get_level" type="linear" orientation="vertical" direction="up">
+      <pos x="+15" y="-10"/>
+      <size width="2" height="[HEIGHT]+6"/>
+      <off shape="square" color="transparent" radius="3"/>
+      <on shape="square" color="green" radius="3"/>
+    </visual>
+    <slider action="level" rightclick="temporary" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+      <pos x="+0" y="-7"/>
+      <size width="32" height="[HEIGHT]"/>
+      <on width="-30" height="+0" color="transparent" border="#CCCCCC" border_size="0" radius="0" shape="square"/>
+      <off width="-30" height="+0" color="transparent" border="#CCCCCC" border_size="0" radius="0" shape="square"/>
+      <fader color="#CCCCCC" width="12" height="2"/>
+    </slider>
+  </define>
   <define class="PITCH_STACK">
     <line color="faderlines2" x="+0" y="+0" width="38" height="1"/>
     <line color="faderlines2" x="+0" y="+48" width="38" height="1"/>

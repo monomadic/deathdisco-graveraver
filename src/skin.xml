@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE skin SYSTEM "macros.dtd">
-<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
-  <oninit action="&grvResetColorFxAndFilters;"/>
-  <!-- === GRAVERAVER SKIN INFO === -->
-  <!--
+<!--
+  === GRAVERAVER SKIN INFO ===
+
     Skin organisation
     =================
 
@@ -20,8 +19,28 @@
     primitives. Component definitions live directly under src/components.
     
   -->
+<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png">
+  <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$skin_mode' 0"/>
+  <breaklines breakline1="500" breakline2="1000" condition="var_equal '@$skin_mode' 1"/>
+  <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$skin_mode' 2"/>
+  <oninit action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50% &amp; wait 250ms &amp; deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%"/>
   <!-- Definitions: theme tokens, runtime globals, components, and containers -->
-  <xi:include href="index.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="colors.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="globals.xml" xpointer="xpointer(/globals/*)"/>
+  <xi:include href="components/index.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- Layout assembly definitions -->
+  <xi:include href="layouts/browser/base.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/browser/overlays.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/browser/containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/browser/performance.generated.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/browser/mini.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/pro/waves.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/pro/decks.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/performance/waves.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/performance/extended.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/performance/vertical.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/performance/horizontal.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/stack/decks.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
   <xi:include href="layouts/base.xml" xpointer="xpointer(/module/*)"/>
   <xi:include href="components/containers/topbar/panel.xml" xpointer="xpointer(/module/*)"/>

@@ -9,13 +9,18 @@ default: install
 generate:
     python3 scripts/gen-browser-positions.py
 
-check: verify-generated lint audit-classes
+check: verify-generated lint audit
 
 verify-generated:
     python3 scripts/gen-browser-positions.py --check
 
+audit: audit-classes audit-structure
+
 audit-classes:
     python3 scripts/audit-class-casing.py
+
+audit-structure:
+    python3 scripts/audit-structure.py
 
 repair-pad-state:
     python3 scripts/repair-vdj-pad-panels.py

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- ALL: TOP BAR
-      height: 43px
-    -->
   <!-- background -->
   <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_1"/>
   <!-- DECK LAYOUT BUTTONS -->
@@ -125,7 +122,7 @@
     </button>
   </group>
   <!-- Accent top line -->
-  <line x="0" y="0" width="1920" height="1" highlight="dark_8" shadow="#00000000"/>
+  <!-- <line x="0" y="0" width="1920" height="1" highlight="dark_8" shadow="#00000000"/> -->
   <!-- SETTINGS MENU BUTTON -->
   <group name="applicationbuttons_logo" condition="is_mac">
     <logo>
@@ -840,5 +837,5 @@
     </button>
   </group>
   <!-- Accent bottom border line -->
-  <line x="0" y="44" width="1920" height="1" highlight="dark_6" shadow="#00000000"/>
+  <!-- <line x="0" y="44" width="1920" height="1" highlight="dark_6" shadow="#00000000"/> -->
 </module>

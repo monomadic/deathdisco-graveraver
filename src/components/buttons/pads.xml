@@ -6,7 +6,7 @@
       <size width="[WIDTH]" height="39"/>
       <off color="dark_0" border="dark_3" border_size="3" radius="5"/>
     </visual>
-    <group visibility="pad_has_color [SOURCE] ? pad_has_action [SOURCE]">
+    <group visibility="pad_has_action [SOURCE]">
       <visual type="color" source="pad_button_color [SOURCE]" visibility="pad_has_color [SOURCE]">
         <pos x="+3" y="+3"/>
         <size width="[WIDTH]-3-3" height="39-6"/>

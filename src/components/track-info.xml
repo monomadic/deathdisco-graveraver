@@ -192,15 +192,10 @@
           <size width="25" height="18"/>
         </textzone>
         <!-- bpm -->
-        <textzone visibility="masterdeck">
+        <textzone>
           <pos x="+0" y="+17"/>
           <size width="90" height="30"/>
-          <text color="color_masterdeck" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
-        </textzone>
-        <textzone visibility="not masterdeck">
-          <pos x="+0" y="+17"/>
-          <size width="90" height="30"/>
-          <text color="white" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
+          <text color="`deck [DECK] masterdeck ? color 'orange' : color 'white'`" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
         </textzone>
         <!-- sync diff -->
         <button action="pitch_reset" tooltip="">
@@ -224,15 +219,10 @@
           <text color="dark_8" align="left" weight="" size="15" action="get_text KEY"/>
         </button>
         <!-- key -->
-        <textzone action="key_match_button" rightclick="key_match_menu" visibility="masterdeck">
+        <textzone action="key_match_button" rightclick="key_match_menu">
           <pos x="+0" y="+17"/>
           <size width="90" height="30"/>
-          <text size="36" color="color_masterdeck" align="left" weight="bold" action="get_key"/>
-        </textzone>
-        <textzone action="key_match_button" rightclick="key_match_menu" visibility="not masterdeck">
-          <pos x="+0" y="+17"/>
-          <size width="90" height="30"/>
-          <text size="36" color="`get_key_color`" align="left" weight="bold" action="get_key"/>
+          <text size="36" color="`deck [DECK] masterdeck ? color 'orange' : get_key_color`" align="left" weight="bold" action="get_key"/>
         </textzone>
         <!-- key modifier -->
         <button action="get_key_modifier_text">
@@ -263,18 +253,6 @@
         </textzone>
       </group>
     </group>
-    <!-- PERFORMANCE: EXTENDED: RIGHT DECK: ACTIONS -->
-    <!-- <group condition="[MIRROR]"> -->
-    <!-- <textzone class="text" x="+222" y="+7" width="90" height="34" fontsize="25" color="needle" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%Pbpmex'" visibility="var_equal '@$jog_type' 0"/> -->
-    <!-- <textzone class="text" x="+222" y="+7" width="90" height="34" fontsize="25" color="white" align="center" weight="bold" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="not var_equal '@$jog_type' 0"/> -->
-    <!-- <textzone class="text" x="+232" y="+36" action="cycle '@$hauntinstimesdisplay' 3" tooltip="" width="80" height="24" fontsize="12" color="textdarker" align="center" weight="" text="BPM"/> -->
-    <!-- <textzone class="text" x="+132" y="+6" width="60" height="34" action="key_match_menu" fontsize="25" color="`get_key_color`" align="center" weight="bold" textaction="get_key"/> -->
-    <!-- key modifier -->
-    <!-- <textzone class="text" x="+132" y="+38" width="60" height="20" fontsize="12" align="center" weight="" color="#999999" textaction="get_key_modifier_text"/> -->
-    <!-- <textzone class="text" x="+12" y="+7" action="cycle '@$hauntinstimesdisplay' 3" tooltip="" width="80" height="34" fontsize="25" color="needle" align="center" weight="bold" textaction="var_equal '@$hauntinstimesdisplay' 0 ? get_time 'ELAPSED' : var_equal '@$hauntinstimesdisplay' 1 ? get_time 'REMAIN' : var_equal '@$hauntinstimesdisplay' 2 ? get_time 'TOTAL'"/> -->
-    <!-- label -->
-    <!-- <textzone class="text" x="+12" y="+36" action="cycle '@$hauntinstimesdisplay' 3" tooltip="" width="80" height="24" fontsize="12" color="textdarker" align="center" weight="" textaction="var_equal '@$hauntinstimesdisplay' 0 ? get_text 'ELAPSED' : var_equal '@$hauntinstimesdisplay' 1 ? get_text 'REMAIN' : var_equal '@$hauntinstimesdisplay' 2 ? get_text 'TIME'"/> -->
-    <!-- </group> -->
   </define>
   <define class="TRACK_INFO_STACK">
     <!-- title background -->

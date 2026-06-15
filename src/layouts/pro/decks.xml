@@ -53,9 +53,26 @@
       <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
     </dropzone>
   </define>
-  <define class="PRO_2DECKS" placeholders="*panelname">
+  <define class="PRO_2DECKS" placeholders="*panel_name,*wave_size">
+    <!-- <pos y="+3+`get_var '@$infntywavesize' &amp; param_multiply 20`"/> -->
+    <pos y="+260" condition="param_equal [WAVE_SIZE] 13"/>
+    <pos y="+240" condition="param_equal [WAVE_SIZE] 12"/>
+    <pos y="+220" condition="param_equal [WAVE_SIZE] 11"/>
+    <pos y="+200" condition="param_equal [WAVE_SIZE] 10"/>
+    <pos y="+180" condition="param_equal [WAVE_SIZE] 9"/>
+    <pos y="+160" condition="param_equal [WAVE_SIZE] 8"/>
+    <pos y="+140" condition="param_equal [WAVE_SIZE] 7"/>
+    <pos y="+120" condition="param_equal [WAVE_SIZE] 6"/>
+    <pos y="+100" condition="param_equal [WAVE_SIZE] 5"/>
+    <pos y="+080" condition="param_equal [WAVE_SIZE] 4"/>
+    <pos y="+060" condition="param_equal [WAVE_SIZE] 3"/>
+    <pos y="+040" condition="param_equal [WAVE_SIZE] 2"/>
+    <pos y="+020" condition="param_equal [WAVE_SIZE] 1"/>
+    <pos y="+000" condition="param_equal [WAVE_SIZE] 0"/>
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
+    <!-- <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/> -->
+    <!-- <positions y="+121" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0"> -->
+    <!-- </positions> -->
     <!-- DECKS -->
     <panel class="deck_container_pro" x="0" panelname="deck1" deck="1" deckside="left" visibility="not deck 3 leftdeck"/>
     <panel class="deck_container_pro" x="0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck"/>
@@ -79,14 +96,27 @@
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
     <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/>
+    <pos y="+260" condition="param_equal [WAVE_SIZE] 13"/>
+    <pos y="+240" condition="param_equal [WAVE_SIZE] 12"/>
+    <pos y="+220" condition="param_equal [WAVE_SIZE] 11"/>
+    <pos y="+200" condition="param_equal [WAVE_SIZE] 10"/>
+    <pos y="+180" condition="param_equal [WAVE_SIZE] 9"/>
+    <pos y="+160" condition="param_equal [WAVE_SIZE] 8"/>
+    <pos y="+140" condition="param_equal [WAVE_SIZE] 7"/>
+    <pos y="+120" condition="param_equal [WAVE_SIZE] 6"/>
+    <pos y="+100" condition="param_equal [WAVE_SIZE] 5"/>
+    <pos y="+080" condition="param_equal [WAVE_SIZE] 4"/>
+    <pos y="+060" condition="param_equal [WAVE_SIZE] 3"/>
+    <pos y="+040" condition="param_equal [WAVE_SIZE] 2"/>
+    <pos y="+020" condition="param_equal [WAVE_SIZE] 1"/>
+    <pos y="+000" condition="param_equal [WAVE_SIZE] 0"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
     <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 3 leftdeck"/>
     <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="left" visibility="deck 1 leftdeck"/>
     <!-- LEFT: TOP -->
-    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 1 leftdeck" y="+100+2"/>
-    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck" y="+100+2"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 1 leftdeck" y="+180"/>
+    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck" y="+180"/>
     <!-- PRO: 4 DECKS: MIXER PANEL / MIDDLE PANEL -->
     <group x="+802" y="+0">
       <!-- MIDDLE PANEL BORDER -->
@@ -111,10 +141,10 @@
     <panel class="pro_racks" x="+2" y="-2"/>
     <group y="+389">
       <!-- TRANSPORT 4 DECK -->
-      <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/>
-      <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/>
-      <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/>
-      <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/>
+      <!-- <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/> -->
+      <!-- <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/> -->
+      <!-- <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/> -->
+      <!-- <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/> -->
     </group>
   </define>
   <define class="PRO_DECKS_NO_WAVES">

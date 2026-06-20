@@ -6,10 +6,12 @@
     <!-- With waves above, the browser slot only depends on deck density.
          Slot heights stay numeric here because the browser classes reuse
          HEIGHT inside their own arithmetic expressions. -->
-    <!-- 2 decks with utility bar: 1080 - 845 -->
+    <!-- 2 decks: decks self-position under the wave via @$infntywavesize; the
+         browser tracks the same ladder, so HEIGHT here is the constant that
+         keeps the browser top flush with the deck bottom. -->
     <group condition="var_equal '@$layout_4deck' 0">
-      <panel class="pro_2decks" wave_size="var @$infntywavesize"/>
-      <panel class="browser_surface_pro" height="`get_var '@$infntywavesize' &amp; param_multiply 2`"/>
+      <panel class="pro_2decks"/>
+      <panel class="browser_surface_pro" height="286"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$layout_4deck' 1">

@@ -53,26 +53,24 @@
       <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
     </dropzone>
   </define>
-  <define class="PRO_2DECKS" placeholders="*panel_name,*wave_size">
-    <!-- <pos y="+3+`get_var '@$infntywavesize' &amp; param_multiply 20`"/> -->
-    <pos y="+260" condition="param_equal [WAVE_SIZE] 13"/>
-    <pos y="+240" condition="param_equal [WAVE_SIZE] 12"/>
-    <pos y="+220" condition="param_equal [WAVE_SIZE] 11"/>
-    <pos y="+200" condition="param_equal [WAVE_SIZE] 10"/>
-    <pos y="+180" condition="param_equal [WAVE_SIZE] 9"/>
-    <pos y="+160" condition="param_equal [WAVE_SIZE] 8"/>
-    <pos y="+140" condition="param_equal [WAVE_SIZE] 7"/>
-    <pos y="+120" condition="param_equal [WAVE_SIZE] 6"/>
-    <pos y="+100" condition="param_equal [WAVE_SIZE] 5"/>
-    <pos y="+080" condition="param_equal [WAVE_SIZE] 4"/>
-    <pos y="+060" condition="param_equal [WAVE_SIZE] 3"/>
-    <pos y="+040" condition="param_equal [WAVE_SIZE] 2"/>
-    <pos y="+020" condition="param_equal [WAVE_SIZE] 1"/>
-    <pos y="+000" condition="param_equal [WAVE_SIZE] 0"/>
-    <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <!-- <xi:include href="positions/2decks.xml" xpointer="xpointer(/positions/*)"/> -->
-    <!-- <positions y="+121" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0"> -->
-    <!-- </positions> -->
+  <define class="PRO_2DECKS">
+    <!-- Wave-size offset ladder kept inline (same paradigm as the extended
+         sublayout): decks and the center mixer drop to sit just below the
+         wave above as @$infntywavesize grows. Only fires with waves above. -->
+    <pos y="+381+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 13"/>
+    <pos y="+361+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 12"/>
+    <pos y="+341+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 11"/>
+    <pos y="+321+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 10"/>
+    <pos y="+301+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 9"/>
+    <pos y="+281+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 8"/>
+    <pos y="+261+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 7"/>
+    <pos y="+241+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 6"/>
+    <pos y="+221+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 5"/>
+    <pos y="+201+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 4"/>
+    <pos y="+181+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 3"/>
+    <pos y="+161+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 2"/>
+    <pos y="+141+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 1"/>
+    <pos y="+121+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 0"/>
     <!-- DECKS -->
     <panel class="deck_container_pro" x="0" panelname="deck1" deck="1" deckside="left" visibility="not deck 3 leftdeck"/>
     <panel class="deck_container_pro" x="0" panelname="deck3" deck="3" deckside="left" visibility="deck 3 leftdeck"/>
@@ -95,21 +93,23 @@
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
   </define>
   <define class="PRO_4DECKS" placeholders="*panelname">
-    <!-- Wave-size offset ladder extracted to keep the shell readable -->
-    <pos y="+260" condition="param_equal [WAVE_SIZE] 13"/>
-    <pos y="+240" condition="param_equal [WAVE_SIZE] 12"/>
-    <pos y="+220" condition="param_equal [WAVE_SIZE] 11"/>
-    <pos y="+200" condition="param_equal [WAVE_SIZE] 10"/>
-    <pos y="+180" condition="param_equal [WAVE_SIZE] 9"/>
-    <pos y="+160" condition="param_equal [WAVE_SIZE] 8"/>
-    <pos y="+140" condition="param_equal [WAVE_SIZE] 7"/>
-    <pos y="+120" condition="param_equal [WAVE_SIZE] 6"/>
-    <pos y="+100" condition="param_equal [WAVE_SIZE] 5"/>
-    <pos y="+080" condition="param_equal [WAVE_SIZE] 4"/>
-    <pos y="+060" condition="param_equal [WAVE_SIZE] 3"/>
-    <pos y="+040" condition="param_equal [WAVE_SIZE] 2"/>
-    <pos y="+020" condition="param_equal [WAVE_SIZE] 1"/>
-    <pos y="+000" condition="param_equal [WAVE_SIZE] 0"/>
+    <!-- Wave-size offset ladder kept inline (same paradigm as the extended
+         sublayout): the deck stack drops below the wave as @$infntywavesize
+         grows. Only fires with waves above. -->
+    <pos y="+381+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 13"/>
+    <pos y="+361+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 12"/>
+    <pos y="+341+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 11"/>
+    <pos y="+321+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 10"/>
+    <pos y="+301+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 9"/>
+    <pos y="+281+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 8"/>
+    <pos y="+261+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 7"/>
+    <pos y="+241+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 6"/>
+    <pos y="+221+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 5"/>
+    <pos y="+201+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 4"/>
+    <pos y="+181+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 3"/>
+    <pos y="+161+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 2"/>
+    <pos y="+141+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 1"/>
+    <pos y="+121+3" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0 ? var_equal '@$infntywavesize' 0"/>
     <!-- shared mini deck strip -->
     <!-- LEFT: BOTTOM -->
     <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="left" visibility="deck 3 leftdeck"/>

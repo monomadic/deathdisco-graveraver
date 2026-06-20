@@ -5,7 +5,6 @@
        only thing that branches by mode is the deck structure (and, later, the rack band).
        The deck defines (pro_2decks / pro_4decks / extended_2decks / extended_4decks) are
        pure deck structure: they no longer carry a wave ladder, they are positioned here. -->
-
   <define class="DECKS_ABOVE">
     <!-- waves -->
     <panel class="area_waves" condition="var_equal '@$layout_4deck' 0"/>
@@ -49,7 +48,6 @@
     <pos y="+1080-50-50-355-2-355-3+3" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 1"/>
     <panel class="extended_4decks" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 1"/>
   </define>
-
   <define class="DECKS_BELOW">
     <!-- Decks sit at the top (no wave ladder); the wave area drops below them. -->
     <group condition="var_equal '@$layout_4deck' 0">
@@ -68,7 +66,6 @@
       <panel class="browser_surface_pro_4decks" height="500" condition="var_equal '@$hide_pro_mixer' 0"/>
     </group>
   </define>
-
   <define class="DECKS_NO_WAVES">
     <group condition="var_equal '@$layout_4deck' 0">
       <panel class="pro_2decks" condition="var_equal '@$hide_pro_mixer' 0"/>

@@ -8,8 +8,8 @@
          HEIGHT inside their own arithmetic expressions. -->
     <!-- 2 decks with utility bar: 1080 - 845 -->
     <group condition="var_equal '@$layout_4deck' 0">
-      <panel class="pro_2decks" wave_size="10"/>
-      <panel class="browser_surface_pro" height="235"/>
+      <panel class="pro_2decks" wave_size="var @$infntywavesize"/>
+      <panel class="browser_surface_pro" height="`get_var '@$infntywavesize' &amp; param_multiply 2`"/>
     </group>
     <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$layout_4deck' 1">

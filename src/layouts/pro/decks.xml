@@ -148,7 +148,9 @@
     </group>
   </define>
   <define class="PRO_DECKS_NO_WAVES">
+    <!-- 2decks -->
     <panel class="pro_2decks" condition="var_equal '@$layout_4deck' 0"/>
+    <!-- 4decks -->
     <panel class="pro_4decks" condition="var_equal '@$layout_4deck' 1"/>
     <!-- browsers -->
     <panel class="browser_overlay_plain" y="+432+2" width="1920" height="1080-432-2-2-38" condition="var_equal '@$layout_4deck' 0"/>

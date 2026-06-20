@@ -23,6 +23,14 @@ import sys
 SRC_DIR = Path("src")
 ROOT_SKIN = SRC_DIR / "skin.xml"
 
+
+def is_parked(path: Path) -> bool:
+    """Files/dirs whose name starts with '_' are deliberately parked out of the
+    build (e.g. src/layouts/pro/_positions/). They are not expected to be
+    reachable from skin.xml, so the audit ignores them entirely."""
+
+    return any(part.startswith("_") for part in path.parts)
+
 COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
 XML_DECL_RE = re.compile(r"<\?xml[^>]*\?>", re.S)
 DOCTYPE_RE = re.compile(r"<!DOCTYPE[^>]*>", re.S)
@@ -226,7 +234,7 @@ def format_definitions(definitions: list[Definition]) -> list[str]:
 
 def audit() -> list[str]:
     findings: list[str] = []
-    xml_paths = sorted(SRC_DIR.rglob("*.xml"))
+    xml_paths = sorted(path for path in SRC_DIR.rglob("*.xml") if not is_parked(path))
 
     definitions, references, root_references, definition_references, hidden_blocks = parse_class_graph(xml_paths)
 

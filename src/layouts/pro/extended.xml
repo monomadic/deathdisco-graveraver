@@ -8,7 +8,6 @@
     The deck transport buttons (performance_play_button / performance_cue_button)
     and the dropzone helper (dual_dropzone) are shared with the Performance
     compact decks and live in src/layouts/performance/decks.xml. -->
-
   <!-- Waveform/browser shells (the expanding wave drives deck offsets). -->
   <define class="EXTENDED_DECKS_ABOVE">
     <panel class="area_waves" condition="var_equal '@$layout_4deck' 0"/>
@@ -30,7 +29,6 @@
     <!-- browsers -->
     <panel class="browser_overlay_with_racks" y="+355+2" width="1920" height="1080-43-2-355-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
   </define>
-
   <!-- Deck density shells. @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
   <define class="EXTENDED_2DECKS" placeholders="*panelname,height=355">
     <!-- Wave-size offset ladder kept inline: decks drop as the wave above grows. -->
@@ -63,12 +61,10 @@
     <panel class="deck_container_extended_side" height="[HEIGHT]" x="+960" y="+[HEIGHT]+2" panelname="deck4" deck="4" mirror="true"/>
     <panel class="extended_main_racks" offset_y="+[HEIGHT]+2" deck_offset="[HEIGHT]"/>
   </define>
-
   <define class="EXTENDED_MAIN_RACKS" placeholders="offset_y=0,deck_offset=264+2">
     <panel class="racks_extended" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 0"/>
     <panel class="racks_single" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 1"/>
   </define>
-
   <!-- Full-width side decks (no center mixer). -->
   <define class="DECK_CONTAINER_EXTENDED_SIDE" placeholders="*deck,*panelname,*mirror=false,height=340">
     <deck deck="[DECK]">

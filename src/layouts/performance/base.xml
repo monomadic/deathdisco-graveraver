@@ -3,19 +3,17 @@
   <!-- PERFORMANCE
     Assumes the user will be heavily slanted to controller use,
     and the VirtualDJ screen mostly for visual cues and feedback over interaction.
+
+    Performance uses statically-sized waveforms only. The expanding-wave
+    ("extended") layout now lives in Pro (src/layouts/pro/extended.xml).
   -->
   <group name="PERFORMANCE" condition="var_equal '@$skin_mode' 1">
-    <!-- @$layout_4deck selects deck density within Performance: 0 = two-deck / swap, 1 = full four-deck -->
-    <!-- Main decks -->
-    <group name="Extended" condition="var_equal '@$performance_layout' 0">
-      <panel class="performance_decks_above" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-      <panel class="performance_decks_below" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-      <panel class="performance_decks_no_waves" condition="var_equal '@$hide_main_waveforms' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-    </group>
-    <group name="Vertical" condition="var_equal '@$performance_layout' 1">
+    <!-- @$performance_layout selects the sublayout: 0 = vertical, 1 = horizontal -->
+    <!-- @$layout_4deck selects deck density: 0 = two-deck / swap, 1 = full four-deck -->
+    <group name="Vertical" condition="not var_equal '@$performance_layout' 1">
       <panel class="performance_decks_vertical" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     </group>
-    <group name="Horizontal" condition="var_equal '@$performance_layout' 2">
+    <group name="Horizontal" condition="var_equal '@$performance_layout' 1">
       <panel class="performance_decks_horizontal" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     </group>
     <!-- browser zoom & auto-switch -->

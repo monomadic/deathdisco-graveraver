@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Performance compact decks, shared by the Vertical and Horizontal layouts.
+    The transport buttons and dropzone helper below are also referenced by the
+    Pro "extended" sublayout (src/layouts/pro/extended.xml). -->
+  <define class="DUAL_DROPZONE" placeholders="*width,*height,x=0,y=0">
+    <dropzone visibility="blink 1bt" x="[X]" y="[Y]" radius="6">
+      <size width="[WIDTH]" height="[HEIGHT]"/>
+      <over color="transparent" border_size="2" border="needle" shape="square"/>
+    </dropzone>
+  </define>
+  <define class="PERFORMANCE_PLAY_BUTTON">
+    <button textsize="11" width="100" height="30" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" textcoloron="black" colorselected="red" bordersize="0">
+      <off color="#000000" border="#333333" border_size="1" shape="square" radius="4" iconcolor="deckcolor"/>
+      <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+      <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+      <selected color="deckcolor" border="deckcolor" radius="4" iconcolor="black"/>
+      <icon sysicon="play_button" width="39" height="39" coloroff="deckcolor" colorover="deckcolor" colordown="deckcolor" colorselected="black"/>
+    </button>
+  </define>
+  <define class="PERFORMANCE_CUE_BUTTON">
+    <button textsize="11" width="100" height="30" action="select &amp; sync" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+      <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
+      <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+      <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+      <selected color="deckcolor" border="deckcolor" radius="4"/>
+      <text coloroff="white" colorselected="black">SYNC</text>
+    </button>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*mirror=false,width=684,height=333">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="[WIDTH]" height="[HEIGHT]" coloroff="panel_background" bordersize="1" bordercoloroff="transparent" radius="6"/>
+      <visual class="gfx_shape" y="+62" width="[WIDTH]" height="33" coloroff="#111111" bordercoloroff="#222222" bordersize="1"/>
+      <songpos class="songpos" x="+2" y="+65" width="[WIDTH]-4" height="30"/>
+      <songpos class="cuemap" x="+2" y="+91" width="[WIDTH]-4" height="2"/>
+      <panel condition="not [MIRROR]">
+        <panel class="track_info_pro" width="[WIDTH]"/>
+        <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <group y="+4" x="-40">
+          <panel class="jogwheel" x="+[WIDTH]-160" y="+105" name="jogwheel_spinner"/>
+          <panel class="pitch_small" deck="[DECK]" x="+[WIDTH]" y="+110"/>
+        </group>
+        <group x="+[WIDTH]-214" y="+[HEIGHT]-40">
+          <panel class="performance_cue_button"/>
+          <panel class="performance_play_button" x="+105"/>
+        </group>
+      </panel>
+      <panel condition="[MIRROR]">
+        <panel class="track_info_pro" x="+0" width="[WIDTH]"/>
+        <panel class="pitch_small" deck="[DECK]" x="+5" y="+114"/>
+        <panel class="jogwheel" x="+42" y="+109" name="jogwheel_spinner"/>
+        <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <group x="+8" y="+[HEIGHT]-40">
+          <panel class="performance_play_button"/>
+          <panel class="performance_cue_button" x="+105"/>
+        </group>
+      </panel>
+      <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="[HEIGHT]" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>
+      <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">
+        <size width="[WIDTH]" height="[HEIGHT]"/>
+        <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="8"/>
+      </visual>
+      <panel x="+1" y="+1" class="dual_dropzone" width="[WIDTH]-2" height="[HEIGHT]-2"/>
+    </deck>
+  </define>
+  <define class="DECK_CONTAINER_PERFORMANCE_COMPACT" placeholders="*deck,*panelname,*mirror=false,width=719,height=333">
+    <deck deck="[DECK]">
+      <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_compact_body" x="+35" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="not [MIRROR]"/>
+      <panel class="deck_container_performance_compact_body" width="[WIDTH]-35" height="[HEIGHT]" deck="[DECK]" panelname="[PANELNAME]" mirror="[MIRROR]" condition="[MIRROR]"/>
+      <panel class="deck_spine_pair" deck="[DECK]" x="+[WIDTH]-34" panelname="[PANELNAME]" height="[HEIGHT]" mirror="[MIRROR]" condition="[MIRROR]"/>
+    </deck>
+  </define>
+</defs>

@@ -39,8 +39,8 @@
   <xi:include href="layouts/browser/mini.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="layouts/pro/waves.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="layouts/pro/decks.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="layouts/performance/waves.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="layouts/performance/extended.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/pro/extended.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="layouts/performance/decks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="layouts/performance/vertical.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="layouts/performance/horizontal.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="layouts/stack/decks.xml" xpointer="xpointer(/defs/*)"/>

@@ -1,341 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-    <!-- Shared rack surfaces used across Pro, Performance, and browser-zoom mini views -->
+    <!-- Shared rack surfaces used across Pro, Performance, and browser-zoom mini views.
+
+      RACKS_BAND is the single source of truth for the rack panel matrix (mic / eq /
+      master / fx / video / xfader). Every panel is positioned relative to [BAND_BASE]
+      (the band's top, measured from the surface origin). The thin wrappers below set
+      [BAND_BASE] (and, where the band rides below the waveforms, a wave-size ladder)
+      so all modes calculate the same layout from one place. -->
+    <define class="RACKS_BAND" placeholders="*panelname,band_base=0">
+      <deck deck="mic">
+        <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+0" y="+[BAND_BASE]"/>
+        </panel>
+      </deck>
+      <deck deck="left">
+        <panel class="video_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
+          <pos x="+0" y="+[BAND_BASE]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="video_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
+          <pos x="+0" y="+[BAND_BASE]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="eq_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+296" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="eq_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+296" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="efx_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
+          <pos x="+0" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="efx_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
+          <pos x="+0" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+0" y="+[BAND_BASE]"/>
+        </panel>
+      </deck>
+      <deck deck="master">
+        <panel class="master_video_rack_ex" panelname="deckmaster" condition="var_equal '@$show_video_rack' 1">
+          <pos x="+561+2" y="+[BAND_BASE]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+561+2" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+561+2" y="+[BAND_BASE]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
+          <pos x="+561+2" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="master_rack_ex" panelname="deckmaster" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+1920-4-294" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="efx_rack_ex_master" panelname="deckmaster" condition="var_equal '@$show_fx_rack' 1">
+          <pos x="+802" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+802" y="+[BAND_BASE]"/>
+        </panel>
+        <!-- XFADER ZONE -->
+        <panel class="xfader_panel" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="804" y="+[BAND_BASE]"/>
+        </panel>
+      </deck>
+      <deck deck="right">
+        <panel class="eq_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+1920-4-800" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="eq_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
+          <pos x="+1920-4-800" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="efx_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
+          <pos x="+1920-4-800" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-800" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="efx_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
+          <pos x="+1920-4-800" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-800" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="video_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
+          <pos x="+1920-4-561" y="+[BAND_BASE]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]"/>
+        </panel>
+        <panel class="video_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
+          <pos x="+1920-4-561" y="+[BAND_BASE]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
+          <pos x="+1920-4-561" y="+[BAND_BASE]"/>
+        </panel>
+      </deck>
+    </define>
+    <!-- Pro / extended: band rides below the decks (deck_offset), with a wave-size
+         ladder when the main waveforms sit below the decks. -->
     <define class="RACKS_EXTENDED" placeholders="*panelname,deck_offset=264+2">
-      <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
       <xi:include href="positions/extended-rack.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+[DECK_OFFSET]" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
-      <deck deck="mic">
-        <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="left">
-        <panel class="video_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="master">
-        <panel class="master_video_rack_ex" panelname="deckmaster" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+561+2" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="master_rack_ex" panelname="deckmaster" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-294" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex_master" panelname="deckmaster" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+802" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+802" y="+[DECK_OFFSET]"/>
-        </panel>
-        <!-- XFADER ZONE -->
-        <panel class="xfader_panel" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="804" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="right">
-        <panel class="eq_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
+      <panel class="racks_band" band_base="[DECK_OFFSET]" panelname="[PANELNAME]"/>
     </define>
+    <!-- Single-height variant (main waveforms hidden): no wave ladder, no 4-deck doubling. -->
+    <define class="RACKS_SINGLE" placeholders="*panelname,deck_offset=264+2">
+      <panel class="racks_band" band_base="[DECK_OFFSET]" panelname="[PANELNAME]"/>
+    </define>
+    <!-- Performance vertical/horizontal: fixed band below the 333px compact decks. -->
+    <define class="RACKS_VERTICAL" placeholders="*panelname">
+      <panel class="racks_band" band_base="333+2" panelname="[PANELNAME]"/>
+    </define>
+    <!-- Browser-zoom mini: band below the mini decks, with a wave-size ladder when shown. -->
     <define class="RACKS_MINI" placeholders="*panelname">
-      <!-- Wave-size offset ladder extracted to keep the rack composition readable -->
       <xi:include href="positions/mini-rack.xml" xpointer="xpointer(/positions/*)"/>
       <pos x="+2" y="+98+2" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
-      <deck deck="mic">
-        <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+0" y="+98+2"/>
-        </panel>
-      </deck>
-      <deck deck="left">
-        <panel class="video_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+98+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+98+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+98+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+98+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+98+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+98+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+98+2"/>
-        </panel>
-      </deck>
-      <deck deck="master">
-        <panel class="master_video_rack_ex" panelname="deckmaster" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+561+2" y="+98+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+98+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+561+2" y="+98+2"/>
-        </panel>
-        <panel class="master_rack_ex" panelname="deckmaster" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-294" y="+98+2"/>
-        </panel>
-        <panel class="efx_rack_ex_master" panelname="deckmaster" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+802" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+802" y="+98+2"/>
-        </panel>
-        <!-- XFADER ZONE -->
-        <panel class="xfader_panel" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="804" y="+98+2"/>
-        </panel>
-      </deck>
-      <deck deck="right">
-        <panel class="eq_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+98+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+98+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+98+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+98+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+98+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+98+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+98+2"/>
-        </panel>
-      </deck>
+      <panel class="racks_band" band_base="98+2" panelname="[PANELNAME]"/>
     </define>
-    <define class="RACKS_SINGLE" placeholders="*panelname,deck_offset=264+2">
-      <deck deck="mic">
-        <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="left">
-        <panel class="video_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="master">
-        <panel class="master_video_rack_ex" panelname="deckmaster" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+561+2" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+561+2" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="master_rack_ex" panelname="deckmaster" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-294" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex_master" panelname="deckmaster" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+802" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+802" y="+[DECK_OFFSET]"/>
-        </panel>
-        <!-- XFADER ZONE -->
-        <panel class="xfader_panel" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="804" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-      <deck deck="right">
-        <panel class="eq_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+[DECK_OFFSET]"/>
-        </panel>
-      </deck>
-    </define>
-    <define class="RACKS_VERTICAL" placeholders="*panelname">
-      <deck deck="mic">
-        <panel class="mic_rack_ex" panelname="deckmic" deck="mic" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+0" y="+333+2"/>
-        </panel>
-      </deck>
-      <deck deck="left">
-        <panel class="video_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+333+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+333+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+0" y="+333+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+0" y="+333+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+333+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+296" y="+333+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck1" deck="1" visibility="not deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck3" deck="3" visibility="deck 3 leftdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+0" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+0" y="+333+2"/>
-        </panel>
-      </deck>
-      <deck deck="master">
-        <panel class="master_video_rack_ex" panelname="deckmaster" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+561+2" y="+333+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+561+2" y="+333+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+561+2" y="+333+2"/>
-        </panel>
-        <panel class="master_rack_ex" panelname="deckmaster" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-294" y="+333+2"/>
-        </panel>
-        <panel class="efx_rack_ex_master" panelname="deckmaster" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+802" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+802" y="+333+2"/>
-        </panel>
-        <!-- XFADER ZONE -->
-        <panel class="xfader_panel" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="804" y="+333+2"/>
-        </panel>
-      </deck>
-      <deck deck="right">
-        <panel class="eq_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+333+2"/>
-        </panel>
-        <panel class="eq_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_mixer_rack' 1">
-          <pos x="+1920-4-800" y="+333+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+333+2"/>
-        </panel>
-        <panel class="efx_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_fx_rack' 1">
-          <pos x="+1920-4-800" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-800" y="+333+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck2" deck="2" visibility="not deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+333+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2"/>
-        </panel>
-        <panel class="video_rack_ex" panelname="deck4" deck="4" visibility="deck 4 rightdeck" condition="var_equal '@$show_video_rack' 1">
-          <pos x="+1920-4-561" y="+333+2+80+2+86+2" condition="var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2+86+2" condition="var_equal '@$show_mixer_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2+80+2" condition="var_equal '@$show_fx_rack' 1"/>
-          <pos x="+1920-4-561" y="+333+2"/>
-        </panel>
-      </deck>
-    </define>
-    <!-- Compatibility aliases while older layout references are being removed -->
 </defs>

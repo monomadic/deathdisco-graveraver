@@ -399,9 +399,38 @@
         </button>
       </group>
     </group>
-    <!-- MIXER OPTIONS: configures the extended racks (left/right/center) -->
-    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$skin_mode' 0 ? var_equal '@$hide_pro_mixer' 1 ? constant 1.0">
-      <pos x="510" y="5"/>
+    <!-- RACKS: show/hide the rack band (same control as the Performance topbar) -->
+    <group x="505" y="2">
+      <group>
+        <group x="+5" y="+9">
+          <button class="button_main" x="+0" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="MIXER"/>
+          </button>
+          <button class="button_main" x="+53" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="VIDEO"/>
+          </button>
+          <button class="button_main" x="+55+60" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="EFFECTS"/>
+          </button>
+        </group>
+        <!-- border -->
+        <visual x="+0" y="+8" width="190" height="28">
+          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+        </visual>
+        <!-- label -->
+        <textzone x="+0">
+          <size width="180" height="16"/>
+          <text fontsize="9" weight="normal" color="#999999" align="center" text="RACKS" important="true"/>
+        </textzone>
+      </group>
+    </group>
+    <!-- MIXER OPTIONS: configures the rack panels (both Pro variants). Show/hide of the
+         rack band itself is handled by the RACKS button group. -->
+    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$skin_mode' 0">
+      <pos x="700" y="5"/>
       <size width="36" height="36"/>
       <off shape="square" color="black" border="transparent"/>
       <icon sysicon="settings" height="20" width="20" color="dark_8" colorover="white" colordown="needle"/>

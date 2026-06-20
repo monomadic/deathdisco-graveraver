@@ -1,36 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- Pro waveform/browser layout shells. -->
-  <define class="PRO_DECKS_ABOVE">
-    <panel class="area_waves"/>
-    <!-- With waves above, the browser slot only depends on deck density.
-         Slot heights stay numeric here because the browser classes reuse
-         HEIGHT inside their own arithmetic expressions. -->
-    <!-- 2 decks: decks self-position under the wave via @$infntywavesize; the
-         browser tracks the same ladder, so HEIGHT here is the constant that
-         keeps the browser top flush with the deck bottom. -->
+  <!-- Shared Pro deck-stack shells for BOTH Pro variants (mixer = @$hide_pro_mixer 0,
+       extended = @$hide_pro_mixer 1). These own the wave + browser positioning so the
+       only thing that branches by mode is the deck structure (and, later, the rack band).
+       The deck defines (pro_2decks / pro_4decks / extended_2decks / extended_4decks) are
+       pure deck structure: they no longer carry a wave ladder, they are positioned here. -->
+
+  <define class="DECKS_ABOVE">
+    <!-- waves -->
+    <panel class="area_waves" condition="var_equal '@$layout_4deck' 0"/>
+    <panel class="area_waves" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 0"/>
+    <panel class="area_waves_extended_4deck" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 1"/>
+    <!-- decks (the shared wave ladder that positions them lives in DECKS_ABOVE_STACK) -->
+    <panel class="decks_above_stack"/>
+    <!-- browsers (after the decks, as in the original shells; each self-positions).
+         Pro-mixer 2-deck uses the rack-aware surface so the browser reflows under the
+         supplemental rack band; decks are 110px taller than extended, hence the larger
+         HEIGHT/bottom_trim. -->
+    <panel class="browser_performance_surface" height="1075" bottom_trim="568" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$hide_pro_mixer' 0"/>
+    <panel class="browser_performance_surface" height="1080-60-2-2-2-1-50" bottom_trim="344" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$hide_pro_mixer' 1"/>
+    <panel class="browser_surface_pro_4decks" height="410" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 0"/>
+  </define>
+  <!-- The single place that owns the expanding-wave deck-top ladder. The ladder and the
+       deck panels live in the same define (as the old per-mode shells did), so the deck
+       panels inherit the ladder cursor. One ladder serves mixer 2/4-deck and extended
+       2-deck; extended 4-deck overrides it with a fixed fill-height offset. -->
+  <define class="DECKS_ABOVE_STACK">
+    <pos y="+381+3" condition="var_equal '@$infntywavesize' 13"/>
+    <pos y="+361+3" condition="var_equal '@$infntywavesize' 12"/>
+    <pos y="+341+3" condition="var_equal '@$infntywavesize' 11"/>
+    <pos y="+321+3" condition="var_equal '@$infntywavesize' 10"/>
+    <pos y="+301+3" condition="var_equal '@$infntywavesize' 9"/>
+    <pos y="+281+3" condition="var_equal '@$infntywavesize' 8"/>
+    <pos y="+261+3" condition="var_equal '@$infntywavesize' 7"/>
+    <pos y="+241+3" condition="var_equal '@$infntywavesize' 6"/>
+    <pos y="+221+3" condition="var_equal '@$infntywavesize' 5"/>
+    <pos y="+201+3" condition="var_equal '@$infntywavesize' 4"/>
+    <pos y="+181+3" condition="var_equal '@$infntywavesize' 3"/>
+    <pos y="+161+3" condition="var_equal '@$infntywavesize' 2"/>
+    <pos y="+141+3" condition="var_equal '@$infntywavesize' 1"/>
+    <pos y="+121+3" condition="var_equal '@$infntywavesize' 0"/>
+    <panel class="pro_2decks" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$hide_pro_mixer' 0"/>
+    <!-- Supplemental rack band below the Pro-mixer 2-deck row (toggle-driven via the
+         @$show_*_rack vars); rides the same wave ladder as the decks. -->
+    <panel class="main_racks" deck_offset="470" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$hide_pro_mixer' 0"/>
+    <panel class="pro_4decks" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 0"/>
+    <panel class="extended_2decks" condition="var_equal '@$layout_4deck' 0 ? var_equal '@$hide_pro_mixer' 1"/>
+    <pos y="+1080-50-50-355-2-355-3+3" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 1"/>
+    <panel class="extended_4decks" condition="var_equal '@$layout_4deck' 1 ? var_equal '@$hide_pro_mixer' 1"/>
+  </define>
+
+  <define class="DECKS_BELOW">
+    <!-- Decks sit at the top (no wave ladder); the wave area drops below them. -->
     <group condition="var_equal '@$layout_4deck' 0">
-      <panel class="pro_2decks"/>
-      <panel class="browser_surface_pro" height="286"/>
+      <panel class="pro_2decks" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="extended_2decks" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="area_waves" y="+470" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="area_waves" y="+355+3" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="browser_surface_pro" height="240" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="browser_performance_surface" height="1080-125" bottom_trim="328" condition="var_equal '@$hide_pro_mixer' 1"/>
     </group>
-    <!-- 4 decks: 1080 - 830 - 50 -->
     <group condition="var_equal '@$layout_4deck' 1">
-      <panel class="pro_4decks"/>
-      <panel class="browser_surface_pro_4decks" height="410"/>
+      <panel class="pro_4decks" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="extended_4decks" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="area_waves" y="+450+200" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="area_waves_extended_4deck" y="+355+2+355+3" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="browser_surface_pro_4decks" height="500" condition="var_equal '@$hide_pro_mixer' 0"/>
     </group>
   </define>
-  <define class="PRO_DECKS_BELOW">
+
+  <define class="DECKS_NO_WAVES">
     <group condition="var_equal '@$layout_4deck' 0">
-      <panel class="pro_2decks"/>
-      <panel class="area_waves" y="+470"/>
+      <panel class="pro_2decks" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="extended_2decks" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="browser_overlay_plain" y="+432+2" width="1920" height="1080-432-2-2-38" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="browser_overlay_with_racks" y="+355+2" width="1920" height="1080-43-2-355-2-2-50" condition="var_equal '@$hide_pro_mixer' 1"/>
     </group>
     <group condition="var_equal '@$layout_4deck' 1">
-      <panel class="pro_4decks"/>
-      <panel class="area_waves" y="+450+200"/>
+      <panel class="pro_4decks" condition="var_equal '@$hide_pro_mixer' 0"/>
+      <panel class="extended_4decks" condition="var_equal '@$hide_pro_mixer' 1"/>
+      <panel class="browser_overlay_plain" y="+432+2+216+2" width="1920" height="1080-432-2-2-216-2-38" condition="var_equal '@$hide_pro_mixer' 0"/>
     </group>
-    <!-- With waves below, the 2-deck browser keeps a fixed top line at y=830. -->
-    <panel class="browser_surface_pro" height="240" condition="var_equal '@$layout_4deck' 0"/>
-    <!-- 4 decks: 1080 - 830 - 50 -->
-    <panel class="browser_surface_pro_4decks" height="500" condition="var_equal '@$layout_4deck' 1"/>
   </define>
 </defs>

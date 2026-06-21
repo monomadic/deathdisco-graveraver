@@ -18,14 +18,12 @@
       <icon sysicon="play_button" width="39" height="39" coloroff="deckcolor" colorover="deckcolor" colordown="deckcolor" colorselected="black"/>
     </button>
   </define>
-  <define class="PERFORMANCE_CUE_BUTTON">
-    <button textsize="11" width="100" height="30" action="select &amp; sync" query="cue" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
-      <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
-      <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
-      <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
-      <selected color="deckcolor" border="deckcolor" radius="4"/>
-      <text coloroff="white" colorselected="black">SYNC</text>
-    </button>
+  <define class="MASTERSYNC_BUTTON" textsize="11" width="100" height="30" action="select &amp; masterdeck" query="masterdeck" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+    <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
+    <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
+    <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
+    <selected color="deckcolor" border="deckcolor" radius="4"/>
+    <text coloroff="white" color="color_masterdeck" text="MASTER" align="center"/>
   </define>
   <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*mirror=false,width=684,height=333">
     <deck deck="[DECK]">

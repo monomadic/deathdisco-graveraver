@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <positions>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+267-207" height="+[HEIGHT]-267+207-50" condition="var_equal '@$infntywavesize' 13"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+247-207" height="+[HEIGHT]-247+207-50" condition="var_equal '@$infntywavesize' 12"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+227-207" height="+[HEIGHT]-227+207-50" condition="var_equal '@$infntywavesize' 11"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+207-207" height="+[HEIGHT]-207+207-50" condition="var_equal '@$infntywavesize' 10"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+187-207" height="+[HEIGHT]-187+207-50" condition="var_equal '@$infntywavesize' 9"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+167-207" height="+[HEIGHT]-167+207-50" condition="var_equal '@$infntywavesize' 8"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+147-207" height="+[HEIGHT]-147+207-50" condition="var_equal '@$infntywavesize' 7"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+127-207" height="+[HEIGHT]-127+207-50" condition="var_equal '@$infntywavesize' 6"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+107-207" height="+[HEIGHT]-107+207-50" condition="var_equal '@$infntywavesize' 5"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+87-207" height="+[HEIGHT]-87+207-50" condition="var_equal '@$infntywavesize' 4"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+67-207" height="+[HEIGHT]-67+207-50" condition="var_equal '@$infntywavesize' 3"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+47-207" height="+[HEIGHT]-47+207-50" condition="var_equal '@$infntywavesize' 2"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+27-207" height="+[HEIGHT]-27+207-50" condition="var_equal '@$infntywavesize' 1"/>
-    <pos x="0" width="1920" y="1080-[HEIGHT]+7-207" height="+[HEIGHT]-7+207-50" condition="var_equal '@$infntywavesize' 0"/>
+    <!-- FEASIBILITY TEST (#1): the 14-rung @$infntywavesize ladder collapsed to one
+         computed <pos>. The wave term (N*20) is evaluated inline rather than enumerated.
+         Arithmetically identical to the old ladder (size 0 -> +0, size 13 -> +260). -->
+    <pos x="0" width="1920" y="1080-[HEIGHT]+7+`get_var '@$infntywavesize' &amp; param_multiply 20`-207" height="[HEIGHT]-7-`get_var '@$infntywavesize' &amp; param_multiply 20`+207-50"/>
 </positions>

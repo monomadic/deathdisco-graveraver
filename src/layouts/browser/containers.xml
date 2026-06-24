@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <define class="BROWSER_SURFACE_PRO" placeholders="*height">
-    <browser class="browser_ui_base">
-      <xi:include href="positions/pro-browser.xml" xpointer="xpointer(/positions/*)"/>
-    </browser>
-  </define>
-  <define class="BROWSER_SURFACE_PRO_4DECKS" placeholders="*height">
-    <browser class="browser_ui_base">
-      <xi:include href="positions/pro-browser-4deck.xml" xpointer="xpointer(/positions/*)"/>
-    </browser>
-  </define>
+  <!-- BROWSER_SURFACE_PRO and BROWSER_SURFACE_PRO_4DECKS are generated alongside
+       BROWSER_PERFORMANCE_SURFACE in browser-positions.generated.xml. -->
   <define class="BROWSER_SURFACE_STACK" placeholders="*height">
     <browser class="browser_ui_base">
       <pos y="+[HEIGHT]+7-200-164-3-164+38+140+2+86+2+80+2" width="1920" height="+[HEIGHT]-140-2-86-2-80-2" condition="var_equal '@$show_video_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1"/>

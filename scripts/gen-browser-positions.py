@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
 """
-Generates src/layouts/browser/performance.generated.xml
+Generates src/layouts/browser/browser-positions.generated.xml
 
-This file encodes the Performance browser surface position/size for every combination of:
-  - 8 rack combinations: any subset of fx (80px), mixer (86px), video (140px) racks active
-  - 14 waveform sizes: @$infntywavesize 0–13 (step = 20px)
+Single source for the browser <pos> tables. VirtualDJ selects a rung by
+condition; it cannot compute var-dependent geometry inline (a get_var/backtick
+term in an x/y/width/height *value* is dropped — only conditions read vars), so
+each surface must enumerate one rung per state:
+  - 14 waveform sizes: @$infntywavesize 0-13 (step = 20px), and optionally
+  - 8 rack combinations: any subset of fx (80px), mixer (86px), video (140px).
+
+Each surface in SURFACES supplies its own x/width and y/height templates (so the
+performance, pro, and pro-4deck formulas stay exact) plus whether it iterates the
+rack combos. Templates use:
+  {wave}  = 7 + 20*n    (per-wavesize y offset; 7 at n=0, 267 at n=13)
+  {hbase} = 121 + 20*n  (per-wavesize height term; 121 at n=0, 381 at n=13)
+  {yr} {hr} = rack y/height terms from RACK_COMBOS ("" for wave-only surfaces)
 
 VirtualDJ evaluates <pos> elements in order and applies the first whose condition
-matches, so rack combos are listed most-specific-first (3 racks → 2 racks → 1 → 0).
-
-Layout constants (all in px):
-  DECK_H       432   total height of the deck area above the browser
-  TOPBAR_H      66   top bar
-  PADDING_TOP   10
-  PADDING_MID   12
-  BROWSER_Y_FULL  18   bottom gap for full browser
-  UTILITY_BAR   50   bottom utility bar reservation
-  WAVESIZE_BASE   7   y offset for wavesize=0  (step: +20 per size unit)
-  HEIGHT_BASE   121   height constant for wavesize=0 (step: -20 per size unit)
-  BOTTOM_TRIM    0    optional layout-level browser height trim
+matches, so rack combos are listed most-specific-first (3 racks -> 2 -> 1 -> 0).
 
 Do not edit the generated file — edit this script instead.
 """
@@ -26,7 +25,7 @@ Do not edit the generated file — edit this script instead.
 import sys
 from pathlib import Path
 
-OUTPUT = Path(__file__).parent.parent / "src/layouts/browser/performance.generated.xml"
+OUTPUT = Path(__file__).parent.parent / "src/layouts/browser/browser-positions.generated.xml"
 
 # Rack combos ordered most-specific-first.
 # Each entry: (rack_condition_prefix, y_rack_terms, h_rack_terms)
@@ -74,23 +73,52 @@ RACK_COMBOS = [
     ),
 ]
 
-DEFINES = [
+# A wave-only surface makes a single pass with no rack condition or offsets.
+NO_RACKS = [("", "", "")]
+
+SURFACES = [
+    # Performance / Pro-extended / Pro-mixer-2deck: rack-aware (8 combos x 14 sizes).
     dict(
-        cls="BROWSER_PERFORMANCE",
-        x_attr='x="+0" ',
-        y_tail="-66+50-10-12-18",
+        cls="BROWSER_PERFORMANCE_SURFACE",
+        placeholders="*height,bottom_trim=0",
+        racks=RACK_COMBOS,
+        x="+0",
+        width="1920",
+        y="+[HEIGHT]+{wave}-432{yr}-66+50-10-12-18",
+        h="+[HEIGHT]-{hbase}{hr}-[BOTTOM_TRIM]",
+    ),
+    # Pro 2-deck (wave-only).
+    dict(
+        cls="BROWSER_SURFACE_PRO",
+        placeholders="*height",
+        racks=NO_RACKS,
+        x="0",
+        width="1920",
+        y="1080-[HEIGHT]+{wave}-207",
+        h="+[HEIGHT]-{wave}+207-50",
+    ),
+    # Pro 4-deck (wave-only).
+    dict(
+        cls="BROWSER_SURFACE_PRO_4DECKS",
+        placeholders="*height",
+        racks=NO_RACKS,
+        x="+2",
+        width="1920-4",
+        y="+[HEIGHT]+{wave}+432+4-200+38",
+        h="[HEIGHT]-{hbase}",
     ),
 ]
 
-def pos_elements(x_attr, y_tail):
-    """Yield all 112 <pos> lines for one define block (8 rack combos × 14 wavesizes)."""
-    for rack_cond, y_rack, h_rack in RACK_COMBOS:
-        for n in range(13, -1, -1):
-            wavesize_y = 7 + n * 20       # 267 at n=13, 7 at n=0
-            height_base = 121 + n * 20    # 381 at n=13, 121 at n=0
 
-            y = f"+[HEIGHT]+{wavesize_y}-432{y_rack}{y_tail}"
-            height = f"+[HEIGHT]-{height_base}{h_rack}-[BOTTOM_TRIM]"
+def pos_elements(surface):
+    """Yield the <pos> lines for one surface (rack combos x 14 wavesizes)."""
+    for rack_cond, y_rack, h_rack in surface["racks"]:
+        for n in range(13, -1, -1):
+            wave = 7 + n * 20       # 7 at n=0, 267 at n=13
+            hbase = 121 + n * 20    # 121 at n=0, 381 at n=13
+
+            y = surface["y"].format(wave=wave, hbase=hbase, yr=y_rack, hr=h_rack)
+            h = surface["h"].format(wave=wave, hbase=hbase, yr=y_rack, hr=h_rack)
 
             if rack_cond:
                 condition = f"{rack_cond} ? var_equal '@$infntywavesize' {n}"
@@ -98,8 +126,8 @@ def pos_elements(x_attr, y_tail):
                 condition = f"var_equal '@$infntywavesize' {n}"
 
             yield (
-                f'    <pos {x_attr}y="{y}" width="1920"'
-                f' height="{height}" condition="{condition}"/>'
+                f'    <pos x="{surface["x"]}" y="{y}" width="{surface["width"]}"'
+                f' height="{h}" condition="{condition}"/>'
             )
 
 
@@ -110,10 +138,10 @@ def generate():
         "<defs>",
     ]
 
-    for d in DEFINES:
-        lines.append(f'  <define class="{d["cls"]}_SURFACE" placeholders="*height,bottom_trim=0">')
+    for surface in SURFACES:
+        lines.append(f'  <define class="{surface["cls"]}" placeholders="{surface["placeholders"]}">')
         lines.append('    <browser class="browser_ui_base">')
-        lines.extend(pos_elements(d["x_attr"], d["y_tail"]))
+        lines.extend(pos_elements(surface))
         lines.append("    </browser>")
         lines.append("  </define>")
 

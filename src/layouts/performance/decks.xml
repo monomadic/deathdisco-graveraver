@@ -18,12 +18,15 @@
       <icon sysicon="play_button" width="39" height="39" coloroff="deckcolor" colorover="deckcolor" colordown="deckcolor" colorselected="black"/>
     </button>
   </define>
-  <define class="MASTERSYNC_BUTTON" textsize="11" width="100" height="30" action="select &amp; masterdeck" query="masterdeck" rightclick="goto_first_beat" textaction="cue_button" textcolor="deckcolor" colorselected="deckcolor" bordersize="0">
+  <!-- When this deck is master: shows MASTER and toggles auto/manual master mode.
+    Otherwise: shows SYNC (grey) and runs a full sync to master (key, bpm/beat, phrase).
+    query="masterdeck" drives the selected (orange) vs off (grey) state. -->
+  <define class="SYNC_BUTTON" textsize="11" width="100" height="30" action="select &amp; match_key &amp; sync &amp; phrase_sync 32" query="match_key &amp; sync &amp; phrase_sync 32" bordersize="0">
     <off color="#000000" border="#333333" border_size="1" shape="square" radius="4"/>
     <over color="#111111" border="#666666" border_size="1" shape="square" radius="4"/>
     <down color="#111111" border="#888888" border_size="1" shape="square" radius="4"/>
-    <selected color="deckcolor" border="deckcolor" radius="4"/>
-    <text coloroff="white" color="color_masterdeck" text="MASTER" align="center"/>
+    <selected color="transparent" border="white" border_size="1" shape="square" radius="4"/>
+    <text size="11" align="center" color="#999999" colorselected="white" action="masterdeck ? get_text 'MASTER' : get_text 'SYNC'"/>
   </define>
   <define class="DECK_CONTAINER_PERFORMANCE_COMPACT_BODY" placeholders="*deck,*panelname,*mirror=false,width=684,height=333">
     <deck deck="[DECK]">
@@ -39,7 +42,7 @@
           <panel class="pitch_small" deck="[DECK]" x="+[WIDTH]" y="+110"/>
         </group>
         <group x="+[WIDTH]-214" y="+[HEIGHT]-40">
-          <panel class="performance_cue_button"/>
+          <panel class="sync_button"/>
           <panel class="performance_play_button" x="+105"/>
         </group>
       </panel>
@@ -50,7 +53,7 @@
         <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
         <group x="+8" y="+[HEIGHT]-40">
           <panel class="performance_play_button"/>
-          <panel class="performance_cue_button" x="+105"/>
+          <panel class="sync_button" x="+105"/>
         </group>
       </panel>
       <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="[HEIGHT]" coloroff="transparent" bordercoloroff="#444444" bordersize="1" radius="6"/>

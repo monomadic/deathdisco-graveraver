@@ -59,12 +59,12 @@
         <panel class="jogwheel" x="+42" name="jogwheel_spinner"/>
       </group>
       <group x="+707" y="+315" condition="not [MIRROR]">
-        <button class="mastersync_button"/>
+        <button class="sync_button"/>
         <panel class="performance_play_button" x="+105"/>
       </group>
       <group x="+8" y="+315" condition="[MIRROR]">
         <panel class="performance_play_button"/>
-        <button class="mastersync_button" x="+105"/>
+        <button class="sync_button" x="+105"/>
       </group>
       <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="[HEIGHT]" coloroff="transparent" bordercoloroff="dark_5" bordersize="1" radius="6"/>
       <visual source="select" x="+0" y="+0" visibility="var_equal '@$dd_bordermode' 1 ? deck [DECK] select">

@@ -46,6 +46,6 @@
   <xi:include href="layouts/stack/decks.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
   <xi:include href="layouts/base.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="components/containers/topbar/panel.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="components/containers/bottombar/panel.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="components/containers/topbar.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="components/containers/bottombar.xml" xpointer="xpointer(/module/*)"/>
 </skin>

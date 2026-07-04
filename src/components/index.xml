@@ -11,17 +11,16 @@
   <xi:include href="pitch.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="display.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-info.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="effects.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks/effects-racks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="track-info.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="transport.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="jogwheel.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="control-groups.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-widgets.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="deck-spine.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="utility-panels.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="video.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks/video-racks.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Containers -->
-  <xi:include href="containers/pads/pad-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="containers/pad-page.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/main-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/horizontal-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/center-waveform.xml" xpointer="xpointer(/defs/*)"/>
@@ -29,7 +28,7 @@
   <xi:include href="containers/waveform/stack-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/mixer/mixer-containers.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/racks/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/racks/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks/mixer-racks.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks/containers/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="racks/containers/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

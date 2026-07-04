@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
+  <!-- Pad page container plus the stack-mode pad rack -->
+
   <!-- Pad page container used by pro and extended deck layouts -->
   <define class="PADBANK_BUTTON" placeholders="textaction,*width=90">
     <size width="[WIDTH]" height="20"/>
@@ -184,5 +186,34 @@
         </panel>
       </group>
     </deck>
+  </define>
+  <!-- Stack-mode pad rack -->
+  <define class="PADS_STACK" placeholders="*panelname">
+    <panel x="+0" y="+0">
+      <panel group="pads16_[PANELNAME]" visible="yes" available="yes" displayname="Pads (4 btn)">
+        <button class="button_main" x="+1" y="+6" width="76" height="25" action="pad_page btn1" rightclick="pad_page_select 1" scroll="pad_page_select 1" tooltip="" textcoloron="needle" textsize="10" textaction="pad_page btn1 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+        <button class="button_main" x="+78" y="+6" width="76" height="25" action="pad_page btn2" rightclick="pad_page_select 2" scroll="pad_page_select 2" tooltip="" textcoloron="needle" textsize="10" textaction="pad_page btn2 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+        <button class="button_main" x="+78*2" y="+6" width="76" height="25" action="pad_page btn3" rightclick="pad_page_select 3" scroll="pad_page_select 3" tooltip="" textcoloron="needle" textsize="10" textaction="pad_page btn3 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+        <button class="button_main" x="+78*3" y="+6" width="76" height="25" action="pad_page btn4" rightclick="pad_page_select 4" scroll="pad_page_select 4" tooltip="" textcoloron="needle" textsize="10" textaction="pad_page btn4 &amp; param_uppercase" coloroff="xf_background" coloron="xf_background" bordersize="0" textcolor="textdarker"/>
+      </panel>
+    </panel>
+    <panel x="+0" y="+0">
+      <panel class="pad_stack_button" x="+1" y="+8+24" source="1"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24" source="2"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24" source="3"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24" source="4"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32" source="5"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32" source="6"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32" source="7"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32" source="8"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32+32" source="9"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32+32" source="10"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32+32" source="11"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32+32" source="12"/>
+      <panel class="pad_stack_button" x="+1" y="+8+24+32+32+32" source="13"/>
+      <panel class="pad_stack_button" x="+78" y="+8+24+32+32+32" source="14"/>
+      <panel class="pad_stack_button" x="+78*2" y="+8+24+32+32+32" source="15"/>
+      <panel class="pad_stack_button" x="+78*3" y="+8+24+32+32+32" source="16"/>
+    </panel>
   </define>
 </defs>

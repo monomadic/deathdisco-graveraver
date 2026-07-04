@@ -191,8 +191,8 @@
             <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
           </led>
         </visual>
-        <panel class="knob" x="+30+70" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="br_focus" textleft="-23" textbelow="+30" text="MIC LEVEL" visibility="mic"/>
-        <panel class="knob" x="+30+70" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="knobfilloff" textleft="-23" textbelow="+30" text="MIC LEVEL" novisibility="mic"/>
+        <panel class="knob" x="+30+70" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="br_focus" textleft="-23" textbelow="+42" text="MIC LEVEL" visibility="mic"/>
+        <panel class="knob" x="+30+70" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="knobfilloff" textleft="-23" textbelow="+42" text="MIC LEVEL" novisibility="mic"/>
         <button class="button_main" x="+30+14+23+8+68+18" y="+14" width="55" height="36" action="sampler_rec 'mic'" textsize="11" textaction="get_text 'REC'" coloron="br_focus" bordersize="0"/>
         <button class="button_main" x="+30+14+23+8+68+55+20" y="+14" width="55" height="36" radius="4" action="mic_talkover while_pressed" rightclick="mic_talkover" tooltip="Mic Talk-Over (while pressed)\nRight-click: Mic Talk-Over (ON-OFF)" textsize="11" textaction="get_text 'TALK\nOVER'" coloroff="button_background2" coloron="#ff1467" bordersize="0"/>
         <button class="button_main" x="+30+14+9" y="+18" width="40" height="30" action="mic" textsize="11" text="ON" coloron="br_focus" bordersize="0"/>

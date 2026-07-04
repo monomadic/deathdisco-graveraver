@@ -92,7 +92,7 @@
     <!-- Pro / extended: band rides below the decks (deck_offset), with a wave-size
          ladder when the main waveforms sit below the decks. -->
     <define class="RACKS_EXTENDED" placeholders="*panelname,deck_offset=264+2">
-      <xi:include href="positions/extended-rack.xml" xpointer="xpointer(/positions/*)"/>
+      <xi:include href="rack-positions.xml" xpointer="xpointer(/positions/extended/*)"/>
       <pos x="+2" y="+[DECK_OFFSET]" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
       <panel class="racks_band" band_base="[DECK_OFFSET]" panelname="[PANELNAME]"/>
@@ -107,7 +107,7 @@
     </define>
     <!-- Browser-zoom mini: band below the mini decks, with a wave-size ladder when shown. -->
     <define class="RACKS_MINI" placeholders="*panelname">
-      <xi:include href="positions/mini-rack.xml" xpointer="xpointer(/positions/*)"/>
+      <xi:include href="rack-positions.xml" xpointer="xpointer(/positions/mini/*)"/>
       <pos x="+2" y="+98+2" condition="var_equal '@$layout_4deck' 1"/>
       <pos x="+2" y="+0" condition="var_equal '@$layout_4deck' 0"/>
       <panel class="racks_band" band_base="98+2" panelname="[PANELNAME]"/>

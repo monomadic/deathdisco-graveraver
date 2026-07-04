@@ -127,7 +127,7 @@
             <!-- Use format with inline eval: backticks around the expression -->
             <text fontsize="14" weight="" color="#eeeeee" align="left" scroll="no" action="get_time" localize="true" important="true"/>
           </button>
-          <group x="+195" y="+0">
+          <group x="+165" y="+0">
             <!-- FILETYPE -->
             <square width="45" border="1" border_color="#555555" height="15" visibility="loaded" color="#111111"/>
             <textzone>
@@ -136,14 +136,12 @@
             </textzone>
           </group>
           <button action="show_splitpanel 'sideview' on &amp; sideview 'remixes' on" query="has_linked_tracks" border_size="1" border="red">
-            <pos x="+296" y="+6"/>
-            <size width="40" height="18"/>
+            <pos x="+165" y="+16"/>
+            <size width="46" height="13"/>
             <off color="black" radius="3" border="green" bordersize="1"/>
             <over color="green" radius="3" border="green" bordersize="1"/>
             <!-- colored when key exists -->
-            <text fontsize="11" weight="normal" align="center" visibility="has_linked_tracks" color="green" text="LINKS"/>
-            <!-- fallback when no key/color -->
-            <text fontsize="11" weight="normal" align="center" visibility="not has_linked_tracks" color="black" coloron="black" text="LINKS"/>
+            <text fontsize="11" weight="normal" align="center" color="green" colorover="black" text="LINKS"/>
           </button>
         </group>
       </group>

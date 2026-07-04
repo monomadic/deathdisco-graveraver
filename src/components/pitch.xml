@@ -110,9 +110,6 @@
     <on width="-27" height="-8" color="transparent" border="#333333" border_size="1" radius="3" shape="square"/>
     <fader color="#333333" width="38" height="14" border="#555555"/>
   </define>
-  <define class="CROSSFADER">
-    <panel class="xfader_panel" x="-18" y="-10"/>
-  </define>
   <define class="VIDEO_CROSSFADER_EX">
     <group name="channel_assign" x="-3+7" visibility="var_equal '@$4decks' 1">
       <button class="button_main" x="+0" y="+0" width="18" height="18" action="deck 1 leftvideo" text="1" coloron="waveform_active1" bordersize="0"/>

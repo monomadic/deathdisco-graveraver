@@ -22,6 +22,7 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - `src/components/index.xml`: component include hub.
 - `src/components/buttons/index.xml`: button-family include hub.
 - `src/components/containers/`: larger reusable regions such as waveform, mixer, racks, topbar, bottombar, and pad containers.
+- `src/components/center-panel/`: the Pro mixer-mode center column. `index.xml` is the hub; `center-panel.xml` holds the `MIXER`/`MIXER_4DECKS` shells and shared channel-strip helpers; each tab pane lives in its own file (`eq-mixer.xml`, `sampler.xml`, `wave-mixer.xml`, `master-mixer.xml`).
 - `src/layouts/base.xml`: top-level layout assembly.
 - `src/layouts/pro/`, `src/layouts/performance/`, `src/layouts/stack/`: mode-specific layout shells.
 - `src/layouts/browser/performance.generated.xml`: generated file; edit `scripts/gen-browser-positions.py` instead of patching this by hand.

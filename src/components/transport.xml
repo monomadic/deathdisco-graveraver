@@ -86,7 +86,8 @@
           <selected color="transparent" border="deckcolor" radius="3"/>
           <text fontsize="12" color="#FF0000" colorselected="deckcolor" colordown="deckcolor" align="center" text="BEAT"/>
         </button>
-        <button class="button_main" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="loaded ? is_sync ? on : blink" visibility="masterdeck">
+        <!-- BEAT BUTTON (master) -->
+        <button class="button_main" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="loaded" visibility="masterdeck">
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -95,16 +96,17 @@
           <selected color="transparent" border="color_masterdeck" radius="3"/>
           <text fontsize="12" color="#FF0000" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="BEAT"/>
         </button>
-        <button class="button_main" x="+0" action="sync &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 : phrase_sync 32" bordersize="1" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck">
+        <!-- PHRASE BUTTON -->
+        <button class="button_main" x="+0" action="select &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 &amp; sync : phrase_sync 32 &amp; sync" bordersize="1" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck">
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
           <off color="#440000" border="#FF3333" radius="3"/>
           <down color="#222222" border="deckcolor" radius="3"/>
           <selected color="transparent" border="deckcolor" radius="3"/>
-          <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" text="PHRASE"/>
+          <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" action="get_text 'PHRASE `var_equals $phrase_len 32 ? 32 : 16`'"/>
         </button>
-        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="true" visibility="masterdeck">
+        <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="loaded" visibility="masterdeck">
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+82*1" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
@@ -114,14 +116,14 @@
           <text fontsize="12" color="#333333" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="PHRASE"/>
         </button>
         <!-- MASTER/SLAVE BUTTON -->
-        <button class="button_main" action="select &amp; masterdeck" textcoloron="orange" bordersize="2" query="masterdeck" visibility="loaded">
+        <button class="button_main" action="select &amp; masterdeck" textcolor="deckcolor" bordersize="2" query="masterdeck" visibility="loaded">
           <pos x="+82*3" condition="param_equal [DECKSIDE] 'left'"/>
           <pos x="+0" condition="param_equal [DECKSIDE] 'right'"/>
           <size width="80" height="25"/>
-          <off color="#000000" border="#888888" border_size="1" shape="square" radius="3"/>
+          <off color="#000000" border="deckcolor" border_size="1" shape="square" radius="3"/>
           <down color="#000000" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
           <selected color="color_masterdeck" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
-          <text size="11" dx="+0" action="masterdeck ? masterdeck_auto ? get_text 'AUTO' : get_text 'MASTER' : get_text 'SLAVE'" color="#999999" colorselected="black" align="center"/>
+          <text size="11" dx="+0" action="masterdeck ? masterdeck_auto ? get_text 'AUTO' : get_text 'MASTER' : get_text 'SLAVE'" colorselected="black" coloron="orange" colorover="white" colordown="orange" align="center"/>
         </button>
       </group>
       <!-- PLAY/PAUSE BUTTON -->

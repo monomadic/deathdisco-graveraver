@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Center panel: the Pro mixer-mode middle column (MIXER / MIXER_4DECKS)
+       shell plus one file per tab pane. -->
+  <xi:include href="center-panel.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="eq-mixer.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="sampler.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="wave-mixer.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="master-mixer.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Wave (scratch) pane: vertical scratch waveforms and scratch controls. -->
+  <define class="WAVE_MIXER_PANE">
+    <visual x="+4" width="307" height="440">
+      <off shape="square" color="dark_0" radius="6" bordersize="1" border="dark_5"/>
+    </visual>
+    <panel class="vertical_scratchwave2" deck="1" visibility="not deck 3 leftdeck" x="+40" y="+0" outer_height="410" waveform_height="410" dropzone_height="370"/>
+    <panel class="vertical_scratchwave2" deck="3" visibility="deck 3 leftdeck" x="+40" y="+0" outer_height="410" waveform_height="410" dropzone_height="370"/>
+    <!-- RIGHT -->
+    <panel class="vertical_scratchwave2" deck="2" visibility="not deck 4 rightdeck" x="+320-98-10-19-19" y="+0" outer_height="410" waveform_height="410" dropzone_height="370"/>
+    <panel class="vertical_scratchwave2" deck="4" visibility="deck 4 rightdeck" x="+320-98-10-19-19" y="+0" outer_height="410" waveform_height="410" dropzone_height="370"/>
+    <!-- config button -->
+    <panel class="scratch_controls" x="960-20" y="+0"/>
+    <!-- needle -->
+    <group visibility="setting 'waveformCenter' 'centered'">
+      <group x="+25" y="+210">
+        <visual width="260" height="28">
+          <off shape="square" color="#88000000" border_size="0" border="deckcolor" radius="0"/>
+        </visual>
+        <visual y="+13" width="260" height="2">
+          <off shape="square" color="white" border_size="0" border="deckcolor" radius="0"/>
+        </visual>
+      </group>
+    </group>
+  </define>
+</defs>

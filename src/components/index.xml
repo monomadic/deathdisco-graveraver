@@ -28,7 +28,8 @@
   <xi:include href="containers/waveform/stack-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="racks/mixer-racks.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- Center panel (pro mixer-mode middle column) -->
+  <xi:include href="center-panel/index.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="racks/containers/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="racks/containers/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

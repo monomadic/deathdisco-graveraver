@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Center panel: the middle column shown on Pro layouts in mixer mode
+       (MIXER / MIXER_4DECKS) plus its channel-strip building blocks. -->
+  <define class="XFADER_DECK_SELECT" placeholders="deck,side,width=60,textsize=14,textcolor=#888888,offcolor=#111111,overcolor=#111111">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="29" coloroff="infos_background" bordercoloroff="#333333" bordersize="1"/>
+      <button x="+0" y="+1" width="[WIDTH]" height="26" action="[SIDE]" border_size="0">
+        <up color="black"/>
+        <over color="black"/>
+        <selected color="black"/>
+        <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="white" align="center" weight="bold" text="[DECK]"/>
+      </button>
+      <visual source="get_level" type="linear" orientation="horizontal" direction="right" granularity="23">
+        <pos x="+0" y="-1"/>
+        <size width="[WIDTH]" height="2"/>
+        <off shape="square" color="transparent"/>
+        <on shape="square" color="green"/>
+      </visual>
+      <button x="+0" y="+27" width="[WIDTH]" height="3" action="[SIDE]" border_size="0">
+        <up color="deckcolor"/>
+        <over color="deckcolor"/>
+        <selected color="deckcolor"/>
+        <text fontsize="[TEXTSIZE]" color="#222222" colorover="#444444" colorselected="black" align="center" text=""/>
+      </button>
+    </deck>
+  </define>
+  <define class="CHANNEL_EXTENDED" placeholders="deck">
+    <deck deck="[DECK]">
+      <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="xf_background"/>
+      <visual class="gfx_shape" y="+30" width="77" height="432-76-1" coloroff="panel_background" visibility="0.9"/>
+      <textzone>
+        <pos x="+0" y="+0"/>
+        <size width="77" height="30"/>
+        <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+      </textzone>
+      <!-- 3knobs -->
+      <group novisibility="setting 'eqMode' 'STEMS'" y="+30">
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72+65" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+56" visibility="var_equal '@$show_drop_menus' 0"/>
+      </group>
+      <!-- 5knobs -->
+      <group visibility="setting 'eqMode' 'STEMS'" y="+30">
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72+65" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+72+65+65" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+81+68+68+64" knobsize="41" knobradius="10" faderradius="9" action="stem 'bass'" rgclick="stem 'bass' 0% ? stem 'bass' 50% : stem 'bass' 0%" dblclick="stem 'bass' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'BASS'" actiontxt="eq_mode +1"/>
+      </group>
+      <group name="levels,vu,cue" y="+366">
+        <panel class="vu_meter_leds" x="+23" y="+30" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds" x="+23+11+10" y="+30" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="158"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="158-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+        <!-- PRO: 4 DECK AUDIO PANEL CUE BUTTON -->
+        <button class="button_main" x="+2+4+4" y="+195" width="57" height="24" action="pfl" coloroff="button_background4" brcoloroff="button_background4" text="CUE" textcoloron="black"/>
+      </group>
+    </deck>
+  </define>
+  <define class="EQ_ZONE_LEFT" placeholders="deck">
+    <deck deck="[DECK]">
+      <!-- 3knobs -->
+      <group x="+30">
+        <visual class="gfx_shape" x="+14+9" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
+        <menu class="fake_menu" x="+14+9+18" y="+58"/>
+        <button class="button_main" x="+14+9" y="+16" width="52" height="28" action="pfl" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
+        <button class="dropdown_menu" action="eq_mode" x="+14+90+20-14-8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+14+90+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+14+90+20+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+14+90+20+80+80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <button class="button_main" x="+14+90+20+80+80+80+20+41+8-12-58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+14+90+20+80+80+80+20+41+8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+14+90+20+80+80+80+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
+      </group>
+    </deck>
+  </define>
+  <define class="EQ_ZONE_RIGHT" placeholders="deck">
+    <deck deck="[DECK]">
+      <!-- 3knobs -->
+      <group x="+6">
+        <visual class="gfx_shape" x="+6+8+5" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
+        <button class="button_main" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20+58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20-8-14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+504-30-52-14-9-41-20+14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <button class="button_main" x="+504-30-60-14-9" y="+16" width="52" height="28" action="pfl" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
+        <menu class="fake_menu" x="+504-30-60-14-9+19" y="+58"/>
+      </group>
+    </deck>
+  </define>
+  <define class="CHANNEL_LEVELS_MINI" placeholders="deck">
+    <deck deck="[DECK]">
+      <group name="ONLY">
+        <visual class="gfx_shape" width="77" height="98" coloroff="xf_background"/>
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="62"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="62-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+  </define>
+  <define class="CHANNEL_LEVELS_STACK" placeholders="deck">
+    <deck deck="[DECK]">
+      <group name="ONLY">
+        <visual class="gfx_shape" width="77" height="164" coloroff="xf_background"/>
+        <!-- gain level -->
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_stack" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_stack" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="128"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="128-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+  </define>
+  <define class="CHANNEL_LEVELS_MINI4_LEFT">
+    <visual class="gfx_shape" width="77" height="98+2+98" coloroff="xf_background"/>
+    <deck deck="1">
+      <group name="deck1">
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="62"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="62-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+    <deck deck="3">
+      <group name="deck3" y="+98+2">
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="62"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="62-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+  </define>
+  <define class="CHANNEL_LEVELS_MINI4_RIGHT">
+    <visual class="gfx_shape" width="77" height="98+2+98" coloroff="xf_background"/>
+    <deck deck="2">
+      <group name="deck2">
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="62"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="62-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+    <deck deck="4">
+      <group name="deck4" y="+98+2">
+        <textzone>
+          <pos x="+0" y="+0"/>
+          <size width="77" height="30"/>
+          <text fontsize="15" weight="" color="deckcolor" align="center" action="get_level 'db'" important="true"/>
+        </textzone>
+        <panel class="vu_meter_leds_mini" x="+23" y="+32" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <panel class="vu_meter_leds_mini" x="+23+11+10" y="+32" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+        <group name="level" x="+20" y="+36+2">
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7"/>
+            <size width="38" height="62"/>
+            <fader color="faderbackground2" width="38" height="14" visibility="0.5"/>
+          </slider>
+          <slider action="level" dblclick="level 80%" orientation="vertical" direction="up" frommiddle="false">
+            <pos y="-7+6"/>
+            <size width="38" height="62-12"/>
+            <fader color="faderbackgroundline" width="38" height="2"/>
+          </slider>
+        </group>
+      </group>
+    </deck>
+  </define>
+  <define class="MIXER">
+    <!-- MIDDLE PANEL BORDER -->
+    <visual x="+4" width="308" height="375">
+      <off shape="square" color="#000000" radius="6" bordersize="1" border="#222222"/>
+    </visual>
+    <!-- MIDDLE PANEL: MIXER -->
+    <panel name="audiomixer" group="mixer" visible="yes" class="eq_mixer_pane"/>
+    <!-- MIXER PANEL: SAMPLER -->
+    <panel name="samplermixer" group="mixer" visible="no" class="sampler_mixer_pane"/>
+    <!-- PRO: MIXER PANEL: WAVE -->
+    <panel name="scratchmixer" group="mixer" visible="no" class="wave_mixer_pane"/>
+    <panel name="mastermixer" group="mixer" visible="no" class="master_mixer_pane"/>
+  </define>
+  <define class="LEVELS_MINI">
+    <group name="2/4 (decks_swap)" visibility="var_not_equal '@$layout_4deck' 1">
+      <panel class="channel_levels_mini" deck="3" x="+77+1" visibility="deck 3 leftdeck"/>
+      <panel class="channel_levels_mini" deck="1" x="+77+1" visibility="not deck 3 leftdeck"/>
+      <panel class="channel_levels_mini" deck="2" x="+77+1+77+2" visibility="not deck 4 rightdeck"/>
+      <panel class="channel_levels_mini" deck="4" x="+77+1+77+2" visibility="deck 4 rightdeck"/>
+    </group>
+    <group name="4 (fulldecks)" visibility="var_equal '@$layout_4deck' 1">
+      <panel class="channel_levels_mini4_left" deck="left" x="+77+1"/>
+      <panel class="channel_levels_mini4_right" deck="right" x="+77+1+77+2"/>
+    </group>
+  </define>
+  <define class="MIXER_4DECKS">
+    <!-- Placeholder preserves the current 4-deck Sampler tab without loading the 2-deck sampler tree. -->
+    <panel name="samplermixer" group="mixer" visible="yes">
+    </panel>
+    <panel name="audiomixer" group="mixer" visible="yes">
+      <!-- Keep only the active mixer-order tree instantiated. -->
+      <group name="3124" condition="setting 'mixerOrder' '3124'">
+        <panel class="channel_extended" deck="3"/>
+        <panel class="channel_extended" deck="1" x="+77+1"/>
+        <panel class="channel_extended" deck="2" x="+77+1+77+2"/>
+        <panel class="channel_extended" deck="4" x="+77+1+77+2+77+1"/>
+      </group>
+      <group name="1234" condition="setting 'mixerOrder' '1234'">
+        <panel class="channel_extended" deck="1"/>
+        <panel class="channel_extended" deck="2" x="+77+1"/>
+        <panel class="channel_extended" deck="3" x="+77+1+77+2"/>
+        <panel class="channel_extended" deck="4" x="+77+1+77+2+77+1"/>
+      </group>
+      <group name="1342" condition="setting 'mixerOrder' '1342'">
+        <panel class="channel_extended" deck="1"/>
+        <panel class="channel_extended" deck="3" x="+77+1"/>
+        <panel class="channel_extended" deck="4" x="+77+1+77+2"/>
+        <panel class="channel_extended" deck="2" x="+77+1+77+2+77+1"/>
+      </group>
+      <menu tooltip="MIXER OPTIONS">
+        <pos x="960-10" y="+0"/>
+        <size width="20" height="18"/>
+        <off shape="square" color="xf_background" border="xf_background"/>
+        <icon sysicon="chevrondown" height="20" width="20" color="textdarker" colorover="needle" colordown="needle"/>
+        <item text="Frequency" localize="true" action="setting 'eqMode' 'Frequency'" check="setting 'eqMode' 'Frequency'"/>
+        <item text="ModernEQ" localize="true" action="setting 'eqMode' 'modernEQ'" check="setting 'eqMode' 'modernEQ'"/>
+        <item text="EZRemix" localize="true" action="setting 'eqMode' 'EZRemix'" check="setting 'eqMode' 'EZRemix'"/>
+        <item text="Full Stems (5 knobs)" localize="true" action="setting 'eqMode' 'STEMS'" check="setting 'eqMode' 'STEMS'"/>
+        <separator/>
+        <submenu text="EQ Frequency Spread" localize="true">
+          <item text="Default" action="setting 'equalizerFrequencySpread' 'default'" check="setting 'equalizerFrequencySpread' 'default'"/>
+          <item text="Full Kill" action="setting 'equalizerFrequencySpread' 'full kill'" check="setting 'equalizerFrequencySpread' 'full kill'"/>
+        </submenu>
+        <submenu text="Vu Meter" localize="true">
+          <item text="Peak Mode" action="setting 'vuMeter' 'peak'" check="setting 'vuMeter' 'peak'"/>
+          <item text="Power Mode" action="setting 'vuMeter' 'power'" check="setting 'vuMeter' 'power'"/>
+          <separator text="Color"/>
+          <item text="Per Deck" action="set '@$hntnhvumetercolors' 0" check="var_equal '@$hntnhvumetercolors' 0"/>
+          <item text="Natural" action="set '@$hntnhvumetercolors' 1" check="var_equal '@$hntnhvumetercolors' 1"/>
+          <separator/>
+          <item text="Show Extra Peak Meter" localize="true" action="toggle '@$show_peak_meter'" check="var_equal '@$show_peak_meter' 1"/>
+        </submenu>
+        <submenu text="Mixer Order" localize="true">
+          <item text="1-2-3-4" action="setting 'mixerOrder' '1234'" check="setting 'mixerOrder' '1234'"/>
+          <item text="3-1-2-4" action="setting 'mixerOrder' '3124'" check="setting 'mixerOrder' '3124'"/>
+          <item text="1-3-4-2" action="setting 'mixerOrder' '1342'" check="setting 'mixerOrder' '1342'"/>
+        </submenu>
+        <submenu text="Filter Resonance" localize="true">
+          <item text="Default" action="setting 'filterDefaultResonance' 'default'" check="setting 'filterDefaultResonance' 'default'"/>
+          <item text="Strong" action="setting 'filterDefaultResonance' 'strong'" check="setting 'filterDefaultResonance' 'strong'"/>
+          <item text="Subtle" action="setting 'filterDefaultResonance' 'subtle'" check="setting 'filterDefaultResonance' 'subtle'"/>
+        </submenu>
+        <submenu text="Fader Start" localize="true">
+          <item text="ON" action="deck all setting 'faderStart' on" check="setting 'faderStart' on"/>
+          <item text="OFF" action="deck all setting 'faderStart' off" check="setting 'faderStart' off"/>
+        </submenu>
+        <submenu text="Fader StartStop" localize="true">
+          <item text="ON" action="deck all setting 'faderStartStop' on" check="setting 'faderStartStop' on"/>
+          <item text="OFF" action="deck all setting 'faderStartStop' off" check="setting 'faderStartStop' off"/>
+        </submenu>
+        <separator/>
+        <item text="Reset EQ On Load" localize="true" action="setting 'resetEqOnLoad'" check="setting 'resetEqOnLoad'"/>
+        <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
+        <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
+        <separator/>
+        <submenu text="Crossfader" localize="true">
+          <item text="Disabled" action="setting 'crossfaderDisable'" check="setting 'crossfaderDisable'"/>
+          <item text="Hamster" action="setting 'crossfaderHamster'" check="setting 'crossfaderHamster'"/>
+          <separator/>
+          <item text="Full" action="setting 'crossfaderCurve' 'full'" check="setting 'crossfaderCurve' 'full'"/>
+          <item text="Smooth" action="setting 'crossfaderCurve' 'smooth'" check="setting 'crossfaderCurve' 'smooth'"/>
+          <item text="Scratch" action="setting 'crossfaderCurve' 'scratch'" check="setting 'crossfaderCurve' 'scratch'"/>
+          <item text="Custom" action="setting 'crossfaderCurve' 'custom'" check="setting 'crossfaderCurve' 'custom'"/>
+          <item text="Cut" action="setting 'crossfaderCurve' 'cut'" check="setting 'crossfaderCurve' 'cut'"/>
+        </submenu>
+      </menu>
+    </panel>
+    <!-- 4 deck scratch mixer -->
+    <panel name="scratchmixer" group="mixer" visible="no">
+      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 0"/>
+      <visual class="gfx_shape" width="312" height="626" coloroff="wave_background" bordercoloroff="panel_background" bordersize="2" visibility="var_equal '@$hide_crossfader' 1"/>
+      <panel class="vertical_scratchwave" deck="3" visibility="deck 3 leftdeck" x="+40" y="+0"/>
+      <panel class="vertical_scratchwave" deck="1" visibility="deck 1 leftdeck" x="+40" y="+0"/>
+      <panel class="vertical_scratchwave" deck="2" visibility="deck 2 rightdeck" x="+320-98-10-19-19" y="+0"/>
+      <panel class="vertical_scratchwave" deck="4" visibility="deck 4 rightdeck" x="+320-98-10-19-19" y="+0"/>
+      <panel class="scratch_controls" x="960-20" y="+0"/>
+    </panel>
+    <panel name="mastermixer" group="mixer" visible="no">
+      <panel class="mic/headphones_controls"/>
+      <panel class="mastercentral_controls" x="+77+1"/>
+      <panel class="master_controls" x="+77+1+77+2+77+1"/>
+    </panel>
+    <!-- XFADER ZONE -->
+    <group visibility="var_equal '@$hide_crossfader' 1 ? not skin_panel 'scratchmixer' : on">
+      <visual class="gfx_shape" y="+432-56+216+2" width="312" height="56" coloroff="xf_background"/>
+      <panel class="xfader_panel" x="+20" y="+432-56+6+4+216+2"/>
+    </group>
+  </define>
+  <define class="XFADER_PANEL">
+    <group y="+53">
+      <panel class="xfader_deck_select" deck="3" side="leftdeck" x="+0" y="+1"/>
+      <panel class="xfader_deck_select" deck="1" side="leftdeck" x="+61" y="+1"/>
+      <panel class="xfader_deck_select" deck="2" side="rightdeck" x="+191" y="+1"/>
+      <panel class="xfader_deck_select" deck="4" side="rightdeck" x="+252" y="+1"/>
+      <!-- PLAY ALL BUTTON -->
+      <group name="playpause_global" x="+123" y="+0">
+        <visual class="gfx_shape" width="66" height="34" coloroff="red">
+          <off color="#000000" border="#555555" border_size="1" shape="square" radius="4" iconcolor="#999999"/>
+        </visual>
+        <!-- BEAT KEEPER -->
+        <group x="+4" y="+3">
+          <panel class="beat_keeper_ex" bgcolor="#222222" width="14" y="+0" deck="3"/>
+          <panel class="beat_keeper_ex" bgcolor="#222222" width="14" y="+7" deck="1"/>
+          <panel class="beat_keeper_ex" bgcolor="#222222" width="14" y="+14" deck="2"/>
+          <panel class="beat_keeper_ex" bgcolor="#222222" width="14" y="+21" deck="4"/>
+        </group>
+      </group>
+    </group>
+  </define>
+</defs>

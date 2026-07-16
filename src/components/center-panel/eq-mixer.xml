@@ -72,31 +72,37 @@
   </define>
   <define class="CHANNEL_EQS" placeholders="deck">
     <deck deck="[DECK]">
+      <!-- bg around stem controls -->
+      <visual x="+8" y="+70" width="63" height="200">
+        <off shape="square" color="dark_4" radius="6" bordersize="1" border="dark_5"/>
+      </visual>
       <group novisibility="setting 'eqMode' 'STEMS'">
         <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$show_drop_menus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
-        <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
-        <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
-        <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
-        <!-- PRO: AUDIO PANEL: COLORFX -->
-        <button class="dropdown_menu" action="effect_select colorfx" x="+58" y="+14+81+68+68+50+6" visibility="var_equal '@$show_drop_menus' 0"/>
-        <!-- filter on light -->
-        <group x="+55" y="+14+81+68+68+50+6">
-          <visual>
-            <size width="16" height="16"/>
-            <off shape="circle" color="#333333" border="#222222" border_size="1"/>
-          </visual>
-          <button action="effect_active 'colorfx'" query="effect_active 'colorfx'" shape="circle">
-            <size width="8" height="8"/>
-            <pos x="+4" y="+4"/>
-            <off shape="circle" color="#AAAAAA" border="#000000" border_size="1"/>
-            <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
-            <over shape="circle" color="#DDDDDD" border="#000000" border_size="0"/>
-            <down shape="circle" color="#00FF00" border="#88FFFF00" border_size="0"/>
-          </button>
+        <panel class="knob" x="+18" y="+10" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+65" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+18" y="+14+65+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <group x="+10" y="+14+68+68+68+50+6">
+          <!-- PRO: AUDIO PANEL: COLORFX -->
+          <button x="+45" class="dropdown_menu" action="effect_select colorfx" visibility="var_equal '@$show_drop_menus' 0"/>
+          <!-- filter on light -->
+          <group>
+            <visual>
+              <size width="16" height="16"/>
+              <off shape="circle" color="#333333" border="#222222" border_size="1"/>
+            </visual>
+            <button action="effect_active 'colorfx'" query="effect_active 'colorfx'" shape="circle">
+              <size width="8" height="8"/>
+              <pos x="+4" y="+4"/>
+              <off shape="circle" color="#AAAAAA" border="#000000" border_size="1"/>
+              <selected shape="circle" color="#00FF00" border="#222222" border_size="1"/>
+              <over shape="circle" color="#DDDDDD" border="#000000" border_size="0"/>
+              <down shape="circle" color="#00FF00" border="#88FFFF00" border_size="0"/>
+            </button>
+          </group>
+          <!-- colorfx on mixer panel on pro -->
+          <panel class="knob" x="+8" y="+8" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label &amp; param_cast 'text' 9" actiontxt="filter_selectcolorfx"/>
         </group>
-        <!-- colorfx on mixer panel on pro -->
-        <panel class="knob" x="+18" y="+14+81+68+68+50+13" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label &amp; param_cast 'text' 9" actiontxt="filter_selectcolorfx"/>
       </group>
       <!-- 5knobs -->
       <group visibility="setting 'eqMode' 'STEMS'">
@@ -111,7 +117,7 @@
   </define>
   <define class="CHANNEL_LEVELS" placeholders="deck">
     <deck deck="[DECK]">
-      <visual class="gfx_shape" width="77" height="432-56-1" coloroff="#000000"/>
+      <visual class="gfx_shape" width="77" height="420" coloroff="#000000"/>
       <panel class="vu_meter_leds" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
       <panel class="vu_meter_leds" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
       <button class="button_main" action="pfl" query="pfl">

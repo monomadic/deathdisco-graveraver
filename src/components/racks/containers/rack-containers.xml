@@ -32,15 +32,6 @@
       </deck>
     </group>
   </define>
-  <define class="EQ_RACK_EX" placeholders="deck,*panelname">
-    <deck deck="[DECK]">
-      <visual class="gfx_shape" width="504" height="86" coloroff="panel_background"/>
-      <button class="button_main" query="on" width="30" height="86" textaction="get_text 'DECK `get_deck`'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="leftdeck"/>
-      <button class="button_main" x="+504-30" query="on" width="30" height="86" textaction="get_text 'DECK `get_deck`'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="rightdeck"/>
-      <panel class="eq_zone_left" panelname="[PANELNAME]" visibility="leftdeck"/>
-      <panel class="eq_zone_right" panelname="[PANELNAME]" visibility="rightdeck"/>
-    </deck>
-  </define>
   <define class="VIDEO_RACK_EX" placeholders="deck,*panelname">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="561" height="140" coloroff="panel_background"/>

@@ -9,12 +9,12 @@
     <text dx="[TEXTDX]" dy="[TEXTDY]" fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="[ALIGN]" orientation="[ORIENTATION]" action="[TEXTACTION]" text="[TEXT]" localize="true" scroll="[TEXTSCROLL]" important="[IMPORTANT]"/>
     <icon dx="[ICONDX]" sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
   </define>
-  <define class="BUTTON_MAIN" placeholders="width,height,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=13,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no" condition="var_equal '@$color_scheme' 4">
+  <define class="BUTTON_LCD_OUTLINE" border_size="1" border_radius="[RADIUS]" placeholders="width,height=24,text,textheight=height,important=true,textaction,coloroff=button_background,coloron=deckcolor,brcoloroff=button_background,brcoloron=deckcolor,bordersize=1,shape=square,icondx,sysicon,iconsize,textsize=12,textcolor=textoff,textcoloron=texton,align=center,orientation=horizontal,textscroll=no,textdx=0,textdy=-1,radius=4,color_on,color_off=grey">
     <size width="[WIDTH]" height="[HEIGHT]"/>
-    <off color="[COLOROFF]" border="[BRCOLOROFF]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
-    <down color="[COLORON]" border="[BRCOLORON]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
-    <selected color="[COLORON]" border="[BRCOLORON]" border_size="[BORDERSIZE]" shape="[SHAPE]"/>
-    <text fontsize="[TEXTSIZE]" height="[TEXTHEIGHT]" weight="bold" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="[ALIGN]" orientation="[ORIENTATION]" action="[TEXTACTION]" text="[TEXT]" localize="true" scroll="[TEXTSCROLL]" important="[IMPORTANT]"/>
+    <off color="transparent" border="[COLOR_OFF]" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="[RADIUS]"/>
+    <down color="[COLOR_ON]" border="[COLOR_ON]" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="[RADIUS]"/>
+    <selected color="transparent" border="[BRCOLORON]" border_size="[BORDERSIZE]" shape="[SHAPE]" radius="[RADIUS]"/>
+    <text dx="[TEXTDX]" dy="[TEXTDY]" fontsize="[TEXTSIZE]" weight="" color="[TEXTCOLOR]" colorselected="[TEXTCOLORON]" colordown="[TEXTCOLORON]" align="[ALIGN]" orientation="[ORIENTATION]" action="[TEXTACTION]" text="[TEXT]" localize="true" scroll="[TEXTSCROLL]" important="[IMPORTANT]"/>
     <icon dx="[ICONDX]" sysicon="[SYSICON]" color="[TEXTCOLOR]" colordown="[TEXTCOLORON]" colorselected="[TEXTCOLORON]" width="[ICONSIZE]" height="[ICONSIZE]"/>
   </define>
 </defs>

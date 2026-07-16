@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="EQ_RACK_EX" placeholders="deck,*panelname">
+    <deck deck="[DECK]">
+      <visual shape="square" width="504" height="86" coloroff="dark_3" bordersize="1" border="dark_8">
+        <off shape="square" color="dark_3" radius="6" bordersize="1" border="dark_5"/>
+      </visual>
+      <button class="button_main" query="on" width="30" height="86" textaction="get_text 'DECK `get_deck`'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="leftdeck"/>
+      <button class="button_main" x="+504-30" query="on" width="30" height="86" textaction="get_text 'DECK `get_deck`'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="rightdeck"/>
+      <panel class="eq_zone_left" panelname="[PANELNAME]" visibility="leftdeck"/>
+      <panel class="eq_zone_right" panelname="[PANELNAME]" visibility="rightdeck"/>
+    </deck>
+  </define>
+  <!-- Mixer rack: per-deck EQ/filter knob zones used by the mixer rack surfaces -->
+  <define class="EQ_ZONE_LEFT" placeholders="deck">
+    <deck deck="[DECK]">
+      <!-- 3knobs -->
+      <group x="+30">
+        <visual x="+100" y="+6" width="250" height="72">
+          <off shape="square" color="dark_4" radius="6" bordersize="1" border="dark_5"/>
+        </visual>
+        <visual class="gfx_shape" x="+0" y="+85-30" width="470" height="20" coloroff="#55000000"/>
+        <!-- <menu class="fake_menu" x="+14+9+18" y="+58"/> -->
+        <!-- cue -->
+        <button class="button_lcd_outline" x="+14+9" y="+16" width="52" action="pfl" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
+        <!-- eq mode -->
+        <button class="button_lcd_outline" x="+14+9" y="+16" width="52" action="pfl" coloroff="button_background" brcoloroff="button_background" textaction="eq_mode"/>
+        <!-- eq mode -->
+        <button class="dropdown_menu" action="eq_mode" x="+14+90+20-14-8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <!-- vocal knob -->
+        <panel class="knob" x="+14+90+20" y="+14" textbelow="+42" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+14+90+20+80" y="+14" textbelow="+42" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+14+90+20+80+80" y="+14" textbelow="+42" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <button class="button_main" x="+14+90+20+80+80+80+20+41+8-12-58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+14+90+20+80+80+80+20+41+8" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+14+90+20+80+80+80+20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
+      </group>
+    </deck>
+  </define>
+  <define class="EQ_ZONE_RIGHT" placeholders="deck">
+    <deck deck="[DECK]">
+      <!-- 3knobs -->
+      <group x="+6">
+        <visual class="gfx_shape" x="+6+8+5" y="+86-29" width="400+16+8" height="20" coloroff="xf_background" visibility="0.57"/>
+        <button class="button_main" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20+58" y="+16" width="5" height="32" action="effect_active colorfx" query="effect_active colorfx" coloroff="button_background" brcoloroff="button_background"/>
+        <button class="dropdown_menu" action="filter_selectcolorfx" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20-8-14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80-80-20" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="filter" dblclick="filter 50%" frommiddle="true" fillcolor="knobfillon" textaction="filter_label" actiontxt="filter_selectcolorfx"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14-80" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+504-30-52-14-9-41-20+14" y="+20" visibility="var_equal '@$show_drop_menus' 0"/>
+        <panel class="knob" x="+504-30-52-14-9-41-20-14-8-14" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
+        <button class="button_lcd_outline" x="+504-30-60-14-9" y="+16" width="52" action="pfl" color_on="blue" coloroff="button_background" brcoloroff="button_background" text="CUE"/>
+        <menu class="fake_menu" x="+504-30-60-14-9+19" y="+58"/>
+      </group>
+    </deck>
+  </define>
+</defs>

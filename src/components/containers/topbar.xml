@@ -177,13 +177,13 @@
         <item text="Dark" localize="true" action="setting 'dialogsColorTheme' 'dark'" check="setting 'dialogsColorTheme' 'dark'"/>
         <item text="Light" localize="true" action="setting 'dialogsColorTheme' 'light'" check="setting 'dialogsColorTheme' 'light'"/>
       </submenu>
-      <submenu text="RACK View" visibility="not var_equal '@$skin_mode' 0 &amp;&amp; not var_equal '@$skin_mode' 4">
+      <submenu text="RACK View" visibility="not var_equal '@$skin_mode' 0">
         <item text="Single Rack" action="set '@$rack_mode' 1 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin" check="var_equal '@$rack_mode' 1"/>
         <item text="Multi Rack" action="set '@$rack_mode' 0" check="var_equal '@$rack_mode' 0"/>
         <separator localize="true"/>
         <item text="Show In Browser Zoom" localize="true" action="toggle '@$show_zoom_racks' &amp; load_skin" check="var_equal '@$show_zoom_racks' 1"/>
       </submenu>
-      <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$skin_mode' 2 &amp;&amp; not var_equal '@$skin_mode' 5">
+      <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$skin_mode' 2">
         <item text="Needle" localize="true" action="set '@$jog_type' 0" check="var_equal '@$jog_type' 0"/>
         <item text="Text" localize="true" action="set '@$jog_type' 1" check="var_equal '@$jog_type' 1"/>
         <item text="Sync Status" localize="true" action="set '@$jog_type' 2" check="var_equal '@$jog_type' 2"/>
@@ -333,29 +333,6 @@
       <item text="Keep Play Status On Load Song" localize="true" action="setting 'keepPlayStatusOnLoadSong'" check="setting 'keepPlayStatusOnLoadSong'"/>
       <item text="Show Tooltips" localize="true" action="setting 'tooltip' no ? setting 'tooltip' yes : setting 'tooltip' yes ? setting 'tooltip' no" check="setting 'tooltip' 'yes'"/>
     </menu>
-    <group visibility="false">
-      <button action="close">
-        <pos x="15" y="+13"/>
-        <size width="17" height="17"/>
-        <off shape="circle" color="#bf4744"/>
-        <down shape="circle" color="#fc5753"/>
-        <selected shape="circle" color="#fc5753"/>
-      </button>
-      <button action="minimize">
-        <pos x="15+27" y="+13"/>
-        <size width="17" height="17"/>
-        <off shape="circle" color="#be8d2f"/>
-        <down shape="circle" color="#fdbc40"/>
-        <selected shape="circle" color="#fdbc40"/>
-      </button>
-      <button action="maximize">
-        <pos x="15+27+27" y="+13"/>
-        <size width="17" height="17"/>
-        <off shape="circle" color="#279637"/>
-        <down shape="circle" color="#33c748"/>
-        <selected shape="circle" color="#33c748"/>
-      </button>
-    </group>
   </group>
   <!-- vr -->
   <line color="dark_5" x="58" y="1" width="1" height="39"/>
@@ -480,26 +457,6 @@
       <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
       <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
     </menu>
-    <!-- sandbox button -->
-    <group name="sandbox area" x="115+80+900" y="8" visibility="can_sandbox ? false">
-      <button class="button_main" width="75" height="27" action="sandbox" coloroff="panel_background" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms" visibility="sandbox on ? false : true"/>
-      <button class="button_main" width="75" height="27" action="sandbox" coloroff="panel_background" textsize="10" textcoloron="texton" text="SANDBOX" coloron="orange" bordersize="0" query="sandbox ? blink 300ms" visibility="sandbox off ? false : true"/>
-      <visual x="115+100+960-1" y="8" width="160" height="27" visibility="sandbox off ? false : true">
-        <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
-      </visual>
-      <!-- sandbox button + wavepos: on state -->
-      <songpos class="songpos" deck="sandbox">
-        <pos x="118+100+960" y="13"/>
-        <size width="150" height="16"/>
-      </songpos>
-      <visual x="115+100+960-1" y="8" width="160" height="27" visibility="sandbox off ? false : true">
-        <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
-      </visual>
-      <songpos class="songpos" deck="sandbox">
-        <pos x="118+100+960" y="13"/>
-        <size width="150" height="16"/>
-      </songpos>
-    </group>
     <!-- ? phrase circles in 4 deck swap ? -->
     <group name="barsleft" x="+660" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 0 ? not deck 3 leftdeck">
       <deck deck="1">

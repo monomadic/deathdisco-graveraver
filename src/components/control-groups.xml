@@ -125,7 +125,7 @@
       </menu>
       <!-- PRO: MASTER PANEL: MASTER VOLUME -->
       <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="master_volume" rgclick="master_volume 62% while_pressed" dblclick="master_volume 62%" frommiddle="false" fillcolor="#777777" textaction="setting 'zeroDB' '-12db' ? get_text '-12dB' : setting 'zeroDB' '-9db' ? get_text '-9dB' : setting 'zeroDB' '-6db' ? get_text '-6dB' : setting 'zeroDB' '-3db' ? get_text '-3dB' : setting 'zeroDB' '-1db' ? get_text '-1dB' : setting 'zeroDB' 'default' ? get_text 'MASTER'"/>
-      <panel class="knob" x="+18" y="+14+60" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="temporary" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
+      <panel class="knob" x="+18" y="+14+60" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="master_balance 50% while_pressed" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
       <button class="button_main" x="+10" y="+74+60" width="77-10-10" height="26" action="mono_mix" textsize="11" text="MONO" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+10" y="+74+24+12+60" width="77-10-10" height="26" action="sampler_rec 'master'" textsize="11" text="REC" coloron="br_focus" bordersize="0"/>
       <group x="+10" y="+200">
@@ -151,7 +151,7 @@
         <item text="-12dB" action="setting 'zeroDB' '-12db'" check="setting 'zeroDB' '-12db'"/>
       </menu>
       <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="master_volume" rgclick="master_volume 62% while_pressed" dblclick="master_volume 62%" frommiddle="false" fillcolor="br_focus" textaction="setting 'zeroDB' '-12db' ? get_text '-12dB' : setting 'zeroDB' '-9db' ? get_text '-9dB' : setting 'zeroDB' '-6db' ? get_text '-6dB' : setting 'zeroDB' '-3db' ? get_text '-3dB' : setting 'zeroDB' '-1db' ? get_text '-1dB' : setting 'zeroDB' 'default' ? get_text 'MASTER'"/>
-      <panel class="knob" x="+18" y="+14+60" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="temporary" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
+      <panel class="knob" x="+18" y="+14+60" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="master_balance 50% while_pressed" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
       <panel class="knob" x="+18" y="+14+60+60" knobsize="41" knobradius="10" faderradius="9" action="booth_volume" rgclick="booth_volume 60% while_pressed" dblclick="booth_volume 60%" frommiddle="false" fillcolor="br_focus" text="BOOTH"/>
       <button class="button_main" x="+10" y="+74+60+60" width="77-10-10" height="26" action="fake_master" textsize="11" text="FAKE" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+10" y="+74+24+12+60+60" width="77-10-10" height="26" action="mono_mix" textsize="11" text="MONO" coloron="br_focus" bordersize="0"/>

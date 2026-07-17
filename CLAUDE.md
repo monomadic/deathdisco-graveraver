@@ -19,7 +19,8 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - `just audit`: class and structural audits only.
 - `just generate`: writes `src/layouts/browser/browser-positions.generated.xml`.
 - `just build`: regenerates browser positions and writes the built/minified skin under `build/`.
-- `just install`: builds and installs the skin into the local VirtualDJ skin directory.
+- `just install`: builds and installs the skin into
+  `~/Library/Application Support/VirtualDJ/Skins/DeathDisco Grave Raver v1/`.
 - `just watch`: continuously rebuilds and installs after changes under `src/` or `assets/`.
 - `just repair-pad-state`: dry-run the VirtualDJ pad panel state repair; `just repair-pad-state-apply` backs up and writes VirtualDJ's `settings.xml`.
 - `just clean`: deletes local `build/` output.

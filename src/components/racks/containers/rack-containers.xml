@@ -191,8 +191,8 @@
     </group>
     <group name="headphones" visibility="var_equal '@$show_left_mixer_rack' 1">
       <deck deck="headphones">
-        <panel class="knob" x="+53" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_volume" rgclick="temporary" dblclick="headphone_volume 40%" frommiddle="false" fillcolor="br_focus" text="LEVEL"/>
-        <panel class="knob" x="+53+60" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_mix" rgclick="temporary" dblclick="headphone_mix 50%" frommiddle="true" fillcolor="br_focus" text="MIXING"/>
+        <panel class="knob" x="+53" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_volume" rgclick="headphone_volume 40% while_pressed" dblclick="headphone_volume 40%" frommiddle="false" fillcolor="br_focus" text="LEVEL"/>
+        <panel class="knob" x="+53+60" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_mix" rgclick="headphone_mix 50% while_pressed" dblclick="headphone_mix 50%" frommiddle="true" fillcolor="br_focus" text="MIXING"/>
         <panel class="knob" x="+53+60+60" y="+18" knobsize="41" knobradius="10" faderradius="9" action="headphone_gain" rgclick="headphone_gain 62% while_pressed" dblclick="headphone_gain 50%" frommiddle="false" fillcolor="br_focus" text="GAIN"/>
         <button class="button_main" x="+30+14+20+8+68+55+33" y="+26" width="45" height="28" action="setting 'splitHeadphones'" tooltip="Split Headphones" textsize="11" text="SPLIT" coloron="br_focus" bordersize="0"/>
       </deck>
@@ -208,7 +208,7 @@
         <button class="button_main" x="+185" y="+8+20+4" width="56" height="21" action="sampler_rec 'master'" textsize="11" text="REC" coloron="br_focus" bordersize="0"/>
         <button class="button_main" x="+185" y="+8+20+4+20+4" width="56" height="21" action="setting 'exclusiveAudioAccess'" tooltip="Exclusive Audio Access To Virtual DJ" textsize="11" text="ONLY" coloron="br_focus" bordersize="0"/>
         <panel class="knob" x="+44" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="master_volume" rgclick="master_volume 62% while_pressed" dblclick="master_volume 62%" frommiddle="false" fillcolor="br_focus" textaction="setting 'zeroDB' '-12db' ? get_text '-12dB' : setting 'zeroDB' '-9db' ? get_text '-9dB' : setting 'zeroDB' '-6db' ? get_text '-6dB' : setting 'zeroDB' '-3db' ? get_text '-3dB' : setting 'zeroDB' '-1db' ? get_text '-1dB' : setting 'zeroDB' 'default' ? get_text 'MASTER'"/>
-        <panel class="knob" x="+44+70" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="temporary" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
+        <panel class="knob" x="+44+70" y="+14" textbelow="+45" knobsize="41" knobradius="10" faderradius="9" action="master_balance" rgclick="master_balance 50% while_pressed" dblclick="master_balance 50%" frommiddle="true" fillcolor="br_focus" text="BALANCE"/>
         <menu class="dropdown_menu" tooltip="Zero dB">
           <pos x="+14+9" y="+20"/>
           <separator text="Headroom"/>
@@ -276,10 +276,8 @@
     <panel class="racks_extended" condition="var_equal '@$hide_main_waveforms' 0"/>
     <panel class="racks_single" condition="var_equal '@$hide_main_waveforms' 1"/>
   </define>
-  <!-- Temporary compatibility alias while old layout references are being cleaned up -->
   <!-- Stack-mode rack composition: band below the two stacked deck rows. -->
   <define class="RACKS_STACK" placeholders="*panelname">
     <panel class="racks_band" band_base="164+2+164+2" panelname="[PANELNAME]"/>
   </define>
-  <!-- Compatibility alias while layout references are being cleaned up -->
 </defs>

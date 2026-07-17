@@ -108,12 +108,5 @@
     <panel class="deck_container_pro" x="+1920-0-800" y="+180+2" panelname="deck4" deck="4" deckside="right" visibility="deck 2 rightdeck"/>
     <!-- RACKS (PADS, ETC) -->
     <panel class="pro_racks" x="+2" y="-2"/>
-    <group y="+389">
-      <!-- TRANSPORT 4 DECK -->
-      <!-- <panel class="transport_bar" deck="3" x="+0" deckside="left" visibility="deck 3 leftdeck"/> -->
-      <!-- <panel class="transport_bar" deck="1" x="+0" deckside="left" visibility="not deck 3 leftdeck"/> -->
-      <!-- <panel class="transport_bar" deck="2" x="+1920-2-800" deckside="right" visibility="not deck 4 rightdeck"/> -->
-      <!-- <panel class="transport_bar" deck="4" x="+1920-2-800" deckside="right" visibility="deck 4 rightdeck"/> -->
-    </group>
   </define>
 </defs>

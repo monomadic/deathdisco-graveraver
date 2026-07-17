@@ -19,33 +19,5 @@
       <xi:include href="performance/base.xml" xpointer="xpointer(/module/*)"/>
       <xi:include href="stack/base.xml" xpointer="xpointer(/module/*)"/>
     </group>
-    <!-- RULERS & DEBUGGING TOOLS -->
-    <group visibility="false">
-      <visual>
-        <pos x="0" y="50"/>
-        <size width="1920" height="800"/>
-        <off shape="square" color="transparent" border="blue" border_size="1"/>
-      </visual>
-      <visual>
-        <pos x="1920-800" y="50"/>
-        <size width="800" height="465"/>
-        <off shape="square" color="transparent" border="red" border_size="1"/>
-      </visual>
-      <visual>
-        <pos x="0" y="50"/>
-        <size width="800" height="465"/>
-        <off shape="square" color="transparent" border="red" border_size="1"/>
-      </visual>
-      <visual>
-        <pos x="0" y="50"/>
-        <size width="34" height="800"/>
-        <off shape="square" color="transparent" border="green" border_size="1"/>
-      </visual>
-      <visual>
-        <pos x="800" y="50"/>
-        <size width="320" height="600"/>
-        <off shape="square" color="transparent" border="green" border_size="1"/>
-      </visual>
-    </group>
   </panel>
 </module>

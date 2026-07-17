@@ -16,7 +16,7 @@ suggest:
 
 - `src/skin.xml` is the sole entrypoint.
 - The XInclude graph is complete: all 65 XML files are reachable.
-- `just check` passes with 163 class definitions, 1,222 references, no unused
+- `just check` passes with 163 class definitions, 1,218 references, no unused
   definitions, no unreachable definitions, and no unlinked XML files.
 - Class casing and missing class references are audited.
 - Generated browser geometry has a clear source script and a freshness check.
@@ -69,13 +69,13 @@ The largest hand-written files are:
 
 - `center-waveform.xml`: 1,464 lines / about 115 KB.
 - `main-waveform.xml`: 1,012 lines / about 77 KB.
-- `topbar.xml`: 894 lines / about 61 KB.
+- `topbar.xml`: 851 lines / about 58 KB.
 - `meters.xml`: 502 lines.
 
 `topbar.xml` currently contains mode switching, deck-count controls, global sync
 settings, the large application options menu, Pro/Performance/Stack controls,
 phrase indicators, status lights, master meters, CPU/battery/clock displays,
-sandbox code, and platform-specific window controls.
+and platform-specific application branding.
 
 The waveform files combine waveform rendering, deck-order permutations,
 dropzones, beat counters, settings menus, mixer menus, zoom controls, and
@@ -132,27 +132,19 @@ Examples include:
   edit, and related operations.
 - Four-deck waveform orders repeat large 1234/3124/1342 rendering matrices.
 
-#### 6. Disabled and compatibility code has no lifecycle
+#### 6. Disabled and compatibility code now has an explicit outcome
 
-The structural audit intentionally allowlists three literal
-`visibility="false"` blocks. There is also a sandbox group using
-`visibility="can_sandbox ? false"`, which is not caught by the literal audit and
-appears semantically dead.
+The P0 audit removed all three literal `visibility="false"` blocks, the
+always-false sandbox group, commented Pro four-deck transport panels, stale
+skin-mode 4/5 exclusions, and the unused DTD macro layer. Placeholder knob
+right-click actions now use the same reset values as their adjacent
+double-click actions, held only while pressed.
 
-Other unresolved markers include:
-
-- disabled transport warning indicators
-- disabled layout rulers
-- disabled macOS window controls
-- commented Pro four-deck transport panels
-- temporary rack compatibility wrappers
-- several `rgclick="temporary"` placeholder actions
-- stale skin-mode checks for modes 4 and 5 even though the current modes are
-  0, 1, and 2
-- an unused DTD entity that duplicates the current `oninit` action
-
-The problem is not that temporary code exists; it is that the intended outcome
-and removal condition are not recorded.
+`PRO_RACKS` and `RACKS_STACK` were confirmed as active layout-owned assembly
+classes, not compatibility aliases. They remain, while the misleading orphaned
+compatibility comments were removed. The always-hidden audit allowlist is now
+empty, so a new literal-hidden block fails `just check` unless it is deliberately
+documented.
 
 #### 7. Current audits prove structure, not intent
 
@@ -245,9 +237,9 @@ Keep `CLAUDE.md` as the canonical guide and expose the same content through an
 `AGENTS.md` symlink. Update stale paths and make that one file the authoritative
 source map. Update `TODO.md` so its targets match the current tree.
 
-Status: started 2026-07-18. The guide/symlink decision, sole-entrypoint wording,
-container roles, generated browser filename, and stale TODO topbar path are now
-aligned.
+Status: completed 2026-07-18. The guide/symlink decision, sole-entrypoint
+wording, container roles, generated browser filename, stale TODO topbar path,
+command effects, and exact live install path are aligned.
 
 Include:
 
@@ -308,6 +300,11 @@ Start with:
 
 Do not combine this with visual redesign. The goal is to establish what is
 intentional before files are split.
+
+Status: completed 2026-07-18. Inactive UI and debug blocks were removed;
+placeholder knob actions and supported-mode conditions were made explicit; the
+unused DTD macro layer was deleted; and active rack wrappers were retained with
+accurate ownership comments.
 
 #### 4. Create a persistent-state registry and compatibility policy
 

@@ -11,37 +11,6 @@
     <deck deck="[DECK]">
       <visual class="gfx_shape" x="+0" y="+0" width="765" height="40" coloroff="black" radius="6"/>
       <line x="+0" y="+0" width="765" height="2" highlight="dark_6" shadow="transparent"/>
-      <!-- WARNING INDICATORS TODO: MOVE THESE -->
-      <group visibility="false">
-        <pos y="+2" x="+7" condition="param_equal [DECKSIDE] 'left'"/>
-        <pos y="+2" x="+700" condition="param_equal [DECKSIDE] 'right'"/>
-        <!-- BPM WARNING -->
-        <!-- more than 20% -->
-        <button action="pitch_reset 4bt" visibility="param_add `get_bpm` `get_bpm 'absolute' &amp; param_multiply -1` &amp; param_smaller -4 ? blink 500ms : off">
-          <pos x="+50" y="+0"/>
-          <size width="90" height="15"/>
-          <off color="#000033" shape="square"/>
-          <text size="14" align="center" color="blue" text="SLOW"/>
-        </button>
-        <button action="pitch_reset 4bt" visibility="param_add `get_bpm` `get_bpm 'absolute' &amp; param_multiply -1` &amp; param_smaller -4 ? blink 500ms : off">
-          <pos x="+50" y="+15"/>
-          <size width="90" height="15"/>
-          <off color="#000033" shape="square"/>
-          <text size="18" align="center" color="blue" weight="bold" action="get_text '%Ppitch%'"/>
-        </button>
-        <button action="pitch_reset 4bt" visibility="param_add `get_bpm` `get_bpm 'absolute' &amp; param_multiply -1` &amp; param_bigger 20 ? blink 500ms : off">
-          <pos x="+45" y="+0"/>
-          <size width="70" height="16"/>
-          <off color="#330000" shape="square"/>
-          <text size="14" align="center" color="red" text="FAST"/>
-        </button>
-        <button action="pitch_reset 4bt" visibility="param_add `get_bpm` `get_bpm 'absolute' &amp; param_multiply -1` &amp; param_bigger 20 ? blink 500ms : off">
-          <pos x="+45" y="+15"/>
-          <size width="70" height="16"/>
-          <off color="#330000" shape="square"/>
-          <text size="18" align="center" color="red" weight="bold" action="get_text '%Ppitch%'"/>
-        </button>
-      </group>
       <!-- SONGPOS -->
       <group visibility="loaded">
         <pos x="+6" y="+6" condition="param_equal [DECKSIDE] 'left'"/>

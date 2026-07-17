@@ -58,13 +58,9 @@ ALLOWED_DUPLICATE_DEFINITIONS = {
 }
 
 
-# Existing disabled/debug blocks. New always-hidden blocks should be intentional
-# enough to either remove, enable, or add here with a short explanation.
-ALLOWED_ALWAYS_HIDDEN_COUNTS = {
-    "src/components/containers/topbar.xml": 1,
-    "src/components/transport.xml": 1,
-    "src/layouts/base.xml": 1,
-}
+# Always-hidden blocks are rejected unless a deliberate exception is documented
+# here with a short explanation.
+ALLOWED_ALWAYS_HIDDEN_COUNTS = {}
 
 
 @dataclass(frozen=True)

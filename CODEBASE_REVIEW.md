@@ -83,9 +83,11 @@ multiple two-/four-deck variants.
 
 #### 3. State is pervasive but mostly undocumented
 
-The XML uses 47 concrete persistent `@$...` variables. `globals.xml` documents
-six of them. Important state families are spread across the topbar, layouts,
-waveform files, rack files, meters, and browser surfaces.
+The XML now has a checked registry for 51 concrete variables: 47 skin-global
+`@$...` names and four deck/local `@...` names. Important state families remain
+spread across the topbar, layouts, waveform files, rack files, meters, and
+browser surfaces, but their meanings and ownership are centralized in
+`docs/STATE.md`.
 
 Several persisted identifiers are compact, historically branded, or
 inconsistently cased, but their meanings are known:
@@ -327,6 +329,11 @@ Do not rename historical identifiers until a migration strategy is proven.
 Seed the registry with the known meanings of infinity wave size, info panel
 mode, Haunting VU meter colors, and beat marker so their legacy spelling or
 branding is no longer mistaken for unknown state.
+
+Status: completed 2026-07-18. All 51 concrete variables are registered with
+values, fallback behavior, main owners, reload requirements, and compatibility
+notes. `just check` now rejects unregistered variables and `@$skin_mode` values
+outside `0` (Pro), `1` (Performance), and `2` (Stack).
 
 ### P1 — Reduce the largest and most duplicated maintenance surfaces
 

@@ -11,6 +11,7 @@ Cleanup backlog after the prototype/index removal and structural audit work.
 - [x] Make bare `just`, linting, generation, builds, installs, and settings repair explicit about their side effects.
 - [x] Remove inactive debug, warning, sandbox, window-control, and commented transport blocks; replace placeholder knob actions and stale mode checks.
 - [x] Remove the unused `macros.dtd` layer and keep the single startup action visible in `src/skin.xml`.
+- [x] Register every concrete skin variable and audit registry coverage plus supported `@$skin_mode` values.
 
 ## Next Cleanup Tasks
 

@@ -23,8 +23,8 @@ check: lint audit
 verify-generated:
     python3 scripts/gen-browser-positions.py --check
 
-# [read-only] Run class and structural audits.
-audit: audit-classes audit-structure
+# [read-only] Run class, structural, and state audits.
+audit: audit-classes audit-structure audit-state
 
 # [read-only, internal] Audit class definition/reference casing.
 audit-classes:
@@ -33,6 +33,10 @@ audit-classes:
 # [read-only, internal] Audit includes, reachability, and structural conventions.
 audit-structure:
     python3 scripts/audit-structure.py
+
+# [read-only, internal] Audit registered skin variables and closed enums.
+audit-state:
+    python3 scripts/audit-state-vars.py
 
 # [read-only] Preview VirtualDJ pad panel state repairs.
 repair-pad-state:

@@ -54,6 +54,7 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 
 - `scripts/audit-class-casing.py` enforces class-definition/reference casing and catches missing class definitions.
 - `scripts/audit-structure.py` catches unused definitions, unreachable class islands, unlinked XML files, missing or empty XInclude targets, unexpected duplicate definitions, and new always-hidden blocks.
+- `scripts/audit-state-vars.py` requires every concrete skin variable to be documented in `docs/STATE.md` and restricts `@$skin_mode` to Pro, Performance, and Stack.
 - Known duplicate class definitions are deliberate color-scheme variants. Add new duplicates only with a clear reason and update the structural audit allowlist.
 
 ## Editing Notes

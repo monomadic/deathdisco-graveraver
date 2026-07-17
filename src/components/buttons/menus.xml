@@ -86,7 +86,7 @@
         <item text="Beats left" action="setting 'cueDisplay' 'beat'" check="setting 'cueDisplay' 'beat'"/>
       </submenu>
     </submenu>
-    <item text="Show CoverArt" action="toggle '@$show_cover_title'" check="var_equal '@$show_cover_title' 1" visibility="not var_equal '@$skin_mode' 3"/>
+    <item text="Show CoverArt" action="toggle '@$show_cover_title'" check="var_equal '@$show_cover_title' 1"/>
   </define>
   <define class="DROPDOWN_MENU">
     <size width="14" height="13"/>

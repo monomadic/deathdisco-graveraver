@@ -171,16 +171,17 @@ The structural audit also parses XML relationships with regular expressions.
 That is adequate for the current controlled format, but it should be treated as
 a focused convention checker rather than a general XML model.
 
-#### 8. Command behavior is more mutating than its names imply
+#### 8. Command side effects needed clearer boundaries
 
-The bare `just` command defaults to `install`, which writes into the user's
-VirtualDJ skin directory. `just lint` also runs `generate`, which can rewrite a
-tracked generated file. These behaviors are valid for a local workflow but are
+Before P0, bare `just` defaulted to `install`, which writes into the user's
+VirtualDJ skin directory, and `just lint` ran `generate`, which could rewrite a
+tracked generated file. These behaviors were valid for a local workflow but
 surprising defaults for a new contributor.
 
-The pad repair commands are sensibly dry-run-first and create a backup when
-applied, but their external effect on VirtualDJ's `settings.xml` should be more
-prominent in the command documentation.
+The command graph now makes `just`, `help`, `check`, `lint`, and `audit`
+read-only. Source generation, build output, live installation, continuous
+installation, cleanup, and applied settings repair are labeled at their recipe
+definitions and in the contributor guide.
 
 ### Recommended direction
 
@@ -275,6 +276,10 @@ Add short descriptions for:
 - build-directory writes
 - VirtualDJ skin installation
 - VirtualDJ settings repair
+
+Status: completed 2026-07-18. Bare `just` lists documented recipes; `lint`
+verifies generated output without rewriting it; generation and external writes
+remain behind explicitly named commands.
 
 Done when command names and default behavior accurately signal their side
 effects.

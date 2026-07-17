@@ -8,6 +8,7 @@ Cleanup backlog after the prototype/index removal and structural audit work.
 - [x] Remove unused class islands, orphan XML files, and empty include targets.
 - [x] Add structural auditing to `just check` via `scripts/audit-structure.py`.
 - [x] Keep one contributor guide: `CLAUDE.md`, with `AGENTS.md` symlinked to it.
+- [x] Make bare `just`, linting, generation, builds, installs, and settings repair explicit about their side effects.
 
 ## Next Cleanup Tasks
 

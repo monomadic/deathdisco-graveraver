@@ -13,13 +13,16 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 
 ## Commands
 
-- `just check`: the main verification command — verifies the generated browser positions are up to date, expands/lints the XML with xmllint, and runs the class-casing and structural audits.
+- Bare `just` (or `just help`): list recipes and their effects without writing.
+- `just check`: the main read-only verification command — verifies generated browser positions, expands/lints the XML, and runs the class-casing and structural audits.
+- `just lint`: read-only generated-file verification and XML expansion/linting.
 - `just audit`: class and structural audits only.
-- `just generate`: regenerate `src/layouts/browser/browser-positions.generated.xml`.
-- `just build`: writes the built/minified skin under `build/`.
-- `just install`: builds and installs the skin into the local VirtualDJ skin directory (also the default recipe — bare `just` installs).
-- `just watch`: rebuild + install on every change under `src/` or `assets/`.
-- `just repair-pad-state` (`-apply` to write): repairs VirtualDJ pad panel state.
+- `just generate`: writes `src/layouts/browser/browser-positions.generated.xml`.
+- `just build`: regenerates browser positions and writes the built/minified skin under `build/`.
+- `just install`: builds and installs the skin into the local VirtualDJ skin directory.
+- `just watch`: continuously rebuilds and installs after changes under `src/` or `assets/`.
+- `just repair-pad-state`: dry-run the VirtualDJ pad panel state repair; `just repair-pad-state-apply` backs up and writes VirtualDJ's `settings.xml`.
+- `just clean`: deletes local `build/` output.
 
 ## Source Map
 

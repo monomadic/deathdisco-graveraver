@@ -1,31 +1,41 @@
-# AGENTS
+# GraveRaver Contributor Guide
 
 Quick orientation for agents working in this VirtualDJ skin repo.
 
 ## Start Here
 
-- The skin root is `src/skin.xml`.
+- `src/skin.xml` is the sole skin entrypoint.
+- `CLAUDE.md` is the canonical contributor guide; `AGENTS.md` is a symlink to
+  this file so Claude and other agents read the same instructions.
 - There is intentionally no `src/index.xml`; do not reintroduce a hidden root include layer.
 - Remaining cleanup work lives in `TODO.md`.
 - Use `rg` for searches and read the local XML before changing shared components.
 
 ## Commands
 
-- `just check` is the main verification command. It checks generated browser positions, expands/lints XML, audits class casing, and runs structural reachability checks.
-- `just audit` runs the class and structural audits only.
-- `just build` writes the built/minified skin under `build/`.
-- `just install` builds and installs the skin into the local VirtualDJ skin directory.
+- `just check`: the main verification command — verifies the generated browser positions are up to date, expands/lints the XML with xmllint, and runs the class-casing and structural audits.
+- `just audit`: class and structural audits only.
+- `just generate`: regenerate `src/layouts/browser/browser-positions.generated.xml`.
+- `just build`: writes the built/minified skin under `build/`.
+- `just install`: builds and installs the skin into the local VirtualDJ skin directory (also the default recipe — bare `just` installs).
+- `just watch`: rebuild + install on every change under `src/` or `assets/`.
+- `just repair-pad-state` (`-apply` to write): repairs VirtualDJ pad panel state.
 
 ## Source Map
 
-- `src/skin.xml`: root skin file and top-level XIncludes.
+- `src/skin.xml`: sole entrypoint, containing the root skin metadata and
+  top-level XIncludes.
+- `src/colors.xml`, `src/globals.xml`: shared color and global definitions.
 - `src/components/index.xml`: component include hub.
 - `src/components/buttons/index.xml`: button-family include hub.
-- `src/components/containers/`: larger reusable regions such as waveform, mixer, racks, topbar, bottombar, and pad containers.
+- `src/components/racks/`: rack components — `effects-racks.xml`, `mixer-racks.xml`, `video-racks.xml`, plus `containers/` for rack shells and positioning.
+- `src/components/containers/`: larger reusable regions — `topbar.xml` and
+  `bottombar.xml` are shared containers shown on every layout; `pad-page.xml`
+  and `waveform/` contain other reusable container surfaces.
 - `src/components/center-panel/`: the Pro mixer-mode center column. `index.xml` is the hub; `center-panel.xml` holds the `MIXER`/`MIXER_4DECKS` shells and shared channel-strip helpers; each tab pane lives in its own file (`eq-mixer.xml`, `sampler.xml`, `wave-mixer.xml`, `master-mixer.xml`).
 - `src/layouts/base.xml`: top-level layout assembly.
 - `src/layouts/pro/`, `src/layouts/performance/`, `src/layouts/stack/`: mode-specific layout shells.
-- `src/layouts/browser/performance.generated.xml`: generated file; edit `scripts/gen-browser-positions.py` instead of patching this by hand.
+- `src/layouts/browser/`: browser panel layouts; `browser-positions.generated.xml` is generated — edit `scripts/gen-browser-positions.py` instead of patching it by hand.
 - `assets/`: installable skin assets copied during build/install.
 
 ## XML Conventions

@@ -7,6 +7,7 @@ Cleanup backlog after the prototype/index removal and structural audit work.
 - [x] Remove prototype skin sources and keep `src/skin.xml` as the real skin root.
 - [x] Remove unused class islands, orphan XML files, and empty include targets.
 - [x] Add structural auditing to `just check` via `scripts/audit-structure.py`.
+- [x] Keep one contributor guide: `CLAUDE.md`, with `AGENTS.md` symlinked to it.
 
 ## Next Cleanup Tasks
 
@@ -15,9 +16,9 @@ Cleanup backlog after the prototype/index removal and structural audit work.
   - Look for repeated waveform/dropzone/menu matrices that can become smaller includes, shared helper defines, or generated XML.
 
 - [ ] Split the topbar by responsibility.
-  - Main target: `src/components/containers/topbar/panel.xml`.
+  - Main target: `src/components/containers/topbar.xml`.
   - Suggested pieces: layout switcher, global settings, browser/options menu, Pro utilities, Performance utilities, Stack utilities.
-  - Keep `panel.xml` as the visible topbar entrypoint, but make it read like an assembly file.
+  - Keep `topbar.xml` as the shared topbar container, but make it read like an assembly file. `src/skin.xml` remains the sole entrypoint.
 
 - [ ] Resolve stale compatibility and disabled-code cruft.
   - Review comments such as temporary compatibility aliases in rack files.

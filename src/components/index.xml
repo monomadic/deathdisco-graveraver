@@ -21,11 +21,12 @@
   <xi:include href="racks/video-racks.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Containers -->
   <xi:include href="containers/pad-page.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/waveform/main-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- Shared waveform helpers must be defined before the files that reference them. -->
   <xi:include href="containers/waveform/main-waveform-shared.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="containers/waveform/center-waveform-shared.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="containers/waveform/main-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/horizontal-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/center-waveform.xml" xpointer="xpointer(/defs/*)"/>
-  <xi:include href="containers/waveform/center-waveform-shared.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/vertical-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/stack-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="containers/waveform/waveform-support.xml" xpointer="xpointer(/defs/*)"/>

@@ -2,7 +2,7 @@
 <defs>
   <!-- Shared building blocks for the WAVEFORM assembly in main-waveform.xml. -->
   <!-- 4-deck beats rhythmzone with its bar counters; mirror is the only variant. -->
-  <define class="MAIN_WAVE_RHYTHM_4DECK" placeholders="*mirror,*waveformheight">
+  <define class="MAIN_WAVE_RHYTHM_4DECK" macro="true" placeholders="mirror,waveformheight">
     <rhythmzone mirror="[MIRROR]" upsidedown="false" fade="200">
       <pos x="+2" y="+0"/>
       <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -32,7 +32,7 @@
     <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
   </define>
   <!-- Left/right bar counter row shared by the split waveform panes. -->
-  <define class="SPLIT_WAVE_BEAT_COUNTERS">
+  <define class="SPLIT_WAVE_BEAT_COUNTERS" macro="true">
     <panel class="beat_counter" deck="left" x="954/2-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
     <panel class="beat_counter" deck="right" x="1436-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
     <panel class="beat_counter" deck="left" x="954/2-2-338-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
@@ -42,10 +42,10 @@
        differ only by the grid background attributes, so both live here and the
        caller passes the two full visibility expressions. Grid geometry defaults
        to wave_grid_mode 0; grid_2 callers override gridmainsize/gridheight/gridpos. -->
-  <define class="SPLIT_SCRATCHWAVE" placeholders="*deck,*x,*y,*w,*h,*visoff,*vison,*overlayheight,*waveformheight,gridmainsize=5,gridheight=6,gridpos=-10,overlayx=+957/2-4">
-    <scratchwave deck="[DECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISOFF]">
-      <pos x="[X]" y="[Y]"/>
-      <size width="[W]" height="[H]"/>
+  <define class="SPLIT_SCRATCHWAVE" macro="true" placeholders="wavedeck,wavex,wavey,wavew,waveh,visoff,vison,overlayheight,waveformheight,gridmainsize=5,gridheight=6,gridpos=-10,overlayx=+957/2-4">
+    <scratchwave deck="[WAVEDECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISOFF]">
+      <pos x="[WAVEX]" y="[WAVEY]"/>
+      <size width="[WAVEW]" height="[WAVEH]"/>
       <grid size="1" mainsize="[GRIDMAINSIZE]" height="[GRIDHEIGHT]" pos="[GRIDPOS]" maincolor="deckcolor" color="darkgray" mirrored="true" shapepos="[GRIDPOS]" shapemirrored="down"/>
       <gridlines width="1" color="gridlines" transparency="0.6"/>
       <cue y="[GRIDPOS]" height="[WAVEFORMHEIGHT]">
@@ -58,9 +58,9 @@
         <background color="needle" shape="square"/>
       </overlay>
     </scratchwave>
-    <scratchwave deck="[DECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISON]">
-      <pos x="[X]" y="[Y]"/>
-      <size width="[W]" height="[H]"/>
+    <scratchwave deck="[WAVEDECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISON]">
+      <pos x="[WAVEX]" y="[WAVEY]"/>
+      <size width="[WAVEW]" height="[WAVEH]"/>
       <grid size="1" mainsize="[GRIDMAINSIZE]" height="[GRIDHEIGHT]" pos="[GRIDPOS]" background="yes" backgroundcolor="wavesbackgroundcolor" backgroundshaded="no" maincolor="deckcolor" color="darkgray" mirrored="true" shapepos="[GRIDPOS]" shapemirrored="down"/>
       <gridlines width="1" color="gridlines" transparency="0.6"/>
       <cue y="[GRIDPOS]" height="[WAVEFORMHEIGHT]">

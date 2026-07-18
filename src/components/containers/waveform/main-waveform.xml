@@ -218,25 +218,25 @@
       <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
         <!-- grid off -->
         <group name="grid_1" visibility="var_equal '@$wave_grid_mode' 0">
-          <group class="split_scratchwave" deck="3" x="+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck"/>
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck"/>
           <dropzone deck="3" visibility="deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="1" x="+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck"/>
           <dropzone deck="1" visibility="not deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="2" x="+2+957+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck"/>
           <dropzone deck="2" visibility="not deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="4" x="+2+957+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck"/>
           <dropzone deck="4" visibility="deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
@@ -244,25 +244,25 @@
           </dropzone>
         </group>
         <group name="grid_2" visibility="var_equal '@$wave_grid_mode' 1">
-          <group class="split_scratchwave" deck="3" x="+2" y="+14+4" w="956-4" h="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
           <dropzone deck="3" visibility="deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="1" x="+2" y="+14+4" w="956-4" h="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
           <dropzone deck="1" visibility="not deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="2" x="+2+957+2" y="+14+4" w="957-4" h="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="2" visibility="not deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="4" x="+2+957+2" y="+14+4" w="957-4" h="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="4" visibility="deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
@@ -273,25 +273,25 @@
       </panel>
       <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
         <group name="grid_1" visibility="var_equal '@$wave_grid_mode' 0">
-          <group class="split_scratchwave" deck="3" x="+2" y="+72+2+[WAVEFORMHEIGHT]/2-24" w="957-4" h="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
           <dropzone deck="3">
             <pos x="+0" y="+[WAVEFORMHEIGHT]/2+1"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="1" x="+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
           <dropzone deck="1">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="2" x="+2+957+2" y="+12" w="957-4" h="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
           <dropzone deck="2">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="4" x="+2+957+2" y="+72+2+[WAVEFORMHEIGHT]/2-24" w="957-4" h="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
           <dropzone deck="4">
             <pos x="+957+2" y="+[WAVEFORMHEIGHT]/2+1"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
@@ -299,25 +299,25 @@
           </dropzone>
         </group>
         <group name="grid_2" visibility="var_equal '@$wave_grid_mode' 1">
-          <group class="split_scratchwave" deck="3" x="+2" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" w="957-4" h="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="3">
             <pos x="+0" y="+[WAVEFORMHEIGHT]/2"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2+1"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="1" x="+2" y="+14+4" w="957-4" h="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="1">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="2" x="+2+957+2" y="+14+4" w="957-4" h="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="2">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" deck="4" x="+2+957+2" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" w="957-4" h="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="4">
             <pos x="+957+2" y="+[WAVEFORMHEIGHT]/2"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2+1"/>

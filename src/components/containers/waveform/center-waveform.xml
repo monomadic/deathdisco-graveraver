@@ -31,13 +31,13 @@
       <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
     </panel>
     <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
-      <group class="center_scratch_pair" deck="3" y="+14+6" h="[WAVEFORMHEIGHT]/2-32-6" overlayheight="[WAVEFORMHEIGHT]/2-6" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+      <group class="center_scratch_pair" wavedeck="3" wavey="+14+6" waveh="[WAVEFORMHEIGHT]/2-32-6" overlayheight="[WAVEFORMHEIGHT]/2-6" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
       <dropzone deck="3" visibility="deck 3 leftdeck">
         <pos x="+0" y="+0"/>
         <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
         <over color="transparent" border="deckcolor" border_size="2"/>
       </dropzone>
-      <group class="center_scratch_pair" deck="1" y="+14+6" h="[WAVEFORMHEIGHT]/2-32-6" overlayheight="[WAVEFORMHEIGHT]/2-6" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+      <group class="center_scratch_pair" wavedeck="1" wavey="+14+6" waveh="[WAVEFORMHEIGHT]/2-32-6" overlayheight="[WAVEFORMHEIGHT]/2-6" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
       <dropzone deck="1" visibility="not deck 3 leftdeck">
         <pos x="+0" y="+0"/>
         <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>

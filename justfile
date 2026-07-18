@@ -55,6 +55,7 @@ build: generate lint
     mkdir -p "{{build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{build_dir}}/"; fi
     xmllint --format --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"
+    python3 scripts/expand-skin-macros.py "{{build_dir}}/skin.xml"
     python3 scripts/minify-skin.py "{{build_dir}}/skin.xml"
 
 # [writes source + build + VirtualDJ skin] Build and install the live skin.

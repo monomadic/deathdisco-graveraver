@@ -20,12 +20,14 @@ Cleanup backlog after the prototype/index removal and structural audit work.
     (1464 -> 334 lines) now build their repeated scratchwave/rhythmzone/counter
     matrices from parameterized defines in `main-waveform-shared.xml` and
     `center-waveform-shared.xml`.
-  - Approach: VDJ-native `define` + `placeholders` instead of generator
-    scripts; generators stay reserved for arithmetic ladders the skin engine
-    cannot express (browser positions).
-  - Both refactors were machine-verified to expand to XML identical to the
-    pre-refactor files, so no visual change is expected; still confirm in
-    VirtualDJ after the next `just install`.
+  - Approach: the helper defines are `macro="true"` build-time templates
+    expanded by `scripts/expand-skin-macros.py` during `just build`, so
+    VirtualDJ only ever sees plain expanded XML. (Relying on VDJ's runtime
+    define/placeholder engine for these broke rendering.) Generators stay
+    reserved for arithmetic ladders (browser positions).
+  - The macro-expanded build was machine-verified canonically identical to
+    the pre-refactor build, so rendering must match the last known-good
+    skin; confirm in VirtualDJ after `just install`.
 
 - [ ] Waveform follow-ups surfaced by the refactor (deliberate behavior
   changes, need visual confirmation in VirtualDJ):

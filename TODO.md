@@ -15,9 +15,28 @@ Cleanup backlog after the prototype/index removal and structural audit work.
 
 ## Next Cleanup Tasks
 
-- [ ] Split the giant waveform files.
-  - Main targets: `src/components/containers/waveform/center-waveform.xml` and `src/components/containers/waveform/main-waveform.xml`.
-  - Look for repeated waveform/dropzone/menu matrices that can become smaller includes, shared helper defines, or generated XML.
+- [x] Split the giant waveform files.
+  - `main-waveform.xml` (1012 -> 427 lines) and `center-waveform.xml`
+    (1464 -> 334 lines) now build their repeated scratchwave/rhythmzone/counter
+    matrices from parameterized defines in `main-waveform-shared.xml` and
+    `center-waveform-shared.xml`.
+  - Approach: VDJ-native `define` + `placeholders` instead of generator
+    scripts; generators stay reserved for arithmetic ladders the skin engine
+    cannot express (browser positions).
+  - Both refactors were machine-verified to expand to XML identical to the
+    pre-refactor files, so no visual change is expected; still confirm in
+    VirtualDJ after the next `just install`.
+
+- [ ] Waveform follow-ups surfaced by the refactor (deliberate behavior
+  changes, need visual confirmation in VirtualDJ):
+  - The bottom-half (deck 2/4) center scratchwaves use `shapemirrored="up"`
+    and one deck-4 variant uses cue mask height 12 where every sibling uses
+    15; they were left verbatim in `center-waveform.xml`. Decide whether the
+    differences are intentional and either fold them into
+    `center_scratch_pair` placeholders or normalize them.
+  - The two `wave_options` menus in `center-waveform.xml` differ by three
+    4-deck menu items and stay duplicated; unifying them means showing those
+    items (visibility-guarded) in the forced-4-deck variant too.
 
 - [ ] Split the topbar by responsibility.
   - Main target: `src/components/containers/topbar.xml`.
@@ -33,5 +52,8 @@ Cleanup backlog after the prototype/index removal and structural audit work.
   - Create an explicit, visible layout-mode switch pattern so new layouts can be added quickly without reintroducing a confusing `src/index.xml`.
 
 - [ ] Consider generators for repeated visual ladders and matrices.
-  - Candidate areas: VU meter LEDs, waveform variants, sampler rows, and browser/deck position tables.
-  - Generated output should have a source script and be checked by `just check`.
+  - Candidate areas: VU meter LEDs, sampler rows, and the `AREA_WAVES`
+    wavesize ladder in `waveform-support.xml`.
+  - Prefer VDJ `define` + `placeholders` first (see the waveform split);
+    reach for a generator only when rungs need computed arithmetic, and have
+    `just check` verify the generated output like browser positions.

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Shared building blocks for the WAVEFORM_HORIZONTAL_CENTER defines
+       in center-waveform.xml. -->
+  <define class="CENTER_RHYTHM_2DECK" placeholders="*mirror,*waveformwidth,*waveformheight">
+    <rhythmzone mirror="[MIRROR]" upsidedown="false" fade="200">
+      <pos x="+2" y="+0"/>
+      <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+      <colors deck1="0" deck1_active="waveform_active1" deck1_left="waveform_passive1" deck2="0" deck2_active="waveform_active2" deck2_right="waveform_passive2" deck3="0" deck3_active="waveform_active3" deck3_left="waveform_passive3" deck4="0" deck4_active="waveform_active4" deck4_right="waveform_passive4"/>
+      <rhythm y="+0" height="[WAVEFORMHEIGHT]-20"/>
+      <grid height="6" width="5" mainwidth="10">
+        <pos y1="+[WAVEFORMHEIGHT]-6-12" y2="+[WAVEFORMHEIGHT]-6-12+8" y3="+[WAVEFORMHEIGHT]-6-12" y4="+[WAVEFORMHEIGHT]-6-12+8"/>
+      </grid>
+      <gridlines width="1" color="gridlines" transparency="0.6"/>
+      <cue dy="+0" height="[WAVEFORMHEIGHT]">
+        <mask x="0" y="0" width="11" height="12"/>
+        <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+      </cue>
+      <overlay>
+        <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+        <size width="2" height="[WAVEFORMHEIGHT]"/>
+        <background color="needle" shape="square"/>
+      </overlay>
+    </rhythmzone>
+  </define>
+  <define class="CENTER_RHYTHM_4DECK" placeholders="*mirror,*waveformwidth,*waveformheight">
+    <rhythmzone mirror="[MIRROR]" upsidedown="false" fade="200">
+      <pos x="+2" y="+0"/>
+      <size width="[WAVEFORMWIDTH]-4" height="[WAVEFORMHEIGHT]"/>
+      <colors deck1="waveform_passive1" deck1_active="waveform_active1" deck1_left="0" deck2="waveform_passive2" deck2_active="waveform_active2" deck2_right="0" deck3="waveform_passive3" deck3_active="waveform_active3" deck3_left="0" deck4="waveform_passive4" deck4_active="waveform_active4" deck4_right="0"/>
+      <rhythm y="+0" height="[WAVEFORMHEIGHT]-20-16"/>
+      <grid height="6" width="5" mainwidth="10">
+        <pos y1="+[WAVEFORMHEIGHT]-6-12-16" y2="+[WAVEFORMHEIGHT]-6-12+8-16" y3="+[WAVEFORMHEIGHT]-6-12+8+8-16" y4="+[WAVEFORMHEIGHT]-6-12+8+8+8-16"/>
+      </grid>
+      <gridlines width="1" color="gridlines" transparency="0.6"/>
+      <cue dy="+0" height="[WAVEFORMHEIGHT]">
+        <mask x="0" y="0" width="11" height="12"/>
+        <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+      </cue>
+      <overlay>
+        <pos x="+[WAVEFORMWIDTH]/2" y="+0"/>
+        <size width="2" height="[WAVEFORMHEIGHT]"/>
+        <background color="needle" shape="square"/>
+      </overlay>
+    </rhythmzone>
+  </define>
+  <define class="CENTER_BEATS_DROPZONES_4DECK" placeholders="*waveformwidth,*waveformheight">
+    <dropzone deck="1">
+      <pos x="+0" y="+2"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <dropzone deck="2">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <dropzone deck="3">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2-24-2+14+12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <dropzone deck="4">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2-12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="1" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="2" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="3" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="4" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+  </define>
+  <define class="CENTER_SCRATCH_PAIR" placeholders="*deck,*y,*h,*overlayheight,*visoff,*vison,*waveformwidth,*waveformheight,gridmainsize=5,gridheight=8,gridpos=-10">
+    <scratchwave deck="[DECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISOFF]">
+      <pos x="+2" y="[Y]"/>
+      <size width="[WAVEFORMWIDTH]-4" height="[H]"/>
+      <grid size="1" mainsize="[GRIDMAINSIZE]" height="[GRIDHEIGHT]" pos="[GRIDPOS]" maincolor="deckcolor" color="darkgray" mirrored="true" shapepos="[GRIDPOS]" shapemirrored="down"/>
+      <gridlines width="1" color="gridlines" transparency="0.6"/>
+      <cue y="[GRIDPOS]" height="[WAVEFORMHEIGHT]">
+        <mask x="0" y="0" width="11" height="15"/>
+        <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+      </cue>
+      <overlay>
+        <pos x="+[WAVEFORMWIDTH]/2" y="[GRIDPOS]"/>
+        <size width="2" height="[OVERLAYHEIGHT]"/>
+        <background color="needle" shape="square"/>
+      </overlay>
+    </scratchwave>
+    <scratchwave deck="[DECK]" orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="[VISON]">
+      <pos x="+2" y="[Y]"/>
+      <size width="[WAVEFORMWIDTH]-4" height="[H]"/>
+      <grid size="1" mainsize="[GRIDMAINSIZE]" height="[GRIDHEIGHT]" pos="[GRIDPOS]" background="yes" backgroundcolor="wavesbackgroundcolor" backgroundshaded="no" maincolor="deckcolor" color="darkgray" mirrored="true" shapepos="[GRIDPOS]" shapemirrored="down"/>
+      <gridlines width="1" color="gridlines" transparency="0.6"/>
+      <cue y="[GRIDPOS]" height="[WAVEFORMHEIGHT]">
+        <mask x="0" y="0" width="11" height="15"/>
+        <text dx="+16" dy="-2" weight="bold" fontsize="15" color="deckcolor" important="true"/>
+      </cue>
+      <overlay>
+        <pos x="+[WAVEFORMWIDTH]/2" y="[GRIDPOS]"/>
+        <size width="2" height="[OVERLAYHEIGHT]"/>
+        <background color="needle" shape="square"/>
+      </overlay>
+    </scratchwave>
+  </define>
+  <define class="CENTER_WAVE_ORDER" placeholders="*d1,*d2,*d3,*d4,*waveformwidth,*waveformheight">
+    <group class="center_scratch_pair" deck="[D1]" y="+12+2" h="[WAVEFORMHEIGHT]/4-24" overlayheight="[WAVEFORMHEIGHT]/4-4" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
+    <dropzone deck="[D1]">
+      <pos x="+0" y="+2"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D2]" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" h="[WAVEFORMHEIGHT]/4-24" overlayheight="[WAVEFORMHEIGHT]/4-4" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
+    <dropzone deck="[D2]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D3]" y="+[WAVEFORMHEIGHT]/2-24-2+14+24" h="[WAVEFORMHEIGHT]/4-24" overlayheight="[WAVEFORMHEIGHT]/4-4" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
+    <dropzone deck="[D3]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2-24-2+14+12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D4]" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" h="[WAVEFORMHEIGHT]/4-24" overlayheight="[WAVEFORMHEIGHT]/4-4" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
+    <dropzone deck="[D4]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2-12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <panel class="beat_counter" deck="[D1]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D1]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D2]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D2]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D3]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D3]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D4]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D4]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+  </define>
+  <define class="CENTER4_WAVE_ORDER" placeholders="*d1,*d2,*d3,*d4,*waveformwidth,*waveformheight">
+    <group class="center_scratch_pair" deck="[D1]" y="+14+6" h="[WAVEFORMHEIGHT]/4-39" overlayheight="[WAVEFORMHEIGHT]/4-7" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+    <dropzone deck="[D1]">
+      <pos x="+0" y="+0"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D2]" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+29" h="[WAVEFORMHEIGHT]/4-39" overlayheight="[WAVEFORMHEIGHT]/4-7" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+    <dropzone deck="[D2]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+12-3"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D3]" y="+[WAVEFORMHEIGHT]/2-24-2+14+29+4" h="[WAVEFORMHEIGHT]/4-39" overlayheight="[WAVEFORMHEIGHT]/4-7" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+    <dropzone deck="[D3]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2-24-2+14+12-1"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <group class="center_scratch_pair" deck="[D4]" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" h="[WAVEFORMHEIGHT]/4-39" overlayheight="[WAVEFORMHEIGHT]/4-7" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
+    <dropzone deck="[D4]">
+      <pos x="+0" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2-12"/>
+      <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/4+1"/>
+      <over color="transparent" border="deckcolor" border_size="2"/>
+    </dropzone>
+    <panel class="beat_counter" deck="[D1]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D1]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+12+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D2]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D2]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24+5" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D3]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D3]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="[D4]" x="+[WAVEFORMWIDTH]/2-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="[D4]" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2+8" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+  </define>
+</defs>

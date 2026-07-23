@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <!-- Shared quick-filter button used by the utility bar. -->
-  <define class="FILTER_TAG_BUTTON" placeholders="*tag,text,width=90,height=17,textheight=height,important=true,textaction,accent_color=green,coloroff=dark_2,coloron=deckcolor,brcoloroff=transparent,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal,overcolor=transparent,selectedcolor=dark1">
+  <define class="FILTER_TAG_BUTTON" placeholders="*tag,text,width=90,height=17,textheight=height,important=true,textaction,accent_color=green,coloroff=dark_2,coloron=deckcolor,brcoloroff=transparent,brcoloron=deckcolor,bordersize=1,shape=square,sysicon,iconsize,textsize=11,textcolor=br_textoff,textcoloron=needle,orientation=horizontal,overcolor=transparent,selectedcolor=dark_1">
     <button action="quick_filter 'User 1 contains [TAG]'" rightclick="quick_filter ''" x="+0" y="+0">
       <pos x="+0" y="+0"/>
       <size width="[WIDTH]" height="[HEIGHT]"/>

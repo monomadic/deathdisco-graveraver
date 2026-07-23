@@ -228,7 +228,7 @@
   <!-- master source colors vu-meters,etc -->
   <group name="mastercolors">
     <define color="mastercoloron" value="#9197a1"/>
-    <define color="br_focus" value="#3a49a0"/>
+    <define color="br_focus" value="#3a3940"/>
     <define color="browser_iconbuttonactive" value="#43ca59"/>
     <define color="green_vu" value="#6fc826"/>
     <define color="orange_vu" value="#df6729"/>

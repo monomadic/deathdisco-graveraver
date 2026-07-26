@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_DECK_COUNT">
+    <!-- border -->
+    <visual x="+0" y="+7" width="65" height="30">
+      <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+    </visual>
+    <!-- blackout -->
+    <visual x="+16" y="+0" width="32" height="13" visibility="1.0">
+      <off shape="square" color="black"/>
+    </visual>
+    <!-- 2 DECK BUTTON -->
+    <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$layout_4deck' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$layout_4deck' 0 ? var_equal '@$4decks' 1">
+      <off color="transparent"/>
+      <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="2"/>
+    </button>
+    <!-- 4 DECK BUTTON -->
+    <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$layout_4deck' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
+      <off color="transparent"/>
+      <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="4"/>
+    </button>
+    <!-- label -->
+    <textzone>
+      <pos x="+0" y="+0"/>
+      <size width="65" height="14"/>
+      <text fontsize="9" weight="normal" color="#999999" align="center" text="DECKS" important="true"/>
+    </textzone>
+  </define>
+</defs>

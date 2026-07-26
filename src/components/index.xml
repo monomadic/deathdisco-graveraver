@@ -36,4 +36,8 @@
   <xi:include href="racks/mixer-racks.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="racks/containers/rack-containers.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="racks/containers/rack-surfaces.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- Top bar components (composed by layouts/topbar.xml) -->
+  <xi:include href="topbar/index.xml" xpointer="xpointer(/defs/*)"/>
+  <!-- Bottom bar components (composed by layouts/bottombar.xml) -->
+  <xi:include href="bottombar/index.xml" xpointer="xpointer(/defs/*)"/>
 </defs>

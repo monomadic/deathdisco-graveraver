@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_STATUS_LIGHTS">
+    <group x="-50">
+      <visual type="transparent" source="deck 1 effect_active colorfx ? true : deck 2 effect_active colorfx ? true : deck 3 effect_active colorfx ? true : deck 4 effect_active colorfx ? true : false">
+        <pos x="+3" y="+9" width="10" height="10"/>
+        <off color="tab_menu" border="tab_menu" shape="circle"/>
+        <on color="green" border="green" shape="circle"/>
+      </visual>
+      <button class="button_main" x="+18" width="40" height="27" textsize="10" text="CFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_active colorfx off &amp; deck all filter_activate off &amp; deck all filter 50%" query="deck 1 effect_active colorfx ? blink 500ms : deck 2 effect_active colorfx ? blink 500ms : deck 3 effect_active colorfx ? blink 500ms : deck 4 effect_active colorfx ? blink 500ms : false"/>
+    </group>
+    <!-- -->
+    <!-- MASTER FX INDICATOR -->
+    <group x="+0">
+      <visual type="transparent" source="is_using 'effect' ? blink 500ms : false">
+        <pos x="+3" y="+9" width="10" height="10"/>
+        <off color="tab_menu" border="tab_menu" shape="circle"/>
+        <on color="green" border="green" shape="circle"/>
+      </visual>
+      <button class="button_main" x="+18" width="40" height="27" textsize="10" text="PFX" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="deck all effect_disable_all" query="effects_used ? blink 500ms"/>
+    </group>
+    <!-- MASTER SAMPLER INDICATOR -->
+    <group x="+45">
+      <visual type="transparent" source="is_using 'sample' ? blink 500ms : false">
+        <pos x="+3" y="+9" width="10" height="10"/>
+        <off color="tab_menu" border="tab_menu" shape="circle"/>
+        <on color="green" border="green" shape="circle"/>
+      </visual>
+      <button class="button_main" x="+18" width="50" height="27" textsize="10" text="SAMP" align="left" radius="6" coloroff="transparent" coloron="transparent" bordersize="0" textcolor="#888888" textcoloron="#888888" brcoloroff="transparent" brcoloron="transparent" action="sampler_stop all &amp; deck 1 sampler_stop all &amp; deck 2 sampler_stop all &amp; deck 3 sampler_stop all &amp; deck 4 sampler_stop all &amp; deck master sampler_stop all"/>
+    </group>
+  </define>
+</defs>

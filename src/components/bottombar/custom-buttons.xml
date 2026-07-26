@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="BOTTOMBAR_CUSTOM_BUTTONS">
+      <group x="+20">
+        <button class="tag_button" source="24" x="+20" color="white" y="+6" width="80"/>
+        <button class="tag_button" source="25" x="+105" y="+6" color="color_tag_genre"/>
+        <button class="tag_button" source="26" x="+105*2" y="+6" color="color_tag_genre"/>
+        <button class="tag_button" source="27" x="+105*3" y="+6" color="color_tag_genre"/>
+        <button class="tag_button" source="28" x="+105*4" y="+6" color="color_tag_genre"/>
+        <button class="tag_button" source="29" x="+105*5" y="+6" color="color_tag_mix"/>
+        <button class="tag_button" source="30" x="+105*6" y="+6" color="color_tag_mix"/>
+        <button class="tag_button" source="31" x="+105*7" y="+6" color="color_tag_mix"/>
+        <button class="tag_button" source="32" x="+105*8" y="+6" color="color_tag_mix"/>
+        <button class="tag_button" source="33" x="+105*9" y="+6" color="color_tag_mix"/>
+        <button class="tag_button" source="34" x="+105*10" y="+6" color="color_tag_timing"/>
+        <button class="tag_button" source="35" x="+105*11" y="+6" color="color_tag_timing"/>
+        <button class="tag_button" source="36" x="+105*12" y="+6" color="color_tag_timing"/>
+        <button class="tag_button" source="37" x="+105*13" y="+6" color="color_tag_timing"/>
+        <button class="tag_button" source="38" x="+105*14" y="+6" color="color_tag_mood"/>
+        <button class="tag_button" source="39" x="+105*15" y="+6" color="color_tag_mood"/>
+        <button class="tag_button" source="40" x="+105*16" y="+6" color="color_tag_mood"/>
+        <button class="tag_button" source="41" x="+105*17" y="+6" color="white"/>
+      </group>
+    </define>
+</defs>

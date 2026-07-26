@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_WINDOW_CONTROLS">
+    <logo>
+      <pos x="+10+32+10" y="8"/>
+      <size width="115" height="27"/>
+    </logo>
+    <button action="minimize">
+      <pos x="1920-80-40-2" y="0"/>
+      <size width="40" height="43"/>
+      <icon sysicon="minimize" color="textoff" colorover="texton" width="28" height="28"/>
+      <over color="appbuttoncolor"/>
+    </button>
+    <button action="maximize" rightclick="maximize off">
+      <pos x="1920-80-2" y="0"/>
+      <size width="40" height="43"/>
+      <icon sysicon="maximize" color="textoff" colorover="texton" width="28" height="28"/>
+      <over color="appbuttoncolor"/>
+    </button>
+    <button action="close">
+      <pos x="1920-40-2" y="0"/>
+      <size width="40" height="43"/>
+      <icon sysicon="close" color="textoff" colorover="texton" width="28" height="28"/>
+      <over color="#db333f"/>
+    </button>
+  </define>
+</defs>

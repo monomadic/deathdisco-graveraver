@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_WAVES_BUTTON">
+    <button tooltip="SHOW WAVEFORMS\nShow or hide waveforms in browser zoom mode." class="button_main" x="+90" action="toggle '@$hide_zoom_waveforms' &amp; load_skin" width="80" height="27" textsize="12" textcoloron="needle" text="WAVES" coloroff="panel_background" coloron="#222222" bordersize="0" query="var_equal '@$hide_zoom_waveforms' '1'"/>
+  </define>
+</defs>

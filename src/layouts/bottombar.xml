@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BOTTOM BAR LAYOUT (utility bar)
+     Composes the bottom bar from bottombar components (src/components/bottombar/)
+     via VirtualDJ classes. This file owns the bar shell and which view is shown
+     when (@$bottombar_mode); each component owns its own contents. -->
+<module>
+  <!-- BOTTOM BAR (UTILITY BAR) height: 50px -->
+  <panel name="bottombar" x="0" y="1080-50">
+    <visual width="1920" height="50">
+      <off shape="square" color="#000000" border_size="1" border="#222222"/>
+    </visual>
+    <visual x="+7" y="+8" width="5" height="15">
+      <off shape="square" color="[ACCENT_COLOR]" border_size="1" border="#222222"/>
+    </visual>
+    <!-- hashtag / browser tools view -->
+    <panel class="bottombar_browser_tools" name="browser_tools" visibility="var_equal '@$bottombar_mode' 0"/>
+    <!-- custom buttons view -->
+    <panel class="bottombar_custom_buttons" name="custom_buttons" visibility="var_equal '@$bottombar_mode' 1"/>
+    <!-- view toggle -->
+    <button class="button_main" x="+5" y="+5" action="toggle '@$bottombar_mode'" width="28" height="28" textsize="12" textcoloron="needle" coloroff="panel_background" coloron="#333333" bordersize="0" sysicon="settings" iconsize="20"/>
+  </panel>
+</module>

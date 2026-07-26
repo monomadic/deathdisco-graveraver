@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_MASTER_METERS">
+    <visual class="gfx_shape" width="260+50" height="43-8-8" coloroff="xf_background"/>
+    <textzone class="text" x="+6" y="+0" width="56" height="27" fontsize="10" color="textdarker" align="right" weight="" text="MASTER"/>
+    <visual type="vumeter" source="get_vu_meter_left" x="+6+56+8" y="+6" width="70" height="6" smooth="no">
+      <led x="+0" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*2" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*3" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*4" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*5" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*6" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*7" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*8" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*9" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*10" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*11" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+    </visual>
+    <visual type="vumeter" source="get_vu_meter_right" x="+6+56+8" y="+6+7+2" width="70" height="6" smooth="no">
+      <led x="+0" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*2" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*3" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*4" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*5" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*6" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*7" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*8" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*9" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*10" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+      <led x="+6*11" y="+0" width="4" height="6">
+        <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+        <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
+      </led>
+    </visual>
+    <visual type="transparent" source="get_limiter">
+      <pos x="+6+56+8+72+6" y="+8" width="12" height="12"/>
+      <off color="tab_menu" border="tab_menu" shape="circle"/>
+      <on color="red" border="red" shape="circle"/>
+    </visual>
+    <!-- CPU + BATTERY LEDS -->
+    <group x="+150" y="+4">
+      <!-- CPU -->
+      <textzone class="text" y="+0" width="56" fontsize="10" color="textdarker" align="right" weight="" text="CPU"/>
+      <visual type="vumeter" source="get_cpu" x="+56+8" y="+1" width="28" height="8" smooth="true">
+        <led x="+0" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*2" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*3" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*4" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="orange_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+      </visual>
+      <!-- BATTERY -->
+      <textzone class="text" y="+12" width="56" fontsize="10" color="textdarker" align="right" weight="" text="BAT"/>
+      <visual type="vumeter" source="get_battery" x="+56+8" y="+14" width="28" height="6" smooth="true">
+        <led x="+0" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*2" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*3" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+        <led x="+6*4" width="4" height="6">
+          <off color="vu_background" radius="0" border="contrast" border_size="0"/>
+          <on color="green_vu" radius="0" border="contrast" border_size="0"/>
+        </led>
+      </visual>
+    </group>
+    <!-- CLOCK -->
+    <textzone>
+      <pos x="+6+56+8+175+20" y="+0"/>
+      <size width="70" height="27"/>
+      <text fontsize="15" color="white" align="right" weight="" action="get_clock" important="true"/>
+      <text2 fontsize="15" color="white" align="right" weight="" format="%counter" important="true"/>
+    </textzone>
+  </define>
+</defs>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Bottom (utility) bar components, composed by layouts/bottombar.xml. -->
+  <xi:include href="browser-tools.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="custom-buttons.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

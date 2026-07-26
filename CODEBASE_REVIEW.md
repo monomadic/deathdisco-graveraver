@@ -359,6 +359,19 @@ three copies of the same long action strings.
 Done when `topbar.xml` communicates layering/order at a glance and no fragment
 needs knowledge of unrelated topbar responsibilities.
 
+Status: split completed 2026-07-26. The bars are treated as layout objects: the
+top and bottom bars moved to `src/layouts/topbar.xml` and
+`src/layouts/bottombar.xml`, each owning which component appears where/when on
+the bar and loading the pieces through VirtualDJ classes (not xmllint XInclude
+flattening). The topbar's responsibility regions became component classes under
+`src/components/topbar/` and the bottombar's two views under
+`src/components/bottombar/`, each with an `index.xml` hub. A per-bar
+reconstruction (re-inlining each define body under its reference attributes) is
+byte-identical to the original bar tree, so the only runtime change is the
+`<group>`→`<panel class>` container the skin already uses everywhere; live
+VirtualDJ confirmation is still required because the render path changed. The
+shared rack-toggle extraction remains as a follow-up in `TODO.md`.
+
 #### 6. Extract shared waveform and mixer option components
 
 The waveform type/color/needle/order menu and the mixer options menu are

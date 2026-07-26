@@ -5,17 +5,21 @@
     Skin organisation
     =================
 
-    Layouts are the highest-level composition blocks. They assemble containers
-    into complete screen modes and live in src/layouts. They are included as
-    modules rather than reusable classes.
+    Layouts are the highest-level composition blocks. They assemble components
+    and containers into complete screen modes and live in src/layouts. They are
+    included as modules rather than reusable classes. The top and bottom bars
+    (layouts/topbar.xml, layouts/bottombar.xml) are layouts: each owns which
+    components appear where on the bar and loads them via VirtualDJ classes.
 
     Containers are reusable regions that group components: decks, racks,
-    waveforms, top/bottom bars, mixer areas, and similar configurable skin
-    regions. Container definitions live under src/components/containers.
+    waveforms, mixer areas, and similar configurable skin regions. Container
+    definitions live under src/components/containers.
 
-    Components are the smaller reusable UI elements used inside containers:
-    buttons, sliders, text, meters, transport controls, jogwheels, and related
-    primitives. Component definitions live directly under src/components.
+    Components are the smaller reusable UI elements loaded by layouts and
+    containers: buttons, sliders, text, meters, transport controls, jogwheels,
+    the per-bar regions under src/components/topbar and src/components/bottombar,
+    and related primitives. Component definitions live directly under
+    src/components.
     
   -->
 <skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png">
@@ -45,6 +49,6 @@
   <xi:include href="layouts/stack/decks.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Composition order matters for layering -->
   <xi:include href="layouts/base.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="components/containers/topbar.xml" xpointer="xpointer(/module/*)"/>
-  <xi:include href="components/containers/bottombar.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="layouts/topbar.xml" xpointer="xpointer(/module/*)"/>
+  <xi:include href="layouts/bottombar.xml" xpointer="xpointer(/module/*)"/>
 </skin>

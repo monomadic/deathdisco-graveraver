@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_PERFORMANCE_UTILITIES">
+    <!-- LAYOUT SELECTOR -->
+    <group x="410" y="2">
+      <!-- border -->
+      <visual x="+0" y="+8" width="90" height="28">
+        <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+      </visual>
+      <!-- blackout -->
+      <visual x="+30">
+        <size width="28" height="16"/>
+        <off shape="square" color="black"/>
+      </visual>
+      <!-- label -->
+      <textzone x="+0">
+        <size width="90" height="16"/>
+        <text fontsize="9" weight="normal" color="#999999" align="center" text="LAYOUT" important="true"/>
+      </textzone>
+      <!-- layout buttons (cycle) -->
+      <group x="+0" y="+11">
+        <button class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="cycle '@$performance_layout' 2 &amp; load_skin">
+          <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$performance_layout' &amp; param_equal 1) ? get_text 'HORIZONTAL' : get_text 'VERTICAL'"/>
+        </button>
+      </group>
+    </group>
+    <group x="505" y="2">
+      <group>
+        <group x="+5" y="+9">
+          <button class="button_main" x="+0" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="MIXER"/>
+          </button>
+          <button class="button_main" x="+53" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="VIDEO"/>
+          </button>
+          <button class="button_main" x="+55+60" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+            <off color="transparent"/>
+            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="EFFECTS"/>
+          </button>
+        </group>
+        <!-- border -->
+        <visual x="+0" y="+8" width="190" height="28">
+          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+        </visual>
+        <!-- label -->
+        <textzone x="+0">
+          <size width="180" height="16"/>
+          <text fontsize="9" weight="normal" color="#999999" align="center" text="RACKS" important="true"/>
+        </textzone>
+        <!-- layout buttons (cycle) -->
+      </group>
+    </group>
+    <group visibility="0.75">
+      <visual class="gfx_shape" x="115+80+300+90+643" y="8" width="75" height="27" coloroff="panel_background" visibility="not can_sandbox"/>
+    </group>
+  </define>
+</defs>

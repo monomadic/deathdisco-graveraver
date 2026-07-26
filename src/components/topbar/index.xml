@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Top bar components. Each define is one responsibility region loaded onto
+       the bar by the layouts/topbar.xml assembly via VirtualDJ classes. -->
+  <xi:include href="mode-switcher.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="deck-count.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="global-settings.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="utility-actions.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="options-menu.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="browser-button.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="waves-button.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="pro-utilities.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="performance-utilities.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="stack-utilities.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="status-lights.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="master-meters.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="window-controls.xml" xpointer="xpointer(/defs/*)"/>
+</defs>

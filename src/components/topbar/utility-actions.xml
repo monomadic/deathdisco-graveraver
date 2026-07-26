@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_UTILITY_ACTIONS">
+    <!-- REFRESH BUTTON -->
+    <button tooltip="Skin Refresh" action="load_skin">
+      <size width="42" height="27"/>
+      <off color="transparent"/>
+      <icon sysicon="sampler_loop" width="22" height="22" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+    </button>
+    <!-- SETTINGS BUTTON -->
+    <button tooltip="Settings" action="settings" x="+180">
+      <size width="42" height="27"/>
+      <off color="transparent"/>
+      <icon sysicon="settings" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+    </button>
+    <!-- INIT CONTROLLER -->
+    <button action="reinit_controller" x="-40">
+      <size width="42" height="27"/>
+      <off color="transparent"/>
+      <icon sysicon="headphones" width="25" height="25" coloroff="#CCCCCC" colorover="#FFFFFF"/>
+    </button>
+  </define>
+</defs>

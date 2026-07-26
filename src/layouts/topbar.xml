@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TOP BAR LAYOUT
+     Composes the shared top bar from topbar components (src/components/topbar/)
+     using VirtualDJ classes. This file owns *which* component appears *where*
+     and *when* (position / name / visibility / condition); each component owns
+     its own internal contents. Children are listed in paint order (earlier =
+     behind). Sibling order is significant: several rows use relative offsets
+     (y="+5", x="+802+..."), so keep this ordering stable. -->
+<module>
+  <!-- bar background plate -->
+  <visual class="gfx_shape" width="1920-2-2" height="45" coloroff="dark_1"/>
+  <!-- Pro / Performance / Stack mode switch -->
+  <panel class="topbar_mode_switcher" x="70" y="0"/>
+  <!-- 2 / 4 deck count selector -->
+  <panel class="topbar_deck_count" x="340" y="2"/>
+  <!-- phrase length, snap, cue mode, global sync controls -->
+  <panel class="topbar_global_settings" x="1070" y="+5"/>
+  <!-- skin refresh, settings, reinit-controller action icons -->
+  <panel class="topbar_utility_actions" x="850" y="8"/>
+  <!-- Accent top line -->
+  <!-- <line x="0" y="0" width="1920" height="1" highlight="dark_8" shadow="#00000000"/> -->
+  <!-- macOS logo + application options menu -->
+  <panel class="topbar_options_menu" name="applicationbuttons_logo" condition="is_mac"/>
+  <!-- browser-zoom / waves toggles and XL custom button -->
+  <line color="dark_5" x="58" y="1" width="1" height="39"/>
+  <panel class="topbar_browser_button" x="250" y="+1"/>
+  <panel class="topbar_waves_button" visibility="browser_zoom" x="680" y="8"/>
+  <!-- XL CUSTOM BUTTON -->
+  <button class="custom_button" source="100" x="+960-64" y="+8" width="130" height="30" coloroff="black">
+      <off color="black" border="#888888"/>
+      <on color="#000000"/>
+      <over color="#000000" border="white"/>
+      <down color="#000000" border="#888888"/>
+      <selected color="#000000"/>
+      <text overcolor="white" size="14" oncolor="white" align="center"/>
+    </button>
+  <!-- Pro-mode utilities: layout, racks, mixer options, phrase circles -->
+  <panel class="topbar_pro_utilities" name="pro_skin_utility" visibility="var_equal '@$skin_mode' 0"/>
+  <!-- Performance-mode utilities: layout cycle, racks -->
+  <panel class="topbar_performance_utilities" name="performance_skin_utility" visibility="var_equal '@$skin_mode' 1"/>
+  <!-- Stack-mode utilities: pad / mixer / video / effects panel toggles -->
+  <panel class="topbar_stack_utilities" name="stack_skin_utility" visibility="var_equal '@$skin_mode' 2"/>
+  <!-- CFX / PFX / SAMP audio-modifier status lights -->
+  <panel class="topbar_status_lights" x="+802+160+100+2+400" y="+8"/>
+  <!-- master VU, CPU, battery, clock -->
+  <panel class="topbar_master_meters" name="master_options" x="+802+160+160+2+440" y="8"/>
+  <!-- Windows logo + minimize / maximize / close window controls -->
+  <panel class="topbar_window_controls" name="applicationbuttons_logo" condition="is_pc"/>
+  <!-- Accent bottom border line -->
+  <!-- <line x="0" y="44" width="1920" height="1" highlight="dark_6" shadow="#00000000"/> -->
+</module>

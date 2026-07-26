@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_BROWSER_BUTTON">
+    <button tooltip="BROWSER ZOOM\nToggle browser zoom mode." class="button_main" x="+0" action="browser_zoom" width="80" height="42" textsize="12" textcoloron="needle" text="BROWSER" coloroff="transparent" coloron="#222222" bordersize="0"/>
+  </define>
+</defs>

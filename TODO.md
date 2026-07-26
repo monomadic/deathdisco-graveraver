@@ -40,10 +40,32 @@ Cleanup backlog after the prototype/index removal and structural audit work.
     4-deck menu items and stay duplicated; unifying them means showing those
     items (visibility-guarded) in the forced-4-deck variant too.
 
-- [ ] Split the topbar by responsibility.
-  - Main target: `src/components/containers/topbar.xml`.
-  - Suggested pieces: layout switcher, global settings, browser/options menu, Pro utilities, Performance utilities, Stack utilities.
-  - Keep `topbar.xml` as the shared topbar container, but make it read like an assembly file. `src/skin.xml` remains the sole entrypoint.
+- [x] Treat the top and bottom bars as layouts and split them into components.
+  - The bars are layout objects, so `topbar` and `bottombar` moved out of
+    `src/components/containers/` to `src/layouts/topbar.xml` and
+    `src/layouts/bottombar.xml`. Each layout owns which component appears
+    where/when on the bar (position / name / visibility / condition) and loads
+    the pieces via VirtualDJ classes — not xmllint XInclude flattening.
+  - The topbar's responsibility regions became component classes under
+    `src/components/topbar/` (mode-switcher, deck-count, global-settings,
+    utility-actions, options-menu, browser-button, waves-button,
+    pro/performance/stack utilities, status-lights, master-meters,
+    window-controls). The bottombar's two views became
+    `src/components/bottombar/` (browser-tools, custom-buttons). Both have an
+    `index.xml` hub included from `src/components/index.xml`.
+  - Verification: a per-bar reconstruction (inlining each define body back
+    under its reference's attributes) is byte-identical to the original bar
+    tree; the only runtime change is the `<group>`→`<panel class>` container,
+    which is the same pattern the skin already uses everywhere (e.g.
+    `EQ_MIXER_PANE`). This changes the render path, so confirm live in
+    VirtualDJ after `just install`.
+
+- [ ] Extract shared topbar rack-toggle controls.
+  - The MIXER/VIDEO/EFFECTS toggle group is duplicated between
+    `components/topbar/pro-utilities.xml` and
+    `components/topbar/performance-utilities.xml`, and the per-button action
+    strings recur again (with PADS) in `components/topbar/stack-utilities.xml`.
+    Fold the identical Pro/Performance group into one reusable class.
 
 - [ ] Normalize repeated geometry constants.
   - Repeated values include canvas size, topbar/bottombar heights, deck heights, browser offsets, and rack/deck widths.

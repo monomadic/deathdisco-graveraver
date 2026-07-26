@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_MODE_SWITCHER">
+    <button tooltip="Pro" class="button_main" action="set '@$skin_mode' 0 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 0">
+      <off color="transparent"/>
+      <on color="#222222"/>
+      <over color="transparent"/>
+      <down color="#222222"/>
+      <selected color="#333333"/>
+      <text overcolor="white" size="12" oncolor="white" text="PRO"/>
+    </button>
+    <button x="+60" tooltip="Performance" class="button_main" action="set '@$skin_mode' 1 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 1">
+      <off color="transparent"/>
+      <on color="#222222"/>
+      <over color="transparent"/>
+      <down color="#222222"/>
+      <selected color="#333333"/>
+      <text overcolor="white" size="12" oncolor="white" text="PERF"/>
+    </button>
+    <button x="+120" tooltip="Stack" class="button_main" action="set '@$skin_mode' 2 &amp; load_skin" width="60" height="45" bordersize="0" query="var_equal '@$skin_mode' 2">
+      <off color="transparent"/>
+      <on color="#222222"/>
+      <over color="transparent"/>
+      <down color="#222222"/>
+      <selected color="#333333"/>
+      <text overcolor="white" size="12" oncolor="white" text="STACK"/>
+    </button>
+  </define>
+</defs>

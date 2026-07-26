@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_STACK_UTILITIES">
+    <!-- PANEL TOGGLES -->
+    <group x="450" y="+8">
+      <button tooltip="Show/Hide Pad Panel" class="button_main" x="+60*0" action="toggle '@$deck_stack'" width="55" height="27" bordersize="0">
+        <off color="black"/>
+        <on color="#222222"/>
+        <over color="#000000"/>
+        <down color="#222222"/>
+        <selected color="#333333"/>
+        <text overcolor="white" size="12" oncolor="white" text="PADS"/>
+      </button>
+      <button tooltip="Show/Hide Mixer Rack" class="button_main" x="+60*1" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <off color="black"/>
+        <on color="#222222"/>
+        <over color="#000000"/>
+        <down color="#222222"/>
+        <selected color="#333333"/>
+        <text overcolor="white" size="12" oncolor="white" text="MIXER"/>
+      </button>
+      <button tooltip="Show/Hide Video Rack" class="button_main" x="+60*2" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="55" height="27" bordersize="0">
+        <off color="black"/>
+        <on color="#222222"/>
+        <over color="#000000"/>
+        <down color="#222222"/>
+        <selected color="#333333"/>
+        <text overcolor="white" size="12" oncolor="white" text="VIDEO"/>
+      </button>
+      <button tooltip="Show/Hide Effects Rack" class="button_main" x="+60*3" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="65" height="27" bordersize="0">
+        <off color="black"/>
+        <on color="#222222"/>
+        <over color="#000000"/>
+        <down color="#222222"/>
+        <selected color="#333333"/>
+        <text overcolor="white" size="12" oncolor="white" text="EFFECTS"/>
+      </button>
+    </group>
+  </define>
+</defs>

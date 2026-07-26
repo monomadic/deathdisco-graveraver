@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <define class="TOPBAR_GLOBAL_SETTINGS">
+    <!-- PHRASE LEN -->
+    <group x="+20" y="+0">
+      <textzone>
+        <pos x="+5" y="+0"/>
+        <size width="70" height="16"/>
+        <text fontsize="9" weight="normal" color="#999999" align="left" text="PHRASE" important="true"/>
+      </textzone>
+      <button class="button_main" x="+0" y="+0+14" width="70" height="20" action="var_equal '$phrase_len' 16 ? set '$phrase_len' 32 : set '$phrase_len' 16" textsize="10" textaction="var_equal '$phrase_len' 16 ? get_text '16 BARS' : get_text '32 BARS'" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#999999" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="setting 'globalQuantize' 1 ? off : setting 'globalQuantize' 0.125 ? on : setting 'globalQuantize' 0.25 ? on : setting 'globalQuantize' 0.5 ? on : setting 'globalQuantize' 2 ? on : setting 'globalQuantize' 4 ? on : setting 'globalQuantize' 16 ? on : setting 'globalQuantize' 32"/>
+    </group>
+    <!-- GLOBAL QUANT -->
+    <group x="+90" y="+0">
+      <textzone>
+        <pos x="+5" y="+0"/>
+        <size width="70" height="16"/>
+        <text fontsize="9" weight="normal" color="#999999" align="left" text="SNAP" important="true"/>
+      </textzone>
+      <button class="button_main" x="+0" y="+0+14" width="70" height="20" action="setting 'globalQuantize' 1 ? setting 'globalQuantize' 4 : setting 'globalQuantize' 4 ? setting 'globalQuantize' 16 : setting 'globalQuantize' 16 ? setting 'globalQuantize' 32 : setting 'globalQuantize' 1" textsize="10" textaction="setting 'globalQuantize' 0.125 ? get_text '1/8' : setting 'globalQuantize' 0.25 ? get_text '1/4' : setting 'globalQuantize' 0.5 ? get_text '1/2' : setting 'globalQuantize' 1 ? get_text 'BEAT' : setting 'globalQuantize' 2 ? get_text '2' : setting 'globalQuantize' 4 ? get_text 'BAR' : setting 'globalQuantize' 16 ? get_text 'PHRASE 16' : setting 'globalQuantize' 32 ? get_text 'PHRASE 32' : get_text 'BEAT'" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#999999" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="setting 'globalQuantize' 1 ? off : setting 'globalQuantize' 0.125 ? on : setting 'globalQuantize' 0.25 ? on : setting 'globalQuantize' 0.5 ? on : setting 'globalQuantize' 2 ? on : setting 'globalQuantize' 4 ? on : setting 'globalQuantize' 16 ? on : setting 'globalQuantize' 32"/>
+    </group>
+    <!-- CUE MODE -->
+    <group x="+160" y="+0">
+      <textzone>
+        <pos x="+5" y="+0"/>
+        <size width="70" height="16"/>
+        <text fontsize="9" weight="normal" color="#999999" align="left" text="CUE MODE" important="true"/>
+      </textzone>
+      <button class="button_main" x="+0" y="+0+14" width="70" height="20" action="setting 'hotCueMode'" textsize="10" textaction="setting 'hotCueMode' &amp; param_uppercase" coloroff="#111111" coloron="#111111" bordersize="1" textcolor="#FFFFFF" textcoloron="white" brcoloroff="#999999" brcoloron="#999999" query="slip_mode ? blink 800ms : off"/>
+    </group>
+    <!-- SYNC BUTTONS -->
+    <group x="+250" y="+0">
+      <textzone>
+        <size width="26+26+26" height="16"/>
+        <text fontsize="9" weight="normal" color="#999999" align="center" text="GLOBAL SYNC" important="true"/>
+      </textzone>
+      <group y="+14">
+        <!-- MASTER TEMPO BUTTON -->
+        <button class="button_main" x="+0" y="+0" width="25" height="15" tooltip="Master Tempo" action="master_tempo" textsize="10" text="MT" coloron="#2D003D" textcoloron="#A800FF" bordersize="1" brcoloron="#A800FF"/>
+        <!-- MASTERDECK AUTO BUTTON -->
+        <button class="button_main" x="+26" y="+0" width="25" height="15" tooltip="Masterdeck Auto" action="masterdeck_auto" textsize="10" text="M" textcoloron="orange" bordersize="1" brcoloron="orange" coloron="#222200"/>
+        <!-- GLOBAL QUANTIZE BUTTON -->
+        <button class="button_main" x="+52" y="+0" width="25" height="15" tooltip="Quantize All" action="deck 1 quantize_all &amp; deck 2 quantize_all &amp; deck 3 quantize_all &amp; deck 4 quantize_all" textsize="10" text="Q" textcoloron="#88FF88" bordersize="1" brcoloron="#88FF88" coloron="#002200"/>
+      </group>
+    </group>
+  </define>
+</defs>

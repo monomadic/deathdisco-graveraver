@@ -33,8 +33,9 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - `src/components/index.xml`: component include hub.
 - `src/components/buttons/index.xml`: button-family include hub.
 - `src/components/racks/`: rack components — `effects-racks.xml`, `mixer-racks.xml`, `video-racks.xml`, plus `containers/` for rack shells and positioning.
-- `src/components/containers/`: larger reusable container regions — `pad-page.xml`
-  and `waveform/` container surfaces.
+- `src/components/pad-page.xml`: the pad-panel page component.
+- `src/components/waveforms/`: waveform component surfaces (main, center,
+  horizontal, vertical, stack, scratch, plus shared helpers and support).
 - `src/components/topbar/`, `src/components/bottombar/`: the per-bar component
   classes (one responsibility region per file, plus an `index.xml` hub). They are
   loaded onto the bars by the bar layouts via VirtualDJ classes.

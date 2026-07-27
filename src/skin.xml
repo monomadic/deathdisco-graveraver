@@ -11,9 +11,11 @@
     (layouts/topbar.xml, layouts/bottombar.xml) are layouts: each owns which
     components appear where on the bar and loads them via VirtualDJ classes.
 
-    Containers are reusable regions that group components: decks, racks,
-    waveforms, mixer areas, and similar configurable skin regions. Container
-    definitions live under src/components/containers.
+    Containers are the larger reusable regions that group components: decks,
+    racks, waveforms, mixer areas, and similar configurable skin regions. They
+    are components themselves and live among the components in src/components
+    (e.g. src/components/waveforms, src/components/pad-page.xml); rack shells
+    live under src/components/racks/containers.
 
     Components are the smaller reusable UI elements loaded by layouts and
     containers: buttons, sliders, text, meters, transport controls, jogwheels,

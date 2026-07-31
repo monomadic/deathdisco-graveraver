@@ -113,8 +113,8 @@
     <deck deck="[DECK]">
       <group>
         <!-- LEFT WAVE -->
-        <visual x="0" y="+20" width="1920" height="[HEIGHT]-40" visibility="leftdeck">
-          <off shape="square" color="transparent" border_size="1" border="#202020" radius="0"/>
+        <visual x="0" y="+0" width="1920" height="[HEIGHT]-20" visibility="leftdeck">
+          <off shape="square" color="transparent" border_size="1" border="dark_4" radius="0"/>
         </visual>
         <!-- <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="leftdeck"> -->
         <!-- <pos x="0" y="+20"/> -->
@@ -127,28 +127,28 @@
         <!-- </cue> -->
         <!-- </scratchwave> -->
         <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="leftdeck">
-          <pos x="0" y="+20"/>
-          <size width="1920" height="[HEIGHT]-40"/>
-          <grid height="20" pos="[HEIGHT]-40" maincolor="#444444" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="false" shapepos="-14" shapemirrored="down"/>
+          <pos x="0" y="+0"/>
+          <size width="1920" height="[HEIGHT]-20"/>
+          <grid height="20" pos="[HEIGHT]-20" maincolor="#444444" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="false" shapepos="-14" shapemirrored="down"/>
           <gridlines width="1" color="gridlines" transparency="0.3"/>
-          <cue y="+[HEIGHT]-38">
-            <mask x="123" y="100" width="6" height="13"/>
+          <cue y="+[HEIGHT]-15">
+            <mask x="123" y="100" width="6" height="14"/>
             <text dx="+8" dy="-1" fontsize="12" important="true"/>
           </cue>
         </scratchwave>
         <!-- RIGHT WAVE -->
         <!-- grid border: right -->
-        <visual x="0" y="+20" width="1920" height="[HEIGHT]-40" visibility="rightdeck">
-          <off shape="square" color="transparent" border_size="1" border="#202020" radius="0"/>
+        <visual x="0" y="+20" width="1920" height="[HEIGHT]-20" visibility="rightdeck">
+          <off shape="square" color="transparent" border_size="1" border="dark_4" radius="0"/>
         </visual>
         <!-- RIGHT: cue markers below -->
         <scratchwave orientation="horizontal" color="scratch1" color2="scratch2" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" visibility="rightdeck">
           <pos x="0" y="+20"/>
-          <size width="1920" height="[HEIGHT]-40"/>
+          <size width="1920" height="[HEIGHT]-20"/>
           <grid height="20" pos="-18" maincolor="#444444" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="false" shapepos="-14" shapemirrored="up"/>
           <gridlines width="1" color="gridlines" transparency="0.3"/>
           <!-- y = below waveform: [HEIGHT] here is the scratchwave's own height in this context -->
-          <cue y="-20">
+          <cue y="-15">
             <mask x="123" y="100" width="6" height="13"/>
             <text dx="+8" dy="-1" fontsize="12" important="true"/>
           </cue>

@@ -19,7 +19,7 @@
     <group visibility="loaded">
     </group>
     <!-- COVER ART: HIDE -->
-    <group visibility="var_equal '@$show_cover_title' 0 &amp; loaded">
+    <group visibility="var_equal '@$dd_show_cover_title' 0 &amp; loaded">
       <pos x="+15" y="+8"/>
       <!-- LEFT -->
       <!-- title -->
@@ -45,7 +45,7 @@
       </textzone>
     </group>
     <!-- COVER ART: SHOW -->
-    <group visibility="var_equal '@$show_cover_title' 1">
+    <group visibility="var_equal '@$dd_show_cover_title' 1">
       <!-- Left decks -->
       <panel class="track_info_metadata" x="+10+170+10" y="+0" visibility="get_deck 1 ? true : get_deck 3 ? true : false" width="[WIDTH]-200"/>
       <!-- Right decks -->
@@ -185,7 +185,7 @@
           <text color="dark_8" align="left" weight="" size="15" action="get_text BPM"/>
         </textzone>
         <!-- topright -->
-        <textzone class="text" fontsize="10" color="dark_8" align="right" weight="normal" action="cycle '@$hauntinstimesdisplay' 3" textaction="var_equal '@$jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="not var_equal '@$jog_type' 0">
+        <textzone class="text" fontsize="10" color="dark_8" align="right" weight="normal" action="cycle '@$dd_time_display_mode' 3" textaction="var_equal '@$dd_jog_bpm_digits' 0 ? get_text '%bpm' : var_equal '@$dd_jog_bpm_digits' 1 ? get_text '%bpmex'" visibility="not var_equal '@$dd_jog_type' 0">
           <pos x="+48"/>
           <size width="25" height="18"/>
         </textzone>
@@ -193,7 +193,7 @@
         <textzone>
           <pos x="+0" y="+17"/>
           <size width="90" height="30"/>
-          <text color="`deck [DECK] masterdeck ? color 'orange' : color 'white'`" align="left" size="36" weight="bold" action="var_equal '@$bpm_hide_options' 1 ? get_text '--.--' : var_equal '@$jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
+          <text color="`deck [DECK] masterdeck ? color 'orange' : color 'white'`" align="left" size="36" weight="bold" action="var_equal '@$dd_bpm_mask' 1 ? get_text '--.--' : var_equal '@$dd_jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
         </textzone>
         <!-- sync diff -->
         <button action="pitch_reset" tooltip="">
@@ -239,22 +239,22 @@
       </visual>
       <!-- label -->
       <group x="+10" y="+1">
-        <textzone action="cycle '@$hauntinstimesdisplay' 3" tooltip="">
+        <textzone action="cycle '@$dd_time_display_mode' 3" tooltip="">
           <size width="90" height="18"/>
-          <text color="dark_8" align="left" weight="" size="15" action="var_equal '@$hauntinstimesdisplay' 0 ? get_text 'ELAPSED' : var_equal '@$hauntinstimesdisplay' 1 ? get_text 'REMAIN' : var_equal '@$hauntinstimesdisplay' 2 ? get_text 'TIME'"/>
+          <text color="dark_8" align="left" weight="" size="15" action="var_equal '@$dd_time_display_mode' 0 ? get_text 'ELAPSED' : var_equal '@$dd_time_display_mode' 1 ? get_text 'REMAIN' : var_equal '@$dd_time_display_mode' 2 ? get_text 'TIME'"/>
         </textzone>
         <!-- time -->
         <textzone tooltip="">
           <pos x="+0" y="+15"/>
           <size width="90" height="27"/>
-          <text color="white" align="left" size="32" weight="bold" action="var_equal '@$hauntinstimesdisplay' 0 ? get_time 'ELAPSED' : var_equal '@$hauntinstimesdisplay' 1 ? get_time 'REMAIN' : var_equal '@$hauntinstimesdisplay' 2 ? get_time 'TOTAL'"/>
+          <text color="white" align="left" size="32" weight="bold" action="var_equal '@$dd_time_display_mode' 0 ? get_time 'ELAPSED' : var_equal '@$dd_time_display_mode' 1 ? get_time 'REMAIN' : var_equal '@$dd_time_display_mode' 2 ? get_time 'TOTAL'"/>
         </textzone>
       </group>
     </group>
   </define>
   <define class="TRACK_INFO_STACK">
     <!-- title background -->
-    <button x="+0" class="button_main" action="toggle '@hntnhtxtscroll'" rightclick="file_info" tooltip="Text Scroll\nRight-click: Tag Editor" width="479" height="124" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="1"/>
+    <button x="+0" class="button_main" action="toggle '@dd_title_scroll'" rightclick="file_info" tooltip="Text Scroll\nRight-click: Tag Editor" width="479" height="124" coloroff="infos_background" coloron="infos_background" brcoloroff="panel_background" brcoloron="panel_background" bordersize="1"/>
     <group x="+4">
       <!-- title -->
       <textzone orientation="vertical" direction="ccw">

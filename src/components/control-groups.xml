@@ -23,15 +23,15 @@
         <item text="Centered" localize="true" action="setting 'waveformCenter' 'centered'" check="setting 'waveformCenter' 'centered'"/>
       </submenu>
       <separator/>
-      <item text="Show Controls" localize="true" action="toggle '@$show_scratch_buttons'" check="var_equal '@$show_scratch_buttons' 1"/>
+      <item text="Show Controls" localize="true" action="toggle '@$dd_show_scratch_buttons'" check="var_equal '@$dd_show_scratch_buttons' 1"/>
       <item text="Show Gridlines" localize="true" action="setting 'showGridlines'" check="setting 'showGridlines'"/>
-      <item text="Bar Counter" localize="true" action="toggle '@$show_bar_counter_vert'" check="var_equal '@$show_bar_counter_vert' 1"/>
-      <item text="Hide Transport" localize="true" action="toggle '@$hide_crossfader'" check="var_equal '@$hide_crossfader' 1"/>
+      <item text="Bar Counter" localize="true" action="toggle '@$dd_show_bar_counter_vertical'" check="var_equal '@$dd_show_bar_counter_vertical' 1"/>
+      <item text="Hide Transport" localize="true" action="toggle '@$dd_hide_transport'" check="var_equal '@$dd_hide_transport' 1"/>
     </menu>
   </define>
   <define class="MIC/HEADPHONES_CONTROLS">
-    <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
+    <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$dd_layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$dd_layout_4deck' 1">
       <!-- background -->
       <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background"/>
       <visual type="vumeter" source="get_level 'mic'" x="+77/2-3" y="+66+122+2" width="7" height="28" smooth="no">
@@ -61,7 +61,7 @@
         </led>
       </visual>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
+    <group name="4decks_view" visibility="var_equal '@$dd_layout_4deck' 1">
       <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="mic_volume" rgclick="mic_volume 62% while_pressed" dblclick="mic_volume 62%" frommiddle="false" fillcolor="br_focus" text="MIC VOL"/>
       <button class="button_main" x="+10" y="+74" width="77-10-10" height="26" action="mic" textsize="11" text="ON" coloron="br_focus" bordersize="0"/>
       <button class="button_main" x="+10" y="+74+24+12" width="77-10-10" height="26" action="sampler_rec 'mic'" textsize="11" text="REC" coloron="br_focus" bordersize="0"/>
@@ -110,8 +110,8 @@
     </group>
   </define>
   <define class="MASTER_CONTROLS">
-    <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
+    <visual class="gfx_shape" width="77" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$dd_layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$dd_layout_4deck' 1">
       <visual class="gfx_shape" width="77" height="432-56-1" coloroff="panel_background"/>
       <menu class="dropdown_menu" tooltip="Zero dB">
         <pos x="+58" y="+6"/>
@@ -139,7 +139,7 @@
         <button class="custom_button" source="207" y="+140" width="57" height="19"/>
       </group>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
+    <group name="4decks_view" visibility="var_equal '@$dd_layout_4deck' 1">
       <menu class="dropdown_menu" tooltip="Zero dB">
         <pos x="+58" y="+6"/>
         <separator text="Headroom"/>
@@ -215,15 +215,15 @@
     </group>
   </define>
   <define class="MASTERCENTRAL_CONTROLS">
-    <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$layout_4deck' 1"/>
-    <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$layout_4deck' 1"/>
-    <group name="2decks_view" visibility="var_not_equal '@$layout_4deck' 1">
+    <visual class="gfx_shape" width="77+77+2" height="432-56-1" coloroff="panel_background" visibility="var_not_equal '@$dd_layout_4deck' 1"/>
+    <visual class="gfx_shape" width="77+77+2" height="432-56-1+216+2" coloroff="panel_background" visibility="var_equal '@$dd_layout_4deck' 1"/>
+    <group name="2decks_view" visibility="var_not_equal '@$dd_layout_4deck' 1">
       <!-- Shared center utilities for the master mixer -->
       <panel class="masterfx_panel" x="+6" y="+6"/>
       <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>
       <panel class="mic_panel" x="+6" y="+164"/>
     </group>
-    <group name="4decks_view" visibility="var_equal '@$layout_4deck' 1">
+    <group name="4decks_view" visibility="var_equal '@$dd_layout_4deck' 1">
       <!-- Shared center utilities for the master mixer -->
       <panel class="masterfx_panel" x="+6" y="+6"/>
       <visual class="gfx_shape" x="+6" y="+154" width="77+77+2-12" height="2" coloroff="skin_background"/>

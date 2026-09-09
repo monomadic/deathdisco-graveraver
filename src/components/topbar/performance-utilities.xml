@@ -19,25 +19,25 @@
       </textzone>
       <!-- layout buttons (cycle) -->
       <group x="+0" y="+11">
-        <button class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="cycle '@$performance_layout' 2 &amp; load_skin">
-          <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$performance_layout' &amp; param_equal 1) ? get_text 'HORIZONTAL' : get_text 'VERTICAL'"/>
+        <button class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="cycle '@$dd_performance_layout' 2 &amp; load_skin">
+          <text colorover="#FFFFFF" color="#999999" weight="normal" align="center" size="14" coloron="white" action="(get_var '@$dd_performance_layout' &amp; param_equal 1) ? get_text 'HORIZONTAL' : get_text 'VERTICAL'"/>
         </button>
       </group>
     </group>
     <group x="505" y="2">
       <group>
         <group x="+5" y="+9">
-          <button class="button_main" x="+0" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+0" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_mixer_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="MIXER"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="MIXER"/>
           </button>
-          <button class="button_main" x="+53" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+53" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_video_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="VIDEO"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="VIDEO"/>
           </button>
-          <button class="button_main" x="+55+60" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+55+60" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_fx_rack' &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="EFFECTS"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="EFFECTS"/>
           </button>
         </group>
         <!-- border -->

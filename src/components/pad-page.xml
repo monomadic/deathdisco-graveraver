@@ -146,7 +146,7 @@
                   <size width="22" height="22"/>
                   <size width="200" height="200"/>
                   <icon sysicon="settings" coloroff="dark_8" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
-                  <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
+                  <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$dd_skin_mode' 2 ? false : var_equal '@$dd_skin_mode' 0 ? false : true"/>
                 </menu>
               </group>
               <!-- menu -->

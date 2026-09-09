@@ -6,7 +6,7 @@ Single source for the browser <pos> tables. VirtualDJ selects a rung by
 condition; it cannot compute var-dependent geometry inline (a get_var/backtick
 term in an x/y/width/height *value* is dropped — only conditions read vars), so
 each surface must enumerate one rung per state:
-  - 14 waveform sizes: @$infntywavesize 0-13 (step = 20px), and optionally
+  - 14 waveform sizes: @$dd_wave_size 0-13 (step = 20px), and optionally
   - 8 rack combinations: any subset of fx (80px), mixer (86px), video (140px).
 
 Each surface in SURFACES supplies its own x/width and y/height templates (so the
@@ -32,37 +32,37 @@ OUTPUT = Path(__file__).parent.parent / "src/layouts/browser/browser-positions.g
 # Conditions use VDJ's `?` as AND; first match wins at runtime.
 RACK_COMBOS = [
     (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1",
+        "var_equal '@$dd_show_fx_rack' 1 ? var_equal '@$dd_show_mixer_rack' 1 ? var_equal '@$dd_show_video_rack' 1",
         "+80+2+86+2+140+2",
         "-80-2-86-2-140-2",
     ),
     (
-        "var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_video_rack' 1",
+        "var_equal '@$dd_show_mixer_rack' 1 ? var_equal '@$dd_show_video_rack' 1",
         "+86+2+140+2",
         "-86-2-140-2",
     ),
     (
-        "var_equal '@$show_fx_rack' 1 ? var_equal '@$show_video_rack' 1",
+        "var_equal '@$dd_show_fx_rack' 1 ? var_equal '@$dd_show_video_rack' 1",
         "+80+2+140+2",
         "-80-2-140-2",
     ),
     (
-        "var_equal '@$show_mixer_rack' 1 ? var_equal '@$show_fx_rack' 1",
+        "var_equal '@$dd_show_mixer_rack' 1 ? var_equal '@$dd_show_fx_rack' 1",
         "+80+2+86+2",
         "-80-2-86-2",
     ),
     (
-        "var_equal '@$show_video_rack' 1",
+        "var_equal '@$dd_show_video_rack' 1",
         "+140+2",
         "-140-2",
     ),
     (
-        "var_equal '@$show_mixer_rack' 1",
+        "var_equal '@$dd_show_mixer_rack' 1",
         "+86+2",
         "-86-2",
     ),
     (
-        "var_equal '@$show_fx_rack' 1",
+        "var_equal '@$dd_show_fx_rack' 1",
         "+80+2",
         "-80-2",
     ),
@@ -121,9 +121,9 @@ def pos_elements(surface):
             h = surface["h"].format(wave=wave, hbase=hbase, yr=y_rack, hr=h_rack)
 
             if rack_cond:
-                condition = f"{rack_cond} ? var_equal '@$infntywavesize' {n}"
+                condition = f"{rack_cond} ? var_equal '@$dd_wave_size' {n}"
             else:
-                condition = f"var_equal '@$infntywavesize' {n}"
+                condition = f"var_equal '@$dd_wave_size' {n}"
 
             yield (
                 f'    <pos x="{surface["x"]}" y="{y}" width="{surface["width"]}"'

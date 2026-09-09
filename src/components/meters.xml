@@ -2,7 +2,7 @@
 <defs>
   <!-- LED-style VU meter variants -->
   <define class="VU_METER_LEDS" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
-    <visual type="vumeter" width="11" height="154" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
+    <visual type="vumeter" width="11" height="154" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 0">
       <led x="+0" y="+6*25" width="11" height="[HEIGHT]">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="deckcolor" radius="0" border="contrast" border_size="0"/>
@@ -108,7 +108,7 @@
         <on color="needle" radius="0" border="contrast" border_size="0"/>
       </led>
     </visual>
-    <visual type="vumeter" width="11" height="154" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 1">
+    <visual type="vumeter" width="11" height="154" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 1">
       <led x="+0" y="+6*25" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="green_vu" radius="0" border="contrast" border_size="0"/>
@@ -224,7 +224,7 @@
   </define>
 
   <define class="VU_METER_LEDS_MINI" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
-    <visual type="vumeter" width="11" height="58" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
+    <visual type="vumeter" width="11" height="58" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 0">
       <led x="+0" y="+6*9" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="deckcolor" radius="0" border="contrast" border_size="0"/>
@@ -266,7 +266,7 @@
         <on color="needle" radius="0" border="contrast" border_size="0"/>
       </led>
     </visual>
-    <visual type="vumeter" width="11" height="58" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 1">
+    <visual type="vumeter" width="11" height="58" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 1">
       <led x="+0" y="+6*9" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="green_vu" radius="0" border="contrast" border_size="0"/>
@@ -319,7 +319,7 @@
 
 
   <define class="VU_METER_LEDS_STACK" placeholders="*source,peak,showpeaks,width=11,height=4,vucoloroff=vu_background">
-    <visual type="vumeter" width="11" height="124" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 0">
+    <visual type="vumeter" width="11" height="124" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 0">
       <led x="+0" y="+6*20" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="deckcolor" radius="0" border="contrast" border_size="0"/>
@@ -405,7 +405,7 @@
         <on color="needle" radius="0" border="contrast" border_size="0"/>
       </led>
     </visual>
-    <visual type="vumeter" width="11" height="124" source="[SOURCE]" smooth="no" visibility="var_equal '@$hntnhvumetercolors' 1">
+    <visual type="vumeter" width="11" height="124" source="[SOURCE]" smooth="no" visibility="var_equal '@$dd_vu_alt_colors' 1">
       <led x="+0" y="+6*20" width="11" height="4">
         <off color="[VUCOLOROFF]" radius="0" border="contrast" border_size="0"/>
         <on color="green_vu" radius="0" border="contrast" border_size="0"/>

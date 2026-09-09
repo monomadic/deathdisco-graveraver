@@ -22,21 +22,21 @@
         <background color="needle" shape="square"/>
       </overlay>
     </rhythmzone>
-    <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="1" x="960-2-598-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-    <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="2" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-    <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="3" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-    <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="1" x="960-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="1" x="960-2-598-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="2" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="2" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/4-24-2+12+3+24" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="3" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="3" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="4" x="960-2-120-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="4" x="960-2-598-40" y="+[WAVEFORMHEIGHT]/2+18+[WAVEFORMHEIGHT]/2+2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
   </define>
   <!-- Left/right bar counter row shared by the split waveform panes. -->
   <define class="SPLIT_WAVE_BEAT_COUNTERS" macro="true">
-    <panel class="beat_counter" deck="left" x="954/2-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="right" x="1436-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-    <panel class="beat_counter" deck="left" x="954/2-2-338-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-    <panel class="beat_counter" deck="right" x="1436-338-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="left" x="954/2-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="right" x="1436-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+    <panel class="beat_counter" deck="left" x="954/2-2-338-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+    <panel class="beat_counter" deck="right" x="1436-338-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
   </define>
   <!-- One split-wave scratch deck: the background-off and background-on variants
        differ only by the grid background attributes, so both live here and the

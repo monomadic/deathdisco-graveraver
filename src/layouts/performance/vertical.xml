@@ -18,10 +18,10 @@
     <panel class="deck_container_performance_compact" x="+1920-2-800+81" y="+333+2" width="800-81" height="333" mirror="true" panelname="deck4" deck="4"/>
   </define>
   <define class="PERFORMANCE_DECKS_VERTICAL">
-    <panel class="performance_2decks_vertical" y="+0" condition="var_equal '@$layout_4deck' 0"/>
-    <panel class="performance_4decks_vertical" y="+0" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="performance_2decks_vertical" y="+0" condition="var_equal '@$dd_layout_4deck' 0"/>
+    <panel class="performance_4decks_vertical" y="+0" condition="var_equal '@$dd_layout_4deck' 1"/>
     <!-- browsers (sit flush under the 333px-tall compact decks, like Horizontal) -->
-    <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2-50" condition="var_equal '@$layout_4deck' 0"/>
-    <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-50" condition="var_equal '@$layout_4deck' 1"/>
+    <panel class="browser_overlay_with_racks" x="2" y="+333+2" width="1920-4" height="1080-43-2-333-2-2-50" condition="var_equal '@$dd_layout_4deck' 0"/>
+    <panel class="browser_overlay_with_racks" x="2" y="+333+2+333+2" width="1920-4" height="1080-43-2-333-2-2-333-2-50" condition="var_equal '@$dd_layout_4deck' 1"/>
   </define>
 </defs>

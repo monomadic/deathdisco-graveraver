@@ -15,7 +15,7 @@ COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 VARIABLE_RE = re.compile(r"@\$?[A-Za-z0-9_]+")
 REGISTRY_ROW_RE = re.compile(r"^\|\s*`(@\$?[A-Za-z0-9_]+)`\s*\|", re.MULTILINE)
 SKIN_MODE_RE = re.compile(
-    r"(?:set|var_(?:equal|not_equal))\s+'@\$skin_mode'\s+(-?\d+)"
+    r"(?:set|var_(?:equal|not_equal))\s+'@\$dd_skin_mode'\s+(-?\d+)"
 )
 ALLOWED_SKIN_MODES = {0, 1, 2}
 
@@ -61,7 +61,7 @@ def main() -> int:
         findings.extend(f"  {name}" for name in stale)
     if unsupported_modes:
         findings.append(
-            "Unsupported @$skin_mode values (supported: 0=Pro, 1=Performance, 2=Stack):"
+            "Unsupported @$dd_skin_mode values (supported: 0=Pro, 1=Performance, 2=Stack):"
         )
         findings.extend(f"  {mode}" for mode in unsupported_modes)
 
@@ -73,7 +73,7 @@ def main() -> int:
     mode_list = ", ".join(str(mode) for mode in sorted(modes))
     print(
         f"State audit passed: {len(source)} registered variables; "
-        f"@$skin_mode values: {mode_list}"
+        f"@$dd_skin_mode values: {mode_list}"
     )
     return 0
 

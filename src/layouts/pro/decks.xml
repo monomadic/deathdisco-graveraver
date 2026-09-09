@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- Pro deck layout shells. @$layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
+  <!-- Pro deck layout shells. @$dd_layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
   <define class="DECK_CONTAINER_PRO" placeholders="*deck,*panelname,*deckside,height=465">
     <deck deck="[DECK]">
       <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" condition="param_equal [DECKSIDE] 'left'"/>

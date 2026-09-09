@@ -3,12 +3,12 @@
   <!-- EXTENDED: a Pro sublayout (mixer off).
     Same expanding-wave shell as the mixer variant, but the center mixer panel
     is dropped and the decks widen to fill the full canvas. Selected in
-    src/layouts/pro/base.xml via @$hide_pro_mixer 1.
+    src/layouts/pro/base.xml via @$dd_hide_pro_mixer 1.
 
     The deck transport buttons (performance_play_button / performance_cue_button)
     and the dropzone helper (dual_dropzone) are shared with the Performance
     compact decks and live in src/layouts/performance/decks.xml. -->
-  <!-- Deck density shells (pure deck structure). @$layout_4deck: 0 = two-deck / swap,
+  <!-- Deck density shells (pure deck structure). @$dd_layout_4deck: 0 = two-deck / swap,
        1 = full four-deck. Positioned by the shared DECKS_* shell (pro/waves.xml). -->
   <define class="EXTENDED_2DECKS" placeholders="*panelname,height=355">
     <panel class="deck_container_extended_side" height="[HEIGHT]" x="0" panelname="deck1" deck="1" mirror="false" visibility="deck 1 leftdeck"/>
@@ -28,8 +28,8 @@
   <!-- Rack band below the decks, shared by both Pro variants (mixer + extended).
        Only the deck_offset (deck height) and the toggled rack content differ. -->
   <define class="MAIN_RACKS" placeholders="offset_y=0,deck_offset=264+2">
-    <panel class="racks_extended" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 0"/>
-    <panel class="racks_single" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$hide_main_waveforms' 1"/>
+    <panel class="racks_extended" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$dd_hide_main_waveforms' 0"/>
+    <panel class="racks_single" x="+2" y="[OFFSET_Y]" deck_offset="[DECK_OFFSET]" condition="var_equal '@$dd_hide_main_waveforms' 1"/>
   </define>
   <!-- Full-width side decks (no center mixer). -->
   <define class="DECK_CONTAINER_EXTENDED_SIDE" placeholders="*deck,*panelname,*mirror=false,height=340">

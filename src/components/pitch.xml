@@ -111,13 +111,13 @@
     <fader color="#333333" width="38" height="14" border="#555555"/>
   </define>
   <define class="VIDEO_CROSSFADER_EX">
-    <group name="channel_assign" x="-3+7" visibility="var_equal '@$4decks' 1">
+    <group name="channel_assign" x="-3+7">
       <button class="button_main" x="+0" y="+0" width="18" height="18" action="deck 1 leftvideo" text="1" coloron="waveform_active1" bordersize="0"/>
       <button class="button_main" x="+20" y="+0" width="18" height="18" action="deck 2 leftvideo" text="2" coloron="waveform_active2" bordersize="0"/>
       <button class="button_main" x="+0" y="+20" width="18" height="18" action="deck 3 leftvideo" text="3" coloron="waveform_active3" bordersize="0"/>
       <button class="button_main" x="+20" y="+20" width="18" height="18" action="deck 4 leftvideo" text="4" coloron="waveform_active4" bordersize="0"/>
     </group>
-    <group name="channel_assign" x="+226-7" visibility="var_equal '@$4decks' 1">
+    <group name="channel_assign" x="+226-7">
       <button class="button_main" x="+0" y="+0" width="18" height="18" action="deck 1 rightvideo" text="1" coloron="waveform_active1" bordersize="0"/>
       <button class="button_main" x="+20" y="+0" width="18" height="18" action="deck 2 rightvideo" text="2" coloron="waveform_active2" bordersize="0"/>
       <button class="button_main" x="+0" y="+20" width="18" height="18" action="deck 3 rightvideo" text="3" coloron="waveform_active3" bordersize="0"/>
@@ -142,8 +142,8 @@
   <define class="PITCH_ZONE_STACK">
     <button class="button_main" x="+0" y="+6" width="58" height="18" action="pitch_reset" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
     <panel class="pitch_stack" x="+11" y="+6+28"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRight-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$jog_type' 0"/>
-    <button class="button_main" x="+29" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRight-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$jog_type' 0"/>
-    <button class="button_main" x="+0" y="+6+30+4+30+6+64" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRight-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$jog_type' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRight-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$dd_jog_type' 0"/>
+    <button class="button_main" x="+29" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRight-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$dd_jog_type' 0"/>
+    <button class="button_main" x="+0" y="+6+30+4+30+6+64" action="pitch_range '8,16,32,50' +1" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch range +8,16,32,50.\nRight-click: Pitch range -8,16,32,50." width="58" height="18" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '±%pitchrange'" visibility="var_equal '@$dd_jog_type' 0"/>
   </define>
 </defs>

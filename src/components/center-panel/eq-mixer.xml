@@ -35,10 +35,10 @@
         <item text="Peak Mode" action="setting 'vuMeter' 'peak'" check="setting 'vuMeter' 'peak'"/>
         <item text="Power Mode" action="setting 'vuMeter' 'power'" check="setting 'vuMeter' 'power'"/>
         <separator text="Color"/>
-        <item text="Per Deck" action="set '@$hntnhvumetercolors' 0" check="var_equal '@$hntnhvumetercolors' 0"/>
-        <item text="Natural" action="set '@$hntnhvumetercolors' 1" check="var_equal '@$hntnhvumetercolors' 1"/>
+        <item text="Per Deck" action="set '@$dd_vu_alt_colors' 0" check="var_equal '@$dd_vu_alt_colors' 0"/>
+        <item text="Natural" action="set '@$dd_vu_alt_colors' 1" check="var_equal '@$dd_vu_alt_colors' 1"/>
         <separator/>
-        <item text="Show Extra Peak Meter" localize="true" action="toggle '@$show_peak_meter'" check="var_equal '@$show_peak_meter' 1"/>
+        <item text="Show Extra Peak Meter" localize="true" action="toggle '@$dd_show_peak_meter'" check="var_equal '@$dd_show_peak_meter' 1"/>
       </submenu>
       <submenu text="Filter Resonance" localize="true">
         <item text="Default" action="setting 'filterDefaultResonance' 'default'" check="setting 'filterDefaultResonance' 'default'"/>
@@ -56,7 +56,7 @@
       <separator/>
       <item text="Reset EQ On Load" localize="true" action="setting 'resetEqOnLoad'" check="setting 'resetEqOnLoad'"/>
       <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
-      <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
+      <item text="Show Drop Down Menus" localize="true" action="toggle '@$dd_hide_drop_menus'" check="var_equal '@$dd_hide_drop_menus' 0"/>
       <separator/>
       <submenu text="Crossfader" localize="true">
         <item text="Disabled" action="setting 'crossfaderDisable'" check="setting 'crossfaderDisable'"/>
@@ -77,14 +77,14 @@
         <off shape="square" color="dark_4" radius="6" bordersize="1" border="dark_5"/>
       </visual>
       <group novisibility="setting 'eqMode' 'STEMS'">
-        <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$show_drop_menus' 0"/>
-        <panel class="knob" x="+18" y="+10" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+58" y="+8" visibility="var_equal '@$dd_hide_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+10" knobsize="41" knobradius="10" faderradius="9" action="gain" rgclick="match_gain" dblclick="gain 50%" frommiddle="true" fillcolor="knobfillon" textaction="gain_label" actiontxt="var_equal '@$dd_hide_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+65" knobsize="41" knobradius="10" faderradius="9" action="eq_high" rgclick="eq_high 0% ? eq_high 50% : eq_high 0%" dblclick="eq_high 50%" frommiddle="true" fillcolor="knobfillon" textaction="high_label" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_mid" rgclick="eq_mid 0% ? eq_mid 50% : eq_mid 0%" dblclick="eq_mid 50%" frommiddle="true" fillcolor="knobfillon" textaction="mid_label 'short'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+65+65+65" knobsize="41" knobradius="10" faderradius="9" action="eq_low" rgclick="eq_low 0% ? eq_low 50% : eq_low 0%" dblclick="eq_low 50%" frommiddle="true" fillcolor="knobfillon" textaction="low_label" actiontxt="eq_mode +1"/>
         <group x="+10" y="+14+68+68+68+50+6">
           <!-- PRO: AUDIO PANEL: COLORFX -->
-          <button x="+45" class="dropdown_menu" action="effect_select colorfx" visibility="var_equal '@$show_drop_menus' 0"/>
+          <button x="+45" class="dropdown_menu" action="effect_select colorfx" visibility="var_equal '@$dd_hide_drop_menus' 0"/>
           <!-- filter on light -->
           <group>
             <visual>
@@ -106,8 +106,8 @@
       </group>
       <!-- 5knobs -->
       <group visibility="setting 'eqMode' 'STEMS'">
-        <button class="dropdown_menu" action="eq_mode" x="+68" y="+6" visibility="var_equal '@$show_drop_menus' 0"/>
-        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$show_drop_menus' 1 ? eq_mode : eq_mode +1"/>
+        <button class="dropdown_menu" action="eq_mode" x="+68" y="+6" visibility="var_equal '@$dd_hide_drop_menus' 0"/>
+        <panel class="knob" x="+18" y="+14" knobsize="41" knobradius="10" faderradius="9" action="stem 'instru'" rgclick="stem 'instru' 0% ? stem 'instru' 50% : stem 'instru' 0%" dblclick="stem 'instru' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'INSTRU'" actiontxt="var_equal '@$dd_hide_drop_menus' 1 ? eq_mode : eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76" knobsize="41" knobradius="10" faderradius="9" action="stem 'hihat'" rgclick="stem 'hihat' 0% ? stem 'hihat' 50% : stem 'hihat' 0%" dblclick="stem 'hihat' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'HIHAT'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'vocal'" rgclick="stem 'vocal' 0% ? stem 'vocal' 50% : stem 'vocal' 0%" dblclick="stem 'vocal' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'VOCAL'" actiontxt="eq_mode +1"/>
         <panel class="knob" x="+18" y="+14+76+67+67" knobsize="41" knobradius="10" faderradius="9" action="stem 'kick'" rgclick="stem 'kick' 0% ? stem 'kick' 50% : stem 'kick' 0%" dblclick="stem 'kick' 50%" frommiddle="true" fillcolor="knobfillon" textaction="get_text 'KICK'" actiontxt="eq_mode +1"/>
@@ -118,8 +118,8 @@
   <define class="CHANNEL_LEVELS" placeholders="deck">
     <deck deck="[DECK]">
       <visual class="gfx_shape" width="77" height="420" coloroff="#000000"/>
-      <panel class="vu_meter_leds" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$show_peak_meter' 1"/>
-      <panel class="vu_meter_leds" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$show_peak_meter' 1"/>
+      <panel class="vu_meter_leds" x="+23" y="+5" source="get_level_left" showpeaks="var_equal '@$dd_show_peak_meter' 1"/>
+      <panel class="vu_meter_leds" x="+23+11+10" y="+5" source="get_level_right" showpeaks="var_equal '@$dd_show_peak_meter' 1"/>
       <button class="button_main" action="pfl" query="pfl">
         <pos x="+10" y="+175"/>
         <size width="60" height="25"/>

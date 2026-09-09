@@ -4,27 +4,27 @@
   <define class="MENU_MAINDECKS" tooltip="Deck Options" placeholders="width,height">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <icon sysicon="settings" coloroff="dark_8" colorover="white" colordown="white" colorselected="#66FFFFFF" width="18" height="18"/>
-    <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
-    <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
-    <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
-    <item text="Auto Pitch Lock" action="auto_pitch_lock" check="auto_pitch_lock" visibility="var_equal '@$skin_mode' 2 ? false : var_equal '@$skin_mode' 0 ? false : true"/>
-    <item text="Hot Cues" action="set '@infospannelmode' 2" check="var_equal '@infospannelmode' 2" visibility="var_equal '@$skin_mode' 2 : false"/>
-    <item text="Loops" action="set '@infospannelmode' 1" check="var_equal '@infospannelmode' 1" visibility="var_equal '@$skin_mode' 2 : false"/>
-    <item text="Edit Grid" action="set '@infospannelmode' 0" check="var_equal '@infospannelmode' 0" visibility="var_equal '@$skin_mode' 2 : false"/>
-    <item text="Timecode &amp; Line-In" action="set '@infospannelmode' 3" check="var_equal '@infospannelmode' 3" visibility="var_equal '@$skin_mode' 2 : false"/>
-    <item text="Custom Buttons" action="set '@infospannelmode' 4" check="var_equal '@infospannelmode' 4" visibility="var_equal '@$skin_mode' 2 : false"/>
-    <item text="Jog" action="set '@deck_mode' 0" check="var_equal '@deck_mode' 0" visibility="var_equal '@$skin_mode' 2"/>
-    <item text="Pads" action="set '@deck_mode' 1" check="var_equal '@deck_mode' 1" visibility="var_equal '@$skin_mode' 2"/>
-    <item text="Saved Loops" action="set '@deck_mode' 2" check="var_equal '@deck_mode' 2" visibility="var_equal '@$skin_mode' 2"/>
+    <item text="Auto Match BPM" action="auto_match_bpm" check="auto_match_bpm" visibility="var_equal '@$dd_skin_mode' 2 ? false : var_equal '@$dd_skin_mode' 0 ? false : true"/>
+    <item text="Auto Match KEY" action="auto_match_key" check="auto_match_key" visibility="var_equal '@$dd_skin_mode' 2 ? false : var_equal '@$dd_skin_mode' 0 ? false : true"/>
+    <item text="Auto Sync on Play" action="auto_sync" check="auto_sync" visibility="var_equal '@$dd_skin_mode' 2 ? false : var_equal '@$dd_skin_mode' 0 ? false : true"/>
+    <item text="Auto Pitch Lock" action="auto_pitch_lock" check="auto_pitch_lock" visibility="var_equal '@$dd_skin_mode' 2 ? false : var_equal '@$dd_skin_mode' 0 ? false : true"/>
+    <item text="Hot Cues" action="set '@dd_info_panel_mode' 2" check="var_equal '@dd_info_panel_mode' 2" visibility="var_equal '@$dd_skin_mode' 2 : false"/>
+    <item text="Loops" action="set '@dd_info_panel_mode' 1" check="var_equal '@dd_info_panel_mode' 1" visibility="var_equal '@$dd_skin_mode' 2 : false"/>
+    <item text="Edit Grid" action="set '@dd_info_panel_mode' 0" check="var_equal '@dd_info_panel_mode' 0" visibility="var_equal '@$dd_skin_mode' 2 : false"/>
+    <item text="Timecode &amp; Line-In" action="set '@dd_info_panel_mode' 3" check="var_equal '@dd_info_panel_mode' 3" visibility="var_equal '@$dd_skin_mode' 2 : false"/>
+    <item text="Custom Buttons" action="set '@dd_info_panel_mode' 4" check="var_equal '@dd_info_panel_mode' 4" visibility="var_equal '@$dd_skin_mode' 2 : false"/>
+    <item text="Jog" action="set '@dd_deck_mode' 0" check="var_equal '@dd_deck_mode' 0" visibility="var_equal '@$dd_skin_mode' 2"/>
+    <item text="Pads" action="set '@dd_deck_mode' 1" check="var_equal '@dd_deck_mode' 1" visibility="var_equal '@$dd_skin_mode' 2"/>
+    <item text="Saved Loops" action="set '@dd_deck_mode' 2" check="var_equal '@dd_deck_mode' 2" visibility="var_equal '@$dd_skin_mode' 2"/>
     <submenu text="Songpos Waveform Type" localize="true">
       <item text="Auto" localize="true" action="setting 'skinOverviewType' 'auto'" check="setting 'skinOverviewType' 'auto'"/>
       <item text="Scratch" localize="true" action="setting 'skinOverviewType' 'colors'" check="setting 'skinOverviewType' 'colors'"/>
       <item text="Shapes" localize="true" action="setting 'skinOverviewType' 'shapes'" check="setting 'skinOverviewType' 'shapes'"/>
       <separator text="Beat Marker"/>
-      <item text="Off" action="set '@$Beat_Marker' 0" check="var_equal '@$Beat_Marker' 0"/>
-      <item text="32 Beats" action="set '@$Beat_Marker' 1" check="var_equal '@$Beat_Marker' 1"/>
-      <item text="64 Beats" action="set '@$Beat_Marker' 2" check="var_equal '@$Beat_Marker' 2"/>
-      <item text="128 Beats or 32 Bars" action="set '@$Beat_Marker' 3" check="var_equal '@$Beat_Marker' 3"/>
+      <item text="Off" action="set '@$dd_beat_marker' 0" check="var_equal '@$dd_beat_marker' 0"/>
+      <item text="32 Beats" action="set '@$dd_beat_marker' 1" check="var_equal '@$dd_beat_marker' 1"/>
+      <item text="64 Beats" action="set '@$dd_beat_marker' 2" check="var_equal '@$dd_beat_marker' 2"/>
+      <item text="128 Beats or 32 Bars" action="set '@$dd_beat_marker' 3" check="var_equal '@$dd_beat_marker' 3"/>
     </submenu>
     <separator visibility="setting 'skinOverviewType' 'colors' ? true : setting 'skinOverviewType' 'auto' ? setting 'skinWaveformType' 'colors' ? true : false"/>
     <submenu text="Songpos Colors" localize="true" visibility="setting 'skinOverviewType' 'colors' ? true : setting 'skinOverviewType' 'auto' ? setting 'skinWaveformType' 'colors' ? true : false">
@@ -37,9 +37,9 @@
       <item text="Wave Use Frequency" action="setting 'waveUseFrequency'" check="setting 'waveUseFrequency'"/>
     </submenu>
     <submenu text="Colors" localize="true" visibility="setting 'skinOverviewType' 'shapes' ? true : setting 'skinOverviewType' 'auto' ? setting 'skinWaveformType' 'shapes' ? true : false">
-      <item text="Virtual DJ (ish)" localize="true" action="set '@$shapes_color' 0 &amp; load_skin" check="var_equal '@$shapes_color' 0"/>
-      <item text="Denon DJ (ish)" localize="true" action="set '@$shapes_color' 2 &amp; load_skin" check="var_equal '@$shapes_color' 2"/>
-      <item text="Pioneer DJ (ish)" localize="true" action="set '@$shapes_color' 1 &amp; load_skin" check="var_equal '@$shapes_color' 1"/>
+      <item text="Virtual DJ (ish)" localize="true" action="set '@$dd_shapes_color' 0 &amp; load_skin" check="var_equal '@$dd_shapes_color' 0"/>
+      <item text="Denon DJ (ish)" localize="true" action="set '@$dd_shapes_color' 2 &amp; load_skin" check="var_equal '@$dd_shapes_color' 2"/>
+      <item text="Pioneer DJ (ish)" localize="true" action="set '@$dd_shapes_color' 1 &amp; load_skin" check="var_equal '@$dd_shapes_color' 1"/>
     </submenu>
     <submenu text="Pitch Range" localize="true">
       <item text="6%" action="pitch_range 6%" check="pitch_range 6%"/>
@@ -86,7 +86,7 @@
         <item text="Beats left" action="setting 'cueDisplay' 'beat'" check="setting 'cueDisplay' 'beat'"/>
       </submenu>
     </submenu>
-    <item text="Show CoverArt" action="toggle '@$show_cover_title'" check="var_equal '@$show_cover_title' 1"/>
+    <item text="Show CoverArt" action="toggle '@$dd_show_cover_title'" check="var_equal '@$dd_show_cover_title' 1"/>
   </define>
   <define class="DROPDOWN_MENU">
     <size width="14" height="13"/>

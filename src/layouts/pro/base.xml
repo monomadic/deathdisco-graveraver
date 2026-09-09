@@ -4,17 +4,17 @@
     A layout that accounts for laptop control as well as controllers.
     More functionality is included in the virtualdj interface UI itself.
   -->
-  <group name="PRO" condition="var_equal '@$skin_mode' 0">
-    <!-- @$hide_pro_mixer selects the Pro variant: 0 = decks + center mixer, 1 = extended (decks fill, no center) -->
-    <!-- @$layout_4deck selects deck density within Pro: 0 = two-deck / swap, 1 = full four-deck -->
-    <!-- @$waveform_position: 0 = waves above decks, 1 = below. @$hide_main_waveforms: 0 = show, 1 = hide -->
-    <!-- One shared deck-stack shell; the @$hide_pro_mixer branch lives inside it. -->
-    <panel class="decks_above" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-    <panel class="decks_below" condition="var_equal '@$hide_main_waveforms' 0 ? var_equal '@$waveform_position' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-    <panel class="decks_no_waves" condition="var_equal '@$hide_main_waveforms' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
+  <group name="PRO" condition="var_equal '@$dd_skin_mode' 0">
+    <!-- @$dd_hide_pro_mixer selects the Pro variant: 0 = decks + center mixer, 1 = extended (decks fill, no center) -->
+    <!-- @$dd_layout_4deck selects deck density within Pro: 0 = two-deck / swap, 1 = full four-deck -->
+    <!-- @$dd_waveform_position: 0 = waves above decks, 1 = below. @$dd_hide_main_waveforms: 0 = show, 1 = hide -->
+    <!-- One shared deck-stack shell; the @$dd_hide_pro_mixer branch lives inside it. -->
+    <panel class="decks_above" condition="var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 0" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
+    <panel class="decks_below" condition="var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
+    <panel class="decks_no_waves" condition="var_equal '@$dd_hide_main_waveforms' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
     <!-- browser zoom & auto-switch (shared across both variants) -->
-    <panel class="browser_zoom_decks_above" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 0" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="browser_zoom_decks_below" condition="var_equal '@$hide_zoom_waveforms' 0 ? var_equal '@$waveform_position' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="browser_zoom_decks_no_waves" condition="var_equal '@$hide_zoom_waveforms' 1" visibility="var '@$browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_above" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 0" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_below" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="browser_zoom_decks_no_waves" condition="var_equal '@$dd_hide_zoom_waveforms' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
   </group>
 </module>

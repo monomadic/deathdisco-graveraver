@@ -73,7 +73,7 @@
           <off color="#440000" border="#FF3333" radius="3"/>
           <down color="#222222" border="deckcolor" radius="3"/>
           <selected color="transparent" border="deckcolor" radius="3"/>
-          <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" action="get_text 'PHRASE `var_equals $phrase_len 32 ? 32 : 16`'"/>
+          <text fontsize="12" color="#FF3333" colorselected="deckcolor" colordown="deckcolor" align="center" action="get_text 'PHRASE `var_equal $phrase_len 32 ? 32 : 16`'"/>
         </button>
         <button class="button_main" x="+0" action="sync &amp; phrase_sync 32" bordersize="1" query="loaded" visibility="masterdeck">
           <pos x="+82*2" condition="param_equal [DECKSIDE] 'left'"/>

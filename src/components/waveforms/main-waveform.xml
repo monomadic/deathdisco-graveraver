@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <define class="WAVEFORM" placeholders="*waveformheight,force4deck=false">
-    <group visibility="var_equal '@$split_waveform' 0">
+    <group visibility="var_equal '@$dd_split_waveform' 0">
       <visual class="gfx_shape" width="1920-4" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-      <panel name="mirroredwave2deck" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <panel name="mirroredwave2deck" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
         <rhythmzone mirror="true" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -23,21 +23,21 @@
             <background color="needle" shape="square"/>
           </overlay>
         </rhythmzone>
-        <panel class="beat_counter" deck="left" x="960-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="right" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="left" x="960-2-598-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="right" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="left" x="960-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="right" x="960-2-120-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="left" x="960-2-598-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="right" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </panel>
       <!-- WAVEFORM TYPE: BEATS -->
-      <panel name="defaultwave4deck" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0"/>
+      <panel name="defaultwave4deck" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
       <!-- WAVEFORM TYPE: BEATS MIRRORED -->
-      <panel name="mirroredwave4deck" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0"/>
+      <panel name="mirroredwave4deck" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
       <!-- PERFORMANCE EXTENDED: MAIN WAVEFORM (HORIZONTAL, FORCED 4 DECK) -->
-      <panel name="defaultwave4deck_forced" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0"/>
-      <panel name="mirroredwave4deck_forced" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0"/>
+      <panel name="defaultwave4deck_forced" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0"/>
+      <panel name="mirroredwave4deck_forced" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0"/>
       <!-- PRO+PERFORMANCE: MAIN WAVEFORM (HORIZONTAL, 2 DECK) -->
       <!-- WAVEFORM TYPE: SHAPES, SCRATCH (COLORS) -->
-      <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
         <group>
           <!-- WAVES -->
           <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
@@ -76,7 +76,7 @@
       </panel>
       <!-- PRO: MAIN WAVEFORM (HORIZONTAL, 4 DECK) -->
       <!-- waveform type: shapes, scratch (colors) -->
-      <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
+      <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
         <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
         <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
         <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
@@ -90,10 +90,10 @@
       </panel>
     </group>
     <!-- split wave -->
-    <group visibility="var_equal '@$split_waveform' 1">
+    <group visibility="var_equal '@$dd_split_waveform' 1">
       <visual class="gfx_shape" width="957" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
       <visual class="gfx_shape" x="+957+2" width="957" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-      <panel name="defaultwave" visibility="var_equal '@$mirror_waveforms' 0 ? setting skinWaveformType 0">
+      <panel name="defaultwave" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0">
         <rhythmzone mirror="false" deck="left" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="954-4" height="[WAVEFORMHEIGHT]"/>
@@ -154,7 +154,7 @@
         </dropzone>
         <group class="split_wave_beat_counters"/>
       </panel>
-      <panel name="mirroredtwave" visibility="var_equal '@$mirror_waveforms' 1 ? setting skinWaveformType 0">
+      <panel name="mirroredtwave" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0">
         <rhythmzone mirror="true" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="954-4" height="[WAVEFORMHEIGHT]"/>
@@ -215,54 +215,54 @@
         </dropzone>
         <group class="split_wave_beat_counters"/>
       </panel>
-      <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4decks' 0 ? true : var_equal '@$4waveforms' 0">
+      <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
         <!-- grid off -->
-        <group name="grid_1" visibility="var_equal '@$wave_grid_mode' 0">
-          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck"/>
+        <group name="grid_1" visibility="var_equal '@$dd_wave_grid_mode' 0">
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? deck 3 leftdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? deck 3 leftdeck"/>
           <dropzone deck="3" visibility="deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? not deck 3 leftdeck"/>
           <dropzone deck="1" visibility="not deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? not deck 4 rightdeck"/>
           <dropzone deck="2" visibility="not deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]-24" overlayheight="[WAVEFORMHEIGHT]-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? deck 4 rightdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? deck 4 rightdeck"/>
           <dropzone deck="4" visibility="deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
         </group>
-        <group name="grid_2" visibility="var_equal '@$wave_grid_mode' 1">
-          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
+        <group name="grid_2" visibility="var_equal '@$dd_wave_grid_mode' 1">
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? deck 3 leftdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
           <dropzone deck="3" visibility="deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="956-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? not deck 3 leftdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? not deck 3 leftdeck" gridmainsize="4" gridheight="12" gridpos="-14" overlayx="+956/2-4"/>
           <dropzone deck="1" visibility="not deck 3 leftdeck">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? not deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? not deck 4 rightdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? not deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="2" visibility="not deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0 ? deck 4 rightdeck" vison="var_equal '@$waves_show_background' 1 ? deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]-32-4" overlayheight="[WAVEFORMHEIGHT]-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0 ? deck 4 rightdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? deck 4 rightdeck" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="4" visibility="deck 4 rightdeck">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]"/>
@@ -271,67 +271,67 @@
         </group>
         <group class="split_wave_beat_counters"/>
       </panel>
-      <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$4waveforms' 1 &amp;&amp; var_not_equal '@$4decks' 0">
-        <group name="grid_1" visibility="var_equal '@$wave_grid_mode' 0">
-          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+      <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
+        <group name="grid_1" visibility="var_equal '@$dd_wave_grid_mode' 0">
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1"/>
           <dropzone deck="3">
             <pos x="+0" y="+[WAVEFORMHEIGHT]/2+1"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1"/>
           <dropzone deck="1">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+12" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1"/>
           <dropzone deck="2">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+72+2+[WAVEFORMHEIGHT]/2-24" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-24" overlayheight="[WAVEFORMHEIGHT]/2-4" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1"/>
           <dropzone deck="4">
             <pos x="+957+2" y="+[WAVEFORMHEIGHT]/2+1"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
         </group>
-        <group name="grid_2" visibility="var_equal '@$wave_grid_mode' 1">
-          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+        <group name="grid_2" visibility="var_equal '@$dd_wave_grid_mode' 1">
+          <group class="split_scratchwave" wavedeck="3" wavex="+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="3">
             <pos x="+0" y="+[WAVEFORMHEIGHT]/2"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2+1"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="1" wavex="+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="1">
             <pos x="+0" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="2" wavex="+2+957+2" wavey="+14+4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="2">
             <pos x="+957+2" y="+0"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
-          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$waves_show_background' 0" vison="var_equal '@$waves_show_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
+          <group class="split_scratchwave" wavedeck="4" wavex="+2+957+2" wavey="+106+2+[WAVEFORMHEIGHT]/2-32-4" wavew="957-4" waveh="[WAVEFORMHEIGHT]/2-32-4" overlayheight="[WAVEFORMHEIGHT]/2-8" waveformheight="[WAVEFORMHEIGHT]" visoff="var_equal '@$dd_wave_hide_background' 0" vison="var_equal '@$dd_wave_hide_background' 1" gridmainsize="4" gridheight="12" gridpos="-14"/>
           <dropzone deck="4">
             <pos x="+957+2" y="+[WAVEFORMHEIGHT]/2"/>
             <size width="957" height="[WAVEFORMHEIGHT]/2+1"/>
             <over color="transparent" border="deckcolor" border_size="2"/>
           </dropzone>
         </group>
-        <panel class="beat_counter" deck="1" x="954/2-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="2" x="1436-2-120-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="1" x="954/2-2-338-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="2" x="1436-338-40" y="+12" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="3" x="954/2-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="4" x="1436-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
-        <panel class="beat_counter" deck="3" x="954/2-2-338-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
-        <panel class="beat_counter" deck="4" x="1436-338-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="1" x="954/2-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="2" x="1436-2-120-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="1" x="954/2-2-338-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="2" x="1436-338-40" y="+12" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="3" x="954/2-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="4" x="1436-2-120-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'centered'"/>
+        <panel class="beat_counter" deck="3" x="954/2-2-338-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
+        <panel class="beat_counter" deck="4" x="1436-338-40" y="+106+2+[WAVEFORMHEIGHT]/2-39-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </panel>
     </group>
     <!-- WAVEFORM SETTINGS / WAVEFORM CONTROLS -->
@@ -352,33 +352,33 @@
         <group x="+1" y="+0">
           <group y="+10">
             <!-- - -->
-            <button class="button_main" y="+0" width="30" height="26" query="on/off" action="cycle '@$infntywavesize' -14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="minus" iconsize="20" bordersize="0"/>
+            <button class="button_main" y="+0" width="30" height="26" query="on/off" action="cycle '@$dd_wave_size' -14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="minus" iconsize="20" bordersize="0"/>
             <!-- + -->
-            <button class="button_main" y="+0+29" width="30" height="26" query="on/off" action="cycle '@$infntywavesize' +14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="plus" iconsize="20" bordersize="0"/>
+            <button class="button_main" y="+0+29" width="30" height="26" query="on/off" action="cycle '@$dd_wave_size' +14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="plus" iconsize="20" bordersize="0"/>
           </group>
           <!-- 2/4 WAVE BUTTONS -->
           <group y="+80">
             <!-- 2 -->
-            <button tooltip="2 Waveforms" class="button_main" action="set '@$4waveforms' 0" width="30" height="27" bordersize="0">
+            <button tooltip="2 Waveforms" class="button_main" action="set '@$dd_four_waveforms' 0" width="30" height="27" bordersize="0">
               <off color="black"/>
               <on color="#222222"/>
               <over color="#000000"/>
               <down color="#222222"/>
               <selected color="#333333"/>
-              <text overcolor="white" size="15" weight="bold" oncolor="white" text="2"/>
+              <text colorover="white" size="15" weight="bold" coloron="white" text="2"/>
             </button>
             <!-- 4 -->
-            <button tooltip="4 Waveforms" class="button_main" y="+30" action="set '@$4waveforms' 1" width="30" height="27" bordersize="0">
+            <button tooltip="4 Waveforms" class="button_main" y="+30" action="set '@$dd_four_waveforms' 1" width="30" height="27" bordersize="0">
               <off color="black"/>
               <on color="#222222"/>
               <over color="#000000"/>
               <down color="#222222"/>
               <selected color="#333333"/>
-              <text overcolor="white" size="15" weight="bold" oncolor="white" text="4"/>
+              <text colorover="white" size="15" weight="bold" coloron="white" text="4"/>
             </button>
           </group>
         </group>
-        <group y="+150" visibility="var_greater '@$infntywavesize' 5">
+        <group y="+150" visibility="var_greater '@$dd_wave_size' 5">
           <button tooltip="" class="button_main" action="setting 'showLyrics'" width="60" height="27" textsize="12" textcoloron="needle" text="LYRICS" coloroff="#101010" coloron="#222222" bordersize="0"/>
         </group>
         <menu tooltip="WAVEFORM OPTIONS">
@@ -387,8 +387,8 @@
           <off shape="square" color="#000000"/>
           <icon sysicon="settings" height="22" width="22" color="textoff" colorover="needle" colordown="needle"/>
           <submenu text="Waveform Type" localize="true">
-            <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 0"/>
-            <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$mirror_waveforms' 1"/>
+            <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
+            <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
             <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
             <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
           </submenu>
@@ -402,23 +402,23 @@
             <item text="Wave Use Frequency" action="setting 'waveUseFrequency'" check="setting 'waveUseFrequency'"/>
           </submenu>
           <submenu text="Colors" localize="true" visibility="setting skinWaveformType 2">
-            <item text="Virtual DJ (ish)" localize="true" action="set '@$shapes_color' 0 &amp; load_skin" check="var_equal '@$shapes_color' 0"/>
-            <item text="Denon DJ (ish)" localize="true" action="set '@$shapes_color' 2 &amp; load_skin" check="var_equal '@$shapes_color' 2"/>
-            <item text="Pioneer DJ (ish)" localize="true" action="set '@$shapes_color' 1 &amp; load_skin" check="var_equal '@$shapes_color' 1"/>
+            <item text="Virtual DJ (ish)" localize="true" action="set '@$dd_shapes_color' 0 &amp; load_skin" check="var_equal '@$dd_shapes_color' 0"/>
+            <item text="Denon DJ (ish)" localize="true" action="set '@$dd_shapes_color' 2 &amp; load_skin" check="var_equal '@$dd_shapes_color' 2"/>
+            <item text="Pioneer DJ (ish)" localize="true" action="set '@$dd_shapes_color' 1 &amp; load_skin" check="var_equal '@$dd_shapes_color' 1"/>
           </submenu>
           <submenu text="Needle" localize="true">
             <item text="Left" localize="true" action="setting 'waveformCenter' 'left'" check="setting 'waveformCenter' 'left'"/>
             <item text="Centered" localize="true" action="setting 'waveformCenter' 'centered'" check="setting 'waveformCenter' 'centered'"/>
           </submenu>
-          <item text="Wave Above" localize="true" action="set '@$waveform_position' 0 &amp; load_skin" check="var_equal '@$waveform_position' 0"/>
-          <item text="Wave Below" localize="true" action="set '@$waveform_position' 1 &amp; load_skin" check="var_equal '@$waveform_position' 1"/>
-          <submenu text="Waveform Order" localize="true" visibility="not setting skinWaveformType 0 ? var_not_equal '@$4decks' 0 &amp;&amp; not var_equal '@$split_waveform' 1">
-            <item text="1-2-3-4" localize="true" action="set '@$wave_order' 1" check="var_equal '@$wave_order' 1"/>
-            <item text="3-1-2-4" localize="true" action="set '@$wave_order' 0" check="var_equal '@$wave_order' 0"/>
-            <item text="1-3-4-2" localize="true" action="set '@$wave_order' 2" check="var_equal '@$wave_order' 2"/>
+          <item text="Wave Above" localize="true" action="set '@$dd_waveform_position' 0 &amp; load_skin" check="var_equal '@$dd_waveform_position' 0"/>
+          <item text="Wave Below" localize="true" action="set '@$dd_waveform_position' 1 &amp; load_skin" check="var_equal '@$dd_waveform_position' 1"/>
+          <submenu text="Waveform Order" localize="true" visibility="not setting skinWaveformType 0 ? not var_equal '@$dd_split_waveform' 1">
+            <item text="1-2-3-4" localize="true" action="set '@$dd_wave_order' 1" check="var_equal '@$dd_wave_order' 1"/>
+            <item text="3-1-2-4" localize="true" action="set '@$dd_wave_order' 0" check="var_equal '@$dd_wave_order' 0"/>
+            <item text="1-3-4-2" localize="true" action="set '@$dd_wave_order' 2" check="var_equal '@$dd_wave_order' 2"/>
           </submenu>
-          <item text="2 Decks" localize="true" action="set '@$4waveforms' 0" check="var_equal '@$4waveforms' 0" visibility="var_not_equal '@$4decks' 0 &amp;&amp; setting skinWaveformType 0 ? not var_equal '@$split_waveform' 1"/>
-          <item text="4 Decks" localize="true" action="set '@$4waveforms' 1" check="var_equal '@$4waveforms' 1" visibility="var_not_equal '@$4decks' 0 &amp;&amp; setting skinWaveformType 0 ? not var_equal '@$split_waveform' 1"/>
+          <item text="2 Decks" localize="true" action="set '@$dd_four_waveforms' 0" check="var_equal '@$dd_four_waveforms' 0" visibility="setting skinWaveformType 0 ? not var_equal '@$dd_split_waveform' 1"/>
+          <item text="4 Decks" localize="true" action="set '@$dd_four_waveforms' 1" check="var_equal '@$dd_four_waveforms' 1" visibility="setting skinWaveformType 0 ? not var_equal '@$dd_split_waveform' 1"/>
           <item text="Wave Gray On Kill" action="setting 'waveGrayOnKill'" check="setting 'waveGrayOnKill'" visibility="setting skinWaveformType 2"/>
         </menu>
       </group>

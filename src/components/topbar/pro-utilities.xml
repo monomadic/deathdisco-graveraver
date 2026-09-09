@@ -19,8 +19,8 @@
       </textzone>
       <!-- toggle -->
       <group x="+0" y="+11">
-        <button tooltip="Toggle the center mixer panel (off = extended decks)" class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="toggle '@$hide_pro_mixer' &amp; load_skin">
-          <text overcolor="#FFFFFF" color="#999999" weight="normal" align="center" size="14" oncolor="white" action="(get_var '@$hide_pro_mixer' &amp; param_equal 1) ? get_text 'EXTENDED' : get_text 'MIXER'"/>
+        <button tooltip="Toggle the center mixer panel (off = extended decks)" class="button_main" width="90" height="22" color="transparent" coloroff="transparent" bordersize="0" align="center" radius="10" action="toggle '@$dd_hide_pro_mixer' &amp; load_skin">
+          <text colorover="#FFFFFF" color="#999999" weight="normal" align="center" size="14" coloron="white" action="(get_var '@$dd_hide_pro_mixer' &amp; param_equal 1) ? get_text 'EXTENDED' : get_text 'MIXER'"/>
         </button>
       </group>
     </group>
@@ -28,17 +28,17 @@
     <group x="505" y="2">
       <group>
         <group x="+5" y="+9">
-          <button class="button_main" x="+0" action="var_equal '@$rack_mode' 1 ? toggle '@$show_mixer_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_pads_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+0" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_mixer_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="MIXER"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="MIXER"/>
           </button>
-          <button class="button_main" x="+53" action="var_equal '@$rack_mode' 1 ? toggle '@$show_video_rack' &amp; set '@$show_fx_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_pads_rack' 0 &amp;&amp; load_skin : toggle '@$show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+53" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_video_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="VIDEO"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="VIDEO"/>
           </button>
-          <button class="button_main" x="+55+60" action="var_equal '@$rack_mode' 1 ? toggle '@$show_fx_rack' &amp; set '@$show_pads_rack' 0 &amp; set '@$show_mixer_rack' 0 &amp; set '@$show_video_rack' 0 &amp;&amp; load_skin : toggle '@$show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
+          <button class="button_main" x="+55+60" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_fx_rack' &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
             <off color="transparent"/>
-            <text color="dark_6" overcolor="dark_8" size="12" oncolor="white" text="EFFECTS"/>
+            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="EFFECTS"/>
           </button>
         </group>
         <!-- border -->
@@ -54,24 +54,24 @@
     </group>
     <!-- MIXER OPTIONS: configures the rack panels (both Pro variants). Show/hide of the
          rack band itself is handled by the RACKS button group. -->
-    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$skin_mode' 0">
+    <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$dd_skin_mode' 0">
       <pos x="700" y="5"/>
       <size width="36" height="36"/>
       <off shape="square" color="black" border="transparent"/>
       <icon sysicon="settings" height="20" width="20" color="dark_8" colorover="white" colordown="needle"/>
       <submenu text="Left Panel (Mixer)" localize="true">
-        <item text="Microphone" action="set '@$show_left_mixer_rack' 0" check="var_equal '@$show_left_mixer_rack' 0"/>
-        <item text="Headphones" action="set '@$show_left_mixer_rack' 1" check="var_equal '@$show_left_mixer_rack' 1"/>
+        <item text="Microphone" action="set '@$dd_left_rack_headphones' 0" check="var_equal '@$dd_left_rack_headphones' 0"/>
+        <item text="Headphones" action="set '@$dd_left_rack_headphones' 1" check="var_equal '@$dd_left_rack_headphones' 1"/>
       </submenu>
       <separator/>
       <submenu text="Right Panel (Mixer)" localize="true">
-        <item text="Master" action="set '@$show_right_mixer_rack' 0" check="var_equal '@$show_right_mixer_rack' 0"/>
-        <item text="Rec/Broadcast" action="set '@$show_right_mixer_rack' 1" check="var_equal '@$show_right_mixer_rack' 1"/>
+        <item text="Master" action="set '@$dd_right_rack_record' 0" check="var_equal '@$dd_right_rack_record' 0"/>
+        <item text="Rec/Broadcast" action="set '@$dd_right_rack_record' 1" check="var_equal '@$dd_right_rack_record' 1"/>
       </submenu>
       <separator/>
       <submenu text="Center Panel (FX)" localize="true">
-        <item text="Master FX" action="set '@$show_center_fx_rack' 0" check="var_equal '@$show_center_fx_rack' 0"/>
-        <item text="Mic FX" action="set '@$show_center_fx_rack' 1" check="var_equal '@$show_center_fx_rack' 1"/>
+        <item text="Master FX" action="set '@$dd_show_center_fx_rack' 0" check="var_equal '@$dd_show_center_fx_rack' 0"/>
+        <item text="Mic FX" action="set '@$dd_show_center_fx_rack' 1" check="var_equal '@$dd_show_center_fx_rack' 1"/>
       </submenu>
       <separator/>
       <submenu text="EQ Frequency Spread" localize="true">
@@ -82,10 +82,10 @@
         <item text="Peak Mode" action="setting 'vuMeter' 'peak'" check="setting 'vuMeter' 'peak'"/>
         <item text="Power Mode" action="setting 'vuMeter' 'power'" check="setting 'vuMeter' 'power'"/>
         <separator text="Color"/>
-        <item text="Per Deck" action="set '@$hntnhvumetercolors' 0" check="var_equal '@$hntnhvumetercolors' 0"/>
-        <item text="Natural" action="set '@$hntnhvumetercolors' 1" check="var_equal '@$hntnhvumetercolors' 1"/>
+        <item text="Per Deck" action="set '@$dd_vu_alt_colors' 0" check="var_equal '@$dd_vu_alt_colors' 0"/>
+        <item text="Natural" action="set '@$dd_vu_alt_colors' 1" check="var_equal '@$dd_vu_alt_colors' 1"/>
         <separator/>
-        <item text="Show Extra Peak Meter" localize="true" action="toggle '@$show_peak_meter'" check="var_equal '@$show_peak_meter' 1"/>
+        <item text="Show Extra Peak Meter" localize="true" action="toggle '@$dd_show_peak_meter'" check="var_equal '@$dd_show_peak_meter' 1"/>
       </submenu>
       <submenu text="Filter Resonance" localize="true">
         <item text="Default" action="setting 'filterDefaultResonance' 'default'" check="setting 'filterDefaultResonance' 'default'"/>
@@ -103,52 +103,9 @@
       <separator/>
       <item text="Reset EQ On Load" localize="true" action="setting 'resetEqOnLoad'" check="setting 'resetEqOnLoad'"/>
       <item text="Use Auto Gain" localize="true" action="setting 'autoGain' 'auto' ? setting 'autoGain' 'no' : setting 'autoGain' 'auto'" check="setting 'autoGain' 'auto'"/>
-      <item text="Show Drop Down Menus" localize="true" action="toggle '@$show_drop_menus'" check="var_equal '@$show_drop_menus' 0"/>
+      <item text="Show Drop Down Menus" localize="true" action="toggle '@$dd_hide_drop_menus'" check="var_equal '@$dd_hide_drop_menus' 0"/>
     </menu>
-    <!-- ? phrase circles in 4 deck swap ? -->
-    <group name="barsleft" x="+660" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 0 ? not deck 3 leftdeck">
-      <deck deck="1">
-        <button class="button_main" x="+0" y="+0" width="30" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+0" width="30" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+0" y="+15" width="30" height="10" shape="square" query="goto_bar 3" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+15" width="30" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloroff="infos_background"/>
-      </deck>
-    </group>
-    <group name="barsleft" x="+660" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 0 ? deck 3 leftdeck">
-      <deck deck="3">
-        <button class="button_main" x="+0" y="+0" width="30" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+0" width="30" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+0" y="+15" width="30" height="10" shape="square" query="goto_bar 3" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+15" width="30" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloroff="infos_background"/>
-      </deck>
-    </group>
-    <group name="barsright" x="+660+530" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 0 ? not deck 4 rightdeck">
-      <deck deck="2">
-        <button class="button_main" x="+0" y="+0" width="30" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+0" width="30" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+0" y="+15" width="30" height="10" shape="square" query="goto_bar 3" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+15" width="30" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloroff="infos_background"/>
-      </deck>
-    </group>
-    <group name="barsright" x="+660+530" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 0 ? deck 4 rightdeck">
-      <!-- BEAT KEEPER -->
-      <group x="+1090" y="+8">
-        <visual class="gfx_shape" width="10*4" height="27" coloroff="transparent"/>
-        <group>
-          <panel class="beat_keeper_ex" bgcolor="#222222" width="10" y="+0" deck="3"/>
-          <panel class="beat_keeper_ex" bgcolor="#222222" width="10" y="+7" deck="1"/>
-          <panel class="beat_keeper_ex" bgcolor="#222222" width="10" y="+14" deck="2"/>
-          <panel class="beat_keeper_ex" bgcolor="#222222" width="10" y="+21" deck="4"/>
-        </group>
-      </group>
-      <deck deck="4">
-        <button class="button_main" x="+0" y="+0" width="30" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+0" width="30" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+0" y="+15" width="30" height="10" shape="square" query="goto_bar 3" coloroff="infos_background" brcoloroff="infos_background"/>
-        <button class="button_main" x="+34" y="+15" width="30" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloroff="infos_background"/>
-      </deck>
-    </group>
-    <group name="barsleft4" x="+660-30" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 1">
+    <group name="barsleft4" x="+660-30" y="+10" visibility="var_equal '@$dd_phrase_circle' 1">
       <deck deck="1">
         <button class="button_main" x="+0" y="+0" width="15" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
         <button class="button_main" x="+17" y="+0" width="15" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>
@@ -162,7 +119,7 @@
         <button class="button_main" x="+17*3" y="+15" width="15" height="10" shape="square" query="goto_bar 4" coloroff="infos_background" brcoloroff="infos_background"/>
       </deck>
     </group>
-    <group name="barsright4" x="+660+530+30" y="+10" visibility="var_equal '@$phrasecircle' 1 ? var_equal '@$4decks' 1">
+    <group name="barsright4" x="+660+530+30" y="+10" visibility="var_equal '@$dd_phrase_circle' 1">
       <deck deck="2">
         <button class="button_main" x="+0" y="+0" width="15" height="10" shape="square" query="goto_bar 1" coloroff="infos_background" brcoloroff="infos_background"/>
         <button class="button_main" x="+17" y="+0" width="15" height="10" shape="square" query="goto_bar 2" coloroff="infos_background" brcoloroff="infos_background"/>

@@ -10,14 +10,14 @@
       <off shape="square" color="black"/>
     </visual>
     <!-- 2 DECK BUTTON -->
-    <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$layout_4deck' 0 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0" query="var_equal '@$layout_4deck' 0 ? var_equal '@$4decks' 1">
+    <button x="+3" y="+8" width="30" height="28" tooltip="2 Decks (4 Swap)" class="button_main" action="set '@$dd_layout_4deck' 0 &amp; load_skin" bordersize="0" query="var_equal '@$dd_layout_4deck' 0">
       <off color="transparent"/>
-      <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="2"/>
+      <text colorover="#999999" fontsize="14" weight="bold" coloron="white" text="2"/>
     </button>
     <!-- 4 DECK BUTTON -->
-    <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$layout_4deck' 1 &amp; set '@$4decks' 1 &amp; load_skin" bordersize="0">
+    <button x="+32" y="+8" width="30" height="28" tooltip="4 Decks" class="button_main" action="set '@$dd_layout_4deck' 1 &amp; load_skin" bordersize="0">
       <off color="transparent"/>
-      <text overcolor="#999999" fontsize="14" weight="bold" oncolor="white" text="4"/>
+      <text colorover="#999999" fontsize="14" weight="bold" coloron="white" text="4"/>
     </button>
     <!-- label -->
     <textzone>

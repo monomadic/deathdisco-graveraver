@@ -15,7 +15,7 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 
 - Bare `just` (or `just help`): list recipes and their effects without writing.
 - `just check`: the main read-only verification command — verifies generated browser positions, expands/lints the XML, and runs the class-casing and structural audits.
-- `just lint`: read-only generated-file verification and XML expansion/linting.
+- `just lint`: read-only generated-file verification, then include and macro expansion into a scratch copy that is linted and checked for macro residue.
 - `just audit`: class and structural audits only.
 - `just generate`: writes `src/layouts/browser/browser-positions.generated.xml`.
 - `just build`: regenerates browser positions and writes the built/minified skin under `build/`.
@@ -98,7 +98,7 @@ region renders exactly as if its elements sat inline.
 
 - `scripts/audit-class-casing.py` enforces class-definition/reference casing and catches missing class definitions.
 - `scripts/audit-structure.py` catches unused definitions, unreachable class islands, unlinked XML files, missing or empty XInclude targets, unexpected duplicate definitions, and new always-hidden blocks.
-- `scripts/audit-state-vars.py` requires every concrete skin variable to be documented in `docs/STATE.md` and restricts `@$dd_skin_mode` to Pro, Performance, and Stack.
+- `scripts/audit-state-vars.py` requires every concrete skin variable to be documented in `docs/STATE.md`, restricts `@$dd_skin_mode` to Pro, Performance, and Stack, and fails when a writer of a `condition`-read variable does not chain `load_skin`.
 - Known duplicate class definitions are deliberate color-scheme variants. Add new duplicates only with a clear reason and update the structural audit allowlist.
 
 ## Editing Notes

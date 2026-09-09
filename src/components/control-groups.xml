@@ -26,7 +26,7 @@
       <item text="Show Controls" localize="true" action="toggle '@$dd_show_scratch_buttons'" check="var_equal '@$dd_show_scratch_buttons' 1"/>
       <item text="Show Gridlines" localize="true" action="setting 'showGridlines'" check="setting 'showGridlines'"/>
       <item text="Bar Counter" localize="true" action="toggle '@$dd_show_bar_counter_vertical'" check="var_equal '@$dd_show_bar_counter_vertical' 1"/>
-      <item text="Hide Transport" localize="true" action="toggle '@$dd_hide_transport'" check="var_equal '@$dd_hide_transport' 1"/>
+      <item text="Hide Transport" localize="true" action="toggle '@$dd_hide_transport' &amp; load_skin" check="var_equal '@$dd_hide_transport' 1"/>
     </menu>
   </define>
   <define class="MIC/HEADPHONES_CONTROLS">

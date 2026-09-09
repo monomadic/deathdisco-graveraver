@@ -35,11 +35,11 @@
       <text colorover="white" size="14" coloron="white" align="center"/>
     </button>
   <!-- Pro-mode utilities: layout, racks, mixer options, phrase circles -->
-  <panel class="topbar_pro_utilities" name="pro_skin_utility" visibility="var_equal '@$dd_skin_mode' 0"/>
+  <panel class="topbar_pro_utilities" name="pro_skin_utility" condition="var_equal '@$dd_skin_mode' 0"/>
   <!-- Performance-mode utilities: layout cycle, racks -->
-  <panel class="topbar_performance_utilities" name="performance_skin_utility" visibility="var_equal '@$dd_skin_mode' 1"/>
+  <panel class="topbar_performance_utilities" name="performance_skin_utility" condition="var_equal '@$dd_skin_mode' 1"/>
   <!-- Stack-mode utilities: pad / mixer / video / effects panel toggles -->
-  <panel class="topbar_stack_utilities" name="stack_skin_utility" visibility="var_equal '@$dd_skin_mode' 2"/>
+  <panel class="topbar_stack_utilities" name="stack_skin_utility" condition="var_equal '@$dd_skin_mode' 2"/>
   <!-- CFX / PFX / SAMP audio-modifier status lights -->
   <panel class="topbar_status_lights" x="+802+160+100+2+400" y="+8"/>
   <!-- master VU, CPU, battery, clock -->

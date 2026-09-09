@@ -46,9 +46,13 @@ repair-pad-state:
 repair-pad-state-apply:
     python3 scripts/repair-vdj-pad-panels.py --apply
 
-# [read-only] Verify generated XML and expand/lint the skin entrypoint.
+# [read-only] Verify generated XML, then expand includes and macros into a scratch copy and lint the result.
 lint: verify-generated
-    xmllint --noout --xinclude --loaddtd --noent "{{src_dir}}/skin.xml"
+    tmp="$(mktemp -d)"; \
+    xmllint --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "$tmp/skin.xml"; \
+    python3 scripts/expand-skin-macros.py "$tmp/skin.xml"; \
+    xmllint --noout "$tmp/skin.xml"; \
+    rm -rf "$tmp"
 
 # [writes source + build] Regenerate source and build the minified skin.
 build: generate lint

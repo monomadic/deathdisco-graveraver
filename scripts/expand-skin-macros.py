@@ -90,6 +90,14 @@ def main(path: Path):
         if rounds > 10:
             raise SystemExit("macro expansion did not converge")
 
+    leftover_defines = [d.get("class") for d in root.iter("define")
+                        if d.get("macro") == "true"]
+    leftover_refs = sorted({e.get("class") for e in root.iter()
+                            if e.get("class", "").lower() in macros})
+    if leftover_defines or leftover_refs:
+        raise SystemExit("macro expansion left residue: "
+                         f"defines={leftover_defines} references={leftover_refs}")
+
     output = ET.tostring(root, encoding="unicode", xml_declaration=True)
     tmp_path = path.with_name(f".{path.name}.{getpid()}.tmp")
     try:

@@ -24,7 +24,7 @@ pass (see the end of this file).
 | `@$dd_stack_controls` | `0` expanded waveform, `1` stack controls; fallback `0` | Stack topbar PADS toggle; read by stack deck strips. | No | No |
 | `@$dd_browser_zoom_mode` | `0` explicit browser zoom only, `1` also follow browser-active state; fallback `0` | Read by all layout bases; no writer currently exists in this skin. | No | Retained external/legacy control |
 | `@$dd_bottombar_mode` | `0` browser tools, `1` custom buttons; fallback `0` | Written by topbar options and bottombar toggle; read by `bottombar.xml`. | No | No |
-| `@$dd_hide_transport` | `0` show, `1` hide; fallback `0` | “Hide Transport” option for vertical controls; name no longer matches the whole affected surface. | No | No |
+| `@$dd_hide_transport` | `0` show, `1` hide; fallback `0` | “Hide Transport” option for vertical controls; name no longer matches the whole affected surface. | Yes | No |
 | `@$dd_bordermode` | `0` normal, `1` show keyboard/selected-deck borders; fallback `0` | Topbar “Keyboard Mode”; read by deck and stack selection borders. | No | No |
 
 ## Waveform state
@@ -33,7 +33,7 @@ pass (see the end of this file).
 | --- | --- | --- | --- | --- |
 | `@$dd_hide_main_waveforms` | `0` show, `1` hide; fallback `0` | Topbar option; selects main layout shells and rack placement. | Yes | No |
 | `@$dd_hide_zoom_waveforms` | `0` show, `1` hide; fallback `0` | Topbar/browser-zoom option; selects mini-deck shells and geometry. | Yes | No |
-| `@$dd_wave_size` | `0…13`, smallest to largest; fallback `0` | Infinity wave size, cycled by main waveform controls and read by waveform/layout geometry. | No | No |
+| `@$dd_wave_size` | `0…13`, smallest to largest; fallback `0` | Infinity wave size, cycled by main waveform controls and read by waveform/layout geometry. | Yes | No |
 | `@$dd_four_waveforms` | `0` left/right active decks, `1` all four decks; fallback `0` | Waveform menus and selectors; read by main, center, and vertical waveform variants. | No | No |
 | `@$dd_mirror_waveforms` | `0` normal, `1` mirrored; fallback `0` | Waveform option menus; read by Beats renderers. | No | No |
 | `@$dd_split_waveform` | `0` unified, `1` split; fallback `0` | Read by main waveform rendering and menus; no writer currently exists in this skin. | No | Retained external/legacy control |

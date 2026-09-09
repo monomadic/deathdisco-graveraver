@@ -29,14 +29,18 @@
     </visual>
   </define>
   <!-- PAD PAGE CONTAINER -->
-  <define class="PAD_PAGE_CONTAINER" placeholders="*deck,*panelname,*width=746,*show_shift_pads=true">
+  <define class="PAD_PAGE_CONTAINER" placeholders="*deck,*panelname,*width=746,*compact=false">
     <deck deck="[DECK]">
       <!-- background of entire pad area -->
       <visual class="gfx_shape" x="+0" y="+0" width="[WIDTH]" height="236" coloroff="#050505" bordersize="1" bordercoloroff="dark_5" radius="10"/>
       <group x="+8" y="+8">
         <panel name="@pads16_[PANELNAME]" width="[WIDTH]" group="pad_area_[PANELNAME]" visible="yes" available="yes" displayname="Pads x16" forceshow="16pads">
-          <!-- PAD PAGE SELECT -->
-          <group name="pad_page_select_8" condition="true">
+          <!-- PAD PAGE SELECT: wide (8 pages, shift reveals 5-8) or compact (4 pages).
+               Call sites pass compact="true" when the container is under ~500px
+               (Performance decks). A width-derived condition would be nicer, but a
+               starred placeholder arrives as the literal expression (e.g. 684-230),
+               and numeric comparison of that in condition="" is unverified. -->
+          <group name="pad_page_select_8" condition="not [COMPACT]">
             <!-- 1-4 -->
             <group>
               <visual width="[WIDTH]-16/2" height="24" visibility="not shift">
@@ -76,8 +80,8 @@
               </visual>
             </group>
           </group>
-          <!-- Compact: [WIDTH] < 500, only pad pages 1-4 full width -->
-          <group name="pad_page_select_4" condition="constant [SHOW_SHIFT_PADS]">
+          <!-- Compact: only pad pages 1-4, full width -->
+          <group name="pad_page_select_4" condition="[COMPACT]">
             <visual width="[WIDTH]" height="24" visibility="not shift">
               <off shape="square" color="dark_5" border="dark_6" radius="5" border_size="2"/>
             </visual>

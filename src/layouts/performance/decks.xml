@@ -36,7 +36,7 @@
       <songpos class="cuemap" x="+2" y="+91" width="[WIDTH]-4" height="2"/>
       <panel condition="not [MIRROR]">
         <panel class="track_info_pro" width="[WIDTH]"/>
-        <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <panel class="pad_page_container" x="+10" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230" compact="true"/>
         <group y="+4" x="-40">
           <panel class="jogwheel" x="+[WIDTH]-160" y="+105" name="jogwheel_spinner"/>
           <panel class="pitch_small" deck="[DECK]" x="+[WIDTH]" y="+110"/>
@@ -50,7 +50,7 @@
         <panel class="track_info_pro" x="+0" width="[WIDTH]"/>
         <panel class="pitch_small" deck="[DECK]" x="+5" y="+114"/>
         <panel class="jogwheel" x="+42" y="+109" name="jogwheel_spinner"/>
-        <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230"/>
+        <panel class="pad_page_container" x="+210" y="+96" deck="[DECK]" panelname="[PANELNAME]_[DECK]" width="[WIDTH]-230" compact="true"/>
         <group x="+8" y="+[HEIGHT]-40">
           <panel class="performance_play_button"/>
           <panel class="sync_button" x="+105"/>

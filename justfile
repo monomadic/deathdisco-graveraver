@@ -48,11 +48,11 @@ repair-pad-state-apply:
 
 # [read-only] Verify generated XML, then expand includes and macros into a scratch copy and lint the result.
 lint: verify-generated
-    tmp="$(mktemp -d)"; \
+    set -e; tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT; \
+    find "{{src_dir}}" -name '*.xml' -print0 | xargs -0 xmllint --noout; \
     xmllint --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "$tmp/skin.xml"; \
     python3 scripts/expand-skin-macros.py "$tmp/skin.xml"; \
-    xmllint --noout "$tmp/skin.xml"; \
-    rm -rf "$tmp"
+    xmllint --noout "$tmp/skin.xml"
 
 # [writes source + build] Regenerate source and build the minified skin.
 build: generate lint

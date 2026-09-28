@@ -56,6 +56,10 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - Keep layout-only helpers near the layout that owns them.
 - Add reusable components to the relevant index, usually `src/components/index.xml` or a nested index such as `src/components/buttons/index.xml`.
 - If an XInclude target becomes empty, remove the include and the file.
+- Mirrored left/right defines take a `*deckside` placeholder (`deckside="leftdeck"` / `"rightdeck"`,
+  as in Denon's official Prime4 skin) and branch with `condition="param_equal '[DECKSIDE]' 'leftdeck'"`.
+  Never pick the side at runtime with `get_deck N` or `leftdeck`/`rightdeck` (those mean the *active*
+  deck on a side).
 
 ### Layouts, components, and the two composition mechanisms
 

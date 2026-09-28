@@ -45,10 +45,10 @@
           <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
           <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- TRACK INFO -->
-          <panel class="horizontal_waveform_track_info" deck="3" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="1" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="2" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="4" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel class="horizontal_waveform_track_info" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- NEEDLE -->
           <!-- left aligned -->
           <group visibility="setting 'waveformCenter' 'left'">

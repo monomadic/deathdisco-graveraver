@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="VIDEO_PREVIEW_EX" placeholders="*vpwidth=208,*vpheight=124">
-    <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 1 ? true : get_deck 3 ? true : false"/>
-    <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" visibility="get_deck 2 ? true : get_deck 4 ? true : false"/>
+  <define class="VIDEO_PREVIEW_EX" placeholders="*deckside,*vpwidth=208,*vpheight=124">
+    <button class="button_main" action="deck leftvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
+    <button class="button_main" action="deck rightvideo video_transition" width="[VPWIDTH]" height="[VPHEIGHT]" coloroff="infos_background" coloron="infos_background" bordersize="0" textcolor="textdarker" text="PREVIEW" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
     <video source="deck" linkdrop="true" visibility="leftdeck">
       <size width="[VPWIDTH]" height="[VPHEIGHT]"/>
     </video>

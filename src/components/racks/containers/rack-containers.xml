@@ -37,8 +37,8 @@
       <visual class="gfx_shape" width="561" height="140" coloroff="panel_background"/>
       <button class="button_main" query="on" width="30" height="140" textaction="get_text 'PREVIEW `get_deck`'" orientation="vertical" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="leftdeck"/>
       <button class="button_main" x="+561-30" query="on" width="30" height="140" textaction="get_text 'PREVIEW `get_deck`'" orientation="vertical-cw" coloroff="tab_buttons" coloron="tab_buttons" textcoloron="texton2" bordersize="0" visibility="rightdeck"/>
-      <panel class="video_preview_ex" x="+561-208-2-6" y="+2+6" visibility="leftdeck"/>
-      <panel class="video_preview_ex" x="+2+6" y="+2+6" visibility="rightdeck"/>
+      <panel class="video_preview_ex" deckside="leftdeck" x="+561-208-2-6" y="+2+6" visibility="leftdeck"/>
+      <panel class="video_preview_ex" deckside="rightdeck" x="+2+6" y="+2+6" visibility="rightdeck"/>
       <slider class="deck_level_video" x="+300" y="+8" visibility="leftdeck"/>
       <slider class="deck_level_video" x="+220" y="+8" visibility="rightdeck"/>
       <button class="button_main" x="+71" y="+44" width="41" height="28" action="effect_show_gui 'video'" text="+" visibility="leftdeck"/>

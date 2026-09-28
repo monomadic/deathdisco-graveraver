@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="HORIZONTAL_WAVEFORM_TRACK_INFO" placeholders="*deck,*height,fullheight=[HEIGHT]*2-4">
+  <define class="HORIZONTAL_WAVEFORM_TRACK_INFO" placeholders="*deck,*deckside,*height,fullheight=[HEIGHT]*2-4">
     <deck deck="[DECK]">
       <!-- TRACK INFO -->
       <!-- === LEFT DECK WAVEFORM TRACK INFO === -->
-      <group x="+34" y="+0" visibility="get_deck 1 ? true : get_deck 3 ? true : false">
+      <group x="+34" y="+0" condition="param_equal '[DECKSIDE]' 'leftdeck'">
         <!-- BG -->
         <square x="+0" y="+0" height="[FULLHEIGHT]" width="[FULLHEIGHT]+40" color="#CC000000"/>
         <!-- black fallback -->
@@ -56,7 +56,7 @@
           <down color="transparent" border_size="1" border="#66FFFFFF" shape="square" radius="4"/>
         </visual>
       </group>
-      <group x="1920-[FULLHEIGHT]-27-40" y="-[HEIGHT]" visibility="get_deck 2 ? true : get_deck 4 ? true : false">
+      <group x="1920-[FULLHEIGHT]-27-40" y="-[HEIGHT]" condition="param_equal '[DECKSIDE]' 'rightdeck'">
         <!-- BG -->
         <square x="+0" y="+0" height="[FULLHEIGHT]" width="[FULLHEIGHT]+40" color="#CC000000"/>
         <!-- black fallback -->
@@ -76,7 +76,7 @@
             <off shape="circle" color="dark_0" border="transparent" border_size="88"/>
           </visual>
         </group>
-        <cover x="+40" visibility="loaded ? get_deck 2 ? true : get_deck 4 ? true : false" action="" rightclick="" dblclick="">
+        <cover x="+40" visibility="loaded" action="" rightclick="" dblclick="">
           <size width="[FULLHEIGHT]" height="[FULLHEIGHT]"/>
         </cover>
         <!-- TRACK INFO -->

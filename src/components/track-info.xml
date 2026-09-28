@@ -19,7 +19,8 @@
     <group visibility="loaded">
     </group>
     <!-- COVER ART: HIDE -->
-    <!-- Two columns: title/remix on the outer edge, BPM/KEY/REMAIN stats on the inner edge. -->
+    <!-- Two columns: title and remix (artist when there is no remix) on the outer edge,
+         BPM/KEY/TIME stats on the inner edge. -->
     <group visibility="var_equal '@$dd_show_cover_title' 0 &amp; loaded">
       <pos x="+15" y="+8"/>
       <!-- LEFT -->
@@ -31,7 +32,7 @@
         <textzone tooltip="">
           <pos y="+30"/>
           <size width="[WIDTH]-30-280" height="70-6-6-26"/>
-          <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
+          <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? param_equal `get_loaded_song remix` '' ? get_loaded_song 'artist' &amp; param_uppercase : get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
         </textzone>
         <panel class="track_info_stats" otherdeck="right" timex="0" div1="81" keyx="85" div2="174" bpmx="176" x="+[WIDTH]-20-276" y="-1"/>
       </group>
@@ -46,7 +47,7 @@
         <textzone tooltip="">
           <pos x="+280" y="+30"/>
           <size width="[WIDTH]-30-280" height="70-6-6-26"/>
-          <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
+          <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? param_equal `get_loaded_song remix` '' ? get_loaded_song 'artist' &amp; param_uppercase : get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
         </textzone>
       </group>
     </group>

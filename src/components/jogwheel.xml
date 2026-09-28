@@ -134,7 +134,7 @@
       <group x="+0" y="+25" visibility="loaded">
         <!-- BPM VALUE -->
         <textzone class="text" width="[JOGSIZE]" height="46" fontsize="23" color="needle" align="center" weight="bold" textaction="var_equal '@$dd_bpm_mask' 1 ? get_text '--.--' : var_equal '@$dd_jog_bpm_digits' 0 ? get_text '%Pbpm' : var_equal '@$dd_jog_bpm_digits' 1 ? get_text '%Pbpmex'"/>
-        <button action="pitch_reset 8bt">
+        <button action="pitch_reset 4bt">
           <pos x="+0" y="-10"/>
           <size width="+[JOGSIZE]" height="25"/>
           <text fontsize="12" weight="" color="white" align="center" action="get_text '%Ppitch%'" important="true"/>
@@ -232,7 +232,7 @@
             <text fontsize="12" weight="" color="white" align="center" format="`get_text '%Ppitch%'`" important="true"/>
           </textzone>
           <!-- BPM -->
-          <button action="pitch_reset 8bt" x="+0" y="+36" width="[JOGSIZE]" height="22" border_size="1" border="red">
+          <button action="pitch_reset 4bt" x="+0" y="+36" width="[JOGSIZE]" height="22" border_size="1" border="red">
             <text fontsize="24" coloron="red" colorselected="green" weight="bold" align="center" action="var_equal '@$dd_bpm_mask' 1 ? get_text '--.--' : var_equal '@$dd_jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
           </button>
         </group>

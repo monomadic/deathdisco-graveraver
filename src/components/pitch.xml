@@ -6,14 +6,14 @@
       <size width="7" height="[HEIGHT]+6"/>
       <off shape="square" color="dark_8" border="dark_0" border_size="2" radius="3"/>
     </visual>
-    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true">
+    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset 4bt" orientation="vertical" direction="down" frommiddle="true">
       <pos x="+0" y="-7"/>
       <size width="33" height="[HEIGHT]"/>
       <on width="-30" height="+0" color="dark_6" border="#FFFFFF" border_size="0" radius="0" shape="square"/>
       <off width="-30" height="+0" color="#FFFFFF" border="#FFFFFF" border_size="0" radius="0" shape="square"/>
       <fader color="#FFFFFF" width="15" height="2"/>
     </slider>
-    <button action="pitch_reset" y="+[HEIGHT]/2-15" x="-8" visibility="not get_pitch_zero">
+    <button action="pitch_reset 4bt" y="+[HEIGHT]/2-15" x="-8" visibility="not get_pitch_zero">
       <size width="16" height="16"/>
       <off shape="circle" color="transparent"/>
       <icon sysicon="arrowright" coloroff="dark_7" colorover="white" colordown="dark_6" colorselected="dark_5" width="14" height="14"/>
@@ -43,14 +43,14 @@
     <line color="faderlines2" x="+0" y="+0" width="38" height="1"/>
     <line color="faderlines2" x="+0" y="+48" width="38" height="1"/>
     <line color="faderlines2" x="+0" y="+48+48" width="38" height="1"/>
-    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true">
+    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset 4bt" orientation="vertical" direction="down" frommiddle="true">
       <pos x="+0" y="-7"/>
       <size width="38" height="111"/>
       <on width="-24" height="-8" color="knobprogressoff" border="panel_background" border_size="4" shape="square"/>
       <off width="-24" height="-8" color="deckcolor" border="panel_background" border_size="4" shape="square"/>
       <fader color="faderbackground" width="38" height="14"/>
     </slider>
-    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset" orientation="vertical" direction="down" frommiddle="true">
+    <slider action="pitch" rightclick="pitch_zero" dblclick="pitch_reset 4bt" orientation="vertical" direction="down" frommiddle="true">
       <pos x="+0" y="-7+6"/>
       <size width="38" height="111-12"/>
       <fader color="faderbackgroundline" width="38" height="2"/>
@@ -140,7 +140,7 @@
     </slider>
   </define>
   <define class="PITCH_ZONE_STACK">
-    <button class="button_main" x="+0" y="+6" width="58" height="18" action="pitch_reset" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
+    <button class="button_main" x="+0" y="+6" width="58" height="18" action="pitch_reset 4bt" coloroff="button_background3" brcoloroff="button_background3" textsize="14" textcolor="textoff2" textaction="get_text '%Ppitch%'" query="pitch_reset ? blink 400ms"/>
     <panel class="pitch_stack" x="+11" y="+6+28"/>
     <button class="button_main" x="+0" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend -2% 500ms" rightclick="pitch_range '8,16,32,50' -1" tooltip="Pitch Bend.\nRight-click: Pitch range -8,16,32,50." textsize="14" text="-" visibility="var_not_equal '@$dd_jog_type' 0"/>
     <button class="button_main" x="+29" y="+6+30+4+30+6+64" width="29" height="18" action="pitch_bend +2% 500ms" rightclick="pitch_range '8,16,32,50' +1" tooltip="Pitch Bend.\nRight-click: Pitch range +8,16,32,50." textsize="14" text="+" visibility="var_not_equal '@$dd_jog_type' 0"/>

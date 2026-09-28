@@ -19,30 +19,36 @@
     <group visibility="loaded">
     </group>
     <!-- COVER ART: HIDE -->
+    <!-- Two columns: title/remix on the outer edge, BPM/KEY/REMAIN stats on the inner edge. -->
     <group visibility="var_equal '@$dd_show_cover_title' 0 &amp; loaded">
       <pos x="+15" y="+8"/>
       <!-- LEFT -->
-      <!-- title -->
-      <textzone tooltip="" condition="param_equal '[DECKSIDE]' 'leftdeck'">
-        <size width="[WIDTH]/2" height="70-6-6-26"/>
-        <text fontsize="22" weight="bold" color="needle" align="left" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
-      </textzone>
-      <!-- artist -->
-      <textzone tooltip="" condition="param_equal '[DECKSIDE]' 'leftdeck'">
-        <pos y="+30"/>
-        <size width="[WIDTH]/2" height="70-6-6-26"/>
-        <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
-      </textzone>
+      <group condition="param_equal '[DECKSIDE]' 'leftdeck'">
+        <textzone tooltip="">
+          <size width="[WIDTH]-30-280" height="70-6-6-26"/>
+          <text fontsize="22" weight="bold" color="needle" align="left" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
+        </textzone>
+        <textzone tooltip="">
+          <pos y="+30"/>
+          <size width="[WIDTH]-30-280" height="70-6-6-26"/>
+          <text fontsize="17" weight="" color="#888888" align="left" scroll="no" action="loaded ? get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
+        </textzone>
+        <panel class="track_info_stats" otherdeck="right" timex="0" div1="81" keyx="85" div2="174" bpmx="176" x="+[WIDTH]-20-276" y="-1"/>
+      </group>
       <!-- RIGHT -->
-      <textzone tooltip="" condition="param_equal '[DECKSIDE]' 'rightdeck'">
-        <size width="[WIDTH]/2" height="70-6-6-26"/>
-        <text fontsize="22" weight="bold" color="needle" align="right" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
-      </textzone>
-      <textzone tooltip="" condition="param_equal '[DECKSIDE]' 'rightdeck'">
-        <pos y="+30"/>
-        <size width="[WIDTH]/2" height="70-6-6-26"/>
-        <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? get_text '`get_loaded_song remix` `get_bpm absolute`bpm' &amp; param_uppercase" localize="true" important="true"/>
-      </textzone>
+      <group condition="param_equal '[DECKSIDE]' 'rightdeck'">
+        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="101" keyx="103" div2="194" timex="200" x="-10" y="-1"/>
+        <textzone tooltip="">
+          <pos x="+280"/>
+          <size width="[WIDTH]-30-280" height="70-6-6-26"/>
+          <text fontsize="22" weight="bold" color="needle" align="right" scroll="no" action="loaded ? get_text '`get_title_before_remix`' &amp; param_uppercase" localize="true" important="true"/>
+        </textzone>
+        <textzone tooltip="">
+          <pos x="+280" y="+30"/>
+          <size width="[WIDTH]-30-280" height="70-6-6-26"/>
+          <text fontsize="17" weight="" color="#888888" align="right" scroll="no" action="loaded ? get_loaded_song 'remix' &amp; param_uppercase" localize="true" important="true"/>
+        </textzone>
+      </group>
     </group>
     <!-- COVER ART: SHOW -->
     <group visibility="var_equal '@$dd_show_cover_title' 1">
@@ -55,6 +61,104 @@
       <!-- right -->
       <group class="cover_art_occluded" x="+[WIDTH]-170-5" y="+6" visibility="loaded" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
     </group>
+  </define>
+  <!-- BPM / KEY / TIME readout for TRACK_INFO_PRO: BPM 100 / KEY 88 / TIME 76 columns split by hairlines
+       (276 wide, 66 tall); callers place BPM nearest the mixer and TIME nearest the title. Each column is label / value / detail; inherits the caller's deck scope.
+       BPM:  white within +/-10% of the original, yellow to +/-20%, red beyond (detail blinks red).
+       KEY:  vs the active deck on the other side ([OTHERDECK]): green when match_key reports
+             compatible (white), orange two Camelot steps away (or one step across A/B), red otherwise,
+             white when that deck has no key. Click: key-match menu; right-click: toggle Musical/Harmonic (Camelot) notation.
+             Detail = MATCH, or the semitone shift.
+             Bare match_key / key_match_button return their value (0), not their truth, so wrap them
+             as `... ? true : false` when they are a branch or the whole visibility.
+       TIME: click cycles @$dd_track_stats_time: -remaining / elapsed / total; white, yellow under 60s
+             remaining, red under 20s. Detail = elapsed, or -remaining while elapsed is shown.
+       Clicking the BPM column glides the pitch back to 0% over one bar (pitch_reset 4bt). -->
+  <define class="TRACK_INFO_STATS" placeholders="*otherdeck,*bpmx,*keyx,*timex,*div1,*div2">
+    <line color="#2a2a2a" x="+[DIV1]" y="+4" width="1" height="58"/>
+    <line color="#2a2a2a" x="+[DIV2]" y="+4" width="1" height="58"/>
+    <textzone action="pitch_reset 4bt">
+      <pos x="+[BPMX]"/>
+      <size width="100" height="11"/>
+      <text fontsize="10" color="#777777" align="center" localize="true" important="true" text="BPM"/>
+    </textzone>
+    <textzone>
+      <pos x="+[KEYX]"/>
+      <size width="88" height="11"/>
+      <text fontsize="10" color="#777777" align="center" localize="true" important="true" text="KEY"/>
+    </textzone>
+    <textzone action="cycle '@$dd_track_stats_time' 3">
+      <pos x="+[TIMEX]"/>
+      <size width="76" height="11"/>
+      <text fontsize="10" color="#777777" align="center" localize="true" important="true" action="var_equal '@$dd_track_stats_time' 1 ? get_text 'ELAPSED' : var_equal '@$dd_track_stats_time' 2 ? get_text 'TOTAL' : get_text 'REMAIN'"/>
+    </textzone>
+    <textzone action="pitch_reset 4bt">
+      <pos x="+[BPMX]" y="+10"/>
+      <size width="100" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="`param_bigger 120 get_pitch_value ? color '#ff453a' : param_smaller 80 get_pitch_value ? color '#ff453a' : param_bigger 110 get_pitch_value ? color '#f5c518' : param_smaller 90 get_pitch_value ? color '#f5c518' : color '#eeeeee'`" action="var_equal '@$dd_jog_bpm_digits' 1 ? get_text '%Pbpmex' : get_text '%Pbpm'"/>
+    </textzone>
+    <!-- key: white with no reference key, else green / orange / red by compatibility -->
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? false : true">
+      <pos x="+[KEYX]" y="+10"/>
+      <size width="88" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="#eeeeee" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? true : false : false">
+      <pos x="+[KEYX]" y="+10"/>
+      <size width="88" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="#eeeeee" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? false : param_contains 'A' `get_harmonic` ? param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? true : false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? true : false : param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? true : false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? true : false : false">
+      <pos x="+[KEYX]" y="+10"/>
+      <size width="88" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="#ff9f1a" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? false : param_contains 'A' `get_harmonic` ? param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? false : true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? false : true : param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? false : true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? false : true : false">
+      <pos x="+[KEYX]" y="+10"/>
+      <size width="88" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="#ff453a" action="get_key"/>
+    </textzone>
+    <textzone action="cycle '@$dd_track_stats_time' 3" >
+      <pos x="+[TIMEX]" y="+10"/>
+      <size width="76" height="36"/>
+      <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="`get_time 'remain' 1 &amp; param_smaller 20 ? color '#ff453a' : get_time 'remain' 1 &amp; param_smaller 60 ? color '#f5c518' : color '#eeeeee'`" action="var_equal '@$dd_track_stats_time' 1 ? get_time 'elapsed' 'short' : var_equal '@$dd_track_stats_time' 2 ? get_time 'total' 'short' : get_text '-`get_time remain short`'"/>
+    </textzone>
+    <!-- detail row -->
+    <textzone action="pitch_reset 4bt" visibility="get_pitch_zero">
+      <pos x="+[BPMX]" y="+44"/>
+      <size width="100" height="20"/>
+      <text weight="bold" fontsize="15" align="center" scroll="no" important="true" color="#dddddd" action="get_text '%Ppitch%'"/>
+    </textzone>
+    <textzone action="pitch_reset 4bt" visibility="get_pitch_zero ? false : param_bigger 120 get_pitch_value ? false : param_smaller 80 get_pitch_value ? false : true">
+      <pos x="+[BPMX]" y="+44"/>
+      <size width="100" height="20"/>
+      <text weight="bold" fontsize="15" align="center" scroll="no" important="true" color="#dddddd" action="get_text '%Ppitch%'"/>
+    </textzone>
+    <textzone action="pitch_reset 4bt" visibility="param_bigger 120 get_pitch_value ? blink 500ms : param_smaller 80 get_pitch_value ? blink 500ms : false">
+      <pos x="+[BPMX]" y="+44"/>
+      <size width="100" height="20"/>
+      <text fontsize="15" align="center" scroll="no" important="true" weight="bold" color="red" action="get_text '%Ppitch%'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? true : false">
+      <pos x="+[KEYX]" y="+44"/>
+      <size width="88" height="20"/>
+      <text fontsize="15" align="center" scroll="no" important="true" weight="bold" color="#eeeeee" action="get_text 'MATCH'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? false : param_equal `get_key_modifier_text` 0 ? true : false">
+      <pos x="+[KEYX]" y="+44"/>
+      <size width="88" height="20"/>
+      <text weight="bold" fontsize="15" align="center" scroll="no" important="true" color="#dddddd" action="get_text '+0 ST'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? false : param_equal `get_key_modifier_text` 0 ? false : true">
+      <pos x="+[KEYX]" y="+44"/>
+      <size width="88" height="20"/>
+      <text fontsize="15" align="center" scroll="no" important="true" weight="bold" color="orange" action="get_text '`get_key_modifier_text` ST'"/>
+    </textzone>
+    <textzone action="cycle '@$dd_track_stats_time' 3">
+      <pos x="+[TIMEX]" y="+44"/>
+      <size width="76" height="20"/>
+      <text weight="bold" fontsize="15" align="center" scroll="no" important="true" color="#dddddd" action="var_equal '@$dd_track_stats_time' 1 ? get_text '-`get_time remain short`' : get_time 'elapsed' 'short'"/>
+    </textzone>
   </define>
   <define class="TRACK_INFO_METADATA" placeholders="deck,*width=340">
     <panel>
@@ -180,7 +284,7 @@
       </visual>
       <group x="+10" y="+1">
         <!-- label -->
-        <textzone action="pitch_reset" tooltip="">
+        <textzone action="pitch_reset 4bt" tooltip="">
           <size width="90" height="18"/>
           <text color="dark_8" align="left" weight="" size="15" action="get_text BPM"/>
         </textzone>
@@ -196,7 +300,7 @@
           <text color="`deck [DECK] masterdeck ? color 'orange' : color 'white'`" align="left" size="36" weight="bold" action="var_equal '@$dd_bpm_mask' 1 ? get_text '--.--' : var_equal '@$dd_jog_bpm_digits' 0 ? get_text '%Pbpm' : get_text '%Pbpmex'"/>
         </textzone>
         <!-- sync diff -->
-        <button action="pitch_reset" tooltip="">
+        <button action="pitch_reset 4bt" tooltip="">
           <pos x="+0" y="+48"/>
           <size width="80" height="20"/>
           <off color="black" border="dark_8" border_size="1" radius="4"/>

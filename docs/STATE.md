@@ -72,6 +72,7 @@ pass (see the end of this file).
 | `@$dd_bpm_mask` | `0` show BPM, `1` mask BPM; fallback `0` | Topbar BPM menu; read by jog and track BPM text. | No | No |
 | `@$dd_phrase_circle` | `0` phrase bars, `1` phrase circles; fallback `0` | Topbar options; read by phrase indicators. | No | No |
 | `@$dd_time_display_mode` | `0…2`, three track-time display modes; fallback `0` | Cycled from track-info components and read by their time zones. | No | No |
+| `@$dd_track_stats_time` | `0` remaining, `1` elapsed, `2` total; fallback `0` | Cycled by clicking the time column of `TRACK_INFO_STATS`; read by its label, value, and detail. | No | No |
 
 ## Deck-local state
 

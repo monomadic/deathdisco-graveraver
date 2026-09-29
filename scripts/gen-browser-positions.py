@@ -97,16 +97,6 @@ SURFACES = [
         y="1080-[HEIGHT]+{wave}-207",
         h="+[HEIGHT]-{wave}+207-50",
     ),
-    # Pro 4-deck (wave-only).
-    dict(
-        cls="BROWSER_SURFACE_PRO_4DECKS",
-        placeholders="*height",
-        racks=NO_RACKS,
-        x="+2",
-        width="1920-4",
-        y="+[HEIGHT]+{wave}+432+4-200+38",
-        h="[HEIGHT]-{hbase}",
-    ),
 ]
 
 

@@ -135,22 +135,4 @@
     <pos x="0" y="1080-[HEIGHT]+7-207" width="1920" height="+[HEIGHT]-7+207-50" condition="var_equal '@$dd_wave_size' 0"/>
     </browser>
   </define>
-  <define class="BROWSER_SURFACE_PRO_4DECKS" placeholders="*height">
-    <browser class="browser_ui_base">
-    <pos x="+2" y="+[HEIGHT]+267+432+4-200+38" width="1920-4" height="[HEIGHT]-381" condition="var_equal '@$dd_wave_size' 13"/>
-    <pos x="+2" y="+[HEIGHT]+247+432+4-200+38" width="1920-4" height="[HEIGHT]-361" condition="var_equal '@$dd_wave_size' 12"/>
-    <pos x="+2" y="+[HEIGHT]+227+432+4-200+38" width="1920-4" height="[HEIGHT]-341" condition="var_equal '@$dd_wave_size' 11"/>
-    <pos x="+2" y="+[HEIGHT]+207+432+4-200+38" width="1920-4" height="[HEIGHT]-321" condition="var_equal '@$dd_wave_size' 10"/>
-    <pos x="+2" y="+[HEIGHT]+187+432+4-200+38" width="1920-4" height="[HEIGHT]-301" condition="var_equal '@$dd_wave_size' 9"/>
-    <pos x="+2" y="+[HEIGHT]+167+432+4-200+38" width="1920-4" height="[HEIGHT]-281" condition="var_equal '@$dd_wave_size' 8"/>
-    <pos x="+2" y="+[HEIGHT]+147+432+4-200+38" width="1920-4" height="[HEIGHT]-261" condition="var_equal '@$dd_wave_size' 7"/>
-    <pos x="+2" y="+[HEIGHT]+127+432+4-200+38" width="1920-4" height="[HEIGHT]-241" condition="var_equal '@$dd_wave_size' 6"/>
-    <pos x="+2" y="+[HEIGHT]+107+432+4-200+38" width="1920-4" height="[HEIGHT]-221" condition="var_equal '@$dd_wave_size' 5"/>
-    <pos x="+2" y="+[HEIGHT]+87+432+4-200+38" width="1920-4" height="[HEIGHT]-201" condition="var_equal '@$dd_wave_size' 4"/>
-    <pos x="+2" y="+[HEIGHT]+67+432+4-200+38" width="1920-4" height="[HEIGHT]-181" condition="var_equal '@$dd_wave_size' 3"/>
-    <pos x="+2" y="+[HEIGHT]+47+432+4-200+38" width="1920-4" height="[HEIGHT]-161" condition="var_equal '@$dd_wave_size' 2"/>
-    <pos x="+2" y="+[HEIGHT]+27+432+4-200+38" width="1920-4" height="[HEIGHT]-141" condition="var_equal '@$dd_wave_size' 1"/>
-    <pos x="+2" y="+[HEIGHT]+7+432+4-200+38" width="1920-4" height="[HEIGHT]-121" condition="var_equal '@$dd_wave_size' 0"/>
-    </browser>
-  </define>
 </defs>

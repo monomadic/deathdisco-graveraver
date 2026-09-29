@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Pro deck layout shells. @$dd_layout_4deck: 0 = two-deck / swap, 1 = full four-deck. -->
-  <define class="DECK_CONTAINER_PRO" placeholders="*deck,*panelname,*deckside,height=465">
+  <!-- pads="false" drops the pad grid and transport bar (4-deck compact strip, height 180);
+       PRO_4DECKS_PADS then draws them once per side for the active deck. -->
+  <define class="DECK_CONTAINER_PRO" placeholders="*deck,*panelname,*deckside,height=465,*pads=true">
     <deck deck="[DECK]">
       <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" mirror="false" height="[HEIGHT]" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
       <panel class="deck_spine_pair" deck="[DECK]" panelname="[PANELNAME]" x="+800-34" mirror="true" height="[HEIGHT]" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
@@ -11,6 +13,15 @@
       <visual width="765" height="[HEIGHT]" condition="param_equal '[DECKSIDE]' 'rightdeck'">
         <off shape="square" color="panel_background" radius="6"/>
       </visual>
+      <!-- 4-deck compact strip: clicking empty strip area makes this deck its side's active
+           deck (which also swaps the pad block) and the selected deck. Sits behind the
+           strip's controls so they keep their own clicks. -->
+      <button action="leftdeck &amp; select" x="+35" condition="not [PADS] ? param_equal '[DECKSIDE]' 'leftdeck'">
+        <size width="765" height="[HEIGHT]"/>
+      </button>
+      <button action="rightdeck &amp; select" condition="not [PADS] ? param_equal '[DECKSIDE]' 'rightdeck'">
+        <size width="765" height="[HEIGHT]"/>
+      </button>
       <group x="+35" condition="param_equal '[DECKSIDE]' 'leftdeck'">
         <panel class="track_info_pro" deckside="leftdeck"/>
         <panel class="track_modifiers_panel" x="+10" y="+60" mirror="false" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
@@ -19,8 +30,8 @@
           <panel class="pitch_small" x="765" y="+10"/>
           <panel class="volume_small" x="765" y="+95"/>
         </group>
-        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
-        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="leftdeck"/>
+        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]" condition="[PADS]"/>
+        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="leftdeck" condition="[PADS]"/>
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
@@ -35,8 +46,8 @@
           <panel class="track_info_pro" deckside="rightdeck"/>
           <panel class="track_modifiers_panel" y="+60" mirror="true" visibility="not has_video_mix 'active' ? yes : not skin_panel 'videomixer'"/>
         </group>
-        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]"/>
-        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="rightdeck"/>
+        <panel class="pad_page_container" y="+180" x="+10" deck="[DECK]" panelname="[PANELNAME]_[DECK]" condition="[PADS]"/>
+        <panel class="transport_bar" y="+425" deck="[DECK]" x="+0" deckside="rightdeck" condition="[PADS]"/>
         <visual width="765" height="[HEIGHT]" y="+0">
           <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
         </visual>
@@ -77,15 +88,30 @@
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2"/>
     <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
   </define>
-  <!-- Pure deck structure: positioned by the shared DECKS_* shell (pro/waves.xml). -->
-  <define class="PRO_4DECKS" placeholders="*panelname">
-    <!-- shared mini deck strip -->
-    <!-- LEFT: BOTTOM -->
-    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="leftdeck" visibility="deck 3 leftdeck"/>
-    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="leftdeck" visibility="deck 1 leftdeck"/>
-    <!-- LEFT: TOP -->
-    <panel class="deck_container_pro" x="+0" panelname="deck1" deck="1" deckside="leftdeck" visibility="deck 1 leftdeck" y="+180"/>
-    <panel class="deck_container_pro" x="+0" panelname="deck3" deck="3" deckside="leftdeck" visibility="deck 3 leftdeck" y="+180"/>
+  <!-- Pad grid + transport for the active deck on one side, shown under the two compact
+       deck strips in PRO_4DECKS. panelname matches DECK_CONTAINER_PRO's pad panel
+       ("deckN_N") so pad state is shared with the 2-deck layout. Height 285. -->
+  <define class="PRO_4DECKS_PADS" placeholders="*deck,*deckside">
+    <deck deck="[DECK]">
+      <visual width="765" height="285">
+        <off shape="square" color="panel_background" radius="6"/>
+      </visual>
+      <panel class="pad_page_container" x="+10" deck="[DECK]" panelname="deck[DECK]_[DECK]"/>
+      <panel class="transport_bar" y="+245" deck="[DECK]" deckside="[DECKSIDE]"/>
+      <visual width="765" height="285">
+        <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
+      </visual>
+    </deck>
+  </define>
+  <!-- Pure deck structure: positioned by the shared DECKS_* shell (pro/waves.xml).
+       All four decks are always visible as 180px strips (1/3 left, 2/4 right); each side
+       shows the pad grid for its active deck below them. Total height 180+2+180+2+285 = 649. -->
+  <define class="PRO_4DECKS">
+    <!-- LEFT: decks 1 / 3 -->
+    <panel class="deck_container_pro" x="+0" y="+0" panelname="deck1" deck="1" deckside="leftdeck" height="180" pads="false"/>
+    <panel class="deck_container_pro" x="+0" y="+182" panelname="deck3" deck="3" deckside="leftdeck" height="180" pads="false"/>
+    <panel class="pro_4decks_pads" x="+35" y="+364" deck="1" deckside="leftdeck" visibility="not deck 3 leftdeck"/>
+    <panel class="pro_4decks_pads" x="+35" y="+364" deck="3" deckside="leftdeck" visibility="deck 3 leftdeck"/>
     <!-- PRO: 4 DECKS: MIXER PANEL / MIDDLE PANEL -->
     <group x="+802" y="+0">
       <!-- MIDDLE PANEL BORDER -->
@@ -100,13 +126,15 @@
     </group>
     <!-- MIDDLE -->
     <panel class="mixer_4decks" x="+2+800+2" y="+24"/>
-    <!-- RIGHT: TOP -->
-    <panel class="deck_container_pro" x="+1920-0-800" panelname="deck2" deck="2" deckside="rightdeck" visibility="deck 2 rightdeck"/>
-    <panel class="deck_container_pro" x="+1920-0-800" panelname="deck4" deck="4" deckside="rightdeck" visibility="deck 4 rightdeck"/>
-    <!-- RIGHT: BOTTOM -->
-    <panel class="deck_container_pro" x="+1920-0-800" y="+180+2" panelname="deck2" deck="2" deckside="rightdeck" visibility="deck 4 rightdeck"/>
-    <panel class="deck_container_pro" x="+1920-0-800" y="+180+2" panelname="deck4" deck="4" deckside="rightdeck" visibility="deck 2 rightdeck"/>
-    <!-- RACKS (PADS, ETC) -->
-    <panel class="pro_racks" x="+2" y="-2"/>
+    <!-- RIGHT: decks 2 / 4 -->
+    <panel class="deck_container_pro" x="+1920-800" y="+0" panelname="deck2" deck="2" deckside="rightdeck" height="180" pads="false"/>
+    <panel class="deck_container_pro" x="+1920-800" y="+182" panelname="deck4" deck="4" deckside="rightdeck" height="180" pads="false"/>
+    <panel class="pro_4decks_pads" x="+1920-800" y="+364" deck="2" deckside="rightdeck" visibility="not deck 4 rightdeck"/>
+    <panel class="pro_4decks_pads" x="+1920-800" y="+364" deck="4" deckside="rightdeck" visibility="deck 4 rightdeck"/>
+    <!-- select border + load dropzone per deck strip -->
+    <panel class="pro_2decks_overlays" x="+35" y="+0" deck="1" height="180"/>
+    <panel class="pro_2decks_overlays" x="+35" y="+182" deck="3" height="180"/>
+    <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2" height="180"/>
+    <panel class="pro_2decks_overlays" x="+1920-800" y="+182" deck="4" height="180"/>
   </define>
 </defs>

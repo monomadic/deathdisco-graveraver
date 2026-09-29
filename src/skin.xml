@@ -24,7 +24,18 @@
     src/components.
     
   -->
-<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png" breakline="1000" breakline2="1000">
+<skin xmlns:xi="http://www.w3.org/2001/XInclude" name="DeathDisco Grave Raver v1" version="8" width="1920" height="1080" author="Rob" image="skin.png" preview="preview.png">
+  <!-- Stretch bands: VirtualDJ stretches the skin between these lines when the window is
+       taller than 1080. Only conditional <breaklines> children are used (no root
+       breakline attributes, which would override them), and the conditions are mutually
+       exclusive. Default: a fold at y=1000, inside the browser. Pro mixer 4-deck has no
+       browser, so its band spans its fill-height wave area instead (waves at 50..378
+       above the decks, or 702..1030 below them, where the browser also sits when the
+       waves are hidden). -->
+  <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? false : true : true : true"/>
+  <breaklines breakline1="50" breakline2="50+328" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 0"/>
+  <breaklines breakline1="1080-50-328" breakline2="1080-50" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 1"/>
+  <breaklines breakline1="1080-50-328" breakline2="1080-50" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 1"/>
   <!-- Definitions: theme tokens, runtime globals, components, and containers -->
   <xi:include href="colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="globals.xml" xpointer="xpointer(/globals/*)"/>

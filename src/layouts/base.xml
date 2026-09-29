@@ -2,10 +2,11 @@
 <module xmlns:xi="http://www.w3.org/2001/XInclude">
   <panel name="main" visible="yes">
     <!-- BACKGROUND -->
-    <square color="bg_main" canstretch="false">
-      <pos x="0" y="0"/>
-      <size width="1920" height="1080"/>
-    </square>
+    <!-- A <visual>, not a <square>: squares ignore skin breaklines, so a stretched window
+         showed holes below y=1080 (confirmed with probes/wave-stretch). -->
+    <visual x="0" y="0" width="1920" height="1080">
+      <off shape="square" color="bg_main"/>
+    </visual>
     <!-- WINDOW HANDLES -->
     <panel name="grabzones">
       <grabzone x="0" y="0" width="1920" height="40"/>

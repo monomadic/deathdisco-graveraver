@@ -269,13 +269,6 @@
       <panel class="pads_stack" x="+0" panelname="[PANELNAME]"/>
     </deck>
   </define>
-  <!-- Pro 4-deck rack surface.
-       This is just a mode-level wrapper around the existing rack compositions:
-       extended racks when the main wave area is shown, single-height racks when it is hidden. -->
-  <define class="PRO_RACKS">
-    <panel class="racks_extended" condition="var_equal '@$dd_hide_main_waveforms' 0"/>
-    <panel class="racks_single" condition="var_equal '@$dd_hide_main_waveforms' 1"/>
-  </define>
   <!-- Stack-mode rack composition: band below the two stacked deck rows. -->
   <define class="RACKS_STACK" placeholders="*panelname">
     <panel class="racks_band" band_base="164+2+164+2" panelname="[PANELNAME]"/>

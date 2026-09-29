@@ -40,10 +40,10 @@
       <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
         <group>
           <!-- WAVES -->
-          <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- TRACK INFO -->
           <panel class="horizontal_waveform_track_info" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
           <panel class="horizontal_waveform_track_info" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
@@ -77,16 +77,16 @@
       <!-- PRO: MAIN WAVEFORM (HORIZONTAL, 4 DECK) -->
       <!-- waveform type: shapes, scratch (colors) -->
       <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
-        <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
-        <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
-        <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
-        <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
+        <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
+        <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
+        <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
+        <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
       </panel>
       <panel name="horizontal_scratch_active4deck_forced" condition="[FORCE4DECK]" visibility="not setting skinWaveformType 0">
-        <panel class="horizontal_main_waveform" deck="3" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
-        <panel class="horizontal_main_waveform" deck="1" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
-        <panel class="horizontal_main_waveform" deck="2" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
-        <panel class="horizontal_main_waveform" deck="4" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
+        <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
+        <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
+        <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
+        <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
       </panel>
     </group>
     <!-- split wave -->

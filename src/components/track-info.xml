@@ -380,7 +380,7 @@
       <size width="120" height="120"/>
     </cover>
   </define>
-  <define class="TRACK_STEM_MODIFIERS">
+  <define class="TRACK_STEM_MODIFIERS" placeholders="*volumes=true,*fx=true">
     <!-- ACAPELLA/INSTRUMENTAL BUTTONS -->
     <group x="+0" y="+0">
       <!-- acapella -->
@@ -405,7 +405,7 @@
       <panel class="stem_button" x="+70" y="+0" stem="instru" label="INSTR" color="colorinstru"/>
       <panel class="stem_button" x="+140" y="+0" stem="bass" label="BASS" color="colorbass"/>
       <panel class="stem_button" x="+210" y="+0" stem="rhythm" label="DRUM" color="colorbeat"/>
-      <group y="+25">
+      <group y="+25" condition="[FX]">
         <group>
           <button class="stem_fx_button" stem="vocal"/>
           <button class="slot_fx_button" slot="vocals" x="+33"/>
@@ -423,7 +423,7 @@
           <button class="slot_fx_button" slot="rhythm" x="+33"/>
         </group>
       </group>
-      <group y="+46">
+      <group y="+46" condition="[VOLUMES]">
         <panel class="stem_volume_slider" x="+0" stem="vocal" label="VOCAL" color="colorvocal"/>
         <panel class="stem_volume_slider" x="+70" stem="instru" label="INSTR" color="colorinstru"/>
         <panel class="stem_volume_slider" x="+140" stem="bass" label="BASS" color="colorbass"/>

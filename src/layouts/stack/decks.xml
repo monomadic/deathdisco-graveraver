@@ -18,7 +18,8 @@
           <pos x="+35" y="+50"/>
           <size width="485" height="75"/>
         </square>
-        <panel class="track_stem_modifiers" x="+40" y="+60"/>
+        <panel class="track_stem_modifiers" x="+40" y="+60" volumes="false" fx="false"/>
+        <panel class="stack_header_pads" x="+40" y="+133"/>
         <group name="deck_control" visibility="var_equal '@$dd_stack_controls' 1">
           <panel visibility="var_equal '@dd_deck_mode' 0">
             <panel class="transport_stack" x="+484+7"/>
@@ -42,6 +43,17 @@
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="6"/>
       </visual>
     </deck>
+  </define>
+  <!-- Eight pads in one row along the bottom of the stack deck header -->
+  <define class="STACK_HEADER_PADS">
+    <panel class="pad_stack_button" x="+0" source="1" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+55" source="2" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+110" source="3" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+165" source="4" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+220" source="5" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+275" source="6" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+330" source="7" width="54" height="28"/>
+    <panel class="pad_stack_button" x="+385" source="8" width="54" height="28"/>
   </define>
   <define class="STACK_2DECKS" placeholders="*panelname">
     <panel class="deck_container_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>

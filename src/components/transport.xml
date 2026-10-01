@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
   <define class="TRANSPORT_STACK">
-    <button class="button_main" x="+0" y="+6" width="60" height="16" action="vinyl_mode" textsize="11" text="VINYL" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="black"/>
-    <button class="button_main" x="+0" y="+6+16+2" width="60" height="16" action="slip_mode" textsize="11" text="SLIP" coloroff="button_background3" coloron="button_background3" bordersize="0" textcolor="textoff3" textcoloron="black" query="slip_mode ? blink 800ms : off"/>
-    <button class="button_main" x="+0" y="+6+20+4+26" width="60" height="30" action="sync" text="SYNC" textcolor="textoff2" textcoloron="black"/>
-    <button class="button_main" x="+0" y="+6+20+4+62" width="60" height="30" action="cue_button" textaction="cue_button" textcolor="textoff2" textcoloron="black"/>
-    <button class="button_main" x="+0" y="+6+20+4+30+6+62" width="60" height="30" action="play_button" sysicon="play_button" iconsize="39" textcolor="textoff2" textcoloron="black"/>
+    <!-- sync column: the Pro transport bar's actions (TRANSPORT_BAR below), with BEAT and PHRASE merged into SYNC -->
+    <group y="+5" visibility="loaded">
+      <!-- KEY -->
+      <button class="button_main" x="+0" y="+0" action="select &amp; match_key" query="loaded ? match_key ? true : blink 1bt" visibility="not masterdeck" bordersize="1">
+        <size width="60" height="31"/>
+        <off color="#330000" border="#FF0000" radius="3"/>
+        <over color="#1c1c1c" border="deckcolor" radius="3"/>
+        <down color="#222222" border="deckcolor" radius="3"/>
+        <selected color="transparent" border="deckcolor" radius="3"/>
+        <text fontsize="12" color="#FF0000" colorover="deckcolor" colorselected="deckcolor" colordown="deckcolor" align="center" text="KEY"/>
+      </button>
+      <button class="button_main" x="+0" y="+0" action="select &amp; match_key" visibility="masterdeck" bordersize="1">
+        <size width="60" height="31"/>
+        <off color="#000000" border="color_masterdeck" radius="3"/>
+        <over color="#1c1c1c" border="color_masterdeck" radius="3"/>
+        <down color="#222222" border="color_masterdeck" radius="3"/>
+        <selected color="transparent" border="color_masterdeck" radius="3"/>
+        <text fontsize="12" color="color_masterdeck" colorover="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="KEY"/>
+      </button>
+      <!-- SYNC: beat + phrase sync to the master; on the master deck, sync every other deck to it -->
+      <button class="button_main" x="+0" y="+35" action="select &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 &amp; sync : phrase_sync 32 &amp; sync" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck" bordersize="1">
+        <size width="60" height="31"/>
+        <off color="#330000" border="#FF0000" radius="3"/>
+        <over color="#1c1c1c" border="deckcolor" radius="3"/>
+        <down color="#222222" border="deckcolor" radius="3"/>
+        <selected color="transparent" border="deckcolor" radius="3"/>
+        <text fontsize="12" color="#FF0000" colorover="deckcolor" colorselected="deckcolor" colordown="deckcolor" align="center" text="SYNC"/>
+      </button>
+      <button class="button_main" x="+0" y="+35" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" query="loaded" visibility="masterdeck" bordersize="1">
+        <size width="60" height="31"/>
+        <off color="#330000" border="#FF0000" radius="3"/>
+        <over color="#1c1c1c" border="color_masterdeck" radius="3"/>
+        <down color="#222222" border="color_masterdeck" radius="3"/>
+        <selected color="transparent" border="color_masterdeck" radius="3"/>
+        <text fontsize="12" color="#FF0000" colorover="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="SYNC"/>
+      </button>
+      <!-- MASTER: dimmed unless this deck is the master -->
+      <button class="button_main" x="+0" y="+70" action="select &amp; masterdeck" bordersize="2" query="masterdeck">
+        <size width="60" height="31"/>
+        <off color="#000000" border="dark_5" border_size="1" shape="square" radius="3"/>
+        <over color="#402900" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
+        <down color="#000000" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
+        <selected color="color_masterdeck" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
+        <text size="11" dx="+0" action="masterdeck ? masterdeck_auto ? get_text 'AUTO' : get_text 'MASTER' : get_text 'MASTER'" color="#555555" colorselected="black" colorover="color_masterdeck" colordown="color_masterdeck" align="center"/>
+      </button>
+    </group>
+    <!-- play: Pro transport-bar look (outlined, deck / master coloured icon, blinks while playing) -->
+    <button class="button_main" x="+0" y="+110" textsize="11" width="60" height="49" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" tooltip="Play / Pause\nRight-click: First Beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0">
+      <off color="transparent" border="dark_4" border_size="1" shape="square" radius="4"/>
+      <over color="#1c1c1c" border="dark_4" border_size="1" shape="square" radius="4"/>
+      <down color="transparent" border="dark_4" border_size="1" shape="square" radius="4"/>
+      <selected color="transparent" border="dark_4" border_size="1" radius="4"/>
+    </button>
+    <button class="button_main" x="+0" y="+110" textsize="11" width="60" height="49" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" tooltip="Play / Pause\nRight-click: First Beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0" visibility="not masterdeck ? play ? blink 1bt : on">
+      <off color="transparent" border="deckcolor" border_size="1" shape="square" radius="4"/>
+      <over color="#1c1c1c" border="deckcolor" border_size="1" shape="square" radius="4"/>
+      <down color="#222222" border="dark_4" border_size="1" shape="square" radius="4"/>
+      <selected color="transparent" border="deckcolor" border_size="2" radius="4"/>
+      <icon coloroff="deckcolor" colorover="#FFFFFF" colordown="#FFFFFF" colorselected="deckcolor"/>
+    </button>
+    <button class="button_main" x="+0" y="+110" textsize="11" width="60" height="49" action="select &amp; play_pause" query="play" rightclick="goto_first_beat" tooltip="Play / Pause\nRight-click: First Beat" sysicon="play_button" iconsize="39" textcoloron="black" colorselected="red" bordersize="0" visibility="masterdeck ? play ? blink 1bt : on">
+      <off color="transparent" border="color_masterdeck" border_size="1" shape="square" radius="4"/>
+      <over color="#1c1c1c" border="color_masterdeck" border_size="1" shape="square" radius="4"/>
+      <down color="#222222" border="dark_4" border_size="1" shape="square" radius="4"/>
+      <selected color="transparent" border="color_masterdeck" border_size="2" radius="4"/>
+      <icon coloroff="color_masterdeck" colorover="#FFFFFF" colordown="#FFFFFF" colorselected="color_masterdeck"/>
+    </button>
   </define>
   <define class="TRANSPORT_BAR" placeholders="*deck,*deckside">
     <deck deck="[DECK]">

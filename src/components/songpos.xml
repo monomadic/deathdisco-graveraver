@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height">
+  <define class="SONGPOS" colorPlayed="colorplayed" colorBass="colorbass" colorMed="colormed" colorHigh="colorhigh" colorVocal="colorVocal" colorInstru="colorInstru" colorBeat="colorBeat" colornoBeat="colorNoBeat" colornoInstru="colorNoInstru" colornovocal="colorNoVocal" placeholders="width,height,cueheight=26">
     <size width="[WIDTH]" height="[HEIGHT]"/>
     <cues shade="0.0">
-      <size width="3" height="26"/>
+      <size width="3" height="[CUEHEIGHT]"/>
       <clipmask x="0" y="-1"/>
     </cues>
     <loops dy="0" shade="0.0">
-      <size width="5" height="26"/>
+      <size width="5" height="[CUEHEIGHT]"/>
       <clipmask x="21" y="-1"/>
     </loops>
   </define>

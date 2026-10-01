@@ -23,13 +23,13 @@
           <pos x="+35" y="+50"/>
           <size width="485" height="75"/>
         </square>
-        <panel class="track_stem_modifiers" x="+40" y="+60" volumes="false" fx="false"/>
+        <panel class="track_stem_modifiers" x="+40" y="+60" volumes="false" fx="false" idleborder="transparent"/>
         <panel class="stack_header_pads" x="+42" y="+120"/>
         <!-- BPM / KEY readout in the space right of the stem buttons; key compares against the other side -->
-        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="96" keyx="82" time="false" timex="0" div2="0" x="+308" y="+50" condition="param_equal '[DECK]' '1'"/>
-        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="96" keyx="82" time="false" timex="0" div2="0" x="+308" y="+50" condition="param_equal '[DECK]' '2'"/>
-        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="96" keyx="82" time="false" timex="0" div2="0" x="+308" y="+50" condition="param_equal '[DECK]' '3'"/>
-        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="96" keyx="82" time="false" timex="0" div2="0" x="+308" y="+50" condition="param_equal '[DECK]' '4'"/>
+        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="9" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '1'"/>
+        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="9" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '2'"/>
+        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="9" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '3'"/>
+        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="9" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '4'"/>
         <group name="deck_control" visibility="var_equal '@$dd_stack_controls' 1">
           <panel visibility="var_equal '@dd_deck_mode' 0">
             <panel class="jogwheel" x="+484+7" y="+3" name="jogwheel_spinner"/>
@@ -43,13 +43,14 @@
             <panel class="saved_loops_stack" panelname="[PANELNAME]" x="+484+7"/>
           </panel>
         </group>
-        <songpos class="songpos" x="+170" y="+10" width="310" height="36"/>
+        <songpos class="songpos" x="+170" y="+10" width="310" height="36" cueheight="36"/>
         <panel class="wave_stack" x="+800+2" visibility="var_equal '@$dd_stack_controls' 1"/>
         <panel class="wave_stack" x="+484+2" width="1114+316" visibility="var_equal '@$dd_stack_controls' 0"/>
       </group>
       <visual source="deck [DECK] select" visibility="var_equal '@$dd_bordermode' 1">
-        <pos x="+35"/>
-        <size width="1920-37" height="164"/>
+        <!-- 2px taller than the strip on each side (into the gaps between decks) so it clears the controls -->
+        <pos x="+35" y="-2"/>
+        <size width="1920-37" height="164+4"/>
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="6"/>
       </visual>
       <!-- load dropzone over the whole deck strip -->
@@ -62,14 +63,14 @@
   </define>
   <!-- Eight pads in one row along the bottom of the stack deck header -->
   <define class="STACK_HEADER_PADS">
-    <panel class="pad_stack_button" x="+0" source="1" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+55" source="2" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+110" source="3" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+165" source="4" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+220" source="5" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+275" source="6" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+330" source="7" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+385" source="8" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+0" source="1" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+55" source="2" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+110" source="3" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+165" source="4" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+220" source="5" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+275" source="6" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+330" source="7" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+385" source="8" width="53" height="32" coloroff="dark_3" coloron="dark_3" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
   </define>
   <define class="STACK_2DECKS" placeholders="*panelname">
     <panel class="deck_container_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>

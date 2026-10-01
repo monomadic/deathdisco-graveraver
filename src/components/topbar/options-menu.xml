@@ -64,7 +64,7 @@
         <item text="Lyrics" localize="true" action="setting 'showLyrics'" check="setting 'showLyrics'"/>
         <item text="Gray On Kill" localize="true" action="setting 'waveGrayOnKill'" check="setting 'waveGrayOnKill'" visibility="setting skinWaveformType 2"/>
       </submenu>
-      <submenu text="Display" localize="true">
+      <submenu text="Components" localize="true">
         <submenu text="Top Bar">
           <submenu text="Beat Counter" localize="true">
             <item text="Phrase Bars" localize="true" action="set '@$dd_phrase_circle' 0" check="var_equal '@$dd_phrase_circle' 0"/>
@@ -87,7 +87,7 @@
           <separator/>
           <item text="Show Battery Status" localize="true" action="toggle '@$dd_show_battery'" check="var_equal '@$dd_show_battery' 1"/>
         </submenu>
-        <submenu text="Utility Bar">
+        <submenu text="Bottom Bar">
           <item text="Show Browser Tools" action="set '@$dd_bottombar_mode' 0" check="var_equal '@$dd_bottombar_mode' 0"/>
           <item text="Show Custom Buttons" action="set '@$dd_bottombar_mode' 1" check="var_equal '@$dd_bottombar_mode' 1"/>
         </submenu>
@@ -97,7 +97,7 @@
           <separator localize="true"/>
           <item text="Show In Browser Zoom" localize="true" action="toggle '@$dd_show_zoom_racks' &amp; load_skin" check="var_equal '@$dd_show_zoom_racks' 1"/>
         </submenu>
-        <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$dd_skin_mode' 2">
+        <submenu text="Jogwheel" localize="true" visibility="not var_equal '@$dd_skin_mode' 2">
           <item text="Needle" localize="true" action="set '@$dd_jog_type' 0" check="var_equal '@$dd_jog_type' 0"/>
           <item text="Text" localize="true" action="set '@$dd_jog_type' 1" check="var_equal '@$dd_jog_type' 1"/>
           <item text="Sync Status" localize="true" action="set '@$dd_jog_type' 2" check="var_equal '@$dd_jog_type' 2"/>
@@ -118,19 +118,9 @@
           <separator localize="true"/>
           <item text="Auto Disc Marker" action="setting 'autoDiscMarker'" check="setting 'autoDiscMarker'"/>
         </submenu>
-        <submenu text="BPM Digits" localize="true">
-          <item text="000.0" localize="true" action="set '@$dd_jog_bpm_digits' 0 &amp; setting 'browserBPMDigits' 1 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 0"/>
-          <item text="000.00" localize="true" action="set '@$dd_jog_bpm_digits' 1 &amp; setting 'browserBPMDigits' 2 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 1"/>
-          <separator/>
-          <item text="Hide BPM" localize="true" action="toggle '@$dd_bpm_mask'" check="var_equal '@$dd_bpm_mask' 1"/>
-        </submenu>
-        <submenu text="Key Display Format">
-          <item text="Musical" action="setting 'keyDisplay' musical" check="setting 'keyDisplay' musical"/>
-          <item text="Harmonic" action="setting 'keyDisplay' harmonic" check="setting 'keyDisplay' harmonic"/>
-        </submenu>
       </submenu>
-      <submenu text="Appearance" localize="true">
-        <submenu text="Color Scheme" localize="true">
+      <submenu text="Skin Settings" localize="true">
+        <submenu text="Theme" localize="true">
           <item text="Default" localize="true" action="set '@$dd_color_scheme' 0 &amp; load_skin" check="var_equal '@$dd_color_scheme' 0"/>
           <item text="Dark" localize="true" action="set '@$dd_color_scheme' 1 &amp; load_skin" check="var_equal '@$dd_color_scheme' 1"/>
           <item text="Darker" localize="true" action="set '@$dd_color_scheme' 2 &amp; load_skin" check="var_equal '@$dd_color_scheme' 2"/>
@@ -140,17 +130,27 @@
           <item text="Per-Decks" localize="true" action="set '@$dd_deck_colors' 0 &amp; load_skin" check="var_equal '@$dd_deck_colors' 0"/>
           <item text="Neutral" localize="true" action="set '@$dd_deck_colors' 1 &amp; load_skin" check="var_equal '@$dd_deck_colors' 1"/>
         </submenu>
-        <submenu text="Dialogs Color Theme" localize="true">
+        <submenu text="Dialog Theme" localize="true">
           <item text="Auto" localize="true" action="setting 'dialogsColorTheme' 'automatic'" check="setting 'dialogsColorTheme' 'automatic'"/>
           <item text="Dark" localize="true" action="setting 'dialogsColorTheme' 'dark'" check="setting 'dialogsColorTheme' 'dark'"/>
           <item text="Light" localize="true" action="setting 'dialogsColorTheme' 'light'" check="setting 'dialogsColorTheme' 'light'"/>
         </submenu>
-        <submenu text="Skin Fps">
+        <submenu text="FPS Throttle">
           <item text="30" action="setting 'skinFPS' 30" check="setting 'skinFPS' 30"/>
           <item text="45" action="setting 'skinFPS' 45" check="setting 'skinFPS' 45"/>
           <item text="60" action="setting 'skinFPS' 60" check="setting 'skinFPS' 60"/>
           <item text="100" action="setting 'skinFPS' 100" check="setting 'skinFPS' 100"/>
           <item text="120" action="setting 'skinFPS' 120" check="setting 'skinFPS' 120"/>
+        </submenu>
+        <submenu text="BPM Digits" localize="true">
+          <item text="000.0" localize="true" action="set '@$dd_jog_bpm_digits' 0 &amp; setting 'browserBPMDigits' 1 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 0"/>
+          <item text="000.00" localize="true" action="set '@$dd_jog_bpm_digits' 1 &amp; setting 'browserBPMDigits' 2 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 1"/>
+          <separator/>
+          <item text="Hide BPM" localize="true" action="toggle '@$dd_bpm_mask'" check="var_equal '@$dd_bpm_mask' 1"/>
+        </submenu>
+        <submenu text="Key Display Format">
+          <item text="Musical" action="setting 'keyDisplay' musical" check="setting 'keyDisplay' musical"/>
+          <item text="Harmonic" action="setting 'keyDisplay' harmonic" check="setting 'keyDisplay' harmonic"/>
         </submenu>
         <separator/>
         <item text="Show Tooltips" localize="true" action="setting 'tooltip' no ? setting 'tooltip' yes : setting 'tooltip' yes ? setting 'tooltip' no" check="setting 'tooltip' 'yes'"/>
@@ -211,6 +211,7 @@
           <item text="16" action="setting 'scratchFilterQuality' 16" check="setting 'scratchFilterQuality' 16"/>
         </submenu>
         <separator/>
+        <item text="Smart Cue (Sync On Hot Cue Jump)" action="smart_cue ? deck all smart_cue off : deck all smart_cue on" check="smart_cue"/>
         <item text="Ultra Latency" localize="true" action="setting 'ultraLatency'" check="setting 'ultraLatency'"/>
         <item text="Keep Playing Past End" localize="true" action="setting 'keepPlayingPastEnd'" check="setting 'keepPlayingPastEnd'"/>
         <item text="Keep Play Status On Load Song" localize="true" action="setting 'keepPlayStatusOnLoadSong'" check="setting 'keepPlayStatusOnLoadSong'"/>

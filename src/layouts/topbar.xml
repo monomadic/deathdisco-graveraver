@@ -21,19 +21,12 @@
   <!-- <line x="0" y="0" width="1920" height="1" highlight="dark_8" shadow="#00000000"/> -->
   <!-- macOS logo + application options menu -->
   <panel class="topbar_options_menu" name="applicationbuttons_logo" condition="is_mac"/>
-  <!-- browser-zoom / waves toggles and XL custom button -->
+  <!-- browser-zoom / waves toggles -->
   <line color="dark_5" x="58" y="1" width="1" height="39"/>
   <panel class="topbar_browser_button" x="250" y="+1"/>
   <panel class="topbar_waves_button" visibility="browser_zoom" x="680" y="8"/>
-  <!-- XL CUSTOM BUTTON -->
-  <button class="custom_button" source="100" x="+960-64" y="+8" width="130" height="30" coloroff="black">
-      <off color="black" border="#888888"/>
-      <on color="#000000"/>
-      <over color="#000000" border="white"/>
-      <down color="#000000" border="#888888"/>
-      <selected color="#000000"/>
-      <text colorover="white" size="14" coloron="white" align="center"/>
-    </button>
+  <!-- audio setup name; click to change the audio device -->
+  <panel class="topbar_audio_device" x="+960-64" y="+8"/>
   <!-- Pro-mode utilities: layout, racks, mixer options, phrase circles -->
   <panel class="topbar_pro_utilities" name="pro_skin_utility" condition="var_equal '@$dd_skin_mode' 0"/>
   <!-- Performance-mode utilities: layout cycle, racks -->

@@ -16,155 +16,145 @@
       <separator/>
       <item text="Keyboard Mode" localize="true" action="toggle '@$dd_bordermode'" check="var_equal '@$dd_bordermode' 1"/>
       <separator/>
-      <submenu text="Top Bar">
-        <submenu text="Beat Counter" localize="true">
-          <item text="Phrase Bars" localize="true" action="set '@$dd_phrase_circle' 0" check="var_equal '@$dd_phrase_circle' 0"/>
-          <item text="Phrase Circle" localize="true" action="set '@$dd_phrase_circle' 1" check="var_equal '@$dd_phrase_circle' 1"/>
+      <submenu text="Waveforms" localize="true">
+        <submenu text="Waveform Type" localize="true">
+          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
+          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
+          <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
+          <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
+        </submenu>
+        <submenu text="Colors" localize="true" visibility="setting skinWaveformType 1">
+          <item text="Monochrome" localize="true" action="setting 'coloredWaveforms' 'monochrome'" check="setting 'coloredWaveforms' 'monochrome'"/>
+          <item text="Per Deck" localize="true" action="setting 'coloredWaveforms' 'per-deck'" check="setting 'coloredWaveforms' 'per-deck'"/>
+          <item text="Neutral" localize="true" action="setting 'coloredWaveforms' 'neutral'" check="setting 'coloredWaveforms' 'neutral'"/>
+          <item text="Infra Red" localize="true" action="setting 'coloredWaveforms' 'infra-red'" check="setting 'coloredWaveforms' 'infra-red'"/>
+          <item text="Ultra Blue" localize="true" action="setting 'coloredWaveforms' 'ultra-blue'" check="setting 'coloredWaveforms' 'ultra-blue'"/>
           <separator/>
-          <submenu text="Range (Phrase Circle)">
-            <item text="1 Phrase" action="setting 'beatCounterRange' 16" check="setting 'beatCounterRange' 16"/>
-            <item text="2 Phrases" action="setting 'beatCounterRange' 32" check="setting 'beatCounterRange' 32"/>
-          </submenu>
+          <item text="Wave Use Frequency" action="setting 'waveUseFrequency'" check="setting 'waveUseFrequency'"/>
         </submenu>
-        <submenu text="CPU Meter">
-          <item text="System" action="setting 'cpuMeter' system" check="setting 'cpuMeter' system"/>
-          <item text="Audio" action="setting 'cpuMeter' audio" check="setting 'cpuMeter' audio"/>
-          <item text="Peak" action="setting 'cpuMeter' peakaudio" check="setting 'cpuMeter' peakaudio"/>
+        <submenu text="Colors" localize="true" visibility="setting skinWaveformType 2">
+          <item text="Virtual DJ (ish)" localize="true" action="set '@$dd_shapes_color' 0 &amp; load_skin" check="var_equal '@$dd_shapes_color' 0"/>
+          <item text="Denon DJ (ish)" localize="true" action="set '@$dd_shapes_color' 2 &amp; load_skin" check="var_equal '@$dd_shapes_color' 2"/>
+          <item text="Pioneer DJ (ish)" localize="true" action="set '@$dd_shapes_color' 1 &amp; load_skin" check="var_equal '@$dd_shapes_color' 1"/>
         </submenu>
-        <submenu text="Clock Display">
-          <item text="12h" action="setting 'clockDisplay' '12h'" check="setting 'clockDisplay' '12h'"/>
-          <item text="24h" action="setting 'clockDisplay' '24h'" check="setting 'clockDisplay' '24h'"/>
+        <submenu text="Needle" localize="true">
+          <item text="Left" localize="true" action="setting 'waveformCenter' 'left'" check="setting 'waveformCenter' 'left'"/>
+          <item text="Centered" localize="true" action="setting 'waveformCenter' 'centered'" check="setting 'waveformCenter' 'centered'"/>
         </submenu>
-        <separator/>
-        <item text="Show Battery Status" localize="true" action="toggle '@$dd_show_battery'" check="var_equal '@$dd_show_battery' 1"/>
-      </submenu>
-      <submenu text="Color Scheme" localize="true">
-        <item text="Default" localize="true" action="set '@$dd_color_scheme' 0 &amp; load_skin" check="var_equal '@$dd_color_scheme' 0"/>
-        <item text="Dark" localize="true" action="set '@$dd_color_scheme' 1 &amp; load_skin" check="var_equal '@$dd_color_scheme' 1"/>
-        <item text="Darker" localize="true" action="set '@$dd_color_scheme' 2 &amp; load_skin" check="var_equal '@$dd_color_scheme' 2"/>
-        <item text="Night" localize="true" action="set '@$dd_color_scheme' 3 &amp; load_skin" check="var_equal '@$dd_color_scheme' 3"/>
-        <item text="Day" localize="true" action="set '@$dd_color_scheme' 4 &amp; load_skin" check="var_equal '@$dd_color_scheme' 4"/>
+        <submenu text="Position" localize="true">
+          <item text="Above Decks" localize="true" action="set '@$dd_waveform_position' 0 &amp; load_skin" check="var_equal '@$dd_waveform_position' 0"/>
+          <item text="Below Decks" localize="true" action="set '@$dd_waveform_position' 1 &amp; load_skin" check="var_equal '@$dd_waveform_position' 1"/>
+        </submenu>
+        <submenu text="Show On" localize="true">
+          <item text="Main Decks" action="toggle '@$dd_hide_main_waveforms' &amp; load_skin" check="var_equal '@$dd_hide_main_waveforms' 0" visibility="var_equal '@$dd_skin_mode' 0"/>
+          <item text="Browser Zoom" action="toggle '@$dd_hide_zoom_waveforms' &amp; load_skin" check="var_equal '@$dd_hide_zoom_waveforms' 0"/>
+        </submenu>
         <separator text="Decks"/>
-        <item text="Per-Decks" localize="true" action="set '@$dd_deck_colors' 0 &amp; load_skin" check="var_equal '@$dd_deck_colors' 0"/>
-        <item text="Neutral" localize="true" action="set '@$dd_deck_colors' 1 &amp; load_skin" check="var_equal '@$dd_deck_colors' 1"/>
-      </submenu>
-      <submenu text="Dialogs Color Theme" localize="true">
-        <item text="Auto" localize="true" action="setting 'dialogsColorTheme' 'automatic'" check="setting 'dialogsColorTheme' 'automatic'"/>
-        <item text="Dark" localize="true" action="setting 'dialogsColorTheme' 'dark'" check="setting 'dialogsColorTheme' 'dark'"/>
-        <item text="Light" localize="true" action="setting 'dialogsColorTheme' 'light'" check="setting 'dialogsColorTheme' 'light'"/>
-      </submenu>
-      <submenu text="RACK View" visibility="not var_equal '@$dd_skin_mode' 0">
-        <item text="Single Rack" action="set '@$dd_rack_mode' 1 &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin" check="var_equal '@$dd_rack_mode' 1"/>
-        <item text="Multi Rack" action="set '@$dd_rack_mode' 0" check="var_equal '@$dd_rack_mode' 0"/>
-        <separator localize="true"/>
-        <item text="Show In Browser Zoom" localize="true" action="toggle '@$dd_show_zoom_racks' &amp; load_skin" check="var_equal '@$dd_show_zoom_racks' 1"/>
-      </submenu>
-      <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$dd_skin_mode' 2">
-        <item text="Needle" localize="true" action="set '@$dd_jog_type' 0" check="var_equal '@$dd_jog_type' 0"/>
-        <item text="Text" localize="true" action="set '@$dd_jog_type' 1" check="var_equal '@$dd_jog_type' 1"/>
-        <item text="Sync Status" localize="true" action="set '@$dd_jog_type' 2" check="var_equal '@$dd_jog_type' 2"/>
-        <item text="Cover Art" localize="true" action="set '@$dd_jog_type' 3" check="var_equal '@$dd_jog_type' 3"/>
-        <separator localize="true"/>
-        <submenu text="Text" localize="true">
-          <item text="Jog Mode" localize="true" action="set '@$dd_jog_display_mode' 0" check="var_equal '@$dd_jog_display_mode' 0"/>
-          <item text="Loop Size" localize="true" action="set '@$dd_jog_display_mode' 1" check="var_equal '@$dd_jog_display_mode' 1"/>
-          <item text="Elapsed" localize="true" action="set '@$dd_jog_display_mode' 2" check="var_equal '@$dd_jog_display_mode' 2"/>
-          <item text="Remain" localize="true" action="set '@$dd_jog_display_mode' 3" check="var_equal '@$dd_jog_display_mode' 3"/>
+        <item text="Left / Right Deck" localize="true" action="set '@$dd_four_waveforms' 0" check="var_equal '@$dd_four_waveforms' 0"/>
+        <item text="All 4 Decks" localize="true" action="set '@$dd_four_waveforms' 1" check="var_equal '@$dd_four_waveforms' 1"/>
+        <submenu text="Waveform Order" localize="true" visibility="not setting skinWaveformType 0">
+          <item text="1-2-3-4" localize="true" action="set '@$dd_wave_order' 1" check="var_equal '@$dd_wave_order' 1"/>
+          <item text="3-1-2-4" localize="true" action="set '@$dd_wave_order' 0" check="var_equal '@$dd_wave_order' 0"/>
+          <item text="1-3-4-2" localize="true" action="set '@$dd_wave_order' 2" check="var_equal '@$dd_wave_order' 2"/>
         </submenu>
-        <submenu text="RPM" localize="true">
-          <item text="25" localize="true" action="setting 'RPM' 25" check="setting 'RPM' 25"/>
-          <item text="33" localize="true" action="setting 'RPM' 33" check="setting 'RPM' 33"/>
-          <item text="45" localize="true" action="setting 'RPM' 45" check="setting 'RPM' 45"/>
-          <item text="4 Beats" localize="true" action="setting 'RPM' '4 beats'" check="setting 'RPM' '4 beats'"/>
+        <separator text="Show"/>
+        <item text="Background" localize="true" action="toggle '@$dd_wave_hide_background'" check="var_equal '@$dd_wave_hide_background' 1" visibility="not setting skinWaveformType 0"/>
+        <item text="Gridlines" localize="true" action="setting 'showGridlines'" check="setting 'showGridlines'"/>
+        <item text="Bar Counter" localize="true" action="toggle '@$dd_show_bar_counter'" check="var_equal '@$dd_show_bar_counter' 1"/>
+        <item text="Lyrics" localize="true" action="setting 'showLyrics'" check="setting 'showLyrics'"/>
+        <item text="Gray On Kill" localize="true" action="setting 'waveGrayOnKill'" check="setting 'waveGrayOnKill'" visibility="setting skinWaveformType 2"/>
+      </submenu>
+      <submenu text="Display" localize="true">
+        <submenu text="Top Bar">
+          <submenu text="Beat Counter" localize="true">
+            <item text="Phrase Bars" localize="true" action="set '@$dd_phrase_circle' 0" check="var_equal '@$dd_phrase_circle' 0"/>
+            <item text="Phrase Circle" localize="true" action="set '@$dd_phrase_circle' 1" check="var_equal '@$dd_phrase_circle' 1"/>
+            <separator/>
+            <submenu text="Range (Phrase Circle)">
+              <item text="1 Phrase" action="setting 'beatCounterRange' 16" check="setting 'beatCounterRange' 16"/>
+              <item text="2 Phrases" action="setting 'beatCounterRange' 32" check="setting 'beatCounterRange' 32"/>
+            </submenu>
+          </submenu>
+          <submenu text="CPU Meter">
+            <item text="System" action="setting 'cpuMeter' system" check="setting 'cpuMeter' system"/>
+            <item text="Audio" action="setting 'cpuMeter' audio" check="setting 'cpuMeter' audio"/>
+            <item text="Peak" action="setting 'cpuMeter' peakaudio" check="setting 'cpuMeter' peakaudio"/>
+          </submenu>
+          <submenu text="Clock Display">
+            <item text="12h" action="setting 'clockDisplay' '12h'" check="setting 'clockDisplay' '12h'"/>
+            <item text="24h" action="setting 'clockDisplay' '24h'" check="setting 'clockDisplay' '24h'"/>
+          </submenu>
+          <separator/>
+          <item text="Show Battery Status" localize="true" action="toggle '@$dd_show_battery'" check="var_equal '@$dd_show_battery' 1"/>
         </submenu>
-        <separator localize="true"/>
-        <item text="Auto Disc Marker" action="setting 'autoDiscMarker'" check="setting 'autoDiscMarker'"/>
+        <submenu text="Utility Bar">
+          <item text="Show Browser Tools" action="set '@$dd_bottombar_mode' 0" check="var_equal '@$dd_bottombar_mode' 0"/>
+          <item text="Show Custom Buttons" action="set '@$dd_bottombar_mode' 1" check="var_equal '@$dd_bottombar_mode' 1"/>
+        </submenu>
+        <submenu text="RACK View" visibility="not var_equal '@$dd_skin_mode' 0">
+          <item text="Single Rack" action="set '@$dd_rack_mode' 1 &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin" check="var_equal '@$dd_rack_mode' 1"/>
+          <item text="Multi Rack" action="set '@$dd_rack_mode' 0" check="var_equal '@$dd_rack_mode' 0"/>
+          <separator localize="true"/>
+          <item text="Show In Browser Zoom" localize="true" action="toggle '@$dd_show_zoom_racks' &amp; load_skin" check="var_equal '@$dd_show_zoom_racks' 1"/>
+        </submenu>
+        <submenu text="Jogwheel Display" localize="true" visibility="not var_equal '@$dd_skin_mode' 2">
+          <item text="Needle" localize="true" action="set '@$dd_jog_type' 0" check="var_equal '@$dd_jog_type' 0"/>
+          <item text="Text" localize="true" action="set '@$dd_jog_type' 1" check="var_equal '@$dd_jog_type' 1"/>
+          <item text="Sync Status" localize="true" action="set '@$dd_jog_type' 2" check="var_equal '@$dd_jog_type' 2"/>
+          <item text="Cover Art" localize="true" action="set '@$dd_jog_type' 3" check="var_equal '@$dd_jog_type' 3"/>
+          <separator localize="true"/>
+          <submenu text="Text" localize="true">
+            <item text="Jog Mode" localize="true" action="set '@$dd_jog_display_mode' 0" check="var_equal '@$dd_jog_display_mode' 0"/>
+            <item text="Loop Size" localize="true" action="set '@$dd_jog_display_mode' 1" check="var_equal '@$dd_jog_display_mode' 1"/>
+            <item text="Elapsed" localize="true" action="set '@$dd_jog_display_mode' 2" check="var_equal '@$dd_jog_display_mode' 2"/>
+            <item text="Remain" localize="true" action="set '@$dd_jog_display_mode' 3" check="var_equal '@$dd_jog_display_mode' 3"/>
+          </submenu>
+          <submenu text="RPM" localize="true">
+            <item text="25" localize="true" action="setting 'RPM' 25" check="setting 'RPM' 25"/>
+            <item text="33" localize="true" action="setting 'RPM' 33" check="setting 'RPM' 33"/>
+            <item text="45" localize="true" action="setting 'RPM' 45" check="setting 'RPM' 45"/>
+            <item text="4 Beats" localize="true" action="setting 'RPM' '4 beats'" check="setting 'RPM' '4 beats'"/>
+          </submenu>
+          <separator localize="true"/>
+          <item text="Auto Disc Marker" action="setting 'autoDiscMarker'" check="setting 'autoDiscMarker'"/>
+        </submenu>
+        <submenu text="BPM Digits" localize="true">
+          <item text="000.0" localize="true" action="set '@$dd_jog_bpm_digits' 0 &amp; setting 'browserBPMDigits' 1 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 0"/>
+          <item text="000.00" localize="true" action="set '@$dd_jog_bpm_digits' 1 &amp; setting 'browserBPMDigits' 2 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 1"/>
+          <separator/>
+          <item text="Hide BPM" localize="true" action="toggle '@$dd_bpm_mask'" check="var_equal '@$dd_bpm_mask' 1"/>
+        </submenu>
+        <submenu text="Key Display Format">
+          <item text="Musical" action="setting 'keyDisplay' musical" check="setting 'keyDisplay' musical"/>
+          <item text="Harmonic" action="setting 'keyDisplay' harmonic" check="setting 'keyDisplay' harmonic"/>
+        </submenu>
       </submenu>
-      <submenu text="Show Waveform On">
-        <item text="Main Decks" action="toggle '@$dd_hide_main_waveforms' &amp; load_skin" check="var_equal '@$dd_hide_main_waveforms' 0" visibility="var_equal '@$dd_skin_mode' 0"/>
-        <item text="Browser Zoom" action="toggle '@$dd_hide_zoom_waveforms' &amp; load_skin" check="var_equal '@$dd_hide_zoom_waveforms' 0"/>
-      </submenu>
-      <submenu text="BPM Digits" localize="true">
-        <item text="000.0" localize="true" action="set '@$dd_jog_bpm_digits' 0 &amp; setting 'browserBPMDigits' 1 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 0"/>
-        <item text="000.00" localize="true" action="set '@$dd_jog_bpm_digits' 1 &amp; setting 'browserBPMDigits' 2 &amp; load_skin" check="var_equal '@$dd_jog_bpm_digits' 1"/>
+      <submenu text="Appearance" localize="true">
+        <submenu text="Color Scheme" localize="true">
+          <item text="Default" localize="true" action="set '@$dd_color_scheme' 0 &amp; load_skin" check="var_equal '@$dd_color_scheme' 0"/>
+          <item text="Dark" localize="true" action="set '@$dd_color_scheme' 1 &amp; load_skin" check="var_equal '@$dd_color_scheme' 1"/>
+          <item text="Darker" localize="true" action="set '@$dd_color_scheme' 2 &amp; load_skin" check="var_equal '@$dd_color_scheme' 2"/>
+          <item text="Night" localize="true" action="set '@$dd_color_scheme' 3 &amp; load_skin" check="var_equal '@$dd_color_scheme' 3"/>
+          <item text="Day" localize="true" action="set '@$dd_color_scheme' 4 &amp; load_skin" check="var_equal '@$dd_color_scheme' 4"/>
+          <separator text="Decks"/>
+          <item text="Per-Decks" localize="true" action="set '@$dd_deck_colors' 0 &amp; load_skin" check="var_equal '@$dd_deck_colors' 0"/>
+          <item text="Neutral" localize="true" action="set '@$dd_deck_colors' 1 &amp; load_skin" check="var_equal '@$dd_deck_colors' 1"/>
+        </submenu>
+        <submenu text="Dialogs Color Theme" localize="true">
+          <item text="Auto" localize="true" action="setting 'dialogsColorTheme' 'automatic'" check="setting 'dialogsColorTheme' 'automatic'"/>
+          <item text="Dark" localize="true" action="setting 'dialogsColorTheme' 'dark'" check="setting 'dialogsColorTheme' 'dark'"/>
+          <item text="Light" localize="true" action="setting 'dialogsColorTheme' 'light'" check="setting 'dialogsColorTheme' 'light'"/>
+        </submenu>
+        <submenu text="Skin Fps">
+          <item text="30" action="setting 'skinFPS' 30" check="setting 'skinFPS' 30"/>
+          <item text="45" action="setting 'skinFPS' 45" check="setting 'skinFPS' 45"/>
+          <item text="60" action="setting 'skinFPS' 60" check="setting 'skinFPS' 60"/>
+          <item text="100" action="setting 'skinFPS' 100" check="setting 'skinFPS' 100"/>
+          <item text="120" action="setting 'skinFPS' 120" check="setting 'skinFPS' 120"/>
+        </submenu>
         <separator/>
-        <item text="Hide BPM" localize="true" action="toggle '@$dd_bpm_mask'" check="var_equal '@$dd_bpm_mask' 1"/>
+        <item text="Show Tooltips" localize="true" action="setting 'tooltip' no ? setting 'tooltip' yes : setting 'tooltip' yes ? setting 'tooltip' no" check="setting 'tooltip' 'yes'"/>
       </submenu>
-      <submenu text="Key Display Format">
-        <item text="Musical" action="setting 'keyDisplay' musical" check="setting 'keyDisplay' musical"/>
-        <item text="Harmonic" action="setting 'keyDisplay' harmonic" check="setting 'keyDisplay' harmonic"/>
-      </submenu>
-      <submenu text="Skin Fps">
-        <item text="30" action="setting 'skinFPS' 30" check="setting 'skinFPS' 30"/>
-        <item text="45" action="setting 'skinFPS' 45" check="setting 'skinFPS' 45"/>
-        <item text="60" action="setting 'skinFPS' 60" check="setting 'skinFPS' 60"/>
-        <item text="100" action="setting 'skinFPS' 100" check="setting 'skinFPS' 100"/>
-        <item text="120" action="setting 'skinFPS' 120" check="setting 'skinFPS' 120"/>
-      </submenu>
-      <submenu text="Quantize Beat">
-        <item text="1/8" action="setting 'globalQuantize' 0.125" check="setting 'globalQuantize' 0.125"/>
-        <item text="1/4" action="setting 'globalQuantize' 0.250000" check="setting 'globalQuantize' 0.25"/>
-        <item text="1/2" action="setting 'globalQuantize' 0.500000" check="setting 'globalQuantize' 0.500000"/>
-        <item text="1" action="setting 'globalQuantize' 1.000000" check="setting 'globalQuantize' 1.000000"/>
-        <item text="2" action="setting 'globalQuantize' 2.000000" check="setting 'globalQuantize' 2.000000"/>
-        <item text="4" action="setting 'globalQuantize' 4.000000" check="setting 'globalQuantize' 4.000000"/>
-        <item text="16" action="setting 'globalQuantize' 16.000000" check="setting 'globalQuantize' 16.000000"/>
-      </submenu>
-      <submenu text="Scratch Filter Quality">
-        <item text="8" action="setting 'scratchFilterQuality' 8" check="setting 'scratchFilterQuality' 8"/>
-        <item text="10" action="setting 'scratchFilterQuality' 10" check="setting 'scratchFilterQuality' 10"/>
-        <item text="12" action="setting 'scratchFilterQuality' 12" check="setting 'scratchFilterQuality' 12"/>
-        <item text="14" action="setting 'scratchFilterQuality' 14" check="setting 'scratchFilterQuality' 14"/>
-        <item text="16" action="setting 'scratchFilterQuality' 16" check="setting 'scratchFilterQuality' 16"/>
-      </submenu>
-      <submenu text="Pitch Quality">
-        <item text="0 - Low" action="setting 'pitchquality' 0" check="setting 'pitchquality' 0"/>
-        <item text="1 - Fastest" action="setting 'pitchquality' 1" check="setting 'pitchquality' 1"/>
-        <item text="2 - Good" action="setting 'pitchquality' 2" check="setting 'pitchquality' 2"/>
-        <item text="3 - Excellent" action="setting 'pitchquality' 3" check="setting 'pitchquality' 3"/>
-        <item text="4 - Best +" action="setting 'pitchquality' 4" check="setting 'pitchquality' 4"/>
-      </submenu>
-      <submenu text="Math Engine">
-        <item text="Disabled" action="setting 'mathEngine' 'disabled'" check="setting 'mathEngine' 'disabled'"/>
-        <item text="CPU" action="setting 'mathEngine' 'CPU'" check="setting 'mathEngine' 'CPU'"/>
-        <item text="GPU" action="setting 'mathEngine' 'GPU'" check="setting 'mathEngine' 'GPU'"/>
-        <item text="AUTO" action="setting 'mathEngine' 'automatic'" check="setting 'mathEngine' 'automatic'"/>
-        <separator/>
-        <submenu text="Priority">
-          <item text="Automatic" action="setting 'mathEnginePriority' 'automatic'" check="setting 'mathEnginePriority' 'automatic'"/>
-          <item text="Normal" action="setting 'mathEnginePriority' 'normal'" check="setting 'mathEnginePriority' 'normal'"/>
-          <item text="Low" action="setting 'mathEnginePriority' 'low'" check="setting 'mathEnginePriority' 'low'"/>
-          <item text="Idle" action="setting 'mathEnginePriority' 'idle'" check="setting 'mathEnginePriority' 'idle'"/>
-        </submenu>
-      </submenu>
-      <submenu text="Precompute Stems">
-        <item text="Create Manually" action="setting 'precomputeStems' 'Create Manually'" check="setting 'precomputeStems' 'Create Manually'"/>
-        <item text="Always Create" action="setting 'precomputeStems' 'Always Create'" check="setting 'precomputeStems' 'Always Create'"/>
-        <item text="Only Use Precomputed" action="setting 'precomputeStems' 'Only Use Precomputed'" check="setting 'precomputeStems' 'Only Use Precomputed'"/>
-      </submenu>
-      <submenu text="Use Low Power GPU">
-        <item text="Default" action="setting 'useLowPowerGPU' 'default'" check="setting 'useLowPowerGPU' 'default'"/>
-        <item text="Low Power" action="setting 'useLowPowerGPU' 'low power'" check="setting 'useLowPowerGPU' 'low power'"/>
-        <item text="High Power" action="setting 'useLowPowerGPU' 'high power'" check="setting 'useLowPowerGPU' 'high power'"/>
-      </submenu>
-      <submenu text="Song Load Priority">
-        <item text="Normal" action="setting 'songLoadPriority' 'normal'" check="setting 'songLoadPriority' 'normal'"/>
-        <item text="Low" action="setting 'songLoadPriority' 'low'" check="setting 'songLoadPriority' 'low'"/>
-        <item text="Idle" action="setting 'songLoadPriority' 'idle'" check="setting 'songLoadPriority' 'idle'"/>
-      </submenu>
-      <submenu text="Song Load Security">
-        <item text="OFF" action="setting 'loadSecurity' 'off'" check="setting 'loadSecurity' 'off'"/>
-        <item text="ON" action="setting 'loadSecurity' 'on'" check="setting 'loadSecurity' 'on'"/>
-        <item text="Silent" action="setting 'loadSecurity' 'silent'" check="setting 'loadSecurity' 'silent'"/>
-      </submenu>
-      <submenu text="Brake Time">
-        <item text="0.00" action="setting 'rampStopTime' 0.0" check="setting 'rampStopTime' 0.0"/>
-        <item text="0.20" action="setting 'rampStopTime' 0.2" check="setting 'rampStopTime' 0.2"/>
-        <item text="0.40" action="setting 'rampStopTime' 0.4" check="setting 'rampStopTime' 0.4"/>
-        <item text="0.80" action="setting 'rampStopTime' 0.8" check="setting 'rampStopTime' 0.8"/>
-        <item text="1.00" action="setting 'rampStopTime' 1.0" check="setting 'rampStopTime' 1.0"/>
-      </submenu>
-      <separator/>
       <submenu text="Browser" localize="true">
         <item text="Set Tags (Auto)" action="setting 'setTagsAuto'" check="setting 'setTagsAuto'"/>
         <item text="Read Only" action="setting 'readOnly'" check="setting 'readOnly'"/>
@@ -188,9 +178,77 @@
           <item text="Shrink" action="setting 'browserTextFit' 'Shrink' &amp; load_skin" check="setting 'browserTextFit' 'Shrink'"/>
         </submenu>
       </submenu>
-      <submenu text="Utility Bar">
-        <item text="Show Browser Tools" action="set '@$dd_bottombar_mode' 0" check="var_equal '@$dd_bottombar_mode' 0"/>
-        <item text="Show Custom Buttons" action="set '@$dd_bottombar_mode' 1" check="var_equal '@$dd_bottombar_mode' 1"/>
+      <separator/>
+      <submenu text="Playback" localize="true">
+        <submenu text="Quantize Beat">
+          <item text="1/8" action="setting 'globalQuantize' 0.125" check="setting 'globalQuantize' 0.125"/>
+          <item text="1/4" action="setting 'globalQuantize' 0.250000" check="setting 'globalQuantize' 0.25"/>
+          <item text="1/2" action="setting 'globalQuantize' 0.500000" check="setting 'globalQuantize' 0.500000"/>
+          <item text="1" action="setting 'globalQuantize' 1.000000" check="setting 'globalQuantize' 1.000000"/>
+          <item text="2" action="setting 'globalQuantize' 2.000000" check="setting 'globalQuantize' 2.000000"/>
+          <item text="4" action="setting 'globalQuantize' 4.000000" check="setting 'globalQuantize' 4.000000"/>
+          <item text="16" action="setting 'globalQuantize' 16.000000" check="setting 'globalQuantize' 16.000000"/>
+        </submenu>
+        <submenu text="Brake Time">
+          <item text="0.00" action="setting 'rampStopTime' 0.0" check="setting 'rampStopTime' 0.0"/>
+          <item text="0.20" action="setting 'rampStopTime' 0.2" check="setting 'rampStopTime' 0.2"/>
+          <item text="0.40" action="setting 'rampStopTime' 0.4" check="setting 'rampStopTime' 0.4"/>
+          <item text="0.80" action="setting 'rampStopTime' 0.8" check="setting 'rampStopTime' 0.8"/>
+          <item text="1.00" action="setting 'rampStopTime' 1.0" check="setting 'rampStopTime' 1.0"/>
+        </submenu>
+        <submenu text="Pitch Quality">
+          <item text="0 - Low" action="setting 'pitchquality' 0" check="setting 'pitchquality' 0"/>
+          <item text="1 - Fastest" action="setting 'pitchquality' 1" check="setting 'pitchquality' 1"/>
+          <item text="2 - Good" action="setting 'pitchquality' 2" check="setting 'pitchquality' 2"/>
+          <item text="3 - Excellent" action="setting 'pitchquality' 3" check="setting 'pitchquality' 3"/>
+          <item text="4 - Best +" action="setting 'pitchquality' 4" check="setting 'pitchquality' 4"/>
+        </submenu>
+        <submenu text="Scratch Filter Quality">
+          <item text="8" action="setting 'scratchFilterQuality' 8" check="setting 'scratchFilterQuality' 8"/>
+          <item text="10" action="setting 'scratchFilterQuality' 10" check="setting 'scratchFilterQuality' 10"/>
+          <item text="12" action="setting 'scratchFilterQuality' 12" check="setting 'scratchFilterQuality' 12"/>
+          <item text="14" action="setting 'scratchFilterQuality' 14" check="setting 'scratchFilterQuality' 14"/>
+          <item text="16" action="setting 'scratchFilterQuality' 16" check="setting 'scratchFilterQuality' 16"/>
+        </submenu>
+        <separator/>
+        <item text="Ultra Latency" localize="true" action="setting 'ultraLatency'" check="setting 'ultraLatency'"/>
+        <item text="Keep Playing Past End" localize="true" action="setting 'keepPlayingPastEnd'" check="setting 'keepPlayingPastEnd'"/>
+        <item text="Keep Play Status On Load Song" localize="true" action="setting 'keepPlayStatusOnLoadSong'" check="setting 'keepPlayStatusOnLoadSong'"/>
+      </submenu>
+      <submenu text="Engine" localize="true">
+        <submenu text="Math Engine">
+          <item text="Disabled" action="setting 'mathEngine' 'disabled'" check="setting 'mathEngine' 'disabled'"/>
+          <item text="CPU" action="setting 'mathEngine' 'CPU'" check="setting 'mathEngine' 'CPU'"/>
+          <item text="GPU" action="setting 'mathEngine' 'GPU'" check="setting 'mathEngine' 'GPU'"/>
+          <item text="AUTO" action="setting 'mathEngine' 'automatic'" check="setting 'mathEngine' 'automatic'"/>
+          <separator/>
+          <submenu text="Priority">
+            <item text="Automatic" action="setting 'mathEnginePriority' 'automatic'" check="setting 'mathEnginePriority' 'automatic'"/>
+            <item text="Normal" action="setting 'mathEnginePriority' 'normal'" check="setting 'mathEnginePriority' 'normal'"/>
+            <item text="Low" action="setting 'mathEnginePriority' 'low'" check="setting 'mathEnginePriority' 'low'"/>
+            <item text="Idle" action="setting 'mathEnginePriority' 'idle'" check="setting 'mathEnginePriority' 'idle'"/>
+          </submenu>
+        </submenu>
+        <submenu text="Precompute Stems">
+          <item text="Create Manually" action="setting 'precomputeStems' 'Create Manually'" check="setting 'precomputeStems' 'Create Manually'"/>
+          <item text="Always Create" action="setting 'precomputeStems' 'Always Create'" check="setting 'precomputeStems' 'Always Create'"/>
+          <item text="Only Use Precomputed" action="setting 'precomputeStems' 'Only Use Precomputed'" check="setting 'precomputeStems' 'Only Use Precomputed'"/>
+        </submenu>
+        <submenu text="Use Low Power GPU">
+          <item text="Default" action="setting 'useLowPowerGPU' 'default'" check="setting 'useLowPowerGPU' 'default'"/>
+          <item text="Low Power" action="setting 'useLowPowerGPU' 'low power'" check="setting 'useLowPowerGPU' 'low power'"/>
+          <item text="High Power" action="setting 'useLowPowerGPU' 'high power'" check="setting 'useLowPowerGPU' 'high power'"/>
+        </submenu>
+        <submenu text="Song Load Priority">
+          <item text="Normal" action="setting 'songLoadPriority' 'normal'" check="setting 'songLoadPriority' 'normal'"/>
+          <item text="Low" action="setting 'songLoadPriority' 'low'" check="setting 'songLoadPriority' 'low'"/>
+          <item text="Idle" action="setting 'songLoadPriority' 'idle'" check="setting 'songLoadPriority' 'idle'"/>
+        </submenu>
+        <submenu text="Song Load Security">
+          <item text="OFF" action="setting 'loadSecurity' 'off'" check="setting 'loadSecurity' 'off'"/>
+          <item text="ON" action="setting 'loadSecurity' 'on'" check="setting 'loadSecurity' 'on'"/>
+          <item text="Silent" action="setting 'loadSecurity' 'silent'" check="setting 'loadSecurity' 'silent'"/>
+        </submenu>
       </submenu>
       <separator/>
       <submenu text="Experimental">
@@ -203,11 +261,6 @@
         <item text="Beat Analyzer" action="setting 'experimentalBeatAnalyzer'" check="setting 'experimentalBeatAnalyzer'"/>
         <item text="Wave Colors" action="setting 'experimentalWaveColors'" check="setting 'experimentalWaveColors'"/>
       </submenu>
-      <separator/>
-      <item text="Ultra Latency" localize="true" action="setting 'ultraLatency'" check="setting 'ultraLatency'"/>
-      <item text="Keep Playing Past End" localize="true" action="setting 'keepPlayingPastEnd'" check="setting 'keepPlayingPastEnd'"/>
-      <item text="Keep Play Status On Load Song" localize="true" action="setting 'keepPlayStatusOnLoadSong'" check="setting 'keepPlayStatusOnLoadSong'"/>
-      <item text="Show Tooltips" localize="true" action="setting 'tooltip' no ? setting 'tooltip' yes : setting 'tooltip' yes ? setting 'tooltip' no" check="setting 'tooltip' 'yes'"/>
     </menu>
   </define>
 </defs>

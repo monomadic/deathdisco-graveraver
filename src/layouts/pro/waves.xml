@@ -8,8 +8,8 @@
   <define class="DECKS_ABOVE">
     <!-- waves -->
     <panel class="area_waves" condition="var_equal '@$dd_layout_4deck' 0"/>
-    <!-- Pro-mixer 4-deck: no browser; the wave area fills whatever the 649px deck block leaves. -->
-    <panel class="area_waves_extended_4deck" height="1080-50-50-649-3" condition="var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0"/>
+    <!-- Pro-mixer 4-deck: no browser; the wave area fills whatever the 852px deck block leaves. -->
+    <panel class="waveform" x="+2" sizebuttons="false" force2deck="true" outerlabels="true" trackinfo="false" waveformheight="1080-50-50-852-3" condition="var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0"/>
     <panel class="area_waves_extended_4deck" condition="var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 1"/>
     <!-- decks (the shared wave ladder that positions them lives in DECKS_ABOVE_STACK) -->
     <panel class="decks_above_stack"/>
@@ -27,7 +27,7 @@
   <define class="DECKS_ABOVE_STACK">
     <!-- Pro-mixer 4-deck: fixed fill-height wave area above, so the decks sit at a fixed
          offset. Must precede the ladder: VirtualDJ takes the first matching <pos>. -->
-    <pos y="+1080-50-50-649-3+3" condition="var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0"/>
+    <pos y="+1080-50-50-852-3+3" condition="var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0"/>
     <pos y="+381+3" condition="var_equal '@$dd_wave_size' 13"/>
     <pos y="+361+3" condition="var_equal '@$dd_wave_size' 12"/>
     <pos y="+341+3" condition="var_equal '@$dd_wave_size' 11"/>
@@ -64,7 +64,7 @@
     <group condition="var_equal '@$dd_layout_4deck' 1">
       <panel class="pro_4decks" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
       <panel class="extended_4decks" condition="var_equal '@$dd_hide_pro_mixer' 1"/>
-      <panel class="area_waves_extended_4deck" y="+649+3" height="1080-50-50-649-3" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
+      <panel class="waveform" x="+2" sizebuttons="false" force2deck="true" outerlabels="true" trackinfo="false" y="+852+3" waveformheight="1080-50-50-852-3" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
       <panel class="area_waves_extended_4deck" y="+355+2+355+3" condition="var_equal '@$dd_hide_pro_mixer' 1"/>
     </group>
   </define>
@@ -78,8 +78,8 @@
     <group condition="var_equal '@$dd_layout_4deck' 1">
       <panel class="pro_4decks" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
       <panel class="extended_4decks" condition="var_equal '@$dd_hide_pro_mixer' 1"/>
-      <!-- waves hidden: the browser takes the space under the 649px deck block -->
-      <panel class="browser_overlay_plain" y="+649+3" width="1920" height="1080-50-50-649-3" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
+      <!-- waves hidden: the browser takes the space under the 852px deck block -->
+      <panel class="browser_overlay_plain" y="+852+3" width="1920" height="1080-50-50-852-3" condition="var_equal '@$dd_hide_pro_mixer' 0"/>
     </group>
   </define>
 </defs>

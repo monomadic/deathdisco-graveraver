@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Wave probe v4: does canstretch="false" keep covers / text / scratchwave cues unscaled
+     inside a breakline band? Small band (y 100..300) so a 16:10 window scales it ~1.6x.
+     Left half: default. Right half: canstretch="false". Deck 1 loaded. -->
+<skin name="ZZ Wave Stretch Probe" version="8" width="1920" height="1080" nbdecks="4" author="probe" image="skin.png" preview="preview.png">
+  <breaklines breakline1="100" breakline2="300"/>
+  <visual x="0" y="0" width="1920" height="1080"><off shape="square" color="#101010"/></visual>
+  <button action="load_skin 'DeathDisco Grave Raver v1/:skin'">
+    <pos x="1720" y="20"/><size width="180" height="40"/>
+    <off color="#333333" border="#888888" border_size="1" radius="4"/>
+    <text fontsize="14" color="white" align="center" text="BACK TO GRAVERAVER"/>
+  </button>
+  <textzone><pos x="20" y="40"/><size width="800" height="30"/><text fontsize="18" color="white" align="left" text="DEFAULT"/></textzone>
+  <textzone><pos x="980" y="40"/><size width="800" height="30"/><text fontsize="18" color="white" align="left" text="canstretch=false"/></textzone>
+  <visual x="0" y="100" width="1920" height="200"><off shape="square" color="transparent" border="#FFFFFF" border_size="1"/></visual>
+  <deck deck="1">
+    <cover><pos x="20" y="110"/><size width="180" height="180"/></cover>
+    <textzone><pos x="220" y="110"/><size width="300" height="40"/><text fontsize="30" color="white" align="left" action="get_title"/></textzone>
+    <scratchwave orientation="horizontal" color="#3399FF" color2="#66CCFF">
+      <pos x="220" y="160"/><size width="720" height="130"/>
+      <cue y="+0"><mask x="123" y="100" width="6" height="14"/><text dx="+8" dy="-1" fontsize="12" important="true"/></cue>
+    </scratchwave>
+    <cover canstretch="false"><pos x="980" y="110"/><size width="180" height="180"/></cover>
+    <textzone canstretch="false"><pos x="1180" y="110"/><size width="300" height="40"/><text fontsize="30" color="white" align="left" action="get_title"/></textzone>
+    <scratchwave orientation="horizontal" color="#3399FF" color2="#66CCFF" canstretch="false">
+      <pos x="1180" y="160"/><size width="720" height="130"/>
+      <cue y="+0"><mask x="123" y="100" width="6" height="14"/><text dx="+8" dy="-1" fontsize="12" important="true"/></cue>
+    </scratchwave>
+  </deck>
+  <visual x="100" y="1000" width="40" height="40"><off shape="square" color="#FFCC00"/></visual>
+</skin>

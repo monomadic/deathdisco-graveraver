@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="WAVEFORM" placeholders="*waveformheight,force4deck=false">
+  <!-- sizebuttons="false" hides the +/- wave-size buttons (fixed-height wave areas).
+       force2deck="true" always shows the two-wave (left/right active deck) view and hides
+       the 2/4 buttons, ignoring @$dd_four_waveforms (Pro 4-deck).
+       outerlabels="true" puts the two-wave view's cue labels on the outside (top lane above,
+       bottom lane below) so the two waves sit together in the middle band;
+       trackinfo="false" hides that view's cover/title side panels. -->
+  <define class="WAVEFORM" placeholders="*waveformheight,force4deck=false,force2deck=false,outerlabels=false,trackinfo=true,*sizebuttons=true">
     <group visibility="var_equal '@$dd_split_waveform' 0">
       <visual class="gfx_shape" width="1920-4" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-      <panel name="mirroredwave2deck" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
+      <panel name="mirroredwave2deck" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 ? [FORCE2DECK] ? true : var_equal '@$dd_four_waveforms' 0 : false : false">
         <rhythmzone mirror="true" upsidedown="false" fade="200">
           <pos x="+2" y="+0"/>
           <size width="1920-8" height="[WAVEFORMHEIGHT]"/>
@@ -29,26 +35,30 @@
         <panel class="beat_counter" deck="right" x="960-2-598-40" y="+77+2+[WAVEFORMHEIGHT]/2-24-2" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       </panel>
       <!-- WAVEFORM TYPE: BEATS -->
-      <panel name="defaultwave4deck" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
+      <panel name="defaultwave4deck" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK] ? not [FORCE2DECK]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
       <!-- WAVEFORM TYPE: BEATS MIRRORED -->
-      <panel name="mirroredwave4deck" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
+      <panel name="mirroredwave4deck" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="not [FORCE4DECK] ? not [FORCE2DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
       <!-- PERFORMANCE EXTENDED: MAIN WAVEFORM (HORIZONTAL, FORCED 4 DECK) -->
       <panel name="defaultwave4deck_forced" class="main_wave_rhythm_4deck" mirror="false" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0"/>
       <panel name="mirroredwave4deck_forced" class="main_wave_rhythm_4deck" mirror="true" waveformheight="[WAVEFORMHEIGHT]" condition="[FORCE4DECK]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0"/>
       <!-- PRO+PERFORMANCE: MAIN WAVEFORM (HORIZONTAL, 2 DECK) -->
       <!-- WAVEFORM TYPE: SHAPES, SCRATCH (COLORS) -->
-      <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
+      <panel name="horizontal_scratch_active2deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 ? [FORCE2DECK] ? true : var_equal '@$dd_four_waveforms' 0 : false">
         <group>
           <!-- WAVES -->
-          <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel condition="not [OUTERLABELS]" class="horizontal_main_waveform" deck="3" labels="below" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel condition="not [OUTERLABELS]" class="horizontal_main_waveform" deck="1" labels="below" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel condition="not [OUTERLABELS]" class="horizontal_main_waveform" deck="2" labels="above" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel condition="not [OUTERLABELS]" class="horizontal_main_waveform" deck="4" labels="above" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel condition="[OUTERLABELS]" class="horizontal_main_waveform" deck="3" labels="above" splitlabels="true" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel condition="[OUTERLABELS]" class="horizontal_main_waveform" deck="1" labels="above" splitlabels="true" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel condition="[OUTERLABELS]" class="horizontal_main_waveform" deck="2" labels="below" splitlabels="true" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel condition="[OUTERLABELS]" class="horizontal_main_waveform" deck="4" labels="below" splitlabels="true" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- TRACK INFO -->
-          <panel class="horizontal_waveform_track_info" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
-          <panel class="horizontal_waveform_track_info" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
+          <panel condition="[TRACKINFO]" class="horizontal_waveform_track_info" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 3 select ? true : deck 1 select ? false : deck 3 leftdeck"/>
+          <panel condition="[TRACKINFO]" class="horizontal_waveform_track_info" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/2" y="+0" visibility="deck 1 select ? true : deck 3 select ? false : deck 1 leftdeck"/>
+          <panel condition="[TRACKINFO]" class="horizontal_waveform_track_info" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 2 select ? true : deck 4 select ? false : deck 2 rightdeck"/>
+          <panel condition="[TRACKINFO]" class="horizontal_waveform_track_info" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/2" y="+[WAVEFORMHEIGHT]/2" visibility="deck 4 select ? true : deck 2 select ? false : deck 4 rightdeck"/>
           <!-- NEEDLE -->
           <!-- left aligned -->
           <group visibility="setting 'waveformCenter' 'left'">
@@ -76,17 +86,17 @@
       </panel>
       <!-- PRO: MAIN WAVEFORM (HORIZONTAL, 4 DECK) -->
       <!-- waveform type: shapes, scratch (colors) -->
-      <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
-        <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
-        <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
-        <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
-        <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
+      <panel name="horizontal_scratch_active4deck" condition="not [FORCE4DECK] ? not [FORCE2DECK]" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
+        <panel class="horizontal_main_waveform" deck="3" labels="below" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
+        <panel class="horizontal_main_waveform" deck="1" labels="below" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
+        <panel class="horizontal_main_waveform" deck="2" labels="above" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
+        <panel class="horizontal_main_waveform" deck="4" labels="above" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
       </panel>
       <panel name="horizontal_scratch_active4deck_forced" condition="[FORCE4DECK]" visibility="not setting skinWaveformType 0">
-        <panel class="horizontal_main_waveform" deck="3" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
-        <panel class="horizontal_main_waveform" deck="1" deckside="leftdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
-        <panel class="horizontal_main_waveform" deck="2" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
-        <panel class="horizontal_main_waveform" deck="4" deckside="rightdeck" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
+        <panel class="horizontal_main_waveform" deck="3" labels="below" height="[WAVEFORMHEIGHT]/4" x="+0" y="+0"/>
+        <panel class="horizontal_main_waveform" deck="1" labels="below" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4"/>
+        <panel class="horizontal_main_waveform" deck="2" labels="above" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*2"/>
+        <panel class="horizontal_main_waveform" deck="4" labels="above" height="[WAVEFORMHEIGHT]/4" x="+0" y="+[WAVEFORMHEIGHT]/4*3"/>
       </panel>
     </group>
     <!-- split wave -->
@@ -350,14 +360,16 @@
         <line y="+0" width="1" height="[WAVEFORMHEIGHT]+3" highlight="#444444" shadow="000000"/>
         <!-- ZOOM BUTTONS -->
         <group x="+1" y="+0">
-          <group y="+10">
+          <group y="+10" condition="[SIZEBUTTONS]">
             <!-- - -->
             <button class="button_main" y="+0" width="30" height="26" query="on/off" action="cycle '@$dd_wave_size' -14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="minus" iconsize="20" bordersize="0"/>
             <!-- + -->
             <button class="button_main" y="+0+29" width="30" height="26" query="on/off" action="cycle '@$dd_wave_size' +14 &amp; load_skin" coloroff="#000000" colorover="#222222" textcoloron="needle" sysicon="plus" iconsize="20" bordersize="0"/>
           </group>
-          <!-- 2/4 WAVE BUTTONS -->
-          <group y="+80">
+          <!-- 2/4 WAVE BUTTONS (take the +/- slot when those are hidden) -->
+          <group condition="not [FORCE2DECK]">
+            <pos y="+10" condition="not [SIZEBUTTONS]"/>
+            <pos y="+80"/>
             <!-- 2 -->
             <button tooltip="2 Waveforms" class="button_main" action="set '@$dd_four_waveforms' 0" width="30" height="27" bordersize="0">
               <off color="black"/>

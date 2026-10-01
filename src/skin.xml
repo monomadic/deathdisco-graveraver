@@ -29,13 +29,14 @@
        taller than 1080. Only conditional <breaklines> children are used (no root
        breakline attributes, which would override them), and the conditions are mutually
        exclusive. Default: a fold at y=1000, inside the browser. Pro mixer 4-deck has no
-       browser, so its band spans its fill-height wave area instead (waves at 50..378
-       above the decks, or 702..1030 below them, where the browser also sits when the
-       waves are hidden). -->
+       browser. A band scales everything inside it vertically (text and covers included),
+       so its band covers only the two stacked wave graphics of its 125px two-wave strip
+       (outer cue labels: 20px above and below stay out of the band). With the waves hidden
+       the browser takes that space and stretches instead. -->
   <breaklines breakline1="1000" breakline2="1000" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? false : true : true : true"/>
-  <breaklines breakline1="50" breakline2="50+328" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 0"/>
-  <breaklines breakline1="1080-50-328" breakline2="1080-50" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 1"/>
-  <breaklines breakline1="1080-50-328" breakline2="1080-50" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 1"/>
+  <breaklines breakline1="50+20" breakline2="50+125-20" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 0"/>
+  <breaklines breakline1="1080-50-125+20" breakline2="1080-50-20" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 0 ? var_equal '@$dd_waveform_position' 1"/>
+  <breaklines breakline1="1080-50-125" breakline2="1080-50" condition="var_equal '@$dd_skin_mode' 0 ? var_equal '@$dd_layout_4deck' 1 ? var_equal '@$dd_hide_pro_mixer' 0 ? var_equal '@$dd_hide_main_waveforms' 1"/>
   <!-- Definitions: theme tokens, runtime globals, components, and containers -->
   <xi:include href="colors.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="globals.xml" xpointer="xpointer(/globals/*)"/>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defs>
+  <!-- Audio device button: shows the connected controller's name, or with no controller the
+       active audio setup's name; click opens VirtualDJ's audio settings to change it.
+       VDJScript has no soundcard-name query: `apply_audio_config` returns the active setup's
+       name (as saved in Settings > Audio), so name setups after their device. -->
+  <define class="TOPBAR_AUDIO_DEVICE">
+    <button action="settings 'audio'" query="off" tooltip="AUDIO SETUP\nThe active audio configuration. Click to change the audio device in Settings > Audio.">
+      <size width="130" height="30"/>
+      <off color="black" border="#888888" border_size="1"/>
+      <over color="black" border="white" border_size="1"/>
+      <down color="black" border="#888888" border_size="1"/>
+      <text fontsize="12" color="#AAAAAA" colorover="white" align="center" action="param_equal `get_controller_name` '' ? apply_audio_config &amp; param_uppercase : get_controller_name &amp; param_uppercase"/>
+    </button>
+  </define>
+</defs>

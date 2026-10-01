@@ -37,16 +37,16 @@
       </visual>
     </group>
   </define>
-  <define class="PAD_STACK_BUTTON" placeholders="*source,*width=76,*height=30">
+  <define class="PAD_STACK_BUTTON" placeholders="*source,*width=76,*height=30,*coloroff=button_background2,*coloron=#CC000000,*bordercolor=dark_4,*bordersize=0,*radius=0">
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="not pad_pushed [SOURCE]">
       <size width="[WIDTH]" height="[HEIGHT]"/>
-      <up color="button_background2" border="dark_4" border_size="0" shape="square"/>
+      <up color="[COLOROFF]" border="[BORDERCOLOR]" border_size="[BORDERSIZE]" shape="square" radius="[RADIUS]"/>
       <over color="#111111" border="#333333" border_size="0" shape="square"/>
-      <selected color="#CC000000" border="dark_6" border_size="0" shape="square"/>
+      <selected color="[COLORON]" border="[BORDERCOLOR]" border_size="[BORDERSIZE]" shape="square" radius="[RADIUS]"/>
     </button>
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="pad_pushed [SOURCE]">
       <size width="[WIDTH]" height="[HEIGHT]"/>
-      <selected color="#CC000000" border="pad_button_color [SOURCE]" border_size="1" shape="square"/>
+      <selected color="#CC000000" border="pad_button_color [SOURCE]" border_size="1" shape="square" radius="[RADIUS]"/>
     </button>
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]">
       <pos x="+0" y="+0"/>

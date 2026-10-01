@@ -74,10 +74,11 @@
              as `... ? true : false` when they are a branch or the whole visibility.
        TIME: click cycles @$dd_track_stats_time: -remaining / elapsed / total; white, yellow under 60s
              remaining, red under 20s. Detail = elapsed, or -remaining while elapsed is shown.
-       Clicking the BPM column glides the pitch back to 0% over one bar (pitch_reset 4bt). -->
-  <define class="TRACK_INFO_STATS" placeholders="*otherdeck,*bpmx,*keyx,*timex,*div1,*div2">
+       Clicking the BPM column glides the pitch back to 0% over one bar (pitch_reset 4bt).
+       time="false" drops the TIME column and its hairline (stack header: BPM / KEY only). -->
+  <define class="TRACK_INFO_STATS" placeholders="*otherdeck,*bpmx,*keyx,*timex,*div1,*div2,*time=true">
     <line color="#2a2a2a" x="+[DIV1]" y="+4" width="1" height="58"/>
-    <line color="#2a2a2a" x="+[DIV2]" y="+4" width="1" height="58"/>
+    <line condition="[TIME]" color="#2a2a2a" x="+[DIV2]" y="+4" width="1" height="58"/>
     <textzone action="pitch_reset 4bt">
       <pos x="+[BPMX]"/>
       <size width="100" height="11"/>
@@ -88,7 +89,7 @@
       <size width="88" height="11"/>
       <text fontsize="10" color="#777777" align="center" localize="true" important="true" text="KEY"/>
     </textzone>
-    <textzone action="cycle '@$dd_track_stats_time' 3">
+    <textzone action="cycle '@$dd_track_stats_time' 3" condition="[TIME]">
       <pos x="+[TIMEX]"/>
       <size width="76" height="11"/>
       <text fontsize="10" color="#777777" align="center" localize="true" important="true" action="var_equal '@$dd_track_stats_time' 1 ? get_text 'ELAPSED' : var_equal '@$dd_track_stats_time' 2 ? get_text 'TOTAL' : get_text 'REMAIN'"/>
@@ -119,7 +120,7 @@
       <size width="88" height="36"/>
       <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="#ff453a" action="get_key"/>
     </textzone>
-    <textzone action="cycle '@$dd_track_stats_time' 3" >
+    <textzone action="cycle '@$dd_track_stats_time' 3" condition="[TIME]">
       <pos x="+[TIMEX]" y="+10"/>
       <size width="76" height="36"/>
       <text fontsize="32" weight="bold" align="center" scroll="no" important="true" color="`get_time 'remain' 1 &amp; param_smaller 20 ? color '#ff453a' : get_time 'remain' 1 &amp; param_smaller 60 ? color '#f5c518' : color '#eeeeee'`" action="var_equal '@$dd_track_stats_time' 1 ? get_time 'elapsed' 'short' : var_equal '@$dd_track_stats_time' 2 ? get_time 'total' 'short' : get_text '-`get_time remain short`'"/>
@@ -155,7 +156,7 @@
       <size width="88" height="20"/>
       <text fontsize="15" align="center" scroll="no" important="true" weight="bold" color="orange" action="get_text '`get_key_modifier_text` ST'"/>
     </textzone>
-    <textzone action="cycle '@$dd_track_stats_time' 3">
+    <textzone action="cycle '@$dd_track_stats_time' 3" condition="[TIME]">
       <pos x="+[TIMEX]" y="+44"/>
       <size width="76" height="20"/>
       <text weight="bold" fontsize="15" align="center" scroll="no" important="true" color="#dddddd" action="var_equal '@$dd_track_stats_time' 1 ? get_text '-`get_time remain short`' : get_time 'elapsed' 'short'"/>

@@ -32,9 +32,9 @@
         <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="96" keyx="82" time="false" timex="0" div2="0" x="+308" y="+50" condition="param_equal '[DECK]' '4'"/>
         <group name="deck_control" visibility="var_equal '@$dd_stack_controls' 1">
           <panel visibility="var_equal '@dd_deck_mode' 0">
-            <panel class="transport_stack" x="+484+7"/>
-            <panel class="pitch_zone_stack" x="+800-58-2-8"/>
-            <panel class="jogwheel" x="+800-[JOGSIZE]-2-8-58-16" y="+3" name="jogwheel_spinner"/>
+            <panel class="jogwheel" x="+484+7" y="+3" name="jogwheel_spinner"/>
+            <panel class="pitch_zone_stack" x="+484+7+155+16"/>
+            <panel class="transport_stack" x="+800-60-2-8"/>
           </panel>
           <panel visibility="var_equal '@dd_deck_mode' 1">
             <panel class="pads_rack_stack" x="+484+7"/>
@@ -62,14 +62,14 @@
   </define>
   <!-- Eight pads in one row along the bottom of the stack deck header -->
   <define class="STACK_HEADER_PADS">
-    <panel class="pad_stack_button" x="+0" source="1" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+55" source="2" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+110" source="3" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+165" source="4" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+220" source="5" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+275" source="6" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+330" source="7" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
-    <panel class="pad_stack_button" x="+385" source="8" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+0" source="1" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+55" source="2" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+110" source="3" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+165" source="4" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+220" source="5" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+275" source="6" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+330" source="7" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+385" source="8" width="53" height="32" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
   </define>
   <define class="STACK_2DECKS" placeholders="*panelname">
     <panel class="deck_container_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>

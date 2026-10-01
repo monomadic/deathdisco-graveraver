@@ -376,7 +376,7 @@
       </textzone>
     </group>
     <!-- cover -->
-    <cover rotate="no" visibility="1.0">
+    <cover rotate="no" visibility="1.0" action="" rightclick="" dblclick="">
       <pos x="+40" y="+5"/>
       <size width="120" height="120"/>
     </cover>

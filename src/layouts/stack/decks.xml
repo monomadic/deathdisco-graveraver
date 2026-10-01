@@ -5,6 +5,11 @@
   <define class="DECK_CONTAINER_STACK" placeholders="*deck,*panelname">
     <deck deck="[DECK]">
       <group>
+        <!-- the whole left bar selects the deck; the tab and menu below sit on top of it -->
+        <button action="select" tooltip="Select Deck">
+          <size width="35" height="164"/>
+          <off color="transparent"/>
+        </button>
         <button textsize="16" class="button_main" action="select" rightclick="cycle '@dd_deck_mode' 3" tooltip="Select Deck \n Right-click: Next Panel" coloroff="button_background" textheight="40" textcoloron="black">
           <size width="30" height="40"/>
           <pos x="+8" y="+6"/>
@@ -47,18 +52,24 @@
         <size width="1920-37" height="164"/>
         <down color="transparent" border_size="3" border="deckcolor" shape="square" radius="6"/>
       </visual>
+      <!-- load dropzone over the whole deck strip -->
+      <dropzone deck="[DECK]">
+        <pos x="+35"/>
+        <size width="1920-37" height="164"/>
+        <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
+      </dropzone>
     </deck>
   </define>
   <!-- Eight pads in one row along the bottom of the stack deck header -->
   <define class="STACK_HEADER_PADS">
-    <panel class="pad_stack_button" x="+0" source="1" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+55" source="2" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+110" source="3" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+165" source="4" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+220" source="5" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+275" source="6" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+330" source="7" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
-    <panel class="pad_stack_button" x="+385" source="8" width="51" height="38" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="1" radius="4"/>
+    <panel class="pad_stack_button" x="+0" source="1" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+55" source="2" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+110" source="3" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+165" source="4" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+220" source="5" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+275" source="6" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+330" source="7" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
+    <panel class="pad_stack_button" x="+385" source="8" width="49" height="32" coloroff="dark_3" coloron="dark_3" bordercolor="dark_6" bordersize="2" radius="4" multiline="true" textdx="+11" textpad="-13" textsize="11" textdy="+0"/>
   </define>
   <define class="STACK_2DECKS" placeholders="*panelname">
     <panel class="deck_container_stack" panelname="deck1" deck="1" visibility="not deck 3 leftdeck"/>

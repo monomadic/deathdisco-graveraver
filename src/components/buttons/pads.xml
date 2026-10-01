@@ -37,7 +37,7 @@
       </visual>
     </group>
   </define>
-  <define class="PAD_STACK_BUTTON" placeholders="*source,*width=76,*height=30,*coloroff=button_background2,*coloron=#CC000000,*bordercolor=dark_4,*bordersize=0,*radius=0">
+  <define class="PAD_STACK_BUTTON" placeholders="*source,*width=76,*height=30,*coloroff=button_background2,*coloron=#CC000000,*bordercolor=dark_4,*bordersize=0,*radius=0,*multiline=false,*textdx=+15,*textpad=+2,*textsize=12,*textdy=-1">
     <button action="pad [SOURCE]" rightclick="padshift [SOURCE]" visibility="not pad_pushed [SOURCE]">
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <up color="[COLOROFF]" border="[BORDERCOLOR]" border_size="[BORDERSIZE]" shape="square" radius="[RADIUS]"/>
@@ -52,7 +52,7 @@
       <pos x="+0" y="+0"/>
       <size width="[WIDTH]" height="[HEIGHT]"/>
       <over color="dark_2" border="dark_7" border_size="1" radius="5"/>
-      <text dx="+15" dy="-1" width="[WIDTH]+2" size="12" weight="" color="textoff" colorselected="needle" colorover="#999999" action="pad [SOURCE]" align="left"/>
+      <text dx="[TEXTDX]" dy="[TEXTDY]" width="[WIDTH][TEXTPAD]" size="[TEXTSIZE]" weight="" multiline="[MULTILINE]" color="textoff" colorselected="needle" colorover="#999999" action="pad [SOURCE]" align="left"/>
     </button>
     <visual type="color" source="pad_button_color [SOURCE]">
       <pos x="+5" y="+6"/>

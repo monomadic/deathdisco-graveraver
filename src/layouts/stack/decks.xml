@@ -26,10 +26,10 @@
         <panel class="track_stem_modifiers" x="+40" y="+60" volumes="false" fx="false" idleborder="transparent"/>
         <panel class="stack_header_pads" x="+40" y="+124"/>
         <!-- BPM / KEY readout in the space right of the stem buttons; key compares against the other side -->
-        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="12" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '1'"/>
-        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="12" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '2'"/>
-        <panel class="track_info_stats" otherdeck="right" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="12" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '3'"/>
-        <panel class="track_info_stats" otherdeck="left" bpmx="0" div1="98" keyx="96" bigsize="26" bigy="12" bigheight="28" detaily="35" detailsize="12" detailweight="" divheight="46" time="false" timex="0" div2="0" x="+308" y="+62" condition="param_equal '[DECK]' '4'"/>
+        <panel class="stack_bpm_key" otherdeck="right" x="+315" y="+60" condition="param_equal '[DECK]' '1'"/>
+        <panel class="stack_bpm_key" otherdeck="left" x="+315" y="+60" condition="param_equal '[DECK]' '2'"/>
+        <panel class="stack_bpm_key" otherdeck="right" x="+315" y="+60" condition="param_equal '[DECK]' '3'"/>
+        <panel class="stack_bpm_key" otherdeck="left" x="+315" y="+60" condition="param_equal '[DECK]' '4'"/>
         <group name="deck_control" visibility="var_equal '@$dd_stack_controls' 1">
           <panel visibility="var_equal '@dd_deck_mode' 0">
             <panel class="jogwheel" x="+484+7" y="+3" name="jogwheel_spinner"/>
@@ -60,6 +60,76 @@
         <over color="transparent" border_size="6" border="#33FFFFFF" shape="square" radius="6"/>
       </dropzone>
     </deck>
+  </define>
+  <!-- Stack deck BPM / KEY readout in a rounded box; key colours compare against [OTHERDECK].
+       On the master deck the box outline takes the master colour. -->
+  <define class="STACK_BPM_KEY" placeholders="*otherdeck">
+    <visual x="+7" y="+0" width="158" height="60">
+      <off shape="square" color="transparent" border_size="1" border="#555555" radius="4"/>
+    </visual>
+    <line color="#2a2a2a" x="+89" y="+6" width="1" height="46"/>
+    <textzone action="pitch_reset 4bt">
+      <pos x="+0" y="+2"/>
+      <size width="100" height="11"/>
+      <text fontsize="10" color="#777777" align="center" localize="true" important="true" text="BPM"/>
+    </textzone>
+    <textzone>
+      <pos x="+79" y="+2"/>
+      <size width="88" height="11"/>
+      <text fontsize="10" color="#777777" align="center" localize="true" important="true" text="KEY"/>
+    </textzone>
+    <textzone action="pitch_reset 4bt">
+      <pos x="+0" y="+14"/>
+      <size width="100" height="28"/>
+      <text fontsize="26" weight="bold" align="center" scroll="no" important="true" color="`param_bigger 120 get_pitch_value ? color '#ff453a' : param_smaller 80 get_pitch_value ? color '#ff453a' : param_bigger 110 get_pitch_value ? color '#f5c518' : param_smaller 90 get_pitch_value ? color '#f5c518' : color '#eeeeee'`" action="var_equal '@$dd_jog_bpm_digits' 1 ? get_text '%Pbpmex' : get_text '%Pbpm'"/>
+    </textzone>
+    <!-- key: neutral with no reference key or when matched, else orange / red by compatibility -->
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? false : true">
+      <pos x="+79" y="+14"/>
+      <size width="88" height="28"/>
+      <text fontsize="26" weight="bold" align="center" scroll="no" important="true" color="#eeeeee" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? true : false : false">
+      <pos x="+79" y="+14"/>
+      <size width="88" height="28"/>
+      <text fontsize="26" weight="bold" align="center" scroll="no" important="true" color="#eeeeee" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? false : param_contains 'A' `get_harmonic` ? param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? true : false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? true : false : param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? true : false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? true : false : false">
+      <pos x="+79" y="+14"/>
+      <size width="88" height="28"/>
+      <text fontsize="26" weight="bold" align="center" scroll="no" important="true" color="#ff9f1a" action="get_key"/>
+    </textzone>
+    <textzone action="key_match_menu" rightclick="setting 'keyDisplay' 'Musical' ? setting 'keyDisplay' 'Harmonic' : setting 'keyDisplay' 'Musical'" visibility="param_bigger 0 `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer'` ? match_key ? false : param_contains 'A' `get_harmonic` ? param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? false : true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? false : true : param_contains 'A' `deck [OTHERDECK] get_harmonic` ? get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 1 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 11 ? false : true : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 2 ? false : get_harmonic &amp; param_cast 'integer' &amp; param_add 12 &amp; param_add `deck [OTHERDECK] get_harmonic &amp; param_cast 'integer' &amp; param_multiply -1` &amp; param_mod 12 &amp; param_equal 10 ? false : true : false">
+      <pos x="+79" y="+14"/>
+      <size width="88" height="28"/>
+      <text fontsize="26" weight="bold" align="center" scroll="no" important="true" color="#ff453a" action="get_key"/>
+    </textzone>
+    <!-- detail row -->
+    <textzone action="pitch_reset 4bt" visibility="param_bigger 120 get_pitch_value ? false : param_smaller 80 get_pitch_value ? false : true">
+      <pos x="+0" y="+37"/>
+      <size width="100" height="20"/>
+      <text fontsize="12" align="center" scroll="no" important="true" color="#dddddd" action="get_text '%Ppitch%'"/>
+    </textzone>
+    <textzone action="pitch_reset 4bt" visibility="param_bigger 120 get_pitch_value ? blink 500ms : param_smaller 80 get_pitch_value ? blink 500ms : false">
+      <pos x="+0" y="+37"/>
+      <size width="100" height="20"/>
+      <text fontsize="12" align="center" scroll="no" important="true" color="red" action="get_text '%Ppitch%'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? true : false">
+      <pos x="+79" y="+37"/>
+      <size width="88" height="20"/>
+      <text fontsize="12" align="center" scroll="no" important="true" color="#eeeeee" action="get_text 'MATCH'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? false : param_equal `get_key_modifier_text` 0 ? true : false">
+      <pos x="+79" y="+37"/>
+      <size width="88" height="20"/>
+      <text fontsize="12" align="center" scroll="no" important="true" color="#dddddd" action="get_text '+0 ST'"/>
+    </textzone>
+    <textzone action="key_match_button" visibility="key_match_button ? false : param_equal `get_key_modifier_text` 0 ? false : true">
+      <pos x="+79" y="+37"/>
+      <size width="88" height="20"/>
+      <text fontsize="12" align="center" scroll="no" important="true" color="orange" action="get_text '`get_key_modifier_text` ST'"/>
+    </textzone>
   </define>
   <!-- Eight pads in one row along the bottom of the stack deck header -->
   <define class="STACK_HEADER_PADS" placeholders="height=28">

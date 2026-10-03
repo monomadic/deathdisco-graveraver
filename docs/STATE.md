@@ -22,7 +22,6 @@ pass (see the end of this file).
 | `@$dd_performance_layout` | `0` vertical, `1` horizontal; fallback `0` | Performance topbar cycle; read by `layouts/performance/base.xml`. | Yes | No |
 | `@$dd_hide_pro_mixer` | `0` mixer, `1` extended; fallback `0` | Pro topbar toggle; selects the Pro center-mixer variant. | Yes | No |
 | `@$dd_stack_controls` | `0` expanded waveform, `1` stack controls; fallback `0` | Stack topbar PADS toggle; read by stack deck strips. | No | No |
-| `@$dd_browser_zoom_mode` | `0` explicit browser zoom only, `1` also follow browser-active state; fallback `0` | Read by all layout bases; no writer currently exists in this skin. | No | Retained external/legacy control |
 | `@$dd_bottombar_mode` | `0` browser tools, `1` custom buttons; fallback `0` | Written by topbar options and bottombar toggle; read by `bottombar.xml`. | No | No |
 | `@$dd_hide_transport` | `0` show, `1` hide; fallback `0` | “Hide Transport” option for vertical controls; name no longer matches the whole affected surface. | Yes | No |
 | `@$dd_bordermode` | `0` normal, `1` show keyboard/selected-deck borders; fallback `0` | Topbar “Keyboard Mode”; read by deck and stack selection borders. | No | No |
@@ -111,7 +110,7 @@ skins) and the writer-only `@$show_pads_rack` were removed instead of renamed.
 | @$performance_layout | `@$dd_performance_layout` |
 | @$hide_pro_mixer | `@$dd_hide_pro_mixer` |
 | @$deck_stack | `@$dd_stack_controls` |
-| @$browser_zoom_mode | `@$dd_browser_zoom_mode` |
+| @$browser_zoom_mode | removed 2026-10-03 (writerless legacy auto-switch branch deleted; layouts now read `browser_zoom` directly) |
 | @$bottombar_mode | `@$dd_bottombar_mode` |
 | @$hide_crossfader | `@$dd_hide_transport` |
 | @$hide_main_waveforms | `@$dd_hide_main_waveforms` |

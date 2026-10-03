@@ -43,10 +43,9 @@ and outstanding live checks are recorded in `docs/VALIDATION.md`.
    layouts, and rack shells. Those consumers still repeat dimensions. Preserve
    sibling order and relative-coordinate context, and compare expanded output
    for each small migration.
-2. Define behavior when waveform/rack combinations exhaust browser space.
-   Pro mixer two-deck with wave size 13 and all racks currently computes browser
-   height as 1075-381-312-568 = -186. This predates the refactor and is preserved;
-   a behavior fix needs an explicit layout decision and live verification.
+2. Rack toggles now refuse to open a rack that would leave the browser under
+   `BROWSER_MIN_HEIGHT` (generated guards, tested against the browser tables).
+   Wave-size buttons are still unguarded; decide whether they should clamp.
 3. Finish the live validation matrix, particularly four-deck, extreme wave
    sizes, multiple racks, browser zoom, and window stretching.
 4. Review the center-waveform deck-4 cue mask and mirrored-grid differences
@@ -57,5 +56,5 @@ and outstanding live checks are recorded in `docs/VALIDATION.md`.
 6. Add focused fixtures for class/structure auditing and minification as those
    tools change. Current tests do not prove every audit or runtime behavior.
 
-Lower-priority cleanup includes LED/sampler repetition and color ownership.
+Lower-priority cleanup includes sampler-row repetition and color ownership; the LED VU meters and rack toggles are generated now.
 Keep persisted variable identifiers stable and document state in `docs/STATE.md`.

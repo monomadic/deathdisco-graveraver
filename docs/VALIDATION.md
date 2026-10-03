@@ -65,3 +65,50 @@ and transport colors matched the assigned decks without stale upper bodies.
 Restored Pro mixer two-deck with decks 1/2, the Wave pane, and racks off.
 This verifies mode-transition rendering; dropping tracks onto the guarded load
 targets was not exercised, to preserve the loaded tracks.
+
+## 2026-10-03 lint fixes, generated VU meters and rack toggles
+
+- `just check` passes (13 tests) and `just lint-script` reports 0 errors.
+- The generated VU meter file was compared element-by-element against the old
+  hand-written `meters.xml`: identical after normalising `+6` / `+6*1`.
+- Installed and reloaded in Pro mixer two-deck (wave size 6, racks off):
+  topbar RACKS frame, label and three buttons render at the former positions
+  (screenshot `virtualdj-api-reference/tests/screenshots/virtualdj-20261003-093947.png`
+  and a zoom after the `*frame` fix). An unstarred `frame=true` placeholder made
+  the framed group disappear; starring it fixed that.
+- Not verified: clicking the toggles (showing/hiding a rack), the dimmed inert
+  state at large wave sizes, Performance and Stack rendering of the shared
+  component. Background clicks do not reach VirtualDJ's canvas, and
+  `vdj_execute` was disabled.
+
+### Follow-up (same day)
+
+- Bug: the first guard emitted `… ? var_smaller … : true ? set … : nothing`, so
+  only the last leaf guarded the action; Pro/Performance toggles did nothing
+  while Stack (last leaf) worked. VDJScript cannot test a computed ternary, so
+  the action/`nothing` pair now sits at every leaf (`rack_fit_script(yes=, no=)`).
+- Rack toggles use the Stack palette everywhere (black, lit `#222222`, white
+  text); Pro/Performance keep the RACKS frame.
+- Wave size +/- buttons in Pro: `condition="[SIZEBUTTONS]"` never matched, so
+  the 2/4 buttons took their slot; now `param_equal '[SIZEBUTTONS]' 'true'`.
+- Reloaded live in Performance vertical: new palette renders inside the frame.
+  Toggle clicks and the Pro +/- buttons still need a manual check.
+
+### Outer cue-label rows (four-deck fixed wave strip), 2026-10-03
+
+Goal: the 20px rows above/below the strip should show only cue labels, not a
+duplicate wave. Tried, all rejected:
+
+- Label-row scratchwave with `transparent` or `#00000000` colours: the wave is
+  still drawn in stem colours (per-element colours ignored for stem waves).
+- No separate row; the wave's scratchwave draws cues outside its box
+  (`cue y="-15"`): works at 1080p but the breakline band scales the cue text in
+  taller windows.
+- Row scratchwave with `<size height="0">`: draws nothing at all.
+- Row scratchwave with `<size height="1">` plus a 1px cover: VirtualDJ's UI
+  hung at 100% CPU on reload (HTTP still answered). Force-quit required.
+- Opaque black (`#000000`) colours: installed but never rendered because the
+  UI was already hung; untested.
+
+The source is back at the original transparent-colour row. Next idea to test
+after a relaunch: the opaque-black colours, then a `songpos`-style strip.

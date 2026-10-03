@@ -4,6 +4,9 @@ skin_name := "DeathDisco Grave Raver v1"
 src_dir := "src"
 assets_dir := "assets"
 build_dir := "build"
+# VDJScript linter from the virtualdj-api-reference checkout (override with VDJ_API_REFERENCE).
+vdj_ref := env_var_or_default("VDJ_API_REFERENCE", justfile_directory() / "../virtualdj-api-reference")
+vdj_ref_python := if path_exists(vdj_ref / ".venv/bin/python3") == "true" { vdj_ref / ".venv/bin/python3" } else { "python3" }
 
 # [read-only] List available recipes and their effects.
 default: help
@@ -16,8 +19,8 @@ help:
 generate:
     python3 scripts/gen-browser-positions.py
 
-# [read-only] Verify generated XML, lint the skin, and run all audits.
-check: lint audit test
+# [read-only] Verify generated XML, lint the skin and its VDJScript, and run all audits.
+check: lint lint-script audit test
 
 # [read-only] Run regression tests for build and audit tools.
 test:
@@ -49,6 +52,17 @@ lint: verify-generated
     xmllint --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "$tmp/skin.xml"; \
     python3 scripts/expand-skin-macros.py "$tmp/skin.xml"; \
     xmllint --noout "$tmp/skin.xml"
+
+# [read-only] Statically lint every VDJScript in the expanded skin (errors fail; warnings are listed, notes and numeric-opacity visibilities are hidden).
+lint-script:
+    set -e; linter="{{vdj_ref}}/tools/lint_script.py"; \
+    if [[ ! -f "$linter" ]]; then echo "SKIPPED lint-script: $linter not found (set VDJ_API_REFERENCE)"; exit 0; fi; \
+    tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT; \
+    xmllint --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "$tmp/skin.xml"; \
+    python3 scripts/expand-skin-macros.py "$tmp/skin.xml" >/dev/null; \
+    "{{vdj_ref_python}}" "$linter" --xml "$tmp/skin.xml" | sed -E 's#^(WARNING|ERROR|NOTE) +/.*/skin.xml:#\1 skin.xml:#' \
+      | grep -v '^NOTE ' | grep -v "visibility: '[0-9.]*' is not in the verb table" || true; \
+    "{{vdj_ref_python}}" "$linter" --xml "$tmp/skin.xml" >/dev/null
 
 # [writes source + build] Regenerate source and build the minified skin.
 build: generate lint audit test

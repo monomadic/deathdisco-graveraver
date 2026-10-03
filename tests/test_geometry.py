@@ -79,6 +79,73 @@ class GeometryTests(unittest.TestCase):
                     self.assertEqual(h0 - h, consumed)
                     self.assertEqual(y + h, y0 + h0)
 
+    def test_rack_fit_guard_matches_surface_geometry(self):
+        """The toggle guard says yes exactly when the generated browser keeps its minimum."""
+        geometry = generator.rack_fit_script.__globals__
+        minimum = geometry["BROWSER_MIN_HEIGHT"]
+        surface = next(s for s in ET.fromstring(generator.generate()) if s.get("class") == "BROWSER_PERFORMANCE_SURFACE")
+        positions = surface.findall("browser/pos")
+        for height, trim, available in ((1075, 568, geometry["PRO_MIXER_BROWSER"]),
+                                        (1080 - 60 - 2 - 2 - 2 - 1 - 50, 344, geometry["PRO_EXTENDED_BROWSER"])):
+            for flags in product((False, True), repeat=3):
+                active = {rack for rack, on in zip(("fx", "mixer", "video"), flags) if on}
+                for rack in active:
+                    limit = geometry["rack_fit_limit"](available, True, tuple(active))
+                    for wave in range(14):
+                        browser = arithmetic(selected(positions, active, wave).get("height"), height, trim)
+                        fits = limit is None or wave < limit
+                        with self.subTest(height=height, racks=active, wave=wave):
+                            self.assertEqual(fits, browser >= minimum, f"browser={browser}")
+        self.assertEqual(geometry["rack_fit_limit"](geometry["PERFORMANCE_4DECK_BROWSER"], False, ("fx", "mixer")), None)
+        self.assertEqual(geometry["rack_fit_limit"](geometry["PERFORMANCE_4DECK_BROWSER"], False, ("fx", "video")), 0)
+        self.assertEqual(arithmetic("1080-43-2-333-2-2-333-2-50", 0), geometry["PERFORMANCE_4DECK_BROWSER"])
+
+    def test_rack_toggle_scripts_reload_and_negate(self):
+        toggles = ET.fromstring(generator.generate_rack_toggles())
+        buttons = toggles.findall(".//button")
+        self.assertEqual(len(buttons), 6)
+        live = [b for b in buttons if b.get("action") != "nothing"]
+        self.assertEqual([b.get("query") for b in live],
+                         ["var '@$dd_show_mixer_rack'", "var '@$dd_show_video_rack'", "var '@$dd_show_fx_rack'"])
+        for button in live:
+            action = button.get("action")
+            self.assertNotIn("&&", action)
+            self.assertNotIn("toggle", action)
+            for branch in re.split(r" : | \? ", action):
+                if "set '" in branch:
+                    self.assertTrue(branch.strip().endswith("load_skin"), branch)
+        for rack in ("fx", "mixer", "video"):
+            yes = generator.rack_fit_script(rack, single=True, yes="GO", no="STOP")
+            self.assertNotIn("true", yes)
+            # every leaf is an action or `nothing`, never a bare query feeding a later `?`
+            for branch in re.split(r" \? | : ", yes):
+                self.assertTrue(branch.startswith(("var_", "GO", "STOP")), branch)
+            self.assertTrue(yes.endswith(" : GO"))
+        action = live[2].get("action")  # fx
+        self.assertIn("var_smaller '@$dd_wave_size' 10 ? set '@$dd_show_fx_rack' 1 & set '@$dd_show_mixer_rack' 0 & set '@$dd_show_video_rack' 0 & load_skin : nothing", action)
+
+    def test_vu_meter_ladders(self):
+        root = ET.fromstring(generator.generate_vu_meters())
+        specs = generator.VU_METERS
+        self.assertEqual([d.get("class") for d in root], list(specs))
+        for define in root:
+            spec = specs[define.get("class")]
+            visuals = define.findall("visual")
+            self.assertEqual(len(visuals), 2)
+            for visual in visuals:
+                leds = visual.findall("led")
+                self.assertEqual(len(leds), spec["leds"])
+                self.assertEqual(int(visual.get("height")), (spec["leds"] - 1) * 6 + 4)
+                colors = [led.find("on").get("color") for led in reversed(leds)]  # bottom first
+                if "1" in visual.get("visibility"):
+                    self.assertEqual(colors[:spec["red"]], ["red_vu"] * spec["red"])
+                    self.assertEqual(colors[spec["red"]:spec["red"] + spec["orange"]], ["orange_vu"] * spec["orange"])
+                    self.assertTrue(all(c == "green_vu" for c in colors[spec["red"] + spec["orange"]:]))
+                else:
+                    self.assertEqual(colors[:spec["needle"]], ["needle"] * spec["needle"])
+                    self.assertTrue(all(c == "deckcolor" for c in colors[spec["needle"]:]))
+            self.assertEqual(define.find("slider/pos").get("height"), visuals[0].get("height"))
+
     def test_check_is_read_only_and_catches_each_output(self):
         with tempfile.TemporaryDirectory() as directory:
             outputs = {Path(directory) / p.name: text for p, text in generator.generated_files().items()}

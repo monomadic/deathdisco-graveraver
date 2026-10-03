@@ -173,6 +173,13 @@
             <pos x="0" y="+[HEIGHT]-20" condition="param_equal '[LABELS]' 'below'"/>
             <pos x="0" y="+0"/>
             <size width="1920" height="20"/>
+            <!-- stem-coloured waves ignore the transparent colours above and draw a duplicate
+                 wave in this row; the overlay paints the wave body out again (cues/grid stay) -->
+            <overlay>
+              <pos x="0" y="+0"/>
+              <size width="1920" height="20"/>
+              <background color="wave_background" shape="square"/>
+            </overlay>
             <grid height="20" pos="0" maincolor="#444444" size="1" mainsize="1" phrasecolor="white" phrasesize="1" color="transparent" mirrored="false" shapepos="-14" shapemirrored="down"/>
             <cue y="+3">
               <mask x="123" y="100" width="6" height="14"/>

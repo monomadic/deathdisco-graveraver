@@ -2,9 +2,9 @@
 <defs>
   <define class="WAVEFORM_HORIZONTAL_CENTER" placeholders="*waveformwidth,*waveformheight">
     <visual class="gfx_shape" width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]" coloroff="wave_background"/>
-    <panel name="defaultwave2deck" class="center_rhythm_2deck" mirror="false" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0"/>
-    <panel name="mirroredwave2deck" class="center_rhythm_2deck" mirror="true" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0"/>
-    <panel name="beats_dropzones2deck" visibility="setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
+    <panel name="defaultwave2deck" class="center_rhythm_2deck" mirror="false" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 0 : false : false"/>
+    <panel name="mirroredwave2deck" class="center_rhythm_2deck" mirror="true" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 0 : false : false"/>
+    <panel name="beats_dropzones2deck" visibility="setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 0 : false">
       <dropzone deck="3" visibility="deck 3 leftdeck">
         <pos x="+0" y="+0"/>
         <size width="[WAVEFORMWIDTH]" height="[WAVEFORMHEIGHT]/2+2"/>
@@ -30,7 +30,7 @@
       <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+18" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
     </panel>
-    <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 0">
+    <panel name="horizontal_scratch_active2deck" visibility="not setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 0 : false">
       <group class="center_scratch_pair" wavedeck="3" wavey="+14+6" waveh="[WAVEFORMHEIGHT]/2-32-6" overlayheight="[WAVEFORMHEIGHT]/2-6" visoff="var_equal '@$dd_wave_hide_background' 0 ? deck 3 leftdeck" vison="var_equal '@$dd_wave_hide_background' 1 ? deck 3 leftdeck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" gridmainsize="4" gridheight="12" gridpos="-16"/>
       <dropzone deck="3" visibility="deck 3 leftdeck">
         <pos x="+0" y="+0"/>
@@ -118,10 +118,10 @@
       <panel class="beat_counter" deck="left" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+18" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
       <panel class="beat_counter" deck="right" x="+[WAVEFORMWIDTH]/2-2-120+40" y="+106+2+[WAVEFORMHEIGHT]/2-32-4" visibility="var_equal '@$dd_show_bar_counter' 1 ? setting 'waveformCenter' 'left'"/>
     </panel>
-    <panel name="defaultwave4deck" class="center_rhythm_4deck" mirror="false" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
-    <panel name="mirroredwave4deck" class="center_rhythm_4deck" mirror="true" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
-    <panel name="beats_dropzones4deck" class="center_beats_dropzones_4deck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1"/>
-    <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 &amp;&amp; var_equal '@$dd_four_waveforms' 1">
+    <panel name="defaultwave4deck" class="center_rhythm_4deck" mirror="false" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 0 ? setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 1 : false : false"/>
+    <panel name="mirroredwave4deck" class="center_rhythm_4deck" mirror="true" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="var_equal '@$dd_mirror_waveforms' 1 ? setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 1 : false : false"/>
+    <panel name="beats_dropzones4deck" class="center_beats_dropzones_4deck" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]" visibility="setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 1 : false"/>
+    <panel name="horizontal_scratch_active4deck" visibility="not setting skinWaveformType 0 ? var_equal '@$dd_four_waveforms' 1 : false">
       <group name="1234" visibility="var_equal '@$dd_wave_order' 1" class="center_wave_order" d1="1" d2="2" d3="3" d4="4" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
       <group name="3124" visibility="var_equal '@$dd_wave_order' 0" class="center_wave_order" d1="3" d2="1" d3="2" d4="4" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
       <group name="1342" visibility="var_equal '@$dd_wave_order' 2" class="center_wave_order" d1="1" d2="3" d3="4" d4="2" waveformwidth="[WAVEFORMWIDTH]" waveformheight="[WAVEFORMHEIGHT]"/>
@@ -133,8 +133,8 @@
         <off shape="square" color="button_background"/>
         <icon sysicon="settings" height="24" width="24" color="textoff" colorover="needle" colordown="needle"/>
         <submenu text="Waveform Type" localize="true">
-          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
-          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
+          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
+          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
           <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
           <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
         </submenu>
@@ -242,8 +242,8 @@
         <off shape="square" color="button_background"/>
         <icon sysicon="settings" height="24" width="24" color="textoff" colorover="needle" colordown="needle"/>
         <submenu text="Waveform Type" localize="true">
-          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
-          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp;&amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
+          <item text="Beats" localize="true" action="setting skinWaveformType 0 &amp; set '@$dd_mirror_waveforms' 0" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 0"/>
+          <item text="Beats Mirrored" localize="true" action="setting skinWaveformType 0 &amp; set '@$dd_mirror_waveforms' 1" check="setting skinWaveformType 0 ? var_equal '@$dd_mirror_waveforms' 1"/>
           <item text="Scratch" localize="true" action="setting 'skinWaveformType' 'colors'" check="setting 'skinWaveformType' 'colors'"/>
           <item text="Shapes" localize="true" action="setting 'skinWaveformType' 'shapes'" check="setting 'skinWaveformType' 'shapes'"/>
         </submenu>

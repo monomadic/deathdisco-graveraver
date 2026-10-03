@@ -11,30 +11,8 @@
         <selected color="#333333"/>
         <text colorover="white" size="12" coloron="white" text="PADS"/>
       </button>
-      <button tooltip="Show/Hide Mixer Rack" class="button_main" x="+60*1" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_mixer_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_mixer_rack' &amp; load_skin" width="55" height="27" bordersize="0">
-        <off color="black"/>
-        <on color="#222222"/>
-        <over color="#000000"/>
-        <down color="#222222"/>
-        <selected color="#333333"/>
-        <text colorover="white" size="12" coloron="white" text="MIXER"/>
-      </button>
-      <button tooltip="Show/Hide Video Rack" class="button_main" x="+60*2" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_video_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_video_rack' &amp; load_skin" width="55" height="27" bordersize="0">
-        <off color="black"/>
-        <on color="#222222"/>
-        <over color="#000000"/>
-        <down color="#222222"/>
-        <selected color="#333333"/>
-        <text colorover="white" size="12" coloron="white" text="VIDEO"/>
-      </button>
-      <button tooltip="Show/Hide Effects Rack" class="button_main" x="+60*3" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_fx_rack' &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_fx_rack' &amp; load_skin" width="65" height="27" bordersize="0">
-        <off color="black"/>
-        <on color="#222222"/>
-        <over color="#000000"/>
-        <down color="#222222"/>
-        <selected color="#333333"/>
-        <text colorover="white" size="12" coloron="white" text="EFFECTS"/>
-      </button>
     </group>
+    <!-- Shared rack toggles in the Stack palette (see rack-toggles.generated.xml) -->
+    <panel class="topbar_rack_toggles" x="450+60" y="+8" inset_x="+0" inset_y="+0" frame="false"/>
   </define>
 </defs>

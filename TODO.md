@@ -68,8 +68,8 @@ Cleanup backlog after the prototype/index removal and structural audit work.
   - Both now load `TOPBAR_RACK_TOGGLES` from `components/topbar/rack-toggles.xml`.
     Reconstructed XML matches the former inline groups. Installed and inspected
     in VirtualDJ, including opening/closing the Performance Mixer rack.
-  - Stack keeps its different button styling; its repeated actions remain a
-    follow-up if a shared action abstraction proves useful.
+  - 2026-10-03: Stack now uses the same generated `TOPBAR_RACK_TOGGLES` with
+    its palette/spacing passed as placeholders; no duplicated actions remain.
 
 - [ ] Normalize repeated geometry constants.
   - Completed first slice: `scripts/skin_geometry.py` owns waveform heights,
@@ -78,10 +78,10 @@ Cleanup backlog after the prototype/index removal and structural audit work.
     by `just check`; tests cover every wave size and rack combination.
   - Remaining: Pro deck offsets, browser overlays/mini layouts, and rack shells
     still repeat geometry. Migrate these separately with expanded XML comparisons.
-  - Existing overflow needs an explicit behavior decision: Pro mixer 2-deck at
-    wave size 13 with all racks gives browser height 1075-381-312-568 = -186.
-    This refactor preserves that expression; decide how to constrain or hide
-    overflowing browser/rack combinations before changing it.
+  - Overflow is now prevented at the source: rack toggles are generated with a
+    browser-fit guard (`skin_geometry.BROWSER_MIN_HEIGHT`, 120px) and render
+    dimmed/inert when showing the rack would overflow. The wave-size buttons are
+    not guarded, so growing the wave with racks open can still overflow.
   - Repeated values include canvas size, topbar/bottombar heights, deck heights, browser offsets, and rack/deck widths.
   - Prefer local placeholders or clearly named helper defines over another opaque root include layer.
 
@@ -90,8 +90,24 @@ Cleanup backlog after the prototype/index removal and structural audit work.
   - Create an explicit, visible layout-mode switch pattern so new layouts can be added quickly without reintroducing a confusing `src/index.xml`.
 
 - [ ] Consider generators for repeated visual ladders and matrices.
-  - Candidate areas: VU meter LEDs and sampler rows. The `AREA_WAVES` wavesize
+  - VU meter LEDs are generated (`meters.generated.xml`, 2026-10-03). Sampler
+    rows remain a candidate. The `AREA_WAVES` wavesize
     ladder is now generated in `waveform-sizes.generated.xml`.
   - Prefer VDJ `define` + `placeholders` first (see the waveform split);
     reach for a generator only when rungs need computed arithmetic, and have
     `just check` verify the generated output like browser positions.
+
+## 2026-10-03 lint-driven fixes
+
+- [x] `query="on/off"` (not a verb) replaced on 16 buttons with `off` or the
+  real toggle state (`var '@$dd_…'`).
+- [x] `&&` removed from actions and visibilities (it never guards; both sides
+  run). Visibilities now use `a ? b : false`.
+- [x] Writerless `@$dd_browser_zoom_mode` legacy branch deleted; layouts read
+  `browser_zoom` directly.
+- [x] `just check` runs the reference VDJScript linter (`just lint-script`).
+- [ ] Remaining lint warnings to decide on: `rightclick="temporary"` in
+  `components/pitch.xml` (unknown verb) and the literal colour branches in
+  `effects-racks.xml:107` (`color` ternary with quoted hex literals).
+- [ ] Live-verify clicking the rack toggles in Pro, Performance and Stack and the
+  dimmed state at wave size 13 (rendering/positions verified; clicks not yet).

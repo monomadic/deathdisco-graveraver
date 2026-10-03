@@ -14,11 +14,11 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 ## Commands
 
 - Bare `just` (or `just help`): list recipes and their effects without writing.
-- `just check`: the main read-only verification command — verifies generated browser positions, expands/lints the XML, and runs all audits and tooling regression tests.
+- `just check`: the main read-only verification command — verifies generated XML, expands/lints the XML, statically lints every VDJScript (`just lint-script`, via the sibling `virtualdj-api-reference` checkout; override with `VDJ_API_REFERENCE`), and runs all audits and tooling regression tests.
 - `just test`: run tooling regression tests using temporary fixtures.
 - `just lint`: read-only generated-file verification, then include and macro expansion into a scratch copy that is linted and checked for macro residue.
 - `just audit`: class and structural audits only.
-- `just generate`: writes the generated browser position tables and waveform size ladder from `scripts/gen-browser-positions.py` and shared dimensions in `scripts/skin_geometry.py`.
+- `just generate`: writes every `*.generated.xml` file (browser position tables, waveform size ladder, LED VU meters, rack toggles with their browser-fit guards) from `scripts/gen-browser-positions.py` and shared dimensions in `scripts/skin_geometry.py`.
 - `just build`: regenerates browser positions, runs linting, all audits, and tooling tests, then writes the built/minified skin under `build/`.
 - `just install`: builds and installs the skin into
   `~/Library/Application Support/VirtualDJ/Skins/DeathDisco Grave Raver v1/`.
@@ -36,6 +36,8 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - `src/components/pad-page.xml`: the pad-panel page component.
 - `src/components/waveforms/`: waveform component surfaces (main, center,
   horizontal, vertical, stack, scratch, plus shared helpers and support).
+- `src/components/meters.generated.xml`: LED VU meter ladders (counts in `skin_geometry.VU_METERS`).
+- `src/components/topbar/rack-toggles.generated.xml`: the one rack toggle design shared by Pro, Performance and Stack (Stack passes its palette as placeholders). A rack can only be shown while the browser keeps `BROWSER_MIN_HEIGHT`; the guard scripts are generated from the same geometry as the browser tables.
 - `src/components/topbar/`, `src/components/bottombar/`: the per-bar component
   classes (one responsibility region per file, plus an `index.xml` hub). They are
   loaded onto the bars by the bar layouts via VirtualDJ classes.
@@ -56,6 +58,8 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - Keep layout-only helpers near the layout that owns them.
 - Add reusable components to the relevant index, usually `src/components/index.xml` or a nested index such as `src/components/buttons/index.xml`.
 - If an XInclude target becomes empty, remove the include and the file.
+- Placeholders read inside `condition=""`/`visibility=""` must be starred (`*frame=true`); an unstarred one is not substituted there (observed live 2026-10-03).
+- `&&` never guards an action in VDJScript; both sides always run. Use `cond ? action : nothing`. `query="on/off"` is not a verb; use `off` or a real query.
 - Mirrored left/right defines take a `*deckside` placeholder (`deckside="leftdeck"` / `"rightdeck"`,
   as in Denon's official Prime4 skin) and branch with `condition="param_equal '[DECKSIDE]' 'leftdeck'"`.
   Never pick the side at runtime with `get_deck N` or `leftdeck`/`rightdeck` (those mean the *active*

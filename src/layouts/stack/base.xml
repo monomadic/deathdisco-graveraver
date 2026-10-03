@@ -5,10 +5,10 @@
   -->
   <group name="STACK" condition="var_equal '@$dd_skin_mode' 2">
     <!-- Main decks -->
-    <panel class="stack_decks" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? false : browser_isactive ? false : true : browser_zoom ? false : true"/>
-    <!-- browser zoom & auto-switch -->
-    <panel class="browser_zoom_decks_above" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 0" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="browser_zoom_decks_below" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
-    <panel class="browser_zoom_decks_no_waves" condition="var_equal '@$dd_hide_zoom_waveforms' 1" visibility="var '@$dd_browser_zoom_mode' 1 ? browser_zoom ? true : browser_isactive ? true : false : browser_zoom ? true : false"/>
+    <panel class="stack_decks" visibility="not browser_zoom"/>
+    <!-- browser zoom -->
+    <panel class="browser_zoom_decks_above" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 0" visibility="browser_zoom"/>
+    <panel class="browser_zoom_decks_below" condition="var_equal '@$dd_hide_zoom_waveforms' 0 ? var_equal '@$dd_waveform_position' 1" visibility="browser_zoom"/>
+    <panel class="browser_zoom_decks_no_waves" condition="var_equal '@$dd_hide_zoom_waveforms' 1" visibility="browser_zoom"/>
   </group>
 </module>

@@ -90,8 +90,8 @@
         <!-- KEY BUTTON -->
         <button class="button_main" action="select &amp; match_key" bordersize="1" query="loaded ? match_key ? true : blink 1bt" visibility="not masterdeck">
           <pos x="+0" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
-          <pos x="+82*3" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
-          <size width="80" height="25"/>
+          <pos x="+108*2" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
+          <size width="106" height="25"/>
           <off color="#330000" border="#FF0000" radius="3"/>
           <down color="#222222" border="deckcolor" radius="3"/>
           <selected color="transparent" border="deckcolor" radius="3"/>
@@ -100,24 +100,24 @@
         <!-- KEY BUTTON: masterdeck -->
         <button class="button_main" action="select &amp; match_key" bordersize="1" visibility="masterdeck">
           <pos x="+0" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
-          <pos x="+82*3" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
-          <size width="80" height="25"/>
+          <pos x="+108*2" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
+          <size width="106" height="25"/>
           <off color="#000000" border="color_masterdeck" radius="3"/>
           <down color="#222222" border="color_masterdeck" radius="3"/>
           <selected color="transparent" border="color_masterdeck" radius="3"/>
           <text fontsize="12" color="color_masterdeck" colorselected="color_masterdeck" colordown="color_masterdeck" align="center" text="KEY"/>
         </button>
         <!-- SYNC: beat + phrase sync to the master (spans the middle two slots) -->
-        <button class="button_main" x="+82" action="select &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 &amp; sync : phrase_sync 32 &amp; sync" bordersize="1" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck">
-          <size width="162" height="25"/>
+        <button class="button_main" x="+108" action="select &amp; var_equal '$phrase_len' 16 ? phrase_sync 16 &amp; sync : phrase_sync 32 &amp; sync" bordersize="1" query="is_sync '`$phrase_len`' ? on : blink 1bt" visibility="not masterdeck">
+          <size width="106" height="25"/>
           <off color="#330000" border="#FF0000" radius="3"/>
           <down color="#222222" border="deckcolor" radius="3"/>
           <selected color="transparent" border="deckcolor" radius="3"/>
           <text fontsize="12" color="#FF0000" colorselected="deckcolor" colordown="deckcolor" align="center" text="SYNC"/>
         </button>
         <!-- SYNC (master): sync every other deck to this one -->
-        <button class="button_main" x="+82" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="loaded" visibility="masterdeck">
-          <size width="162" height="25"/>
+        <button class="button_main" x="+108" action="select &amp; action_deck 1 ? deck 2 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 2 ? deck 1 sync &amp; deck 3 sync &amp; deck 4 sync : action_deck 3 ? deck 1 sync &amp; deck 2 sync &amp; deck 4 sync : deck 1 sync &amp; deck 2 sync &amp; deck 3 sync" bordersize="1" query="loaded" visibility="masterdeck">
+          <size width="106" height="25"/>
           <off color="#330000" border="#FF0000" radius="3"/>
           <down color="#222222" border="color_masterdeck" radius="3"/>
           <selected color="transparent" border="color_masterdeck" radius="3"/>
@@ -125,9 +125,9 @@
         </button>
         <!-- MASTER/SLAVE BUTTON -->
         <button class="button_main" action="select &amp; masterdeck" textcolor="deckcolor" bordersize="2" query="masterdeck" visibility="loaded">
-          <pos x="+82*3" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
+          <pos x="+108*2" condition="param_equal '[DECKSIDE]' 'leftdeck'"/>
           <pos x="+0" condition="param_equal '[DECKSIDE]' 'rightdeck'"/>
-          <size width="80" height="25"/>
+          <size width="106" height="25"/>
           <off color="#000000" border="deckcolor" border_size="1" shape="square" radius="3"/>
           <down color="#000000" border="color_masterdeck" border_size="1" shape="square" radius="3"/>
           <selected color="color_masterdeck" border="color_masterdeck" border_size="1" shape="square" radius="3"/>

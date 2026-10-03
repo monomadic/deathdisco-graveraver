@@ -39,8 +39,7 @@ The code has four useful layers:
    buttons, the Pro center panel, racks, and waveform containers.
 3. `src/layouts/` composes those classes into Pro, Performance, Stack, and
    browser/mini surfaces.
-4. `scripts/` validates, generates, builds, minifies, and repairs persisted
-   VirtualDJ panel state.
+4. `scripts/` validates, generates, builds, and minifies the skin.
 
 That conceptual model is sound, but the directory tree and include hubs do not
 express it consistently. `components/index.xml` directly lists individual
@@ -174,7 +173,7 @@ surprising defaults for a new contributor.
 
 The command graph now makes `just`, `help`, `check`, `lint`, and `audit`
 read-only. Source generation, build output, live installation, continuous
-installation, cleanup, and applied settings repair are labeled at their recipe
+installation and cleanup are labeled at their recipe
 definitions and in the contributor guide.
 
 ### Recommended direction
@@ -269,7 +268,6 @@ Add short descriptions for:
 - source-generating commands
 - build-directory writes
 - VirtualDJ skin installation
-- VirtualDJ settings repair
 
 Status: completed 2026-07-18. Bare `just` lists documented recipes; `lint`
 verifies generated output without rewriting it; generation and external writes
@@ -481,7 +479,6 @@ Add small fixture-based tests for:
 - browser-position generation order and boundary values
 - structure-audit include reachability and duplicate handling
 - class-casing checks
-- pad-panel repair token selection and settings backup behavior
 - minifier comment/whitespace handling
 
 The current scripts are important enough that changes to the safety net itself

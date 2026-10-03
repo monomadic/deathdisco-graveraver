@@ -38,14 +38,6 @@ audit-structure:
 audit-state:
     python3 scripts/audit-state-vars.py
 
-# [read-only] Preview VirtualDJ pad panel state repairs.
-repair-pad-state:
-    python3 scripts/repair-vdj-pad-panels.py
-
-# [writes VirtualDJ settings] Back up and repair persisted pad panel state.
-repair-pad-state-apply:
-    python3 scripts/repair-vdj-pad-panels.py --apply
-
 # [read-only] Verify generated XML, then expand includes and macros into a scratch copy and lint the result.
 lint: verify-generated
     set -e; tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT; \

@@ -8,7 +8,7 @@ Cleanup backlog after the prototype/index removal and structural audit work.
 - [x] Remove unused class islands, orphan XML files, and empty include targets.
 - [x] Add structural auditing to `just check` via `scripts/audit-structure.py`.
 - [x] Keep one contributor guide: `CLAUDE.md`, with `AGENTS.md` symlinked to it.
-- [x] Make bare `just`, linting, generation, builds, installs, and settings repair explicit about their side effects.
+- [x] Make bare `just`, linting, generation, builds, and installs explicit about their side effects.
 - [x] Remove inactive debug, warning, sandbox, window-control, and commented transport blocks; replace placeholder knob actions and stale mode checks.
 - [x] Remove the unused `macros.dtd` layer and keep the single startup action visible in `src/skin.xml`.
 - [x] Register every concrete skin variable and audit registry coverage plus supported `@$dd_skin_mode` values.

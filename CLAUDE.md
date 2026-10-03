@@ -22,7 +22,6 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 - `just install`: builds and installs the skin into
   `~/Library/Application Support/VirtualDJ/Skins/DeathDisco Grave Raver v1/`.
 - `just watch`: continuously rebuilds and installs after changes under `src/` or `assets/`.
-- `just repair-pad-state`: dry-run the VirtualDJ pad panel state repair; `just repair-pad-state-apply` backs up and writes VirtualDJ's `settings.xml`.
 - `just clean`: deletes local `build/` output.
 
 ## Source Map

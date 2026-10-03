@@ -12,14 +12,18 @@ default: help
 help:
     @just --list
 
-# [writes source] Regenerate checked-in browser position XML.
+# [writes source] Regenerate browser positions and waveform size XML.
 generate:
     python3 scripts/gen-browser-positions.py
 
 # [read-only] Verify generated XML, lint the skin, and run all audits.
-check: lint audit
+check: lint audit test
 
-# [read-only] Fail when generated browser position XML is stale.
+# [read-only] Run regression tests for build and audit tools.
+test:
+    python3 -B -m unittest discover -s tests
+
+# [read-only] Fail when any generated geometry XML is stale.
 verify-generated:
     python3 scripts/gen-browser-positions.py --check
 
@@ -47,7 +51,7 @@ lint: verify-generated
     xmllint --noout "$tmp/skin.xml"
 
 # [writes source + build] Regenerate source and build the minified skin.
-build: generate lint
+build: generate lint audit test
     mkdir -p "{{build_dir}}"
     if [[ -d "{{assets_dir}}" ]]; then rsync -a --delete "{{assets_dir}}/" "{{build_dir}}/"; fi
     xmllint --format --xinclude --loaddtd --noent "{{src_dir}}/skin.xml" --output "{{build_dir}}/skin.xml"

@@ -25,33 +25,7 @@
       </group>
     </group>
     <!-- RACKS: show/hide the rack band (same control as the Performance topbar) -->
-    <group x="505" y="2">
-      <group>
-        <group x="+5" y="+9">
-          <button class="button_main" x="+0" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_mixer_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_mixer_rack' &amp; load_skin" width="60" height="27" bordersize="0">
-            <off color="transparent"/>
-            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="MIXER"/>
-          </button>
-          <button class="button_main" x="+53" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_video_rack' &amp; set '@$dd_show_fx_rack' 0 &amp; set '@$dd_show_mixer_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_video_rack' &amp; load_skin" width="60" height="27" bordersize="0">
-            <off color="transparent"/>
-            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="VIDEO"/>
-          </button>
-          <button class="button_main" x="+55+60" action="var_equal '@$dd_rack_mode' 1 ? toggle '@$dd_show_fx_rack' &amp; set '@$dd_show_mixer_rack' 0 &amp; set '@$dd_show_video_rack' 0 &amp;&amp; load_skin : toggle '@$dd_show_fx_rack' &amp; load_skin" width="60" height="27" bordersize="0">
-            <off color="transparent"/>
-            <text color="dark_6" colorover="dark_8" size="12" coloron="white" text="EFFECTS"/>
-          </button>
-        </group>
-        <!-- border -->
-        <visual x="+0" y="+8" width="190" height="28">
-          <off shape="square" color="transparent" border_size="1" border="#333333" radius="6"/>
-        </visual>
-        <!-- label -->
-        <textzone x="+0">
-          <size width="180" height="16"/>
-          <text fontsize="9" weight="normal" color="#999999" align="center" text="RACKS" important="true"/>
-        </textzone>
-      </group>
-    </group>
+    <panel class="topbar_rack_toggles" x="505" y="2"/>
     <!-- MIXER OPTIONS: configures the rack panels (both Pro variants). Show/hide of the
          rack band itself is handled by the RACKS button group. -->
     <menu tooltip="MIXER OPTIONS" visibility="var_equal '@$dd_skin_mode' 0">

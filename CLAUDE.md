@@ -14,11 +14,12 @@ Quick orientation for agents working in this VirtualDJ skin repo.
 ## Commands
 
 - Bare `just` (or `just help`): list recipes and their effects without writing.
-- `just check`: the main read-only verification command — verifies generated browser positions, expands/lints the XML, and runs the class-casing and structural audits.
+- `just check`: the main read-only verification command — verifies generated browser positions, expands/lints the XML, and runs all audits and tooling regression tests.
+- `just test`: run tooling regression tests using temporary fixtures.
 - `just lint`: read-only generated-file verification, then include and macro expansion into a scratch copy that is linted and checked for macro residue.
 - `just audit`: class and structural audits only.
-- `just generate`: writes `src/layouts/browser/browser-positions.generated.xml`.
-- `just build`: regenerates browser positions and writes the built/minified skin under `build/`.
+- `just generate`: writes the generated browser position tables and waveform size ladder from `scripts/gen-browser-positions.py` and shared dimensions in `scripts/skin_geometry.py`.
+- `just build`: regenerates browser positions, runs linting, all audits, and tooling tests, then writes the built/minified skin under `build/`.
 - `just install`: builds and installs the skin into
   `~/Library/Application Support/VirtualDJ/Skins/DeathDisco Grave Raver v1/`.
 - `just watch`: continuously rebuilds and installs after changes under `src/` or `assets/`.
@@ -45,7 +46,7 @@ Quick orientation for agents working in this VirtualDJ skin repo.
   bar and loads the `src/components/topbar` / `src/components/bottombar` classes;
   they are layered onto every screen mode.
 - `src/layouts/pro/`, `src/layouts/performance/`, `src/layouts/stack/`: mode-specific layout shells.
-- `src/layouts/browser/`: browser panel layouts; `browser-positions.generated.xml` is generated — edit `scripts/gen-browser-positions.py` instead of patching it by hand.
+- `src/layouts/browser/`: browser panel layouts; `browser-positions.generated.xml` and `browser-stack-positions.generated.xml` are generated. The same generator produces `src/components/waveforms/waveform-sizes.generated.xml`. Edit `scripts/gen-browser-positions.py` (table templates) or `scripts/skin_geometry.py` (shared wave/rack dimensions), then run `just generate`.
 - `assets/`: installable skin assets copied during build/install.
 
 ## XML Conventions
@@ -101,7 +102,8 @@ region renders exactly as if its elements sat inline.
 
 - `scripts/audit-class-casing.py` enforces class-definition/reference casing and catches missing class definitions.
 - `scripts/audit-structure.py` catches unused definitions, unreachable class islands, unlinked XML files, missing or empty XInclude targets, unexpected duplicate definitions, and new always-hidden blocks.
-- `scripts/audit-state-vars.py` requires every concrete skin variable to be documented in `docs/STATE.md`, restricts `@$dd_skin_mode` to Pro, Performance, and Stack, and fails when a writer of a `condition`-read variable does not chain `load_skin`.
+- `scripts/audit-state-vars.py` requires every concrete skin variable to be documented in `docs/STATE.md`, restricts `@$dd_skin_mode` to Pro, Performance, and Stack, and requires each writer of a `condition`-read variable to chain a later `load_skin` in the same straight-line branch. This is a narrow convention check, not a full VDJScript parser; keep structural writes and their reloads together rather than relying on reloads across branch/group boundaries.
+- Build-time macro bodies must declare their placeholder tokens. Pass enclosing runtime placeholders explicitly as macro arguments; these caller-owned tokens are preserved during expansion.
 - Known duplicate class definitions are deliberate color-scheme variants. Add new duplicates only with a clear reason and update the structural audit allowlist.
 
 ## Editing Notes

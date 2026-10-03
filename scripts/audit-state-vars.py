@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from xml.parsers import expat
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -18,8 +19,62 @@ SKIN_MODE_RE = re.compile(
     r"(?:set|var_(?:equal|not_equal))\s+'@\$dd_skin_mode'\s+(-?\d+)"
 )
 ALLOWED_SKIN_MODES = {0, 1, 2}
-ATTR_RE = re.compile(r'\b([a-z_0-9]+)="([^"]*)"')
-WRITER_RE = re.compile(r"\b(?:set|toggle|cycle)\s+'(@\$?[A-Za-z0-9_]+)'")
+TOKEN_RE = re.compile(r''' '(?:\\.|[^'\\])*' | "(?:\\.|[^"\\])*" | `(?:\\.|[^`\\])*` | && | [&?:()] | [^\s&?:()]+ ''', re.VERBOSE)
+
+
+def source_attributes():
+    """Read decoded XML attributes, including multiline and single-quoted ones."""
+    for path in sorted(SRC.rglob("*.xml")):
+        parser = expat.ParserCreate()
+        attributes = []
+
+        def start_element(tag, attrs):
+            attributes.extend((parser.CurrentLineNumber, name, value)
+                              for name, value in attrs.items())
+
+        parser.StartElementHandler = start_element
+        with path.open("rb") as source:
+            parser.ParseFile(source)
+        for line, name, value in attributes:
+            yield path, line, name, value
+
+
+def unreloaded_writes(action: str, structural: set[str]) -> set[str]:
+    """Enforce a local convention, not a complete VDJScript grammar.
+
+    Each structural write must be followed by a load_skin command in the same
+    straight-line branch. Both chaining operators used by this skin are accepted.
+    Branch/group boundaries cannot borrow a reload from another branch; quoted
+    strings are opaque. More complex but valid scripts should be rewritten with
+    explicit reloads alongside their writes so this rule remains reviewable.
+    """
+    pending: set[str] = set()
+    missing: set[str] = set()
+    command: list[str] = []
+
+    def finish_command():
+        if command == ["load_skin"]:
+            pending.clear()
+        else:
+            # Also catch deck-prefixed writes. Strings containing script text
+            # remain one quoted token and cannot masquerade as commands.
+            for verb, argument in zip(command, command[1:]):
+                if verb in {"set", "toggle", "cycle"}:
+                    variable = argument.strip("'\"")
+                    if variable in structural:
+                        pending.add(variable)
+        command.clear()
+
+    for token in TOKEN_RE.findall(action):
+        if token in {"&", "&&", "?", ":", "(", ")"}:
+            finish_command()
+            if token not in {"&", "&&"}:
+                missing.update(pending)
+                pending.clear()
+        else:
+            command.append(token)
+    finish_command()
+    return missing | pending
 
 
 def source_variables() -> set[str]:
@@ -49,29 +104,23 @@ def used_skin_modes() -> set[int]:
 def condition_variables() -> set[str]:
     """Variables read by any condition="" attribute (evaluated only at load)."""
     variables: set[str] = set()
-    for path in sorted(SRC.rglob("*.xml")):
-        text = COMMENT_RE.sub("", path.read_text())
-        for name, value in ATTR_RE.findall(text):
-            if name == "condition":
-                variables.update(VARIABLE_RE.findall(value))
+    for _, _, name, value in source_attributes():
+        if name == "condition":
+            variables.update(VARIABLE_RE.findall(value))
     return variables
 
 
 def writers_without_reload(structural: set[str]) -> list[str]:
-    """Writers of a condition-read variable whose action chain never reloads."""
+    """Find structural writes without a later reload in their own branch."""
     findings: list[str] = []
-    for path in sorted(SRC.rglob("*.xml")):
-        text = COMMENT_RE.sub("", path.read_text())
-        for line_no, line in enumerate(text.splitlines(), 1):
-            for name, value in ATTR_RE.findall(line):
-                if name == "condition" or "load_skin" in value:
-                    continue
-                written = {v for v in WRITER_RE.findall(value) if v in structural}
-                for variable in sorted(written):
-                    findings.append(
-                        f"  {path.relative_to(ROOT)}:{line_no} writes {variable} "
-                        f"in {name}=\"\" without load_skin"
-                    )
+    for path, line_no, name, value in source_attributes():
+        if name == "condition":
+            continue
+        for variable in sorted(unreloaded_writes(value, structural)):
+            findings.append(
+                f"  {path.relative_to(ROOT)}:{line_no} writes {variable} "
+                f"in {name}=\"\" without a later load_skin in the same branch"
+            )
     return findings
 
 

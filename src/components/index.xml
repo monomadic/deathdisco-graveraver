@@ -29,6 +29,7 @@
   <xi:include href="waveforms/center-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="waveforms/vertical-waveform.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="waveforms/stack-waveform.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="waveforms/waveform-sizes.generated.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="waveforms/waveform-support.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="waveforms/scratch-waveforms.xml" xpointer="xpointer(/defs/*)"/>
   <!-- Center panel (pro mixer-mode middle column) -->

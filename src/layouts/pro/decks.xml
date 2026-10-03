@@ -65,11 +65,20 @@
   </define>
   <!-- Pure deck structure: positioned by the shared DECKS_* shell (pro/waves.xml). -->
   <define class="PRO_2DECKS">
-    <!-- DECKS -->
-    <panel class="deck_container_pro" x="0" panelname="deck1" deck="1" deckside="leftdeck" visibility="not deck 3 leftdeck"/>
-    <panel class="deck_container_pro" x="0" panelname="deck3" deck="3" deckside="leftdeck" visibility="deck 3 leftdeck"/>
-    <panel class="deck_container_pro" x="+1920-800" panelname="deck2" deck="2" deckside="rightdeck" visibility="not deck 4 rightdeck"/>
-    <panel class="deck_container_pro" x="+1920-800" panelname="deck4" deck="4" deckside="rightdeck" visibility="deck 4 rightdeck"/>
+    <!-- Keep visibility on an outer group: on the class reference alone, nested
+         deck content can remain visible over the active deck (observed live). -->
+    <group visibility="not deck 3 leftdeck">
+      <panel class="deck_container_pro" x="0" panelname="deck1" deck="1" deckside="leftdeck"/>
+    </group>
+    <group visibility="deck 3 leftdeck">
+      <panel class="deck_container_pro" x="0" panelname="deck3" deck="3" deckside="leftdeck"/>
+    </group>
+    <group visibility="not deck 4 rightdeck">
+      <panel class="deck_container_pro" x="+1920-800" panelname="deck2" deck="2" deckside="rightdeck"/>
+    </group>
+    <group visibility="deck 4 rightdeck">
+      <panel class="deck_container_pro" x="+1920-800" panelname="deck4" deck="4" deckside="rightdeck"/>
+    </group>
     <!-- PRO: 2 DECK: MIXER PANEL / MIDDLE PANEL -->
     <group x="+800">
       <!-- header -->
@@ -82,10 +91,18 @@
       <!-- panel -->
       <panel name="content" class="mixer" x="+2" y="+24"/>
     </group>
-    <panel class="pro_2decks_overlays" x="+35" y="+0" deck="1"/>
-    <panel class="pro_2decks_overlays" x="+35" y="+0" deck="3"/>
-    <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2"/>
-    <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
+    <group visibility="not deck 3 leftdeck">
+      <panel class="pro_2decks_overlays" x="+35" y="+0" deck="1"/>
+    </group>
+    <group visibility="deck 3 leftdeck">
+      <panel class="pro_2decks_overlays" x="+35" y="+0" deck="3"/>
+    </group>
+    <group visibility="not deck 4 rightdeck">
+      <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="2"/>
+    </group>
+    <group visibility="deck 4 rightdeck">
+      <panel class="pro_2decks_overlays" x="+1920-800" y="+0" deck="4"/>
+    </group>
   </define>
   <!-- Pure deck structure: positioned by the shared DECKS_* shell (pro/waves.xml).
        All four decks are full decks with their own pads but no transport bar (1/3 left,

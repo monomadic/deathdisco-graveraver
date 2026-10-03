@@ -20,10 +20,14 @@ Expansion rules:
 """
 
 import sys
+import re
 import xml.etree.ElementTree as ET
 from copy import deepcopy
 from os import getpid
 from pathlib import Path
+
+
+PLACEHOLDER_RE = re.compile(r"\[([A-Z][A-Z0-9_]*)\]")
 
 
 def collect_macros(element, macros):
@@ -33,6 +37,17 @@ def collect_macros(element, macros):
             for item in filter(None, child.get("placeholders", "").split(",")):
                 name, eq, default = item.partition("=")
                 spec[name.lstrip("*")] = default if eq else None
+            # Validate template-owned tokens before inserting caller values.
+            # Values such as [HEIGHT] passed by an enclosing runtime define are
+            # deliberately preserved, even if that token is not a macro input.
+            declared = {name.upper() for name in spec}
+            used = {token for node in child.iter() for value in node.attrib.values()
+                    for token in PLACEHOLDER_RE.findall(value)}
+            unknown = used - declared
+            if unknown:
+                raise SystemExit(
+                    f"macro {child.get('class')}: undeclared placeholders "
+                    + ", ".join(sorted(unknown)))
             macros[child.get("class").lower()] = (spec, list(child))
             element.remove(child)
         else:
@@ -40,9 +55,12 @@ def collect_macros(element, macros):
 
 
 def substitute(element, values):
+    replacements = {name.upper(): value for name, value in values.items()}
     for key, value in element.attrib.items():
-        for name, replacement in values.items():
-            value = value.replace(f"[{name.upper()}]", replacement)
+        # One pass prevents caller-owned tokens from being substituted again
+        # when their names happen to overlap another macro parameter.
+        value = PLACEHOLDER_RE.sub(
+            lambda match: replacements.get(match[1], match[0]), value)
         element.set(key, value)
     for child in element:
         substitute(child, values)

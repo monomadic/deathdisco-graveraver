@@ -10,6 +10,7 @@
   <xi:include href="browser-button.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="waves-button.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="audio-device.xml" xpointer="xpointer(/defs/*)"/>
+  <xi:include href="rack-toggles.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="pro-utilities.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="performance-utilities.xml" xpointer="xpointer(/defs/*)"/>
   <xi:include href="stack-utilities.xml" xpointer="xpointer(/defs/*)"/>

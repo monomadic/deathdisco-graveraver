@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defs>
-  <define class="AREA_WAVES">
-    <panel class="waveform" x="+2" waveformheight="381" condition="var_equal '@$dd_wave_size' 13"/>
-    <panel class="waveform" x="+2" waveformheight="361" condition="var_equal '@$dd_wave_size' 12"/>
-    <panel class="waveform" x="+2" waveformheight="341" condition="var_equal '@$dd_wave_size' 11"/>
-    <panel class="waveform" x="+2" waveformheight="321" condition="var_equal '@$dd_wave_size' 10"/>
-    <panel class="waveform" x="+2" waveformheight="301" condition="var_equal '@$dd_wave_size' 9"/>
-    <panel class="waveform" x="+2" waveformheight="281" condition="var_equal '@$dd_wave_size' 8"/>
-    <panel class="waveform" x="+2" waveformheight="261" condition="var_equal '@$dd_wave_size' 7"/>
-    <panel class="waveform" x="+2" waveformheight="241" condition="var_equal '@$dd_wave_size' 6"/>
-    <panel class="waveform" x="+2" waveformheight="221" condition="var_equal '@$dd_wave_size' 5"/>
-    <panel class="waveform" x="+2" waveformheight="201" condition="var_equal '@$dd_wave_size' 4"/>
-    <panel class="waveform" x="+2" waveformheight="181" condition="var_equal '@$dd_wave_size' 3"/>
-    <panel class="waveform" x="+2" waveformheight="161" condition="var_equal '@$dd_wave_size' 2"/>
-    <panel class="waveform" x="+2" waveformheight="141" condition="var_equal '@$dd_wave_size' 1"/>
-    <panel class="waveform" x="+2" waveformheight="121" condition="var_equal '@$dd_wave_size' 0"/>
-  </define>
   <!-- Fixed-height 4-lane wave area for the 4-deck shells; HEIGHT is whatever the decks leave. -->
   <define class="AREA_WAVES_EXTENDED_4DECK" placeholders="*height=1080-50-50-355-2-355-3">
     <panel class="waveform" x="+2" width="1920-4" height="[HEIGHT]" waveformheight="[HEIGHT]" force4deck="true"/>
